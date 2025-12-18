@@ -1,0 +1,190 @@
+{
+  "id": "phase2_lesson7_1",
+  "order": 1,
+  "unitId": "phase2_unit7",
+  "title": "Time Prepositions",
+  "description": "on / in / at / since / for / ago / before / by",
+  "level": "A2",
+  "explain": {
+    "ta": "காலத்தை குறிப்பிட நாம் பல்வேறு prepositions பயன்படுத்துகிறோம். 'on' என்பது நாட்களுக்கு (on Monday, on 5th June), 'in' என்பது மாதங்கள், வருடங்கள் மற்றும் நாளின் பகுதிகளுக்கு (in July, in 2020, in the morning), 'at' என்பது குறிப்பிட்ட நேரத்திற்கு (at 5 pm, at night) பயன்படுத்தப்படுகிறது. 'since' ஒரு தொடக்க புள்ளியைக் காட்டுகிறது (since 2020), 'for' கால அளவைக் காட்டுகிறது (for 2 years), 'ago' கடந்த காலத்தைக் குறிக்கிறது (2 years ago), 'before' முன்பு என்று பொருள் (before 5 pm), 'by' என்பது ஒரு குறிப்பிட்ட நேரத்திற்குள் என்று பொருள் (by 5 pm).",
+    "en": "We use different prepositions to indicate time. 'on' is used for days and dates (on Monday, on 5th June), 'in' for months, years, and parts of the day (in July, in 2020, in the morning), 'at' for specific times (at 5 pm, at night). 'since' shows a starting point in time (since 2020), 'for' shows duration (for 2 years), 'ago' refers to past time (2 years ago), 'before' means earlier than (before 5 pm), and 'by' means not later than (by 5 pm).",
+    "table": [
+      {
+        "key": "on",
+        "examples": ["on Monday", "on 5th June", "on Christmas Day"]
+      },
+      {
+        "key": "in",
+        "examples": ["in July", "in 2020", "in the morning"]
+      },
+      {
+        "key": "at",
+        "examples": ["at 5 pm", "at night", "at noon"]
+      },
+      {
+        "key": "since",
+        "examples": ["since 2020", "since Monday", "since morning"]
+      },
+      {
+        "key": "for",
+        "examples": ["for 2 years", "for 3 hours", "for a week"]
+      },
+      {
+        "key": "ago",
+        "examples": ["2 years ago", "3 days ago", "an hour ago"]
+      },
+      {
+        "key": "before",
+        "examples": ["before 5 pm", "before Monday", "before noon"]
+      },
+      {
+        "key": "by",
+        "examples": ["by 5 pm", "by Monday", "by tomorrow"]
+      }
+    ]
+  },
+  "examples": [
+    {
+      "en": "I have a class on Monday.",
+      "ta": "எனக்கு திங்கள்கிழமை வகுப்பு உள்ளது.",
+      "audioId": "phase2_l7_1_ex1"
+    },
+    {
+      "en": "She was born in 2004.",
+      "ta": "அவள் 2004-ல் பிறந்தாள்.",
+      "audioId": "phase2_l7_1_ex2"
+    },
+    {
+      "en": "We eat dinner at 9 pm.",
+      "ta": "நாங்கள் இரவு 9 மணிக்கு இரவு உணவு சாப்பிடுகிறோம்.",
+      "audioId": "phase2_l7_1_ex3"
+    },
+    {
+      "en": "I have lived here since 2020.",
+      "ta": "நான் 2020 முதல் இங்கே வசிக்கிறேன்.",
+      "audioId": "phase2_l7_1_ex4"
+    },
+    {
+      "en": "They studied for 3 hours.",
+      "ta": "அவர்கள் 3 மணி நேரம் படித்தார்கள்.",
+      "audioId": "phase2_l7_1_ex5"
+    }
+  ],
+  "listeningQuestions": [
+    {
+      "audioText": "I go to school at 8 am.",
+      "options": [
+        "I go to school at 8 am.",
+        "I go to school in 8 am.",
+        "I go to school on 8 am."
+      ],
+      "correctIndex": 0
+    },
+    {
+      "audioText": "We have a holiday on Monday.",
+      "options": [
+        "We have a holiday in Monday.",
+        "We have a holiday on Monday.",
+        "We have a holiday at Monday."
+      ],
+      "correctIndex": 1
+    },
+    {
+      "audioText": "She was born in July.",
+      "options": [
+        "She was born at July.",
+        "She was born on July.",
+        "She was born in July."
+      ],
+      "correctIndex": 2
+    }
+  ],
+  "speakSentences": [
+    {
+      "en": "I have English class on Friday.",
+      "ta": "எனக்கு வெள்ளிக்கிழமை ஆங்கில வகுப்பு உள்ளது."
+    },
+    {
+      "en": "We eat dinner at 9 pm.",
+      "ta": "நாங்கள் இரவு 9 மணிக்கு இரவு உணவு சாப்பிடுகிறோம்."
+    },
+    {
+      "en": "I was born in 2005.",
+      "ta": "நான் 2005-ல் பிறந்தேன்."
+    }
+  ],
+  "practiceQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "We have a holiday ___ Monday.",
+      "promptTa": "நமக்கு திங்கள்கிழமை விடுமுறை உள்ளது.",
+      "options": ["in", "on", "at", "by"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "She wakes up ___ 6 am.",
+      "promptTa": "அவள் காலை 6 மணிக்கு எழுந்து விடுகிறாள்.",
+      "options": ["in", "on", "at", "for"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "I was born ___ 2004.",
+      "promptTa": "நான் 2004-ல் பிறந்தேன்.",
+      "options": ["in", "on", "at", "by"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "I have lived here ___ 2020.",
+      "promptTa": "நான் 2020 முதல் இங்கே வசிக்கிறேன்.",
+      "options": ["for", "since", "ago", "before"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "They studied ___ 3 hours.",
+      "promptTa": "அவர்கள் 3 மணி நேரம் படித்தார்கள்.",
+      "options": ["for", "since", "ago", "in"],
+      "correctIndex": 0
+    }
+  ],
+  "masteryQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "The meeting is ___ 3 pm.",
+      "promptTa": "கூட்டம் மதியம் 3 மணிக்கு உள்ளது.",
+      "options": ["in", "on", "at", "by"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "I will finish ___ 5 pm.",
+      "promptTa": "நான் மாலை 5 மணிக்குள் முடிப்பேன்.",
+      "options": ["in", "on", "at", "by"],
+      "correctIndex": 3
+    },
+    {
+      "type": "mcq",
+      "promptEn": "He left 2 hours ___.",
+      "promptTa": "அவர் 2 மணி நேரத்திற்கு முன் சென்றார்.",
+      "options": ["for", "since", "ago", "before"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "My birthday is ___ December.",
+      "promptTa": "என் பிறந்தநாள் டிசம்பரில் உள்ளது.",
+      "options": ["in", "on", "at", "by"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "I have been waiting ___ 30 minutes.",
+      "promptTa": "நான் 30 நிமிடங்களாக காத்திருக்கிறேன்.",
+      "options": ["for", "since", "ago", "in"],
+      "correctIndex": 0
+    }
+  ]
+}

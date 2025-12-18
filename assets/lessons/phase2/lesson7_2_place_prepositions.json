@@ -1,0 +1,198 @@
+{
+  "id": "phase2_lesson7_2",
+  "order": 2,
+  "unitId": "phase2_unit7",
+  "title": "Place & Movement Prepositions",
+  "description": "in / on / at / under / above / across / through / into / from / towards",
+  "level": "A2",
+  "explain": {
+    "ta": "இடத்தையும் இயக்கத்தையும் குறிப்பிட பல்வேறு prepositions பயன்படுத்தப்படுகின்றன. 'in' என்பது உள்ளே (in the room), 'on' என்பது மேலே (on the table), 'at' என்பது குறிப்பிட்ட இடத்தில் (at school), 'under' என்பது கீழே (under the table), 'above' என்பது மேலே (above the clouds), 'across' என்பது குறுக்கே (across the road), 'through' என்பது வழியாக (through the door), 'into' என்பது உள்ளே நுழைதல் (into the room), 'from' என்பது இருந்து (from Chennai), 'towards' என்பது நோக்கி (towards the school) என்று பொருள்படும்.",
+    "en": "Different prepositions are used to indicate place and movement. 'in' means inside (in the room), 'on' means on top of (on the table), 'at' means at a specific location (at school), 'under' means below (under the table), 'above' means higher than (above the clouds), 'across' means from one side to another (across the road), 'through' means passing from one side to another (through the door), 'into' means entering (into the room), 'from' indicates origin (from Chennai), 'towards' means in the direction of (towards the school).",
+    "table": [
+      {
+        "key": "in",
+        "examples": ["in the room", "in Chennai", "in the box"]
+      },
+      {
+        "key": "on",
+        "examples": ["on the table", "on the wall", "on the floor"]
+      },
+      {
+        "key": "at",
+        "examples": ["at school", "at home", "at the station"]
+      },
+      {
+        "key": "under",
+        "examples": ["under the table", "under the bed", "under the tree"]
+      },
+      {
+        "key": "above",
+        "examples": ["above the clouds", "above the door", "above sea level"]
+      },
+      {
+        "key": "across",
+        "examples": ["across the road", "across the river", "across the field"]
+      },
+      {
+        "key": "through",
+        "examples": ["through the door", "through the window", "through the tunnel"]
+      },
+      {
+        "key": "into",
+        "examples": ["into the room", "into the car", "into the water"]
+      },
+      {
+        "key": "from",
+        "examples": ["from Chennai", "from school", "from home"]
+      },
+      {
+        "key": "towards",
+        "examples": ["towards the school", "towards the city", "towards me"]
+      }
+    ]
+  },
+  "examples": [
+    {
+      "en": "The book is on the table.",
+      "ta": "புத்தகம் மேசையின் மேல் உள்ளது.",
+      "audioId": "phase2_l7_2_ex1"
+    },
+    {
+      "en": "She lives in Chennai.",
+      "ta": "அவள் சென்னையில் வசிக்கிறாள்.",
+      "audioId": "phase2_l7_2_ex2"
+    },
+    {
+      "en": "The cat is under the bed.",
+      "ta": "பூனை படுக்கைக்கு கீழே உள்ளது.",
+      "audioId": "phase2_l7_2_ex3"
+    },
+    {
+      "en": "He walked across the road.",
+      "ta": "அவர் சாலையைக் கடந்து நடந்தார்.",
+      "audioId": "phase2_l7_2_ex4"
+    },
+    {
+      "en": "I am going towards the school.",
+      "ta": "நான் பள்ளியை நோக்கிச் செல்கிறேன்.",
+      "audioId": "phase2_l7_2_ex5"
+    }
+  ],
+  "listeningQuestions": [
+    {
+      "audioText": "The book is on the table.",
+      "options": [
+        "The book is on the table.",
+        "The book is in the table.",
+        "The book is at the table."
+      ],
+      "correctIndex": 0
+    },
+    {
+      "audioText": "She lives in Chennai.",
+      "options": [
+        "She lives at Chennai.",
+        "She lives on Chennai.",
+        "She lives in Chennai."
+      ],
+      "correctIndex": 2
+    },
+    {
+      "audioText": "The cat is under the bed.",
+      "options": [
+        "The cat is under the bed.",
+        "The cat is above the bed.",
+        "The cat is on the bed."
+      ],
+      "correctIndex": 0
+    }
+  ],
+  "speakSentences": [
+    {
+      "en": "The book is on the table.",
+      "ta": "புத்தகம் மேசையின் மேல் உள்ளது."
+    },
+    {
+      "en": "I am at school.",
+      "ta": "நான் பள்ளியில் இருக்கிறேன்."
+    },
+    {
+      "en": "He walked through the door.",
+      "ta": "அவர் கதவு வழியாக நடந்தார்."
+    }
+  ],
+  "practiceQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "The book is ___ the table.",
+      "promptTa": "புத்தகம் மேசையின் மேல் உள்ளது.",
+      "options": ["in", "on", "at", "under"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "She lives ___ Chennai.",
+      "promptTa": "அவள் சென்னையில் வசிக்கிறாள்.",
+      "options": ["in", "on", "at", "under"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "The cat is ___ the bed.",
+      "promptTa": "பூனை படுக்கைக்கு கீழே உள்ளது.",
+      "options": ["in", "on", "at", "under"],
+      "correctIndex": 3
+    },
+    {
+      "type": "mcq",
+      "promptEn": "He walked ___ the road.",
+      "promptTa": "அவர் சாலையைக் கடந்து நடந்தார்.",
+      "options": ["across", "through", "into", "from"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "I am going ___ the school.",
+      "promptTa": "நான் பள்ளியை நோக்கிச் செல்கிறேன்.",
+      "options": ["from", "into", "towards", "through"],
+      "correctIndex": 2
+    }
+  ],
+  "masteryQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "I am ___ home now.",
+      "promptTa": "நான் இப்போது வீட்டில் இருக்கிறேன்.",
+      "options": ["in", "on", "at", "under"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "The plane is flying ___ the clouds.",
+      "promptTa": "விமானம் மேகங்களுக்கு மேலே பறக்கிறது.",
+      "options": ["under", "above", "in", "on"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "He came ___ the window.",
+      "promptTa": "அவர் ஜன்னல் வழியாக வந்தார்.",
+      "options": ["across", "through", "towards", "from"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "She jumped ___ the water.",
+      "promptTa": "அவள் தண்ணீருக்குள் குதித்தாள்.",
+      "options": ["from", "into", "towards", "across"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "I am coming ___ Mumbai.",
+      "promptTa": "நான் மும்பையிலிருந்து வருகிறேன்.",
+      "options": ["from", "into", "towards", "through"],
+      "correctIndex": 0
+    }
+  ]
+}

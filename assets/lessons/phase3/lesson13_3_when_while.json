@@ -1,0 +1,228 @@
+{
+  "id": "phase3_lesson13_3",
+  "order": 3,
+  "unitId": "phase3_unit13",
+  "title": "Time Connectors: WHEN, WHILE, AFTER, BEFORE",
+  "description": "Express time relationships between actions",
+  "level": "B1",
+  "explain": {
+    "ta": "நேர உறவுகளை வெளிப்படுத்த நாம் WHEN, WHILE, AFTER, BEFORE போன்ற connectors பயன்படுத்துகிறோம். 'WHEN' ஒரு குறிப்பிட்ட நேரத்தில் நடக்கும் செயலை காட்டுகிறது (When I arrived, he left - நான் வந்தபோது அவர் சென்றார்). 'WHILE' ஒரே நேரத்தில் நடக்கும் இரண்டு செயல்களை காட்டுகிறது (While I was cooking, he was reading - நான் சமைத்துக்கொண்டிருந்தபோது அவர் படித்துக்கொண்டிருந்தார்). 'AFTER' ஒரு செயல் முடிந்த பிறகு மற்றொன்று நடப்பதை காட்டுகிறது. 'BEFORE' ஒரு செயல் நடப்பதற்கு முன் மற்றொன்று நடப்பதை காட்டுகிறது.",
+    "en": "We use time connectors like WHEN, WHILE, AFTER, BEFORE to show time relationships between actions. 'WHEN' shows an action at a specific time (When I arrived, he left). 'WHILE' shows two actions happening at the same time (While I was cooking, he was reading). 'AFTER' shows one action following another (After I finished work, I went home). 'BEFORE' shows one action preceding another (Before I sleep, I brush my teeth).",
+    "table": [
+      {
+        "key": "WHEN (specific time)",
+        "examples": ["When I woke up, it was raining.", "When she called, I was busy.", "I was happy when I heard the news."]
+      },
+      {
+        "key": "WHILE (simultaneous)",
+        "examples": ["While I was studying, he was playing.", "She listened to music while cooking.", "While it was raining, we stayed inside."]
+      },
+      {
+        "key": "AFTER (sequence)",
+        "examples": ["After I ate, I slept.", "She left after the meeting ended.", "After we finished, we went home."]
+      },
+      {
+        "key": "BEFORE (prior)",
+        "examples": ["Before I sleep, I read.", "Call me before you come.", "I checked everything before I left."]
+      }
+    ]
+  },
+  "examples": [
+    {
+      "en": "When I arrived home, my family was waiting.",
+      "ta": "நான் வீட்டிற்கு வந்தபோது, என் குடும்பம் காத்திருந்தது.",
+      "audioId": "phase3_l13_3_ex1"
+    },
+    {
+      "en": "While I was cooking, my brother was watching TV.",
+      "ta": "நான் சமைத்துக்கொண்டிருந்தபோது, என் சகோதரர் டிவி பார்த்துக்கொண்டிருந்தார்.",
+      "audioId": "phase3_l13_3_ex2"
+    },
+    {
+      "en": "After I finished my homework, I played games.",
+      "ta": "நான் என் வீட்டுப்பாடத்தை முடித்த பிறகு, விளையாட்டு விளையாடினேன்.",
+      "audioId": "phase3_l13_3_ex3"
+    },
+    {
+      "en": "Before I go to bed, I brush my teeth.",
+      "ta": "நான் படுக்கைக்கு செல்வதற்கு முன், பல் துலக்குகிறேன்.",
+      "audioId": "phase3_l13_3_ex4"
+    },
+    {
+      "en": "When the phone rang, I was taking a shower.",
+      "ta": "தொலைபேசி ஒலித்தபோது, நான் குளித்துக்கொண்டிருந்தேன்.",
+      "audioId": "phase3_l13_3_ex5"
+    },
+    {
+      "en": "While she was talking, I was listening carefully.",
+      "ta": "அவள் பேசிக்கொண்டிருந்தபோது, நான் கவனமாக கேட்டுக்கொண்டிருந்தேன்.",
+      "audioId": "phase3_l13_3_ex6"
+    },
+    {
+      "en": "After the rain stopped, we went outside.",
+      "ta": "மழை நின்ற பிறகு, நாங்கள் வெளியே சென்றோம்.",
+      "audioId": "phase3_l13_3_ex7"
+    },
+    {
+      "en": "Before you leave, please close the door.",
+      "ta": "நீங்கள் செல்வதற்கு முன், தயவுசெய்து கதவை மூடுங்கள்.",
+      "audioId": "phase3_l13_3_ex8"
+    }
+  ],
+  "listeningQuestions": [
+    {
+      "audioText": "When I saw her, she was smiling.",
+      "options": [
+        "When I saw her, she was smiling.",
+        "While I saw her, she was smiling.",
+        "After I saw her, she was smiling."
+      ],
+      "correctIndex": 0
+    },
+    {
+      "audioText": "While I was working, my phone rang.",
+      "options": [
+        "When I was working, my phone rang.",
+        "While I was working, my phone rang.",
+        "Before I was working, my phone rang."
+      ],
+      "correctIndex": 1
+    },
+    {
+      "audioText": "After I ate dinner, I watched a movie.",
+      "options": [
+        "Before I ate dinner, I watched a movie.",
+        "While I ate dinner, I watched a movie.",
+        "After I ate dinner, I watched a movie."
+      ],
+      "correctIndex": 2
+    }
+  ],
+  "speakSentences": [
+    {
+      "en": "When I wake up, I drink water.",
+      "ta": "நான் எழுந்ததும், தண்ணீர் குடிக்கிறேன்."
+    },
+    {
+      "en": "While I was studying, my friend called me.",
+      "ta": "நான் படித்துக்கொண்டிருந்தபோது, என் நண்பர் என்னை அழைத்தார்."
+    },
+    {
+      "en": "After I finish work, I go to the gym.",
+      "ta": "நான் வேலையை முடித்த பிறகு, ஜிம்மிற்கு செல்கிறேன்."
+    },
+    {
+      "en": "Before I eat, I wash my hands.",
+      "ta": "நான் சாப்பிடுவதற்கு முன், கைகளை கழுவுகிறேன்."
+    }
+  ],
+  "practiceQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "___ I arrived, everyone was waiting.",
+      "promptTa": "நான் வந்தபோது, எல்லோரும் காத்திருந்தார்கள்.",
+      "options": ["When", "While", "After", "Before"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "___ I was sleeping, someone knocked on the door.",
+      "promptTa": "நான் தூங்கிக்கொண்டிருந்தபோது, யாரோ கதவை தட்டினார்கள்.",
+      "options": ["When", "While", "After", "Before"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "___ I finished eating, I washed the dishes.",
+      "promptTa": "நான் சாப்பிட்டு முடித்த பிறகு, பாத்திரங்களை கழுவினேன்.",
+      "options": ["When", "While", "After", "Before"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "___ you go, turn off the lights.",
+      "promptTa": "நீங்கள் செல்வதற்கு முன், விளக்குகளை அணைக்கவும்.",
+      "options": ["When", "While", "After", "Before"],
+      "correctIndex": 3
+    },
+    {
+      "type": "mcq",
+      "promptEn": "___ the teacher entered, the students stood up.",
+      "promptTa": "ஆசிரியர் உள்ளே வந்தபோது, மாணவர்கள் எழுந்து நின்றார்கள்.",
+      "options": ["When", "While", "After", "Before"],
+      "correctIndex": 0
+    }
+  ],
+  "masteryQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "___ I was reading, my sister was singing.",
+      "promptTa": "நான் படித்துக்கொண்டிருந்தபோது, என் சகோதரி பாடிக்கொண்டிருந்தாள்.",
+      "options": ["When", "While", "After", "Before"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "___ the movie ended, we went home.",
+      "promptTa": "திரைப்படம் முடிந்த பிறகு, நாங்கள் வீட்டிற்கு சென்றோம்.",
+      "options": ["When", "While", "After", "Before"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "___ you start, read the instructions.",
+      "promptTa": "நீங்கள் தொடங்குவதற்கு முன், வழிமுறைகளை படியுங்கள்.",
+      "options": ["When", "While", "After", "Before"],
+      "correctIndex": 3
+    },
+    {
+      "type": "mcq",
+      "promptEn": "___ I heard the news, I was shocked.",
+      "promptTa": "நான் செய்தியை கேட்டபோது, அதிர்ச்சியடைந்தேன்.",
+      "options": ["When", "While", "After", "Before"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "___ she was cooking, I was setting the table.",
+      "promptTa": "அவள் சமைத்துக்கொண்டிருந்தபோது, நான் மேசையை அமைத்துக்கொண்டிருந்தேன்.",
+      "options": ["When", "While", "After", "Before"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "___ we ate, we thanked the host.",
+      "promptTa": "நாங்கள் சாப்பிட்ட பிறகு, விருந்தோம்பலுக்கு நன்றி கூறினோம்.",
+      "options": ["When", "While", "After", "Before"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "___ I leave home, I check my bag.",
+      "promptTa": "நான் வீட்டை விட்டு செல்வதற்கு முன், என் பையை சரிபார்க்கிறேன்.",
+      "options": ["When", "While", "After", "Before"],
+      "correctIndex": 3
+    },
+    {
+      "type": "mcq",
+      "promptEn": "___ the bell rang, the class ended.",
+      "promptTa": "மணி அடித்தபோது, வகுப்பு முடிந்தது.",
+      "options": ["When", "While", "After", "Before"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "___ I was driving, I saw an accident.",
+      "promptTa": "நான் வாகனம் ஓட்டிக்கொண்டிருந்தபோது, ஒரு விபத்தை பார்த்தேன்.",
+      "options": ["When", "While", "After", "Before"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "___ the sun set, it became dark.",
+      "promptTa": "சூரியன் மறைந்த பிறகு, இருட்டாகிவிட்டது.",
+      "options": ["When", "While", "After", "Before"],
+      "correctIndex": 2
+    }
+  ]
+}

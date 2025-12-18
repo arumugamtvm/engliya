@@ -1,0 +1,225 @@
+{
+  "id": "phase3_lesson14_2",
+  "order": 2,
+  "unitId": "phase3_unit14",
+  "title": "Simple Past Passive",
+  "description": "Learn to form past passive with was/were + past participle",
+  "level": "B1",
+  "explain": {
+    "ta": "Simple past passive-ஐ உருவாக்க was/were + past participle பயன்படுத்துகிறோம். Active: 'They built the house in 1990' → Passive: 'The house was built in 1990'. Past passive-ஐ நாம் கடந்த காலத்தில் நடந்த செயல்களை விவரிக்க பயன்படுத்துகிறோம், குறிப்பாக வரலாறு, செய்திகள், மற்றும் அறிக்கைகளில். இது formal மற்றும் objective tone-ஐ உருவாக்க உதவுகிறது.",
+    "en": "To form simple past passive: use was/were + past participle. Active: 'They built the house in 1990' → Passive: 'The house was built in 1990'. We use past passive to describe completed actions in the past, especially in history, news reports, and formal descriptions. It helps create a formal and objective tone by focusing on what happened rather than who did it.",
+    "table": [
+      {
+        "key": "Singular (was)",
+        "examples": ["The letter was written yesterday.", "The door was opened at 8 AM.", "The book was published in 2020."]
+      },
+      {
+        "key": "Plural (were)",
+        "examples": ["The letters were written yesterday.", "The doors were opened at 8 AM.", "The books were published in 2020."]
+      },
+      {
+        "key": "Negative",
+        "examples": ["The letter was not written.", "The doors were not opened.", "The book was not published."]
+      }
+    ]
+  },
+  "examples": [
+    {
+      "en": "The house was built in 1990.",
+      "ta": "வீடு 1990-ல் கட்டப்பட்டது.",
+      "audioId": "phase3_l14_2_ex1"
+    },
+    {
+      "en": "The movie was directed by a famous director.",
+      "ta": "திரைப்படம் ஒரு பிரபல இயக்குனரால் இயக்கப்பட்டது.",
+      "audioId": "phase3_l14_2_ex2"
+    },
+    {
+      "en": "The letter was sent last week.",
+      "ta": "கடிதம் கடந்த வாரம் அனுப்பப்பட்டது.",
+      "audioId": "phase3_l14_2_ex3"
+    },
+    {
+      "en": "The computers were installed yesterday.",
+      "ta": "கணினிகள் நேற்று நிறுவப்பட்டன.",
+      "audioId": "phase3_l14_2_ex4"
+    },
+    {
+      "en": "The meeting was cancelled due to rain.",
+      "ta": "மழை காரணமாக கூட்டம் ரத்து செய்யப்பட்டது.",
+      "audioId": "phase3_l14_2_ex5"
+    },
+    {
+      "en": "The documents were signed by both parties.",
+      "ta": "ஆவணங்கள் இரு தரப்பினராலும் கையெழுத்திடப்பட்டன.",
+      "audioId": "phase3_l14_2_ex6"
+    },
+    {
+      "en": "The bridge was completed in 2015.",
+      "ta": "பாலம் 2015-ல் முடிக்கப்பட்டது.",
+      "audioId": "phase3_l14_2_ex7"
+    },
+    {
+      "en": "The students were taught by an experienced teacher.",
+      "ta": "மாணவர்கள் அனுபவமிக்க ஆசிரியரால் கற்பிக்கப்பட்டனர்.",
+      "audioId": "phase3_l14_2_ex8"
+    },
+    {
+      "en": "The problem was solved quickly.",
+      "ta": "பிரச்சனை விரைவாக தீர்க்கப்பட்டது.",
+      "audioId": "phase3_l14_2_ex9"
+    }
+  ],
+  "listeningQuestions": [
+    {
+      "audioText": "The car was repaired last month.",
+      "options": [
+        "The car is repaired last month.",
+        "The car was repaired last month.",
+        "The car were repaired last month."
+      ],
+      "correctIndex": 1
+    },
+    {
+      "audioText": "The windows were cleaned this morning.",
+      "options": [
+        "The windows was cleaned this morning.",
+        "The windows are cleaned this morning.",
+        "The windows were cleaned this morning."
+      ],
+      "correctIndex": 2
+    },
+    {
+      "audioText": "The report was submitted on time.",
+      "options": [
+        "The report was submitted on time.",
+        "The report were submitted on time.",
+        "The report is submitted on time."
+      ],
+      "correctIndex": 0
+    }
+  ],
+  "speakSentences": [
+    {
+      "en": "The package was delivered yesterday.",
+      "ta": "பார்சல் நேற்று வழங்கப்பட்டது."
+    },
+    {
+      "en": "The photos were taken last summer.",
+      "ta": "புகைப்படங்கள் கடந்த கோடையில் எடுக்கப்பட்டன."
+    },
+    {
+      "en": "The decision was made by the committee.",
+      "ta": "முடிவு குழுவால் எடுக்கப்பட்டது."
+    }
+  ],
+  "practiceQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "Active: They opened the store in 2010. Passive: The store ___ in 2010.",
+      "promptTa": "Active: அவர்கள் கடையை 2010-ல் திறந்தார்கள். Passive: கடை 2010-ல் ___.",
+      "options": ["opens", "was opened", "were opened"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Active: She wrote the email. Passive: The email ___ by her.",
+      "promptTa": "Active: அவள் மின்னஞ்சல் எழுதினாள். Passive: மின்னஞ்சல் அவளால் ___.",
+      "options": ["writes", "was written", "were written"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Active: They invited many guests. Passive: Many guests ___.",
+      "promptTa": "Active: அவர்கள் பல விருந்தினர்களை அழைத்தார்கள். Passive: பல விருந்தினர்கள் ___.",
+      "options": ["invited", "was invited", "were invited"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Active: He fixed the computer. Passive: The computer ___ by him.",
+      "promptTa": "Active: அவர் கணினியை சரி செய்தார். Passive: கணினி அவரால் ___.",
+      "options": ["fixed", "was fixed", "were fixed"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Active: They painted the walls. Passive: The walls ___.",
+      "promptTa": "Active: அவர்கள் சுவர்களை வர்ணம் பூசினார்கள். Passive: சுவர்கள் ___.",
+      "options": ["painted", "was painted", "were painted"],
+      "correctIndex": 2
+    }
+  ],
+  "masteryQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "The temple ___ 500 years ago.",
+      "promptTa": "கோவில் 500 ஆண்டுகளுக்கு முன்பு ___.",
+      "options": ["builds", "was built", "were built"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "The prizes ___ to the winners yesterday.",
+      "promptTa": "பரிசுகள் நேற்று வெற்றியாளர்களுக்கு ___.",
+      "options": ["give", "was given", "were given"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "The song ___ by a famous singer.",
+      "promptTa": "பாடல் ஒரு பிரபல பாடகரால் ___.",
+      "options": ["sings", "was sung", "were sung"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "The books ___ in the library last week.",
+      "promptTa": "புத்தகங்கள் கடந்த வாரம் நூலகத்தில் ___.",
+      "options": ["place", "was placed", "were placed"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "The message ___ at 10 AM.",
+      "promptTa": "செய்தி காலை 10 மணிக்கு ___.",
+      "options": ["receives", "was received", "were received"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "The tickets ___ online.",
+      "promptTa": "டிக்கெட்டுகள் ஆன்லைனில் ___.",
+      "options": ["book", "was booked", "were booked"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "The project ___ last month.",
+      "promptTa": "திட்டம் கடந்த மாதம் ___.",
+      "options": ["completes", "was completed", "were completed"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "The children ___ by their parents.",
+      "promptTa": "குழந்தைகள் அவர்களின் பெற்றோரால் ___.",
+      "options": ["teach", "was taught", "were taught"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "The cake ___ for the party.",
+      "promptTa": "கேக் விருந்துக்காக ___.",
+      "options": ["bakes", "was baked", "were baked"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "The roads ___ after the storm.",
+      "promptTa": "புயலுக்குப் பிறகு சாலைகள் ___.",
+      "options": ["repair", "was repaired", "were repaired"],
+      "correctIndex": 2
+    }
+  ]
+}

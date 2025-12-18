@@ -1,0 +1,266 @@
+{
+  "id": "phase3_lesson17_2",
+  "order": 2,
+  "unitId": "phase3_unit17",
+  "title": "Description Project",
+  "description": "Describe a place, person, or event in detail",
+  "level": "B1",
+  "sampleParagraph": "My favorite place is Marina Beach in Chennai. It is one of the longest beaches in India and stretches for several kilometers along the coast. The beach is always full of life, with families enjoying picnics, children playing in the sand, and vendors selling snacks. In the early morning, you can see people jogging and doing yoga. The sunset view is absolutely beautiful, with the sky turning orange and pink. The sound of the waves is very relaxing. There are many food stalls selling local snacks like sundal and bajji. The beach is clean and well-maintained by the city. I love going there on weekends to relax and enjoy the sea breeze.",
+  "explain": {
+    "ta": "விவரணை என்பது ஒரு இடம், நபர், அல்லது நிகழ்வை விரிவாக சொல்வது. நல்ல விவரணத்தில் உணர்வுகள் (sight, sound, smell), பண்புகள் (beautiful, large, friendly), மற்றும் குறிப்பிட்ட விவரங்கள் இருக்க வேண்டும். இடம் விவரிக்க: அது எங்கே உள்ளது, எப்படி இருக்கிறது, என்ன நடக்கிறது. நபர் விவரிக்க: தோற்றம், குணம், செயல்கள். நிகழ்வு விவரிக்க: எப்போது, எங்கே, என்ன நடந்தது, எப்படி உணர்ந்தீர்கள். உதாரணம்: 'The beach is beautiful' (கடற்கரை அழகாக உள்ளது), 'She is friendly and helpful' (அவள் நட்பாகவும் உதவியாகவும் இருக்கிறாள்).",
+    "en": "Description means explaining a place, person, or event in detail. A good description includes sensory details (sight, sound, smell), adjectives (beautiful, large, friendly), and specific information. To describe a place: where it is, what it looks like, what happens there. To describe a person: appearance, personality, actions. To describe an event: when, where, what happened, how you felt. Example: 'The beach is beautiful' (visual detail), 'She is friendly and helpful' (personality traits).",
+    "table": [
+      {
+        "key": "Place Description",
+        "examples": ["The park is large and green.", "It has many trees and flowers.", "People come here to relax."]
+      },
+      {
+        "key": "Person Description",
+        "examples": ["She is tall with long hair.", "He is friendly and helpful.", "They are hardworking students."]
+      },
+      {
+        "key": "Event Description",
+        "examples": ["The wedding was beautiful.", "It took place in a big hall.", "Everyone enjoyed the celebration."]
+      },
+      {
+        "key": "Sensory Details",
+        "examples": ["The food smells delicious.", "The music sounds wonderful.", "The flowers look colorful."]
+      }
+    ]
+  },
+  "examples": [
+    {
+      "en": "Marina Beach is one of the longest beaches in India.",
+      "ta": "மெரினா கடற்கரை இந்தியாவின் மிக நீளமான கடற்கரைகளில் ஒன்றாகும்.",
+      "audioId": "phase3_l17_2_ex1"
+    },
+    {
+      "en": "The beach is always full of life with families and children.",
+      "ta": "கடற்கரை எப்போதும் குடும்பங்கள் மற்றும் குழந்தைகளுடன் உயிர் நிறைந்ததாக இருக்கிறது.",
+      "audioId": "phase3_l17_2_ex2"
+    },
+    {
+      "en": "The sunset view is absolutely beautiful.",
+      "ta": "சூரிய அஸ்தமனக் காட்சி முற்றிலும் அழகாக உள்ளது.",
+      "audioId": "phase3_l17_2_ex3"
+    },
+    {
+      "en": "My teacher is very patient and kind.",
+      "ta": "என் ஆசிரியர் மிகவும் பொறுமையாகவும் அன்பாகவும் இருக்கிறார்.",
+      "audioId": "phase3_l17_2_ex4"
+    },
+    {
+      "en": "She always explains things clearly and helps everyone.",
+      "ta": "அவர் எப்போதும் விஷயங்களை தெளிவாக விளக்குகிறார் மற்றும் அனைவருக்கும் உதவுகிறார்.",
+      "audioId": "phase3_l17_2_ex5"
+    },
+    {
+      "en": "The festival was colorful and exciting.",
+      "ta": "திருவிழா வண்ணமயமாகவும் உற்சாகமாகவும் இருந்தது.",
+      "audioId": "phase3_l17_2_ex6"
+    },
+    {
+      "en": "There was music, dancing, and delicious food everywhere.",
+      "ta": "எல்லா இடங்களிலும் இசை, நடனம் மற்றும் சுவையான உணவு இருந்தது.",
+      "audioId": "phase3_l17_2_ex7"
+    },
+    {
+      "en": "The sound of the waves is very relaxing.",
+      "ta": "அலைகளின் ஒலி மிகவும் ஓய்வளிக்கிறது.",
+      "audioId": "phase3_l17_2_ex8"
+    },
+    {
+      "en": "The park has many trees, flowers, and walking paths.",
+      "ta": "பூங்காவில் பல மரங்கள், பூக்கள் மற்றும் நடைபாதைகள் உள்ளன.",
+      "audioId": "phase3_l17_2_ex9"
+    }
+  ],
+  "listeningQuestions": [
+    {
+      "audioText": "The temple is very old and beautiful. It has tall towers and colorful sculptures. Many people visit it every day.",
+      "options": [
+        "The temple is new and small.",
+        "The temple is old and beautiful with tall towers.",
+        "The temple has no visitors."
+      ],
+      "correctIndex": 1
+    },
+    {
+      "audioText": "My friend Ravi is tall and athletic. He loves playing cricket and is very good at it. He is also friendly and helpful to everyone.",
+      "options": [
+        "Ravi is short and doesn't like sports.",
+        "Ravi is tall, athletic, and loves cricket.",
+        "Ravi is unfriendly."
+      ],
+      "correctIndex": 1
+    },
+    {
+      "audioText": "The birthday party was amazing. There was delicious food, fun games, and great music. Everyone had a wonderful time.",
+      "options": [
+        "The party was boring.",
+        "The party had food, games, and music.",
+        "Nobody enjoyed the party."
+      ],
+      "correctIndex": 1
+    }
+  ],
+  "speakSentences": [
+    {
+      "en": "My favorite place is [place name]. It is [adjective] and [adjective].",
+      "ta": "என் விருப்பமான இடம் [இட பெயர்]. அது [பண்பு] மற்றும் [பண்பு]."
+    },
+    {
+      "en": "[Person name] is [adjective] and [adjective]. He/She always [action].",
+      "ta": "[நபர் பெயர்] [பண்பு] மற்றும் [பண்பு]. அவர் எப்போதும் [செயல்]."
+    },
+    {
+      "en": "The [event] was [adjective]. There was [detail] and [detail].",
+      "ta": "[நிகழ்வு] [பண்பு] இருந்தது. அங்கே [விவரம்] மற்றும் [விவரம்] இருந்தது."
+    },
+    {
+      "en": "I love [place/person/event] because it/he/she is [reason].",
+      "ta": "நான் [இடம்/நபர்/நிகழ்வு] விரும்புகிறேன் ஏனெனில் அது/அவர் [காரணம்]."
+    },
+    {
+      "en": "The [noun] looks/sounds/smells [adjective] and makes me feel [emotion].",
+      "ta": "[பெயர்ச்சொல்] [பண்பு] தோன்றுகிறது/ஒலிக்கிறது/மணக்கிறது மற்றும் என்னை [உணர்வு] உணர வைக்கிறது."
+    }
+  ],
+  "practiceQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "Which word is best for describing appearance?",
+      "promptTa": "தோற்றத்தை விவரிக்க சிறந்த சொல் எது?",
+      "options": ["quickly", "tall", "yesterday"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Complete: The beach is ___ and beautiful.",
+      "promptTa": "நிரப்புக: கடற்கரை ___ மற்றும் அழகாக உள்ளது.",
+      "options": ["clean", "cleaning", "cleaned"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which describes a sensory detail?",
+      "promptTa": "உணர்வு விவரத்தை விவரிப்பது எது?",
+      "options": [
+        "The food smells delicious.",
+        "The food is food.",
+        "Food."
+      ],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Complete: She is friendly ___ helpful.",
+      "promptTa": "நிரப்புக: அவள் நட்பாகவும் ___ உதவியாகவும் இருக்கிறாள்.",
+      "options": ["but", "and", "or"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which is the best way to describe a place?",
+      "promptTa": "ஒரு இடத்தை விவரிக்க சிறந்த வழி எது?",
+      "options": [
+        "Place.",
+        "The place is nice.",
+        "The park is large, green, and has many trees."
+      ],
+      "correctIndex": 2
+    }
+  ],
+  "masteryQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "Which sentence has the most descriptive details?",
+      "promptTa": "எந்த வாக்கியத்தில் அதிக விவரிப்பு விவரங்கள் உள்ளன?",
+      "options": [
+        "The beach is nice.",
+        "The beach is beautiful with golden sand and clear blue water.",
+        "Beach."
+      ],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Complete: The temple ___ tall towers and colorful sculptures.",
+      "promptTa": "நிரப்புக: கோவிலில் உயரமான கோபுரங்கள் மற்றும் வண்ணமயமான சிற்பங்கள் ___.",
+      "options": ["have", "has", "having"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which describes personality best?",
+      "promptTa": "ஆளுமையை சிறப்பாக விவரிப்பது எது?",
+      "options": [
+        "He is tall.",
+        "He is kind, patient, and always helps others.",
+        "He."
+      ],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Complete: The sunset view is ___ beautiful.",
+      "promptTa": "நிரப்புக: சூரிய அஸ்தமனக் காட்சி ___ அழகாக உள்ளது.",
+      "options": ["absolute", "absolutely", "absolutes"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which sentence describes an event well?",
+      "promptTa": "ஒரு நிகழ்வை நன்றாக விவரிக்கும் வாக்கியம் எது?",
+      "options": [
+        "Party.",
+        "The party was good.",
+        "The party was amazing with delicious food, fun games, and great music."
+      ],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Complete: The sound of the waves ___ very relaxing.",
+      "promptTa": "நிரப்புக: அலைகளின் ஒலி மிகவும் ஓய்வளிக்கிறது ___.",
+      "options": ["is", "are", "be"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which uses sensory language?",
+      "promptTa": "உணர்வு மொழியைப் பயன்படுத்துவது எது?",
+      "options": [
+        "The flower is there.",
+        "The flower smells sweet and looks colorful.",
+        "Flower."
+      ],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Complete: The beach is always full ___ life.",
+      "promptTa": "நிரப்புக: கடற்கரை எப்போதும் உயிர் ___ நிறைந்ததாக இருக்கிறது.",
+      "options": ["of", "with", "in"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which describes location and features?",
+      "promptTa": "இடம் மற்றும் அம்சங்களை விவரிப்பது எது?",
+      "options": [
+        "The park.",
+        "The park is good.",
+        "The park is in the city center and has many trees, flowers, and walking paths."
+      ],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Complete: Everyone ___ the celebration.",
+      "promptTa": "நிரப்புக: அனைவரும் கொண்டாட்டத்தை ___.",
+      "options": ["enjoy", "enjoyed", "enjoying"],
+      "correctIndex": 1
+    }
+  ]
+}

@@ -1,0 +1,238 @@
+{
+  "id": "phase3_lesson12_2",
+  "order": 2,
+  "unitId": "phase3_unit12",
+  "title": "Story Q&A",
+  "description": "Answer Who, What, Where, Why questions about stories",
+  "level": "B1",
+  "explain": {
+    "ta": "கதையை புரிந்துகொள்ள, நான்கு முக்கிய கேள்விகளுக்கு பதில் தேடுங்கள்: WHO (யார்) - கதையில் உள்ள நபர்கள், WHAT (என்ன) - என்ன நடந்தது, WHERE (எங்கே) - இடம், WHY (ஏன்) - காரணம். இந்த கேள்விகளுக்கு பதில் கண்டுபிடிப்பது கதையின் முக்கிய தகவல்களை புரிந்துகொள்ள உதவும். கேட்கும்போது இந்த கேள்விகளை மனதில் வைத்துக்கொள்ளுங்கள்.",
+    "en": "To understand a story, look for answers to four key questions: WHO - the people in the story, WHAT - what happened, WHERE - the place, WHY - the reason. Finding answers to these questions helps you understand the main information in the story. Keep these questions in mind while listening. This is called active listening.",
+    "story": [
+      {"line": 1, "en": "Priya is a teacher at a village school.", "ta": "பிரியா ஒரு கிராம பள்ளியில் ஆசிரியர்."},
+      {"line": 2, "en": "Every morning, she walks two kilometers to reach the school.", "ta": "ஒவ்வொரு காலையும், அவள் பள்ளிக்கு செல்ல இரண்டு கிலோமீட்டர் நடக்கிறாள்."},
+      {"line": 3, "en": "She teaches English and Mathematics to children.", "ta": "அவள் குழந்தைகளுக்கு ஆங்கிலமும் கணிதமும் கற்பிக்கிறாள்."},
+      {"line": 4, "en": "The children love her because she is kind and patient.", "ta": "குழந்தைகள் அவளை நேசிக்கிறார்கள் ஏனெனில் அவள் அன்பானவள் மற்றும் பொறுமையானவள்."},
+      {"line": 5, "en": "Last week, she started a free evening class for poor students.", "ta": "கடந்த வாரம், அவள் ஏழை மாணவர்களுக்கு இலவச மாலை வகுப்பை தொடங்கினாள்."}
+    ],
+    "table": [
+      {
+        "key": "WHO questions",
+        "examples": ["Who is the teacher?", "Who loves Priya?", "Who attends the evening class?"]
+      },
+      {
+        "key": "WHAT questions",
+        "examples": ["What does Priya teach?", "What did she start?", "What happened last week?"]
+      },
+      {
+        "key": "WHERE questions",
+        "examples": ["Where does Priya work?", "Where is the school?", "Where does she walk?"]
+      },
+      {
+        "key": "WHY questions",
+        "examples": ["Why do children love her?", "Why did she start the class?", "Why does she walk?"]
+      }
+    ]
+  },
+  "examples": [
+    {
+      "en": "Who is Priya? - Priya is a teacher.",
+      "ta": "பிரியா யார்? - பிரியா ஒரு ஆசிரியர்.",
+      "audioId": "phase3_l12_2_ex1"
+    },
+    {
+      "en": "What does she teach? - She teaches English and Mathematics.",
+      "ta": "அவள் என்ன கற்பிக்கிறாள்? - அவள் ஆங்கிலமும் கணிதமும் கற்பிக்கிறாள்.",
+      "audioId": "phase3_l12_2_ex2"
+    },
+    {
+      "en": "Where does she work? - She works at a village school.",
+      "ta": "அவள் எங்கே வேலை செய்கிறாள்? - அவள் ஒரு கிராம பள்ளியில் வேலை செய்கிறாள்.",
+      "audioId": "phase3_l12_2_ex3"
+    },
+    {
+      "en": "Why do children love her? - Because she is kind and patient.",
+      "ta": "குழந்தைகள் ஏன் அவளை நேசிக்கிறார்கள்? - ஏனெனில் அவள் அன்பானவள் மற்றும் பொறுமையானவள்.",
+      "audioId": "phase3_l12_2_ex4"
+    },
+    {
+      "en": "What did she start last week? - She started a free evening class.",
+      "ta": "கடந்த வாரம் அவள் என்ன தொடங்கினாள்? - அவள் இலவச மாலை வகுப்பை தொடங்கினாள்.",
+      "audioId": "phase3_l12_2_ex5"
+    },
+    {
+      "en": "How far does she walk? - She walks two kilometers.",
+      "ta": "அவள் எவ்வளவு தூரம் நடக்கிறாள்? - அவள் இரண்டு கிலோமீட்டர் நடக்கிறாள்.",
+      "audioId": "phase3_l12_2_ex6"
+    }
+  ],
+  "listeningQuestions": [
+    {
+      "audioText": "Priya is a teacher at a village school.",
+      "options": [
+        "Priya is a doctor at a village hospital.",
+        "Priya is a teacher at a village school.",
+        "Priya is a teacher at a city school."
+      ],
+      "correctIndex": 1
+    },
+    {
+      "audioText": "She teaches English and Mathematics.",
+      "options": [
+        "She teaches Science and History.",
+        "She teaches English and Science.",
+        "She teaches English and Mathematics."
+      ],
+      "correctIndex": 2
+    },
+    {
+      "audioText": "The children love her because she is kind.",
+      "options": [
+        "The children love her because she is strict.",
+        "The children love her because she is kind.",
+        "The children love her because she is funny."
+      ],
+      "correctIndex": 1
+    },
+    {
+      "audioText": "She started a free evening class for poor students.",
+      "options": [
+        "She started a free morning class for poor students.",
+        "She started a paid evening class for poor students.",
+        "She started a free evening class for poor students."
+      ],
+      "correctIndex": 2
+    }
+  ],
+  "speakSentences": [
+    {
+      "en": "Priya is a teacher at a village school.",
+      "ta": "பிரியா ஒரு கிராம பள்ளியில் ஆசிரியர்."
+    },
+    {
+      "en": "She teaches English and Mathematics.",
+      "ta": "அவள் ஆங்கிலமும் கணிதமும் கற்பிக்கிறாள்."
+    },
+    {
+      "en": "The children love her because she is kind.",
+      "ta": "குழந்தைகள் அவளை நேசிக்கிறார்கள் ஏனெனில் அவள் அன்பானவள்."
+    },
+    {
+      "en": "She walks two kilometers every morning.",
+      "ta": "அவள் ஒவ்வொரு காலையும் இரண்டு கிலோமீட்டர் நடக்கிறாள்."
+    },
+    {
+      "en": "She started a free evening class last week.",
+      "ta": "அவள் கடந்த வாரம் இலவச மாலை வகுப்பை தொடங்கினாள்."
+    }
+  ],
+  "practiceQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "WHO is the main person in the story?",
+      "promptTa": "கதையில் முக்கிய நபர் யார்?",
+      "options": ["Kumar", "Priya", "Ravi"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "WHAT subjects does Priya teach?",
+      "promptTa": "பிரியா என்ன பாடங்கள் கற்பிக்கிறாள்?",
+      "options": ["Science and History", "English and Mathematics", "Tamil and English"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "WHERE does Priya work?",
+      "promptTa": "பிரியா எங்கே வேலை செய்கிறாள்?",
+      "options": ["City school", "Village school", "College"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "WHY do children love Priya?",
+      "promptTa": "குழந்தைகள் ஏன் பிரியாவை நேசிக்கிறார்கள்?",
+      "options": ["She gives gifts", "She is kind and patient", "She is strict"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "WHAT did Priya start last week?",
+      "promptTa": "கடந்த வாரம் பிரியா என்ன தொடங்கினாள்?",
+      "options": ["A new school", "A free evening class", "A morning walk"],
+      "correctIndex": 1
+    }
+  ],
+  "masteryQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "WHO attends Priya's evening class?",
+      "promptTa": "பிரியாவின் மாலை வகுப்பில் யார் கலந்துகொள்கிறார்கள்?",
+      "options": ["Rich students", "Poor students", "All students"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "WHAT is Priya's job?",
+      "promptTa": "பிரியாவின் வேலை என்ன?",
+      "options": ["Doctor", "Teacher", "Engineer"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "WHERE is the school located?",
+      "promptTa": "பள்ளி எங்கே அமைந்துள்ளது?",
+      "options": ["In a city", "In a village", "In a town"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "WHY does Priya walk to school?",
+      "promptTa": "பிரியா ஏன் பள்ளிக்கு நடந்து செல்கிறாள்?",
+      "options": ["For exercise", "The school is two kilometers away", "She likes walking"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "HOW far does Priya walk every morning?",
+      "promptTa": "பிரியா ஒவ்வொரு காலையும் எவ்வளவு தூரம் நடக்கிறாள்?",
+      "options": ["One kilometer", "Two kilometers", "Three kilometers"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "WHEN did Priya start the evening class?",
+      "promptTa": "பிரியா மாலை வகுப்பை எப்போது தொடங்கினாள்?",
+      "options": ["Last month", "Last week", "Yesterday"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Complete: The children love her ___ she is kind.",
+      "promptTa": "நிரப்புக: குழந்தைகள் அவளை நேசிக்கிறார்கள் ___ அவள் அன்பானவள்.",
+      "options": ["and", "but", "because"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Complete: She ___ English and Mathematics.",
+      "promptTa": "நிரப்புக: அவள் ஆங்கிலமும் கணிதமும் ___.",
+      "options": ["teach", "teaches", "teaching"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Complete: Last week, she ___ a free evening class.",
+      "promptTa": "நிரப்புக: கடந்த வாரம், அவள் இலவச மாலை வகுப்பை ___.",
+      "options": ["start", "starts", "started"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "What kind of person is Priya?",
+      "promptTa": "பிரியா எந்த வகையான நபர்?",
+      "options": ["Strict and serious", "Kind and patient", "Lazy and careless"],
+      "correctIndex": 1
+    }
+  ]
+}

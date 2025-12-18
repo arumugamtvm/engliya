@@ -1,0 +1,63 @@
+{
+  "id": "phase2_lesson11_1",
+  "order": 1,
+  "unitId": "phase2_unit11",
+  "title": "Possessive Pronouns & Adjectives",
+  "description": "my / your / his / her / its / our / their / mine / yours / hers / ours / theirs",
+  "level": "A2",
+  "explain": {
+    "ta": "உடைமையைக் குறிக்க இரண்டு வகை சொற்கள் உள்ளன. Possessive adjectives (my, your, his, her, its, our, their) பெயர்ச்சொல்லுக்கு முன் வரும். Possessive pronouns (mine, yours, his, hers, its, ours, theirs) தனியாக நிற்கும், பெயர்ச்சொல் தேவையில்லை. உதாரணம்: 'This is my book' (adjective) vs 'This book is mine' (pronoun).",
+    "en": "There are two types of words to show possession. Possessive adjectives (my, your, his, her, its, our, their) come before nouns. Possessive pronouns (mine, yours, his, hers, its, ours, theirs) stand alone and don't need a noun after them. Example: 'This is my book' (adjective) vs 'This book is mine' (pronoun)."
+  },
+  "examples": [
+    {
+      "en": "This is my pen. The pen is mine.",
+      "ta": "இது என் பேனா. இந்த பேனா என்னுடையது.",
+      "audioId": "phase2_l11_1_ex1"
+    },
+    {
+      "en": "That is her bag. The bag is hers.",
+      "ta": "அது அவளுடைய பை. அந்த பை அவளுடையது.",
+      "audioId": "phase2_l11_1_ex2"
+    },
+    {
+      "en": "These are our books. The books are ours.",
+      "ta": "இவை எங்கள் புத்தகங்கள். இந்த புத்தகங்கள் எங்களுடையவை.",
+      "audioId": "phase2_l11_1_ex3"
+    }
+  ],
+  "listeningQuestions": [],
+  "speakSentences": [],
+  "practiceQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "This is ___ car.",
+      "promptTa": "இது என் கார்.",
+      "options": ["my", "mine", "me", "I"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "The house is ___.",
+      "promptTa": "இந்த வீடு அவர்களுடையது.",
+      "options": ["their", "theirs", "them", "they"],
+      "correctIndex": 1
+    }
+  ],
+  "masteryQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "Is this pen ___?",
+      "promptTa": "இந்த பேனா உங்களுடையதா?",
+      "options": ["your", "yours", "you", "you're"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "That is ___ dog.",
+      "promptTa": "அது அவனுடைய நாய்.",
+      "options": ["he", "him", "his", "he's"],
+      "correctIndex": 2
+    }
+  ]
+}

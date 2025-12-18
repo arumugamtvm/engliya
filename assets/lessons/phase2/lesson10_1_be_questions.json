@@ -1,0 +1,63 @@
+{
+  "id": "phase2_lesson10_1",
+  "order": 1,
+  "unitId": "phase2_unit10",
+  "title": "Be-Verb Questions",
+  "description": "am / is / are / was / were questions",
+  "level": "A2",
+  "explain": {
+    "ta": "Be வினைச்சொற்களைக் கொண்டு கேள்விகள் கேட்க, நாம் வினைச்சொல்லை முதலில் வைக்க வேண்டும். Am/Is/Are என்பது நிகழ்காலத்திற்கும், Was/Were என்பது இறந்த காலத்திற்கும் பயன்படுத்தப்படுகிறது. கேள்வி வடிவம்: Am/Is/Are/Was/Were + subject + ...?",
+    "en": "To form questions with be-verbs, we place the verb first. Am/Is/Are is used for present tense, and Was/Were for past tense. Question format: Am/Is/Are/Was/Were + subject + ...? For example: 'Are you ready?' or 'Was she at home?'"
+  },
+  "examples": [
+    {
+      "en": "Are you a student?",
+      "ta": "நீங்கள் மாணவரா?",
+      "audioId": "phase2_l10_1_ex1"
+    },
+    {
+      "en": "Is he your brother?",
+      "ta": "அவர் உங்கள் சகோதரனா?",
+      "audioId": "phase2_l10_1_ex2"
+    },
+    {
+      "en": "Were they at the party?",
+      "ta": "அவர்கள் விருந்தில் இருந்தார்களா?",
+      "audioId": "phase2_l10_1_ex3"
+    }
+  ],
+  "listeningQuestions": [],
+  "speakSentences": [],
+  "practiceQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "___ you happy?",
+      "promptTa": "நீங்கள் மகிழ்ச்சியாக இருக்கிறீர்களா?",
+      "options": ["Am", "Is", "Are", "Was"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "___ she at home yesterday?",
+      "promptTa": "அவள் நேற்று வீட்டில் இருந்தாளா?",
+      "options": ["Am", "Is", "Are", "Was"],
+      "correctIndex": 3
+    }
+  ],
+  "masteryQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "___ they your friends?",
+      "promptTa": "அவர்கள் உங்கள் நண்பர்களா?",
+      "options": ["Am", "Is", "Are", "Were"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "___ I late for the meeting?",
+      "promptTa": "நான் கூட்டத்திற்கு தாமதமாக வந்தேனா?",
+      "options": ["Am", "Is", "Are", "Was"],
+      "correctIndex": 3
+    }
+  ]
+}

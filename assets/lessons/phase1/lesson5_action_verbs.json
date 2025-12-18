@@ -1,0 +1,284 @@
+{
+  "id": "phase1_lesson5",
+  "order": 5,
+  "unitId": "phase1",
+  "title": "Basic Action Verbs",
+  "description": "eat, drink, sleep, walk, run",
+  "level": "A1",
+  "explain": {
+    "ta": "Action verbs என்பது செயல்களைக் குறிக்கும் வினைச்சொற்கள். இவை நாம் செய்யும் செயல்களை விவரிக்கின்றன. உதாரணமாக: eat (சாப்பிடு), drink (குடி), sleep (தூங்கு), walk (நட), run (ஓடு). He, She, It போன்ற pronouns-உடன் பெரும்பாலான வினைச்சொற்களுக்கு 's' அல்லது 'es' சேர்க்க வேண்டும். உதாரணமாக: 'I eat' ஆனால் 'He eats', 'I drink' ஆனால் 'She drinks'.",
+    "en": "Action verbs are words that describe actions or things we do. Examples include: eat, drink, sleep, walk, run. When using action verbs with He, She, or It, we usually add 's' or 'es' to the verb. For example: 'I eat' but 'He eats', 'I drink' but 'She drinks'. This is an important rule in English grammar.",
+    "table": [
+      {
+        "pronoun": "eat",
+        "descriptionEn": "to consume food (I eat, He eats)",
+        "descriptionTa": "சாப்பிடு (நான் சாப்பிடுகிறேன், அவர் சாப்பிடுகிறார்)"
+      },
+      {
+        "pronoun": "drink",
+        "descriptionEn": "to consume liquid (I drink, She drinks)",
+        "descriptionTa": "குடி (நான் குடிக்கிறேன், அவள் குடிக்கிறாள்)"
+      },
+      {
+        "pronoun": "sleep",
+        "descriptionEn": "to rest (I sleep, It sleeps)",
+        "descriptionTa": "தூங்கு (நான் தூங்குகிறேன், அது தூங்குகிறது)"
+      },
+      {
+        "pronoun": "walk",
+        "descriptionEn": "to move on foot (I walk, He walks)",
+        "descriptionTa": "நட (நான் நடக்கிறேன், அவர் நடக்கிறார்)"
+      },
+      {
+        "pronoun": "run",
+        "descriptionEn": "to move quickly (I run, She runs)",
+        "descriptionTa": "ஓடு (நான் ஓடுகிறேன், அவள் ஓடுகிறாள்)"
+      }
+    ]
+  },
+  "examples": [
+    {
+      "en": "I eat rice.",
+      "ta": "நான் சாதம் சாப்பிடுகிறேன்.",
+      "audioId": "phase1_l5_ex1"
+    },
+    {
+      "en": "She drinks water.",
+      "ta": "அவள் தண்ணீர் குடிக்கிறாள்.",
+      "audioId": "phase1_l5_ex2"
+    },
+    {
+      "en": "He sleeps early.",
+      "ta": "அவர் சீக்கிரம் தூங்குகிறார்.",
+      "audioId": "phase1_l5_ex3"
+    },
+    {
+      "en": "We walk to school.",
+      "ta": "நாங்கள் பள்ளிக்கு நடந்து செல்கிறோம்.",
+      "audioId": "phase1_l5_ex4"
+    },
+    {
+      "en": "They run fast.",
+      "ta": "அவர்கள் வேகமாக ஓடுகிறார்கள்.",
+      "audioId": "phase1_l5_ex5"
+    },
+    {
+      "en": "I drink milk.",
+      "ta": "நான் பால் குடிக்கிறேன்.",
+      "audioId": "phase1_l5_ex6"
+    },
+    {
+      "en": "He eats breakfast.",
+      "ta": "அவர் காலை உணவு சாப்பிடுகிறார்.",
+      "audioId": "phase1_l5_ex7"
+    },
+    {
+      "en": "She walks slowly.",
+      "ta": "அவள் மெதுவாக நடக்கிறாள்.",
+      "audioId": "phase1_l5_ex8"
+    },
+    {
+      "en": "We sleep at night.",
+      "ta": "நாங்கள் இரவில் தூங்குகிறோம்.",
+      "audioId": "phase1_l5_ex9"
+    },
+    {
+      "en": "They eat vegetables.",
+      "ta": "அவர்கள் காய்கறிகள் சாப்பிடுகிறார்கள்.",
+      "audioId": "phase1_l5_ex10"
+    }
+  ],
+  "listeningQuestions": [
+    {
+      "audioText": "I eat rice.",
+      "options": ["I eat rice.", "I eats rice.", "I eating rice."],
+      "correctIndex": 0
+    },
+    {
+      "audioText": "She drinks water.",
+      "options": ["She drink water.", "She drinks water.", "She drinking water."],
+      "correctIndex": 1
+    },
+    {
+      "audioText": "They run fast.",
+      "options": ["They runs fast.", "They running fast.", "They run fast."],
+      "correctIndex": 2
+    },
+    {
+      "audioText": "He sleeps early.",
+      "options": ["He sleep early.", "He sleeps early.", "He sleeping early."],
+      "correctIndex": 1
+    },
+    {
+      "audioText": "We walk to school.",
+      "options": ["We walks to school.", "We walk to school.", "We walking to school."],
+      "correctIndex": 1
+    }
+  ],
+  "speakSentences": [
+    {
+      "en": "I eat rice.",
+      "ta": "நான் சாதம் சாப்பிடுகிறேன்."
+    },
+    {
+      "en": "She drinks water.",
+      "ta": "அவள் தண்ணீர் குடிக்கிறாள்."
+    },
+    {
+      "en": "He sleeps early.",
+      "ta": "அவர் சீக்கிரம் தூங்குகிறார்."
+    },
+    {
+      "en": "We walk to school.",
+      "ta": "நாங்கள் பள்ளிக்கு நடந்து செல்கிறோம்."
+    },
+    {
+      "en": "They run fast.",
+      "ta": "அவர்கள் வேகமாக ஓடுகிறார்கள்."
+    }
+  ],
+  "practiceQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "She ___ water.",
+      "promptTa": "அவள் தண்ணீர் ___.",
+      "options": ["drink", "drinks", "drinking"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "I ___ breakfast.",
+      "promptTa": "நான் காலை உணவு ___.",
+      "options": ["eat", "eats", "eating"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "They ___ fast.",
+      "promptTa": "அவர்கள் வேகமாக ___.",
+      "options": ["run", "runs", "running"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "He ___ at night.",
+      "promptTa": "அவர் இரவில் ___.",
+      "options": ["sleep", "sleeps", "sleeping"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "We ___ to school.",
+      "promptTa": "நாங்கள் பள்ளிக்கு ___.",
+      "options": ["walk", "walks", "walking"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "She ___ slowly.",
+      "promptTa": "அவள் மெதுவாக ___.",
+      "options": ["walk", "walks", "walking"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "I ___ milk.",
+      "promptTa": "நான் பால் ___.",
+      "options": ["drink", "drinks", "drinking"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "He ___ vegetables.",
+      "promptTa": "அவர் காய்கறிகள் ___.",
+      "options": ["eat", "eats", "eating"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "They ___ early.",
+      "promptTa": "அவர்கள் சீக்கிரம் ___.",
+      "options": ["sleep", "sleeps", "sleeping"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "You ___ very fast.",
+      "promptTa": "நீ மிகவும் வேகமாக ___.",
+      "options": ["run", "runs", "running"],
+      "correctIndex": 0
+    }
+  ],
+  "masteryQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "They ___ fast.",
+      "promptTa": "அவர்கள் வேகமாக ___.",
+      "options": ["run", "runs", "running"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "She ___ rice.",
+      "promptTa": "அவள் சாதம் ___.",
+      "options": ["eat", "eats", "eating"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "I ___ water.",
+      "promptTa": "நான் தண்ணீர் ___.",
+      "options": ["drink", "drinks", "drinking"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "He ___ well.",
+      "promptTa": "அவர் நன்றாக ___.",
+      "options": ["sleep", "sleeps", "sleeping"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "We ___ together.",
+      "promptTa": "நாங்கள் ஒன்றாக ___.",
+      "options": ["walk", "walks", "walking"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "It ___ quickly.",
+      "promptTa": "அது வேகமாக ___.",
+      "options": ["run", "runs", "running"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "You ___ breakfast.",
+      "promptTa": "நீ காலை உணவு ___.",
+      "options": ["eat", "eats", "eating"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "She ___ juice.",
+      "promptTa": "அவள் ஜூஸ் ___.",
+      "options": ["drink", "drinks", "drinking"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "They ___ at home.",
+      "promptTa": "அவர்கள் வீட்டில் ___.",
+      "options": ["sleep", "sleeps", "sleeping"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "He ___ to work.",
+      "promptTa": "அவர் வேலைக்கு ___.",
+      "options": ["walk", "walks", "walking"],
+      "correctIndex": 1
+    }
+  ]
+}

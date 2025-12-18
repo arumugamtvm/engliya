@@ -1,0 +1,226 @@
+{
+  "id": "phase3_lesson12_4",
+  "order": 4,
+  "unitId": "phase3_unit12",
+  "title": "Story Tense Change",
+  "description": "Practice changing story tenses from present to past",
+  "level": "B1",
+  "explain": {
+    "ta": "கதைகளை மீண்டும் சொல்லும்போது, நாம் பொதுவாக கடந்த காலத்தை பயன்படுத்துகிறோம். நிகழ்காலத்தை கடந்த காலமாக மாற்ற வேண்டும்: 'go' → 'went', 'is' → 'was', 'eat' → 'ate'. இது கதையை சரியாக மீண்டும் சொல்ல உதவும். சில வினைச்சொற்கள் ஒழுங்கானவை (add -ed) மற்றும் சில ஒழுங்கற்றவை (முற்றிலும் மாறும்).",
+    "en": "When retelling stories, we usually use past tense. You need to change present tense to past tense: 'go' → 'went', 'is' → 'was', 'eat' → 'ate'. This helps you retell the story correctly. Some verbs are regular (add -ed) and some are irregular (change completely). Practice these changes to become fluent in storytelling.",
+    "story": [
+      {"line": 1, "en": "Present: Arun goes to the park every day.", "ta": "நிகழ்காலம்: அருண் தினமும் பூங்காவிற்கு செல்கிறார்."},
+      {"line": 2, "en": "Past: Arun went to the park yesterday.", "ta": "கடந்த காலம்: அருண் நேற்று பூங்காவிற்கு சென்றார்."},
+      {"line": 3, "en": "Present: He plays with his friends.", "ta": "நிகழ்காலம்: அவர் தனது நண்பர்களுடன் விளையாடுகிறார்."},
+      {"line": 4, "en": "Past: He played with his friends.", "ta": "கடந்த காலம்: அவர் தனது நண்பர்களுடன் விளையாடினார்."},
+      {"line": 5, "en": "Present: They eat ice cream together.", "ta": "நிகழ்காலம்: அவர்கள் ஒன்றாக ஐஸ்கிரீம் சாப்பிடுகிறார்கள்."},
+      {"line": 6, "en": "Past: They ate ice cream together.", "ta": "கடந்த காலம்: அவர்கள் ஒன்றாக ஐஸ்கிரீம் சாப்பிட்டார்கள்."}
+    ],
+    "table": [
+      {
+        "key": "Regular Verbs (+ed)",
+        "examples": ["walk → walked", "play → played", "work → worked", "watch → watched"]
+      },
+      {
+        "key": "Irregular Verbs",
+        "examples": ["go → went", "eat → ate", "see → saw", "come → came", "take → took"]
+      },
+      {
+        "key": "Be Verbs",
+        "examples": ["is → was", "are → were", "am → was"]
+      }
+    ]
+  },
+  "examples": [
+    {
+      "en": "Present: She walks to school. → Past: She walked to school.",
+      "ta": "நிகழ்காலம்: அவள் பள்ளிக்கு நடக்கிறாள். → கடந்த காலம்: அவள் பள்ளிக்கு நடந்தாள்.",
+      "audioId": "phase3_l12_4_ex1"
+    },
+    {
+      "en": "Present: He goes to work. → Past: He went to work.",
+      "ta": "நிகழ்காலம்: அவர் வேலைக்கு செல்கிறார். → கடந்த காலம்: அவர் வேலைக்கு சென்றார்.",
+      "audioId": "phase3_l12_4_ex2"
+    },
+    {
+      "en": "Present: They eat breakfast. → Past: They ate breakfast.",
+      "ta": "நிகழ்காலம்: அவர்கள் காலை உணவு சாப்பிடுகிறார்கள். → கடந்த காலம்: அவர்கள் காலை உணவு சாப்பிட்டார்கள்.",
+      "audioId": "phase3_l12_4_ex3"
+    },
+    {
+      "en": "Present: She is happy. → Past: She was happy.",
+      "ta": "நிகழ்காலம்: அவள் மகிழ்ச்சியாக இருக்கிறாள். → கடந்த காலம்: அவள் மகிழ்ச்சியாக இருந்தாள்.",
+      "audioId": "phase3_l12_4_ex4"
+    },
+    {
+      "en": "Present: We see a movie. → Past: We saw a movie.",
+      "ta": "நிகழ்காலம்: நாங்கள் திரைப்படம் பார்க்கிறோம். → கடந்த காலம்: நாங்கள் திரைப்படம் பார்த்தோம்.",
+      "audioId": "phase3_l12_4_ex5"
+    },
+    {
+      "en": "Present: He takes the bus. → Past: He took the bus.",
+      "ta": "நிகழ்காலம்: அவர் பேருந்தில் செல்கிறார். → கடந்த காலம்: அவர் பேருந்தில் சென்றார்.",
+      "audioId": "phase3_l12_4_ex6"
+    }
+  ],
+  "listeningQuestions": [
+    {
+      "audioText": "Yesterday, she walked to the market.",
+      "options": [
+        "Yesterday, she walks to the market.",
+        "Yesterday, she walked to the market.",
+        "Yesterday, she walk to the market."
+      ],
+      "correctIndex": 1
+    },
+    {
+      "audioText": "Last week, they went to Chennai.",
+      "options": [
+        "Last week, they go to Chennai.",
+        "Last week, they goes to Chennai.",
+        "Last week, they went to Chennai."
+      ],
+      "correctIndex": 2
+    },
+    {
+      "audioText": "He was very tired after work.",
+      "options": [
+        "He is very tired after work.",
+        "He was very tired after work.",
+        "He were very tired after work."
+      ],
+      "correctIndex": 1
+    }
+  ],
+  "speakSentences": [
+    {
+      "en": "Yesterday, I went to the market.",
+      "ta": "நேற்று, நான் சந்தைக்கு சென்றேன்."
+    },
+    {
+      "en": "She walked to school last Monday.",
+      "ta": "அவள் கடந்த திங்கள் பள்ளிக்கு நடந்தாள்."
+    },
+    {
+      "en": "They ate dinner at a restaurant.",
+      "ta": "அவர்கள் உணவகத்தில் இரவு உணவு சாப்பிட்டார்கள்."
+    },
+    {
+      "en": "He was happy to see his friends.",
+      "ta": "அவர் தனது நண்பர்களை பார்த்து மகிழ்ச்சியாக இருந்தார்."
+    },
+    {
+      "en": "We saw a beautiful bird in the garden.",
+      "ta": "நாங்கள் தோட்டத்தில் ஒரு அழகான பறவையை பார்த்தோம்."
+    }
+  ],
+  "practiceQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "Change to past: She walks to school.",
+      "promptTa": "கடந்த காலமாக மாற்றுக: அவள் பள்ளிக்கு நடக்கிறாள்.",
+      "options": ["She walk to school.", "She walked to school.", "She walking to school."],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Change to past: He goes to work.",
+      "promptTa": "கடந்த காலமாக மாற்றுக: அவர் வேலைக்கு செல்கிறார்.",
+      "options": ["He goed to work.", "He going to work.", "He went to work."],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Change to past: They eat lunch.",
+      "promptTa": "கடந்த காலமாக மாற்றுக: அவர்கள் மதிய உணவு சாப்பிடுகிறார்கள்.",
+      "options": ["They ate lunch.", "They eated lunch.", "They eating lunch."],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Change to past: She is tired.",
+      "promptTa": "கடந்த காலமாக மாற்றுக: அவள் சோர்வாக இருக்கிறாள்.",
+      "options": ["She were tired.", "She was tired.", "She been tired."],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Change to past: We see a movie.",
+      "promptTa": "கடந்த காலமாக மாற்றுக: நாங்கள் திரைப்படம் பார்க்கிறோம்.",
+      "options": ["We seed a movie.", "We seeing a movie.", "We saw a movie."],
+      "correctIndex": 2
+    }
+  ],
+  "masteryQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "Yesterday, she ___ to the market. (go)",
+      "promptTa": "நேற்று, அவள் சந்தைக்கு ___. (go)",
+      "options": ["go", "goes", "went"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Last week, they ___ a new car. (buy)",
+      "promptTa": "கடந்த வாரம், அவர்கள் புதிய கார் ___. (buy)",
+      "options": ["buy", "buyed", "bought"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "He ___ very happy yesterday. (is)",
+      "promptTa": "அவர் நேற்று மிகவும் மகிழ்ச்சியாக ___. (is)",
+      "options": ["is", "was", "were"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "She ___ to school every day last year. (walk)",
+      "promptTa": "அவள் கடந்த ஆண்டு தினமும் பள்ளிக்கு ___. (walk)",
+      "options": ["walk", "walks", "walked"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "They ___ dinner at 8 PM yesterday. (eat)",
+      "promptTa": "அவர்கள் நேற்று இரவு 8 மணிக்கு இரவு உணவு ___. (eat)",
+      "options": ["eat", "eated", "ate"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "We ___ a beautiful sunset last evening. (see)",
+      "promptTa": "நாங்கள் நேற்று மாலை அழகான சூரிய அஸ்தமனத்தை ___. (see)",
+      "options": ["see", "seed", "saw"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "He ___ the bus to work yesterday. (take)",
+      "promptTa": "அவர் நேற்று வேலைக்கு பேருந்தில் ___. (take)",
+      "options": ["take", "taked", "took"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "She ___ her homework last night. (do)",
+      "promptTa": "அவள் நேற்று இரவு தனது வீட்டுப்பாடத்தை ___. (do)",
+      "options": ["do", "does", "did"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "They ___ at the park yesterday. (play)",
+      "promptTa": "அவர்கள் நேற்று பூங்காவில் ___. (play)",
+      "options": ["play", "played", "playing"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "I ___ my friend at the market last Sunday. (meet)",
+      "promptTa": "நான் கடந்த ஞாயிறு சந்தையில் என் நண்பரை ___. (meet)",
+      "options": ["meet", "meeted", "met"],
+      "correctIndex": 2
+    }
+  ]
+}

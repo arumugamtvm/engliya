@@ -1,0 +1,186 @@
+{
+  "id": "phase2_lesson7_3",
+  "order": 3,
+  "unitId": "phase2_unit7",
+  "title": "Daily Time Expressions",
+  "description": "always / usually / sometimes / often / every day / now / right now",
+  "level": "A2",
+  "explain": {
+    "ta": "நாம் அன்றாட வாழ்க்கையில் நிகழும் செயல்களின் அடிக்கடி நிகழும் தன்மையை குறிப்பிட பல்வேறு time expressions பயன்படுத்துகிறோம். 'always' என்பது எப்போதும் (100%), 'usually' என்பது பொதுவாக (80-90%), 'often' என்பது அடிக்கடி (60-70%), 'sometimes' என்பது சில நேரங்களில் (30-40%), 'every day' என்பது ஒவ்வொரு நாளும், 'now' என்பது இப்போது, 'right now' என்பது இப்போதே என்று பொருள்படும். இந்த expressions வாக்கியத்தில் வெவ்வேறு இடங்களில் வரலாம்.",
+    "en": "We use different time expressions to indicate how frequently actions occur in daily life. 'always' means all the time (100%), 'usually' means most of the time (80-90%), 'often' means frequently (60-70%), 'sometimes' means occasionally (30-40%), 'every day' means each day without exception, 'now' means at this moment, 'right now' means at this very moment with emphasis. These expressions can appear in different positions in a sentence.",
+    "table": [
+      {
+        "key": "always",
+        "examples": ["I always wake up at 6 am", "She always studies hard", "They always help me"]
+      },
+      {
+        "key": "usually",
+        "examples": ["I usually eat breakfast", "He usually goes to gym", "We usually watch TV"]
+      },
+      {
+        "key": "often",
+        "examples": ["I often read books", "She often visits her parents", "They often play cricket"]
+      },
+      {
+        "key": "sometimes",
+        "examples": ["I sometimes eat pizza", "He sometimes works late", "We sometimes go to movies"]
+      },
+      {
+        "key": "every day",
+        "examples": ["I study every day", "She exercises every day", "They work every day"]
+      },
+      {
+        "key": "now",
+        "examples": ["I am studying now", "She is cooking now", "They are playing now"]
+      },
+      {
+        "key": "right now",
+        "examples": ["I am busy right now", "He is sleeping right now", "We are eating right now"]
+      }
+    ]
+  },
+  "examples": [
+    {
+      "en": "I always wake up at 6 am.",
+      "ta": "நான் எப்போதும் காலை 6 மணிக்கு எழுந்திருக்கிறேன்.",
+      "audioId": "phase2_l7_3_ex1"
+    },
+    {
+      "en": "She usually eats breakfast at home.",
+      "ta": "அவள் பொதுவாக வீட்டில் காலை உணவு சாப்பிடுகிறாள்.",
+      "audioId": "phase2_l7_3_ex2"
+    },
+    {
+      "en": "We sometimes go to the movies.",
+      "ta": "நாங்கள் சில நேரங்களில் திரைப்படத்திற்கு செல்கிறோம்.",
+      "audioId": "phase2_l7_3_ex3"
+    },
+    {
+      "en": "He often plays cricket with friends.",
+      "ta": "அவர் அடிக்கடி நண்பர்களுடன் கிரிக்கெட் விளையாடுகிறார்.",
+      "audioId": "phase2_l7_3_ex4"
+    },
+    {
+      "en": "I am studying right now.",
+      "ta": "நான் இப்போதே படித்துக் கொண்டிருக்கிறேன்.",
+      "audioId": "phase2_l7_3_ex5"
+    }
+  ],
+  "listeningQuestions": [
+    {
+      "audioText": "I always wake up at 6 am.",
+      "options": [
+        "I always wake up at 6 am.",
+        "I sometimes wake up at 6 am.",
+        "I usually wake up at 6 am."
+      ],
+      "correctIndex": 0
+    },
+    {
+      "audioText": "She often visits her parents.",
+      "options": [
+        "She always visits her parents.",
+        "She often visits her parents.",
+        "She sometimes visits her parents."
+      ],
+      "correctIndex": 1
+    },
+    {
+      "audioText": "I am studying right now.",
+      "options": [
+        "I am studying every day.",
+        "I am studying now.",
+        "I am studying right now."
+      ],
+      "correctIndex": 2
+    }
+  ],
+  "speakSentences": [
+    {
+      "en": "I always wake up at 6 am.",
+      "ta": "நான் எப்போதும் காலை 6 மணிக்கு எழுந்திருக்கிறேன்."
+    },
+    {
+      "en": "She usually eats breakfast at home.",
+      "ta": "அவள் பொதுவாக வீட்டில் காலை உணவு சாப்பிடுகிறாள்."
+    },
+    {
+      "en": "I am busy right now.",
+      "ta": "நான் இப்போது பிஸியாக இருக்கிறேன்."
+    }
+  ],
+  "practiceQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "I ___ wake up at 6 am. (100% of the time)",
+      "promptTa": "நான் ___ காலை 6 மணிக்கு எழுந்திருக்கிறேன். (100% நேரம்)",
+      "options": ["always", "usually", "sometimes", "often"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "She ___ eats breakfast at home. (most of the time)",
+      "promptTa": "அவள் ___ வீட்டில் காலை உணவு சாப்பிடுகிறாள். (பெரும்பாலான நேரம்)",
+      "options": ["always", "usually", "sometimes", "often"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "We ___ go to the movies. (occasionally)",
+      "promptTa": "நாங்கள் ___ திரைப்படத்திற்கு செல்கிறோம். (சில நேரங்களில்)",
+      "options": ["always", "usually", "sometimes", "often"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "I study ___. (each day)",
+      "promptTa": "நான் ___ படிக்கிறேன். (ஒவ்வொரு நாளும்)",
+      "options": ["always", "every day", "sometimes", "now"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "I am busy ___. (at this moment)",
+      "promptTa": "நான் ___ பிஸியாக இருக்கிறேன். (இந்த நேரத்தில்)",
+      "options": ["always", "every day", "sometimes", "right now"],
+      "correctIndex": 3
+    }
+  ],
+  "masteryQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "He ___ plays cricket with friends. (frequently)",
+      "promptTa": "அவர் ___ நண்பர்களுடன் கிரிக்கெட் விளையாடுகிறார். (அடிக்கடி)",
+      "options": ["always", "usually", "often", "sometimes"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "I ___ drink coffee in the morning. (all the time)",
+      "promptTa": "நான் ___ காலையில் காபி குடிக்கிறேன். (எப்போதும்)",
+      "options": ["always", "usually", "often", "sometimes"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "They are eating ___. (at this very moment)",
+      "promptTa": "அவர்கள் ___ சாப்பிட்டுக் கொண்டிருக்கிறார்கள். (இப்போதே)",
+      "options": ["always", "every day", "now", "right now"],
+      "correctIndex": 3
+    },
+    {
+      "type": "mcq",
+      "promptEn": "She ___ goes to the gym. (occasionally)",
+      "promptTa": "அவள் ___ ஜிம்மிற்கு செல்கிறாள். (சில நேரங்களில்)",
+      "options": ["always", "usually", "sometimes", "every day"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "We exercise ___. (each day without exception)",
+      "promptTa": "நாங்கள் ___ உடற்பயிற்சி செய்கிறோம். (ஒவ்வொரு நாளும்)",
+      "options": ["always", "every day", "often", "now"],
+      "correctIndex": 1
+    }
+  ]
+}

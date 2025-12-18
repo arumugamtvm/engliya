@@ -1,0 +1,284 @@
+{
+  "id": "phase1_lesson2",
+  "order": 2,
+  "unitId": "phase1",
+  "title": "Be Verb",
+  "description": "am, is, are",
+  "level": "A1",
+  "explain": {
+    "ta": "Be verb என்பது ஆங்கிலத்தில் மிக முக்கியமான வினைச்சொல். இது am, is, are என மூன்று வடிவங்களில் வருகிறது. இந்த வினைச்சொல் 'இருக்கிறேன்', 'இருக்கிறார்', 'இருக்கிறது' என்ற பொருளில் பயன்படுத்தப்படுகிறது. ஒவ்வொரு subject pronoun-க்கும் குறிப்பிட்ட be verb வடிவம் உள்ளது. 'I' உடன் 'am', 'He/She/It' உடன் 'is', மற்றும் 'You/We/They' உடன் 'are' பயன்படுத்த வேண்டும். இதை சரியாகப் பயன்படுத்துவது மிக முக்கியம்.",
+    "en": "The be verb is one of the most important verbs in English. It has three forms: am, is, are. This verb means 'to be' or 'to exist' and is used to describe states, conditions, and identities. Each subject pronoun uses a specific form of the be verb. Use 'am' with 'I', 'is' with 'He/She/It', and 'are' with 'You/We/They'. Learning to use these correctly is essential for forming proper English sentences.",
+    "table": [
+      {
+        "pronoun": "I",
+        "descriptionEn": "am - always use with 'I'",
+        "descriptionTa": "am - 'நான்' உடன் மட்டும்"
+      },
+      {
+        "pronoun": "You",
+        "descriptionEn": "are - use with 'you' (singular or plural)",
+        "descriptionTa": "are - 'நீ' அல்லது 'நீங்கள்' உடன்"
+      },
+      {
+        "pronoun": "He/She/It",
+        "descriptionEn": "is - use with singular third person",
+        "descriptionTa": "is - ஒருவர் அல்லது ஒன்று பற்றி"
+      },
+      {
+        "pronoun": "We",
+        "descriptionEn": "are - use with 'we'",
+        "descriptionTa": "are - 'நாம்' அல்லது 'நாங்கள்' உடன்"
+      },
+      {
+        "pronoun": "They",
+        "descriptionEn": "are - use with 'they' (plural)",
+        "descriptionTa": "are - 'அவர்கள்' உடன் (பலர்)"
+      }
+    ]
+  },
+  "examples": [
+    {
+      "en": "I am happy.",
+      "ta": "நான் மகிழ்ச்சியாக இருக்கிறேன்.",
+      "audioId": "phase1_l2_ex1"
+    },
+    {
+      "en": "You are smart.",
+      "ta": "நீ புத்திசாலி.",
+      "audioId": "phase1_l2_ex2"
+    },
+    {
+      "en": "He is tall.",
+      "ta": "அவர் உயரமானவர்.",
+      "audioId": "phase1_l2_ex3"
+    },
+    {
+      "en": "She is beautiful.",
+      "ta": "அவள் அழகானவள்.",
+      "audioId": "phase1_l2_ex4"
+    },
+    {
+      "en": "It is cold today.",
+      "ta": "இன்று குளிராக இருக்கிறது.",
+      "audioId": "phase1_l2_ex5"
+    },
+    {
+      "en": "We are ready.",
+      "ta": "நாங்கள் தயாராக இருக்கிறோம்.",
+      "audioId": "phase1_l2_ex6"
+    },
+    {
+      "en": "They are busy.",
+      "ta": "அவர்கள் பிஸியாக இருக்கிறார்கள்.",
+      "audioId": "phase1_l2_ex7"
+    },
+    {
+      "en": "I am a good student.",
+      "ta": "நான் ஒரு நல்ல மாணவன்.",
+      "audioId": "phase1_l2_ex8"
+    },
+    {
+      "en": "You are very kind.",
+      "ta": "நீ மிகவும் அன்பானவன்.",
+      "audioId": "phase1_l2_ex9"
+    },
+    {
+      "en": "We are from India.",
+      "ta": "நாங்கள் இந்தியாவிலிருந்து வந்தவர்கள்.",
+      "audioId": "phase1_l2_ex10"
+    }
+  ],
+  "listeningQuestions": [
+    {
+      "audioText": "I am happy.",
+      "options": ["I am happy.", "I is happy.", "I are happy."],
+      "correctIndex": 0
+    },
+    {
+      "audioText": "She is a teacher.",
+      "options": ["She am a teacher.", "She is a teacher.", "She are a teacher."],
+      "correctIndex": 1
+    },
+    {
+      "audioText": "They are students.",
+      "options": ["They am students.", "They is students.", "They are students."],
+      "correctIndex": 2
+    },
+    {
+      "audioText": "We are friends.",
+      "options": ["We am friends.", "We is friends.", "We are friends."],
+      "correctIndex": 2
+    },
+    {
+      "audioText": "He is very tall.",
+      "options": ["He am very tall.", "He is very tall.", "He are very tall."],
+      "correctIndex": 1
+    }
+  ],
+  "speakSentences": [
+    {
+      "en": "I am happy.",
+      "ta": "நான் மகிழ்ச்சியாக இருக்கிறேன்."
+    },
+    {
+      "en": "You are smart.",
+      "ta": "நீ புத்திசாலி."
+    },
+    {
+      "en": "She is kind.",
+      "ta": "அவள் அன்பானவள்."
+    },
+    {
+      "en": "We are ready.",
+      "ta": "நாங்கள் தயாராக இருக்கிறோம்."
+    },
+    {
+      "en": "They are busy.",
+      "ta": "அவர்கள் பிஸியாக இருக்கிறார்கள்."
+    }
+  ],
+  "practiceQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "I ___ a student.",
+      "promptTa": "நான் ஒரு மாணவன் ___.",
+      "options": ["am", "is", "are"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "She ___ my sister.",
+      "promptTa": "அவள் என் சகோதரி ___.",
+      "options": ["am", "is", "are"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "They ___ doctors.",
+      "promptTa": "அவர்கள் மருத்துவர்கள் ___.",
+      "options": ["am", "is", "are"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "You ___ very smart.",
+      "promptTa": "நீ மிகவும் புத்திசாலி ___.",
+      "options": ["am", "is", "are"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "He ___ a teacher.",
+      "promptTa": "அவர் ஒரு ஆசிரியர் ___.",
+      "options": ["am", "is", "are"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "It ___ a book.",
+      "promptTa": "அது ஒரு புத்தகம் ___.",
+      "options": ["am", "is", "are"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "We ___ happy.",
+      "promptTa": "நாங்கள் மகிழ்ச்சியாக ___ இருக்கிறோம்.",
+      "options": ["am", "is", "are"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "I ___ from Chennai.",
+      "promptTa": "நான் சென்னையிலிருந்து ___.",
+      "options": ["am", "is", "are"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "She ___ beautiful.",
+      "promptTa": "அவள் அழகானவள் ___.",
+      "options": ["am", "is", "are"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "You ___ my best friend.",
+      "promptTa": "நீ என் சிறந்த நண்பன் ___.",
+      "options": ["am", "is", "are"],
+      "correctIndex": 2
+    }
+  ],
+  "masteryQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "She ___ a teacher.",
+      "promptTa": "அவர் ஒரு ஆசிரியர் ___.",
+      "options": ["am", "is", "are"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "I ___ tired.",
+      "promptTa": "நான் சோர்வாக ___ இருக்கிறேன்.",
+      "options": ["am", "is", "are"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "They ___ my friends.",
+      "promptTa": "அவர்கள் என் நண்பர்கள் ___.",
+      "options": ["am", "is", "are"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "We ___ students.",
+      "promptTa": "நாங்கள் மாணவர்கள் ___.",
+      "options": ["am", "is", "are"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "It ___ hot today.",
+      "promptTa": "இன்று வெப்பமாக ___ இருக்கிறது.",
+      "options": ["am", "is", "are"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "You ___ late.",
+      "promptTa": "நீ தாமதமாக ___ வந்தாய்.",
+      "options": ["am", "is", "are"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "He ___ my brother.",
+      "promptTa": "அவர் என் சகோதரன் ___.",
+      "options": ["am", "is", "are"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "I ___ ready to go.",
+      "promptTa": "நான் செல்ல தயாராக ___ இருக்கிறேன்.",
+      "options": ["am", "is", "are"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "They ___ very busy.",
+      "promptTa": "அவர்கள் மிகவும் பிஸியாக ___ இருக்கிறார்கள்.",
+      "options": ["am", "is", "are"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "She ___ from Mumbai.",
+      "promptTa": "அவள் மும்பையிலிருந்து ___.",
+      "options": ["am", "is", "are"],
+      "correctIndex": 1
+    }
+  ]
+}

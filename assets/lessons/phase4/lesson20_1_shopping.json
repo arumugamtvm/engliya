@@ -1,0 +1,260 @@
+{
+  "id": "phase4_lesson20_1",
+  "order": 1,
+  "unitId": "phase4_unit20",
+  "title": "Shopping & Money",
+  "description": "Learn to communicate effectively while shopping",
+  "level": "B2",
+  "explain": {
+    "ta": "கடையில் பேசும் ஆங்கிலம் தினசரி வாழ்க்கையில் மிக முக்கியம். விலை கேட்பது, பேரம் பேசுவது, பணம் செலுத்துவது போன்ற சூழ்நிலைகளுக்கு தயாராக இருங்கள். முக்கிய சொற்றொடர்கள்: 'How much is this?', 'Can I try this on?', 'Do you have this in a different size?', 'I'll take it', 'Can I pay by card?'. கடைக்காரர்களுடன் கண்ணியமாக பேசுவது முக்கியம்.",
+    "en": "Shopping English is essential for daily life. Be prepared for situations like asking prices, bargaining, and making payments. Key phrases: 'How much is this?', 'Can I try this on?', 'Do you have this in a different size?', 'I'll take it', 'Can I pay by card?'. Being polite with shopkeepers helps create a pleasant shopping experience.",
+    "table": [
+      {
+        "key": "Asking About Products",
+        "examples": ["How much is this?", "Do you have this in blue?", "Can I try this on?", "Is this on sale?"]
+      },
+      {
+        "key": "Making Decisions",
+        "examples": ["I'll take it.", "I'll think about it.", "It's too expensive.", "Do you have anything cheaper?"]
+      },
+      {
+        "key": "Payment",
+        "examples": ["Can I pay by card?", "Do you accept UPI?", "Can I have a receipt?", "Keep the change."]
+      },
+      {
+        "key": "Returns & Exchanges",
+        "examples": ["Can I return this?", "I'd like to exchange this.", "This doesn't fit.", "It's damaged."]
+      }
+    ]
+  },
+  "examples": [
+    {
+      "en": "Excuse me, how much is this shirt?",
+      "ta": "மன்னிக்கவும், இந்த சட்டை எவ்வளவு?",
+      "audioId": "phase4_l20_1_ex1"
+    },
+    {
+      "en": "Do you have this in a larger size?",
+      "ta": "இது பெரிய அளவில் உள்ளதா?",
+      "audioId": "phase4_l20_1_ex2"
+    },
+    {
+      "en": "Can I try this on? Where is the fitting room?",
+      "ta": "இதை அணிந்து பார்க்கலாமா? மாற்றும் அறை எங்கே?",
+      "audioId": "phase4_l20_1_ex3"
+    },
+    {
+      "en": "It's a bit expensive. Can you give me a discount?",
+      "ta": "இது கொஞ்சம் விலை அதிகம். தள்ளுபடி தர முடியுமா?",
+      "audioId": "phase4_l20_1_ex4"
+    },
+    {
+      "en": "I'll take it. Can I pay by card?",
+      "ta": "நான் இதை எடுத்துக்கொள்கிறேன். கார்டில் பணம் செலுத்தலாமா?",
+      "audioId": "phase4_l20_1_ex5"
+    },
+    {
+      "en": "Can I have a receipt, please?",
+      "ta": "ரசீது தர முடியுமா, தயவுசெய்து?",
+      "audioId": "phase4_l20_1_ex6"
+    },
+    {
+      "en": "I'd like to return this. It doesn't fit properly.",
+      "ta": "இதை திருப்பி தர விரும்புகிறேன். இது சரியாக பொருந்தவில்லை.",
+      "audioId": "phase4_l20_1_ex7"
+    },
+    {
+      "en": "Do you accept UPI payments?",
+      "ta": "UPI பணம் செலுத்துவதை ஏற்றுக்கொள்கிறீர்களா?",
+      "audioId": "phase4_l20_1_ex8"
+    }
+  ],
+  "dialogues": [
+    {
+      "roleA": "Customer",
+      "roleB": "Shopkeeper",
+      "lines": [
+        {"speaker": "Customer", "text": "Excuse me, how much is this blue shirt?"},
+        {"speaker": "Shopkeeper", "text": "That one is 800 rupees, sir."},
+        {"speaker": "Customer", "text": "Do you have it in a larger size?"},
+        {"speaker": "Shopkeeper", "text": "Yes, let me check. Here you go, this is XL."},
+        {"speaker": "Customer", "text": "Can I try it on?"},
+        {"speaker": "Shopkeeper", "text": "Of course. The fitting room is on your right."},
+        {"speaker": "Customer", "text": "It fits well. I'll take it. Can I pay by card?"},
+        {"speaker": "Shopkeeper", "text": "Yes, we accept cards and UPI. Here's your receipt."}
+      ]
+    },
+    {
+      "roleA": "Customer",
+      "roleB": "Shopkeeper",
+      "lines": [
+        {"speaker": "Customer", "text": "Hello, I bought this yesterday but it's too small."},
+        {"speaker": "Shopkeeper", "text": "I'm sorry to hear that. Would you like to exchange it?"},
+        {"speaker": "Customer", "text": "Yes, please. Do you have a larger size?"},
+        {"speaker": "Shopkeeper", "text": "Let me check. Yes, we have L and XL available."},
+        {"speaker": "Customer", "text": "I'll take the L size, please."},
+        {"speaker": "Shopkeeper", "text": "Here you go. Is there anything else you need?"}
+      ]
+    }
+  ],
+  "listeningQuestions": [
+    {
+      "audioText": "Excuse me, how much is this shirt? It's 800 rupees.",
+      "options": [
+        "The shirt costs 500 rupees",
+        "The shirt costs 800 rupees",
+        "The shirt is free"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "audioText": "Can I try this on? Of course, the fitting room is on your right.",
+      "options": [
+        "The customer can't try it on",
+        "The fitting room is on the left",
+        "The fitting room is on the right"
+      ],
+      "correctIndex": 2
+    },
+    {
+      "audioText": "I'll take it. Can I pay by card? Yes, we accept cards and UPI.",
+      "options": [
+        "The shop only accepts cash",
+        "The shop accepts cards and UPI",
+        "The customer doesn't want to buy"
+      ],
+      "correctIndex": 1
+    }
+  ],
+  "speakSentences": [
+    {
+      "en": "Excuse me, how much is this?",
+      "ta": "மன்னிக்கவும், இது எவ்வளவு?"
+    },
+    {
+      "en": "Do you have this in a different size?",
+      "ta": "இது வேறு அளவில் உள்ளதா?"
+    },
+    {
+      "en": "Can I try this on?",
+      "ta": "இதை அணிந்து பார்க்கலாமா?"
+    },
+    {
+      "en": "I'll take it. Can I pay by card?",
+      "ta": "நான் இதை எடுத்துக்கொள்கிறேன். கார்டில் பணம் செலுத்தலாமா?"
+    },
+    {
+      "en": "Can I have a receipt, please?",
+      "ta": "ரசீது தர முடியுமா, தயவுசெய்து?"
+    }
+  ],
+  "practiceQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "How do you ask the price of something?",
+      "promptTa": "ஒன்றின் விலையை எப்படி கேட்பது?",
+      "options": ["What is this?", "How much is this?", "Where is this?"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "How do you ask to try on clothes?",
+      "promptTa": "ஆடைகளை அணிந்து பார்க்க எப்படி கேட்பது?",
+      "options": ["Can I buy this?", "Can I try this on?", "Can I take this?"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "How do you say you want to buy something?",
+      "promptTa": "ஏதாவது வாங்க விரும்புவதை எப்படி சொல்வது?",
+      "options": ["I'll think about it.", "I'll take it.", "I don't want it."],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "How do you ask for a discount?",
+      "promptTa": "தள்ளுபடி எப்படி கேட்பது?",
+      "options": ["Give me free.", "Can you give me a discount?", "I want more."],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "How do you ask about payment methods?",
+      "promptTa": "பணம் செலுத்தும் முறைகளை எப்படி கேட்பது?",
+      "options": ["Can I pay by card?", "Give me money.", "I have no money."],
+      "correctIndex": 0
+    }
+  ],
+  "masteryQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "What does 'I'll take it' mean?",
+      "promptTa": "'I'll take it' என்றால் என்ன?",
+      "options": ["I don't want it", "I will buy it", "I will return it"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "How do you ask for a different size?",
+      "promptTa": "வேறு அளவு எப்படி கேட்பது?",
+      "options": ["Do you have this in a different size?", "This is wrong.", "I don't like this."],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "What do you say when returning an item?",
+      "promptTa": "பொருளை திருப்பி தரும்போது என்ன சொல்வது?",
+      "options": ["I'll take it.", "I'd like to return this.", "How much is this?"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "How do you ask for a receipt?",
+      "promptTa": "ரசீது எப்படி கேட்பது?",
+      "options": ["Give me paper.", "Can I have a receipt, please?", "Where is the bill?"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "What does 'fitting room' mean?",
+      "promptTa": "'fitting room' என்றால் என்ன?",
+      "options": ["Payment counter", "Place to try on clothes", "Storage room"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "How do you politely say something is expensive?",
+      "promptTa": "ஏதாவது விலை அதிகம் என்று கண்ணியமாக எப்படி சொல்வது?",
+      "options": ["Too much money!", "It's a bit expensive.", "I won't pay."],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "What does 'exchange' mean in shopping?",
+      "promptTa": "ஷாப்பிங்கில் 'exchange' என்றால் என்ன?",
+      "options": ["Return for money", "Replace with another item", "Buy more"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "How do you ask if something is on sale?",
+      "promptTa": "ஏதாவது விற்பனையில் உள்ளதா என்று எப்படி கேட்பது?",
+      "options": ["Is this free?", "Is this on sale?", "Is this new?"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "What do you say when you need time to decide?",
+      "promptTa": "முடிவெடுக்க நேரம் தேவைப்படும்போது என்ன சொல்வது?",
+      "options": ["I'll take it.", "I'll think about it.", "I don't want it."],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "How do you ask about UPI payment?",
+      "promptTa": "UPI பணம் செலுத்துவது பற்றி எப்படி கேட்பது?",
+      "options": ["Do you accept UPI?", "Give me UPI.", "UPI is good."],
+      "correctIndex": 0
+    }
+  ]
+}

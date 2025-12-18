@@ -1,0 +1,334 @@
+{
+  "id": "phase1_lesson1",
+  "order": 1,
+  "unitId": "phase1",
+  "title": "Subject Pronouns",
+  "description": "I, You, He, She, It, We, They",
+  "level": "A1",
+  "explain": {
+    "ta": "பெயர்ச்சொற்களுக்கு பதிலாக பயன்படுத்தப்படும் சொற்கள் பிரதிபெயர்கள் எனப்படும். ஆங்கிலத்தில் ஏழு முக்கிய subject pronouns உள்ளன: I, You, He, She, It, We, They. இவை வாக்கியத்தின் தொடக்கத்தில் வந்து செயலைச் செய்பவரைக் குறிக்கும். உதாரணமாக, 'நான் படிக்கிறேன்' என்பதை 'I study' என்று சொல்லலாம். இங்கு 'I' என்பது subject pronoun ஆகும். ஒவ்வொரு pronoun-ம் வெவ்வேறு நபர்களையோ அல்லது பொருட்களையோ குறிக்கிறது.",
+    "en": "Pronouns are words that replace nouns like names of people, places, or things. In English, there are seven main subject pronouns: I, You, He, She, It, We, They. These pronouns come at the beginning of a sentence and indicate who is performing the action. For example, 'I study' uses 'I' as the subject pronoun. Each pronoun refers to different people or things, and using them correctly is essential for clear communication.",
+    "table": [
+      {
+        "pronoun": "I",
+        "descriptionEn": "First person singular - used when talking about yourself",
+        "descriptionTa": "நான் - உங்களைப் பற்றி பேசும்போது"
+      },
+      {
+        "pronoun": "You",
+        "descriptionEn": "Second person (singular/plural) - used when talking to someone",
+        "descriptionTa": "நீ / நீங்கள் - யாரிடமாவது பேசும்போது"
+      },
+      {
+        "pronoun": "He",
+        "descriptionEn": "Third person singular (male) - used for a male person",
+        "descriptionTa": "அவன் / அவர் (ஆண்) - ஆண் நபரைப் பற்றி"
+      },
+      {
+        "pronoun": "She",
+        "descriptionEn": "Third person singular (female) - used for a female person",
+        "descriptionTa": "அவள் / அவர் (பெண்) - பெண் நபரைப் பற்றி"
+      },
+      {
+        "pronoun": "It",
+        "descriptionEn": "Third person singular (thing/animal) - used for objects and animals",
+        "descriptionTa": "அது - பொருட்கள் மற்றும் விலங்குகளுக்கு"
+      },
+      {
+        "pronoun": "We",
+        "descriptionEn": "First person plural - used when talking about yourself and others",
+        "descriptionTa": "நாம் / நாங்கள் - நீங்களும் மற்றவர்களும் சேர்ந்து"
+      },
+      {
+        "pronoun": "They",
+        "descriptionEn": "Third person plural - used for multiple people or things",
+        "descriptionTa": "அவர்கள் - பல நபர்கள் அல்லது பொருட்கள்"
+      }
+    ]
+  },
+  "examples": [
+    {
+      "en": "I am a student.",
+      "ta": "நான் ஒரு மாணவன்.",
+      "audioId": "phase1_l1_ex1"
+    },
+    {
+      "en": "You are my friend.",
+      "ta": "நீ என் நண்பன்.",
+      "audioId": "phase1_l1_ex2"
+    },
+    {
+      "en": "He is a teacher.",
+      "ta": "அவர் ஒரு ஆசிரியர்.",
+      "audioId": "phase1_l1_ex3"
+    },
+    {
+      "en": "She is a doctor.",
+      "ta": "அவர் ஒரு மருத்துவர்.",
+      "audioId": "phase1_l1_ex4"
+    },
+    {
+      "en": "It is a book.",
+      "ta": "அது ஒரு புத்தகம்.",
+      "audioId": "phase1_l1_ex5"
+    },
+    {
+      "en": "We are students.",
+      "ta": "நாங்கள் மாணவர்கள்.",
+      "audioId": "phase1_l1_ex6"
+    },
+    {
+      "en": "They are teachers.",
+      "ta": "அவர்கள் ஆசிரியர்கள்.",
+      "audioId": "phase1_l1_ex7"
+    },
+    {
+      "en": "I like apples.",
+      "ta": "நான் ஆப்பிள்களை விரும்புகிறேன்.",
+      "audioId": "phase1_l1_ex8"
+    },
+    {
+      "en": "You are very kind.",
+      "ta": "நீ மிகவும் அன்பானவன்.",
+      "audioId": "phase1_l1_ex9"
+    },
+    {
+      "en": "It is a beautiful day.",
+      "ta": "இது ஒரு அழகான நாள்.",
+      "audioId": "phase1_l1_ex10"
+    }
+  ],
+  "listeningQuestions": [
+    {
+      "audioText": "I am a student.",
+      "options": [
+        "I am a student.",
+        "You are a student.",
+        "They are students."
+      ],
+      "correctIndex": 0
+    },
+    {
+      "audioText": "She is a doctor.",
+      "options": [
+        "He is a doctor.",
+        "She is a doctor.",
+        "They are doctors."
+      ],
+      "correctIndex": 1
+    },
+    {
+      "audioText": "We are friends.",
+      "options": [
+        "I am a friend.",
+        "You are friends.",
+        "We are friends."
+      ],
+      "correctIndex": 2
+    },
+    {
+      "audioText": "He is my brother.",
+      "options": [
+        "He is my brother.",
+        "She is my brother.",
+        "They are my brothers."
+      ],
+      "correctIndex": 0
+    },
+    {
+      "audioText": "They are playing.",
+      "options": [
+        "We are playing.",
+        "You are playing.",
+        "They are playing."
+      ],
+      "correctIndex": 2
+    }
+  ],
+  "speakSentences": [
+    {
+      "en": "I am a student.",
+      "ta": "நான் ஒரு மாணவன்."
+    },
+    {
+      "en": "You are my friend.",
+      "ta": "நீ என் நண்பன்."
+    },
+    {
+      "en": "He is a teacher.",
+      "ta": "அவர் ஒரு ஆசிரியர்."
+    },
+    {
+      "en": "She is very smart.",
+      "ta": "அவள் மிகவும் புத்திசாலி."
+    },
+    {
+      "en": "It is a book.",
+      "ta": "அது ஒரு புத்தகம்."
+    },
+    {
+      "en": "We are happy.",
+      "ta": "நாங்கள் மகிழ்ச்சியாக இருக்கிறோம்."
+    },
+    {
+      "en": "They are playing.",
+      "ta": "அவர்கள் விளையாடுகிறார்கள்."
+    },
+    {
+      "en": "I like apples.",
+      "ta": "நான் ஆப்பிள்களை விரும்புகிறேன்."
+    },
+    {
+      "en": "You are very kind.",
+      "ta": "நீ மிகவும் அன்பானவன்."
+    },
+    {
+      "en": "He is my brother.",
+      "ta": "அவன் என் சகோதரன்."
+    }
+  ],
+  "practiceQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "___ am a boy.",
+      "promptTa": "___ நான் ஒரு சிறுவன்.",
+      "options": ["He", "I", "She", "They"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "___ is my sister.",
+      "promptTa": "___ என் சகோதரி.",
+      "options": ["He", "She", "It", "They"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "___ are students.",
+      "promptTa": "___ மாணவர்கள்.",
+      "options": ["I", "He", "She", "They"],
+      "correctIndex": 3
+    },
+    {
+      "type": "mcq",
+      "promptEn": "___ is a cat.",
+      "promptTa": "___ ஒரு பூனை.",
+      "options": ["He", "She", "It", "We"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "___ are friends.",
+      "promptTa": "___ நண்பர்கள்.",
+      "options": ["I", "You", "He", "It"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "___ am learning English.",
+      "promptTa": "___ ஆங்கிலம் கற்றுக்கொண்டிருக்கிறேன்.",
+      "options": ["You", "I", "We", "They"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "___ is my father.",
+      "promptTa": "___ என் தந்தை.",
+      "options": ["She", "He", "It", "They"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "___ are playing cricket.",
+      "promptTa": "___ கிரிக்கெட் விளையாடுகிறார்கள்.",
+      "options": ["He", "She", "It", "They"],
+      "correctIndex": 3
+    },
+    {
+      "type": "mcq",
+      "promptEn": "___ is a big tree.",
+      "promptTa": "___ ஒரு பெரிய மரம்.",
+      "options": ["He", "She", "It", "They"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "___ are going to school.",
+      "promptTa": "___ பள்ளிக்குச் செல்கிறோம்.",
+      "options": ["I", "You", "We", "He"],
+      "correctIndex": 2
+    }
+  ],
+  "masteryQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "Choose the correct pronoun: ___ is my brother.",
+      "promptTa": "சரியான pronoun-ஐ தேர்வு செய்: ___ என் சகோதரன்.",
+      "options": ["He", "She", "It", "They"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Choose the correct pronoun: ___ am happy.",
+      "promptTa": "சரியான pronoun-ஐ தேர்வு செய்: ___ மகிழ்ச்சியாக இருக்கிறேன்.",
+      "options": ["You", "I", "He", "We"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Choose the correct pronoun: ___ are my parents.",
+      "promptTa": "சரியான pronoun-ஐ தேர்வு செய்: ___ என் பெற்றோர்.",
+      "options": ["He", "She", "It", "They"],
+      "correctIndex": 3
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Choose the correct pronoun: ___ is a dog.",
+      "promptTa": "சரியான pronoun-ஐ தேர்வு செய்: ___ ஒரு நாய்.",
+      "options": ["He", "She", "It", "We"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Choose the correct pronoun: ___ are teachers.",
+      "promptTa": "சரியான pronoun-ஐ தேர்வு செய்: ___ ஆசிரியர்கள்.",
+      "options": ["I", "You", "He", "It"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which pronoun is used for a female person?",
+      "promptTa": "பெண் நபருக்கு எந்த pronoun பயன்படுத்தப்படும்?",
+      "options": ["He", "She", "It", "They"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Choose the correct pronoun: ___ is raining.",
+      "promptTa": "சரியான pronoun-ஐ தேர்வு செய்: ___ மழை பெய்கிறது.",
+      "options": ["He", "She", "It", "They"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Choose the correct pronoun: ___ are studying together.",
+      "promptTa": "சரியான pronoun-ஐ தேர்வு செய்: ___ ஒன்றாகப் படிக்கிறோம்.",
+      "options": ["I", "You", "We", "He"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which pronoun is used for yourself?",
+      "promptTa": "உங்களைப் பற்றி பேச எந்த pronoun பயன்படுத்தப்படும்?",
+      "options": ["You", "I", "We", "They"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Choose the correct pronoun: ___ are my best friends.",
+      "promptTa": "சரியான pronoun-ஐ தேர்வு செய்: ___ என் சிறந்த நண்பர்கள்.",
+      "options": ["He", "She", "It", "They"],
+      "correctIndex": 3
+    }
+  ]
+}

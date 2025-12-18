@@ -1,0 +1,257 @@
+{
+  "id": "phase3_lesson16_2",
+  "order": 2,
+  "unitId": "phase3_unit16",
+  "title": "Phone & Online Calls",
+  "description": "Master telephone and video call communication",
+  "level": "B1",
+  "explain": {
+    "ta": "தொலைபேசி மற்றும் ஆன்லைன் அழைப்புகள் நவீன தொடர்புக்கு அவசியம். முக்கிய வடிவங்கள்: 'May I speak to...' (யாரையாவது பேச கேட்பது), 'Could you hold on?' (காத்திருக்க கேட்பது), 'I'll call back later' (பின்னர் அழைப்பேன்), 'Can you hear me?' (கேட்கிறதா என்று கேட்பது), 'The line is breaking up' (சிக்னல் சரியில்லை). இந்த வடிவங்கள் தொழில்முறை மற்றும் தனிப்பட்ட அழைப்புகளில் பயன்படுத்தப்படுகின்றன.",
+    "en": "Phone and online calls are essential for modern communication. Key patterns include: 'May I speak to...' (asking for someone), 'Could you hold on?' (asking to wait), 'I'll call back later' (promising to call again), 'Can you hear me?' (checking audio), 'The line is breaking up' (poor connection). These patterns are used in both professional and personal calls, and mastering them helps you communicate clearly even when you can't see the other person.",
+    "table": [
+      {
+        "key": "Starting",
+        "examples": ["Hello, may I speak to Mr. Kumar?", "Hi, is this Priya?", "Good morning, this is Ravi calling."]
+      },
+      {
+        "key": "Asking to Wait",
+        "examples": ["Could you hold on, please?", "Just a moment, please.", "Please wait while I check."]
+      },
+      {
+        "key": "Connection Issues",
+        "examples": ["Can you hear me?", "The line is breaking up.", "Could you speak louder, please?"]
+      },
+      {
+        "key": "Ending",
+        "examples": ["I'll call back later.", "Thank you for calling.", "Talk to you soon."]
+      }
+    ]
+  },
+  "examples": [
+    {
+      "en": "Hello, may I speak to Mr. Kumar, please?",
+      "ta": "வணக்கம், நான் திரு. குமாரிடம் பேசலாமா?",
+      "audioId": "phase3_l16_2_ex1"
+    },
+    {
+      "en": "Could you hold on for a moment? I'll transfer your call.",
+      "ta": "ஒரு நிமிடம் காத்திருக்க முடியுமா? நான் உங்கள் அழைப்பை மாற்றுகிறேன்.",
+      "audioId": "phase3_l16_2_ex2"
+    },
+    {
+      "en": "I'm sorry, he's not available right now. Can I take a message?",
+      "ta": "மன்னிக்கவும், அவர் இப்போது கிடைக்கவில்லை. நான் செய்தி எடுக்கலாமா?",
+      "audioId": "phase3_l16_2_ex3"
+    },
+    {
+      "en": "The line is breaking up. Could you repeat that, please?",
+      "ta": "சிக்னல் சரியில்லை. அதை மீண்டும் சொல்ல முடியுமா?",
+      "audioId": "phase3_l16_2_ex4"
+    },
+    {
+      "en": "I'll call back later. Thank you for your time.",
+      "ta": "நான் பின்னர் அழைக்கிறேன். உங்கள் நேரத்திற்கு நன்றி.",
+      "audioId": "phase3_l16_2_ex5"
+    },
+    {
+      "en": "Can you hear me clearly? Is the audio okay?",
+      "ta": "நீங்கள் என்னை தெளிவாக கேட்கிறீர்களா? ஆடியோ சரியாக உள்ளதா?",
+      "audioId": "phase3_l16_2_ex6"
+    },
+    {
+      "en": "Good morning, this is Priya calling from ABC Company.",
+      "ta": "காலை வணக்கம், இது ஏபிசி நிறுவனத்திலிருந்து பிரியா அழைக்கிறேன்.",
+      "audioId": "phase3_l16_2_ex7"
+    },
+    {
+      "en": "Just a moment, please. Let me check if she's available.",
+      "ta": "ஒரு நிமிடம், தயவுசெய்து. அவள் கிடைக்கிறாளா என்று பார்க்கிறேன்.",
+      "audioId": "phase3_l16_2_ex8"
+    },
+    {
+      "en": "Could you speak a bit louder? I can't hear you very well.",
+      "ta": "கொஞ்சம் சத்தமாக பேச முடியுமா? உங்களை நன்றாக கேட்க முடியவில்லை.",
+      "audioId": "phase3_l16_2_ex9"
+    }
+  ],
+  "listeningQuestions": [
+    {
+      "audioText": "Hello, may I speak to Dr. Sharma, please?",
+      "options": [
+        "He wants to speak to Dr. Sharma.",
+        "He wants to speak to Mr. Sharma.",
+        "He is Dr. Sharma."
+      ],
+      "correctIndex": 0
+    },
+    {
+      "audioText": "Could you hold on for a moment? I'll check if he's available.",
+      "options": [
+        "She's asking him to wait while she checks.",
+        "She's saying he's not available.",
+        "She's transferring the call immediately."
+      ],
+      "correctIndex": 0
+    },
+    {
+      "audioText": "The line is breaking up. Could you call back in five minutes?",
+      "options": [
+        "The connection is good.",
+        "The connection is poor and he should call back.",
+        "She will call him back."
+      ],
+      "correctIndex": 1
+    }
+  ],
+  "speakSentences": [
+    {
+      "en": "Hello, may I speak to [name], please?",
+      "ta": "வணக்கம், நான் [பெயர்] உடன் பேசலாமா?"
+    },
+    {
+      "en": "Could you hold on for a moment, please?",
+      "ta": "ஒரு நிமிடம் காத்திருக்க முடியுமா, தயவுசெய்து?"
+    },
+    {
+      "en": "I'm sorry, the line is breaking up. Can you hear me?",
+      "ta": "மன்னிக்கவும், சிக்னல் சரியில்லை. நீங்கள் என்னை கேட்கிறீர்களா?"
+    },
+    {
+      "en": "I'll call back later. Thank you.",
+      "ta": "நான் பின்னர் அழைக்கிறேன். நன்றி."
+    },
+    {
+      "en": "Good morning, this is [your name] calling from [company/place].",
+      "ta": "காலை வணக்கம், இது [உங்கள் பெயர்] [நிறுவனம்/இடம்] இலிருந்து அழைக்கிறேன்."
+    }
+  ],
+  "practiceQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "Complete: May I ___ to Mr. Kumar?",
+      "promptTa": "நிரப்புக: நான் திரு. குமாரிடம் ___ முடியுமா?",
+      "options": ["speak", "speaking", "spoke"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Complete: Could you ___ on, please?",
+      "promptTa": "நிரப்புக: நீங்கள் ___, தயவுசெய்து?",
+      "options": ["hold", "wait", "stay"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Complete: I'll call ___ later.",
+      "promptTa": "நிரப்புக: நான் பின்னர் ___.",
+      "options": ["you back", "back you", "back"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Complete: The line is ___ up.",
+      "promptTa": "நிரப்புக: சிக்னல் ___.",
+      "options": ["breaking", "broken", "break"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Complete: Can you ___ me?",
+      "promptTa": "நிரப்புக: நீங்கள் என்னை ___ முடியுமா?",
+      "options": ["hear", "hearing", "heard"],
+      "correctIndex": 0
+    }
+  ],
+  "masteryQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "Which is the most polite way to ask for someone?",
+      "promptTa": "யாரையாவது கேட்க மிகவும் கண்ணியமான வழி எது?",
+      "options": [
+        "I want to speak to Kumar.",
+        "May I speak to Mr. Kumar, please?",
+        "Give me Kumar."
+      ],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Complete: Just a ___, please.",
+      "promptTa": "நிரப்புக: ஒரு ___, தயவுசெய்து.",
+      "options": ["minute", "moment", "second"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "What should you say if you can't hear well?",
+      "promptTa": "நீங்கள் நன்றாக கேட்க முடியாவிட்டால் என்ன சொல்ல வேண்டும்?",
+      "options": [
+        "What?",
+        "Could you speak louder, please?",
+        "I don't hear."
+      ],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Complete: This is Ravi ___ from ABC Company.",
+      "promptTa": "நிரப்புக: இது ரவி ஏபிசி நிறுவனத்திலிருந்து ___.",
+      "options": ["call", "calling", "called"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Complete: Can I ___ a message?",
+      "promptTa": "நிரப்புக: நான் செய்தி ___ முடியுமா?",
+      "options": ["take", "make", "give"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which is correct for ending a call?",
+      "promptTa": "அழைப்பை முடிக்க எது சரி?",
+      "options": [
+        "Bye.",
+        "Thank you for calling. Talk to you soon.",
+        "I go now."
+      ],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Complete: He's not ___ right now.",
+      "promptTa": "நிரப்புக: அவர் இப்போது ___.",
+      "options": ["available", "here", "present"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "What does 'hold on' mean?",
+      "promptTa": "'hold on' என்றால் என்ன?",
+      "options": [
+        "End the call",
+        "Wait for a moment",
+        "Speak louder"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Complete: I'll ___ your call.",
+      "promptTa": "நிரப்புக: நான் உங்கள் அழைப்பை ___.",
+      "options": ["transfer", "change", "move"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which is the best response to 'Can you hear me?'",
+      "promptTa": "'Can you hear me?' க்கு சிறந்த பதில் எது?",
+      "options": [
+        "Yes.",
+        "Yes, I can hear you clearly.",
+        "I hear."
+      ],
+      "correctIndex": 1
+    }
+  ]
+}

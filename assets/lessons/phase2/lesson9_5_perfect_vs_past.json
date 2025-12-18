@@ -1,0 +1,63 @@
+{
+  "id": "phase2_lesson9_5",
+  "order": 5,
+  "unitId": "phase2_unit9",
+  "title": "Perfect vs Simple Past",
+  "description": "Understanding the difference",
+  "level": "A2",
+  "explain": {
+    "ta": "Present Perfect மற்றும் Simple Past இரண்டும் கடந்த காலத்தை குறிக்கின்றன, ஆனால் வித்தியாசம் உள்ளது. Simple Past என்பது கடந்த காலத்தில் முடிந்த குறிப்பிட்ட நேரத்தை குறிக்கிறது (yesterday, last week போன்றவை). Present Perfect என்பது கடந்த காலத்தில் நடந்து தற்போது தொடர்பு உள்ள செயலை குறிக்கிறது, குறிப்பிட்ட நேரம் இல்லாமல். உதாரணம்: I visited Chennai last year (Simple Past). I have visited Chennai (Present Perfect - எப்போது என்று குறிப்பிடவில்லை).",
+    "en": "Both Present Perfect and Simple Past refer to the past, but there is a difference. Simple Past describes a completed action at a specific time in the past (yesterday, last week, etc.). Present Perfect describes an action that happened in the past but has a connection to the present, without specifying when. Example: I visited Chennai last year (Simple Past). I have visited Chennai (Present Perfect - doesn't specify when)."
+  },
+  "examples": [
+    {
+      "en": "I visited Chennai last year. (Simple Past)",
+      "ta": "நான் கடந்த வருடம் சென்னைக்கு சென்றேன். (Simple Past)",
+      "audioId": "phase2_l9_5_ex1"
+    },
+    {
+      "en": "I have visited Chennai. (Present Perfect)",
+      "ta": "நான் சென்னைக்கு சென்றிருக்கிறேன். (Present Perfect)",
+      "audioId": "phase2_l9_5_ex2"
+    },
+    {
+      "en": "She finished her work yesterday. vs She has finished her work.",
+      "ta": "அவள் நேற்று தன் வேலையை முடித்தாள். vs அவள் தன் வேலையை முடித்துவிட்டாள்.",
+      "audioId": "phase2_l9_5_ex3"
+    }
+  ],
+  "listeningQuestions": [],
+  "speakSentences": [],
+  "practiceQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "I ___ to Delhi last month.",
+      "promptTa": "நான் கடந்த மாதம் டெல்லிக்கு சென்றேன்.",
+      "options": ["went", "have gone", "has gone", "go"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "I ___ never ___ to Mumbai.",
+      "promptTa": "நான் மும்பைக்கு சென்றதே இல்லை.",
+      "options": ["did / go", "have / gone", "has / gone", "do / go"],
+      "correctIndex": 1
+    }
+  ],
+  "masteryQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "She ___ her homework yesterday.",
+      "promptTa": "அவள் நேற்று தன் வீட்டுப்பாடத்தை முடித்தாள்.",
+      "options": ["finished", "has finished", "have finished", "finish"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "They ___ already ___ their lunch.",
+      "promptTa": "அவர்கள் ஏற்கனவே மதிய உணவு சாப்பிட்டுவிட்டார்கள்.",
+      "options": ["did / eat", "have / eaten", "has / eaten", "do / eat"],
+      "correctIndex": 1
+    }
+  ]
+}

@@ -1,0 +1,236 @@
+{
+  "id": "phase4_lesson18_2",
+  "order": 2,
+  "unitId": "phase4_unit18",
+  "title": "Word Stress",
+  "description": "Learn word stress patterns to improve pronunciation",
+  "level": "B2",
+  "explain": {
+    "ta": "சொல் அழுத்தம் (Word Stress) என்பது ஒரு சொல்லில் குறிப்பிட்ட எழுத்துக்கூட்டை மற்றவற்றை விட சத்தமாகவும் நீளமாகவும் உச்சரிப்பது. ஆங்கிலத்தில் சரியான அழுத்தம் மிக முக்கியம். எடுத்துக்காட்டு: PHOtograph (முதல் எழுத்துக்கூட்டில் அழுத்தம்), phoTOGraphy (இரண்டாவது எழுத்துக்கூட்டில் அழுத்தம்), photoGRAphic (மூன்றாவது எழுத்துக்கூட்டில் அழுத்தம்). தவறான அழுத்தம் புரிந்துகொள்வதை கடினமாக்கும்.",
+    "en": "Word stress is emphasizing a particular syllable in a word by saying it louder and longer than others. Correct stress is crucial in English. For example: PHOtograph (stress on first syllable), phoTOGraphy (stress on second syllable), photoGRAphic (stress on third syllable). Wrong stress can make it difficult for listeners to understand you. Learning stress patterns helps you sound more natural.",
+    "table": [
+      {
+        "key": "2-syllable nouns (stress on 1st)",
+        "examples": ["TAble", "WATer", "GARden", "TEAcher"]
+      },
+      {
+        "key": "2-syllable verbs (stress on 2nd)",
+        "examples": ["beLIEVE", "deCIDE", "rePEAT", "beGIN"]
+      },
+      {
+        "key": "-tion/-sion words (stress before suffix)",
+        "examples": ["eduCAtion", "informAtion", "deCIsion", "teleVIsion"]
+      },
+      {
+        "key": "-ic words (stress before suffix)",
+        "examples": ["fanTAStic", "draMAtic", "autoMAtic", "scienTIfic"]
+      },
+      {
+        "key": "Compound nouns (stress on 1st word)",
+        "examples": ["AIRport", "BUSstop", "FOOTball", "SUNshine"]
+      }
+    ]
+  },
+  "examples": [
+    {
+      "en": "PHOtograph - stress on the first syllable",
+      "ta": "PHOtograph - முதல் எழுத்துக்கூட்டில் அழுத்தம்",
+      "audioId": "phase4_l18_2_ex1"
+    },
+    {
+      "en": "phoTOGraphy - stress on the second syllable",
+      "ta": "phoTOGraphy - இரண்டாவது எழுத்துக்கூட்டில் அழுத்தம்",
+      "audioId": "phase4_l18_2_ex2"
+    },
+    {
+      "en": "photoGRAphic - stress on the third syllable",
+      "ta": "photoGRAphic - மூன்றாவது எழுத்துக்கூட்டில் அழுத்தம்",
+      "audioId": "phase4_l18_2_ex3"
+    },
+    {
+      "en": "TAble is a noun with stress on the first syllable",
+      "ta": "TAble ஒரு பெயர்ச்சொல், முதல் எழுத்துக்கூட்டில் அழுத்தம்",
+      "audioId": "phase4_l18_2_ex4"
+    },
+    {
+      "en": "beLIEVE is a verb with stress on the second syllable",
+      "ta": "beLIEVE ஒரு வினைச்சொல், இரண்டாவது எழுத்துக்கூட்டில் அழுத்தம்",
+      "audioId": "phase4_l18_2_ex5"
+    },
+    {
+      "en": "eduCAtion - stress comes before -tion",
+      "ta": "eduCAtion - -tion க்கு முன் அழுத்தம் வரும்",
+      "audioId": "phase4_l18_2_ex6"
+    },
+    {
+      "en": "fanTAStic - stress comes before -ic",
+      "ta": "fanTAStic - -ic க்கு முன் அழுத்தம் வரும்",
+      "audioId": "phase4_l18_2_ex7"
+    },
+    {
+      "en": "AIRport - compound noun with stress on first word",
+      "ta": "AIRport - கூட்டுப் பெயர்ச்சொல், முதல் சொல்லில் அழுத்தம்",
+      "audioId": "phase4_l18_2_ex8"
+    }
+  ],
+  "listeningQuestions": [
+    {
+      "audioText": "The word 'photograph' has stress on the first syllable: PHOtograph.",
+      "options": [
+        "Stress is on the first syllable",
+        "Stress is on the second syllable",
+        "Stress is on the third syllable"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "audioText": "The word 'believe' has stress on the second syllable: beLIEVE.",
+      "options": [
+        "Stress is on the first syllable",
+        "Stress is on the second syllable",
+        "There is no stress"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "audioText": "The word 'information' has stress on the third syllable: informAtion.",
+      "options": [
+        "Stress is on 'in'",
+        "Stress is on 'for'",
+        "Stress is on 'ma'"
+      ],
+      "correctIndex": 2
+    }
+  ],
+  "speakSentences": [
+    {
+      "en": "PHOtograph - stress on the first syllable",
+      "ta": "PHOtograph - முதல் எழுத்துக்கூட்டில் அழுத்தம்"
+    },
+    {
+      "en": "phoTOGraphy - stress on the second syllable",
+      "ta": "phoTOGraphy - இரண்டாவது எழுத்துக்கூட்டில் அழுத்தம்"
+    },
+    {
+      "en": "eduCAtion has stress before the suffix",
+      "ta": "eduCAtion இல் பின்னொட்டுக்கு முன் அழுத்தம் உள்ளது"
+    },
+    {
+      "en": "AIRport is a compound noun with stress on the first word",
+      "ta": "AIRport ஒரு கூட்டுப் பெயர்ச்சொல், முதல் சொல்லில் அழுத்தம்"
+    },
+    {
+      "en": "beLIEVE is a verb with stress on the second syllable",
+      "ta": "beLIEVE ஒரு வினைச்சொல், இரண்டாவது எழுத்துக்கூட்டில் அழுத்தம்"
+    }
+  ],
+  "practiceQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "Where is the stress in 'TAble'?",
+      "promptTa": "'TAble' இல் அழுத்தம் எங்கே?",
+      "options": ["First syllable", "Second syllable", "No stress"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Where is the stress in 'beLIEVE'?",
+      "promptTa": "'beLIEVE' இல் அழுத்தம் எங்கே?",
+      "options": ["First syllable", "Second syllable", "Third syllable"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Where is the stress in 'informAtion'?",
+      "promptTa": "'informAtion' இல் அழுத்தம் எங்கே?",
+      "options": ["First syllable", "Second syllable", "Third syllable"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Two-syllable nouns usually have stress on:",
+      "promptTa": "இரண்டு எழுத்துக்கூட்டு பெயர்ச்சொற்களில் வழக்கமாக அழுத்தம்:",
+      "options": ["First syllable", "Second syllable", "Both syllables"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Two-syllable verbs usually have stress on:",
+      "promptTa": "இரண்டு எழுத்துக்கூட்டு வினைச்சொற்களில் வழக்கமாக அழுத்தம்:",
+      "options": ["First syllable", "Second syllable", "Both syllables"],
+      "correctIndex": 1
+    }
+  ],
+  "masteryQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "Where is the stress in 'PHOtograph'?",
+      "promptTa": "'PHOtograph' இல் அழுத்தம் எங்கே?",
+      "options": ["First syllable", "Second syllable", "Third syllable"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Where is the stress in 'phoTOGraphy'?",
+      "promptTa": "'phoTOGraphy' இல் அழுத்தம் எங்கே?",
+      "options": ["First syllable", "Second syllable", "Third syllable"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Where is the stress in 'photoGRAphic'?",
+      "promptTa": "'photoGRAphic' இல் அழுத்தம் எங்கே?",
+      "options": ["First syllable", "Second syllable", "Third syllable"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Where is the stress in 'AIRport'?",
+      "promptTa": "'AIRport' இல் அழுத்தம் எங்கே?",
+      "options": ["First word (AIR)", "Second word (port)", "Both words"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Where is the stress in 'fanTAStic'?",
+      "promptTa": "'fanTAStic' இல் அழுத்தம் எங்கே?",
+      "options": ["First syllable", "Second syllable", "Third syllable"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Where is the stress in 'deCIDE'?",
+      "promptTa": "'deCIDE' இல் அழுத்தம் எங்கே?",
+      "options": ["First syllable", "Second syllable", "No stress"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Where is the stress in 'TEAcher'?",
+      "promptTa": "'TEAcher' இல் அழுத்தம் எங்கே?",
+      "options": ["First syllable", "Second syllable", "Both syllables"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Words ending in '-tion' have stress:",
+      "promptTa": "'-tion' இல் முடியும் சொற்களில் அழுத்தம்:",
+      "options": ["On the first syllable", "Before the suffix", "On the suffix"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Where is the stress in 'teleVIsion'?",
+      "promptTa": "'teleVIsion' இல் அழுத்தம் எங்கே?",
+      "options": ["First syllable", "Second syllable", "Third syllable"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Where is the stress in 'autoMAtic'?",
+      "promptTa": "'autoMAtic' இல் அழுத்தம் எங்கே?",
+      "options": ["First syllable", "Second syllable", "Third syllable"],
+      "correctIndex": 2
+    }
+  ]
+}

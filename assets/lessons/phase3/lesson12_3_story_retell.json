@@ -1,0 +1,225 @@
+{
+  "id": "phase3_lesson12_3",
+  "order": 3,
+  "unitId": "phase3_unit12",
+  "title": "Story Retelling",
+  "description": "Practice retelling stories using sentence starters",
+  "level": "B1",
+  "explain": {
+    "ta": "கதையை மீண்டும் சொல்வது ஒரு முக்கியமான திறன். வாக்கிய தொடக்கங்களை பயன்படுத்தி கதையை மீண்டும் சொல்லலாம். 'First...' (முதலில்), 'Then...' (பிறகு), 'After that...' (அதன் பிறகு), 'Finally...' (இறுதியாக) போன்ற வார்த்தைகள் கதையை வரிசையாக சொல்ல உதவும். உங்கள் சொந்த வார்த்தைகளில் சொல்லுங்கள் - அதே வார்த்தைகளை பயன்படுத்த வேண்டிய அவசியமில்லை.",
+    "en": "Retelling a story is an important skill. You can use sentence starters to retell the story. Words like 'First...' 'Then...' 'After that...' 'Finally...' help you tell the story in order. Use your own words - you don't need to use the exact same words. Focus on the main events and tell them in sequence.",
+    "story": [
+      {"line": 1, "en": "Meena woke up late on Monday morning.", "ta": "மீனா திங்கள் காலை தாமதமாக எழுந்தாள்."},
+      {"line": 2, "en": "She quickly got ready for work.", "ta": "அவள் விரைவாக வேலைக்கு தயாரானாள்."},
+      {"line": 3, "en": "She ran to the bus stop but missed the bus.", "ta": "அவள் பேருந்து நிறுத்தத்திற்கு ஓடினாள் ஆனால் பேருந்தை தவறவிட்டாள்."},
+      {"line": 4, "en": "She took an auto rickshaw to the office.", "ta": "அவள் அலுவலகத்திற்கு ஆட்டோ ரிக்ஷாவில் சென்றாள்."},
+      {"line": 5, "en": "She reached the office just in time for the meeting.", "ta": "அவள் கூட்டத்திற்கு சரியான நேரத்தில் அலுவலகத்தை அடைந்தாள்."}
+    ],
+    "table": [
+      {
+        "key": "Sequence Words",
+        "examples": ["First, Meena woke up late.", "Then, she got ready quickly.", "After that, she ran to the bus stop.", "Finally, she reached the office."]
+      },
+      {
+        "key": "Time Words",
+        "examples": ["In the morning...", "At that time...", "Later...", "At the end..."]
+      },
+      {
+        "key": "Connecting Words",
+        "examples": ["...and then...", "...but...", "...so...", "...because..."]
+      }
+    ]
+  },
+  "examples": [
+    {
+      "en": "First, Meena woke up late on Monday.",
+      "ta": "முதலில், மீனா திங்கள் அன்று தாமதமாக எழுந்தாள்.",
+      "audioId": "phase3_l12_3_ex1"
+    },
+    {
+      "en": "Then, she quickly got ready for work.",
+      "ta": "பிறகு, அவள் விரைவாக வேலைக்கு தயாரானாள்.",
+      "audioId": "phase3_l12_3_ex2"
+    },
+    {
+      "en": "After that, she ran to the bus stop.",
+      "ta": "அதன் பிறகு, அவள் பேருந்து நிறுத்தத்திற்கு ஓடினாள்.",
+      "audioId": "phase3_l12_3_ex3"
+    },
+    {
+      "en": "But she missed the bus.",
+      "ta": "ஆனால் அவள் பேருந்தை தவறவிட்டாள்.",
+      "audioId": "phase3_l12_3_ex4"
+    },
+    {
+      "en": "So she took an auto rickshaw.",
+      "ta": "எனவே அவள் ஆட்டோ ரிக்ஷா எடுத்தாள்.",
+      "audioId": "phase3_l12_3_ex5"
+    },
+    {
+      "en": "Finally, she reached the office on time.",
+      "ta": "இறுதியாக, அவள் சரியான நேரத்தில் அலுவலகத்தை அடைந்தாள்.",
+      "audioId": "phase3_l12_3_ex6"
+    }
+  ],
+  "listeningQuestions": [
+    {
+      "audioText": "First, Meena woke up late on Monday morning.",
+      "options": [
+        "First, Meena woke up early on Monday morning.",
+        "First, Meena woke up late on Monday morning.",
+        "First, Meena woke up late on Sunday morning."
+      ],
+      "correctIndex": 1
+    },
+    {
+      "audioText": "Then, she quickly got ready for work.",
+      "options": [
+        "Then, she slowly got ready for work.",
+        "Then, she quickly got ready for school.",
+        "Then, she quickly got ready for work."
+      ],
+      "correctIndex": 2
+    },
+    {
+      "audioText": "Finally, she reached the office just in time.",
+      "options": [
+        "Finally, she reached the office late.",
+        "Finally, she reached the office just in time.",
+        "Finally, she reached home just in time."
+      ],
+      "correctIndex": 1
+    }
+  ],
+  "speakSentences": [
+    {
+      "en": "First, Meena woke up late on Monday.",
+      "ta": "முதலில், மீனா திங்கள் அன்று தாமதமாக எழுந்தாள்."
+    },
+    {
+      "en": "Then, she quickly got ready for work.",
+      "ta": "பிறகு, அவள் விரைவாக வேலைக்கு தயாரானாள்."
+    },
+    {
+      "en": "After that, she ran to the bus stop.",
+      "ta": "அதன் பிறகு, அவள் பேருந்து நிறுத்தத்திற்கு ஓடினாள்."
+    },
+    {
+      "en": "But she missed the bus, so she took an auto.",
+      "ta": "ஆனால் அவள் பேருந்தை தவறவிட்டாள், எனவே அவள் ஆட்டோ எடுத்தாள்."
+    },
+    {
+      "en": "Finally, she reached the office on time.",
+      "ta": "இறுதியாக, அவள் சரியான நேரத்தில் அலுவலகத்தை அடைந்தாள்."
+    }
+  ],
+  "practiceQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "___, Meena woke up late.",
+      "promptTa": "___, மீனா தாமதமாக எழுந்தாள்.",
+      "options": ["Finally", "First", "After that"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "___, she got ready for work.",
+      "promptTa": "___, அவள் வேலைக்கு தயாரானாள்.",
+      "options": ["First", "Finally", "Then"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "___, she ran to the bus stop.",
+      "promptTa": "___, அவள் பேருந்து நிறுத்தத்திற்கு ஓடினாள்.",
+      "options": ["After that", "First", "Finally"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "She missed the bus, ___ she took an auto.",
+      "promptTa": "அவள் பேருந்தை தவறவிட்டாள், ___ அவள் ஆட்டோ எடுத்தாள்.",
+      "options": ["but", "so", "and"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "___, she reached the office on time.",
+      "promptTa": "___, அவள் சரியான நேரத்தில் அலுவலகத்தை அடைந்தாள்.",
+      "options": ["First", "Then", "Finally"],
+      "correctIndex": 2
+    }
+  ],
+  "masteryQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "What is the correct order? ___ Meena woke up late.",
+      "promptTa": "சரியான வரிசை என்ன? ___ மீனா தாமதமாக எழுந்தாள்.",
+      "options": ["Finally", "First", "Then"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "First, she woke up. ___, she got ready.",
+      "promptTa": "முதலில், அவள் எழுந்தாள். ___, அவள் தயாரானாள்.",
+      "options": ["First", "Finally", "Then"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "She ran to the bus stop ___ she missed the bus.",
+      "promptTa": "அவள் பேருந்து நிறுத்தத்திற்கு ஓடினாள் ___ அவள் பேருந்தை தவறவிட்டாள்.",
+      "options": ["so", "but", "because"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "She took an auto ___ she missed the bus.",
+      "promptTa": "அவள் ஆட்டோ எடுத்தாள் ___ அவள் பேருந்தை தவறவிட்டாள்.",
+      "options": ["but", "and", "because"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "___ the story, Meena reached the office on time.",
+      "promptTa": "கதையின் ___, மீனா சரியான நேரத்தில் அலுவலகத்தை அடைந்தாள்.",
+      "options": ["At the beginning of", "In the middle of", "At the end of"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which word shows the last event?",
+      "promptTa": "கடைசி நிகழ்வை எந்த வார்த்தை காட்டுகிறது?",
+      "options": ["First", "Then", "Finally"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which word shows the first event?",
+      "promptTa": "முதல் நிகழ்வை எந்த வார்த்தை காட்டுகிறது?",
+      "options": ["Finally", "First", "After that"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "She woke up late ___ she had to hurry.",
+      "promptTa": "அவள் தாமதமாக எழுந்தாள் ___ அவள் அவசரப்பட வேண்டியிருந்தது.",
+      "options": ["but", "so", "or"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Complete the retelling: First, she woke up. Then, she got ready. ___, she ran to the bus stop.",
+      "promptTa": "மீண்டும் சொல்வதை நிரப்புக: முதலில், அவள் எழுந்தாள். பிறகு, அவள் தயாரானாள். ___, அவள் பேருந்து நிறுத்தத்திற்கு ஓடினாள்.",
+      "options": ["First", "After that", "Finally"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "What happened after Meena missed the bus?",
+      "promptTa": "மீனா பேருந்தை தவறவிட்ட பிறகு என்ன நடந்தது?",
+      "options": ["She walked to office", "She took an auto", "She went home"],
+      "correctIndex": 1
+    }
+  ]
+}

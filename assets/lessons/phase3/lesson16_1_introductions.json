@@ -1,0 +1,253 @@
+{
+  "id": "phase3_lesson16_1",
+  "order": 1,
+  "unitId": "phase3_unit16",
+  "title": "Self-Introductions",
+  "description": "Learn to introduce yourself confidently in English",
+  "level": "B1",
+  "explain": {
+    "ta": "சுய அறிமுகம் என்பது ஆங்கிலத்தில் மிக முக்கியமான திறன். புதிய நபர்களை சந்திக்கும் போது, நேர்காணல்களில், அல்லது சமூக சூழ்நிலைகளில் நம்மை அறிமுகப்படுத்திக்கொள்ள வேண்டும். அடிப்படை வடிவங்கள்: 'My name is...' (என் பெயர்), 'I'm from...' (நான் இருந்து வருகிறேன்), 'I work as...' (நான் வேலை செய்கிறேன்), 'I'm interested in...' (எனக்கு ஆர்வம்). இந்த வடிவங்களை பயன்படுத்தி நாம் தெளிவாகவும் நம்பிக்கையுடனும் நம்மை அறிமுகப்படுத்திக்கொள்ளலாம்.",
+    "en": "Self-introduction is one of the most important skills in English. When meeting new people, in interviews, or social situations, we need to introduce ourselves clearly. Basic patterns include: 'My name is...' (stating your name), 'I'm from...' (your origin), 'I work as...' (your profession), 'I'm interested in...' (your interests). Using these patterns, you can introduce yourself confidently and make a good first impression in any situation.",
+    "table": [
+      {
+        "key": "Name",
+        "examples": ["My name is Ravi.", "I'm Priya.", "You can call me Kumar."]
+      },
+      {
+        "key": "Origin",
+        "examples": ["I'm from Chennai.", "I come from Tamil Nadu.", "I live in Coimbatore."]
+      },
+      {
+        "key": "Profession",
+        "examples": ["I work as a teacher.", "I'm a software engineer.", "I'm currently studying."]
+      },
+      {
+        "key": "Interests",
+        "examples": ["I'm interested in music.", "I enjoy reading books.", "I like playing cricket."]
+      }
+    ]
+  },
+  "examples": [
+    {
+      "en": "Hello, my name is Ravi. I'm from Chennai.",
+      "ta": "வணக்கம், என் பெயர் ரவி. நான் சென்னையிலிருந்து வருகிறேன்.",
+      "audioId": "phase3_l16_1_ex1"
+    },
+    {
+      "en": "Hi, I'm Priya. I work as a software engineer.",
+      "ta": "வணக்கம், நான் பிரியா. நான் மென்பொருள் பொறியாளராக வேலை செய்கிறேன்.",
+      "audioId": "phase3_l16_1_ex2"
+    },
+    {
+      "en": "Good morning, my name is Kumar. I'm from Coimbatore and I'm a teacher.",
+      "ta": "காலை வணக்கம், என் பெயர் குமார். நான் கோவையிலிருந்து வருகிறேன் மற்றும் நான் ஆசிரியர்.",
+      "audioId": "phase3_l16_1_ex3"
+    },
+    {
+      "en": "Nice to meet you. I'm Lakshmi. I'm interested in photography.",
+      "ta": "உங்களை சந்தித்ததில் மகிழ்ச்சி. நான் லட்சுமி. எனக்கு புகைப்படம் எடுப்பதில் ஆர்வம்.",
+      "audioId": "phase3_l16_1_ex4"
+    },
+    {
+      "en": "Hello, you can call me Arun. I live in Madurai and I work in a bank.",
+      "ta": "வணக்கம், நீங்கள் என்னை அருண் என்று அழைக்கலாம். நான் மதுரையில் வசிக்கிறேன் மற்றும் வங்கியில் வேலை செய்கிறேன்.",
+      "audioId": "phase3_l16_1_ex5"
+    },
+    {
+      "en": "Hi there, I'm Divya. I'm from Salem and I'm currently studying medicine.",
+      "ta": "வணக்கம், நான் திவ்யா. நான் சேலத்திலிருந்து வருகிறேன் மற்றும் தற்போது மருத்துவம் படித்து வருகிறேன்.",
+      "audioId": "phase3_l16_1_ex6"
+    },
+    {
+      "en": "Good afternoon, my name is Vijay. I enjoy playing cricket and watching movies.",
+      "ta": "மதிய வணக்கம், என் பெயர் விஜய். எனக்கு கிரிக்கெட் விளையாடுவதும் திரைப்படங்கள் பார்ப்பதும் பிடிக்கும்.",
+      "audioId": "phase3_l16_1_ex7"
+    },
+    {
+      "en": "Hello everyone, I'm Meera. I come from Trichy and I work as a nurse.",
+      "ta": "அனைவருக்கும் வணக்கம், நான் மீரா. நான் திருச்சியிலிருந்து வருகிறேன் மற்றும் செவிலியராக வேலை செய்கிறேன்.",
+      "audioId": "phase3_l16_1_ex8"
+    },
+    {
+      "en": "Hi, my name is Karthik. I'm interested in technology and I love learning new things.",
+      "ta": "வணக்கம், என் பெயர் கார்த்திக். எனக்கு தொழில்நுட்பத்தில் ஆர்வம் மற்றும் புதிய விஷயங்களை கற்றுக்கொள்வது பிடிக்கும்.",
+      "audioId": "phase3_l16_1_ex9"
+    }
+  ],
+  "listeningQuestions": [
+    {
+      "audioText": "Hello, my name is Suresh. I'm from Bangalore.",
+      "options": [
+        "His name is Suresh and he's from Bangalore.",
+        "His name is Ramesh and he's from Mumbai.",
+        "His name is Suresh and he's from Chennai."
+      ],
+      "correctIndex": 0
+    },
+    {
+      "audioText": "Hi, I'm Anjali. I work as a doctor.",
+      "options": [
+        "She's Anjali and she's a teacher.",
+        "She's Anjali and she's a doctor.",
+        "She's Anita and she's a doctor."
+      ],
+      "correctIndex": 1
+    },
+    {
+      "audioText": "Good morning, I'm Rajesh. I'm interested in music and I play the guitar.",
+      "options": [
+        "He's Rajesh and he's interested in sports.",
+        "He's Rajesh and he plays the piano.",
+        "He's Rajesh and he's interested in music and plays guitar."
+      ],
+      "correctIndex": 2
+    }
+  ],
+  "speakSentences": [
+    {
+      "en": "Hello, my name is [your name]. I'm from [your city].",
+      "ta": "வணக்கம், என் பெயர் [உங்கள் பெயர்]. நான் [உங்கள் நகரம்] இலிருந்து வருகிறேன்."
+    },
+    {
+      "en": "Hi, I'm [your name]. I work as a [your profession].",
+      "ta": "வணக்கம், நான் [உங்கள் பெயர்]. நான் [உங்கள் தொழில்] ஆக வேலை செய்கிறேன்."
+    },
+    {
+      "en": "Good morning, my name is [your name]. I'm interested in [your interest].",
+      "ta": "காலை வணக்கம், என் பெயர் [உங்கள் பெயர்]. எனக்கு [உங்கள் ஆர்வம்] இல் ஆர்வம்."
+    },
+    {
+      "en": "Nice to meet you. I'm [your name] and I live in [your city].",
+      "ta": "உங்களை சந்தித்ததில் மகிழ்ச்சி. நான் [உங்கள் பெயர்] மற்றும் நான் [உங்கள் நகரம்] இல் வசிக்கிறேன்."
+    },
+    {
+      "en": "Hello everyone, I'm [your name]. I enjoy [your hobby] and I'm currently [your activity].",
+      "ta": "அனைவருக்கும் வணக்கம், நான் [உங்கள் பெயர்]. எனக்கு [உங்கள் பொழுதுபோக்கு] பிடிக்கும் மற்றும் தற்போது நான் [உங்கள் செயல்பாடு]."
+    }
+  ],
+  "practiceQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "Complete: Hello, ___ name is Ravi.",
+      "promptTa": "நிரப்புக: வணக்கம், ___ பெயர் ரவி.",
+      "options": ["my", "I", "me"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Complete: Hi, I'm ___ Chennai.",
+      "promptTa": "நிரப்புக: வணக்கம், நான் சென்னை ___.",
+      "options": ["at", "from", "in"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Complete: I work ___ a teacher.",
+      "promptTa": "நிரப்புக: நான் ஆசிரியராக வேலை ___.",
+      "options": ["as", "like", "for"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Complete: I'm interested ___ music.",
+      "promptTa": "நிரப்புக: எனக்கு இசையில் ___ உள்ளது.",
+      "options": ["at", "in", "on"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Complete: Nice to ___ you.",
+      "promptTa": "நிரப்புக: உங்களை ___ மகிழ்ச்சி.",
+      "options": ["meet", "meeting", "met"],
+      "correctIndex": 0
+    }
+  ],
+  "masteryQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "Which is the correct introduction?",
+      "promptTa": "சரியான அறிமுகம் எது?",
+      "options": [
+        "My name Ravi and I from Chennai.",
+        "My name is Ravi and I'm from Chennai.",
+        "My name is Ravi and I from Chennai."
+      ],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Complete: Hello, ___ call me Kumar.",
+      "promptTa": "நிரப்புக: வணக்கம், நீங்கள் என்னை குமார் என்று ___.",
+      "options": ["you can", "you", "can you"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Complete: I ___ in a bank.",
+      "promptTa": "நிரப்புக: நான் வங்கியில் ___.",
+      "options": ["working", "work", "works"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which is more polite?",
+      "promptTa": "எது மிகவும் கண்ணியமானது?",
+      "options": [
+        "I'm Priya.",
+        "My name is Priya. Nice to meet you.",
+        "Priya."
+      ],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Complete: I ___ studying medicine.",
+      "promptTa": "நிரப்புக: நான் மருத்துவம் ___ வருகிறேன்.",
+      "options": ["am currently", "current", "currently am"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Complete: I come ___ Tamil Nadu.",
+      "promptTa": "நிரப்புக: நான் தமிழ்நாட்டிலிருந்து ___.",
+      "options": ["of", "from", "at"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which is the best way to introduce your hobby?",
+      "promptTa": "உங்கள் பொழுதுபோக்கை அறிமுகப்படுத்த சிறந்த வழி எது?",
+      "options": [
+        "I like cricket.",
+        "I'm interested in cricket and I enjoy playing it.",
+        "Cricket."
+      ],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Complete: I live ___ Coimbatore.",
+      "promptTa": "நிரப்புக: நான் கோவையில் ___.",
+      "options": ["at", "in", "on"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which introduction is most complete?",
+      "promptTa": "எந்த அறிமுகம் மிகவும் முழுமையானது?",
+      "options": [
+        "I'm Arun.",
+        "I'm Arun from Madurai.",
+        "Hello, I'm Arun. I'm from Madurai and I work as an engineer."
+      ],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Complete: I enjoy ___ books.",
+      "promptTa": "நிரப்புக: எனக்கு புத்தகங்கள் ___ பிடிக்கும்.",
+      "options": ["read", "reading", "to read"],
+      "correctIndex": 1
+    }
+  ]
+}

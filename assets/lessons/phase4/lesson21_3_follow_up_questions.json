@@ -1,0 +1,232 @@
+{
+  "id": "phase4_lesson21_3",
+  "order": 3,
+  "unitId": "phase4_unit21",
+  "title": "Asking Follow-up Questions",
+  "description": "Learn to ask questions that keep conversations going",
+  "level": "B2",
+  "explain": {
+    "ta": "தொடர் கேள்விகள் உரையாடலை சுவாரஸ்யமாக வைத்திருக்கும். யாரோ ஒருவர் ஏதாவது சொன்னால், அதைப் பற்றி மேலும் கேளுங்கள். வகைகள்: 1) விளக்கம் கேட்பது: 'What do you mean by that?' 2) எடுத்துக்காட்டு கேட்பது: 'Can you give an example?' 3) காரணம் கேட்பது: 'Why do you think so?' 4) மேலும் தகவல் கேட்பது: 'Tell me more about that.' இது நீங்கள் ஆர்வமாக கேட்கிறீர்கள் என்று காட்டும்.",
+    "en": "Follow-up questions keep conversations interesting. When someone says something, ask more about it. Types: 1) Asking for clarification: 'What do you mean by that?' 2) Asking for examples: 'Can you give an example?' 3) Asking for reasons: 'Why do you think so?' 4) Asking for more information: 'Tell me more about that.' This shows you're interested and engaged in the conversation.",
+    "table": [
+      {
+        "key": "Asking for Clarification",
+        "examples": ["What do you mean by that?", "Could you explain that?", "I'm not sure I understand.", "Can you clarify?"]
+      },
+      {
+        "key": "Asking for Examples",
+        "examples": ["Can you give an example?", "Like what?", "Such as?", "For instance?"]
+      },
+      {
+        "key": "Asking for Reasons",
+        "examples": ["Why do you think so?", "What makes you say that?", "How come?", "What's the reason?"]
+      },
+      {
+        "key": "Asking for More Information",
+        "examples": ["Tell me more about that.", "What happened next?", "How did that go?", "And then?"]
+      }
+    ]
+  },
+  "examples": [
+    {
+      "en": "That's interesting. What do you mean by that?",
+      "ta": "அது சுவாரஸ்யமானது. அதன் மூலம் என்ன சொல்ல வருகிறீர்கள்?",
+      "audioId": "phase4_l21_3_ex1"
+    },
+    {
+      "en": "Can you give me an example of what you're talking about?",
+      "ta": "நீங்கள் பேசுவதற்கு ஒரு எடுத்துக்காட்டு தர முடியுமா?",
+      "audioId": "phase4_l21_3_ex2"
+    },
+    {
+      "en": "Why do you think that's the best approach?",
+      "ta": "அது சிறந்த அணுகுமுறை என்று ஏன் நினைக்கிறீர்கள்?",
+      "audioId": "phase4_l21_3_ex3"
+    },
+    {
+      "en": "That sounds exciting! Tell me more about it.",
+      "ta": "அது உற்சாகமாக இருக்கிறது! அதைப் பற்றி மேலும் சொல்லுங்கள்.",
+      "audioId": "phase4_l21_3_ex4"
+    },
+    {
+      "en": "What happened next? I'm curious to know.",
+      "ta": "அடுத்து என்ன நடந்தது? தெரிந்துகொள்ள ஆர்வமாக இருக்கிறேன்.",
+      "audioId": "phase4_l21_3_ex5"
+    },
+    {
+      "en": "What makes you say that? I'd like to understand your perspective.",
+      "ta": "அப்படி ஏன் சொல்கிறீர்கள்? உங்கள் கண்ணோட்டத்தை புரிந்துகொள்ள விரும்புகிறேன்.",
+      "audioId": "phase4_l21_3_ex6"
+    },
+    {
+      "en": "Could you explain that a bit more? I'm not sure I follow.",
+      "ta": "அதை கொஞ்சம் மேலும் விளக்க முடியுமா? புரியவில்லை என்று நினைக்கிறேன்.",
+      "audioId": "phase4_l21_3_ex7"
+    },
+    {
+      "en": "How did that work out for you?",
+      "ta": "அது உங்களுக்கு எப்படி வேலை செய்தது?",
+      "audioId": "phase4_l21_3_ex8"
+    }
+  ],
+  "listeningQuestions": [
+    {
+      "audioText": "That's interesting. What do you mean by that?",
+      "options": [
+        "The speaker is ending the conversation",
+        "The speaker is asking for clarification",
+        "The speaker disagrees"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "audioText": "Can you give me an example of what you're talking about?",
+      "options": [
+        "The speaker wants an example",
+        "The speaker is giving an example",
+        "The speaker doesn't want to talk"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "audioText": "That sounds exciting! Tell me more about it.",
+      "options": [
+        "The speaker is not interested",
+        "The speaker wants more information",
+        "The speaker wants to change the topic"
+      ],
+      "correctIndex": 1
+    }
+  ],
+  "speakSentences": [
+    {
+      "en": "What do you mean by that?",
+      "ta": "அதன் மூலம் என்ன சொல்ல வருகிறீர்கள்?"
+    },
+    {
+      "en": "Can you give me an example?",
+      "ta": "ஒரு எடுத்துக்காட்டு தர முடியுமா?"
+    },
+    {
+      "en": "Why do you think so?",
+      "ta": "ஏன் அப்படி நினைக்கிறீர்கள்?"
+    },
+    {
+      "en": "Tell me more about that.",
+      "ta": "அதைப் பற்றி மேலும் சொல்லுங்கள்."
+    },
+    {
+      "en": "What happened next?",
+      "ta": "அடுத்து என்ன நடந்தது?"
+    }
+  ],
+  "practiceQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "Which question asks for clarification?",
+      "promptTa": "எந்த கேள்வி விளக்கம் கேட்கிறது?",
+      "options": ["What happened next?", "What do you mean by that?", "Can you give an example?"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which question asks for an example?",
+      "promptTa": "எந்த கேள்வி எடுத்துக்காட்டு கேட்கிறது?",
+      "options": ["Why do you think so?", "Can you give an example?", "Tell me more."],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which question asks for a reason?",
+      "promptTa": "எந்த கேள்வி காரணம் கேட்கிறது?",
+      "options": ["What do you mean?", "Like what?", "Why do you think so?"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which phrase asks for more information?",
+      "promptTa": "எந்த சொற்றொடர் மேலும் தகவல் கேட்கிறது?",
+      "options": ["I see.", "Tell me more about that.", "That's nice."],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Why are follow-up questions important?",
+      "promptTa": "தொடர் கேள்விகள் ஏன் முக்கியம்?",
+      "options": ["They end conversations", "They show interest and keep conversations going", "They change the topic"],
+      "correctIndex": 1
+    }
+  ],
+  "masteryQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "What does 'What makes you say that?' ask for?",
+      "promptTa": "'What makes you say that?' என்ன கேட்கிறது?",
+      "options": ["An example", "A reason", "More information"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which is a good follow-up to 'I went on vacation'?",
+      "promptTa": "'I went on vacation' க்கு நல்ல தொடர் கேள்வி எது?",
+      "options": ["Okay.", "Where did you go? Tell me more!", "I don't care."],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "What does 'How come?' mean?",
+      "promptTa": "'How come?' என்றால் என்ன?",
+      "options": ["How did you arrive?", "Why?", "When?"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which question continues a story?",
+      "promptTa": "எந்த கேள்வி கதையை தொடர்கிறது?",
+      "options": ["What do you mean?", "What happened next?", "Can you clarify?"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "What does 'Such as?' ask for?",
+      "promptTa": "'Such as?' என்ன கேட்கிறது?",
+      "options": ["A reason", "An example", "Clarification"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which shows you're interested in the conversation?",
+      "promptTa": "உரையாடலில் ஆர்வம் காட்டுவது எது?",
+      "options": ["Okay, bye.", "That's interesting! Tell me more.", "I don't want to know."],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "What does 'I'm not sure I follow' mean?",
+      "promptTa": "'I'm not sure I follow' என்றால் என்ன?",
+      "options": ["I agree", "I don't understand", "I'm walking behind you"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which is a polite way to ask for clarification?",
+      "promptTa": "விளக்கம் கேட்க கண்ணியமான வழி எது?",
+      "options": ["What?!", "Could you explain that a bit more?", "I don't get it."],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "What does 'How did that go?' ask about?",
+      "promptTa": "'How did that go?' என்ன பற்றி கேட்கிறது?",
+      "options": ["The result or outcome", "The location", "The time"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which question type keeps conversations longest?",
+      "promptTa": "எந்த வகை கேள்வி உரையாடலை நீண்ட நேரம் வைத்திருக்கும்?",
+      "options": ["Yes/No questions", "Open-ended follow-up questions", "One-word answers"],
+      "correctIndex": 1
+    }
+  ]
+}

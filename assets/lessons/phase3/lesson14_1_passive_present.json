@@ -1,0 +1,225 @@
+{
+  "id": "phase3_lesson14_1",
+  "order": 1,
+  "unitId": "phase3_unit14",
+  "title": "Simple Present Passive",
+  "description": "Learn to form passive voice with is/are + past participle",
+  "level": "B1",
+  "explain": {
+    "ta": "Passive voice-ல் நாம் செயலை செய்பவரை விட செயலையே முக்கியமாக காட்டுகிறோம். Simple present passive-ஐ உருவாக்க: is/are + past participle பயன்படுத்துகிறோம். Active: 'The author writes the book' → Passive: 'The book is written by the author'. Passive voice-ஐ பயன்படுத்தும்போது செயலை செய்பவர் தெரியாமல் இருக்கலாம் அல்லது முக்கியமில்லாமல் இருக்கலாம். இது formal writing மற்றும் scientific reports-ல் அதிகம் பயன்படுத்தப்படுகிறது.",
+    "en": "In passive voice, we focus on the action rather than who does it. To form simple present passive: use is/are + past participle. Active: 'The author writes the book' → Passive: 'The book is written by the author'. We use passive voice when the doer is unknown, unimportant, or obvious. It's commonly used in formal writing, news reports, and scientific descriptions to maintain objectivity.",
+    "table": [
+      {
+        "key": "Singular (is)",
+        "examples": ["The letter is written.", "English is spoken here.", "The door is closed at 6 PM."]
+      },
+      {
+        "key": "Plural (are)",
+        "examples": ["The letters are written.", "Many languages are spoken here.", "The doors are closed at 6 PM."]
+      },
+      {
+        "key": "Negative",
+        "examples": ["The letter is not written.", "English is not spoken here.", "The doors are not closed."]
+      }
+    ]
+  },
+  "examples": [
+    {
+      "en": "The book is written by a famous author.",
+      "ta": "புத்தகம் ஒரு பிரபல எழுத்தாளரால் எழுதப்பட்டது.",
+      "audioId": "phase3_l14_1_ex1"
+    },
+    {
+      "en": "English is spoken in many countries.",
+      "ta": "ஆங்கிலம் பல நாடுகளில் பேசப்படுகிறது.",
+      "audioId": "phase3_l14_1_ex2"
+    },
+    {
+      "en": "The office is cleaned every day.",
+      "ta": "அலுவலகம் தினமும் சுத்தம் செய்யப்படுகிறது.",
+      "audioId": "phase3_l14_1_ex3"
+    },
+    {
+      "en": "These cars are made in Japan.",
+      "ta": "இந்த கார்கள் ஜப்பானில் தயாரிக்கப்படுகின்றன.",
+      "audioId": "phase3_l14_1_ex4"
+    },
+    {
+      "en": "The news is broadcast at 9 PM.",
+      "ta": "செய்திகள் இரவு 9 மணிக்கு ஒளிபரப்பப்படுகின்றன.",
+      "audioId": "phase3_l14_1_ex5"
+    },
+    {
+      "en": "Rice is grown in many Asian countries.",
+      "ta": "அரிசி பல ஆசிய நாடுகளில் விளைவிக்கப்படுகிறது.",
+      "audioId": "phase3_l14_1_ex6"
+    },
+    {
+      "en": "The emails are sent automatically.",
+      "ta": "மின்னஞ்சல்கள் தானாகவே அனுப்பப்படுகின்றன.",
+      "audioId": "phase3_l14_1_ex7"
+    },
+    {
+      "en": "This language is taught in schools.",
+      "ta": "இந்த மொழி பள்ளிகளில் கற்பிக்கப்படுகிறது.",
+      "audioId": "phase3_l14_1_ex8"
+    },
+    {
+      "en": "The products are sold online.",
+      "ta": "தயாரிப்புகள் ஆன்லைனில் விற்கப்படுகின்றன.",
+      "audioId": "phase3_l14_1_ex9"
+    }
+  ],
+  "listeningQuestions": [
+    {
+      "audioText": "The house is painted every year.",
+      "options": [
+        "The house is painted every year.",
+        "The house paints every year.",
+        "The house was painted every year."
+      ],
+      "correctIndex": 0
+    },
+    {
+      "audioText": "These phones are designed in California.",
+      "options": [
+        "These phones design in California.",
+        "These phones are designed in California.",
+        "These phones were designed in California."
+      ],
+      "correctIndex": 1
+    },
+    {
+      "audioText": "The report is prepared by the team.",
+      "options": [
+        "The report prepares by the team.",
+        "The report was prepared by the team.",
+        "The report is prepared by the team."
+      ],
+      "correctIndex": 2
+    }
+  ],
+  "speakSentences": [
+    {
+      "en": "The newspaper is delivered every morning.",
+      "ta": "செய்தித்தாள் தினமும் காலையில் வழங்கப்படுகிறது."
+    },
+    {
+      "en": "These shoes are made of leather.",
+      "ta": "இந்த காலணிகள் தோலால் செய்யப்பட்டவை."
+    },
+    {
+      "en": "The meeting is held on Mondays.",
+      "ta": "கூட்டம் திங்கட்கிழமைகளில் நடத்தப்படுகிறது."
+    }
+  ],
+  "practiceQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "Active: They speak Spanish here. Passive: Spanish ___ here.",
+      "promptTa": "Active: அவர்கள் இங்கே ஸ்பானிஷ் பேசுகிறார்கள். Passive: ஸ்பானிஷ் இங்கே ___.",
+      "options": ["speaks", "is spoken", "are spoken"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Active: The company produces cars. Passive: Cars ___ by the company.",
+      "promptTa": "Active: நிறுவனம் கார்களை உற்பத்தி செய்கிறது. Passive: கார்கள் நிறுவனத்தால் ___.",
+      "options": ["produce", "is produced", "are produced"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Active: She writes the letter. Passive: The letter ___ by her.",
+      "promptTa": "Active: அவள் கடிதம் எழுதுகிறாள். Passive: கடிதம் அவளால் ___.",
+      "options": ["writes", "is written", "are written"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Active: They teach English. Passive: English ___ by them.",
+      "promptTa": "Active: அவர்கள் ஆங்கிலம் கற்பிக்கிறார்கள். Passive: ஆங்கிலம் அவர்களால் ___.",
+      "options": ["teach", "is taught", "are taught"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Active: People use this app. Passive: This app ___ by people.",
+      "promptTa": "Active: மக்கள் இந்த ஆப்பை பயன்படுத்துகிறார்கள். Passive: இந்த ஆப் மக்களால் ___.",
+      "options": ["uses", "is used", "are used"],
+      "correctIndex": 1
+    }
+  ],
+  "masteryQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "The windows ___ every week.",
+      "promptTa": "ஜன்னல்கள் ஒவ்வொரு வாரமும் ___.",
+      "options": ["clean", "is cleaned", "are cleaned"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "This song ___ by millions of people.",
+      "promptTa": "இந்த பாடல் மில்லியன் கணக்கான மக்களால் ___.",
+      "options": ["loves", "is loved", "are loved"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "The documents ___ in the safe.",
+      "promptTa": "ஆவணங்கள் பாதுகாப்பு பெட்டியில் ___.",
+      "options": ["keep", "is kept", "are kept"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Coffee ___ in Brazil.",
+      "promptTa": "காபி பிரேசிலில் ___.",
+      "options": ["grows", "is grown", "are grown"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "The rules ___ by everyone.",
+      "promptTa": "விதிகள் அனைவராலும் ___.",
+      "options": ["follow", "is followed", "are followed"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "This medicine ___ twice a day.",
+      "promptTa": "இந்த மருந்து நாளொன்றுக்கு இரண்டு முறை ___.",
+      "options": ["takes", "is taken", "are taken"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "The letters ___ by the postman.",
+      "promptTa": "கடிதங்கள் தபால்காரரால் ___.",
+      "options": ["deliver", "is delivered", "are delivered"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "The problem ___ by the team.",
+      "promptTa": "பிரச்சனை குழுவால் ___.",
+      "options": ["solves", "is solved", "are solved"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "These books ___ in the library.",
+      "promptTa": "இந்த புத்தகங்கள் நூலகத்தில் ___.",
+      "options": ["find", "is found", "are found"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "The food ___ fresh every day.",
+      "promptTa": "உணவு தினமும் புதிதாக ___.",
+      "options": ["prepares", "is prepared", "are prepared"],
+      "correctIndex": 1
+    }
+  ]
+}

@@ -1,0 +1,225 @@
+{
+  "id": "phase3_lesson14_4",
+  "order": 4,
+  "unitId": "phase3_unit14",
+  "title": "When to Use Passive Voice",
+  "description": "Learn appropriate contexts for using passive voice",
+  "level": "B1",
+  "explain": {
+    "ta": "Passive voice-ஐ குறிப்பிட்ட சூழ்நிலைகளில் பயன்படுத்துவது சரியானது: 1) செயலை செய்பவர் தெரியாதபோது ('My bike was stolen'), 2) செயலை செய்பவர் முக்கியமில்லாதபோது ('English is spoken here'), 3) செயலை செய்பவர் தெளிவாக இருக்கும்போது ('The President was elected'), 4) formal writing-ல் (news, reports, science), 5) process descriptions-ல் ('The rice is washed, then it is cooked'). Active voice-ஐ casual மற்றும் direct communication-க்கு பயன்படுத்துங்கள்.",
+    "en": "Use passive voice in specific situations: 1) When the doer is unknown ('My bike was stolen'), 2) When the doer is unimportant ('English is spoken here'), 3) When the doer is obvious ('The President was elected'), 4) In formal writing (news reports, scientific papers, business documents), 5) In process descriptions ('The ingredients are mixed, then the mixture is baked'). Use active voice for casual, direct communication and when emphasizing who does the action.",
+    "table": [
+      {
+        "key": "News Reports",
+        "examples": ["A new law was passed yesterday.", "Three people were injured in the accident.", "The suspect has been arrested."]
+      },
+      {
+        "key": "Scientific Writing",
+        "examples": ["The experiment was conducted carefully.", "The results were analyzed.", "The hypothesis was tested."]
+      },
+      {
+        "key": "Process Descriptions",
+        "examples": ["The water is boiled first.", "The ingredients are mixed together.", "The product is packaged and shipped."]
+      }
+    ]
+  },
+  "examples": [
+    {
+      "en": "My wallet was stolen. (We don't know who did it)",
+      "ta": "என் பணப்பை திருடப்பட்டது. (யார் செய்தார்கள் என்று தெரியாது)",
+      "audioId": "phase3_l14_4_ex1"
+    },
+    {
+      "en": "Spanish is spoken in 20 countries. (The speakers are not important)",
+      "ta": "ஸ்பானிஷ் 20 நாடுகளில் பேசப்படுகிறது. (பேசுபவர்கள் முக்கியமில்லை)",
+      "audioId": "phase3_l14_4_ex2"
+    },
+    {
+      "en": "The Prime Minister was welcomed at the airport. (Obviously by officials)",
+      "ta": "பிரதமர் விமான நிலையத்தில் வரவேற்கப்பட்டார். (அதிகாரிகளால் என்பது தெளிவு)",
+      "audioId": "phase3_l14_4_ex3"
+    },
+    {
+      "en": "The samples were tested in the laboratory. (Scientific report)",
+      "ta": "மாதிரிகள் ஆய்வகத்தில் சோதிக்கப்பட்டன. (அறிவியல் அறிக்கை)",
+      "audioId": "phase3_l14_4_ex4"
+    },
+    {
+      "en": "The rice is washed and then cooked. (Process description)",
+      "ta": "அரிசி கழுவப்பட்டு பின்னர் சமைக்கப்படுகிறது. (செயல்முறை விளக்கம்)",
+      "audioId": "phase3_l14_4_ex5"
+    },
+    {
+      "en": "Two people were killed in the storm. (News report)",
+      "ta": "புயலில் இரண்டு பேர் கொல்லப்பட்டனர். (செய்தி அறிக்கை)",
+      "audioId": "phase3_l14_4_ex6"
+    },
+    {
+      "en": "The building was designed by a famous architect. (Focus on building)",
+      "ta": "கட்டிடம் ஒரு பிரபல கட்டிடக் கலைஞரால் வடிவமைக்கப்பட்டது. (கட்டிடத்தில் கவனம்)",
+      "audioId": "phase3_l14_4_ex7"
+    },
+    {
+      "en": "Mistakes were made during the project. (Avoiding blame)",
+      "ta": "திட்டத்தின் போது தவறுகள் செய்யப்பட்டன. (குற்றச்சாட்டை தவிர்த்தல்)",
+      "audioId": "phase3_l14_4_ex8"
+    },
+    {
+      "en": "The data is collected and analyzed monthly. (Business process)",
+      "ta": "தரவு மாதந்தோறும் சேகரிக்கப்பட்டு பகுப்பாய்வு செய்யப்படுகிறது. (வணிக செயல்முறை)",
+      "audioId": "phase3_l14_4_ex9"
+    }
+  ],
+  "listeningQuestions": [
+    {
+      "audioText": "The window was broken last night.",
+      "options": [
+        "Someone broke the window last night. (Active - we know who)",
+        "The window was broken last night. (Passive - we don't know who)",
+        "They broke the window last night. (Active - specific person)"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "audioText": "The medicine should be taken after meals.",
+      "options": [
+        "You should take the medicine after meals. (Active - direct instruction)",
+        "The medicine should be taken after meals. (Passive - formal instruction)",
+        "People take the medicine after meals. (Active - general)"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "audioText": "The company was founded in 1995.",
+      "options": [
+        "Someone founded the company in 1995. (Active - unknown founder)",
+        "They founded the company in 1995. (Active - vague)",
+        "The company was founded in 1995. (Passive - focus on company)"
+      ],
+      "correctIndex": 2
+    }
+  ],
+  "speakSentences": [
+    {
+      "en": "The decision was made by the board of directors.",
+      "ta": "முடிவு இயக்குநர்கள் குழுவால் எடுக்கப்பட்டது."
+    },
+    {
+      "en": "The vegetables are washed, cut, and cooked.",
+      "ta": "காய்கறிகள் கழுவப்பட்டு, வெட்டப்பட்டு, சமைக்கப்படுகின்றன."
+    },
+    {
+      "en": "Several houses were damaged in the earthquake.",
+      "ta": "பூகம்பத்தில் பல வீடுகள் சேதமடைந்தன."
+    }
+  ],
+  "practiceQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "Which is better for a news report? 'A bank ___'",
+      "promptTa": "செய்தி அறிக்கைக்கு எது சிறந்தது? 'ஒரு வங்கி ___'",
+      "options": ["Someone robbed a bank", "was robbed yesterday", "They robbed a bank"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which is better for a recipe? 'The onions ___'",
+      "promptTa": "சமையல் குறிப்புக்கு எது சிறந்தது? 'வெங்காயம் ___'",
+      "options": ["You chop the onions", "are chopped finely", "We chop the onions"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which is better when you don't know who did it? 'My car ___'",
+      "promptTa": "யார் செய்தார்கள் என்று தெரியாதபோது எது சிறந்தது? 'என் கார் ___'",
+      "options": ["Someone scratched my car", "was scratched", "They scratched my car"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which is better for scientific writing? 'The experiment ___'",
+      "promptTa": "அறிவியல் எழுத்துக்கு எது சிறந்தது? 'சோதனை ___'",
+      "options": ["We conducted the experiment", "was conducted carefully", "The scientists conducted the experiment"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which is better for casual conversation? 'I ___ the book'",
+      "promptTa": "சாதாரண உரையாடலுக்கு எது சிறந்தது? 'நான் புத்தகத்தை ___'",
+      "options": ["read the book", "The book was read by me", "The book is read"],
+      "correctIndex": 0
+    }
+  ],
+  "masteryQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "Best for a formal announcement: 'The new policy ___'",
+      "promptTa": "முறையான அறிவிப்புக்கு சிறந்தது: 'புதிய கொள்கை ___'",
+      "options": ["We will implement the new policy", "will be implemented next month", "The management will implement"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Best when the doer is obvious: 'The President ___'",
+      "promptTa": "செய்பவர் தெளிவாக இருக்கும்போது சிறந்தது: 'ஜனாதிபதி ___'",
+      "options": ["People elected the President", "was elected last year", "They elected the President"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Best for a process: 'The application ___'",
+      "promptTa": "செயல்முறைக்கு சிறந்தது: 'விண்ணப்பம் ___'",
+      "options": ["You submit the application online", "is submitted online", "People submit the application"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Best for emphasizing the doer: 'The song ___'",
+      "promptTa": "செய்பவரை வலியுறுத்த சிறந்தது: 'பாடல் ___'",
+      "options": ["was composed by Mozart", "Mozart composed the song", "The song is composed"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Best for unknown doer: 'The documents ___'",
+      "promptTa": "தெரியாத செய்பவருக்கு சிறந்தது: 'ஆவணங்கள் ___'",
+      "options": ["Someone stole the documents", "were stolen from the office", "They stole the documents"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Best for lab report: 'The temperature ___'",
+      "promptTa": "ஆய்வக அறிக்கைக்கு சிறந்தது: 'வெப்பநிலை ___'",
+      "options": ["We measured the temperature", "was measured every hour", "The scientists measured"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Best for direct communication: 'I ___ the email'",
+      "promptTa": "நேரடி தொடர்புக்கு சிறந்தது: 'நான் மின்னஞ்சலை ___'",
+      "options": ["sent the email", "The email was sent by me", "The email is sent"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Best for news headline: 'New bridge ___'",
+      "promptTa": "செய்தி தலைப்புக்கு சிறந்தது: 'புதிய பாலம் ___'",
+      "options": ["The government opened the bridge", "was opened yesterday", "They opened the bridge"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Best for instruction manual: 'The device ___'",
+      "promptTa": "வழிமுறை கையேட்டுக்கு சிறந்தது: 'சாதனம் ___'",
+      "options": ["You should charge the device", "should be charged for 2 hours", "Users charge the device"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Best for telling a personal story: 'I ___ my friend'",
+      "promptTa": "தனிப்பட்ட கதை சொல்ல சிறந்தது: 'நான் என் நண்பரை ___'",
+      "options": ["met my friend at the park", "My friend was met by me", "My friend is met"],
+      "correctIndex": 0
+    }
+  ]
+}

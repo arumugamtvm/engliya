@@ -1,0 +1,232 @@
+{
+  "id": "phase4_lesson21_2",
+  "order": 2,
+  "unitId": "phase4_unit21",
+  "title": "Giving Opinions & Reasons",
+  "description": "Learn to express opinions with supporting reasons",
+  "level": "B2",
+  "explain": {
+    "ta": "கருத்துக்களை காரணங்களுடன் வெளிப்படுத்துவது சிறந்த உரையாடலுக்கு முக்கியம். கருத்து சொல்ல: 'I think...', 'In my opinion...', 'I believe...'. காரணம் சொல்ல: 'because...', 'The reason is...', 'This is because...'. எடுத்துக்காட்டு: 'I think public transport is better because it reduces pollution.' காரணங்கள் உங்கள் கருத்தை வலுப்படுத்தும்.",
+    "en": "Expressing opinions with supporting reasons is essential for good conversation. To give opinions: 'I think...', 'In my opinion...', 'I believe...'. To give reasons: 'because...', 'The reason is...', 'This is because...'. Example: 'I think public transport is better because it reduces pollution.' Reasons strengthen your opinion and make it more convincing.",
+    "table": [
+      {
+        "key": "Opinion Starters",
+        "examples": ["I think...", "In my opinion...", "I believe...", "From my point of view..."]
+      },
+      {
+        "key": "Giving Reasons",
+        "examples": ["because...", "The reason is...", "This is because...", "due to..."]
+      },
+      {
+        "key": "Adding More Reasons",
+        "examples": ["Also...", "Another reason is...", "Furthermore...", "In addition..."]
+      },
+      {
+        "key": "Concluding",
+        "examples": ["That's why I think...", "So, in conclusion...", "For these reasons...", "Overall..."]
+      }
+    ]
+  },
+  "examples": [
+    {
+      "en": "I think reading books is important because it improves vocabulary.",
+      "ta": "புத்தகங்கள் படிப்பது முக்கியம் என்று நினைக்கிறேன் ஏனெனில் அது சொற்களஞ்சியத்தை மேம்படுத்துகிறது.",
+      "audioId": "phase4_l21_2_ex1"
+    },
+    {
+      "en": "In my opinion, exercise is essential for good health.",
+      "ta": "என் கருத்தில், உடற்பயிற்சி நல்ல ஆரோக்கியத்திற்கு அவசியம்.",
+      "audioId": "phase4_l21_2_ex2"
+    },
+    {
+      "en": "I believe technology has made life easier. The reason is it saves time.",
+      "ta": "தொழில்நுட்பம் வாழ்க்கையை எளிதாக்கியுள்ளது என்று நம்புகிறேன். காரணம் அது நேரத்தை மிச்சப்படுத்துகிறது.",
+      "audioId": "phase4_l21_2_ex3"
+    },
+    {
+      "en": "From my point of view, learning English opens many opportunities.",
+      "ta": "என் பார்வையில், ஆங்கிலம் கற்றுக்கொள்வது பல வாய்ப்புகளைத் திறக்கிறது.",
+      "audioId": "phase4_l21_2_ex4"
+    },
+    {
+      "en": "I think public transport is better because it reduces pollution. Also, it's cheaper.",
+      "ta": "பொது போக்குவரத்து சிறந்தது என்று நினைக்கிறேன் ஏனெனில் அது மாசுபாட்டைக் குறைக்கிறது. மேலும், அது மலிவானது.",
+      "audioId": "phase4_l21_2_ex5"
+    },
+    {
+      "en": "In my opinion, teamwork is important. Another reason is it brings different ideas together.",
+      "ta": "என் கருத்தில், குழு வேலை முக்கியம். மற்றொரு காரணம் அது வெவ்வேறு யோசனைகளை ஒன்றிணைக்கிறது.",
+      "audioId": "phase4_l21_2_ex6"
+    },
+    {
+      "en": "I believe cooking at home is healthier. This is because you control the ingredients.",
+      "ta": "வீட்டில் சமைப்பது ஆரோக்கியமானது என்று நம்புகிறேன். இது ஏனெனில் நீங்கள் பொருட்களைக் கட்டுப்படுத்துகிறீர்கள்.",
+      "audioId": "phase4_l21_2_ex7"
+    },
+    {
+      "en": "That's why I think education is the key to success.",
+      "ta": "அதனால்தான் கல்வி வெற்றிக்கான திறவுகோல் என்று நினைக்கிறேன்.",
+      "audioId": "phase4_l21_2_ex8"
+    }
+  ],
+  "listeningQuestions": [
+    {
+      "audioText": "I think reading books is important because it improves vocabulary.",
+      "options": [
+        "The speaker doesn't like reading",
+        "The speaker thinks reading improves vocabulary",
+        "The speaker has no opinion on reading"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "audioText": "In my opinion, exercise is essential for good health.",
+      "options": [
+        "The speaker thinks exercise is not important",
+        "The speaker believes exercise is essential for health",
+        "The speaker doesn't exercise"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "audioText": "I think public transport is better because it reduces pollution. Also, it's cheaper.",
+      "options": [
+        "One reason is given",
+        "Two reasons are given",
+        "No reasons are given"
+      ],
+      "correctIndex": 1
+    }
+  ],
+  "speakSentences": [
+    {
+      "en": "I think reading books is important because it improves vocabulary.",
+      "ta": "புத்தகங்கள் படிப்பது முக்கியம் என்று நினைக்கிறேன் ஏனெனில் அது சொற்களஞ்சியத்தை மேம்படுத்துகிறது."
+    },
+    {
+      "en": "In my opinion, exercise is essential for good health.",
+      "ta": "என் கருத்தில், உடற்பயிற்சி நல்ல ஆரோக்கியத்திற்கு அவசியம்."
+    },
+    {
+      "en": "I believe technology has made life easier.",
+      "ta": "தொழில்நுட்பம் வாழ்க்கையை எளிதாக்கியுள்ளது என்று நம்புகிறேன்."
+    },
+    {
+      "en": "From my point of view, learning English opens many opportunities.",
+      "ta": "என் பார்வையில், ஆங்கிலம் கற்றுக்கொள்வது பல வாய்ப்புகளைத் திறக்கிறது."
+    },
+    {
+      "en": "That's why I think education is the key to success.",
+      "ta": "அதனால்தான் கல்வி வெற்றிக்கான திறவுகோல் என்று நினைக்கிறேன்."
+    }
+  ],
+  "practiceQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "Which is an opinion starter?",
+      "promptTa": "எது கருத்து தொடக்கம்?",
+      "options": ["Because...", "I think...", "Also..."],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which word introduces a reason?",
+      "promptTa": "எந்த சொல் காரணத்தை அறிமுகப்படுத்துகிறது?",
+      "options": ["I think", "because", "In conclusion"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "How do you add another reason?",
+      "promptTa": "மற்றொரு காரணத்தை எப்படி சேர்ப்பது?",
+      "options": ["I think...", "Also...", "In my opinion..."],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which phrase means 'from my perspective'?",
+      "promptTa": "'என் கண்ணோட்டத்தில்' என்று எந்த சொற்றொடர் பொருள்படும்?",
+      "options": ["Because of", "From my point of view", "The reason is"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which is a concluding phrase?",
+      "promptTa": "எது முடிவு சொற்றொடர்?",
+      "options": ["I think...", "That's why...", "Because..."],
+      "correctIndex": 1
+    }
+  ],
+  "masteryQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "Which sentence has both opinion and reason?",
+      "promptTa": "எந்த வாக்கியத்தில் கருத்தும் காரணமும் உள்ளன?",
+      "options": ["I like coffee.", "I think coffee is good because it gives energy.", "Coffee is popular."],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "What does 'In my opinion' introduce?",
+      "promptTa": "'In my opinion' என்ன அறிமுகப்படுத்துகிறது?",
+      "options": ["A fact", "A personal view", "A question"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which phrase adds a second reason?",
+      "promptTa": "எந்த சொற்றொடர் இரண்டாவது காரணத்தைச் சேர்க்கிறது?",
+      "options": ["I think", "Another reason is", "In conclusion"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "What does 'This is because' introduce?",
+      "promptTa": "'This is because' என்ன அறிமுகப்படுத்துகிறது?",
+      "options": ["An opinion", "An explanation/reason", "A conclusion"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which is the best structure for giving an opinion?",
+      "promptTa": "கருத்து சொல்ல சிறந்த அமைப்பு எது?",
+      "options": ["Reason first, then opinion", "Opinion first, then reason", "Only opinion, no reason"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "What does 'Furthermore' mean?",
+      "promptTa": "'Furthermore' என்றால் என்ன?",
+      "options": ["However", "In addition", "In conclusion"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which phrase summarizes your opinion?",
+      "promptTa": "எந்த சொற்றொடர் உங்கள் கருத்தை சுருக்குகிறது?",
+      "options": ["I think...", "For these reasons...", "Because..."],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "What makes an opinion more convincing?",
+      "promptTa": "கருத்தை மேலும் நம்பகமானதாக ஆக்குவது என்ன?",
+      "options": ["Speaking loudly", "Giving supporting reasons", "Repeating the opinion"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which is correct: 'I think because...' or 'I think... because...'?",
+      "promptTa": "எது சரி: 'I think because...' அல்லது 'I think... because...'?",
+      "options": ["I think because...", "I think... because...", "Both are correct"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "What does 'due to' mean?",
+      "promptTa": "'due to' என்றால் என்ன?",
+      "options": ["In spite of", "Because of", "Instead of"],
+      "correctIndex": 1
+    }
+  ]
+}

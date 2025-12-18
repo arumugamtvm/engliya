@@ -1,0 +1,262 @@
+{
+  "id": "phase4_lesson21_4",
+  "order": 4,
+  "unitId": "phase4_unit21",
+  "title": "Mini Discussion Practice",
+  "description": "Practice discussion skills with short topics",
+  "level": "B2",
+  "explain": {
+    "ta": "விவாதம் என்பது ஒரு தலைப்பில் கருத்துக்களை பரிமாறிக்கொள்வது. நல்ல விவாதத்திற்கு: 1) உங்கள் கருத்தை சொல்லுங்கள். 2) காரணங்கள் கொடுங்கள். 3) மற்றவர்களின் கருத்தைக் கேளுங்கள். 4) ஒப்புக்கொள்ளுங்கள் அல்லது கண்ணியமாக மறுங்கள். 5) தொடர் கேள்விகள் கேளுங்கள். இந்த பாடத்தில் சிறிய தலைப்புகளில் விவாதிக்க பயிற்சி செய்வோம்.",
+    "en": "Discussion is exchanging views on a topic. For good discussion: 1) State your opinion. 2) Give reasons. 3) Listen to others' views. 4) Agree or politely disagree. 5) Ask follow-up questions. In this lesson, we'll practice discussing short topics. This combines all the skills from previous lessons.",
+    "table": [
+      {
+        "key": "Discussion Topics",
+        "examples": ["Is social media good or bad?", "Should students wear uniforms?", "Is city life better than village life?", "Should we ban plastic?"]
+      },
+      {
+        "key": "Starting a Discussion",
+        "examples": ["What do you think about...?", "How do you feel about...?", "What's your opinion on...?", "Do you agree that...?"]
+      },
+      {
+        "key": "Responding",
+        "examples": ["I think... because...", "I agree/disagree because...", "That's a good point, but...", "I see what you mean, however..."]
+      },
+      {
+        "key": "Concluding",
+        "examples": ["To sum up...", "Overall, I believe...", "In conclusion...", "So, we can say that..."]
+      }
+    ]
+  },
+  "examples": [
+    {
+      "en": "What do you think about social media? Is it good or bad?",
+      "ta": "சமூக ஊடகங்களைப் பற்றி என்ன நினைக்கிறீர்கள்? அது நல்லதா அல்லது கெட்டதா?",
+      "audioId": "phase4_l21_4_ex1"
+    },
+    {
+      "en": "I think social media is useful because it helps us stay connected with friends and family.",
+      "ta": "சமூக ஊடகங்கள் பயனுள்ளது என்று நினைக்கிறேன் ஏனெனில் அது நண்பர்கள் மற்றும் குடும்பத்துடன் தொடர்பில் இருக்க உதவுகிறது.",
+      "audioId": "phase4_l21_4_ex2"
+    },
+    {
+      "en": "I agree to some extent, but I also think it can be addictive and waste time.",
+      "ta": "ஓரளவு ஒப்புக்கொள்கிறேன், ஆனால் அது அடிமையாக்கும் மற்றும் நேரத்தை வீணடிக்கும் என்றும் நினைக்கிறேன்.",
+      "audioId": "phase4_l21_4_ex3"
+    },
+    {
+      "en": "That's a good point. What do you think we should do about it?",
+      "ta": "அது நல்ல கருத்து. அதைப் பற்றி என்ன செய்ய வேண்டும் என்று நினைக்கிறீர்கள்?",
+      "audioId": "phase4_l21_4_ex4"
+    },
+    {
+      "en": "In my opinion, we should limit our screen time and use social media responsibly.",
+      "ta": "என் கருத்தில், நாம் திரை நேரத்தை கட்டுப்படுத்தி சமூக ஊடகங்களை பொறுப்பாக பயன்படுத்த வேண்டும்.",
+      "audioId": "phase4_l21_4_ex5"
+    },
+    {
+      "en": "I completely agree. Balance is important in everything.",
+      "ta": "நான் முழுமையாக ஒப்புக்கொள்கிறேன். எல்லாவற்றிலும் சமநிலை முக்கியம்.",
+      "audioId": "phase4_l21_4_ex6"
+    },
+    {
+      "en": "To sum up, social media has both advantages and disadvantages. We need to use it wisely.",
+      "ta": "சுருக்கமாக, சமூக ஊடகங்களுக்கு நன்மைகளும் தீமைகளும் உள்ளன. நாம் அதை புத்திசாலித்தனமாக பயன்படுத்த வேண்டும்.",
+      "audioId": "phase4_l21_4_ex7"
+    },
+    {
+      "en": "Overall, I believe education is more important than money for success.",
+      "ta": "ஒட்டுமொத்தமாக, வெற்றிக்கு பணத்தை விட கல்வி முக்கியம் என்று நம்புகிறேன்.",
+      "audioId": "phase4_l21_4_ex8"
+    }
+  ],
+  "dialogues": [
+    {
+      "roleA": "Person A",
+      "roleB": "Person B",
+      "lines": [
+        {"speaker": "Person A", "text": "What do you think about working from home? Is it better than office work?"},
+        {"speaker": "Person B", "text": "I think working from home is great because it saves commute time."},
+        {"speaker": "Person A", "text": "That's true. But don't you miss interacting with colleagues?"},
+        {"speaker": "Person B", "text": "I see your point. Yes, sometimes I miss the social aspect."},
+        {"speaker": "Person A", "text": "So maybe a hybrid model would be best?"},
+        {"speaker": "Person B", "text": "I agree. Working from home some days and office other days seems ideal."},
+        {"speaker": "Person A", "text": "To sum up, both have advantages, and a balance works best."},
+        {"speaker": "Person B", "text": "Exactly. It depends on the type of work and personal preference."}
+      ]
+    },
+    {
+      "roleA": "Student A",
+      "roleB": "Student B",
+      "lines": [
+        {"speaker": "Student A", "text": "Do you think students should wear school uniforms?"},
+        {"speaker": "Student B", "text": "In my opinion, yes. Uniforms create equality among students."},
+        {"speaker": "Student A", "text": "I understand, but don't you think it limits self-expression?"},
+        {"speaker": "Student B", "text": "That's a good point. However, students can express themselves in other ways."},
+        {"speaker": "Student A", "text": "Like how?"},
+        {"speaker": "Student B", "text": "Through their work, activities, and personality, not just clothes."},
+        {"speaker": "Student A", "text": "I see what you mean. So uniforms have more benefits than drawbacks?"},
+        {"speaker": "Student B", "text": "Overall, I believe so. They reduce peer pressure about clothing."}
+      ]
+    }
+  ],
+  "listeningQuestions": [
+    {
+      "audioText": "I think social media is useful because it helps us stay connected with friends and family.",
+      "options": [
+        "The speaker thinks social media is bad",
+        "The speaker thinks social media is useful for staying connected",
+        "The speaker doesn't use social media"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "audioText": "I agree to some extent, but I also think it can be addictive.",
+      "options": [
+        "The speaker completely agrees",
+        "The speaker partially agrees but has concerns",
+        "The speaker completely disagrees"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "audioText": "To sum up, social media has both advantages and disadvantages.",
+      "options": [
+        "The speaker is starting the discussion",
+        "The speaker is concluding the discussion",
+        "The speaker is asking a question"
+      ],
+      "correctIndex": 1
+    }
+  ],
+  "speakSentences": [
+    {
+      "en": "What do you think about social media?",
+      "ta": "சமூக ஊடகங்களைப் பற்றி என்ன நினைக்கிறீர்கள்?"
+    },
+    {
+      "en": "I think it's useful because it helps us stay connected.",
+      "ta": "அது பயனுள்ளது என்று நினைக்கிறேன் ஏனெனில் அது தொடர்பில் இருக்க உதவுகிறது."
+    },
+    {
+      "en": "I agree to some extent, but it can also be addictive.",
+      "ta": "ஓரளவு ஒப்புக்கொள்கிறேன், ஆனால் அது அடிமையாக்கும்."
+    },
+    {
+      "en": "That's a good point. What do you think we should do?",
+      "ta": "அது நல்ல கருத்து. என்ன செய்ய வேண்டும் என்று நினைக்கிறீர்கள்?"
+    },
+    {
+      "en": "To sum up, we need to use it wisely.",
+      "ta": "சுருக்கமாக, நாம் அதை புத்திசாலித்தனமாக பயன்படுத்த வேண்டும்."
+    }
+  ],
+  "practiceQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "How do you start a discussion?",
+      "promptTa": "விவாதத்தை எப்படி தொடங்குவது?",
+      "options": ["To sum up...", "What do you think about...?", "I agree."],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which phrase shows partial agreement?",
+      "promptTa": "எந்த சொற்றொடர் பகுதி ஒப்புதலைக் காட்டுகிறது?",
+      "options": ["I completely agree.", "I agree to some extent, but...", "I totally disagree."],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "How do you conclude a discussion?",
+      "promptTa": "விவாதத்தை எப்படி முடிப்பது?",
+      "options": ["What do you think?", "To sum up...", "I think..."],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "What makes a good discussion?",
+      "promptTa": "நல்ல விவாதத்தை உருவாக்குவது என்ன?",
+      "options": ["Only stating your opinion", "Exchanging views and listening to others", "Arguing loudly"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which is a good discussion topic?",
+      "promptTa": "எது நல்ல விவாத தலைப்பு?",
+      "options": ["What's your name?", "Is social media good or bad?", "What time is it?"],
+      "correctIndex": 1
+    }
+  ],
+  "masteryQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "What should you do after stating your opinion?",
+      "promptTa": "உங்கள் கருத்தை சொன்ன பிறகு என்ன செய்ய வேண்டும்?",
+      "options": ["Stop talking", "Give reasons to support it", "Change the topic"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "What does 'To sum up' signal?",
+      "promptTa": "'To sum up' என்ன குறிக்கிறது?",
+      "options": ["Starting a new point", "Concluding the discussion", "Asking a question"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which response shows active listening?",
+      "promptTa": "எந்த பதில் செயலில் கேட்பதைக் காட்டுகிறது?",
+      "options": ["Okay.", "That's a good point. Can you explain more?", "I don't care."],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "What should you do when you disagree in a discussion?",
+      "promptTa": "விவாதத்தில் நீங்கள் மறுக்கும்போது என்ன செய்ய வேண்டும்?",
+      "options": ["Say 'You're wrong!'", "Politely disagree and give reasons", "Stay silent"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which combines opinion, reason, and conclusion?",
+      "promptTa": "எது கருத்து, காரணம், முடிவு ஆகியவற்றை இணைக்கிறது?",
+      "options": ["I like it.", "I think X is good because Y. Overall, Z.", "Maybe."],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "What does 'How do you feel about...?' ask for?",
+      "promptTa": "'How do you feel about...?' என்ன கேட்கிறது?",
+      "options": ["Facts", "Someone's opinion", "Directions"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which is a balanced conclusion?",
+      "promptTa": "எது சமநிலையான முடிவு?",
+      "options": ["X is always bad.", "X has both advantages and disadvantages.", "X is always good."],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "What skill is most important in discussions?",
+      "promptTa": "விவாதங்களில் மிக முக்கியமான திறன் எது?",
+      "options": ["Speaking loudly", "Listening and responding thoughtfully", "Talking the most"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which phrase invites others to share their view?",
+      "promptTa": "எந்த சொற்றொடர் மற்றவர்களை தங்கள் கருத்தை பகிர அழைக்கிறது?",
+      "options": ["I think...", "What's your opinion on this?", "To conclude..."],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "What makes a discussion productive?",
+      "promptTa": "விவாதத்தை பயனுள்ளதாக ஆக்குவது என்ன?",
+      "options": ["One person talking", "Respectful exchange of different views", "Avoiding the topic"],
+      "correctIndex": 1
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "id": "phase2_lesson11_3",
+  "order": 3,
+  "unitId": "phase2_unit11",
+  "title": "Demonstrative Pronouns",
+  "description": "this / that / these / those",
+  "level": "A2",
+  "explain": {
+    "ta": "Demonstrative pronouns என்பது பொருள்களை சுட்டிக்காட்ட பயன்படும். 'This' மற்றும் 'these' அருகில் உள்ளவற்றிற்கு பயன்படும். 'That' மற்றும் 'those' தொலைவில் உள்ளவற்றிற்கு பயன்படும். This/that ஒருமைக்கும், these/those பன்மைக்கும் பயன்படுத்தப்படுகிறது. உதாரணம்: 'This is my book' (இது என் புத்தகம்), 'Those are your pens' (அவை உங்கள் பேனாக்கள்).",
+    "en": "Demonstrative pronouns point to specific things. 'This' and 'these' are for things near us. 'That' and 'those' are for things far from us. This/that are singular, these/those are plural. Example: 'This is my book' (near, one), 'Those are your pens' (far, many)."
+  },
+  "examples": [
+    {
+      "en": "This is my phone. That is yours.",
+      "ta": "இது என் தொலைபேசி. அது உங்களுடையது.",
+      "audioId": "phase2_l11_3_ex1"
+    },
+    {
+      "en": "These are fresh apples. Those are old.",
+      "ta": "இவை புதிய ஆப்பிள்கள். அவை பழையவை.",
+      "audioId": "phase2_l11_3_ex2"
+    },
+    {
+      "en": "Is that your car over there?",
+      "ta": "அங்கே இருப்பது உங்கள் கார் தானா?",
+      "audioId": "phase2_l11_3_ex3"
+    }
+  ],
+  "listeningQuestions": [],
+  "speakSentences": [],
+  "practiceQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "___ is my book. (near)",
+      "promptTa": "இது என் புத்தகம். (அருகில்)",
+      "options": ["This", "That", "These", "Those"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "___ are beautiful flowers. (near)",
+      "promptTa": "இவை அழகான பூக்கள். (அருகில்)",
+      "options": ["This", "That", "These", "Those"],
+      "correctIndex": 2
+    }
+  ],
+  "masteryQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "___ is your house? (far)",
+      "promptTa": "அது உங்கள் வீடா? (தொலைவில்)",
+      "options": ["This", "That", "These", "Those"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "___ are my friends. (far)",
+      "promptTa": "அவர்கள் என் நண்பர்கள். (தொலைவில்)",
+      "options": ["This", "That", "These", "Those"],
+      "correctIndex": 3
+    }
+  ]
+}

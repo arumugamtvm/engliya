@@ -1,0 +1,276 @@
+{
+  "id": "phase4_lesson20_5",
+  "order": 5,
+  "unitId": "phase4_unit20",
+  "title": "Emergencies & Health",
+  "description": "Learn essential English for emergency and health situations",
+  "level": "B2",
+  "explain": {
+    "ta": "அவசர மற்றும் சுகாதார சூழ்நிலைகளில் ஆங்கிலம் பேசுவது மிக முக்கியம். மருத்துவரிடம் பேசுவது, அவசர உதவி கேட்பது, அறிகுறிகளை விவரிப்பது போன்ற சூழ்நிலைகளுக்கு தயாராக இருங்கள். முக்கிய சொற்றொடர்கள்: 'I need help!', 'Please call an ambulance', 'I'm not feeling well', 'Where is the nearest hospital?'. தெளிவாக பேசுவது அவசர சூழ்நிலைகளில் உதவும்.",
+    "en": "Speaking English in emergency and health situations is crucial. Be prepared for situations like talking to doctors, asking for emergency help, and describing symptoms. Key phrases: 'I need help!', 'Please call an ambulance', 'I'm not feeling well', 'Where is the nearest hospital?'. Speaking clearly helps in emergency situations.",
+    "table": [
+      {
+        "key": "Emergency Phrases",
+        "examples": ["Help! I need help!", "Please call an ambulance.", "There's been an accident.", "Call the police!"]
+      },
+      {
+        "key": "At the Doctor",
+        "examples": ["I'm not feeling well.", "I have a headache.", "I've been sick for two days.", "Do I need medicine?"]
+      },
+      {
+        "key": "Describing Symptoms",
+        "examples": ["I have a fever.", "My stomach hurts.", "I feel dizzy.", "I can't breathe properly."]
+      },
+      {
+        "key": "At the Pharmacy",
+        "examples": ["I need medicine for cold.", "Do I need a prescription?", "How often should I take this?", "Are there any side effects?"]
+      }
+    ]
+  },
+  "examples": [
+    {
+      "en": "Help! Please call an ambulance. There's been an accident.",
+      "ta": "உதவி! ஆம்புலன்ஸ் அழைக்கவும். விபத்து நடந்துவிட்டது.",
+      "audioId": "phase4_l20_5_ex1"
+    },
+    {
+      "en": "I'm not feeling well. I have a fever and headache.",
+      "ta": "எனக்கு உடல்நிலை சரியில்லை. காய்ச்சல் மற்றும் தலைவலி உள்ளது.",
+      "audioId": "phase4_l20_5_ex2"
+    },
+    {
+      "en": "Where is the nearest hospital? It's an emergency.",
+      "ta": "அருகிலுள்ள மருத்துவமனை எங்கே? இது அவசரம்.",
+      "audioId": "phase4_l20_5_ex3"
+    },
+    {
+      "en": "I've been sick for two days. I have stomach pain and nausea.",
+      "ta": "இரண்டு நாட்களாக உடல்நிலை சரியில்லை. வயிற்று வலி மற்றும் குமட்டல் உள்ளது.",
+      "audioId": "phase4_l20_5_ex4"
+    },
+    {
+      "en": "I need medicine for cold and cough. Do I need a prescription?",
+      "ta": "சளி மற்றும் இருமலுக்கு மருந்து தேவை. மருந்து சீட்டு தேவையா?",
+      "audioId": "phase4_l20_5_ex5"
+    },
+    {
+      "en": "How often should I take this medicine?",
+      "ta": "இந்த மருந்தை எத்தனை முறை எடுக்க வேண்டும்?",
+      "audioId": "phase4_l20_5_ex6"
+    },
+    {
+      "en": "I'm allergic to penicillin. Please note that.",
+      "ta": "எனக்கு பென்சிலின் ஒவ்வாமை உள்ளது. தயவுசெய்து குறித்துக்கொள்ளுங்கள்.",
+      "audioId": "phase4_l20_5_ex7"
+    },
+    {
+      "en": "I feel dizzy and I can't breathe properly.",
+      "ta": "தலை சுற்றுகிறது மற்றும் சரியாக சுவாசிக்க முடியவில்லை.",
+      "audioId": "phase4_l20_5_ex8"
+    }
+  ],
+  "dialogues": [
+    {
+      "roleA": "Patient",
+      "roleB": "Doctor",
+      "lines": [
+        {"speaker": "Doctor", "text": "Good morning. What brings you here today?"},
+        {"speaker": "Patient", "text": "I'm not feeling well. I have a fever and headache."},
+        {"speaker": "Doctor", "text": "How long have you been feeling this way?"},
+        {"speaker": "Patient", "text": "For about two days now."},
+        {"speaker": "Doctor", "text": "Do you have any other symptoms? Cough, body pain?"},
+        {"speaker": "Patient", "text": "Yes, I have body pain and a slight cough."},
+        {"speaker": "Doctor", "text": "I'll prescribe some medicine. Take rest and drink plenty of fluids."},
+        {"speaker": "Patient", "text": "Thank you, doctor. How often should I take the medicine?"},
+        {"speaker": "Doctor", "text": "Three times a day after meals. Come back if you don't feel better in three days."}
+      ]
+    },
+    {
+      "roleA": "Customer",
+      "roleB": "Pharmacist",
+      "lines": [
+        {"speaker": "Customer", "text": "Hello, I need medicine for cold and cough."},
+        {"speaker": "Pharmacist", "text": "Do you have a prescription?"},
+        {"speaker": "Customer", "text": "No, I don't. Can I get something over the counter?"},
+        {"speaker": "Pharmacist", "text": "Yes, I can give you this cough syrup and these tablets."},
+        {"speaker": "Customer", "text": "How often should I take them?"},
+        {"speaker": "Pharmacist", "text": "The syrup twice a day, and the tablets three times a day after meals."},
+        {"speaker": "Customer", "text": "Are there any side effects?"},
+        {"speaker": "Pharmacist", "text": "The syrup may cause drowsiness. Don't drive after taking it."}
+      ]
+    },
+    {
+      "roleA": "Caller",
+      "roleB": "Emergency Operator",
+      "lines": [
+        {"speaker": "Caller", "text": "Hello! I need help! There's been an accident."},
+        {"speaker": "Emergency Operator", "text": "Stay calm. What is your location?"},
+        {"speaker": "Caller", "text": "I'm on MG Road, near the bus stop."},
+        {"speaker": "Emergency Operator", "text": "Is anyone injured?"},
+        {"speaker": "Caller", "text": "Yes, one person is injured. They're conscious but in pain."},
+        {"speaker": "Emergency Operator", "text": "An ambulance is on the way. Stay with the person and keep them calm."},
+        {"speaker": "Caller", "text": "Okay, thank you. Please hurry."}
+      ]
+    }
+  ],
+  "listeningQuestions": [
+    {
+      "audioText": "I'm not feeling well. I have a fever and headache for two days.",
+      "options": [
+        "The patient is feeling fine",
+        "The patient has fever and headache for two days",
+        "The patient has no symptoms"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "audioText": "Take the medicine three times a day after meals.",
+      "options": [
+        "Take medicine once a day",
+        "Take medicine three times a day after meals",
+        "Take medicine before meals"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "audioText": "There's been an accident on MG Road. An ambulance is on the way.",
+      "options": [
+        "No help is coming",
+        "An ambulance is coming to MG Road",
+        "The accident is at the hospital"
+      ],
+      "correctIndex": 1
+    }
+  ],
+  "speakSentences": [
+    {
+      "en": "Help! Please call an ambulance.",
+      "ta": "உதவி! ஆம்புலன்ஸ் அழைக்கவும்."
+    },
+    {
+      "en": "I'm not feeling well. I have a fever.",
+      "ta": "எனக்கு உடல்நிலை சரியில்லை. காய்ச்சல் உள்ளது."
+    },
+    {
+      "en": "Where is the nearest hospital?",
+      "ta": "அருகிலுள்ள மருத்துவமனை எங்கே?"
+    },
+    {
+      "en": "How often should I take this medicine?",
+      "ta": "இந்த மருந்தை எத்தனை முறை எடுக்க வேண்டும்?"
+    },
+    {
+      "en": "I'm allergic to penicillin.",
+      "ta": "எனக்கு பென்சிலின் ஒவ்வாமை உள்ளது."
+    }
+  ],
+  "practiceQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "How do you ask for emergency help?",
+      "promptTa": "அவசர உதவி எப்படி கேட்பது?",
+      "options": ["Help me sometime.", "Help! I need help!", "Maybe help."],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "How do you say you're not feeling well?",
+      "promptTa": "உடல்நிலை சரியில்லை என்று எப்படி சொல்வது?",
+      "options": ["I'm fine.", "I'm not feeling well.", "I'm happy."],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "How do you ask for the nearest hospital?",
+      "promptTa": "அருகிலுள்ள மருத்துவமனை எப்படி கேட்பது?",
+      "options": ["Hospital?", "Where is the nearest hospital?", "Hospital where?"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "How do you describe a headache?",
+      "promptTa": "தலைவலியை எப்படி விவரிப்பது?",
+      "options": ["Head bad.", "I have a headache.", "Head problem."],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "How do you ask about medicine dosage?",
+      "promptTa": "மருந்து அளவு பற்றி எப்படி கேட்பது?",
+      "options": ["Medicine how?", "How often should I take this?", "When medicine?"],
+      "correctIndex": 1
+    }
+  ],
+  "masteryQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "What does 'prescription' mean?",
+      "promptTa": "'prescription' என்றால் என்ன?",
+      "options": ["Medicine bottle", "Doctor's written order for medicine", "Pharmacy name"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "How do you tell a doctor about an allergy?",
+      "promptTa": "ஒவ்வாமை பற்றி மருத்துவரிடம் எப்படி சொல்வது?",
+      "options": ["Allergy!", "I'm allergic to penicillin.", "No penicillin."],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "What does 'side effects' mean?",
+      "promptTa": "'side effects' என்றால் என்ன?",
+      "options": ["Main effects", "Unwanted effects of medicine", "Good effects"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "How do you describe feeling dizzy?",
+      "promptTa": "தலை சுற்றுவதை எப்படி விவரிப்பது?",
+      "options": ["Head moving.", "I feel dizzy.", "Dizzy head."],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "What does 'over the counter' medicine mean?",
+      "promptTa": "'over the counter' மருந்து என்றால் என்ன?",
+      "options": ["Expensive medicine", "Medicine without prescription", "Hospital medicine"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "How do you say how long you've been sick?",
+      "promptTa": "எவ்வளவு நாட்களாக உடல்நிலை சரியில்லை என்று எப்படி சொல்வது?",
+      "options": ["Sick long time.", "I've been sick for two days.", "Two days sick."],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "What does 'ambulance' mean?",
+      "promptTa": "'ambulance' என்றால் என்ன?",
+      "options": ["Police car", "Emergency medical vehicle", "Fire truck"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "How do you describe stomach pain?",
+      "promptTa": "வயிற்று வலியை எப்படி விவரிப்பது?",
+      "options": ["Stomach bad.", "My stomach hurts.", "Pain stomach."],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "What should you say in an emergency call?",
+      "promptTa": "அவசர அழைப்பில் என்ன சொல்ல வேண்டும்?",
+      "options": ["Just wait.", "Your location and what happened", "Nothing specific"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "How do you ask about breathing problems?",
+      "promptTa": "சுவாச பிரச்சனைகளை எப்படி விவரிப்பது?",
+      "options": ["Breath bad.", "I can't breathe properly.", "No air."],
+      "correctIndex": 1
+    }
+  ]
+}

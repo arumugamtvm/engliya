@@ -1,0 +1,63 @@
+{
+  "id": "phase2_lesson11_4",
+  "order": 4,
+  "unitId": "phase2_unit11",
+  "title": "Common Adjectives",
+  "description": "big / small / beautiful / clean / exciting / outstanding",
+  "level": "A2",
+  "explain": {
+    "ta": "Adjectives என்பது பெயர்ச்சொற்களை விவரிக்கும் சொற்கள். இவை பெயர்ச்சொல்லுக்கு முன் வரும். Big (பெரிய), small (சிறிய), beautiful (அழகான), clean (சுத்தமான), exciting (உற்சாகமான), outstanding (சிறந்த) போன்றவை பொதுவான adjectives. உதாரணம்: 'a big house' (ஒரு பெரிய வீடு), 'a beautiful flower' (ஒரு அழகான பூ).",
+    "en": "Adjectives are words that describe nouns. They come before the noun. Big, small, beautiful, clean, exciting, and outstanding are common adjectives. They tell us about size, appearance, or quality. Example: 'a big house', 'a beautiful flower', 'an exciting game'."
+  },
+  "examples": [
+    {
+      "en": "She lives in a big house.",
+      "ta": "அவள் ஒரு பெரிய வீட்டில் வசிக்கிறாள்.",
+      "audioId": "phase2_l11_4_ex1"
+    },
+    {
+      "en": "This is a beautiful garden.",
+      "ta": "இது ஒரு அழகான தோட்டம்.",
+      "audioId": "phase2_l11_4_ex2"
+    },
+    {
+      "en": "He gave an outstanding performance.",
+      "ta": "அவர் ஒரு சிறந்த நடிப்பை வழங்கினார்.",
+      "audioId": "phase2_l11_4_ex3"
+    }
+  ],
+  "listeningQuestions": [],
+  "speakSentences": [],
+  "practiceQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "I have a ___ car.",
+      "promptTa": "என்னிடம் ஒரு சிறிய கார் உள்ளது.",
+      "options": ["big", "small", "clean", "exciting"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "The room is very ___.",
+      "promptTa": "அறை மிகவும் சுத்தமாக உள்ளது.",
+      "options": ["beautiful", "clean", "small", "outstanding"],
+      "correctIndex": 1
+    }
+  ],
+  "masteryQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "It was an ___ movie.",
+      "promptTa": "அது ஒரு உற்சாகமான திரைப்படம்.",
+      "options": ["exciting", "clean", "small", "big"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "She wore a ___ dress.",
+      "promptTa": "அவள் ஒரு அழகான உடை அணிந்திருந்தாள்.",
+      "options": ["big", "small", "beautiful", "clean"],
+      "correctIndex": 2
+    }
+  ]
+}

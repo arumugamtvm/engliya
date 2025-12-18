@@ -1,0 +1,232 @@
+{
+  "id": "phase4_lesson21_1",
+  "order": 1,
+  "unitId": "phase4_unit21",
+  "title": "Agreeing & Disagreeing Politely",
+  "description": "Learn polite phrases for agreement and disagreement",
+  "level": "B2",
+  "explain": {
+    "ta": "கண்ணியமாக ஒப்புக்கொள்வதும் மறுப்பதும் நல்ல உரையாடலுக்கு முக்கியம். நேரடியாக 'No' அல்லது 'Wrong' என்று சொல்வது கண்ணியமற்றது. மாறாக, மென்மையான சொற்றொடர்களைப் பயன்படுத்துங்கள். ஒப்புக்கொள்ள: 'I agree', 'That's a good point', 'Exactly'. மறுக்க: 'I see your point, but...', 'I'm not sure about that', 'I understand, however...'. இது உரையாடலை நேர்மறையாக வைத்திருக்கும்.",
+    "en": "Agreeing and disagreeing politely is essential for good conversation. Saying 'No' or 'Wrong' directly is impolite. Instead, use softer phrases. To agree: 'I agree', 'That's a good point', 'Exactly'. To disagree: 'I see your point, but...', 'I'm not sure about that', 'I understand, however...'. This keeps conversations positive and respectful.",
+    "table": [
+      {
+        "key": "Strong Agreement",
+        "examples": ["I completely agree.", "Exactly!", "Absolutely!", "That's so true."]
+      },
+      {
+        "key": "Partial Agreement",
+        "examples": ["I agree to some extent.", "That's partly true.", "You have a point.", "I see what you mean."]
+      },
+      {
+        "key": "Polite Disagreement",
+        "examples": ["I see your point, but...", "I'm not sure about that.", "I understand, however...", "That's one way to look at it, but..."]
+      },
+      {
+        "key": "Strong Disagreement (Polite)",
+        "examples": ["I'm afraid I disagree.", "I don't think that's quite right.", "I have a different view.", "I respectfully disagree."]
+      }
+    ]
+  },
+  "examples": [
+    {
+      "en": "I completely agree with you. That's a great idea.",
+      "ta": "நான் உங்களுடன் முழுமையாக ஒப்புக்கொள்கிறேன். அது ஒரு சிறந்த யோசனை.",
+      "audioId": "phase4_l21_1_ex1"
+    },
+    {
+      "en": "That's a good point. I hadn't thought of it that way.",
+      "ta": "அது ஒரு நல்ல கருத்து. நான் அப்படி நினைக்கவில்லை.",
+      "audioId": "phase4_l21_1_ex2"
+    },
+    {
+      "en": "I see your point, but I think there's another way to look at it.",
+      "ta": "உங்கள் கருத்தை புரிந்துகொள்கிறேன், ஆனால் வேறு விதமாகவும் பார்க்கலாம் என்று நினைக்கிறேன்.",
+      "audioId": "phase4_l21_1_ex3"
+    },
+    {
+      "en": "I'm not sure about that. Can you explain more?",
+      "ta": "அதைப் பற்றி எனக்கு உறுதியில்லை. மேலும் விளக்க முடியுமா?",
+      "audioId": "phase4_l21_1_ex4"
+    },
+    {
+      "en": "I understand your perspective, however, I have a different view.",
+      "ta": "உங்கள் கண்ணோட்டத்தை புரிந்துகொள்கிறேன், இருப்பினும், எனக்கு வேறு கருத்து உள்ளது.",
+      "audioId": "phase4_l21_1_ex5"
+    },
+    {
+      "en": "I'm afraid I disagree. The data shows something different.",
+      "ta": "மன்னிக்கவும், நான் மறுக்கிறேன். தரவு வேறு ஒன்றைக் காட்டுகிறது.",
+      "audioId": "phase4_l21_1_ex6"
+    },
+    {
+      "en": "You have a point, but we should also consider other factors.",
+      "ta": "உங்கள் கருத்தில் உண்மை உள்ளது, ஆனால் மற்ற காரணிகளையும் கருத்தில் கொள்ள வேண்டும்.",
+      "audioId": "phase4_l21_1_ex7"
+    },
+    {
+      "en": "I respectfully disagree. I think we need more evidence.",
+      "ta": "நான் மரியாதையுடன் மறுக்கிறேன். நமக்கு மேலும் ஆதாரங்கள் தேவை என்று நினைக்கிறேன்.",
+      "audioId": "phase4_l21_1_ex8"
+    }
+  ],
+  "listeningQuestions": [
+    {
+      "audioText": "I completely agree with you. That's a great idea.",
+      "options": [
+        "The speaker disagrees",
+        "The speaker strongly agrees",
+        "The speaker is unsure"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "audioText": "I see your point, but I think there's another way to look at it.",
+      "options": [
+        "The speaker completely agrees",
+        "The speaker politely disagrees",
+        "The speaker has no opinion"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "audioText": "I'm afraid I disagree. The data shows something different.",
+      "options": [
+        "The speaker agrees with the data",
+        "The speaker politely disagrees",
+        "The speaker is confused"
+      ],
+      "correctIndex": 1
+    }
+  ],
+  "speakSentences": [
+    {
+      "en": "I completely agree with you.",
+      "ta": "நான் உங்களுடன் முழுமையாக ஒப்புக்கொள்கிறேன்."
+    },
+    {
+      "en": "That's a good point.",
+      "ta": "அது ஒரு நல்ல கருத்து."
+    },
+    {
+      "en": "I see your point, but I have a different view.",
+      "ta": "உங்கள் கருத்தை புரிந்துகொள்கிறேன், ஆனால் எனக்கு வேறு கருத்து உள்ளது."
+    },
+    {
+      "en": "I'm not sure about that.",
+      "ta": "அதைப் பற்றி எனக்கு உறுதியில்லை."
+    },
+    {
+      "en": "I respectfully disagree.",
+      "ta": "நான் மரியாதையுடன் மறுக்கிறேன்."
+    }
+  ],
+  "practiceQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "Which is a polite way to agree?",
+      "promptTa": "ஒப்புக்கொள்ள கண்ணியமான வழி எது?",
+      "options": ["Yes, obviously.", "I completely agree.", "You're right, duh."],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which is a polite way to disagree?",
+      "promptTa": "மறுக்க கண்ணியமான வழி எது?",
+      "options": ["You're wrong.", "I see your point, but...", "No way!"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "What does 'I see your point' mean?",
+      "promptTa": "'I see your point' என்றால் என்ன?",
+      "options": ["I can see you", "I understand your view", "I agree completely"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which shows partial agreement?",
+      "promptTa": "எது பகுதி ஒப்புதலைக் காட்டுகிறது?",
+      "options": ["Absolutely!", "That's partly true.", "I completely disagree."],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which is impolite when disagreeing?",
+      "promptTa": "மறுக்கும்போது எது கண்ணியமற்றது?",
+      "options": ["I respectfully disagree.", "You're wrong!", "I have a different view."],
+      "correctIndex": 1
+    }
+  ],
+  "masteryQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "Which phrase shows strong agreement?",
+      "promptTa": "எந்த சொற்றொடர் வலுவான ஒப்புதலைக் காட்டுகிறது?",
+      "options": ["I'm not sure.", "Absolutely!", "Maybe."],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "How do you politely say you disagree?",
+      "promptTa": "நீங்கள் மறுக்கிறீர்கள் என்று கண்ணியமாக எப்படி சொல்வது?",
+      "options": ["That's stupid.", "I'm afraid I disagree.", "No!"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "What does 'I understand, however...' introduce?",
+      "promptTa": "'I understand, however...' என்ன அறிமுகப்படுத்துகிறது?",
+      "options": ["Agreement", "Polite disagreement", "A question"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which is appropriate in a professional setting?",
+      "promptTa": "தொழில்முறை சூழலில் எது பொருத்தமானது?",
+      "options": ["You're totally wrong.", "I have a different perspective.", "That's a dumb idea."],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "What does 'You have a point' mean?",
+      "promptTa": "'You have a point' என்றால் என்ன?",
+      "options": ["You're pointing at something", "Your argument has some validity", "You're wrong"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which phrase acknowledges the other person before disagreeing?",
+      "promptTa": "மறுப்பதற்கு முன் மற்றவரை ஒப்புக்கொள்ளும் சொற்றொடர் எது?",
+      "options": ["No, but...", "I see your point, but...", "Wrong, because..."],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "What does 'That's one way to look at it' suggest?",
+      "promptTa": "'That's one way to look at it' என்ன குறிக்கிறது?",
+      "options": ["Complete agreement", "There are other perspectives", "Complete disagreement"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which is a softer way to say 'I disagree'?",
+      "promptTa": "'I disagree' என்பதை மென்மையாக சொல்வது எது?",
+      "options": ["I'm not sure about that.", "You're wrong.", "I hate that idea."],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Why is polite disagreement important?",
+      "promptTa": "கண்ணியமான மறுப்பு ஏன் முக்கியம்?",
+      "options": ["It ends conversations", "It keeps conversations respectful", "It shows you're always right"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which phrase can follow 'I agree to some extent'?",
+      "promptTa": "'I agree to some extent' க்குப் பிறகு எந்த சொற்றொடர் வரலாம்?",
+      "options": ["You're completely right.", "But I also think...", "I totally disagree."],
+      "correctIndex": 1
+    }
+  ]
+}

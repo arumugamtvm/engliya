@@ -1,0 +1,274 @@
+{
+  "id": "phase1_lesson3",
+  "order": 3,
+  "unitId": "phase1",
+  "title": "Basic Nouns and Articles",
+  "description": "a, an, the",
+  "level": "A1",
+  "explain": {
+    "ta": "Nouns என்பது பெயர்ச்சொற்கள். மனிதர்கள், இடங்கள், பொருட்கள், விலங்குகள் ஆகியவற்றின் பெயர்கள் nouns ஆகும். Articles (a, an, the) பெயர்ச்சொற்களுக்கு முன் வரும். 'a' என்பது மெய் எழுத்துக்களுடன் தொடங்கும் சொற்களுக்கு முன்பும், 'an' என்பது உயிர் எழுத்துக்களுடன் (a, e, i, o, u) தொடங்கும் சொற்களுக்கு முன்பும் பயன்படுத்தப்படும். 'the' என்பது குறிப்பிட்ட பொருட்களுக்கு பயன்படுத்தப்படும்.",
+    "en": "Nouns are naming words for people, places, things, and animals. Articles (a, an, the) come before nouns. Use 'a' before words starting with consonant sounds, 'an' before words starting with vowel sounds (a, e, i, o, u), and 'the' for specific things that both speaker and listener know about.",
+    "table": [
+      {
+        "pronoun": "a",
+        "descriptionEn": "Used before consonant sounds (a book, a cat)",
+        "descriptionTa": "மெய் எழுத்துக்களுக்கு முன் (ஒரு புத்தகம், ஒரு பூனை)"
+      },
+      {
+        "pronoun": "an",
+        "descriptionEn": "Used before vowel sounds (an apple, an egg)",
+        "descriptionTa": "உயிர் எழுத்துக்களுக்கு முன் (ஒரு ஆப்பிள், ஒரு முட்டை)"
+      },
+      {
+        "pronoun": "the",
+        "descriptionEn": "Used for specific things (the sun, the book)",
+        "descriptionTa": "குறிப்பிட்ட பொருட்களுக்கு (சூரியன், அந்த புத்தகம்)"
+      }
+    ]
+  },
+  "examples": [
+    {
+      "en": "I have a book.",
+      "ta": "என்னிடம் ஒரு புத்தகம் உள்ளது.",
+      "audioId": "phase1_l3_ex1"
+    },
+    {
+      "en": "She has an apple.",
+      "ta": "அவளிடம் ஒரு ஆப்பிள் உள்ளது.",
+      "audioId": "phase1_l3_ex2"
+    },
+    {
+      "en": "The sun is bright.",
+      "ta": "சூரியன் பிரகாசமாக இருக்கிறது.",
+      "audioId": "phase1_l3_ex3"
+    },
+    {
+      "en": "I see a cat.",
+      "ta": "நான் ஒரு பூனையைப் பார்க்கிறேன்.",
+      "audioId": "phase1_l3_ex4"
+    },
+    {
+      "en": "He has an umbrella.",
+      "ta": "அவரிடம் ஒரு குடை உள்ளது.",
+      "audioId": "phase1_l3_ex5"
+    },
+    {
+      "en": "The dog is big.",
+      "ta": "அந்த நாய் பெரியது.",
+      "audioId": "phase1_l3_ex6"
+    },
+    {
+      "en": "I want a pen.",
+      "ta": "எனக்கு ஒரு பேனா வேண்டும்.",
+      "audioId": "phase1_l3_ex7"
+    },
+    {
+      "en": "She eats an orange.",
+      "ta": "அவள் ஒரு ஆரஞ்சு சாப்பிடுகிறாள்.",
+      "audioId": "phase1_l3_ex8"
+    },
+    {
+      "en": "The moon is beautiful.",
+      "ta": "சந்திரன் அழகாக இருக்கிறது.",
+      "audioId": "phase1_l3_ex9"
+    },
+    {
+      "en": "I need a chair.",
+      "ta": "எனக்கு ஒரு நாற்காலி தேவை.",
+      "audioId": "phase1_l3_ex10"
+    }
+  ],
+  "listeningQuestions": [
+    {
+      "audioText": "I have a book.",
+      "options": ["I have a book.", "I have an book.", "I have the book."],
+      "correctIndex": 0
+    },
+    {
+      "audioText": "She has an apple.",
+      "options": ["She has a apple.", "She has an apple.", "She has the apple."],
+      "correctIndex": 1
+    },
+    {
+      "audioText": "The cat is sleeping.",
+      "options": ["A cat is sleeping.", "An cat is sleeping.", "The cat is sleeping."],
+      "correctIndex": 2
+    },
+    {
+      "audioText": "I need an umbrella.",
+      "options": ["I need a umbrella.", "I need an umbrella.", "I need the umbrella."],
+      "correctIndex": 1
+    },
+    {
+      "audioText": "He sees a dog.",
+      "options": ["He sees a dog.", "He sees an dog.", "He sees the dog."],
+      "correctIndex": 0
+    }
+  ],
+  "speakSentences": [
+    {
+      "en": "I have a book.",
+      "ta": "என்னிடம் ஒரு புத்தகம் உள்ளது."
+    },
+    {
+      "en": "She has an apple.",
+      "ta": "அவளிடம் ஒரு ஆப்பிள் உள்ளது."
+    },
+    {
+      "en": "The sun is hot.",
+      "ta": "சூரியன் வெப்பமாக இருக்கிறது."
+    },
+    {
+      "en": "I want a pen.",
+      "ta": "எனக்கு ஒரு பேனா வேண்டும்."
+    },
+    {
+      "en": "He has an egg.",
+      "ta": "அவரிடம் ஒரு முட்டை உள்ளது."
+    }
+  ],
+  "practiceQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "I have ___ apple.",
+      "promptTa": "என்னிடம் ___ ஆப்பிள் உள்ளது.",
+      "options": ["a", "an", "the"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "She has ___ cat.",
+      "promptTa": "அவளிடம் ___ பூனை உள்ளது.",
+      "options": ["a", "an", "the"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "___ sun is bright.",
+      "promptTa": "___ சூரியன் பிரகாசமாக இருக்கிறது.",
+      "options": ["A", "An", "The"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "I need ___ umbrella.",
+      "promptTa": "எனக்கு ___ குடை தேவை.",
+      "options": ["a", "an", "the"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "He sees ___ dog.",
+      "promptTa": "அவர் ___ நாயைப் பார்க்கிறார்.",
+      "options": ["a", "an", "the"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "I want ___ orange.",
+      "promptTa": "எனக்கு ___ ஆரஞ்சு வேண்டும்.",
+      "options": ["a", "an", "the"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "___ moon is beautiful.",
+      "promptTa": "___ சந்திரன் அழகாக இருக்கிறது.",
+      "options": ["A", "An", "The"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "She has ___ pen.",
+      "promptTa": "அவளிடம் ___ பேனா உள்ளது.",
+      "options": ["a", "an", "the"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "I eat ___ egg.",
+      "promptTa": "நான் ___ முட்டை சாப்பிடுகிறேன்.",
+      "options": ["a", "an", "the"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "He reads ___ book.",
+      "promptTa": "அவர் ___ புத்தகம் படிக்கிறார்.",
+      "options": ["a", "an", "the"],
+      "correctIndex": 0
+    }
+  ],
+  "masteryQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "She has ___ cat.",
+      "promptTa": "அவளிடம் ___ பூனை உள்ளது.",
+      "options": ["a", "an", "the"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "I need ___ eraser.",
+      "promptTa": "எனக்கு ___ அழிப்பான் தேவை.",
+      "options": ["a", "an", "the"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "___ sky is blue.",
+      "promptTa": "___ வானம் நீலமாக இருக்கிறது.",
+      "options": ["A", "An", "The"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "He has ___ ball.",
+      "promptTa": "அவரிடம் ___ பந்து உள்ளது.",
+      "options": ["a", "an", "the"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "I see ___ elephant.",
+      "promptTa": "நான் ___ யானையைப் பார்க்கிறேன்.",
+      "options": ["a", "an", "the"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "She wants ___ ice cream.",
+      "promptTa": "அவளுக்கு ___ ஐஸ்கிரீம் வேண்டும்.",
+      "options": ["a", "an", "the"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "___ earth is round.",
+      "promptTa": "___ பூமி உருண்டையானது.",
+      "options": ["A", "An", "The"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "I have ___ toy.",
+      "promptTa": "என்னிடம் ___ பொம்மை உள்ளது.",
+      "options": ["a", "an", "the"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "He eats ___ apple.",
+      "promptTa": "அவர் ___ ஆப்பிள் சாப்பிடுகிறார்.",
+      "options": ["a", "an", "the"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "We see ___ stars at night.",
+      "promptTa": "நாங்கள் இரவில் ___ நட்சத்திரங்களைப் பார்க்கிறோம்.",
+      "options": ["a", "an", "the"],
+      "correctIndex": 2
+    }
+  ]
+}

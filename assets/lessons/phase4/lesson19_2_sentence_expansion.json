@@ -1,0 +1,236 @@
+{
+  "id": "phase4_lesson19_2",
+  "order": 2,
+  "unitId": "phase4_unit19",
+  "title": "Sentence Expansion",
+  "description": "Learn to expand simple sentences into longer, more detailed ones",
+  "level": "B2",
+  "explain": {
+    "ta": "வாக்கிய விரிவாக்கம் என்பது எளிய வாக்கியங்களை மேலும் விவரமான வாக்கியங்களாக மாற்றுவது. இது உங்கள் பேச்சை மேலும் சுவாரஸ்யமாகவும் தகவல் நிறைந்ததாகவும் ஆக்கும். உத்திகள்: 1) எப்போது? (when) சேர்க்கவும். 2) எங்கே? (where) சேர்க்கவும். 3) ஏன்? (why) சேர்க்கவும். 4) எப்படி? (how) சேர்க்கவும். 5) யாருடன்? (with whom) சேர்க்கவும். எடுத்துக்காட்டு: 'I eat' → 'I eat breakfast' → 'I eat breakfast at 8 AM' → 'I eat breakfast at 8 AM with my family'.",
+    "en": "Sentence expansion is transforming simple sentences into longer, more detailed ones. This makes your speech more interesting and informative. Strategies: 1) Add when? 2) Add where? 3) Add why? 4) Add how? 5) Add with whom? Example: 'I eat' → 'I eat breakfast' → 'I eat breakfast at 8 AM' → 'I eat breakfast at 8 AM with my family'. Practice expanding sentences step by step.",
+    "table": [
+      {
+        "key": "Add What",
+        "examples": ["I eat → I eat breakfast", "I read → I read books", "I watch → I watch movies"]
+      },
+      {
+        "key": "Add When",
+        "examples": ["I eat breakfast → I eat breakfast at 8 AM", "I read books → I read books every evening"]
+      },
+      {
+        "key": "Add Where",
+        "examples": ["I eat breakfast at 8 AM → I eat breakfast at 8 AM in the kitchen"]
+      },
+      {
+        "key": "Add With Whom",
+        "examples": ["I eat breakfast at 8 AM → I eat breakfast at 8 AM with my family"]
+      },
+      {
+        "key": "Add Why/How",
+        "examples": ["I read books → I read books because I enjoy learning", "I walk → I walk quickly to work"]
+      }
+    ]
+  },
+  "examples": [
+    {
+      "en": "I eat. → I eat breakfast. → I eat breakfast at 8 AM. → I eat breakfast at 8 AM with my family.",
+      "ta": "நான் சாப்பிடுகிறேன். → நான் காலை உணவு சாப்பிடுகிறேன். → நான் காலை 8 மணிக்கு காலை உணவு சாப்பிடுகிறேன். → நான் காலை 8 மணிக்கு என் குடும்பத்துடன் காலை உணவு சாப்பிடுகிறேன்.",
+      "audioId": "phase4_l19_2_ex1"
+    },
+    {
+      "en": "I work. → I work in an office. → I work in an office in Chennai. → I work in an office in Chennai from Monday to Friday.",
+      "ta": "நான் வேலை செய்கிறேன். → நான் அலுவலகத்தில் வேலை செய்கிறேன். → நான் சென்னையில் அலுவலகத்தில் வேலை செய்கிறேன். → நான் திங்கள் முதல் வெள்ளி வரை சென்னையில் அலுவலகத்தில் வேலை செய்கிறேன்.",
+      "audioId": "phase4_l19_2_ex2"
+    },
+    {
+      "en": "I read. → I read novels. → I read novels every night. → I read novels every night before sleeping.",
+      "ta": "நான் படிக்கிறேன். → நான் நாவல்கள் படிக்கிறேன். → நான் ஒவ்வொரு இரவும் நாவல்கள் படிக்கிறேன். → நான் ஒவ்வொரு இரவும் தூங்குவதற்கு முன் நாவல்கள் படிக்கிறேன்.",
+      "audioId": "phase4_l19_2_ex3"
+    },
+    {
+      "en": "I exercise. → I exercise in the morning. → I exercise in the morning at the park. → I exercise in the morning at the park with my friends.",
+      "ta": "நான் உடற்பயிற்சி செய்கிறேன். → நான் காலையில் உடற்பயிற்சி செய்கிறேன். → நான் காலையில் பூங்காவில் உடற்பயிற்சி செய்கிறேன். → நான் காலையில் என் நண்பர்களுடன் பூங்காவில் உடற்பயிற்சி செய்கிறேன்.",
+      "audioId": "phase4_l19_2_ex4"
+    },
+    {
+      "en": "I cook. → I cook dinner. → I cook dinner every evening. → I cook dinner every evening because I enjoy it.",
+      "ta": "நான் சமைக்கிறேன். → நான் இரவு உணவு சமைக்கிறேன். → நான் ஒவ்வொரு மாலையும் இரவு உணவு சமைக்கிறேன். → நான் ஒவ்வொரு மாலையும் இரவு உணவு சமைக்கிறேன் ஏனெனில் எனக்கு அது பிடிக்கும்.",
+      "audioId": "phase4_l19_2_ex5"
+    },
+    {
+      "en": "I travel. → I travel by bus. → I travel by bus to work. → I travel by bus to work every day.",
+      "ta": "நான் பயணிக்கிறேன். → நான் பேருந்தில் பயணிக்கிறேன். → நான் வேலைக்கு பேருந்தில் பயணிக்கிறேன். → நான் தினமும் வேலைக்கு பேருந்தில் பயணிக்கிறேன்.",
+      "audioId": "phase4_l19_2_ex6"
+    },
+    {
+      "en": "I study. → I study English. → I study English online. → I study English online for two hours every day.",
+      "ta": "நான் படிக்கிறேன். → நான் ஆங்கிலம் படிக்கிறேன். → நான் ஆன்லைனில் ஆங்கிலம் படிக்கிறேன். → நான் தினமும் இரண்டு மணி நேரம் ஆன்லைனில் ஆங்கிலம் படிக்கிறேன்.",
+      "audioId": "phase4_l19_2_ex7"
+    },
+    {
+      "en": "I watch. → I watch movies. → I watch movies on weekends. → I watch movies on weekends with my family at home.",
+      "ta": "நான் பார்க்கிறேன். → நான் திரைப்படங்கள் பார்க்கிறேன். → நான் வார இறுதிகளில் திரைப்படங்கள் பார்க்கிறேன். → நான் வார இறுதிகளில் வீட்டில் என் குடும்பத்துடன் திரைப்படங்கள் பார்க்கிறேன்.",
+      "audioId": "phase4_l19_2_ex8"
+    }
+  ],
+  "listeningQuestions": [
+    {
+      "audioText": "I eat breakfast at 8 AM with my family in the kitchen.",
+      "options": [
+        "Simple sentence with no details",
+        "Expanded sentence with when, with whom, and where",
+        "Only mentions eating"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "audioText": "To expand a sentence, you can add when, where, why, how, and with whom.",
+      "options": [
+        "Only add 'what'",
+        "Add when, where, why, how, and with whom",
+        "Make the sentence shorter"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "audioText": "I exercise in the morning at the park with my friends.",
+      "options": [
+        "This sentence has no details",
+        "This sentence includes when, where, and with whom",
+        "This is a simple sentence"
+      ],
+      "correctIndex": 1
+    }
+  ],
+  "speakSentences": [
+    {
+      "en": "I eat breakfast at 8 AM with my family.",
+      "ta": "நான் காலை 8 மணிக்கு என் குடும்பத்துடன் காலை உணவு சாப்பிடுகிறேன்."
+    },
+    {
+      "en": "I work in an office in Chennai from Monday to Friday.",
+      "ta": "நான் திங்கள் முதல் வெள்ளி வரை சென்னையில் அலுவலகத்தில் வேலை செய்கிறேன்."
+    },
+    {
+      "en": "I read novels every night before sleeping.",
+      "ta": "நான் ஒவ்வொரு இரவும் தூங்குவதற்கு முன் நாவல்கள் படிக்கிறேன்."
+    },
+    {
+      "en": "I exercise in the morning at the park with my friends.",
+      "ta": "நான் காலையில் என் நண்பர்களுடன் பூங்காவில் உடற்பயிற்சி செய்கிறேன்."
+    },
+    {
+      "en": "I study English online for two hours every day.",
+      "ta": "நான் தினமும் இரண்டு மணி நேரம் ஆன்லைனில் ஆங்கிலம் படிக்கிறேன்."
+    }
+  ],
+  "practiceQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "What is sentence expansion?",
+      "promptTa": "வாக்கிய விரிவாக்கம் என்றால் என்ன?",
+      "options": ["Making sentences shorter", "Adding details to simple sentences", "Removing words"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which question helps add time details?",
+      "promptTa": "எந்த கேள்வி நேர விவரங்களைச் சேர்க்க உதவும்?",
+      "options": ["Where?", "When?", "What?"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Expand: 'I eat' → 'I eat ___'",
+      "promptTa": "விரிவாக்கு: 'நான் சாப்பிடுகிறேன்' → 'நான் ___ சாப்பிடுகிறேன்'",
+      "options": ["breakfast", "quickly eat", "eat eat"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which adds 'where' to 'I work'?",
+      "promptTa": "'நான் வேலை செய்கிறேன்' க்கு 'எங்கே' சேர்ப்பது எது?",
+      "options": ["I work hard", "I work in an office", "I work daily"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which adds 'with whom' to 'I exercise'?",
+      "promptTa": "'நான் உடற்பயிற்சி செய்கிறேன்' க்கு 'யாருடன்' சேர்ப்பது எது?",
+      "options": ["I exercise daily", "I exercise at the gym", "I exercise with my friends"],
+      "correctIndex": 2
+    }
+  ],
+  "masteryQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "Which is the most expanded sentence?",
+      "promptTa": "எது மிகவும் விரிவாக்கப்பட்ட வாக்கியம்?",
+      "options": ["I eat.", "I eat breakfast.", "I eat breakfast at 8 AM with my family."],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "What detail does 'because I enjoy it' add?",
+      "promptTa": "'ஏனெனில் எனக்கு அது பிடிக்கும்' என்ன விவரத்தைச் சேர்க்கிறது?",
+      "options": ["When", "Where", "Why"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "What detail does 'at the park' add?",
+      "promptTa": "'பூங்காவில்' என்ன விவரத்தைச் சேர்க்கிறது?",
+      "options": ["When", "Where", "Why"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "What detail does 'every morning' add?",
+      "promptTa": "'ஒவ்வொரு காலையும்' என்ன விவரத்தைச் சேர்க்கிறது?",
+      "options": ["When", "Where", "With whom"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Expand 'I read' with what and when:",
+      "promptTa": "'நான் படிக்கிறேன்' ஐ என்ன மற்றும் எப்போது உடன் விரிவாக்கு:",
+      "options": ["I read books every night", "I read quickly", "I read here"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which sentence has the most details?",
+      "promptTa": "எந்த வாக்கியத்தில் அதிக விவரங்கள் உள்ளன?",
+      "options": ["I work.", "I work in Chennai.", "I work in an office in Chennai from Monday to Friday."],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "What does 'with my family' add to a sentence?",
+      "promptTa": "'என் குடும்பத்துடன்' வாக்கியத்திற்கு என்ன சேர்க்கிறது?",
+      "options": ["When", "Where", "With whom"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Why is sentence expansion useful?",
+      "promptTa": "வாக்கிய விரிவாக்கம் ஏன் பயனுள்ளது?",
+      "options": ["It makes speech shorter", "It makes speech more interesting and informative", "It removes details"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Expand 'I cook' with what, when, and why:",
+      "promptTa": "'நான் சமைக்கிறேன்' ஐ என்ன, எப்போது, ஏன் உடன் விரிவாக்கு:",
+      "options": ["I cook dinner every evening because I enjoy it", "I cook fast", "I cook here"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "What detail does 'by bus' add?",
+      "promptTa": "'பேருந்தில்' என்ன விவரத்தைச் சேர்க்கிறது?",
+      "options": ["When", "How", "Why"],
+      "correctIndex": 1
+    }
+  ]
+}

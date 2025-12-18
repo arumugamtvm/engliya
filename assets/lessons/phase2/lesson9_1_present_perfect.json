@@ -1,0 +1,63 @@
+{
+  "id": "phase2_lesson9_1",
+  "order": 1,
+  "unitId": "phase2_unit9",
+  "title": "Present Perfect",
+  "description": "have / has + past participle",
+  "level": "A2",
+  "explain": {
+    "ta": "Present Perfect Tense என்பது கடந்த காலத்தில் நடந்து தற்போது முடிந்த அல்லது தொடர்ந்து நடக்கும் செயல்களை குறிக்க பயன்படுத்தப்படுகிறது. இதை உருவாக்க have/has + past participle (மூன்றாம் வடிவ வினைச்சொல்) பயன்படுத்துகிறோம். I, you, we, they-க்கு 'have' பயன்படுத்துகிறோம். He, she, it-க்கு 'has' பயன்படுத்துகிறோம். உதாரணம்: I have finished my work. She has visited Chennai.",
+    "en": "The Present Perfect Tense is used to describe actions that happened in the past but are connected to the present, or actions that started in the past and continue to the present. We form it using have/has + past participle (third form of the verb). Use 'have' with I, you, we, they. Use 'has' with he, she, it. Examples: I have finished my work. She has visited Chennai."
+  },
+  "examples": [
+    {
+      "en": "I have finished my homework.",
+      "ta": "நான் என் வீட்டுப்பாடத்தை முடித்துவிட்டேன்.",
+      "audioId": "phase2_l9_1_ex1"
+    },
+    {
+      "en": "She has visited many countries.",
+      "ta": "அவள் பல நாடுகளுக்கு சென்றிருக்கிறாள்.",
+      "audioId": "phase2_l9_1_ex2"
+    },
+    {
+      "en": "They have lived here for 5 years.",
+      "ta": "அவர்கள் 5 வருடங்களாக இங்கே வசித்து வருகிறார்கள்.",
+      "audioId": "phase2_l9_1_ex3"
+    }
+  ],
+  "listeningQuestions": [],
+  "speakSentences": [],
+  "practiceQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "I ___ already eaten breakfast.",
+      "promptTa": "நான் ஏற்கனவே காலை உணவு சாப்பிட்டுவிட்டேன்.",
+      "options": ["have", "has", "had", "am"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "She ___ finished her work.",
+      "promptTa": "அவள் தன் வேலையை முடித்துவிட்டாள்.",
+      "options": ["have", "has", "had", "is"],
+      "correctIndex": 1
+    }
+  ],
+  "masteryQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "They ___ visited the museum.",
+      "promptTa": "அவர்கள் அருங்காட்சியகத்திற்கு சென்றிருக்கிறார்கள்.",
+      "options": ["have", "has", "had", "are"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "He ___ learned English for 3 years.",
+      "promptTa": "அவன் 3 வருடங்களாக ஆங்கிலம் கற்று வருகிறான்.",
+      "options": ["have", "has", "had", "is"],
+      "correctIndex": 1
+    }
+  ]
+}

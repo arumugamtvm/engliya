@@ -1,0 +1,257 @@
+{
+  "id": "phase3_lesson16_5",
+  "order": 5,
+  "unitId": "phase3_unit16",
+  "title": "Complaints & Apologies",
+  "description": "Learn to complain politely and apologize sincerely",
+  "level": "B1",
+  "explain": {
+    "ta": "புகார்கள் மற்றும் மன்னிப்புகள் கடினமான சூழ்நிலைகளை கையாள உதவுகின்றன. புகார் வடிவங்கள்: 'I'm afraid there's a problem' (பிரச்சனை உள்ளது), 'I'm not happy with...' (திருப்தியில்லை), 'This isn't what I ordered' (இது நான் ஆர்டர் செய்தது அல்ல). மன்னிப்பு வடிவங்கள்: 'I'm terribly sorry' (மிகவும் வருந்துகிறேன்), 'I apologize for...' (மன்னிப்பு கேட்கிறேன்), 'It won't happen again' (மீண்டும் நடக்காது). இந்த வடிவங்கள் மரியாதையுடன் பிரச்சனைகளை தீர்க்க உதவுகின்றன.",
+    "en": "Complaints and apologies help handle difficult situations professionally. Complaint patterns include: 'I'm afraid there's a problem' (introducing an issue), 'I'm not happy with...' (expressing dissatisfaction), 'This isn't what I ordered' (pointing out errors). Apology patterns include: 'I'm terribly sorry' (sincere apology), 'I apologize for...' (formal apology), 'It won't happen again' (promising improvement). These patterns help resolve issues while maintaining good relationships.",
+    "table": [
+      {
+        "key": "Making Complaints",
+        "examples": ["I'm afraid there's a problem with my order.", "I'm not happy with the service.", "This isn't what I expected."]
+      },
+      {
+        "key": "Apologizing",
+        "examples": ["I'm terribly sorry about that.", "I apologize for the inconvenience.", "Please accept my apologies."]
+      },
+      {
+        "key": "Explaining",
+        "examples": ["I didn't realize...", "It was a misunderstanding.", "There was a mistake."]
+      },
+      {
+        "key": "Promising",
+        "examples": ["It won't happen again.", "I'll make sure this doesn't repeat.", "I'll be more careful next time."]
+      }
+    ]
+  },
+  "examples": [
+    {
+      "en": "I'm afraid there's a problem with my bill. I was charged twice.",
+      "ta": "என் பில்லில் ஒரு பிரச்சனை உள்ளது. எனக்கு இரண்டு முறை கட்டணம் வசூலிக்கப்பட்டது.",
+      "audioId": "phase3_l16_5_ex1"
+    },
+    {
+      "en": "I'm terribly sorry I'm late. There was heavy traffic.",
+      "ta": "நான் தாமதமாக வந்ததற்கு மிகவும் வருந்துகிறேன். அதிக போக்குவரத்து இருந்தது.",
+      "audioId": "phase3_l16_5_ex2"
+    },
+    {
+      "en": "I'm not happy with the quality of this product. It's not working properly.",
+      "ta": "இந்த தயாரிப்பின் தரத்தில் நான் திருப்தியடையவில்லை. இது சரியாக வேலை செய்யவில்லை.",
+      "audioId": "phase3_l16_5_ex3"
+    },
+    {
+      "en": "I apologize for the confusion. There was a misunderstanding on my part.",
+      "ta": "குழப்பத்திற்கு நான் மன்னிப்பு கேட்கிறேன். என் பக்கத்தில் தவறான புரிதல் இருந்தது.",
+      "audioId": "phase3_l16_5_ex4"
+    },
+    {
+      "en": "This isn't what I ordered. I asked for a vegetarian meal.",
+      "ta": "இது நான் ஆர்டர் செய்தது அல்ல. நான் சைவ உணவு கேட்டேன்.",
+      "audioId": "phase3_l16_5_ex5"
+    },
+    {
+      "en": "I'm so sorry about the noise. It won't happen again.",
+      "ta": "சத்தத்திற்கு நான் மிகவும் வருந்துகிறேன். இது மீண்டும் நடக்காது.",
+      "audioId": "phase3_l16_5_ex6"
+    },
+    {
+      "en": "Excuse me, but I've been waiting for 30 minutes. When will my order be ready?",
+      "ta": "மன்னிக்கவும், ஆனால் நான் 30 நிமிடங்களாக காத்திருக்கிறேன். என் ஆர்டர் எப்போது தயாராகும்?",
+      "audioId": "phase3_l16_5_ex7"
+    },
+    {
+      "en": "Please accept my apologies for the delay. I'll make sure it doesn't happen again.",
+      "ta": "தாமதத்திற்கு என் மன்னிப்பை ஏற்றுக்கொள்ளுங்கள். இது மீண்டும் நடக்காமல் பார்த்துக்கொள்கிறேன்.",
+      "audioId": "phase3_l16_5_ex8"
+    },
+    {
+      "en": "I didn't realize this was your seat. I'm very sorry.",
+      "ta": "இது உங்கள் இருக்கை என்று எனக்கு தெரியவில்லை. நான் மிகவும் வருந்துகிறேன்.",
+      "audioId": "phase3_l16_5_ex9"
+    }
+  ],
+  "listeningQuestions": [
+    {
+      "audioText": "I'm afraid there's a problem with my room. The air conditioning isn't working.",
+      "options": [
+        "He's happy with his room.",
+        "He's complaining about the air conditioning.",
+        "He's fixing the air conditioning."
+      ],
+      "correctIndex": 1
+    },
+    {
+      "audioText": "I'm terribly sorry I forgot your birthday. I'll make it up to you.",
+      "options": [
+        "He remembered the birthday.",
+        "He's apologizing for forgetting a birthday.",
+        "He's celebrating a birthday."
+      ],
+      "correctIndex": 1
+    },
+    {
+      "audioText": "This isn't what I ordered. I asked for a medium pizza, not a large one.",
+      "options": [
+        "He got the correct order.",
+        "He's complaining about the wrong order.",
+        "He ordered a large pizza."
+      ],
+      "correctIndex": 1
+    }
+  ],
+  "speakSentences": [
+    {
+      "en": "I'm afraid there's a problem with [item/service]. [explain problem]",
+      "ta": "[பொருள்/சேவை] இல் ஒரு பிரச்சனை உள்ளது. [பிரச்சனையை விளக்குக]"
+    },
+    {
+      "en": "I'm terribly sorry [about/for] [situation]. [reason/explanation]",
+      "ta": "[சூழ்நிலை] க்கு நான் மிகவும் வருந்துகிறேன். [காரணம்/விளக்கம்]"
+    },
+    {
+      "en": "I'm not happy with [product/service]. [explain dissatisfaction]",
+      "ta": "[தயாரிப்பு/சேவை] இல் நான் திருப்தியடையவில்லை. [அதிருப்தியை விளக்குக]"
+    },
+    {
+      "en": "I apologize for [mistake/problem]. It won't happen again.",
+      "ta": "[தவறு/பிரச்சனை] க்கு நான் மன்னிப்பு கேட்கிறேன். இது மீண்டும் நடக்காது."
+    },
+    {
+      "en": "This isn't what I [ordered/expected]. I asked for [correct item].",
+      "ta": "இது நான் [ஆர்டர் செய்தது/எதிர்பார்த்தது] அல்ல. நான் [சரியான பொருள்] கேட்டேன்."
+    }
+  ],
+  "practiceQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "Complete: I'm afraid there's a ___ with my order.",
+      "promptTa": "நிரப்புக: என் ஆர்டரில் ஒரு ___ உள்ளது.",
+      "options": ["problem", "issue", "trouble"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Complete: I'm ___ sorry about that.",
+      "promptTa": "நிரப்புக: அதற்கு நான் ___ வருந்துகிறேன்.",
+      "options": ["very", "terribly", "much"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Complete: I apologize ___ the delay.",
+      "promptTa": "நிரப்புக: தாமதத்திற்கு நான் மன்னிப்பு ___.",
+      "options": ["for", "about", "of"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Complete: It won't ___ again.",
+      "promptTa": "நிரப்புக: இது மீண்டும் ___.",
+      "options": ["happen", "do", "make"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Complete: I'm not happy ___ the service.",
+      "promptTa": "நிரப்புக: சேவையில் நான் திருப்தியடையவில்லை ___.",
+      "options": ["with", "about", "for"],
+      "correctIndex": 0
+    }
+  ],
+  "masteryQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "Which is the most polite way to complain?",
+      "promptTa": "புகார் செய்ய மிகவும் கண்ணியமான வழி எது?",
+      "options": [
+        "This is wrong!",
+        "I'm afraid there's a problem with this.",
+        "You made a mistake."
+      ],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Complete: Please ___ my apologies.",
+      "promptTa": "நிரப்புக: தயவுசெய்து என் மன்னிப்பை ___.",
+      "options": ["accept", "take", "receive"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "What should you say after apologizing?",
+      "promptTa": "மன்னிப்பு கேட்டபின் என்ன சொல்ல வேண்டும்?",
+      "options": [
+        "Nothing more.",
+        "It won't happen again.",
+        "It's your fault too."
+      ],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Complete: This isn't ___ I ordered.",
+      "promptTa": "நிரப்புக: இது நான் ஆர்டர் செய்தது ___.",
+      "options": ["what", "that", "which"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Complete: There was a ___ on my part.",
+      "promptTa": "நிரப்புக: என் பக்கத்தில் ஒரு ___ இருந்தது.",
+      "options": ["mistake", "misunderstanding", "error"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which shows a sincere apology?",
+      "promptTa": "உண்மையான மன்னிப்பை காட்டுவது எது?",
+      "options": [
+        "Sorry.",
+        "I'm terribly sorry. I apologize for the inconvenience.",
+        "My bad."
+      ],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Complete: I didn't ___ this was your seat.",
+      "promptTa": "நிரப்புக: இது உங்கள் இருக்கை என்று எனக்கு ___.",
+      "options": ["know", "realize", "understand"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "How do you politely express dissatisfaction?",
+      "promptTa": "அதிருப்தியை கண்ணியமாக வெளிப்படுத்துவது எப்படி?",
+      "options": [
+        "This is bad!",
+        "I'm not happy with this. It's not what I expected.",
+        "I hate this."
+      ],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Complete: I'll make sure this doesn't ___.",
+      "promptTa": "நிரப்புக: இது ___ என்று நான் உறுதி செய்கிறேன்.",
+      "options": ["repeat", "happen again", "do again"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which is the best way to start a complaint?",
+      "promptTa": "புகார் தொடங்க சிறந்த வழி எது?",
+      "options": [
+        "You're wrong!",
+        "I'm afraid there's a problem. Could you help me?",
+        "This is terrible!"
+      ],
+      "correctIndex": 1
+    }
+  ]
+}

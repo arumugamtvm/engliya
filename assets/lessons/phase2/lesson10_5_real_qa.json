@@ -1,0 +1,63 @@
+{
+  "id": "phase2_lesson10_5",
+  "order": 5,
+  "unitId": "phase2_unit10",
+  "title": "Real Q&A Practice",
+  "description": "Practice questions and answers in conversation",
+  "level": "A2",
+  "explain": {
+    "ta": "இப்போது நாம் கற்றுக்கொண்ட அனைத்து கேள்வி வகைகளையும் உண்மையான உரையாடலில் பயன்படுத்துவோம். Be வினைச்சொல் கேள்விகள், Do/Does/Did கேள்விகள், மற்றும் WH கேள்விகள் அனைத்தையும் இணைத்து பயிற்சி செய்வோம். கேள்விகளுக்கு முழுமையான வாக்கியங்களில் பதிலளிக்க கற்றுக்கொள்வோம்.",
+    "en": "Now we will practice using all the question types we learned in real conversations. We will combine be-verb questions, do/does/did questions, and WH-questions. Learn to answer questions with complete sentences. Practice both asking and answering questions naturally."
+  },
+  "examples": [
+    {
+      "en": "Q: What is your name? A: My name is Ravi.",
+      "ta": "கே: உங்கள் பெயர் என்ன? ப: என் பெயர் ரவி.",
+      "audioId": "phase2_l10_5_ex1"
+    },
+    {
+      "en": "Q: Do you like movies? A: Yes, I do. I like action movies.",
+      "ta": "கே: உங்களுக்கு திரைப்படங்கள் பிடிக்குமா? ப: ஆம், பிடிக்கும். எனக்கு ஆக்ஷன் படங்கள் பிடிக்கும்.",
+      "audioId": "phase2_l10_5_ex2"
+    },
+    {
+      "en": "Q: Where did you go yesterday? A: I went to the market.",
+      "ta": "கே: நீங்கள் நேற்று எங்கே சென்றீர்கள்? ப: நான் சந்தைக்கு சென்றேன்.",
+      "audioId": "phase2_l10_5_ex3"
+    }
+  ],
+  "listeningQuestions": [],
+  "speakSentences": [],
+  "practiceQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "Q: ___ you a teacher? A: Yes, I am.",
+      "promptTa": "கே: நீங்கள் ஆசிரியரா? ப: ஆம், நான் ஆசிரியர்.",
+      "options": ["Do", "Does", "Are", "Is"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Q: ___ does she live? A: She lives in Chennai.",
+      "promptTa": "கே: அவள் எங்கே வசிக்கிறாள்? ப: அவள் சென்னையில் வசிக்கிறாள்.",
+      "options": ["What", "When", "Where", "Who"],
+      "correctIndex": 2
+    }
+  ],
+  "masteryQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "Q: ___ he play cricket? A: Yes, he does.",
+      "promptTa": "கே: அவர் கிரிக்கெட் விளையாடுகிறாரா? ப: ஆம், விளையாடுகிறார்.",
+      "options": ["Do", "Does", "Is", "Are"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Q: ___ did you eat for breakfast? A: I ate idli.",
+      "promptTa": "கே: நீங்கள் காலை உணவாக என்ன சாப்பிட்டீர்கள்? ப: நான் இட்லி சாப்பிட்டேன்.",
+      "options": ["What", "When", "Where", "Why"],
+      "correctIndex": 0
+    }
+  ]
+}

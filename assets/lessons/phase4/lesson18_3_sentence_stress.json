@@ -1,0 +1,228 @@
+{
+  "id": "phase4_lesson18_3",
+  "order": 3,
+  "unitId": "phase4_unit18",
+  "title": "Sentence Stress & Rhythm",
+  "description": "Learn sentence stress patterns for natural English rhythm",
+  "level": "B2",
+  "explain": {
+    "ta": "வாக்கிய அழுத்தம் (Sentence Stress) என்பது வாக்கியத்தில் முக்கியமான சொற்களை அழுத்தமாக உச்சரிப்பது. ஆங்கிலத்தில் உள்ளடக்க சொற்கள் (content words) - பெயர்ச்சொற்கள், வினைச்சொற்கள், பெயரடைகள், வினையடைகள் - அழுத்தம் பெறும். செயல்பாட்டு சொற்கள் (function words) - a, the, is, are, to, of - குறைவான அழுத்தம் பெறும். எடுத்துக்காட்டு: 'I WANT to GO to the SHOP' - WANT, GO, SHOP ஆகியவை அழுத்தம் பெறும்.",
+    "en": "Sentence stress is emphasizing important words in a sentence. In English, content words (nouns, main verbs, adjectives, adverbs) receive stress, while function words (a, the, is, are, to, of) are usually unstressed. For example: 'I WANT to GO to the SHOP' - WANT, GO, SHOP are stressed. This creates the natural rhythm of English speech. Mastering sentence stress helps you sound more fluent and natural.",
+    "table": [
+      {
+        "key": "Content Words (Stressed)",
+        "examples": ["Nouns: BOOK, HOUSE", "Main verbs: WANT, GO", "Adjectives: BIG, HAPPY", "Adverbs: QUICKLY, WELL"]
+      },
+      {
+        "key": "Function Words (Unstressed)",
+        "examples": ["Articles: a, the", "Prepositions: to, of, in", "Auxiliary verbs: is, are, was", "Pronouns: I, you, he, she"]
+      },
+      {
+        "key": "Example Sentences",
+        "examples": ["I WANT to GO HOME", "She BOUGHT a NEW CAR", "They're WORKING HARD TODAY", "He SPEAKS ENGLISH WELL"]
+      }
+    ]
+  },
+  "examples": [
+    {
+      "en": "I WANT to GO to the SHOP.",
+      "ta": "நான் கடைக்கு போக விரும்புகிறேன். (WANT, GO, SHOP அழுத்தம்)",
+      "audioId": "phase4_l18_3_ex1"
+    },
+    {
+      "en": "She BOUGHT a NEW CAR yesterday.",
+      "ta": "அவள் நேற்று ஒரு புதிய கார் வாங்கினாள். (BOUGHT, NEW, CAR அழுத்தம்)",
+      "audioId": "phase4_l18_3_ex2"
+    },
+    {
+      "en": "They're WORKING HARD on the PROJECT.",
+      "ta": "அவர்கள் திட்டத்தில் கடினமாக வேலை செய்கிறார்கள். (WORKING, HARD, PROJECT அழுத்தம்)",
+      "audioId": "phase4_l18_3_ex3"
+    },
+    {
+      "en": "He SPEAKS ENGLISH very WELL.",
+      "ta": "அவர் ஆங்கிலம் மிக நன்றாக பேசுகிறார். (SPEAKS, ENGLISH, WELL அழுத்தம்)",
+      "audioId": "phase4_l18_3_ex4"
+    },
+    {
+      "en": "The CHILDREN are PLAYING in the GARDEN.",
+      "ta": "குழந்தைகள் தோட்டத்தில் விளையாடுகிறார்கள். (CHILDREN, PLAYING, GARDEN அழுத்தம்)",
+      "audioId": "phase4_l18_3_ex5"
+    },
+    {
+      "en": "I NEED to FINISH this WORK TODAY.",
+      "ta": "இந்த வேலையை இன்று முடிக்க வேண்டும். (NEED, FINISH, WORK, TODAY அழுத்தம்)",
+      "audioId": "phase4_l18_3_ex6"
+    },
+    {
+      "en": "She's READING a BOOK in her ROOM.",
+      "ta": "அவள் தன் அறையில் ஒரு புத்தகம் படிக்கிறாள். (READING, BOOK, ROOM அழுத்தம்)",
+      "audioId": "phase4_l18_3_ex7"
+    },
+    {
+      "en": "We WENT to the BEACH LAST WEEKEND.",
+      "ta": "கடந்த வார இறுதியில் கடற்கரைக்கு சென்றோம். (WENT, BEACH, LAST, WEEKEND அழுத்தம்)",
+      "audioId": "phase4_l18_3_ex8"
+    }
+  ],
+  "listeningQuestions": [
+    {
+      "audioText": "I WANT to GO to the SHOP. The stressed words are WANT, GO, and SHOP.",
+      "options": [
+        "Stressed words: I, to, the",
+        "Stressed words: WANT, GO, SHOP",
+        "All words are equally stressed"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "audioText": "She BOUGHT a NEW CAR. The content words BOUGHT, NEW, and CAR are stressed.",
+      "options": [
+        "Stressed words: She, a",
+        "Stressed words: BOUGHT, NEW, CAR",
+        "Stressed words: a, CAR"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "audioText": "Function words like 'a', 'the', 'to', and 'is' are usually unstressed in English.",
+      "options": [
+        "Function words are always stressed",
+        "Function words are usually unstressed",
+        "Function words don't exist in English"
+      ],
+      "correctIndex": 1
+    }
+  ],
+  "speakSentences": [
+    {
+      "en": "I WANT to GO to the SHOP.",
+      "ta": "நான் கடைக்கு போக விரும்புகிறேன்."
+    },
+    {
+      "en": "She BOUGHT a NEW CAR yesterday.",
+      "ta": "அவள் நேற்று ஒரு புதிய கார் வாங்கினாள்."
+    },
+    {
+      "en": "They're WORKING HARD on the PROJECT.",
+      "ta": "அவர்கள் திட்டத்தில் கடினமாக வேலை செய்கிறார்கள்."
+    },
+    {
+      "en": "He SPEAKS ENGLISH very WELL.",
+      "ta": "அவர் ஆங்கிலம் மிக நன்றாக பேசுகிறார்."
+    },
+    {
+      "en": "The CHILDREN are PLAYING in the GARDEN.",
+      "ta": "குழந்தைகள் தோட்டத்தில் விளையாடுகிறார்கள்."
+    }
+  ],
+  "practiceQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "Which words are stressed in 'I WANT to GO HOME'?",
+      "promptTa": "'I WANT to GO HOME' இல் எந்த சொற்கள் அழுத்தம் பெறும்?",
+      "options": ["I, to", "WANT, GO, HOME", "All words"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which type of words are usually stressed?",
+      "promptTa": "எந்த வகை சொற்கள் வழக்கமாக அழுத்தம் பெறும்?",
+      "options": ["Function words", "Content words", "All words"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which is a function word?",
+      "promptTa": "எது செயல்பாட்டு சொல்?",
+      "options": ["BOOK", "the", "HAPPY"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which is a content word?",
+      "promptTa": "எது உள்ளடக்க சொல்?",
+      "options": ["a", "is", "TEACHER"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "In 'She BOUGHT a NEW CAR', which words are unstressed?",
+      "promptTa": "'She BOUGHT a NEW CAR' இல் எந்த சொற்கள் அழுத்தம் இல்லாமல் இருக்கும்?",
+      "options": ["BOUGHT, CAR", "She, a", "NEW, CAR"],
+      "correctIndex": 1
+    }
+  ],
+  "masteryQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "Which words are stressed in 'They're WORKING HARD TODAY'?",
+      "promptTa": "'They're WORKING HARD TODAY' இல் எந்த சொற்கள் அழுத்தம் பெறும்?",
+      "options": ["They're", "WORKING, HARD, TODAY", "All words"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which words are stressed in 'He SPEAKS ENGLISH WELL'?",
+      "promptTa": "'He SPEAKS ENGLISH WELL' இல் எந்த சொற்கள் அழுத்தம் பெறும்?",
+      "options": ["He", "SPEAKS, ENGLISH, WELL", "He, SPEAKS"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Nouns, main verbs, adjectives, and adverbs are called:",
+      "promptTa": "பெயர்ச்சொற்கள், முக்கிய வினைச்சொற்கள், பெயரடைகள், வினையடைகள் என்று அழைக்கப்படுவது:",
+      "options": ["Function words", "Content words", "Auxiliary words"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Articles, prepositions, and auxiliary verbs are called:",
+      "promptTa": "கட்டுரைகள், முன்னிடைச்சொற்கள், துணை வினைச்சொற்கள் என்று அழைக்கப்படுவது:",
+      "options": ["Content words", "Function words", "Main words"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which words are stressed in 'I NEED to FINISH the WORK'?",
+      "promptTa": "'I NEED to FINISH the WORK' இல் எந்த சொற்கள் அழுத்தம் பெறும்?",
+      "options": ["I, to, the", "NEED, FINISH, WORK", "All words"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which word is unstressed in 'She's READING a BOOK'?",
+      "promptTa": "'She's READING a BOOK' இல் எந்த சொல் அழுத்தம் இல்லாமல் இருக்கும்?",
+      "options": ["READING", "a", "BOOK"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Why is sentence stress important?",
+      "promptTa": "வாக்கிய அழுத்தம் ஏன் முக்கியம்?",
+      "options": ["It makes speech faster", "It creates natural English rhythm", "It makes all words equal"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which words are stressed in 'We WENT to the BEACH'?",
+      "promptTa": "'We WENT to the BEACH' இல் எந்த சொற்கள் அழுத்தம் பெறும்?",
+      "options": ["We, to, the", "WENT, BEACH", "All words"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "In 'The CHILDREN are PLAYING', which is a function word?",
+      "promptTa": "'The CHILDREN are PLAYING' இல் எது செயல்பாட்டு சொல்?",
+      "options": ["CHILDREN", "PLAYING", "The, are"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which words are stressed in 'I'm LEARNING ENGLISH QUICKLY'?",
+      "promptTa": "'I'm LEARNING ENGLISH QUICKLY' இல் எந்த சொற்கள் அழுத்தம் பெறும்?",
+      "options": ["I'm", "LEARNING, ENGLISH, QUICKLY", "All words"],
+      "correctIndex": 1
+    }
+  ]
+}

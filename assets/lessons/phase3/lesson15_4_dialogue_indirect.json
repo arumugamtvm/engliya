@@ -1,0 +1,229 @@
+{
+  "id": "phase3_lesson15_4",
+  "order": 4,
+  "unitId": "phase3_unit15",
+  "title": "Dialogue to Reported Speech",
+  "description": "Convert complete dialogues into reported speech",
+  "level": "B1",
+  "explain": {
+    "ta": "முழு உரையாடலையும் reported speech-க்கு மாற்றும்போது, ஒவ்வொரு வாக்கியத்தையும் தனித்தனியாக மாற்ற வேண்டும். Statements, questions, commands அனைத்தும் சரியான pattern-ல் மாற்ற வேண்டும். Pronouns மற்றும் time/place expressions மாறும். 'Here' → 'there', 'now' → 'then', 'today' → 'that day', 'tomorrow' → 'the next day'. Reporting verbs மாறும்: said, asked, told, replied, answered, explained. இது conversations-ஐ மூன்றாம் நபர் பார்வையில் விவரிக்க உதவுகிறது.",
+    "en": "When converting a complete dialogue to reported speech, each sentence must be transformed individually. Statements, questions, and commands all follow their respective patterns. Pronouns and time/place expressions change: 'here' → 'there', 'now' → 'then', 'today' → 'that day', 'tomorrow' → 'the next day'. Reporting verbs vary: said, asked, told, replied, answered, explained. This skill is essential for retelling conversations, writing reports, and narrating events from a third-person perspective.",
+    "table": [
+      {
+        "key": "Time Changes",
+        "examples": ["now → then", "today → that day", "tomorrow → the next day", "yesterday → the day before"]
+      },
+      {
+        "key": "Place Changes",
+        "examples": ["here → there", "this → that", "these → those", "come → go"]
+      },
+      {
+        "key": "Reporting Verbs",
+        "examples": ["said, told, asked", "replied, answered", "explained, mentioned", "suggested, advised"]
+      },
+      {
+        "key": "Pronoun Changes",
+        "examples": ["I → he/she", "you → I/we", "my → his/her", "your → my/our"]
+      }
+    ]
+  },
+  "examples": [
+    {
+      "en": "Direct: 'I am going home now.' Reported: She said she was going home then.",
+      "ta": "நேரடி: 'நான் இப்போது வீட்டுக்கு போகிறேன்.' மறைமுக: அவள் அப்போது வீட்டுக்கு போவதாக கூறினாள்.",
+      "audioId": "phase3_l15_4_ex1"
+    },
+    {
+      "en": "Direct: 'Where do you work?' Reported: He asked where I worked.",
+      "ta": "நேரடி: 'நீங்கள் எங்கே வேலை செய்கிறீர்கள்?' மறைமுக: அவர் நான் எங்கே வேலை செய்கிறேன் என்று கேட்டார்.",
+      "audioId": "phase3_l15_4_ex2"
+    },
+    {
+      "en": "Direct: 'I will call you tomorrow.' Reported: She said she would call me the next day.",
+      "ta": "நேரடி: 'நான் நாளை உங்களை அழைப்பேன்.' மறைமுக: அவள் அடுத்த நாள் என்னை அழைப்பாள் என்று கூறினாள்.",
+      "audioId": "phase3_l15_4_ex3"
+    },
+    {
+      "en": "Direct: 'Can you help me?' Reported: He asked if I could help him.",
+      "ta": "நேரடி: 'நீங்கள் எனக்கு உதவ முடியுமா?' மறைமுக: அவர் நான் அவருக்கு உதவ முடியுமா என்று கேட்டார்.",
+      "audioId": "phase3_l15_4_ex4"
+    },
+    {
+      "en": "Direct: 'I saw this movie yesterday.' Reported: She said she had seen that movie the day before.",
+      "ta": "நேரடி: 'நான் நேற்று இந்த படத்தை பார்த்தேன்.' மறைமுக: அவள் முந்தைய நாள் அந்த படத்தை பார்த்ததாக கூறினாள்.",
+      "audioId": "phase3_l15_4_ex5"
+    },
+    {
+      "en": "Direct: 'Please come here.' Reported: He asked me to go there.",
+      "ta": "நேரடி: 'தயவுசெய்து இங்கே வாருங்கள்.' மறைமுக: அவர் என்னிடம் அங்கே செல்ல கேட்டார்.",
+      "audioId": "phase3_l15_4_ex6"
+    },
+    {
+      "en": "Direct: 'I don't like this place.' Reported: She said she didn't like that place.",
+      "ta": "நேரடி: 'எனக்கு இந்த இடம் பிடிக்கவில்லை.' மறைமுக: அவளுக்கு அந்த இடம் பிடிக்கவில்லை என்று கூறினாள்.",
+      "audioId": "phase3_l15_4_ex7"
+    },
+    {
+      "en": "Direct: 'What are you doing?' Reported: He asked what I was doing.",
+      "ta": "நேரடி: 'நீங்கள் என்ன செய்கிறீர்கள்?' மறைமுக: அவர் நான் என்ன செய்கிறேன் என்று கேட்டார்.",
+      "audioId": "phase3_l15_4_ex8"
+    },
+    {
+      "en": "Direct: 'I have been here before.' Reported: She said she had been there before.",
+      "ta": "நேரடி: 'நான் முன்பு இங்கே வந்திருக்கிறேன்.' மறைமுக: அவள் முன்பு அங்கே வந்திருந்ததாக கூறினாள்.",
+      "audioId": "phase3_l15_4_ex9"
+    }
+  ],
+  "listeningQuestions": [
+    {
+      "audioText": "He said he would meet me there the next day.",
+      "options": [
+        "He said he would meet me there the next day.",
+        "He said he will meet me here tomorrow.",
+        "He said he would meet me here tomorrow."
+      ],
+      "correctIndex": 0
+    },
+    {
+      "audioText": "She asked if I had seen that movie before.",
+      "options": [
+        "She asked if I saw this movie before.",
+        "She asked if I had seen that movie before.",
+        "She asked if I have seen this movie before."
+      ],
+      "correctIndex": 1
+    },
+    {
+      "audioText": "They told us to wait there until they came back.",
+      "options": [
+        "They told us wait here until they come back.",
+        "They told us to wait here until they came back.",
+        "They told us to wait there until they came back."
+      ],
+      "correctIndex": 2
+    }
+  ],
+  "speakSentences": [
+    {
+      "en": "She said she was busy that day and couldn't come.",
+      "ta": "அவள் அன்று பிஸியாக இருந்ததால் வர முடியாது என்று கூறினாள்."
+    },
+    {
+      "en": "He asked where I had bought those shoes.",
+      "ta": "அவர் நான் அந்த காலணிகளை எங்கே வாங்கினேன் என்று கேட்டார்."
+    },
+    {
+      "en": "They told me to call them when I arrived there.",
+      "ta": "அவர்கள் என்னிடம் நான் அங்கே சென்றதும் அவர்களை அழைக்க சொன்னார்கள்."
+    }
+  ],
+  "practiceQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "Direct: 'I am here now.' Reported: She said she was ___ then.",
+      "promptTa": "நேரடி: 'நான் இப்போது இங்கே இருக்கிறேன்.' மறைமுக: அவள் அப்போது ___ இருந்ததாக கூறினாள்.",
+      "options": ["here", "there", "this"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Direct: 'I will come tomorrow.' Reported: He said he would come ___.",
+      "promptTa": "நேரடி: 'நான் நாளை வருவேன்.' மறைமுக: அவர் ___ வருவார் என்று கூறினார்.",
+      "options": ["tomorrow", "the next day", "that day"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Direct: 'I saw this yesterday.' Reported: She said she had seen ___ the day before.",
+      "promptTa": "நேரடி: 'நான் இதை நேற்று பார்த்தேன்.' மறைமுக: அவள் முந்தைய நாள் ___ பார்த்ததாக கூறினாள்.",
+      "options": ["this", "that", "these"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Direct: 'Come here.' Reported: He told me to go ___.",
+      "promptTa": "நேரடி: 'இங்கே வா.' மறைமுக: அவர் என்னிடம் ___ செல்ல சொன்னார்.",
+      "options": ["here", "there", "this"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Direct: 'I am working today.' Reported: She said she was working ___.",
+      "promptTa": "நேரடி: 'நான் இன்று வேலை செய்கிறேன்.' மறைமுக: அவள் ___ வேலை செய்வதாக கூறினாள்.",
+      "options": ["today", "that day", "this day"],
+      "correctIndex": 1
+    }
+  ],
+  "masteryQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "Dialogue: 'I live here.' → 'Where do you work?' Report: He said he lived ___ and I asked where he worked.",
+      "promptTa": "உரையாடல்: 'நான் இங்கே வசிக்கிறேன்.' → 'நீங்கள் எங்கே வேலை செய்கிறீர்கள்?' அறிக்கை: அவர் ___ வசித்ததாக கூறினார் மற்றும் நான் அவர் எங்கே வேலை செய்கிறார் என்று கேட்டேன்.",
+      "options": ["here", "there", "this place"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Direct: 'I will call you now.' Reported: She said she would call me ___.",
+      "promptTa": "நேரடி: 'நான் இப்போது உங்களை அழைப்பேன்.' மறைமுக: அவள் ___ என்னை அழைப்பாள் என்று கூறினாள்.",
+      "options": ["now", "then", "today"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Direct: 'I bought these yesterday.' Reported: He said he had bought ___ the day before.",
+      "promptTa": "நேரடி: 'நான் இவற்றை நேற்று வாங்கினேன்.' மறைமுக: அவர் முந்தைய நாள் ___ வாங்கியதாக கூறினார்.",
+      "options": ["these", "those", "this"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Direct: 'Wait here.' Reported: She told me to wait ___.",
+      "promptTa": "நேரடி: 'இங்கே காத்திரு.' மறைமுக: அவள் என்னிடம் ___ காத்திருக்க சொன்னாள்.",
+      "options": ["here", "there", "this place"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Direct: 'I am leaving today.' Reported: He said he was leaving ___.",
+      "promptTa": "நேரடி: 'நான் இன்று கிளம்புகிறேன்.' மறைமுக: அவர் ___ கிளம்புவதாக கூறினார்.",
+      "options": ["today", "that day", "this day"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Dialogue: 'Can you help me?' → 'Yes, I can.' Report: She asked if I could help ___ and I replied that I could.",
+      "promptTa": "உரையாடல்: 'நீங்கள் எனக்கு உதவ முடியுமா?' → 'ஆம், என்னால் முடியும்.' அறிக்கை: அவள் நான் ___ உதவ முடியுமா என்று கேட்டாள் மற்றும் நான் முடியும் என்று பதிலளித்தேன்.",
+      "options": ["me", "her", "him"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Direct: 'I saw you yesterday.' Reported: He said he had seen me ___.",
+      "promptTa": "நேரடி: 'நான் உங்களை நேற்று பார்த்தேன்.' மறைமுக: அவர் என்னை ___ பார்த்ததாக கூறினார்.",
+      "options": ["yesterday", "the day before", "that day"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Direct: 'Come to my house tomorrow.' Reported: She asked me to go to ___ house the next day.",
+      "promptTa": "நேரடி: 'நாளை என் வீட்டுக்கு வா.' மறைமுக: அவள் என்னிடம் அடுத்த நாள் ___ வீட்டுக்கு செல்ல கேட்டாள்.",
+      "options": ["my", "her", "his"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Direct: 'I am doing this now.' Reported: He said he was doing ___ then.",
+      "promptTa": "நேரடி: 'நான் இதை இப்போது செய்கிறேன்.' மறைமுக: அவர் ___ அப்போது செய்வதாக கூறினார்.",
+      "options": ["this", "that", "these"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Dialogue: 'Where are you going?' → 'I am going home.' Report: I asked where ___ was going and she replied that she was going home.",
+      "promptTa": "உரையாடல்: 'நீங்கள் எங்கே போகிறீர்கள்?' → 'நான் வீட்டுக்கு போகிறேன்.' அறிக்கை: நான் ___ எங்கே போகிறாள் என்று கேட்டேன் மற்றும் அவள் வீட்டுக்கு போவதாக பதிலளித்தாள்.",
+      "options": ["you", "she", "he"],
+      "correctIndex": 1
+    }
+  ]
+}

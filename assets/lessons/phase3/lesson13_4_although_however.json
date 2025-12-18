@@ -1,0 +1,225 @@
+{
+  "id": "phase3_lesson13_4",
+  "order": 4,
+  "unitId": "phase3_unit13",
+  "title": "Contrast: ALTHOUGH, HOWEVER, DESPITE",
+  "description": "Express contrast and unexpected results",
+  "level": "B1",
+  "explain": {
+    "ta": "எதிர்மறை அல்லது எதிர்பாராத விளைவுகளை வெளிப்படுத்த நாம் ALTHOUGH, HOWEVER, DESPITE போன்ற connectors பயன்படுத்துகிறோம். 'ALTHOUGH' ஒரு வாக்கியத்தில் எதிர்மறையை காட்டுகிறது (Although it rained, we went out - மழை பெய்தாலும், நாங்கள் வெளியே சென்றோம்). 'HOWEVER' இரண்டு தனி வாக்கியங்களை இணைக்கிறது (It rained. However, we went out - மழை பெய்தது. இருப்பினும், நாங்கள் வெளியே சென்றோம்). 'DESPITE' noun அல்லது -ing வடிவத்துடன் பயன்படுத்தப்படுகிறது (Despite the rain, we went out).",
+    "en": "We use contrast connectors like ALTHOUGH, HOWEVER, DESPITE to show unexpected or contrasting results. 'ALTHOUGH' introduces contrast within one sentence (Although it rained, we went out). 'HOWEVER' connects two separate sentences (It rained. However, we went out). 'DESPITE' is followed by a noun or -ing form (Despite the rain, we went out). These connectors make your communication more sophisticated and natural.",
+    "table": [
+      {
+        "key": "ALTHOUGH (one sentence)",
+        "examples": ["Although I was tired, I continued working.", "She passed although she didn't study much.", "Although it's expensive, I'll buy it."]
+      },
+      {
+        "key": "HOWEVER (two sentences)",
+        "examples": ["I was tired. However, I continued working.", "She didn't study much. However, she passed.", "It's expensive. However, I'll buy it."]
+      },
+      {
+        "key": "DESPITE (+ noun/-ing)",
+        "examples": ["Despite being tired, I continued working.", "Despite the difficulty, she passed.", "Despite the price, I'll buy it."]
+      }
+    ]
+  },
+  "examples": [
+    {
+      "en": "Although it rained, we went out.",
+      "ta": "மழை பெய்தாலும், நாங்கள் வெளியே சென்றோம்.",
+      "audioId": "phase3_l13_4_ex1"
+    },
+    {
+      "en": "It rained. However, we went out.",
+      "ta": "மழை பெய்தது. இருப்பினும், நாங்கள் வெளியே சென்றோம்.",
+      "audioId": "phase3_l13_4_ex2"
+    },
+    {
+      "en": "Despite the rain, we went out.",
+      "ta": "மழை இருந்தபோதிலும், நாங்கள் வெளியே சென்றோம்.",
+      "audioId": "phase3_l13_4_ex3"
+    },
+    {
+      "en": "Although he is rich, he is not happy.",
+      "ta": "அவர் பணக்காரர் என்றாலும், அவர் மகிழ்ச்சியாக இல்லை.",
+      "audioId": "phase3_l13_4_ex4"
+    },
+    {
+      "en": "He is rich. However, he is not happy.",
+      "ta": "அவர் பணக்காரர். இருப்பினும், அவர் மகிழ்ச்சியாக இல்லை.",
+      "audioId": "phase3_l13_4_ex5"
+    },
+    {
+      "en": "Despite being rich, he is not happy.",
+      "ta": "பணக்காரராக இருந்தாலும், அவர் மகிழ்ச்சியாக இல்லை.",
+      "audioId": "phase3_l13_4_ex6"
+    },
+    {
+      "en": "Although she studied hard, she failed.",
+      "ta": "அவள் கடினமாக படித்தாலும், தோல்வியடைந்தாள்.",
+      "audioId": "phase3_l13_4_ex7"
+    },
+    {
+      "en": "She studied hard. However, she failed.",
+      "ta": "அவள் கடினமாக படித்தாள். இருப்பினும், தோல்வியடைந்தாள்.",
+      "audioId": "phase3_l13_4_ex8"
+    },
+    {
+      "en": "Despite studying hard, she failed.",
+      "ta": "கடினமாக படித்தபோதிலும், அவள் தோல்வியடைந்தாள்.",
+      "audioId": "phase3_l13_4_ex9"
+    }
+  ],
+  "listeningQuestions": [
+    {
+      "audioText": "Although I was tired, I finished my work.",
+      "options": [
+        "Although I was tired, I finished my work.",
+        "Because I was tired, I finished my work.",
+        "When I was tired, I finished my work."
+      ],
+      "correctIndex": 0
+    },
+    {
+      "audioText": "The food was cold. However, it was delicious.",
+      "options": [
+        "The food was cold. Because it was delicious.",
+        "The food was cold. However, it was delicious.",
+        "The food was cold. So it was delicious."
+      ],
+      "correctIndex": 1
+    },
+    {
+      "audioText": "Despite the traffic, we arrived on time.",
+      "options": [
+        "Because of the traffic, we arrived on time.",
+        "Despite the traffic, we arrived on time.",
+        "During the traffic, we arrived on time."
+      ],
+      "correctIndex": 1
+    }
+  ],
+  "speakSentences": [
+    {
+      "en": "Although I don't like vegetables, I eat them for health.",
+      "ta": "எனக்கு காய்கறிகள் பிடிக்காவிட்டாலும், ஆரோக்கியத்திற்காக சாப்பிடுகிறேன்."
+    },
+    {
+      "en": "The exam was difficult. However, I passed.",
+      "ta": "தேர்வு கடினமாக இருந்தது. இருப்பினும், நான் தேர்ச்சி பெற்றேன்."
+    },
+    {
+      "en": "Despite being busy, I always make time for family.",
+      "ta": "பிஸியாக இருந்தாலும், குடும்பத்திற்கு எப்போதும் நேரம் ஒதுக்குகிறேன்."
+    }
+  ],
+  "practiceQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "___ it was late, we continued talking.",
+      "promptTa": "தாமதமானாலும், நாங்கள் பேசிக்கொண்டே இருந்தோம்.",
+      "options": ["Although", "Because", "When", "So"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "The movie was long. ___, it was interesting.",
+      "promptTa": "திரைப்படம் நீளமானது. ___, அது சுவாரஸ்யமாக இருந்தது.",
+      "options": ["Because", "However", "So", "And"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "___ the heat, we played cricket.",
+      "promptTa": "வெப்பம் இருந்தபோதிலும், நாங்கள் கிரிக்கெட் விளையாடினோம்.",
+      "options": ["Because", "Despite", "During", "After"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "___ he is old, he is very active.",
+      "promptTa": "அவர் வயதானவர் என்றாலும், மிகவும் சுறுசுறுப்பானவர்.",
+      "options": ["Although", "Because", "When", "So"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "I was nervous. ___, I gave a good speech.",
+      "promptTa": "நான் பதட்டமாக இருந்தேன். ___, நல்ல உரை நிகழ்த்தினேன்.",
+      "options": ["Because", "So", "However", "And"],
+      "correctIndex": 2
+    }
+  ],
+  "masteryQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "___ I don't like coffee, I drink it to stay awake.",
+      "promptTa": "எனக்கு காபி பிடிக்காவிட்டாலும், விழித்திருக்க குடிக்கிறேன்.",
+      "options": ["Although", "Because", "When", "So"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "The hotel was expensive. ___, the service was poor.",
+      "promptTa": "ஹோட்டல் விலை அதிகம். ___, சேவை மோசமாக இருந்தது.",
+      "options": ["Because", "So", "However", "And"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "___ the pain, he continued running.",
+      "promptTa": "வலி இருந்தபோதிலும், அவர் ஓடிக்கொண்டே இருந்தார்.",
+      "options": ["Because", "Despite", "During", "After"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "___ she is young, she is very mature.",
+      "promptTa": "அவள் இளமையானவள் என்றாலும், மிகவும் முதிர்ச்சியானவள்.",
+      "options": ["Although", "Because", "When", "So"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "I studied all night. ___, I didn't do well.",
+      "promptTa": "நான் இரவு முழுவதும் படித்தேன். ___, நன்றாக செய்யவில்லை.",
+      "options": ["Because", "So", "However", "And"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "___ the warnings, he went swimming.",
+      "promptTa": "எச்சரிக்கைகள் இருந்தபோதிலும், அவர் நீச்சல் அடித்தார்.",
+      "options": ["Because", "Despite", "During", "After"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "___ the weather was bad, we enjoyed the trip.",
+      "promptTa": "வானிலை மோசமாக இருந்தாலும், பயணத்தை ரசித்தோம்.",
+      "options": ["Although", "Because", "When", "So"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "The task was simple. ___, many people failed.",
+      "promptTa": "பணி எளிமையானது. ___, பலர் தோல்வியடைந்தனர்.",
+      "options": ["Because", "So", "However", "And"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "___ having no experience, she got the job.",
+      "promptTa": "அனுபவம் இல்லாதபோதிலும், அவளுக்கு வேலை கிடைத்தது.",
+      "options": ["Because", "Despite", "During", "After"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "___ I was scared, I watched the horror movie.",
+      "promptTa": "நான் பயந்தாலும், திகில் படம் பார்த்தேன்.",
+      "options": ["Although", "Because", "When", "So"],
+      "correctIndex": 0
+    }
+  ]
+}

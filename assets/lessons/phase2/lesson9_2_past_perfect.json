@@ -1,0 +1,63 @@
+{
+  "id": "phase2_lesson9_2",
+  "order": 2,
+  "unitId": "phase2_unit9",
+  "title": "Past Perfect",
+  "description": "had + past participle",
+  "level": "A2",
+  "explain": {
+    "ta": "Past Perfect Tense என்பது கடந்த காலத்தில் இரண்டு செயல்கள் நடந்தால், அதில் முதலில் நடந்த செயலை குறிக்க பயன்படுத்தப்படுகிறது. இதை உருவாக்க had + past participle (மூன்றாம் வடிவ வினைச்சொல்) பயன்படுத்துகிறோம். எல்லா subjects-க்கும் 'had' மட்டுமே பயன்படுத்துகிறோம். உதாரணம்: I had finished my work before he came. She had already left when I arrived.",
+    "en": "The Past Perfect Tense is used to describe an action that was completed before another action in the past. We form it using had + past participle (third form of the verb). Use 'had' with all subjects (I, you, he, she, it, we, they). Examples: I had finished my work before he came. She had already left when I arrived."
+  },
+  "examples": [
+    {
+      "en": "I had finished my work before he came.",
+      "ta": "அவன் வருவதற்கு முன் நான் என் வேலையை முடித்துவிட்டேன்.",
+      "audioId": "phase2_l9_2_ex1"
+    },
+    {
+      "en": "She had already eaten when I called her.",
+      "ta": "நான் அவளை அழைத்தபோது அவள் ஏற்கனவே சாப்பிட்டுவிட்டாள்.",
+      "audioId": "phase2_l9_2_ex2"
+    },
+    {
+      "en": "They had left before the rain started.",
+      "ta": "மழை தொடங்குவதற்கு முன் அவர்கள் சென்றுவிட்டார்கள்.",
+      "audioId": "phase2_l9_2_ex3"
+    }
+  ],
+  "listeningQuestions": [],
+  "speakSentences": [],
+  "practiceQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "I ___ finished my homework before dinner.",
+      "promptTa": "இரவு உணவுக்கு முன் நான் என் வீட்டுப்பாடத்தை முடித்துவிட்டேன்.",
+      "options": ["have", "has", "had", "was"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "She ___ already left when I arrived.",
+      "promptTa": "நான் வந்தபோது அவள் ஏற்கனவே சென்றுவிட்டாள்.",
+      "options": ["have", "has", "had", "was"],
+      "correctIndex": 2
+    }
+  ],
+  "masteryQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "They ___ studied English before they moved to America.",
+      "promptTa": "அவர்கள் அமெரிக்காவுக்கு செல்வதற்கு முன் ஆங்கிலம் படித்திருந்தார்கள்.",
+      "options": ["have", "has", "had", "were"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "He ___ never seen snow before he visited Kashmir.",
+      "promptTa": "அவன் காஷ்மீருக்கு செல்வதற்கு முன் பனியை பார்த்ததே இல்லை.",
+      "options": ["have", "has", "had", "was"],
+      "correctIndex": 2
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "id": "phase2_lesson9_3",
+  "order": 3,
+  "unitId": "phase2_unit9",
+  "title": "Future Perfect",
+  "description": "will have + past participle",
+  "level": "A2",
+  "explain": {
+    "ta": "Future Perfect Tense என்பது எதிர்காலத்தில் ஒரு குறிப்பிட்ட நேரத்திற்கு முன் முடிந்திருக்கும் செயலை குறிக்க பயன்படுத்தப்படுகிறது. இதை உருவாக்க will have + past participle (மூன்றாம் வடிவ வினைச்சொல்) பயன்படுத்துகிறோம். எல்லா subjects-க்கும் 'will have' பயன்படுத்துகிறோம். உதாரணம்: I will have finished my work by 5 pm. She will have completed the course by next month.",
+    "en": "The Future Perfect Tense is used to describe an action that will be completed before a specific time in the future. We form it using will have + past participle (third form of the verb). Use 'will have' with all subjects (I, you, he, she, it, we, they). Examples: I will have finished my work by 5 pm. She will have completed the course by next month."
+  },
+  "examples": [
+    {
+      "en": "I will have finished my work by 5 pm.",
+      "ta": "நான் மாலை 5 மணிக்குள் என் வேலையை முடித்திருப்பேன்.",
+      "audioId": "phase2_l9_3_ex1"
+    },
+    {
+      "en": "She will have completed the course by next month.",
+      "ta": "அவள் அடுத்த மாதத்திற்குள் பாடத்தை முடித்திருப்பாள்.",
+      "audioId": "phase2_l9_3_ex2"
+    },
+    {
+      "en": "They will have left before we arrive.",
+      "ta": "நாம் வருவதற்கு முன் அவர்கள் சென்றிருப்பார்கள்.",
+      "audioId": "phase2_l9_3_ex3"
+    }
+  ],
+  "listeningQuestions": [],
+  "speakSentences": [],
+  "practiceQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "I ___ finished my homework by 8 pm.",
+      "promptTa": "நான் இரவு 8 மணிக்குள் என் வீட்டுப்பாடத்தை முடித்திருப்பேன்.",
+      "options": ["will have", "will has", "have will", "has will"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "She ___ graduated by next year.",
+      "promptTa": "அவள் அடுத்த வருடத்திற்குள் பட்டம் பெற்றிருப்பாள்.",
+      "options": ["will have", "will has", "have will", "has will"],
+      "correctIndex": 0
+    }
+  ],
+  "masteryQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "They ___ completed the project by Friday.",
+      "promptTa": "அவர்கள் வெள்ளிக்கிழமைக்குள் திட்டத்தை முடித்திருப்பார்கள்.",
+      "options": ["will have", "will has", "have will", "has will"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "He ___ learned 1000 words by the end of this month.",
+      "promptTa": "அவன் இந்த மாத இறுதிக்குள் 1000 வார்த்தைகளை கற்றிருப்பான்.",
+      "options": ["will have", "will has", "have will", "has will"],
+      "correctIndex": 0
+    }
+  ]
+}

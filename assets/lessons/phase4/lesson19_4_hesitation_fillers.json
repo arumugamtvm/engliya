@@ -1,0 +1,232 @@
+{
+  "id": "phase4_lesson19_4",
+  "order": 4,
+  "unitId": "phase4_unit19",
+  "title": "Handling Hesitation & Fillers",
+  "description": "Learn to reduce filler words and handle pauses naturally",
+  "level": "B2",
+  "explain": {
+    "ta": "நிரப்பி சொற்கள் (Fillers) என்பது 'um', 'uh', 'like', 'you know' போன்ற சொற்கள். இவை அதிகமாக பயன்படுத்தினால் பேச்சு தெளிவாக இருக்காது. இவற்றை குறைக்க: 1) மெதுவாக பேசுங்கள். 2) இடைநிறுத்தம் எடுங்கள் - அது சரி. 3) 'Let me think' அல்லது 'That's a good question' போன்ற சிறந்த மாற்றுகளைப் பயன்படுத்துங்கள். 4) உங்கள் பேச்சை பதிவு செய்து கேளுங்கள்.",
+    "en": "Fillers are words like 'um', 'uh', 'like', 'you know'. Using too many makes speech unclear. To reduce them: 1) Speak more slowly. 2) Take pauses - it's okay to pause. 3) Use better alternatives like 'Let me think' or 'That's a good question'. 4) Record yourself and listen. A short pause is better than filling with 'um'. Practice being comfortable with brief silences.",
+    "table": [
+      {
+        "key": "Common Fillers (Avoid)",
+        "examples": ["um...", "uh...", "like...", "you know...", "basically...", "actually..."]
+      },
+      {
+        "key": "Better Alternatives",
+        "examples": ["Let me think...", "That's a good question...", "Well...", "I mean..."]
+      },
+      {
+        "key": "Buying Time Phrases",
+        "examples": ["Give me a moment...", "Let me see...", "How should I put this...", "That's interesting..."]
+      },
+      {
+        "key": "Tips to Reduce Fillers",
+        "examples": ["Speak slowly", "Pause instead of filling", "Practice regularly", "Record and review"]
+      }
+    ]
+  },
+  "examples": [
+    {
+      "en": "Instead of 'Um... I think...', say 'Let me think... I believe...'",
+      "ta": "'Um... நான் நினைக்கிறேன்...' என்பதற்கு பதிலாக 'சிந்திக்கிறேன்... நான் நம்புகிறேன்...' என்று சொல்லுங்கள்",
+      "audioId": "phase4_l19_4_ex1"
+    },
+    {
+      "en": "Instead of 'Uh... the answer is...', say 'The answer is...' with a pause.",
+      "ta": "'Uh... பதில்...' என்பதற்கு பதிலாக இடைநிறுத்தத்துடன் 'பதில்...' என்று சொல்லுங்கள்",
+      "audioId": "phase4_l19_4_ex2"
+    },
+    {
+      "en": "Instead of 'Like, I went to the store, like, yesterday', say 'I went to the store yesterday'.",
+      "ta": "'Like, நான் கடைக்கு போனேன், like, நேற்று' என்பதற்கு பதிலாக 'நான் நேற்று கடைக்கு போனேன்' என்று சொல்லுங்கள்",
+      "audioId": "phase4_l19_4_ex3"
+    },
+    {
+      "en": "When asked a difficult question, say 'That's a good question. Let me think about it.'",
+      "ta": "கடினமான கேள்வி கேட்கப்படும்போது, 'அது நல்ல கேள்வி. சிந்திக்கிறேன்' என்று சொல்லுங்கள்",
+      "audioId": "phase4_l19_4_ex4"
+    },
+    {
+      "en": "Instead of 'You know, I was, you know, thinking...', say 'I was thinking...'",
+      "ta": "'You know, நான், you know, நினைத்துக்கொண்டிருந்தேன்...' என்பதற்கு பதிலாக 'நான் நினைத்துக்கொண்டிருந்தேன்...' என்று சொல்லுங்கள்",
+      "audioId": "phase4_l19_4_ex5"
+    },
+    {
+      "en": "A short pause is better than saying 'um' or 'uh'.",
+      "ta": "'um' அல்லது 'uh' சொல்வதை விட குறுகிய இடைநிறுத்தம் சிறந்தது.",
+      "audioId": "phase4_l19_4_ex6"
+    },
+    {
+      "en": "When you need time, say 'Give me a moment to think about that.'",
+      "ta": "உங்களுக்கு நேரம் தேவைப்படும்போது, 'அதைப் பற்றி சிந்திக்க ஒரு கணம் கொடுங்கள்' என்று சொல்லுங்கள்",
+      "audioId": "phase4_l19_4_ex7"
+    },
+    {
+      "en": "Practice speaking slowly and clearly without fillers.",
+      "ta": "நிரப்பிகள் இல்லாமல் மெதுவாகவும் தெளிவாகவும் பேசுவதை பயிற்சி செய்யுங்கள்.",
+      "audioId": "phase4_l19_4_ex8"
+    }
+  ],
+  "listeningQuestions": [
+    {
+      "audioText": "Instead of saying 'um' or 'uh', it's better to take a short pause.",
+      "options": [
+        "Always say 'um' when thinking",
+        "A short pause is better than fillers",
+        "Speak faster to avoid pauses"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "audioText": "'Let me think' and 'That's a good question' are better alternatives to fillers.",
+      "options": [
+        "These are also fillers",
+        "These are better alternatives to fillers",
+        "Never use these phrases"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "audioText": "Recording yourself and listening helps identify filler words you use.",
+      "options": [
+        "Recording doesn't help",
+        "Recording helps identify fillers",
+        "Only listen to others"
+      ],
+      "correctIndex": 1
+    }
+  ],
+  "speakSentences": [
+    {
+      "en": "Let me think about that for a moment.",
+      "ta": "அதைப் பற்றி ஒரு கணம் சிந்திக்கிறேன்."
+    },
+    {
+      "en": "That's a good question. I believe the answer is...",
+      "ta": "அது நல்ல கேள்வி. பதில் என்னவென்றால்..."
+    },
+    {
+      "en": "Well, I think we should consider all options.",
+      "ta": "சரி, நாம் அனைத்து விருப்பங்களையும் பரிசீலிக்க வேண்டும் என்று நினைக்கிறேன்."
+    },
+    {
+      "en": "Give me a moment to organize my thoughts.",
+      "ta": "என் எண்ணங்களை ஒழுங்கமைக்க ஒரு கணம் கொடுங்கள்."
+    },
+    {
+      "en": "I went to the store yesterday and bought some groceries.",
+      "ta": "நான் நேற்று கடைக்கு போய் சில மளிகை பொருட்கள் வாங்கினேன்."
+    }
+  ],
+  "practiceQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "Which is a filler word?",
+      "promptTa": "எது நிரப்பி சொல்?",
+      "options": ["because", "um", "however"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "What is a better alternative to 'um'?",
+      "promptTa": "'um' க்கு சிறந்த மாற்று என்ன?",
+      "options": ["uh", "Let me think", "like"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "What should you do instead of saying 'uh'?",
+      "promptTa": "'uh' சொல்வதற்கு பதிலாக என்ன செய்ய வேண்டும்?",
+      "options": ["Say 'um' instead", "Take a short pause", "Speak faster"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which is NOT a filler word?",
+      "promptTa": "எது நிரப்பி சொல் அல்ல?",
+      "options": ["um", "like", "because"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "How can you reduce filler words?",
+      "promptTa": "நிரப்பி சொற்களை எப்படி குறைக்கலாம்?",
+      "options": ["Speak faster", "Speak slowly and pause", "Use more fillers"],
+      "correctIndex": 1
+    }
+  ],
+  "masteryQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "Which sentence has no fillers?",
+      "promptTa": "எந்த வாக்கியத்தில் நிரப்பிகள் இல்லை?",
+      "options": ["Um, I think, uh, we should go.", "I think we should go.", "Like, I think, you know, we should go."],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "What is a good phrase when you need time to think?",
+      "promptTa": "சிந்திக்க நேரம் தேவைப்படும்போது நல்ல சொற்றொடர் என்ன?",
+      "options": ["Um...", "That's a good question", "Uh..."],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which is better: 'Um... the answer is five' or 'The answer is five'?",
+      "promptTa": "எது சிறந்தது: 'Um... பதில் ஐந்து' அல்லது 'பதில் ஐந்து'?",
+      "options": ["Um... the answer is five", "The answer is five", "Both are equally good"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Why should you record yourself speaking?",
+      "promptTa": "உங்கள் பேச்சை ஏன் பதிவு செய்ய வேண்டும்?",
+      "options": ["To share with friends", "To identify filler words", "To speak faster"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which is a 'buying time' phrase?",
+      "promptTa": "எது 'நேரம் வாங்கும்' சொற்றொடர்?",
+      "options": ["um", "Give me a moment", "uh"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "What makes speech unclear?",
+      "promptTa": "பேச்சை தெளிவற்றதாக்குவது என்ன?",
+      "options": ["Pausing", "Too many filler words", "Speaking slowly"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which is better than saying 'you know' repeatedly?",
+      "promptTa": "'you know' மீண்டும் மீண்டும் சொல்வதை விட எது சிறந்தது?",
+      "options": ["Saying 'like' instead", "Speaking clearly without fillers", "Saying 'basically'"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "What should you do when asked a difficult question?",
+      "promptTa": "கடினமான கேள்வி கேட்கப்படும்போது என்ன செய்ய வேண்டும்?",
+      "options": ["Say 'um' many times", "Say 'That's a good question. Let me think.'", "Speak very fast"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "A short pause is:",
+      "promptTa": "குறுகிய இடைநிறுத்தம்:",
+      "options": ["Bad for speaking", "Better than fillers", "The same as fillers"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which tip helps reduce fillers?",
+      "promptTa": "எந்த குறிப்பு நிரப்பிகளை குறைக்க உதவும்?",
+      "options": ["Speak as fast as possible", "Practice speaking slowly", "Use more 'um' and 'uh'"],
+      "correctIndex": 1
+    }
+  ]
+}

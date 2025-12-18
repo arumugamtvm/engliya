@@ -1,0 +1,236 @@
+{
+  "id": "phase4_lesson18_4",
+  "order": 4,
+  "unitId": "phase4_unit18",
+  "title": "Common Pronunciation Problems",
+  "description": "Address common pronunciation issues for Tamil speakers",
+  "level": "B2",
+  "explain": {
+    "ta": "தமிழ் பேசுபவர்களுக்கு சில ஆங்கில ஒலிகள் கடினமாக இருக்கும். முக்கிய சிக்கல்கள்: 1) /w/ vs /v/ - 'water' vs 'vater' (தவறு). 2) ஆரம்ப மெய்யெழுத்து கூட்டங்கள் - 'school' ஐ 'ischool' என்று சொல்வது. 3) /θ/ மற்றும் /ð/ ஒலிகள் - 'think' மற்றும் 'this'. 4) /ʃ/ vs /s/ - 'ship' vs 'sip'. இந்த ஒலிகளை பயிற்சி செய்வது உங்கள் உச்சரிப்பை மேம்படுத்தும்.",
+    "en": "Tamil speakers often face specific pronunciation challenges in English. Key issues include: 1) /w/ vs /v/ - saying 'vater' instead of 'water'. 2) Initial consonant clusters - adding a vowel before words like 'school' (saying 'ischool'). 3) /θ/ and /ð/ sounds - 'think' and 'this' are difficult. 4) /ʃ/ vs /s/ - distinguishing 'ship' from 'sip'. Practicing these sounds will significantly improve your pronunciation.",
+    "table": [
+      {
+        "key": "/w/ vs /v/",
+        "examples": ["water (not vater)", "well (not vell)", "west (not vest)", "wine (not vine)"]
+      },
+      {
+        "key": "Initial Consonant Clusters",
+        "examples": ["school (not ischool)", "speak (not ispeak)", "stop (not istop)", "street (not istreet)"]
+      },
+      {
+        "key": "/θ/ (th as in 'think')",
+        "examples": ["think (not tink)", "three (not tree)", "thank (not tank)", "Thursday (not Tursday)"]
+      },
+      {
+        "key": "/ð/ (th as in 'this')",
+        "examples": ["this (not dis)", "that (not dat)", "the (not de)", "mother (not moder)"]
+      },
+      {
+        "key": "/ʃ/ vs /s/",
+        "examples": ["ship vs sip", "she vs see", "shop vs sop", "show vs so"]
+      }
+    ]
+  },
+  "examples": [
+    {
+      "en": "Say 'water' with /w/, not 'vater' with /v/.",
+      "ta": "'water' ஐ /w/ உடன் சொல்லுங்கள், /v/ உடன் 'vater' அல்ல.",
+      "audioId": "phase4_l18_4_ex1"
+    },
+    {
+      "en": "Say 'school' directly, not 'ischool' with an extra vowel.",
+      "ta": "'school' ஐ நேரடியாக சொல்லுங்கள், கூடுதல் உயிரெழுத்துடன் 'ischool' அல்ல.",
+      "audioId": "phase4_l18_4_ex2"
+    },
+    {
+      "en": "Say 'think' with /θ/, not 'tink' with /t/.",
+      "ta": "'think' ஐ /θ/ உடன் சொல்லுங்கள், /t/ உடன் 'tink' அல்ல.",
+      "audioId": "phase4_l18_4_ex3"
+    },
+    {
+      "en": "Say 'this' with /ð/, not 'dis' with /d/.",
+      "ta": "'this' ஐ /ð/ உடன் சொல்லுங்கள், /d/ உடன் 'dis' அல்ல.",
+      "audioId": "phase4_l18_4_ex4"
+    },
+    {
+      "en": "'Ship' and 'sip' are different: ship /ʃɪp/ vs sip /sɪp/.",
+      "ta": "'Ship' மற்றும் 'sip' வேறுபட்டவை: ship /ʃɪp/ vs sip /sɪp/.",
+      "audioId": "phase4_l18_4_ex5"
+    },
+    {
+      "en": "Say 'speak' directly, not 'ispeak'.",
+      "ta": "'speak' ஐ நேரடியாக சொல்லுங்கள், 'ispeak' அல்ல.",
+      "audioId": "phase4_l18_4_ex6"
+    },
+    {
+      "en": "Say 'three' with /θ/, not 'tree' with /t/.",
+      "ta": "'three' ஐ /θ/ உடன் சொல்லுங்கள், /t/ உடன் 'tree' அல்ல.",
+      "audioId": "phase4_l18_4_ex7"
+    },
+    {
+      "en": "Say 'well' with /w/, not 'vell' with /v/.",
+      "ta": "'well' ஐ /w/ உடன் சொல்லுங்கள், /v/ உடன் 'vell' அல்ல.",
+      "audioId": "phase4_l18_4_ex8"
+    }
+  ],
+  "listeningQuestions": [
+    {
+      "audioText": "The correct pronunciation is 'water' with /w/, not 'vater' with /v/.",
+      "options": [
+        "'vater' is correct",
+        "'water' with /w/ is correct",
+        "Both are correct"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "audioText": "Say 'school' directly without adding a vowel at the beginning.",
+      "options": [
+        "Say 'ischool'",
+        "Say 'school' directly",
+        "Say 'eschool'"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "audioText": "The word 'think' uses the /θ/ sound, which is different from /t/.",
+      "options": [
+        "'think' uses /t/ sound",
+        "'think' uses /θ/ sound",
+        "'think' uses /d/ sound"
+      ],
+      "correctIndex": 1
+    }
+  ],
+  "speakSentences": [
+    {
+      "en": "Water, well, west, wine - all start with /w/.",
+      "ta": "Water, well, west, wine - அனைத்தும் /w/ உடன் தொடங்கும்."
+    },
+    {
+      "en": "School, speak, stop, street - no extra vowel at the start.",
+      "ta": "School, speak, stop, street - தொடக்கத்தில் கூடுதல் உயிரெழுத்து இல்லை."
+    },
+    {
+      "en": "Think, three, thank, Thursday - use the /θ/ sound.",
+      "ta": "Think, three, thank, Thursday - /θ/ ஒலியைப் பயன்படுத்துங்கள்."
+    },
+    {
+      "en": "This, that, the, mother - use the /ð/ sound.",
+      "ta": "This, that, the, mother - /ð/ ஒலியைப் பயன்படுத்துங்கள்."
+    },
+    {
+      "en": "Ship is different from sip. She is different from see.",
+      "ta": "Ship என்பது sip இலிருந்து வேறுபட்டது. She என்பது see இலிருந்து வேறுபட்டது."
+    }
+  ],
+  "practiceQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "What is the correct pronunciation of 'water'?",
+      "promptTa": "'water' இன் சரியான உச்சரிப்பு என்ன?",
+      "options": ["vater", "water with /w/", "watter"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "How should you say 'school'?",
+      "promptTa": "'school' ஐ எப்படி சொல்ல வேண்டும்?",
+      "options": ["ischool", "eschool", "school (directly)"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "What sound does 'think' start with?",
+      "promptTa": "'think' எந்த ஒலியுடன் தொடங்குகிறது?",
+      "options": ["/t/", "/θ/", "/d/"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "What sound does 'this' start with?",
+      "promptTa": "'this' எந்த ஒலியுடன் தொடங்குகிறது?",
+      "options": ["/d/", "/t/", "/ð/"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "'Ship' and 'sip' are:",
+      "promptTa": "'Ship' மற்றும் 'sip':",
+      "options": ["The same word", "Different words with different sounds", "Spelled the same"],
+      "correctIndex": 1
+    }
+  ],
+  "masteryQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "Which is the correct pronunciation?",
+      "promptTa": "எது சரியான உச்சரிப்பு?",
+      "options": ["vell", "well with /w/", "Both are correct"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which is the correct pronunciation?",
+      "promptTa": "எது சரியான உச்சரிப்பு?",
+      "options": ["ispeak", "speak (directly)", "espeak"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which word uses the /θ/ sound?",
+      "promptTa": "எந்த சொல் /θ/ ஒலியைப் பயன்படுத்துகிறது?",
+      "options": ["tree", "three", "tea"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which word uses the /ð/ sound?",
+      "promptTa": "எந்த சொல் /ð/ ஒலியைப் பயன்படுத்துகிறது?",
+      "options": ["day", "the", "tea"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "What is a common mistake Tamil speakers make with 'water'?",
+      "promptTa": "தமிழ் பேசுபவர்கள் 'water' உடன் செய்யும் பொதுவான தவறு என்ன?",
+      "options": ["Saying 'vater' with /v/", "Saying it too fast", "Adding extra syllables"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "What is a common mistake with words like 'school'?",
+      "promptTa": "'school' போன்ற சொற்களுடன் பொதுவான தவறு என்ன?",
+      "options": ["Saying it too slowly", "Adding a vowel at the start", "Removing letters"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which pair shows the /ʃ/ vs /s/ difference?",
+      "promptTa": "எந்த ஜோடி /ʃ/ vs /s/ வேறுபாட்டைக் காட்டுகிறது?",
+      "options": ["think vs this", "ship vs sip", "water vs vater"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "How should you pronounce 'street'?",
+      "promptTa": "'street' ஐ எப்படி உச்சரிக்க வேண்டும்?",
+      "options": ["istreet", "estreet", "street (directly)"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which is correct: 'tank you' or 'thank you'?",
+      "promptTa": "எது சரி: 'tank you' அல்லது 'thank you'?",
+      "options": ["tank you", "thank you with /θ/", "Both are correct"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which is correct: 'dis' or 'this'?",
+      "promptTa": "எது சரி: 'dis' அல்லது 'this'?",
+      "options": ["dis", "this with /ð/", "Both are correct"],
+      "correctIndex": 1
+    }
+  ]
+}

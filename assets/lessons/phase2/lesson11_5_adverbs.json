@@ -1,0 +1,63 @@
+{
+  "id": "phase2_lesson11_5",
+  "order": 5,
+  "unitId": "phase2_unit11",
+  "title": "Common Adverbs",
+  "description": "slowly / quickly / carefully / always / often",
+  "level": "A2",
+  "explain": {
+    "ta": "Adverbs என்பது வினைச்சொற்களை, adjectives அல்லது மற்ற adverbs-ஐ விவரிக்கும் சொற்கள். இவை எப்படி, எப்போது, எவ்வளவு என்பதைக் குறிக்கும். Slowly (மெதுவாக), quickly (விரைவாக), carefully (கவனமாக), always (எப்போதும்), often (அடிக்கடி) போன்றவை பொதுவான adverbs. உதாரணம்: 'He walks slowly' (அவன் மெதுவாக நடக்கிறான்).",
+    "en": "Adverbs are words that describe verbs, adjectives, or other adverbs. They tell us how, when, or how much. Slowly, quickly, carefully, always, and often are common adverbs. Example: 'He walks slowly' (describes how he walks), 'She always smiles' (describes when she smiles)."
+  },
+  "examples": [
+    {
+      "en": "She speaks English slowly.",
+      "ta": "அவள் ஆங்கிலம் மெதுவாக பேசுகிறாள்.",
+      "audioId": "phase2_l11_5_ex1"
+    },
+    {
+      "en": "He always comes on time.",
+      "ta": "அவன் எப்போதும் சரியான நேரத்தில் வருகிறான்.",
+      "audioId": "phase2_l11_5_ex2"
+    },
+    {
+      "en": "They often visit their grandparents.",
+      "ta": "அவர்கள் அடிக்கடி தங்கள் தாத்தா பாட்டியை சந்திக்கிறார்கள்.",
+      "audioId": "phase2_l11_5_ex3"
+    }
+  ],
+  "listeningQuestions": [],
+  "speakSentences": [],
+  "practiceQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "Please drive ___.",
+      "promptTa": "தயவுசெய்து கவனமாக ஓட்டுங்கள்.",
+      "options": ["slowly", "quickly", "carefully", "often"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "She ___ goes to the gym.",
+      "promptTa": "அவள் அடிக்கடி ஜிம்மிற்கு செல்கிறாள்.",
+      "options": ["slowly", "quickly", "carefully", "often"],
+      "correctIndex": 3
+    }
+  ],
+  "masteryQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "He finished his work ___.",
+      "promptTa": "அவன் தன் வேலையை விரைவாக முடித்தான்.",
+      "options": ["slowly", "quickly", "carefully", "always"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "I ___ brush my teeth in the morning.",
+      "promptTa": "நான் எப்போதும் காலையில் பல் துலக்குகிறேன்.",
+      "options": ["slowly", "quickly", "often", "always"],
+      "correctIndex": 3
+    }
+  ]
+}

@@ -1,0 +1,294 @@
+{
+  "id": "phase1_lesson4",
+  "order": 4,
+  "unitId": "phase1",
+  "title": "Object Pronouns",
+  "description": "me, you, him, her, it, us, them",
+  "level": "A1",
+  "explain": {
+    "ta": "Object pronouns என்பது வினைக்குப் பின் வரும் பிரதிபெயர்கள். Subject pronouns வாக்கியத்தின் தொடக்கத்தில் வரும், ஆனால் object pronouns வினைச்சொல்லுக்குப் பின் வரும். உதாரணமாக, 'I' என்பது subject pronoun, ஆனால் 'me' என்பது object pronoun. 'She likes me' என்ற வாக்கியத்தில், 'She' subject-ம், 'me' object-ம் ஆகும்.",
+    "en": "Object pronouns are pronouns that come after verbs and receive the action. While subject pronouns perform the action, object pronouns receive it. For example, 'I' is a subject pronoun, but 'me' is an object pronoun. In 'She likes me', 'She' is the subject and 'me' is the object receiving the action of liking.",
+    "table": [
+      {
+        "pronoun": "me",
+        "descriptionEn": "Object form of 'I'",
+        "descriptionTa": "'நான்' என்பதன் object வடிவம் - என்னை"
+      },
+      {
+        "pronoun": "you",
+        "descriptionEn": "Object form of 'you' (same as subject)",
+        "descriptionTa": "'நீ/நீங்கள்' - உன்னை/உங்களை"
+      },
+      {
+        "pronoun": "him",
+        "descriptionEn": "Object form of 'he'",
+        "descriptionTa": "'அவன்/அவர்' என்பதன் object வடிவம் - அவனை/அவரை"
+      },
+      {
+        "pronoun": "her",
+        "descriptionEn": "Object form of 'she'",
+        "descriptionTa": "'அவள்/அவர்' என்பதன் object வடிவம் - அவளை/அவரை"
+      },
+      {
+        "pronoun": "it",
+        "descriptionEn": "Object form of 'it' (same as subject)",
+        "descriptionTa": "'அது' - அதை"
+      },
+      {
+        "pronoun": "us",
+        "descriptionEn": "Object form of 'we'",
+        "descriptionTa": "'நாம்/நாங்கள்' என்பதன் object வடிவம் - நம்மை/எங்களை"
+      },
+      {
+        "pronoun": "them",
+        "descriptionEn": "Object form of 'they'",
+        "descriptionTa": "'அவர்கள்' என்பதன் object வடிவம் - அவர்களை"
+      }
+    ]
+  },
+  "examples": [
+    {
+      "en": "She likes me.",
+      "ta": "அவள் என்னை விரும்புகிறாள்.",
+      "audioId": "phase1_l4_ex1"
+    },
+    {
+      "en": "I know you.",
+      "ta": "நான் உன்னை அறிவேன்.",
+      "audioId": "phase1_l4_ex2"
+    },
+    {
+      "en": "We see him.",
+      "ta": "நாங்கள் அவரைப் பார்க்கிறோம்.",
+      "audioId": "phase1_l4_ex3"
+    },
+    {
+      "en": "They help her.",
+      "ta": "அவர்கள் அவளுக்கு உதவுகிறார்கள்.",
+      "audioId": "phase1_l4_ex4"
+    },
+    {
+      "en": "He loves it.",
+      "ta": "அவர் அதை விரும்புகிறார்.",
+      "audioId": "phase1_l4_ex5"
+    },
+    {
+      "en": "She teaches us.",
+      "ta": "அவர் எங்களுக்குக் கற்பிக்கிறார்.",
+      "audioId": "phase1_l4_ex6"
+    },
+    {
+      "en": "I call them.",
+      "ta": "நான் அவர்களை அழைக்கிறேன்.",
+      "audioId": "phase1_l4_ex7"
+    },
+    {
+      "en": "He tells me a story.",
+      "ta": "அவர் எனக்கு ஒரு கதை சொல்கிறார்.",
+      "audioId": "phase1_l4_ex8"
+    },
+    {
+      "en": "They invite us.",
+      "ta": "அவர்கள் எங்களை அழைக்கிறார்கள்.",
+      "audioId": "phase1_l4_ex9"
+    },
+    {
+      "en": "We thank you.",
+      "ta": "நாங்கள் உங்களுக்கு நன்றி சொல்கிறோம்.",
+      "audioId": "phase1_l4_ex10"
+    }
+  ],
+  "listeningQuestions": [
+    {
+      "audioText": "She likes me.",
+      "options": ["She likes me.", "She likes I.", "She likes my."],
+      "correctIndex": 0
+    },
+    {
+      "audioText": "I know him.",
+      "options": ["I know he.", "I know him.", "I know his."],
+      "correctIndex": 1
+    },
+    {
+      "audioText": "They help us.",
+      "options": ["They help we.", "They help our.", "They help us."],
+      "correctIndex": 2
+    },
+    {
+      "audioText": "We see her.",
+      "options": ["We see she.", "We see her.", "We see hers."],
+      "correctIndex": 1
+    },
+    {
+      "audioText": "He calls them.",
+      "options": ["He calls they.", "He calls their.", "He calls them."],
+      "correctIndex": 2
+    }
+  ],
+  "speakSentences": [
+    {
+      "en": "She likes me.",
+      "ta": "அவள் என்னை விரும்புகிறாள்."
+    },
+    {
+      "en": "I know you.",
+      "ta": "நான் உன்னை அறிவேன்."
+    },
+    {
+      "en": "We see him.",
+      "ta": "நாங்கள் அவரைப் பார்க்கிறோம்."
+    },
+    {
+      "en": "They help her.",
+      "ta": "அவர்கள் அவளுக்கு உதவுகிறார்கள்."
+    },
+    {
+      "en": "She teaches us.",
+      "ta": "அவர் எங்களுக்குக் கற்பிக்கிறார்."
+    }
+  ],
+  "practiceQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "He helps ___.",
+      "promptTa": "அவர் ___ உதவுகிறார்.",
+      "options": ["I", "me", "my"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "She knows ___.",
+      "promptTa": "அவள் ___ அறிவாள்.",
+      "options": ["he", "him", "his"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "They see ___.",
+      "promptTa": "அவர்கள் ___ பார்க்கிறார்கள்.",
+      "options": ["we", "us", "our"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "I like ___.",
+      "promptTa": "நான் ___ விரும்புகிறேன்.",
+      "options": ["she", "her", "hers"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "We call ___.",
+      "promptTa": "நாங்கள் ___ அழைக்கிறோம்.",
+      "options": ["they", "them", "their"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "She teaches ___.",
+      "promptTa": "அவர் ___ கற்பிக்கிறார்.",
+      "options": ["I", "me", "my"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "He loves ___.",
+      "promptTa": "அவர் ___ விரும்புகிறார்.",
+      "options": ["it", "its", "it's"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "They invite ___.",
+      "promptTa": "அவர்கள் ___ அழைக்கிறார்கள்.",
+      "options": ["you", "your", "yours"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "I tell ___ a story.",
+      "promptTa": "நான் ___ ஒரு கதை சொல்கிறேன்.",
+      "options": ["he", "him", "his"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "We thank ___.",
+      "promptTa": "நாங்கள் ___ நன்றி சொல்கிறோம்.",
+      "options": ["they", "them", "their"],
+      "correctIndex": 1
+    }
+  ],
+  "masteryQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "They see ___.",
+      "promptTa": "அவர்கள் ___ பார்க்கிறார்கள்.",
+      "options": ["we", "us", "our"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "She helps ___.",
+      "promptTa": "அவள் ___ உதவுகிறாள்.",
+      "options": ["I", "me", "my"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "I know ___.",
+      "promptTa": "நான் ___ அறிவேன்.",
+      "options": ["she", "her", "hers"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "He calls ___.",
+      "promptTa": "அவர் ___ அழைக்கிறார்.",
+      "options": ["they", "them", "their"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "We like ___.",
+      "promptTa": "நாங்கள் ___ விரும்புகிறோம்.",
+      "options": ["he", "him", "his"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "They teach ___.",
+      "promptTa": "அவர்கள் ___ கற்பிக்கிறார்கள்.",
+      "options": ["we", "us", "our"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "She loves ___.",
+      "promptTa": "அவள் ___ விரும்புகிறாள்.",
+      "options": ["it", "its", "it's"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "I see ___.",
+      "promptTa": "நான் ___ பார்க்கிறேன்.",
+      "options": ["you", "your", "yours"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "He tells ___ stories.",
+      "promptTa": "அவர் ___ கதைகள் சொல்கிறார்.",
+      "options": ["we", "us", "our"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "We invite ___.",
+      "promptTa": "நாங்கள் ___ அழைக்கிறோம்.",
+      "options": ["they", "them", "their"],
+      "correctIndex": 1
+    }
+  ]
+}

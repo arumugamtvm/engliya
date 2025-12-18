@@ -1,0 +1,274 @@
+{
+  "id": "phase4_lesson20_4",
+  "order": 4,
+  "unitId": "phase4_unit20",
+  "title": "Workplace English",
+  "description": "Learn professional English for office communication",
+  "level": "B2",
+  "explain": {
+    "ta": "அலுவலக ஆங்கிலம் தொழில்முறை வெற்றிக்கு முக்கியம். சக ஊழியர்களுடன் பேசுவது, கூட்டங்களில் பங்கேற்பது, மின்னஞ்சல் எழுதுவது போன்ற சூழ்நிலைகளுக்கு தயாராக இருங்கள். முக்கிய சொற்றொடர்கள்: 'Could you help me with...?', 'I'd like to schedule a meeting', 'Can I have your feedback?', 'I'll get back to you'. கண்ணியமான மொழி தொழில்முறை உறவுகளை வலுப்படுத்தும்.",
+    "en": "Workplace English is crucial for professional success. Be prepared for situations like talking to colleagues, participating in meetings, and writing emails. Key phrases: 'Could you help me with...?', 'I'd like to schedule a meeting', 'Can I have your feedback?', 'I'll get back to you'. Polite language strengthens professional relationships.",
+    "table": [
+      {
+        "key": "Asking for Help",
+        "examples": ["Could you help me with this?", "Do you have a minute?", "Can you explain this to me?", "I need some assistance."]
+      },
+      {
+        "key": "Meetings",
+        "examples": ["I'd like to schedule a meeting.", "Can we discuss this later?", "What's on the agenda?", "Let's wrap up."]
+      },
+      {
+        "key": "Giving Updates",
+        "examples": ["I've completed the report.", "I'm working on it.", "I'll have it ready by tomorrow.", "There's been a delay."]
+      },
+      {
+        "key": "Professional Phrases",
+        "examples": ["I'll get back to you.", "Let me check and confirm.", "Thank you for your time.", "I appreciate your help."]
+      }
+    ]
+  },
+  "examples": [
+    {
+      "en": "Excuse me, do you have a minute? I need some help with this report.",
+      "ta": "மன்னிக்கவும், உங்களுக்கு ஒரு நிமிடம் இருக்கிறதா? இந்த அறிக்கையில் எனக்கு உதவி தேவை.",
+      "audioId": "phase4_l20_4_ex1"
+    },
+    {
+      "en": "I'd like to schedule a meeting to discuss the project.",
+      "ta": "திட்டத்தை விவாதிக்க ஒரு கூட்டத்தை திட்டமிட விரும்புகிறேன்.",
+      "audioId": "phase4_l20_4_ex2"
+    },
+    {
+      "en": "I've completed the report. Can I have your feedback?",
+      "ta": "நான் அறிக்கையை முடித்துவிட்டேன். உங்கள் கருத்தை தர முடியுமா?",
+      "audioId": "phase4_l20_4_ex3"
+    },
+    {
+      "en": "I'm working on it. I'll have it ready by tomorrow.",
+      "ta": "நான் அதில் வேலை செய்கிறேன். நாளைக்குள் தயாராக இருக்கும்.",
+      "audioId": "phase4_l20_4_ex4"
+    },
+    {
+      "en": "Let me check and confirm. I'll get back to you by end of day.",
+      "ta": "சரிபார்த்து உறுதிப்படுத்துகிறேன். இன்று மாலைக்குள் உங்களுக்கு பதில் சொல்கிறேன்.",
+      "audioId": "phase4_l20_4_ex5"
+    },
+    {
+      "en": "Thank you for your time. I appreciate your help.",
+      "ta": "உங்கள் நேரத்திற்கு நன்றி. உங்கள் உதவியை பாராட்டுகிறேன்.",
+      "audioId": "phase4_l20_4_ex6"
+    },
+    {
+      "en": "There's been a slight delay. I apologize for the inconvenience.",
+      "ta": "சிறிய தாமதம் ஏற்பட்டுள்ளது. சிரமத்திற்கு மன்னிப்பு கேட்கிறேன்.",
+      "audioId": "phase4_l20_4_ex7"
+    },
+    {
+      "en": "Can we discuss this in our next meeting?",
+      "ta": "இதை நம் அடுத்த கூட்டத்தில் விவாதிக்கலாமா?",
+      "audioId": "phase4_l20_4_ex8"
+    }
+  ],
+  "dialogues": [
+    {
+      "roleA": "Employee",
+      "roleB": "Manager",
+      "lines": [
+        {"speaker": "Employee", "text": "Excuse me, do you have a minute?"},
+        {"speaker": "Manager", "text": "Yes, of course. What can I help you with?"},
+        {"speaker": "Employee", "text": "I need some guidance on the quarterly report."},
+        {"speaker": "Manager", "text": "Sure. What specifically do you need help with?"},
+        {"speaker": "Employee", "text": "I'm not sure about the format for the sales data."},
+        {"speaker": "Manager", "text": "I'll send you a template. You can follow that format."},
+        {"speaker": "Employee", "text": "Thank you. I appreciate your help."},
+        {"speaker": "Manager", "text": "No problem. Let me know if you have any other questions."}
+      ]
+    },
+    {
+      "roleA": "Colleague A",
+      "roleB": "Colleague B",
+      "lines": [
+        {"speaker": "Colleague A", "text": "Hi, I'd like to schedule a meeting to discuss the project."},
+        {"speaker": "Colleague B", "text": "Sure. When works for you?"},
+        {"speaker": "Colleague A", "text": "How about tomorrow at 2 PM?"},
+        {"speaker": "Colleague B", "text": "Let me check my calendar. Yes, that works for me."},
+        {"speaker": "Colleague A", "text": "Great. I'll send a meeting invite."},
+        {"speaker": "Colleague B", "text": "Perfect. What's on the agenda?"},
+        {"speaker": "Colleague A", "text": "We'll discuss the timeline and task assignments."},
+        {"speaker": "Colleague B", "text": "Sounds good. See you tomorrow."}
+      ]
+    },
+    {
+      "roleA": "Team Member",
+      "roleB": "Team Lead",
+      "lines": [
+        {"speaker": "Team Lead", "text": "How's the progress on the client presentation?"},
+        {"speaker": "Team Member", "text": "I'm working on it. I'll have it ready by tomorrow."},
+        {"speaker": "Team Lead", "text": "Good. Can you share a draft by end of day?"},
+        {"speaker": "Team Member", "text": "Sure. I'll send it by 5 PM."},
+        {"speaker": "Team Lead", "text": "Great. I'll review it and give you feedback."},
+        {"speaker": "Team Member", "text": "Thank you. I appreciate your guidance."}
+      ]
+    }
+  ],
+  "listeningQuestions": [
+    {
+      "audioText": "Excuse me, do you have a minute? I need some help with this report.",
+      "options": [
+        "The person wants to leave",
+        "The person needs help with a report",
+        "The person is offering help"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "audioText": "I'm working on it. I'll have it ready by tomorrow.",
+      "options": [
+        "The work is already done",
+        "The work will be ready tomorrow",
+        "The work is cancelled"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "audioText": "I'd like to schedule a meeting. How about tomorrow at 2 PM?",
+      "options": [
+        "The meeting is cancelled",
+        "The meeting is proposed for tomorrow at 2 PM",
+        "The meeting was yesterday"
+      ],
+      "correctIndex": 1
+    }
+  ],
+  "speakSentences": [
+    {
+      "en": "Excuse me, do you have a minute?",
+      "ta": "மன்னிக்கவும், உங்களுக்கு ஒரு நிமிடம் இருக்கிறதா?"
+    },
+    {
+      "en": "I'd like to schedule a meeting to discuss the project.",
+      "ta": "திட்டத்தை விவாதிக்க ஒரு கூட்டத்தை திட்டமிட விரும்புகிறேன்."
+    },
+    {
+      "en": "I've completed the report. Can I have your feedback?",
+      "ta": "நான் அறிக்கையை முடித்துவிட்டேன். உங்கள் கருத்தை தர முடியுமா?"
+    },
+    {
+      "en": "I'll get back to you by end of day.",
+      "ta": "இன்று மாலைக்குள் உங்களுக்கு பதில் சொல்கிறேன்."
+    },
+    {
+      "en": "Thank you for your time. I appreciate your help.",
+      "ta": "உங்கள் நேரத்திற்கு நன்றி. உங்கள் உதவியை பாராட்டுகிறேன்."
+    }
+  ],
+  "practiceQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "How do you politely ask for someone's time?",
+      "promptTa": "ஒருவரின் நேரத்தை கண்ணியமாக எப்படி கேட்பது?",
+      "options": ["Come here!", "Do you have a minute?", "Talk now."],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "How do you ask for help professionally?",
+      "promptTa": "தொழில்முறையாக உதவி எப்படி கேட்பது?",
+      "options": ["Help me!", "Could you help me with this?", "I need help now."],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "How do you say you'll respond later?",
+      "promptTa": "பின்னர் பதில் சொல்வேன் என்று எப்படி சொல்வது?",
+      "options": ["Later.", "I'll get back to you.", "Maybe."],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "How do you ask for feedback?",
+      "promptTa": "கருத்து எப்படி கேட்பது?",
+      "options": ["Tell me!", "Can I have your feedback?", "What you think?"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "How do you thank someone professionally?",
+      "promptTa": "தொழில்முறையாக எப்படி நன்றி சொல்வது?",
+      "options": ["Thanks.", "Thank you for your time. I appreciate your help.", "Okay bye."],
+      "correctIndex": 1
+    }
+  ],
+  "masteryQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "What does 'I'll get back to you' mean?",
+      "promptTa": "'I'll get back to you' என்றால் என்ன?",
+      "options": ["I'm leaving", "I'll respond later", "I don't know"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "How do you propose a meeting time?",
+      "promptTa": "கூட்ட நேரத்தை எப்படி முன்மொழிவது?",
+      "options": ["Meeting now!", "How about tomorrow at 2 PM?", "When meeting?"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "How do you give a status update?",
+      "promptTa": "நிலை புதுப்பிப்பை எப்படி தருவது?",
+      "options": ["Working.", "I'm working on it. I'll have it ready by tomorrow.", "Doing."],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "What does 'agenda' mean in a meeting?",
+      "promptTa": "கூட்டத்தில் 'agenda' என்றால் என்ன?",
+      "options": ["Meeting room", "List of topics to discuss", "Meeting time"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "How do you apologize for a delay?",
+      "promptTa": "தாமதத்திற்கு எப்படி மன்னிப்பு கேட்பது?",
+      "options": ["Sorry late.", "I apologize for the delay.", "Delay happened."],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "What does 'Let's wrap up' mean?",
+      "promptTa": "'Let's wrap up' என்றால் என்ன?",
+      "options": ["Let's start", "Let's finish/conclude", "Let's continue"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "How do you ask to discuss something later?",
+      "promptTa": "பின்னர் விவாதிக்க எப்படி கேட்பது?",
+      "options": ["Talk later!", "Can we discuss this in our next meeting?", "Later talk."],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "What is a professional way to say 'I don't know'?",
+      "promptTa": "'I don't know' என்பதை தொழில்முறையாக எப்படி சொல்வது?",
+      "options": ["No idea.", "Let me check and confirm.", "Don't know."],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "How do you offer to send information?",
+      "promptTa": "தகவல் அனுப்ப எப்படி முன்வருவது?",
+      "options": ["I send.", "I'll send you the details.", "Details coming."],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "What does 'I appreciate your help' express?",
+      "promptTa": "'I appreciate your help' என்ன வெளிப்படுத்துகிறது?",
+      "options": ["Complaint", "Gratitude", "Request"],
+      "correctIndex": 1
+    }
+  ]
+}

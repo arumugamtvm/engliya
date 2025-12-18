@@ -1,0 +1,63 @@
+{
+  "id": "phase2_lesson10_3",
+  "order": 3,
+  "unitId": "phase2_unit10",
+  "title": "WH-Questions",
+  "description": "who / what / when / where / why / how",
+  "level": "A2",
+  "explain": {
+    "ta": "WH கேள்விகள் குறிப்பிட்ட தகவல்களைப் பெற பயன்படுத்தப்படுகின்றன. Who (யார்), What (என்ன), When (எப்போது), Where (எங்கே), Why (ஏன்), How (எப்படி) என்பவை WH வார்த்தைகள். கேள்வி வடிவம்: WH-word + do/does/did/am/is/are/was/were + subject + ...?",
+    "en": "WH-questions are used to get specific information. Who (person), What (thing), When (time), Where (place), Why (reason), How (manner). Question format: WH-word + do/does/did/am/is/are/was/were + subject + ...? For example: 'Where do you live?' or 'What is your name?'"
+  },
+  "examples": [
+    {
+      "en": "What is your name?",
+      "ta": "உங்கள் பெயர் என்ன?",
+      "audioId": "phase2_l10_3_ex1"
+    },
+    {
+      "en": "Where do you live?",
+      "ta": "நீங்கள் எங்கே வசிக்கிறீர்கள்?",
+      "audioId": "phase2_l10_3_ex2"
+    },
+    {
+      "en": "Why did she leave?",
+      "ta": "அவள் ஏன் சென்றாள்?",
+      "audioId": "phase2_l10_3_ex3"
+    }
+  ],
+  "listeningQuestions": [],
+  "speakSentences": [],
+  "practiceQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "___ do you go to school?",
+      "promptTa": "நீங்கள் எப்போது பள்ளிக்கு செல்கிறீர்கள்?",
+      "options": ["What", "When", "Where", "Who"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "___ is your teacher?",
+      "promptTa": "உங்கள் ஆசிரியர் யார்?",
+      "options": ["What", "When", "Where", "Who"],
+      "correctIndex": 3
+    }
+  ],
+  "masteryQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "___ does she work?",
+      "promptTa": "அவள் எங்கே வேலை செய்கிறாள்?",
+      "options": ["What", "When", "Where", "Why"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "___ did you come late?",
+      "promptTa": "நீங்கள் ஏன் தாமதமாக வந்தீர்கள்?",
+      "options": ["What", "How", "Where", "Why"],
+      "correctIndex": 3
+    }
+  ]
+}

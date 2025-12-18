@@ -1,0 +1,63 @@
+{
+  "id": "phase2_lesson10_4",
+  "order": 4,
+  "unitId": "phase2_unit10",
+  "title": "Negatives",
+  "description": "don't / doesn't / didn't / wasn't / weren't",
+  "level": "A2",
+  "explain": {
+    "ta": "எதிர்மறை வாக்கியங்களை உருவாக்க don't/doesn't/didn't அல்லது wasn't/weren't பயன்படுத்துகிறோம். செயல் வினைச்சொற்களுக்கு don't/doesn't/didn't பயன்படுத்துகிறோம். Be வினைச்சொற்களுக்கு wasn't/weren't பயன்படுத்துகிறோம. நிகழ்காலத்தில் I/You/We/They-க்கு 'don't', He/She/It-க்கு 'doesn't' பயன்படுத்துகிறோம். இறந்த காலத்திற்கு எல்லோருக்கும் 'didn't' பயன்படுத்துகிறோம.",
+    "en": "We use don't/doesn't/didn't or wasn't/weren't to form negative sentences. Use don't/doesn't/didn't with action verbs. Use wasn't/weren't with be-verbs. In present tense, use 'don't' with I/You/We/They and 'doesn't' with He/She/It. For past tense, use 'didn't' for all subjects. The main verb stays in base form."
+  },
+  "examples": [
+    {
+      "en": "I don't like coffee.",
+      "ta": "எனக்கு காபி பிடிக்காது.",
+      "audioId": "phase2_l10_4_ex1"
+    },
+    {
+      "en": "She doesn't work here.",
+      "ta": "அவள் இங்கே வேலை செய்யவில்லை.",
+      "audioId": "phase2_l10_4_ex2"
+    },
+    {
+      "en": "They didn't go to school.",
+      "ta": "அவர்கள் பள்ளிக்கு செல்லவில்லை.",
+      "audioId": "phase2_l10_4_ex3"
+    }
+  ],
+  "listeningQuestions": [],
+  "speakSentences": [],
+  "practiceQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "I ___ speak Tamil.",
+      "promptTa": "நான் தமிழ் பேசமாட்டேன்.",
+      "options": ["don't", "doesn't", "didn't", "wasn't"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "He ___ come yesterday.",
+      "promptTa": "அவர் நேற்று வரவில்லை.",
+      "options": ["don't", "doesn't", "didn't", "wasn't"],
+      "correctIndex": 2
+    }
+  ],
+  "masteryQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "She ___ like vegetables.",
+      "promptTa": "அவளுக்கு காய்கறிகள் பிடிக்காது.",
+      "options": ["don't", "doesn't", "didn't", "isn't"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "They ___ at home last night.",
+      "promptTa": "அவர்கள் நேற்று இரவு வீட்டில் இல்லை.",
+      "options": ["don't", "doesn't", "didn't", "weren't"],
+      "correctIndex": 3
+    }
+  ]
+}

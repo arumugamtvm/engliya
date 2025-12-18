@@ -1,0 +1,258 @@
+{
+  "id": "phase3_lesson17_1",
+  "order": 1,
+  "unitId": "phase3_unit17",
+  "title": "Daily Routine Project",
+  "description": "Describe your daily routine in a complete paragraph",
+  "level": "B1",
+  "sampleParagraph": "I wake up at 6 AM every morning. First, I brush my teeth and take a shower. Then I have breakfast with my family at 7 AM. After breakfast, I get ready and leave for work at 8 AM. I take the bus to my office, which takes about 30 minutes. I work from 9 AM to 5 PM with a lunch break at 1 PM. In the evening, I come home around 6 PM and spend time with my family. We have dinner together at 8 PM. After dinner, I watch TV or read a book for an hour. Finally, I go to bed at 10 PM to get enough rest for the next day.",
+  "explain": {
+    "ta": "தினசரி வழக்கம் என்பது நாம் ஒவ்வொரு நாளும் செய்யும் செயல்களின் வரிசை. இதை விவரிக்க நேர வெளிப்பாடுகள் (at 6 AM, in the evening), வரிசை சொற்கள் (first, then, after, finally), மற்றும் எளிய நிகழ்கால வினைகள் பயன்படுத்துகிறோம். ஒரு நல்ல தினசரி வழக்க விவரணம் காலை முதல் இரவு வரை தெளிவான வரிசையில் இருக்க வேண்டும். உதாரணம்: 'I wake up at 6 AM' (நான் காலை 6 மணிக்கு எழுகிறேன்), 'Then I have breakfast' (பின்னர் நான் காலை உணவு சாப்பிடுகிறேன்), 'Finally, I go to bed' (இறுதியாக, நான் படுக்கைக்கு செல்கிறேன்).",
+    "en": "A daily routine is the sequence of activities we do every day. To describe it, we use time expressions (at 6 AM, in the evening), sequence words (first, then, after, finally), and simple present tense verbs. A good daily routine description should follow a clear order from morning to night. Example: 'I wake up at 6 AM' (starting the day), 'Then I have breakfast' (next activity), 'Finally, I go to bed' (ending the day). This helps listeners understand your schedule clearly.",
+    "table": [
+      {
+        "key": "Morning",
+        "examples": ["I wake up at 6 AM.", "I brush my teeth.", "I have breakfast at 7 AM."]
+      },
+      {
+        "key": "Daytime",
+        "examples": ["I go to work at 8 AM.", "I work from 9 to 5.", "I have lunch at 1 PM."]
+      },
+      {
+        "key": "Evening",
+        "examples": ["I come home at 6 PM.", "I have dinner at 8 PM.", "I watch TV in the evening."]
+      },
+      {
+        "key": "Night",
+        "examples": ["I read before bed.", "I go to bed at 10 PM.", "I sleep for 8 hours."]
+      }
+    ]
+  },
+  "examples": [
+    {
+      "en": "I wake up at 6 AM every morning.",
+      "ta": "நான் ஒவ்வொரு காலையும் காலை 6 மணிக்கு எழுகிறேன்.",
+      "audioId": "phase3_l17_1_ex1"
+    },
+    {
+      "en": "First, I brush my teeth and take a shower.",
+      "ta": "முதலில், நான் பல் துலக்கி குளிக்கிறேன்.",
+      "audioId": "phase3_l17_1_ex2"
+    },
+    {
+      "en": "Then I have breakfast with my family.",
+      "ta": "பின்னர் நான் என் குடும்பத்துடன் காலை உணவு சாப்பிடுகிறேன்.",
+      "audioId": "phase3_l17_1_ex3"
+    },
+    {
+      "en": "After breakfast, I get ready and leave for work.",
+      "ta": "காலை உணவுக்குப் பிறகு, நான் தயாராகி வேலைக்கு கிளம்புகிறேன்.",
+      "audioId": "phase3_l17_1_ex4"
+    },
+    {
+      "en": "I work from 9 AM to 5 PM with a lunch break.",
+      "ta": "நான் காலை 9 மணி முதல் மாலை 5 மணி வரை மதிய உணவு இடைவேளையுடன் வேலை செய்கிறேன்.",
+      "audioId": "phase3_l17_1_ex5"
+    },
+    {
+      "en": "In the evening, I come home and spend time with my family.",
+      "ta": "மாலையில், நான் வீட்டிற்கு வந்து என் குடும்பத்துடன் நேரம் செலவிடுகிறேன்.",
+      "audioId": "phase3_l17_1_ex6"
+    },
+    {
+      "en": "We have dinner together at 8 PM.",
+      "ta": "நாங்கள் இரவு 8 மணிக்கு ஒன்றாக இரவு உணவு சாப்பிடுகிறோம்.",
+      "audioId": "phase3_l17_1_ex7"
+    },
+    {
+      "en": "After dinner, I watch TV or read a book.",
+      "ta": "இரவு உணவுக்குப் பிறகு, நான் டிவி பார்க்கிறேன் அல்லது புத்தகம் படிக்கிறேன்.",
+      "audioId": "phase3_l17_1_ex8"
+    },
+    {
+      "en": "Finally, I go to bed at 10 PM.",
+      "ta": "இறுதியாக, நான் இரவு 10 மணிக்கு படுக்கைக்கு செல்கிறேன்.",
+      "audioId": "phase3_l17_1_ex9"
+    }
+  ],
+  "listeningQuestions": [
+    {
+      "audioText": "I wake up at 7 AM. Then I have breakfast and go to work at 9 AM.",
+      "options": [
+        "He wakes up at 6 AM and goes to work at 8 AM.",
+        "He wakes up at 7 AM and goes to work at 9 AM.",
+        "He wakes up at 8 AM and goes to work at 9 AM."
+      ],
+      "correctIndex": 1
+    },
+    {
+      "audioText": "In the evening, I come home at 6 PM. I have dinner with my family at 7:30 PM.",
+      "options": [
+        "She comes home at 5 PM and has dinner at 7 PM.",
+        "She comes home at 6 PM and has dinner at 7:30 PM.",
+        "She comes home at 6:30 PM and has dinner at 8 PM."
+      ],
+      "correctIndex": 1
+    },
+    {
+      "audioText": "After work, I go to the gym for one hour. Then I go home and relax.",
+      "options": [
+        "He goes home directly after work.",
+        "He goes to the gym before work.",
+        "He goes to the gym after work, then goes home."
+      ],
+      "correctIndex": 2
+    }
+  ],
+  "speakSentences": [
+    {
+      "en": "I wake up at [time] every morning and start my day.",
+      "ta": "நான் ஒவ்வொரு காலையும் [நேரம்] க்கு எழுந்து என் நாளைத் தொடங்குகிறேன்."
+    },
+    {
+      "en": "First, I [morning activity], then I have breakfast.",
+      "ta": "முதலில், நான் [காலை செயல்பாடு], பின்னர் நான் காலை உணவு சாப்பிடுகிறேன்."
+    },
+    {
+      "en": "I go to [work/school/college] at [time] and stay there until [time].",
+      "ta": "நான் [நேரம்] க்கு [வேலை/பள்ளி/கல்லூரி] செல்கிறேன் மற்றும் [நேரம்] வரை அங்கே இருக்கிறேன்."
+    },
+    {
+      "en": "In the evening, I [evening activity] and spend time with my family.",
+      "ta": "மாலையில், நான் [மாலை செயல்பாடு] மற்றும் என் குடும்பத்துடன் நேரம் செலவிடுகிறேன்."
+    },
+    {
+      "en": "Finally, I go to bed at [time] to get enough rest for the next day.",
+      "ta": "இறுதியாக, நான் அடுத்த நாளுக்கு போதுமான ஓய்வு பெற [நேரம்] க்கு படுக்கைக்கு செல்கிறேன்."
+    }
+  ],
+  "practiceQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "Which word shows sequence in a daily routine?",
+      "promptTa": "தினசரி வழக்கத்தில் வரிசையைக் காட்டும் சொல் எது?",
+      "options": ["beautiful", "then", "very"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Complete: I wake up ___ 6 AM.",
+      "promptTa": "நிரப்புக: நான் காலை 6 மணி ___ எழுகிறேன்.",
+      "options": ["at", "in", "on"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Complete: ___ breakfast, I go to work.",
+      "promptTa": "நிரப்புக: காலை உணவு ___, நான் வேலைக்கு செல்கிறேன்.",
+      "options": ["Before", "After", "During"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which is the correct order?",
+      "promptTa": "சரியான வரிசை எது?",
+      "options": [
+        "I have dinner, then I come home.",
+        "I come home, then I have dinner.",
+        "I dinner have, then home I come."
+      ],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Complete: I work ___ 9 AM to 5 PM.",
+      "promptTa": "நிரப்புக: நான் காலை 9 மணி ___ மாலை 5 மணி வரை வேலை செய்கிறேன்.",
+      "options": ["from", "at", "in"],
+      "correctIndex": 0
+    }
+  ],
+  "masteryQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "Which sentence best starts a daily routine description?",
+      "promptTa": "தினசரி வழக்க விவரணத்தைத் தொடங்க சிறந்த வாக்கியம் எது?",
+      "options": [
+        "Finally, I go to bed.",
+        "I wake up at 6 AM every morning.",
+        "I have lunch at 1 PM."
+      ],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Complete: ___, I brush my teeth and take a shower.",
+      "promptTa": "நிரப்புக: ___, நான் பல் துலக்கி குளிக்கிறேன்.",
+      "options": ["Finally", "First", "Last"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Complete: I have breakfast ___ my family.",
+      "promptTa": "நிரப்புக: நான் என் குடும்பத்துடன் ___ காலை உணவு சாப்பிடுகிறேன்.",
+      "options": ["with", "at", "for"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which time expression is correct for evening?",
+      "promptTa": "மாலைக்கு சரியான நேர வெளிப்பாடு எது?",
+      "options": [
+        "in the evening",
+        "at the evening",
+        "on the evening"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Complete: I ___ home at 6 PM.",
+      "promptTa": "நிரப்புக: நான் மாலை 6 மணிக்கு வீட்டிற்கு ___.",
+      "options": ["coming", "come", "comes"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which word best ends a daily routine?",
+      "promptTa": "தினசரி வழக்கத்தை முடிக்க சிறந்த சொல் எது?",
+      "options": ["First", "Then", "Finally"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Complete: I spend time ___ my family.",
+      "promptTa": "நிரப்புக: நான் என் குடும்பத்துடன் நேரம் ___.",
+      "options": ["spend", "spending", "spent"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which is the best way to describe your work hours?",
+      "promptTa": "உங்கள் வேலை நேரத்தை விவரிக்க சிறந்த வழி எது?",
+      "options": [
+        "I work.",
+        "I work from 9 AM to 5 PM.",
+        "I working 9 to 5."
+      ],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Complete: ___ dinner, I watch TV.",
+      "promptTa": "நிரப்புக: இரவு உணவு ___, நான் டிவி பார்க்கிறேன்.",
+      "options": ["Before", "After", "During"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which sentence shows a complete routine activity?",
+      "promptTa": "முழுமையான வழக்க செயல்பாட்டைக் காட்டும் வாக்கியம் எது?",
+      "options": [
+        "I breakfast.",
+        "I have breakfast at 7 AM with my family.",
+        "Breakfast 7 AM."
+      ],
+      "correctIndex": 1
+    }
+  ]
+}

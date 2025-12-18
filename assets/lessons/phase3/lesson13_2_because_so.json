@@ -1,0 +1,216 @@
+{
+  "id": "phase3_lesson13_2",
+  "order": 2,
+  "unitId": "phase3_unit13",
+  "title": "Cause & Effect: BECAUSE, SO",
+  "description": "Express reasons and results in sentences",
+  "level": "B1",
+  "explain": {
+    "ta": "காரணம் மற்றும் விளைவுகளை வெளிப்படுத்த நாம் 'BECAUSE' மற்றும் 'SO' பயன்படுத்துகிறோம். 'BECAUSE' காரணத்தை விளக்குகிறது (I was tired because I worked hard - நான் கடினமாக உழைத்ததால் சோர்வாக இருந்தேன்). 'SO' விளைவை காட்டுகிறது (I worked hard, so I was tired - நான் கடினமாக உழைத்தேன், அதனால் சோர்வாக இருந்தேன்). இரண்டும் ஒரே பொருளை வெளிப்படுத்துகின்றன ஆனால் வாக்கிய அமைப்பு வேறுபடுகிறது.",
+    "en": "We use 'BECAUSE' and 'SO' to express cause and effect relationships. 'BECAUSE' explains the reason (I was tired because I worked hard). 'SO' shows the result (I worked hard, so I was tired). Both express the same meaning but with different sentence structures. 'BECAUSE' comes before the reason, while 'SO' comes before the result.",
+    "table": [
+      {
+        "key": "BECAUSE (reason)",
+        "examples": ["I stayed home because it rained.", "She is happy because she passed.", "He sleeps early because he is tired."]
+      },
+      {
+        "key": "SO (result)",
+        "examples": ["It rained, so I stayed home.", "She passed, so she is happy.", "He is tired, so he sleeps early."]
+      }
+    ]
+  },
+  "examples": [
+    {
+      "en": "I was tired because I worked hard.",
+      "ta": "நான் கடினமாக உழைத்ததால் சோர்வாக இருந்தேன்.",
+      "audioId": "phase3_l13_2_ex1"
+    },
+    {
+      "en": "I worked hard, so I was tired.",
+      "ta": "நான் கடினமாக உழைத்தேன், அதனால் சோர்வாக இருந்தேன்.",
+      "audioId": "phase3_l13_2_ex2"
+    },
+    {
+      "en": "She stayed home because she was sick.",
+      "ta": "அவள் உடல்நிலை சரியில்லாததால் வீட்டில் இருந்தாள்.",
+      "audioId": "phase3_l13_2_ex3"
+    },
+    {
+      "en": "She was sick, so she stayed home.",
+      "ta": "அவள் உடல்நிலை சரியில்லை, அதனால் வீட்டில் இருந்தாள்.",
+      "audioId": "phase3_l13_2_ex4"
+    },
+    {
+      "en": "He failed because he didn't study.",
+      "ta": "அவர் படிக்காததால் தோல்வியடைந்தார்.",
+      "audioId": "phase3_l13_2_ex5"
+    },
+    {
+      "en": "He didn't study, so he failed.",
+      "ta": "அவர் படிக்கவில்லை, அதனால் தோல்வியடைந்தார்.",
+      "audioId": "phase3_l13_2_ex6"
+    },
+    {
+      "en": "We cancelled the trip because it rained heavily.",
+      "ta": "கடுமையாக மழை பெய்ததால் நாங்கள் பயணத்தை ரத்து செய்தோம்.",
+      "audioId": "phase3_l13_2_ex7"
+    },
+    {
+      "en": "It rained heavily, so we cancelled the trip.",
+      "ta": "கடுமையாக மழை பெய்தது, அதனால் நாங்கள் பயணத்தை ரத்து செய்தோம்.",
+      "audioId": "phase3_l13_2_ex8"
+    }
+  ],
+  "listeningQuestions": [
+    {
+      "audioText": "I am happy because I got a new job.",
+      "options": [
+        "I am happy because I got a new job.",
+        "I am happy, so I got a new job.",
+        "I got a new job because I am happy."
+      ],
+      "correctIndex": 0
+    },
+    {
+      "audioText": "She was late, so she missed the bus.",
+      "options": [
+        "She missed the bus because she was late.",
+        "She was late, so she missed the bus.",
+        "She was late because she missed the bus."
+      ],
+      "correctIndex": 1
+    },
+    {
+      "audioText": "He saved money because he wanted to buy a car.",
+      "options": [
+        "He wanted to buy a car, so he saved money.",
+        "He saved money, so he wanted to buy a car.",
+        "He saved money because he wanted to buy a car."
+      ],
+      "correctIndex": 2
+    }
+  ],
+  "speakSentences": [
+    {
+      "en": "I am learning English because I want a better job.",
+      "ta": "எனக்கு நல்ல வேலை வேண்டும் என்பதால் ஆங்கிலம் கற்கிறேன்."
+    },
+    {
+      "en": "I want a better job, so I am learning English.",
+      "ta": "எனக்கு நல்ல வேலை வேண்டும், அதனால் ஆங்கிலம் கற்கிறேன்."
+    },
+    {
+      "en": "The shop was closed, so I went to another shop.",
+      "ta": "கடை மூடப்பட்டிருந்தது, அதனால் நான் வேறு கடைக்கு சென்றேன்."
+    }
+  ],
+  "practiceQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "I stayed home ___ it was raining.",
+      "promptTa": "மழை பெய்ததால் நான் வீட்டில் இருந்தேன்.",
+      "options": ["because", "so", "and", "but"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "It was raining, ___ I stayed home.",
+      "promptTa": "மழை பெய்தது, அதனால் நான் வீட்டில் இருந்தேன்.",
+      "options": ["because", "so", "and", "but"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "She is happy ___ she passed the exam.",
+      "promptTa": "தேர்வில் தேர்ச்சி பெற்றதால் அவள் மகிழ்ச்சியாக இருக்கிறாள்.",
+      "options": ["because", "so", "or", "but"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "She passed the exam, ___ she is happy.",
+      "promptTa": "அவள் தேர்வில் தேர்ச்சி பெற்றாள், அதனால் மகிழ்ச்சியாக இருக்கிறாள்.",
+      "options": ["because", "so", "or", "and"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "He was late ___ he missed the train.",
+      "promptTa": "அவர் தாமதமானதால் ரயிலை தவறவிட்டார்.",
+      "options": ["because", "so", "and", "but"],
+      "correctIndex": 0
+    }
+  ],
+  "masteryQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "I didn't go to work ___ I was sick.",
+      "promptTa": "நான் உடல்நிலை சரியில்லாததால் வேலைக்கு செல்லவில்லை.",
+      "options": ["because", "so", "but", "or"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "I was sick, ___ I didn't go to work.",
+      "promptTa": "நான் உடல்நிலை சரியில்லை, அதனால் வேலைக்கு செல்லவில்லை.",
+      "options": ["because", "so", "but", "and"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "We are celebrating ___ it's my birthday.",
+      "promptTa": "இது என் பிறந்தநாள் என்பதால் நாங்கள் கொண்டாடுகிறோம்.",
+      "options": ["because", "so", "and", "or"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "It's my birthday, ___ we are celebrating.",
+      "promptTa": "இது என் பிறந்தநாள், அதனால் நாங்கள் கொண்டாடுகிறோம்.",
+      "options": ["because", "so", "but", "or"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "She bought a car ___ she got a promotion.",
+      "promptTa": "அவளுக்கு பதவி உயர்வு கிடைத்ததால் கார் வாங்கினாள்.",
+      "options": ["because", "so", "and", "but"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "She got a promotion, ___ she bought a car.",
+      "promptTa": "அவளுக்கு பதவி உயர்வு கிடைத்தது, அதனால் கார் வாங்கினாள்.",
+      "options": ["because", "so", "but", "or"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "The restaurant was full, ___ we went to another place.",
+      "promptTa": "உணவகம் நிரம்பியிருந்தது, அதனால் நாங்கள் வேறு இடத்திற்கு சென்றோம்.",
+      "options": ["because", "so", "and", "but"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "I am tired ___ I worked all day.",
+      "promptTa": "நான் நாள் முழுவதும் வேலை செய்ததால் சோர்வாக இருக்கிறேன்.",
+      "options": ["because", "so", "but", "or"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "I worked all day, ___ I am tired.",
+      "promptTa": "நான் நாள் முழுவதும் வேலை செய்தேன், அதனால் சோர்வாக இருக்கிறேன்.",
+      "options": ["because", "so", "and", "but"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "He studies hard ___ he wants to succeed.",
+      "promptTa": "அவர் வெற்றி பெற விரும்புவதால் கடினமாக படிக்கிறார்.",
+      "options": ["because", "so", "but", "or"],
+      "correctIndex": 0
+    }
+  ]
+}

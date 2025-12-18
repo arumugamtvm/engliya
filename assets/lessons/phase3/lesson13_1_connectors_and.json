@@ -1,0 +1,225 @@
+{
+  "id": "phase3_lesson13_1",
+  "order": 1,
+  "unitId": "phase3_unit13",
+  "title": "Connectors: AND, BUT, OR",
+  "description": "Join simple sentences with coordinating conjunctions",
+  "level": "B1",
+  "explain": {
+    "ta": "எளிய வாக்கியங்களை இணைக்க நாம் AND, BUT, OR போன்ற connectors பயன்படுத்துகிறோம். 'AND' இரண்டு ஒத்த எண்ணங்களை இணைக்கிறது (I like tea and coffee), 'BUT' எதிர்மறை அல்லது வேறுபட்ட எண்ணங்களை இணைக்கிறது (I like tea but I don't like coffee), 'OR' தேர்வுகளை காட்டுகிறது (Do you want tea or coffee?). இந்த connectors இரண்டு சுயாதீன வாக்கியங்களை ஒரு சிக்கலான வாக்கியமாக மாற்றுகின்றன.",
+    "en": "We use connectors like AND, BUT, OR to join simple sentences. 'AND' connects similar ideas (I like tea and coffee), 'BUT' shows contrast or opposite ideas (I like tea but I don't like coffee), 'OR' presents choices (Do you want tea or coffee?). These connectors transform two independent sentences into one complex sentence, making your speech and writing more natural and fluent.",
+    "table": [
+      {
+        "key": "AND",
+        "examples": ["I work and I study.", "She is smart and kind.", "He reads books and watches movies."]
+      },
+      {
+        "key": "BUT",
+        "examples": ["I work but I'm tired.", "She is smart but lazy.", "He reads books but doesn't watch movies."]
+      },
+      {
+        "key": "OR",
+        "examples": ["Do you work or study?", "Is she smart or kind?", "Does he read books or watch movies?"]
+      }
+    ]
+  },
+  "examples": [
+    {
+      "en": "I like pizza and I like pasta.",
+      "ta": "எனக்கு பீட்சா பிடிக்கும் மற்றும் எனக்கு பாஸ்தா பிடிக்கும்.",
+      "audioId": "phase3_l13_1_ex1"
+    },
+    {
+      "en": "She is young but she is very wise.",
+      "ta": "அவள் இளமையானவள் ஆனால் அவள் மிகவும் புத்திசாலி.",
+      "audioId": "phase3_l13_1_ex2"
+    },
+    {
+      "en": "Do you want tea or do you want coffee?",
+      "ta": "உனக்கு தேநீர் வேண்டுமா அல்லது காபி வேண்டுமா?",
+      "audioId": "phase3_l13_1_ex3"
+    },
+    {
+      "en": "He works hard and he earns well.",
+      "ta": "அவர் கடினமாக உழைக்கிறார் மற்றும் நன்றாக சம்பாதிக்கிறார்.",
+      "audioId": "phase3_l13_1_ex4"
+    },
+    {
+      "en": "The food is cheap but it is delicious.",
+      "ta": "உணவு மலிவானது ஆனால் அது சுவையானது.",
+      "audioId": "phase3_l13_1_ex5"
+    },
+    {
+      "en": "We can go by bus or we can go by train.",
+      "ta": "நாம் பேருந்தில் செல்லலாம் அல்லது ரயிலில் செல்லலாம்.",
+      "audioId": "phase3_l13_1_ex6"
+    },
+    {
+      "en": "I study English and I practice every day.",
+      "ta": "நான் ஆங்கிலம் படிக்கிறேன் மற்றும் தினமும் பயிற்சி செய்கிறேன்.",
+      "audioId": "phase3_l13_1_ex7"
+    },
+    {
+      "en": "She wants to travel but she has no money.",
+      "ta": "அவள் பயணம் செய்ய விரும்புகிறாள் ஆனால் அவளிடம் பணம் இல்லை.",
+      "audioId": "phase3_l13_1_ex8"
+    },
+    {
+      "en": "Should I call you or should I send a message?",
+      "ta": "நான் உன்னை அழைக்கலாமா அல்லது செய்தி அனுப்பலாமா?",
+      "audioId": "phase3_l13_1_ex9"
+    }
+  ],
+  "listeningQuestions": [
+    {
+      "audioText": "I like reading and I like writing.",
+      "options": [
+        "I like reading and I like writing.",
+        "I like reading but I like writing.",
+        "I like reading or I like writing."
+      ],
+      "correctIndex": 0
+    },
+    {
+      "audioText": "He is rich but he is not happy.",
+      "options": [
+        "He is rich and he is not happy.",
+        "He is rich but he is not happy.",
+        "He is rich or he is not happy."
+      ],
+      "correctIndex": 1
+    },
+    {
+      "audioText": "Do you want rice or do you want bread?",
+      "options": [
+        "Do you want rice and do you want bread?",
+        "Do you want rice but do you want bread?",
+        "Do you want rice or do you want bread?"
+      ],
+      "correctIndex": 2
+    }
+  ],
+  "speakSentences": [
+    {
+      "en": "I work in the morning and I study at night.",
+      "ta": "நான் காலையில் வேலை செய்கிறேன் மற்றும் இரவில் படிக்கிறேன்."
+    },
+    {
+      "en": "She is beautiful but she is very shy.",
+      "ta": "அவள் அழகானவள் ஆனால் மிகவும் கூச்ச சுபாவமுள்ளவள்."
+    },
+    {
+      "en": "Should we walk or should we take a taxi?",
+      "ta": "நாம் நடக்கலாமா அல்லது டாக்ஸி எடுக்கலாமா?"
+    }
+  ],
+  "practiceQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "I like tea ___ I like coffee.",
+      "promptTa": "எனக்கு தேநீர் பிடிக்கும் ___ எனக்கு காபி பிடிக்கும்.",
+      "options": ["and", "but", "or"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "She is smart ___ she is lazy.",
+      "promptTa": "அவள் புத்திசாலி ___ அவள் சோம்பேறி.",
+      "options": ["and", "but", "or"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Do you want water ___ juice?",
+      "promptTa": "உனக்கு தண்ணீர் வேண்டுமா ___ ஜூஸ் வேண்டுமா?",
+      "options": ["and", "but", "or"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "He works hard ___ he plays hard.",
+      "promptTa": "அவர் கடினமாக உழைக்கிறார் ___ கடினமாக விளையாடுகிறார்.",
+      "options": ["and", "but", "or"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "The movie is long ___ it is interesting.",
+      "promptTa": "திரைப்படம் நீளமானது ___ அது சுவாரஸ்யமானது.",
+      "options": ["and", "but", "or"],
+      "correctIndex": 1
+    }
+  ],
+  "masteryQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "I want to go ___ I have no time.",
+      "promptTa": "நான் செல்ல விரும்புகிறேன் ___ எனக்கு நேரம் இல்லை.",
+      "options": ["and", "but", "or"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "She sings ___ she dances very well.",
+      "promptTa": "அவள் பாடுகிறாள் ___ மிகவும் நன்றாக நடனமாடுகிறாள்.",
+      "options": ["and", "but", "or"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Should I email you ___ call you?",
+      "promptTa": "நான் உனக்கு மின்னஞ்சல் அனுப்பலாமா ___ அழைக்கலாமா?",
+      "options": ["and", "but", "or"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "He is poor ___ he is very happy.",
+      "promptTa": "அவர் ஏழை ___ அவர் மிகவும் மகிழ்ச்சியாக இருக்கிறார்.",
+      "options": ["and", "but", "or"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "We can eat here ___ we can go to a restaurant.",
+      "promptTa": "நாம் இங்கே சாப்பிடலாம் ___ உணவகத்திற்கு செல்லலாம்.",
+      "options": ["and", "but", "or"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "I study English ___ I practice speaking.",
+      "promptTa": "நான் ஆங்கிலம் படிக்கிறேன் ___ பேசுவதை பயிற்சி செய்கிறேன்.",
+      "options": ["and", "but", "or"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "The house is old ___ it is very strong.",
+      "promptTa": "வீடு பழையது ___ அது மிகவும் உறுதியானது.",
+      "options": ["and", "but", "or"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Do you prefer tea ___ coffee?",
+      "promptTa": "உனக்கு தேநீர் விருப்பமா ___ காபி விருப்பமா?",
+      "options": ["and", "but", "or"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "She reads books ___ she watches movies.",
+      "promptTa": "அவள் புத்தகங்கள் படிக்கிறாள் ___ திரைப்படங்கள் பார்க்கிறாள்.",
+      "options": ["and", "but", "or"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "I want to help ___ I don't know how.",
+      "promptTa": "நான் உதவ விரும்புகிறேன் ___ எப்படி என்று தெரியவில்லை.",
+      "options": ["and", "but", "or"],
+      "correctIndex": 1
+    }
+  ]
+}

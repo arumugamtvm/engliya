@@ -1,0 +1,236 @@
+{
+  "id": "phase4_lesson18_1",
+  "order": 1,
+  "unitId": "phase4_unit18",
+  "title": "Sounds & Syllables",
+  "description": "Learn the basic sounds and syllables of English words",
+  "level": "B2",
+  "explain": {
+    "ta": "ஆங்கில உச்சரிப்பின் அடிப்படை ஒலிகள் மற்றும் எழுத்துக்களை புரிந்துகொள்வது முக்கியம். ஆங்கிலத்தில் 44 ஒலிகள் உள்ளன - 24 மெய்யெழுத்து ஒலிகள் (consonants) மற்றும் 20 உயிரெழுத்து ஒலிகள் (vowels). எழுத்துக்கூட்டு (syllable) என்பது ஒரு உயிரெழுத்து ஒலியைக் கொண்ட சொல்லின் ஒரு பகுதி. எடுத்துக்காட்டு: 'water' = wa-ter (2 எழுத்துக்கூட்டுகள்), 'beautiful' = beau-ti-ful (3 எழுத்துக்கூட்டுகள்). எழுத்துக்கூட்டுகளை சரியாக எண்ணுவது உச்சரிப்பை மேம்படுத்த உதவும்.",
+    "en": "Understanding the basic sounds and syllables of English is essential for good pronunciation. English has 44 sounds - 24 consonant sounds and 20 vowel sounds. A syllable is a unit of pronunciation containing one vowel sound. For example: 'water' = wa-ter (2 syllables), 'beautiful' = beau-ti-ful (3 syllables). Counting syllables correctly helps improve your pronunciation and rhythm when speaking English.",
+    "table": [
+      {
+        "key": "Consonant Sounds",
+        "examples": ["/p/ as in 'pen'", "/b/ as in 'book'", "/t/ as in 'time'", "/d/ as in 'day'"]
+      },
+      {
+        "key": "Vowel Sounds",
+        "examples": ["/iː/ as in 'see'", "/ɪ/ as in 'sit'", "/e/ as in 'bed'", "/æ/ as in 'cat'"]
+      },
+      {
+        "key": "1 Syllable Words",
+        "examples": ["cat", "dog", "book", "house"]
+      },
+      {
+        "key": "2 Syllable Words",
+        "examples": ["wa-ter", "hap-py", "ta-ble", "gar-den"]
+      },
+      {
+        "key": "3 Syllable Words",
+        "examples": ["beau-ti-ful", "to-mor-row", "com-pu-ter", "im-por-tant"]
+      }
+    ]
+  },
+  "examples": [
+    {
+      "en": "The word 'cat' has one syllable.",
+      "ta": "'cat' என்ற சொல்லில் ஒரு எழுத்துக்கூட்டு உள்ளது.",
+      "audioId": "phase4_l18_1_ex1"
+    },
+    {
+      "en": "The word 'water' has two syllables: wa-ter.",
+      "ta": "'water' என்ற சொல்லில் இரண்டு எழுத்துக்கூட்டுகள் உள்ளன: wa-ter.",
+      "audioId": "phase4_l18_1_ex2"
+    },
+    {
+      "en": "The word 'beautiful' has three syllables: beau-ti-ful.",
+      "ta": "'beautiful' என்ற சொல்லில் மூன்று எழுத்துக்கூட்டுகள் உள்ளன: beau-ti-ful.",
+      "audioId": "phase4_l18_1_ex3"
+    },
+    {
+      "en": "The sound /p/ is a consonant sound, as in 'pen'.",
+      "ta": "/p/ ஒலி ஒரு மெய்யெழுத்து ஒலி, 'pen' என்பதில் உள்ளது போல.",
+      "audioId": "phase4_l18_1_ex4"
+    },
+    {
+      "en": "The sound /iː/ is a vowel sound, as in 'see'.",
+      "ta": "/iː/ ஒலி ஒரு உயிரெழுத்து ஒலி, 'see' என்பதில் உள்ளது போல.",
+      "audioId": "phase4_l18_1_ex5"
+    },
+    {
+      "en": "The word 'computer' has three syllables: com-pu-ter.",
+      "ta": "'computer' என்ற சொல்லில் மூன்று எழுத்துக்கூட்டுகள் உள்ளன: com-pu-ter.",
+      "audioId": "phase4_l18_1_ex6"
+    },
+    {
+      "en": "The word 'elephant' has three syllables: el-e-phant.",
+      "ta": "'elephant' என்ற சொல்லில் மூன்று எழுத்துக்கூட்டுகள் உள்ளன: el-e-phant.",
+      "audioId": "phase4_l18_1_ex7"
+    },
+    {
+      "en": "The word 'university' has five syllables: u-ni-ver-si-ty.",
+      "ta": "'university' என்ற சொல்லில் ஐந்து எழுத்துக்கூட்டுகள் உள்ளன: u-ni-ver-si-ty.",
+      "audioId": "phase4_l18_1_ex8"
+    }
+  ],
+  "listeningQuestions": [
+    {
+      "audioText": "The word 'happy' has two syllables: hap-py.",
+      "options": [
+        "'happy' has 1 syllable",
+        "'happy' has 2 syllables",
+        "'happy' has 3 syllables"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "audioText": "The word 'important' has three syllables: im-por-tant.",
+      "options": [
+        "'important' has 2 syllables",
+        "'important' has 3 syllables",
+        "'important' has 4 syllables"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "audioText": "The sound /b/ is a consonant sound found in words like 'book' and 'baby'.",
+      "options": [
+        "/b/ is a vowel sound",
+        "/b/ is a consonant sound",
+        "/b/ is a silent sound"
+      ],
+      "correctIndex": 1
+    }
+  ],
+  "speakSentences": [
+    {
+      "en": "The word 'water' has two syllables.",
+      "ta": "'water' என்ற சொல்லில் இரண்டு எழுத்துக்கூட்டுகள் உள்ளன."
+    },
+    {
+      "en": "Beautiful has three syllables: beau-ti-ful.",
+      "ta": "'beautiful' இல் மூன்று எழுத்துக்கூட்டுகள் உள்ளன: beau-ti-ful."
+    },
+    {
+      "en": "The sound /p/ is a consonant sound.",
+      "ta": "/p/ ஒலி ஒரு மெய்யெழுத்து ஒலி."
+    },
+    {
+      "en": "Computer has three syllables: com-pu-ter.",
+      "ta": "'computer' இல் மூன்று எழுத்துக்கூட்டுகள் உள்ளன: com-pu-ter."
+    },
+    {
+      "en": "University has five syllables.",
+      "ta": "'university' இல் ஐந்து எழுத்துக்கூட்டுகள் உள்ளன."
+    }
+  ],
+  "practiceQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "How many syllables does 'cat' have?",
+      "promptTa": "'cat' இல் எத்தனை எழுத்துக்கூட்டுகள் உள்ளன?",
+      "options": ["1", "2", "3"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "How many syllables does 'garden' have?",
+      "promptTa": "'garden' இல் எத்தனை எழுத்துக்கூட்டுகள் உள்ளன?",
+      "options": ["1", "2", "3"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which is a consonant sound?",
+      "promptTa": "எது மெய்யெழுத்து ஒலி?",
+      "options": ["/iː/ as in 'see'", "/p/ as in 'pen'", "/æ/ as in 'cat'"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which is a vowel sound?",
+      "promptTa": "எது உயிரெழுத்து ஒலி?",
+      "options": ["/t/ as in 'time'", "/b/ as in 'book'", "/e/ as in 'bed'"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "How many syllables does 'tomorrow' have?",
+      "promptTa": "'tomorrow' இல் எத்தனை எழுத்துக்கூட்டுகள் உள்ளன?",
+      "options": ["2", "3", "4"],
+      "correctIndex": 1
+    }
+  ],
+  "masteryQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "How many syllables does 'beautiful' have?",
+      "promptTa": "'beautiful' இல் எத்தனை எழுத்துக்கூட்டுகள் உள்ளன?",
+      "options": ["2", "3", "4"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "How many syllables does 'university' have?",
+      "promptTa": "'university' இல் எத்தனை எழுத்துக்கூட்டுகள் உள்ளன?",
+      "options": ["3", "4", "5"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which word has 1 syllable?",
+      "promptTa": "எந்த சொல்லில் 1 எழுத்துக்கூட்டு உள்ளது?",
+      "options": ["water", "book", "happy"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which word has 3 syllables?",
+      "promptTa": "எந்த சொல்லில் 3 எழுத்துக்கூட்டுகள் உள்ளன?",
+      "options": ["garden", "important", "house"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "How many consonant sounds are there in English?",
+      "promptTa": "ஆங்கிலத்தில் எத்தனை மெய்யெழுத்து ஒலிகள் உள்ளன?",
+      "options": ["20", "24", "44"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "How many vowel sounds are there in English?",
+      "promptTa": "ஆங்கிலத்தில் எத்தனை உயிரெழுத்து ஒலிகள் உள்ளன?",
+      "options": ["5", "20", "24"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which word has 2 syllables?",
+      "promptTa": "எந்த சொல்லில் 2 எழுத்துக்கூட்டுகள் உள்ளன?",
+      "options": ["cat", "table", "elephant"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "The sound /d/ is a:",
+      "promptTa": "/d/ ஒலி ஒரு:",
+      "options": ["vowel sound", "consonant sound", "silent sound"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "How many syllables does 'elephant' have?",
+      "promptTa": "'elephant' இல் எத்தனை எழுத்துக்கூட்டுகள் உள்ளன?",
+      "options": ["2", "3", "4"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "A syllable must contain at least one:",
+      "promptTa": "ஒரு எழுத்துக்கூட்டில் குறைந்தது ஒரு ___ இருக்க வேண்டும்:",
+      "options": ["consonant sound", "vowel sound", "silent letter"],
+      "correctIndex": 1
+    }
+  ]
+}

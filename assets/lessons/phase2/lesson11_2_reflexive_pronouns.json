@@ -1,0 +1,63 @@
+{
+  "id": "phase2_lesson11_2",
+  "order": 2,
+  "unitId": "phase2_unit11",
+  "title": "Reflexive Pronouns",
+  "description": "myself / yourself / himself / herself / itself / ourselves / yourselves / themselves",
+  "level": "A2",
+  "explain": {
+    "ta": "Reflexive pronouns என்பது செயலை செய்பவரே அதன் பலனையும் பெறுவதைக் குறிக்கும். இவை -self அல்லது -selves என முடியும். I → myself, you → yourself/yourselves, he → himself, she → herself, it → itself, we → ourselves, they → themselves. உதாரணம்: 'I hurt myself' (நான் என்னையே காயப்படுத்திக்கொண்டேன்).",
+    "en": "Reflexive pronouns show that the subject does the action to itself. They end in -self or -selves. I → myself, you → yourself/yourselves, he → himself, she → herself, it → itself, we → ourselves, they → themselves. Example: 'I hurt myself' means I hurt me, the same person."
+  },
+  "examples": [
+    {
+      "en": "She looked at herself in the mirror.",
+      "ta": "அவள் கண்ணாடியில் தன்னைப் பார்த்தாள்.",
+      "audioId": "phase2_l11_2_ex1"
+    },
+    {
+      "en": "We enjoyed ourselves at the party.",
+      "ta": "நாங்கள் விருந்தில் மகிழ்ந்தோம்.",
+      "audioId": "phase2_l11_2_ex2"
+    },
+    {
+      "en": "They taught themselves English.",
+      "ta": "அவர்கள் தாங்களாகவே ஆங்கிலம் கற்றுக்கொண்டார்கள்.",
+      "audioId": "phase2_l11_2_ex3"
+    }
+  ],
+  "listeningQuestions": [],
+  "speakSentences": [],
+  "practiceQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "I hurt ___ while cooking.",
+      "promptTa": "நான் சமைக்கும்போது என்னைக் காயப்படுத்திக்கொண்டேன்.",
+      "options": ["me", "myself", "mine", "my"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "He can do it ___.",
+      "promptTa": "அவன் அதை தானாகவே செய்ய முடியும்.",
+      "options": ["him", "his", "himself", "he"],
+      "correctIndex": 2
+    }
+  ],
+  "masteryQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "Did you enjoy ___ at the concert?",
+      "promptTa": "நீங்கள் இசை நிகழ்ச்சியில் மகிழ்ந்தீர்களா?",
+      "options": ["you", "your", "yours", "yourself"],
+      "correctIndex": 3
+    },
+    {
+      "type": "mcq",
+      "promptEn": "The children dressed ___.",
+      "promptTa": "குழந்தைகள் தாங்களாகவே உடை அணிந்தார்கள்.",
+      "options": ["them", "their", "theirs", "themselves"],
+      "correctIndex": 3
+    }
+  ]
+}

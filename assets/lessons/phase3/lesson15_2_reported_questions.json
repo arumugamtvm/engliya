@@ -1,0 +1,229 @@
+{
+  "id": "phase3_lesson15_2",
+  "order": 2,
+  "unitId": "phase3_unit15",
+  "title": "Reported Questions",
+  "description": "Learn to report questions using indirect speech",
+  "level": "B1",
+  "explain": {
+    "ta": "Questions-ஐ report செய்யும்போது சில மாற்றங்கள் நடக்கும். Yes/No questions-க்கு 'if' அல்லது 'whether' பயன்படுத்துகிறோம். Wh-questions-க்கு wh-word-ஐ வைத்துக்கொள்கிறோம். Question mark இல்லை, word order மாறும் (subject + verb). Tense backshift நடக்கும். Direct: 'Where do you live?' → Reported: 'She asked where I lived'. Direct: 'Do you like tea?' → Reported: 'He asked if I liked tea'. Auxiliary verbs (do/does/did) மறைந்துவிடும்.",
+    "en": "When reporting questions, several changes occur. For Yes/No questions, we use 'if' or 'whether'. For Wh-questions, we keep the wh-word. There's no question mark, and word order changes to statement form (subject + verb). Tense backshift applies. Direct: 'Where do you live?' → Reported: 'She asked where I lived'. Direct: 'Do you like tea?' → Reported: 'He asked if I liked tea'. Auxiliary verbs (do/does/did) disappear in reported questions.",
+    "table": [
+      {
+        "key": "Yes/No Questions (if/whether)",
+        "examples": ["'Do you like it?' → He asked if I liked it", "'Are you coming?' → She asked if I was coming", "'Can you help?' → He asked if I could help"]
+      },
+      {
+        "key": "Where Questions",
+        "examples": ["'Where do you live?' → She asked where I lived", "'Where is he?' → He asked where he was", "'Where did you go?' → She asked where I had gone"]
+      },
+      {
+        "key": "What/Who Questions",
+        "examples": ["'What do you want?' → He asked what I wanted", "'Who is she?' → She asked who she was", "'What did you say?' → He asked what I had said"]
+      },
+      {
+        "key": "When/Why/How Questions",
+        "examples": ["'When will you come?' → She asked when I would come", "'Why are you late?' → He asked why I was late", "'How do you know?' → She asked how I knew"]
+      }
+    ]
+  },
+  "examples": [
+    {
+      "en": "Direct: 'Where do you live?' Reported: She asked where I lived.",
+      "ta": "நேரடி: 'நீங்கள் எங்கே வசிக்கிறீர்கள்?' மறைமுக: அவள் நான் எங்கே வசிக்கிறேன் என்று கேட்டாள்.",
+      "audioId": "phase3_l15_2_ex1"
+    },
+    {
+      "en": "Direct: 'Do you like coffee?' Reported: He asked if I liked coffee.",
+      "ta": "நேரடி: 'உங்களுக்கு காபி பிடிக்குமா?' மறைமுக: அவர் எனக்கு காபி பிடிக்குமா என்று கேட்டார்.",
+      "audioId": "phase3_l15_2_ex2"
+    },
+    {
+      "en": "Direct: 'What is your name?' Reported: She asked what my name was.",
+      "ta": "நேரடி: 'உங்கள் பெயர் என்ன?' மறைமுக: அவள் என் பெயர் என்ன என்று கேட்டாள்.",
+      "audioId": "phase3_l15_2_ex3"
+    },
+    {
+      "en": "Direct: 'Are you coming to the party?' Reported: He asked if I was coming to the party.",
+      "ta": "நேரடி: 'நீங்கள் விழாவுக்கு வருகிறீர்களா?' மறைமுக: அவர் நான் விழாவுக்கு வருகிறேனா என்று கேட்டார்.",
+      "audioId": "phase3_l15_2_ex4"
+    },
+    {
+      "en": "Direct: 'When will you finish?' Reported: She asked when I would finish.",
+      "ta": "நேரடி: 'நீங்கள் எப்போது முடிப்பீர்கள்?' மறைமுக: அவள் நான் எப்போது முடிப்பேன் என்று கேட்டாள்.",
+      "audioId": "phase3_l15_2_ex5"
+    },
+    {
+      "en": "Direct: 'Why are you late?' Reported: He asked why I was late.",
+      "ta": "நேரடி: 'நீங்கள் ஏன் தாமதமாக வந்தீர்கள்?' மறைமுக: அவர் நான் ஏன் தாமதமாக வந்தேன் என்று கேட்டார்.",
+      "audioId": "phase3_l15_2_ex6"
+    },
+    {
+      "en": "Direct: 'How do you know?' Reported: She asked how I knew.",
+      "ta": "நேரடி: 'உங்களுக்கு எப்படி தெரியும்?' மறைமுக: அவள் எனக்கு எப்படி தெரியும் என்று கேட்டாள்.",
+      "audioId": "phase3_l15_2_ex7"
+    },
+    {
+      "en": "Direct: 'Can you help me?' Reported: He asked if I could help him.",
+      "ta": "நேரடி: 'நீங்கள் எனக்கு உதவ முடியுமா?' மறைமுக: அவர் நான் அவருக்கு உதவ முடியுமா என்று கேட்டார்.",
+      "audioId": "phase3_l15_2_ex8"
+    },
+    {
+      "en": "Direct: 'Who is that person?' Reported: She asked who that person was.",
+      "ta": "நேரடி: 'அந்த நபர் யார்?' மறைமுக: அவள் அந்த நபர் யார் என்று கேட்டாள்.",
+      "audioId": "phase3_l15_2_ex9"
+    }
+  ],
+  "listeningQuestions": [
+    {
+      "audioText": "She asked if I had seen the movie.",
+      "options": [
+        "She asked if I had seen the movie.",
+        "She asked if I have seen the movie.",
+        "She asked do I see the movie."
+      ],
+      "correctIndex": 0
+    },
+    {
+      "audioText": "He asked where I was going.",
+      "options": [
+        "He asked where am I going.",
+        "He asked where I was going.",
+        "He asked where I am going."
+      ],
+      "correctIndex": 1
+    },
+    {
+      "audioText": "They asked what time the meeting would start.",
+      "options": [
+        "They asked what time will the meeting start.",
+        "They asked what time the meeting starts.",
+        "They asked what time the meeting would start."
+      ],
+      "correctIndex": 2
+    }
+  ],
+  "speakSentences": [
+    {
+      "en": "She asked if I could speak English.",
+      "ta": "அவள் என்னால் ஆங்கிலம் பேச முடியுமா என்று கேட்டாள்."
+    },
+    {
+      "en": "He asked where I had bought the phone.",
+      "ta": "அவர் நான் எங்கே போனை வாங்கினேன் என்று கேட்டார்."
+    },
+    {
+      "en": "They asked when we would arrive.",
+      "ta": "அவர்கள் நாங்கள் எப்போது வருவோம் என்று கேட்டார்கள்."
+    }
+  ],
+  "practiceQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "Direct: 'Do you like music?' Reported: She asked ___ I liked music.",
+      "promptTa": "நேரடி: 'உங்களுக்கு இசை பிடிக்குமா?' மறைமுக: அவள் எனக்கு இசை பிடிக்குமா ___ கேட்டாள்.",
+      "options": ["that", "if", "what"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Direct: 'Where is the station?' Reported: He asked where the station ___.",
+      "promptTa": "நேரடி: 'நிலையம் எங்கே?' மறைமுக: அவர் நிலையம் எங்கே ___ என்று கேட்டார்.",
+      "options": ["is", "was", "has been"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Direct: 'What do you want?' Reported: She asked what I ___.",
+      "promptTa": "நேரடி: 'உங்களுக்கு என்ன வேண்டும்?' மறைமுக: அவள் எனக்கு என்ன ___ என்று கேட்டாள்.",
+      "options": ["want", "wanted", "have wanted"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Direct: 'Are you ready?' Reported: He asked ___ I was ready.",
+      "promptTa": "நேரடி: 'நீங்கள் தயாரா?' மறைமுக: அவர் நான் தயாரா ___ கேட்டார்.",
+      "options": ["that", "if", "what"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Direct: 'When will you come?' Reported: She asked when I ___ come.",
+      "promptTa": "நேரடி: 'நீங்கள் எப்போது வருவீர்கள்?' மறைமுக: அவள் நான் எப்போது ___ என்று கேட்டாள்.",
+      "options": ["will", "would", "can"],
+      "correctIndex": 1
+    }
+  ],
+  "masteryQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "Direct: 'Why are you here?' Reported: He asked why I ___ there.",
+      "promptTa": "நேரடி: 'நீங்கள் ஏன் இங்கே இருக்கிறீர்கள்?' மறைமுக: அவர் நான் ஏன் அங்கே ___ என்று கேட்டார்.",
+      "options": ["am", "was", "have been"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Direct: 'Can you drive?' Reported: She asked ___ I could drive.",
+      "promptTa": "நேரடி: 'உங்களால் வாகனம் ஓட்ட முடியுமா?' மறைமுக: அவள் என்னால் வாகனம் ஓட்ட முடியுமா ___ கேட்டாள்.",
+      "options": ["that", "if", "what"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Direct: 'How old are you?' Reported: He asked how old I ___.",
+      "promptTa": "நேரடி: 'உங்கள் வயது என்ன?' மறைமுக: அவர் என் வயது என்ன ___ கேட்டார்.",
+      "options": ["am", "was", "have been"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Direct: 'Did you see him?' Reported: She asked if I ___ him.",
+      "promptTa": "நேரடி: 'நீங்கள் அவரை பார்த்தீர்களா?' மறைமுக: அவள் நான் அவரை ___ என்று கேட்டாள்.",
+      "options": ["saw", "had seen", "have seen"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Direct: 'Where did you go?' Reported: He asked where I ___ gone.",
+      "promptTa": "நேரடி: 'நீங்கள் எங்கே சென்றீர்கள்?' மறைமுக: அவர் நான் எங்கே ___ என்று கேட்டார்.",
+      "options": ["have", "had", "has"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Direct: 'Will you help me?' Reported: She asked if I ___ help her.",
+      "promptTa": "நேரடி: 'நீங்கள் எனக்கு உதவுவீர்களா?' மறைமுக: அவள் நான் அவளுக்கு ___ என்று கேட்டாள்.",
+      "options": ["will", "would", "can"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Direct: 'Who is your teacher?' Reported: He asked who my teacher ___.",
+      "promptTa": "நேரடி: 'உங்கள் ஆசிரியர் யார்?' மறைமுக: அவர் என் ஆசிரியர் யார் ___ கேட்டார்.",
+      "options": ["is", "was", "has been"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Direct: 'Have you finished?' Reported: She asked if I ___ finished.",
+      "promptTa": "நேரடி: 'நீங்கள் முடித்துவிட்டீர்களா?' மறைமுக: அவள் நான் ___ என்று கேட்டாள்.",
+      "options": ["have", "had", "has"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Direct: 'What time is it?' Reported: He asked what time it ___.",
+      "promptTa": "நேரடி: 'நேரம் என்ன?' மறைமுக: அவர் நேரம் என்ன ___ கேட்டார்.",
+      "options": ["is", "was", "has been"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Direct: 'Are you feeling better?' Reported: She asked ___ I was feeling better.",
+      "promptTa": "நேரடி: 'உங்களுக்கு நன்றாக இருக்கிறதா?' மறைமுக: அவள் எனக்கு நன்றாக இருக்கிறதா ___ கேட்டாள்.",
+      "options": ["that", "if", "what"],
+      "correctIndex": 1
+    }
+  ]
+}

@@ -1,0 +1,272 @@
+{
+  "id": "phase4_lesson20_2",
+  "order": 2,
+  "unitId": "phase4_unit20",
+  "title": "Restaurant & Food",
+  "description": "Learn to order food and communicate at restaurants",
+  "level": "B2",
+  "explain": {
+    "ta": "உணவகத்தில் ஆங்கிலத்தில் பேசுவது முக்கியமான திறன். மேசை முன்பதிவு செய்வது, உணவு ஆர்டர் செய்வது, பில் கேட்பது போன்ற சூழ்நிலைகளுக்கு தயாராக இருங்கள். முக்கிய சொற்றொடர்கள்: 'A table for two, please', 'Can I see the menu?', 'I'd like to order...', 'Can I have the bill?'. சர்வர்களுடன் கண்ணியமாக பேசுவது நல்ல அனுபவத்தை தரும்.",
+    "en": "Speaking English at restaurants is an important skill. Be prepared for situations like making reservations, ordering food, and asking for the bill. Key phrases: 'A table for two, please', 'Can I see the menu?', 'I'd like to order...', 'Can I have the bill?'. Being polite with servers creates a pleasant dining experience.",
+    "table": [
+      {
+        "key": "Reservations & Seating",
+        "examples": ["A table for two, please.", "Do you have a reservation?", "Can we sit by the window?", "How long is the wait?"]
+      },
+      {
+        "key": "Ordering Food",
+        "examples": ["Can I see the menu?", "I'd like to order...", "What do you recommend?", "Is this dish spicy?"]
+      },
+      {
+        "key": "Special Requests",
+        "examples": ["I'm vegetarian.", "No onions, please.", "Can I have extra rice?", "Is this gluten-free?"]
+      },
+      {
+        "key": "Payment",
+        "examples": ["Can I have the bill?", "Is service charge included?", "Can we split the bill?", "Keep the change."]
+      }
+    ]
+  },
+  "examples": [
+    {
+      "en": "Good evening. A table for two, please.",
+      "ta": "மாலை வணக்கம். இரண்டு பேருக்கு ஒரு மேசை, தயவுசெய்து.",
+      "audioId": "phase4_l20_2_ex1"
+    },
+    {
+      "en": "Can I see the menu, please?",
+      "ta": "மெனு பார்க்கலாமா, தயவுசெய்து?",
+      "audioId": "phase4_l20_2_ex2"
+    },
+    {
+      "en": "I'd like to order the chicken biryani and a mango lassi.",
+      "ta": "நான் சிக்கன் பிரியாணி மற்றும் மாம்பழ லஸ்ஸி ஆர்டர் செய்ய விரும்புகிறேன்.",
+      "audioId": "phase4_l20_2_ex3"
+    },
+    {
+      "en": "What do you recommend? What's your specialty?",
+      "ta": "நீங்கள் என்ன பரிந்துரைக்கிறீர்கள்? உங்கள் சிறப்பு என்ன?",
+      "audioId": "phase4_l20_2_ex4"
+    },
+    {
+      "en": "Is this dish very spicy? I prefer mild food.",
+      "ta": "இந்த உணவு மிகவும் காரமா? நான் லேசான உணவை விரும்புகிறேன்.",
+      "audioId": "phase4_l20_2_ex5"
+    },
+    {
+      "en": "I'm vegetarian. Do you have any vegetarian options?",
+      "ta": "நான் சைவம். சைவ விருப்பங்கள் ஏதாவது உள்ளதா?",
+      "audioId": "phase4_l20_2_ex6"
+    },
+    {
+      "en": "Can I have the bill, please?",
+      "ta": "பில் தர முடியுமா, தயவுசெய்து?",
+      "audioId": "phase4_l20_2_ex7"
+    },
+    {
+      "en": "The food was delicious. Thank you!",
+      "ta": "உணவு சுவையாக இருந்தது. நன்றி!",
+      "audioId": "phase4_l20_2_ex8"
+    }
+  ],
+  "dialogues": [
+    {
+      "roleA": "Customer",
+      "roleB": "Waiter",
+      "lines": [
+        {"speaker": "Waiter", "text": "Good evening! Welcome to our restaurant. Do you have a reservation?"},
+        {"speaker": "Customer", "text": "No, we don't. A table for two, please."},
+        {"speaker": "Waiter", "text": "Of course. Please follow me. Here's your table."},
+        {"speaker": "Customer", "text": "Thank you. Can I see the menu, please?"},
+        {"speaker": "Waiter", "text": "Here you go. Would you like something to drink first?"},
+        {"speaker": "Customer", "text": "Yes, two glasses of water, please."},
+        {"speaker": "Waiter", "text": "Sure. I'll be back to take your order."}
+      ]
+    },
+    {
+      "roleA": "Customer",
+      "roleB": "Waiter",
+      "lines": [
+        {"speaker": "Waiter", "text": "Are you ready to order?"},
+        {"speaker": "Customer", "text": "Yes. I'd like the chicken biryani. Is it very spicy?"},
+        {"speaker": "Waiter", "text": "It's medium spicy. We can make it mild if you prefer."},
+        {"speaker": "Customer", "text": "Mild would be great, thank you. And a mango lassi."},
+        {"speaker": "Waiter", "text": "Excellent choice. Anything else?"},
+        {"speaker": "Customer", "text": "That's all for now, thank you."},
+        {"speaker": "Waiter", "text": "Your order will be ready in about 15 minutes."}
+      ]
+    },
+    {
+      "roleA": "Customer",
+      "roleB": "Waiter",
+      "lines": [
+        {"speaker": "Customer", "text": "Excuse me, can I have the bill, please?"},
+        {"speaker": "Waiter", "text": "Of course. Here's your bill. The total is 650 rupees."},
+        {"speaker": "Customer", "text": "Is service charge included?"},
+        {"speaker": "Waiter", "text": "Yes, it's included. Would you like to pay by cash or card?"},
+        {"speaker": "Customer", "text": "I'll pay by card, please."},
+        {"speaker": "Waiter", "text": "Thank you. Here's your receipt. Have a great evening!"}
+      ]
+    }
+  ],
+  "listeningQuestions": [
+    {
+      "audioText": "Good evening! A table for two, please. Of course, please follow me.",
+      "options": [
+        "The customer wants a table for four",
+        "The customer wants a table for two",
+        "There are no tables available"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "audioText": "I'd like the chicken biryani. Is it very spicy? It's medium spicy.",
+      "options": [
+        "The biryani is very spicy",
+        "The biryani is medium spicy",
+        "The biryani is not spicy at all"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "audioText": "Can I have the bill, please? The total is 650 rupees.",
+      "options": [
+        "The bill is 560 rupees",
+        "The bill is 650 rupees",
+        "The bill is 750 rupees"
+      ],
+      "correctIndex": 1
+    }
+  ],
+  "speakSentences": [
+    {
+      "en": "A table for two, please.",
+      "ta": "இரண்டு பேருக்கு ஒரு மேசை, தயவுசெய்து."
+    },
+    {
+      "en": "Can I see the menu, please?",
+      "ta": "மெனு பார்க்கலாமா, தயவுசெய்து?"
+    },
+    {
+      "en": "I'd like to order the chicken biryani.",
+      "ta": "நான் சிக்கன் பிரியாணி ஆர்டர் செய்ய விரும்புகிறேன்."
+    },
+    {
+      "en": "Is this dish spicy?",
+      "ta": "இந்த உணவு காரமா?"
+    },
+    {
+      "en": "Can I have the bill, please?",
+      "ta": "பில் தர முடியுமா, தயவுசெய்து?"
+    }
+  ],
+  "practiceQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "How do you ask for a table?",
+      "promptTa": "மேசை எப்படி கேட்பது?",
+      "options": ["Give me table.", "A table for two, please.", "I want sit."],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "How do you ask to see the menu?",
+      "promptTa": "மெனு பார்க்க எப்படி கேட்பது?",
+      "options": ["Menu!", "Can I see the menu, please?", "Where is food?"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "How do you order food politely?",
+      "promptTa": "உணவை கண்ணியமாக எப்படி ஆர்டர் செய்வது?",
+      "options": ["Give me biryani.", "I'd like to order the biryani.", "Biryani now."],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "How do you ask if food is spicy?",
+      "promptTa": "உணவு காரமா என்று எப்படி கேட்பது?",
+      "options": ["Is this dish spicy?", "This is hot?", "Spicy food?"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "How do you ask for the bill?",
+      "promptTa": "பில் எப்படி கேட்பது?",
+      "options": ["Money please.", "Can I have the bill, please?", "Pay now."],
+      "correctIndex": 1
+    }
+  ],
+  "masteryQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "What does 'What do you recommend?' mean?",
+      "promptTa": "'What do you recommend?' என்றால் என்ன?",
+      "options": ["What is cheap?", "What do you suggest I order?", "What is available?"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "How do you say you're vegetarian?",
+      "promptTa": "நீங்கள் சைவம் என்று எப்படி சொல்வது?",
+      "options": ["No meat.", "I'm vegetarian.", "Vegetables only."],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "How do you ask for mild food?",
+      "promptTa": "லேசான உணவு எப்படி கேட்பது?",
+      "options": ["Not spicy!", "Can you make it mild, please?", "No chili."],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "What does 'split the bill' mean?",
+      "promptTa": "'split the bill' என்றால் என்ன?",
+      "options": ["Pay everything", "Divide payment between people", "Get a discount"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "How do you compliment the food?",
+      "promptTa": "உணவை எப்படி பாராட்டுவது?",
+      "options": ["Food okay.", "The food was delicious!", "I ate."],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "What does 'service charge' mean?",
+      "promptTa": "'service charge' என்றால் என்ன?",
+      "options": ["Food cost", "Extra fee for service", "Discount"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "How do you ask for extra rice?",
+      "promptTa": "கூடுதல் சாதம் எப்படி கேட்பது?",
+      "options": ["More rice!", "Can I have extra rice, please?", "Rice again."],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "How do you ask about waiting time?",
+      "promptTa": "காத்திருப்பு நேரம் பற்றி எப்படி கேட்பது?",
+      "options": ["How long is the wait?", "Wait time?", "When food?"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "What do you say when leaving a tip?",
+      "promptTa": "டிப் கொடுக்கும்போது என்ன சொல்வது?",
+      "options": ["Take money.", "Keep the change.", "Extra for you."],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "How do you ask about ingredients?",
+      "promptTa": "பொருட்கள் பற்றி எப்படி கேட்பது?",
+      "options": ["What's in this dish?", "Food what?", "Ingredients?"],
+      "correctIndex": 0
+    }
+  ]
+}

@@ -1,0 +1,190 @@
+{
+  "id": "phase3_lesson12_1",
+  "order": 1,
+  "unitId": "phase3_unit12",
+  "title": "Story Listening",
+  "description": "Listen to short stories and understand the main ideas",
+  "level": "B1",
+  "explain": {
+    "ta": "கதை கேட்பது ஆங்கிலம் கற்றலின் முக்கியமான பகுதி. கதையை கேட்கும்போது, முதலில் முக்கிய கருத்துக்களை புரிந்துகொள்ளுங்கள். யார், என்ன, எங்கே, எப்போது என்ற கேள்விகளுக்கு பதில் தேடுங்கள். ஒவ்வொரு வார்த்தையும் புரிய வேண்டிய அவசியமில்லை - முக்கிய தகவல்களை கவனியுங்கள். கதையை மீண்டும் சொல்ல முயற்சிக்கும்போது, உங்கள் சொந்த வார்த்தைகளில் சொல்லுங்கள்.",
+    "en": "Story listening is an important part of learning English. When listening to a story, first understand the main ideas. Look for answers to who, what, where, and when questions. You don't need to understand every word - focus on key information. When trying to retell the story, use your own words. This helps improve both listening comprehension and speaking skills.",
+    "story": [
+      {"line": 1, "en": "Yesterday, Ravi went to the market.", "ta": "நேற்று, ரவி சந்தைக்கு சென்றார்."},
+      {"line": 2, "en": "He wanted to buy vegetables for dinner.", "ta": "அவர் இரவு உணவுக்கு காய்கறிகள் வாங்க விரும்பினார்."},
+      {"line": 3, "en": "At the market, he met his old friend Kumar.", "ta": "சந்தையில், அவர் தனது பழைய நண்பர் குமாரை சந்தித்தார்."},
+      {"line": 4, "en": "They talked for thirty minutes.", "ta": "அவர்கள் முப்பது நிமிடங்கள் பேசினார்கள்."},
+      {"line": 5, "en": "Ravi forgot to buy the vegetables!", "ta": "ரவி காய்கறிகள் வாங்க மறந்துவிட்டார்!"},
+      {"line": 6, "en": "He had to go back to the market again.", "ta": "அவர் மீண்டும் சந்தைக்கு செல்ல வேண்டியிருந்தது."}
+    ]
+  },
+  "examples": [
+    {
+      "en": "Ravi went to the market yesterday.",
+      "ta": "ரவி நேற்று சந்தைக்கு சென்றார்.",
+      "audioId": "phase3_l12_1_ex1"
+    },
+    {
+      "en": "He wanted to buy vegetables.",
+      "ta": "அவர் காய்கறிகள் வாங்க விரும்பினார்.",
+      "audioId": "phase3_l12_1_ex2"
+    },
+    {
+      "en": "He met his friend at the market.",
+      "ta": "அவர் சந்தையில் தனது நண்பரை சந்தித்தார்.",
+      "audioId": "phase3_l12_1_ex3"
+    },
+    {
+      "en": "They talked for a long time.",
+      "ta": "அவர்கள் நீண்ட நேரம் பேசினார்கள்.",
+      "audioId": "phase3_l12_1_ex4"
+    },
+    {
+      "en": "Ravi forgot to buy the vegetables.",
+      "ta": "ரவி காய்கறிகள் வாங்க மறந்துவிட்டார்.",
+      "audioId": "phase3_l12_1_ex5"
+    },
+    {
+      "en": "He went back to the market.",
+      "ta": "அவர் மீண்டும் சந்தைக்கு சென்றார்.",
+      "audioId": "phase3_l12_1_ex6"
+    }
+  ],
+  "listeningQuestions": [
+    {
+      "audioText": "Ravi went to the market to buy vegetables.",
+      "options": [
+        "Ravi went to the market to buy vegetables.",
+        "Ravi went to the market to buy fruits.",
+        "Ravi went to the shop to buy vegetables."
+      ],
+      "correctIndex": 0
+    },
+    {
+      "audioText": "He met his old friend Kumar at the market.",
+      "options": [
+        "He met his brother Kumar at the market.",
+        "He met his old friend Kumar at the market.",
+        "He met his old friend Kumar at the shop."
+      ],
+      "correctIndex": 1
+    },
+    {
+      "audioText": "Ravi forgot to buy the vegetables.",
+      "options": [
+        "Ravi remembered to buy the vegetables.",
+        "Ravi forgot to buy the fruits.",
+        "Ravi forgot to buy the vegetables."
+      ],
+      "correctIndex": 2
+    }
+  ],
+  "speakSentences": [
+    {
+      "en": "Ravi went to the market yesterday.",
+      "ta": "ரவி நேற்று சந்தைக்கு சென்றார்."
+    },
+    {
+      "en": "He wanted to buy vegetables for dinner.",
+      "ta": "அவர் இரவு உணவுக்கு காய்கறிகள் வாங்க விரும்பினார்."
+    },
+    {
+      "en": "He met his old friend Kumar.",
+      "ta": "அவர் தனது பழைய நண்பர் குமாரை சந்தித்தார்."
+    }
+  ],
+  "practiceQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "Where did Ravi go yesterday?",
+      "promptTa": "ரவி நேற்று எங்கே சென்றார்?",
+      "options": ["To the shop", "To the market", "To the office"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "What did Ravi want to buy?",
+      "promptTa": "ரவி என்ன வாங்க விரும்பினார்?",
+      "options": ["Fruits", "Vegetables", "Clothes"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Who did Ravi meet at the market?",
+      "promptTa": "ரவி சந்தையில் யாரை சந்தித்தார்?",
+      "options": ["His brother", "His teacher", "His friend Kumar"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "How long did they talk?",
+      "promptTa": "அவர்கள் எவ்வளவு நேரம் பேசினார்கள்?",
+      "options": ["Ten minutes", "Thirty minutes", "One hour"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "What did Ravi forget to do?",
+      "promptTa": "ரவி என்ன செய்ய மறந்தார்?",
+      "options": ["Meet his friend", "Buy vegetables", "Go home"],
+      "correctIndex": 1
+    }
+  ],
+  "masteryQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "Why did Ravi go to the market?",
+      "promptTa": "ரவி ஏன் சந்தைக்கு சென்றார்?",
+      "options": ["To meet Kumar", "To buy vegetables", "To sell vegetables"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "When did Ravi go to the market?",
+      "promptTa": "ரவி எப்போது சந்தைக்கு சென்றார்?",
+      "options": ["Today", "Yesterday", "Last week"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "What happened when Ravi met Kumar?",
+      "promptTa": "ரவி குமாரை சந்தித்தபோது என்ன நடந்தது?",
+      "options": ["They fought", "They talked for thirty minutes", "They went home"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Why did Ravi have to go back to the market?",
+      "promptTa": "ரவி ஏன் மீண்டும் சந்தைக்கு செல்ல வேண்டியிருந்தது?",
+      "options": ["He forgot his wallet", "He forgot to buy vegetables", "He forgot to meet Kumar"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Who is Kumar?",
+      "promptTa": "குமார் யார்?",
+      "options": ["Ravi's brother", "Ravi's old friend", "Ravi's neighbor"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "What was Ravi's plan for the vegetables?",
+      "promptTa": "காய்கறிகளுக்கான ரவியின் திட்டம் என்ன?",
+      "options": ["For breakfast", "For lunch", "For dinner"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Complete: Ravi ___ to the market yesterday.",
+      "promptTa": "நிரப்புக: ரவி நேற்று சந்தைக்கு ___.",
+      "options": ["go", "goes", "went"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Complete: He ___ his old friend at the market.",
+      "promptTa": "நிரப்புக: அவர் சந்தையில் தனது பழைய நண்பரை ___.",
+      "options": ["meet", "meets", "met"],
+      "correctIndex": 2
+    }
+  ]
+}

@@ -1,0 +1,272 @@
+{
+  "id": "phase3_lesson17_4",
+  "order": 4,
+  "unitId": "phase3_unit17",
+  "title": "Mock Interview",
+  "description": "Practice answering common interview questions",
+  "level": "B1",
+  "interviewQuestions": [
+    "Tell me about yourself.",
+    "Why do you want this job?",
+    "What are your strengths and weaknesses?",
+    "Where do you see yourself in 5 years?",
+    "Do you have any questions for us?"
+  ],
+  "explain": {
+    "ta": "நேர்காணல் என்பது வேலை அல்லது கல்வி வாய்ப்புக்கான முக்கியமான படி. நல்ல நேர்காணல் பதில்கள்: 1) தெளிவாகவும் நம்பிக்கையுடனும் பேசுதல், 2) குறிப்பிட்ட உதாரணங்கள் கொடுத்தல், 3) நேர்மறையாக இருத்தல், 4) கேள்விக்கு நேரடியாக பதிலளித்தல். பொதுவான கேள்விகள்: 'Tell me about yourself' (உங்களைப் பற்றி சொல்லுங்கள்), 'Why do you want this job?' (இந்த வேலை ஏன் வேண்டும்?), 'What are your strengths?' (உங்கள் பலங்கள் என்ன?). STAR முறை பயன்படுத்துங்கள்: Situation (சூழ்நிலை), Task (பணி), Action (செயல்), Result (முடிவு).",
+    "en": "An interview is a crucial step for job or education opportunities. Good interview answers: 1) Speak clearly and confidently, 2) Give specific examples, 3) Be positive, 4) Answer the question directly. Common questions: 'Tell me about yourself' (brief background), 'Why do you want this job?' (show interest), 'What are your strengths?' (highlight skills). Use the STAR method: Situation (context), Task (what needed to be done), Action (what you did), Result (outcome).",
+    "table": [
+      {
+        "key": "About Yourself",
+        "examples": ["I'm a software engineer with 3 years experience.", "I graduated from XYZ University.", "I'm passionate about technology."]
+      },
+      {
+        "key": "Why This Job",
+        "examples": ["I'm interested in this field.", "This role matches my skills.", "I want to grow in this company."]
+      },
+      {
+        "key": "Strengths",
+        "examples": ["I'm hardworking and dedicated.", "I'm good at problem-solving.", "I work well in teams."]
+      },
+      {
+        "key": "Future Goals",
+        "examples": ["I want to become a team leader.", "I plan to develop new skills.", "I hope to contribute to the company's success."]
+      }
+    ]
+  },
+  "examples": [
+    {
+      "en": "Tell me about yourself. - I'm a software engineer with 3 years of experience in web development.",
+      "ta": "உங்களைப் பற்றி சொல்லுங்கள். - நான் வலை மேம்பாட்டில் 3 ஆண்டுகள் அனுபவம் கொண்ட மென்பொருள் பொறியாளர்.",
+      "audioId": "phase3_l17_4_ex1"
+    },
+    {
+      "en": "Why do you want this job? - I'm interested in this field and this role matches my skills perfectly.",
+      "ta": "இந்த வேலை ஏன் வேண்டும்? - இந்த துறையில் எனக்கு ஆர்வம் உள்ளது மற்றும் இந்த பங்கு என் திறன்களுடன் சரியாக பொருந்துகிறது.",
+      "audioId": "phase3_l17_4_ex2"
+    },
+    {
+      "en": "What are your strengths? - I'm hardworking, dedicated, and good at problem-solving.",
+      "ta": "உங்கள் பலங்கள் என்ன? - நான் கடின உழைப்பாளி, அர்ப்பணிப்புள்ளவர், மற்றும் சிக்கல் தீர்ப்பதில் நல்லவர்.",
+      "audioId": "phase3_l17_4_ex3"
+    },
+    {
+      "en": "What are your weaknesses? - Sometimes I focus too much on details, but I'm learning to balance it.",
+      "ta": "உங்கள் பலவீனங்கள் என்ன? - சில நேரங்களில் நான் விவரங்களில் அதிகம் கவனம் செலுத்துகிறேன், ஆனால் அதை சமநிலைப்படுத்த கற்றுக்கொண்டிருக்கிறேன்.",
+      "audioId": "phase3_l17_4_ex4"
+    },
+    {
+      "en": "Where do you see yourself in 5 years? - I hope to become a team leader and contribute to the company's growth.",
+      "ta": "5 ஆண்டுகளில் உங்களை எங்கே பார்க்கிறீர்கள்? - நான் குழு தலைவராக மாறி நிறுவனத்தின் வளர்ச்சிக்கு பங்களிக்க நம்புகிறேன்.",
+      "audioId": "phase3_l17_4_ex5"
+    },
+    {
+      "en": "Why should we hire you? - I have the right skills and experience for this position.",
+      "ta": "நாங்கள் உங்களை ஏன் வேலைக்கு எடுக்க வேண்டும்? - இந்த பதவிக்கு எனக்கு சரியான திறன்கள் மற்றும் அனுபவம் உள்ளது.",
+      "audioId": "phase3_l17_4_ex6"
+    },
+    {
+      "en": "Tell me about a challenge you faced. - In my previous job, I had a tight deadline but managed to complete the project on time.",
+      "ta": "நீங்கள் எதிர்கொண்ட சவாலைப் பற்றி சொல்லுங்கள். - என் முந்தைய வேலையில், எனக்கு இறுக்கமான காலக்கெடு இருந்தது ஆனால் திட்டத்தை சரியான நேரத்தில் முடிக்க முடிந்தது.",
+      "audioId": "phase3_l17_4_ex7"
+    },
+    {
+      "en": "What motivates you? - I'm motivated by learning new things and achieving goals.",
+      "ta": "உங்களை ஊக்குவிப்பது என்ன? - புதிய விஷயங்களைக் கற்றுக்கொள்வதும் இலக்குகளை அடைவதும் என்னை ஊக்குவிக்கிறது.",
+      "audioId": "phase3_l17_4_ex8"
+    },
+    {
+      "en": "Do you have any questions for us? - Yes, what are the opportunities for professional development in this role?",
+      "ta": "எங்களுக்கு ஏதேனும் கேள்விகள் உள்ளதா? - ஆம், இந்த பங்கில் தொழில்முறை மேம்பாட்டிற்கான வாய்ப்புகள் என்ன?",
+      "audioId": "phase3_l17_4_ex9"
+    }
+  ],
+  "listeningQuestions": [
+    {
+      "audioText": "I'm a teacher with 5 years of experience. I love working with students and helping them learn.",
+      "options": [
+        "She's a doctor with 5 years experience.",
+        "She's a teacher with 5 years experience who loves working with students.",
+        "She doesn't like teaching."
+      ],
+      "correctIndex": 1
+    },
+    {
+      "audioText": "I want this job because it matches my skills and I'm passionate about this field. I believe I can contribute to the team.",
+      "options": [
+        "He doesn't want the job.",
+        "He wants the job because it matches his skills and he's passionate.",
+        "He has no skills."
+      ],
+      "correctIndex": 1
+    },
+    {
+      "audioText": "My strength is problem-solving. For example, in my last project, I found a solution that saved the company time and money.",
+      "options": [
+        "He doesn't have any strengths.",
+        "His strength is problem-solving with a specific example.",
+        "He only talks about weaknesses."
+      ],
+      "correctIndex": 1
+    }
+  ],
+  "speakSentences": [
+    {
+      "en": "I'm a [profession] with [number] years of experience in [field].",
+      "ta": "நான் [துறையில்] [எண்] ஆண்டுகள் அனுபவம் கொண்ட [தொழில்]."
+    },
+    {
+      "en": "I want this job because [reason 1] and [reason 2].",
+      "ta": "இந்த வேலை எனக்கு வேண்டும் ஏனெனில் [காரணம் 1] மற்றும் [காரணம் 2]."
+    },
+    {
+      "en": "My strengths are [strength 1], [strength 2], and [strength 3].",
+      "ta": "என் பலங்கள் [பலம் 1], [பலம் 2], மற்றும் [பலம் 3]."
+    },
+    {
+      "en": "In 5 years, I hope to [future goal] and [achievement].",
+      "ta": "5 ஆண்டுகளில், நான் [எதிர்கால இலக்கு] மற்றும் [சாதனை] நம்புகிறேன்."
+    },
+    {
+      "en": "Yes, I have a question: [your question about the role or company]?",
+      "ta": "ஆம், எனக்கு ஒரு கேள்வி உள்ளது: [பங்கு அல்லது நிறுவனத்தைப் பற்றிய உங்கள் கேள்வி]?"
+    }
+  ],
+  "practiceQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "What should you mention when introducing yourself?",
+      "promptTa": "உங்களை அறிமுகப்படுத்தும் போது என்ன குறிப்பிட வேண்டும்?",
+      "options": ["Only your name", "Your background and experience", "Nothing"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Complete: I want this job ___ it matches my skills.",
+      "promptTa": "நிரப்புக: இந்த வேலை எனக்கு வேண்டும் ___ அது என் திறன்களுடன் பொருந்துகிறது.",
+      "options": ["but", "because", "never"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "When discussing weaknesses, you should:",
+      "promptTa": "பலவீனங்களைப் பற்றி விவாதிக்கும் போது, நீங்கள்:",
+      "options": [
+        "Say you have no weaknesses",
+        "Mention a weakness and how you're improving",
+        "List many weaknesses"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Complete: I'm ___ at problem-solving.",
+      "promptTa": "நிரப்புக: நான் சிக்கல் தீர்ப்பதில் ___.",
+      "options": ["bad", "good", "never"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "What's a good question to ask the interviewer?",
+      "promptTa": "நேர்காணல் செய்பவரிடம் கேட்க நல்ல கேள்வி என்ன?",
+      "options": [
+        "When can I take vacation?",
+        "What are the opportunities for growth?",
+        "Can I leave early?"
+      ],
+      "correctIndex": 1
+    }
+  ],
+  "masteryQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "Which is the best way to introduce yourself?",
+      "promptTa": "உங்களை அறிமுகப்படுத்த சிறந்த வழி எது?",
+      "options": [
+        "My name is Ravi.",
+        "I'm Ravi, a software engineer with 3 years of experience in web development.",
+        "Ravi."
+      ],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Complete: I'm interested in this field ___ this role matches my skills.",
+      "promptTa": "நிரப்புக: இந்த துறையில் எனக்கு ஆர்வம் உள்ளது ___ இந்த பங்கு என் திறன்களுடன் பொருந்துகிறது.",
+      "options": ["but", "and", "or"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which shows multiple strengths best?",
+      "promptTa": "பல பலங்களை சிறப்பாகக் காட்டுவது எது?",
+      "options": [
+        "I'm good.",
+        "I'm hardworking, dedicated, and good at problem-solving.",
+        "I work."
+      ],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Complete: Sometimes I focus too much on details, ___ I'm learning to balance it.",
+      "promptTa": "நிரப்புக: சில நேரங்களில் நான் விவரங்களில் அதிகம் கவனம் செலுத்துகிறேன், ___ அதை சமநிலைப்படுத்த கற்றுக்கொண்டிருக்கிறேன்.",
+      "options": ["and", "but", "or"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which is the best answer for future goals?",
+      "promptTa": "எதிர்கால இலக்குகளுக்கு சிறந்த பதில் எது?",
+      "options": [
+        "I don't know.",
+        "I hope to become a team leader and contribute to the company's growth.",
+        "Maybe something."
+      ],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Complete: I have the right skills ___ experience for this position.",
+      "promptTa": "நிரப்புக: இந்த பதவிக்கு எனக்கு சரியான திறன்கள் ___ அனுபவம் உள்ளது.",
+      "options": ["but", "and", "or"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "When using STAR method, what does 'R' stand for?",
+      "promptTa": "STAR முறையைப் பயன்படுத்தும் போது, 'R' என்பது எதைக் குறிக்கிறது?",
+      "options": ["Result", "Reason", "Ready"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which shows motivation best?",
+      "promptTa": "ஊக்கத்தை சிறப்பாகக் காட்டுவது எது?",
+      "options": [
+        "I work.",
+        "I'm motivated by learning new things and achieving goals.",
+        "Motivation."
+      ],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Complete: In my previous job, I ___ a tight deadline.",
+      "promptTa": "நிரப்புக: என் முந்தைய வேலையில், எனக்கு இறுக்கமான காலக்கெடு ___.",
+      "options": ["have", "had", "having"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which is a professional question to ask?",
+      "promptTa": "கேட்க தொழில்முறை கேள்வி எது?",
+      "options": [
+        "What's the salary?",
+        "What are the opportunities for professional development in this role?",
+        "When is lunch?"
+      ],
+      "correctIndex": 1
+    }
+  ]
+}

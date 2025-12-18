@@ -1,0 +1,266 @@
+{
+  "id": "phase3_lesson17_3",
+  "order": 3,
+  "unitId": "phase3_unit17",
+  "title": "Opinion Writing",
+  "description": "Express your opinion with reasons and examples",
+  "level": "B1",
+  "sampleParagraph": "I believe that learning English is very important in today's world. First of all, English is the most widely spoken language internationally, so it helps us communicate with people from different countries. Secondly, many good jobs require English skills, especially in technology and business fields. For example, most computer programs and websites use English. Additionally, English allows us to access more information and entertainment, such as books, movies, and online content. Some people might say that learning English is difficult, but I think with regular practice and good resources, anyone can learn it. In conclusion, learning English opens many doors and creates opportunities for personal and professional growth.",
+  "explain": {
+    "ta": "கருத்து எழுதுதல் என்பது உங்கள் கருத்தை காரணங்கள் மற்றும் உதாரணங்களுடன் வெளிப்படுத்துவது. நல்ல கருத்து பத்தியில்: 1) தெளிவான கருத்து அறிக்கை (I believe/think that...), 2) காரணங்கள் (First, Secondly, Additionally), 3) உதாரணங்கள் (For example...), 4) எதிர் கருத்து (Some people might say...), 5) முடிவு (In conclusion...). உதாரணம்: 'I believe that reading is important' (கருத்து), 'because it improves knowledge' (காரணம்), 'For example, I learned history from books' (உதாரணம்).",
+    "en": "Opinion writing means expressing your viewpoint with reasons and examples. A good opinion paragraph includes: 1) Clear opinion statement (I believe/think that...), 2) Reasons (First, Secondly, Additionally), 3) Examples (For example...), 4) Counter-argument (Some people might say...), 5) Conclusion (In conclusion...). Example: 'I believe that reading is important' (opinion), 'because it improves knowledge' (reason), 'For example, I learned history from books' (example).",
+    "table": [
+      {
+        "key": "Opinion Statement",
+        "examples": ["I believe that...", "In my opinion...", "I think that..."]
+      },
+      {
+        "key": "Giving Reasons",
+        "examples": ["First of all...", "Secondly...", "Additionally..."]
+      },
+      {
+        "key": "Giving Examples",
+        "examples": ["For example...", "For instance...", "Such as..."]
+      },
+      {
+        "key": "Conclusion",
+        "examples": ["In conclusion...", "To sum up...", "Overall..."]
+      }
+    ]
+  },
+  "examples": [
+    {
+      "en": "I believe that learning English is very important.",
+      "ta": "ஆங்கிலம் கற்பது மிகவும் முக்கியம் என்று நான் நம்புகிறேன்.",
+      "audioId": "phase3_l17_3_ex1"
+    },
+    {
+      "en": "First of all, English helps us communicate internationally.",
+      "ta": "முதலாவதாக, ஆங்கிலம் நமக்கு சர்வதேச அளவில் தொடர்பு கொள்ள உதவுகிறது.",
+      "audioId": "phase3_l17_3_ex2"
+    },
+    {
+      "en": "Secondly, many good jobs require English skills.",
+      "ta": "இரண்டாவதாக, பல நல்ல வேலைகளுக்கு ஆங்கில திறன் தேவை.",
+      "audioId": "phase3_l17_3_ex3"
+    },
+    {
+      "en": "For example, most computer programs use English.",
+      "ta": "உதாரணமாக, பெரும்பாலான கணினி நிரல்கள் ஆங்கிலத்தைப் பயன்படுத்துகின்றன.",
+      "audioId": "phase3_l17_3_ex4"
+    },
+    {
+      "en": "Additionally, English allows us to access more information.",
+      "ta": "கூடுதலாக, ஆங்கிலம் நமக்கு அதிக தகவல்களை அணுக அனுமதிக்கிறது.",
+      "audioId": "phase3_l17_3_ex5"
+    },
+    {
+      "en": "Some people might say that learning English is difficult.",
+      "ta": "ஆங்கிலம் கற்பது கடினம் என்று சிலர் கூறலாம்.",
+      "audioId": "phase3_l17_3_ex6"
+    },
+    {
+      "en": "However, I think with practice, anyone can learn it.",
+      "ta": "இருப்பினும், பயிற்சியுடன் யார் வேண்டுமானாலும் அதைக் கற்றுக்கொள்ளலாம் என்று நான் நினைக்கிறேன்.",
+      "audioId": "phase3_l17_3_ex7"
+    },
+    {
+      "en": "In conclusion, learning English opens many doors.",
+      "ta": "முடிவில், ஆங்கிலம் கற்பது பல வாசல்களைத் திறக்கிறது.",
+      "audioId": "phase3_l17_3_ex8"
+    },
+    {
+      "en": "In my opinion, reading books is better than watching TV.",
+      "ta": "என் கருத்துப்படி, டிவி பார்ப்பதை விட புத்தகங்கள் படிப்பது சிறந்தது.",
+      "audioId": "phase3_l17_3_ex9"
+    }
+  ],
+  "listeningQuestions": [
+    {
+      "audioText": "I think that exercise is important for health. First, it keeps our body strong. Second, it reduces stress. For example, I feel better after jogging.",
+      "options": [
+        "He thinks exercise is not important.",
+        "He thinks exercise is important for health with two reasons.",
+        "He doesn't give any examples."
+      ],
+      "correctIndex": 1
+    },
+    {
+      "audioText": "In my opinion, online learning is very useful. It saves time because we don't need to travel. Additionally, we can learn at our own pace.",
+      "options": [
+        "She thinks online learning is not useful.",
+        "She gives one reason for online learning.",
+        "She thinks online learning is useful and gives two reasons."
+      ],
+      "correctIndex": 2
+    },
+    {
+      "audioText": "I believe that teamwork is better than working alone. When we work together, we can share ideas and solve problems faster. For instance, our team completed the project in half the time.",
+      "options": [
+        "He prefers working alone.",
+        "He believes teamwork is better and gives an example.",
+        "He doesn't mention any benefits."
+      ],
+      "correctIndex": 1
+    }
+  ],
+  "speakSentences": [
+    {
+      "en": "I believe that [topic] is [adjective] because [reason].",
+      "ta": "நான் நம்புகிறேன் [தலைப்பு] [பண்பு] ஏனெனில் [காரணம்]."
+    },
+    {
+      "en": "First of all, [first reason]. Secondly, [second reason].",
+      "ta": "முதலாவதாக, [முதல் காரணம்]. இரண்டாவதாக, [இரண்டாவது காரணம்]."
+    },
+    {
+      "en": "For example, [specific example that supports your opinion].",
+      "ta": "உதாரணமாக, [உங்கள் கருத்தை ஆதரிக்கும் குறிப்பிட்ட உதாரணம்]."
+    },
+    {
+      "en": "Some people might say [opposite view], but I think [your response].",
+      "ta": "சிலர் [எதிர் பார்வை] கூறலாம், ஆனால் நான் நினைக்கிறேன் [உங்கள் பதில்]."
+    },
+    {
+      "en": "In conclusion, [summary of your opinion and main points].",
+      "ta": "முடிவில், [உங்கள் கருத்து மற்றும் முக்கிய புள்ளிகளின் சுருக்கம்]."
+    }
+  ],
+  "practiceQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "Which phrase starts an opinion?",
+      "promptTa": "கருத்தைத் தொடங்கும் சொற்றொடர் எது?",
+      "options": ["Yesterday", "I believe that", "The end"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Complete: ___, English helps us communicate.",
+      "promptTa": "நிரப்புக: ___, ஆங்கிலம் நமக்கு தொடர்பு கொள்ள உதவுகிறது.",
+      "options": ["In conclusion", "First of all", "The end"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which phrase introduces an example?",
+      "promptTa": "உதாரணத்தை அறிமுகப்படுத்தும் சொற்றொடர் எது?",
+      "options": ["For example", "Finally", "Never"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Complete: ___, learning English opens many doors.",
+      "promptTa": "நிரப்புக: ___, ஆங்கிலம் கற்பது பல வாசல்களைத் திறக்கிறது.",
+      "options": ["First", "In conclusion", "For example"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which shows a counter-argument?",
+      "promptTa": "எதிர் வாதத்தைக் காட்டுவது எது?",
+      "options": [
+        "I think reading is good.",
+        "Some people might say it's difficult.",
+        "Books are nice."
+      ],
+      "correctIndex": 1
+    }
+  ],
+  "masteryQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "Which is the best opinion statement?",
+      "promptTa": "சிறந்த கருத்து அறிக்கை எது?",
+      "options": [
+        "English.",
+        "English is good.",
+        "I believe that learning English is very important in today's world."
+      ],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Complete: ___, many good jobs require English skills.",
+      "promptTa": "நிரப்புக: ___, பல நல்ல வேலைகளுக்கு ஆங்கில திறன் தேவை.",
+      "options": ["Secondly", "Yesterday", "Never"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which gives a specific example?",
+      "promptTa": "குறிப்பிட்ட உதாரணத்தை அளிப்பது எது?",
+      "options": [
+        "English is useful.",
+        "For example, most computer programs use English.",
+        "I like English."
+      ],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Complete: ___, English allows us to access more information.",
+      "promptTa": "நிரப்புக: ___, ஆங்கிலம் நமக்கு அதிக தகவல்களை அணுக அனுமதிக்கிறது.",
+      "options": ["Additionally", "Yesterday", "Never"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which introduces a counter-argument properly?",
+      "promptTa": "எதிர் வாதத்தை சரியாக அறிமுகப்படுத்துவது எது?",
+      "options": [
+        "Some people might say that learning English is difficult.",
+        "English difficult.",
+        "People say."
+      ],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Complete: However, I think ___ practice, anyone can learn it.",
+      "promptTa": "நிரப்புக: இருப்பினும், பயிற்சி ___, யார் வேண்டுமானாலும் அதைக் கற்றுக்கொள்ளலாம் என்று நான் நினைக்கிறேன்.",
+      "options": ["without", "with", "never"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which is the best conclusion?",
+      "promptTa": "சிறந்த முடிவு எது?",
+      "options": [
+        "English.",
+        "The end.",
+        "In conclusion, learning English opens many doors and creates opportunities."
+      ],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "What makes an opinion paragraph strong?",
+      "promptTa": "கருத்து பத்தியை வலுவாக்குவது என்ன?",
+      "options": [
+        "Just stating your opinion.",
+        "Opinion with reasons, examples, and conclusion.",
+        "One sentence only."
+      ],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Complete: In my ___, reading books is better than watching TV.",
+      "promptTa": "நிரப்புக: என் ___, டிவி பார்ப்பதை விட புத்தகங்கள் படிப்பது சிறந்தது.",
+      "options": ["house", "opinion", "time"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which structure is correct for opinion writing?",
+      "promptTa": "கருத்து எழுதுதலுக்கு சரியான அமைப்பு எது?",
+      "options": [
+        "Example - Opinion - Conclusion",
+        "Opinion - Reasons - Examples - Conclusion",
+        "Conclusion - Opinion - Reasons"
+      ],
+      "correctIndex": 1
+    }
+  ]
+}

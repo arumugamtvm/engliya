@@ -1,0 +1,229 @@
+{
+  "id": "phase3_lesson15_1",
+  "order": 1,
+  "unitId": "phase3_unit15",
+  "title": "Reported Statements",
+  "description": "Learn to report what someone said using indirect speech",
+  "level": "B1",
+  "explain": {
+    "ta": "Reported speech (அல்லது indirect speech) என்பது யாரோ சொன்னதை மறுபடியும் சொல்வது. Direct speech-ல் இருந்து reported speech-க்கு மாற்றும்போது tense பின்னோக்கி மாறும் (backshift). Present → Past, Past → Past Perfect. 'He said that...' என்று ஆரம்பிக்கிறோம். Pronouns மற்றும் time expressions மாறும். Direct: 'I am tired' → Reported: 'He said he was tired'. 'That' என்பது optional ஆனால் formal writing-ல் பயன்படுத்துவது நல்லது.",
+    "en": "Reported speech (or indirect speech) is when we tell someone what another person said. When converting from direct to reported speech, the tense shifts back (backshift). Present → Past, Past → Past Perfect. We start with 'He/She said that...'. Pronouns and time expressions change. Direct: 'I am tired' → Reported: 'He said he was tired'. The word 'that' is optional but commonly used in formal writing. This is essential for conveying conversations and information accurately.",
+    "table": [
+      {
+        "key": "Present → Past",
+        "examples": ["'I am happy' → He said he was happy", "'I work here' → She said she worked there", "'I like it' → He said he liked it"]
+      },
+      {
+        "key": "Present Continuous → Past Continuous",
+        "examples": ["'I am reading' → She said she was reading", "'They are coming' → He said they were coming", "'I am working' → She said she was working"]
+      },
+      {
+        "key": "Past → Past Perfect",
+        "examples": ["'I went home' → He said he had gone home", "'I saw it' → She said she had seen it", "'I finished' → He said he had finished"]
+      },
+      {
+        "key": "Will → Would",
+        "examples": ["'I will come' → He said he would come", "'I will help' → She said she would help", "'I will call' → He said he would call"]
+      }
+    ]
+  },
+  "examples": [
+    {
+      "en": "Direct: 'I am tired.' Reported: He said he was tired.",
+      "ta": "நேரடி: 'நான் சோர்வாக இருக்கிறேன்.' மறைமுக: அவர் சோர்வாக இருந்ததாக கூறினார்.",
+      "audioId": "phase3_l15_1_ex1"
+    },
+    {
+      "en": "Direct: 'I live in Chennai.' Reported: She said she lived in Chennai.",
+      "ta": "நேரடி: 'நான் சென்னையில் வசிக்கிறேன்.' மறைமுக: அவள் சென்னையில் வசித்ததாக கூறினாள்.",
+      "audioId": "phase3_l15_1_ex2"
+    },
+    {
+      "en": "Direct: 'I am studying English.' Reported: He said he was studying English.",
+      "ta": "நேரடி: 'நான் ஆங்கிலம் படிக்கிறேன்.' மறைமுக: அவர் ஆங்கிலம் படித்துக் கொண்டிருந்ததாக கூறினார்.",
+      "audioId": "phase3_l15_1_ex3"
+    },
+    {
+      "en": "Direct: 'I went to the market.' Reported: She said she had gone to the market.",
+      "ta": "நேரடி: 'நான் சந்தைக்கு சென்றேன்.' மறைமுக: அவள் சந்தைக்கு சென்றிருந்ததாக கூறினாள்.",
+      "audioId": "phase3_l15_1_ex4"
+    },
+    {
+      "en": "Direct: 'I will call you tomorrow.' Reported: He said he would call me tomorrow.",
+      "ta": "நேரடி: 'நான் நாளை உங்களை அழைப்பேன்.' மறைமுக: அவர் நாளை என்னை அழைப்பார் என்று கூறினார்.",
+      "audioId": "phase3_l15_1_ex5"
+    },
+    {
+      "en": "Direct: 'I don't like coffee.' Reported: She said she didn't like coffee.",
+      "ta": "நேரடி: 'எனக்கு காபி பிடிக்காது.' மறைமுக: அவளுக்கு காபி பிடிக்காது என்று கூறினாள்.",
+      "audioId": "phase3_l15_1_ex6"
+    },
+    {
+      "en": "Direct: 'I have finished my work.' Reported: He said he had finished his work.",
+      "ta": "நேரடி: 'நான் என் வேலையை முடித்துவிட்டேன்.' மறைமுக: அவர் தன் வேலையை முடித்திருந்ததாக கூறினார்.",
+      "audioId": "phase3_l15_1_ex7"
+    },
+    {
+      "en": "Direct: 'I can swim.' Reported: She said she could swim.",
+      "ta": "நேரடி: 'என்னால் நீந்த முடியும்.' மறைமுக: அவளால் நீந்த முடியும் என்று கூறினாள்.",
+      "audioId": "phase3_l15_1_ex8"
+    },
+    {
+      "en": "Direct: 'I am not feeling well.' Reported: He said he was not feeling well.",
+      "ta": "நேரடி: 'எனக்கு உடல்நிலை சரியில்லை.' மறைமுக: அவருக்கு உடல்நிலை சரியில்லை என்று கூறினார்.",
+      "audioId": "phase3_l15_1_ex9"
+    }
+  ],
+  "listeningQuestions": [
+    {
+      "audioText": "She said she was happy with the results.",
+      "options": [
+        "She said she was happy with the results.",
+        "She said she is happy with the results.",
+        "She says she was happy with the results."
+      ],
+      "correctIndex": 0
+    },
+    {
+      "audioText": "He said he would come to the party.",
+      "options": [
+        "He said he will come to the party.",
+        "He said he would come to the party.",
+        "He says he would come to the party."
+      ],
+      "correctIndex": 1
+    },
+    {
+      "audioText": "They said they had seen the movie before.",
+      "options": [
+        "They said they saw the movie before.",
+        "They said they have seen the movie before.",
+        "They said they had seen the movie before."
+      ],
+      "correctIndex": 2
+    }
+  ],
+  "speakSentences": [
+    {
+      "en": "She said she was learning to drive.",
+      "ta": "அவள் வாகனம் ஓட்ட கற்றுக் கொண்டிருந்ததாக கூறினாள்."
+    },
+    {
+      "en": "He said he had visited India last year.",
+      "ta": "அவர் கடந்த ஆண்டு இந்தியா சென்றிருந்ததாக கூறினார்."
+    },
+    {
+      "en": "They said they would help us with the project.",
+      "ta": "அவர்கள் திட்டத்தில் எங்களுக்கு உதவுவார்கள் என்று கூறினார்கள்."
+    }
+  ],
+  "practiceQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "Direct: 'I am busy.' Reported: He said he ___ busy.",
+      "promptTa": "நேரடி: 'நான் பிஸியாக இருக்கிறேன்.' மறைமுக: அவர் பிஸியாக ___ என்று கூறினார்.",
+      "options": ["is", "was", "has been"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Direct: 'I work in a bank.' Reported: She said she ___ in a bank.",
+      "promptTa": "நேரடி: 'நான் வங்கியில் வேலை செய்கிறேன்.' மறைமுக: அவள் வங்கியில் ___ என்று கூறினாள்.",
+      "options": ["works", "worked", "has worked"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Direct: 'I will help you.' Reported: He said he ___ help me.",
+      "promptTa": "நேரடி: 'நான் உங்களுக்கு உதவுவேன்.' மறைமுக: அவர் எனக்கு ___ என்று கூறினார்.",
+      "options": ["will", "would", "can"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Direct: 'I saw the accident.' Reported: She said she ___ the accident.",
+      "promptTa": "நேரடி: 'நான் விபத்தை பார்த்தேன்.' மறைமுக: அவள் விபத்தை ___ என்று கூறினாள்.",
+      "options": ["saw", "had seen", "has seen"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Direct: 'I am reading a book.' Reported: He said he ___ a book.",
+      "promptTa": "நேரடி: 'நான் புத்தகம் படிக்கிறேன்.' மறைமுக: அவர் புத்தகம் ___ என்று கூறினார்.",
+      "options": ["is reading", "was reading", "has been reading"],
+      "correctIndex": 1
+    }
+  ],
+  "masteryQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "Direct: 'I like pizza.' Reported: She said she ___ pizza.",
+      "promptTa": "நேரடி: 'எனக்கு பீட்சா பிடிக்கும்.' மறைமுக: அவளுக்கு பீட்சா ___ என்று கூறினாள்.",
+      "options": ["likes", "liked", "has liked"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Direct: 'I have finished.' Reported: He said he ___ finished.",
+      "promptTa": "நேரடி: 'நான் முடித்துவிட்டேன்.' மறைமுக: அவர் ___ என்று கூறினார்.",
+      "options": ["has", "had", "have"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Direct: 'I can't come.' Reported: She said she ___ come.",
+      "promptTa": "நேரடி: 'என்னால் வர முடியாது.' மறைமுக: அவளால் ___ என்று கூறினாள்.",
+      "options": ["can't", "couldn't", "won't"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Direct: 'I am going home.' Reported: He said he ___ home.",
+      "promptTa": "நேரடி: 'நான் வீட்டுக்கு போகிறேன்.' மறைமுக: அவர் வீட்டுக்கு ___ என்று கூறினார்.",
+      "options": ["is going", "was going", "has gone"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Direct: 'I bought a car.' Reported: She said she ___ a car.",
+      "promptTa": "நேரடி: 'நான் கார் வாங்கினேன்.' மறைமுக: அவள் கார் ___ என்று கூறினாள்.",
+      "options": ["bought", "had bought", "has bought"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Direct: 'I will call later.' Reported: He said he ___ call later.",
+      "promptTa": "நேரடி: 'நான் பிறகு அழைப்பேன்.' மறைமுக: அவர் பிறகு ___ என்று கூறினார்.",
+      "options": ["will", "would", "can"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Direct: 'I don't understand.' Reported: She said she ___ understand.",
+      "promptTa": "நேரடி: 'எனக்கு புரியவில்லை.' மறைமுக: அவளுக்கு ___ என்று கூறினாள்.",
+      "options": ["doesn't", "didn't", "hasn't"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Direct: 'I am waiting.' Reported: He said he ___ waiting.",
+      "promptTa": "நேரடி: 'நான் காத்திருக்கிறேன்.' மறைமுக: அவர் ___ என்று கூறினார்.",
+      "options": ["is", "was", "has been"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Direct: 'I have never been there.' Reported: She said she ___ never been there.",
+      "promptTa": "நேரடி: 'நான் அங்கு போனதில்லை.' மறைமுக: அவள் அங்கு ___ என்று கூறினாள்.",
+      "options": ["has", "had", "have"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Direct: 'I need help.' Reported: He said he ___ help.",
+      "promptTa": "நேரடி: 'எனக்கு உதவி தேவை.' மறைமுக: அவருக்கு உதவி ___ என்று கூறினார்.",
+      "options": ["needs", "needed", "has needed"],
+      "correctIndex": 1
+    }
+  ]
+}

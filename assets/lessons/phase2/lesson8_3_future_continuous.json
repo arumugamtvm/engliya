@@ -1,0 +1,162 @@
+{
+  "id": "phase2_lesson8_3",
+  "order": 3,
+  "unitId": "phase2_unit8",
+  "title": "Future Continuous",
+  "description": "will be + V-ing",
+  "level": "A2",
+  "explain": {
+    "ta": "எதிர்காலத்தில் ஒரு குறிப்பிட்ட நேரத்தில் நடந்து கொண்டிருக்கும் செயல்களை விவரிக்க Future Continuous Tense பயன்படுத்தப்படுகிறது. இதன் அமைப்பு: will be + verb-ing. எல்லா subjects-க்கும் 'will be' பயன்படுத்துகிறோம் (I will be eating, She will be reading, They will be playing). இது எதிர்காலத்தில் நடக்கும் செயல்கள், எதிர்காலத்தில் ஒரு குறிப்பிட்ட நேரத்தில் நடக்கும் செயல்கள், மற்றும் எதிர்காலத்தில் திட்டமிடப்பட்ட செயல்களுக்கு பயன்படுத்தப்படுகிறது.",
+    "en": "Future Continuous Tense is used to describe actions that will be happening at a specific time in the future. The structure is: will be + verb-ing. We use 'will be' with all subjects (I will be eating, She will be reading, They will be playing). This tense is used for future ongoing actions, actions at a specific time in the future, and planned future activities.",
+    "table": [
+      {
+        "key": "I/You/He/She/It/We/They will be + V-ing",
+        "examples": ["I will be studying", "She will be working", "They will be playing"]
+      }
+    ]
+  },
+  "examples": [
+    {
+      "en": "I will be studying at 8 pm tonight.",
+      "ta": "நான் இன்று இரவு 8 மணிக்கு படித்துக் கொண்டிருப்பேன்.",
+      "audioId": "phase2_l8_3_ex1"
+    },
+    {
+      "en": "She will be cooking dinner when you arrive.",
+      "ta": "நீங்கள் வரும்போது அவள் இரவு உணவு சமைத்துக் கொண்டிருப்பாள்.",
+      "audioId": "phase2_l8_3_ex2"
+    },
+    {
+      "en": "They will be playing football tomorrow afternoon.",
+      "ta": "அவர்கள் நாளை மதியம் கால்பந்து விளையாடிக் கொண்டிருப்பார்கள்.",
+      "audioId": "phase2_l8_3_ex3"
+    },
+    {
+      "en": "We will be watching a movie at 9 pm.",
+      "ta": "நாங்கள் இரவு 9 மணிக்கு ஒரு திரைப்படம் பார்த்துக் கொண்டிருப்போம்.",
+      "audioId": "phase2_l8_3_ex4"
+    },
+    {
+      "en": "He will be working on his project next week.",
+      "ta": "அவர் அடுத்த வாரம் தனது திட்டத்தில் வேலை செய்து கொண்டிருப்பார்.",
+      "audioId": "phase2_l8_3_ex5"
+    }
+  ],
+  "listeningQuestions": [
+    {
+      "audioText": "I will be reading a book tonight.",
+      "options": [
+        "I will be reading a book tonight.",
+        "I am reading a book tonight.",
+        "I was reading a book tonight."
+      ],
+      "correctIndex": 0
+    },
+    {
+      "audioText": "She will be writing a letter tomorrow.",
+      "options": [
+        "She is writing a letter tomorrow.",
+        "She will be writing a letter tomorrow.",
+        "She was writing a letter tomorrow."
+      ],
+      "correctIndex": 1
+    },
+    {
+      "audioText": "They will be eating lunch at noon.",
+      "options": [
+        "They were eating lunch at noon.",
+        "They are eating lunch at noon.",
+        "They will be eating lunch at noon."
+      ],
+      "correctIndex": 2
+    }
+  ],
+  "speakSentences": [
+    {
+      "en": "I will be learning English tomorrow.",
+      "ta": "நான் நாளை ஆங்கிலம் கற்றுக் கொண்டிருப்பேன்."
+    },
+    {
+      "en": "He will be working on his computer.",
+      "ta": "அவர் தனது கணினியில் வேலை செய்து கொண்டிருப்பார்."
+    },
+    {
+      "en": "We will be going to the market.",
+      "ta": "நாங்கள் சந்தைக்கு செல்லுகிறோம்."
+    }
+  ],
+  "practiceQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "I ___ ___ studying English tomorrow.",
+      "promptTa": "நான் நாளை ஆங்கிலம் படித்துக் கொண்டிருப்பேன்.",
+      "options": ["am", "was", "will be", "were"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "She ___ ___ cooking dinner at 6 pm.",
+      "promptTa": "அவள் மாலை 6 மணிக்கு இரவு உணவு சமைத்துக் கொண்டிருப்பாள்.",
+      "options": ["am", "was", "will be", "were"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "They ___ ___ playing football tomorrow.",
+      "promptTa": "அவர்கள் நாளை கால்பந்து விளையாடிக் கொண்டிருப்பார்கள்.",
+      "options": ["am", "was", "will be", "were"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "We ___ ___ watching TV tonight.",
+      "promptTa": "நாங்கள் இன்று இரவு டிவி பார்த்துக் கொண்டிருப்போம்.",
+      "options": ["am", "was", "will be", "were"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "He ___ ___ reading a book.",
+      "promptTa": "அவர் ஒரு புத்தகம் படித்துக் கொண்டிருப்பார்.",
+      "options": ["am", "was", "will be", "were"],
+      "correctIndex": 2
+    }
+  ],
+  "masteryQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "I ___ ___ to music at 8 pm.",
+      "promptTa": "நான் இரவு 8 மணிக்கு இசை கேட்டுக் கொண்டிருப்பேன்.",
+      "options": ["am listening", "was listening", "will be listening", "were listening"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "She ___ ___ her homework tomorrow.",
+      "promptTa": "அவள் நாளை தன் வீட்டுப்பாடம் செய்து கொண்டிருப்பாள்.",
+      "options": ["am doing", "was doing", "will be doing", "were doing"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "They ___ ___ a new house next year.",
+      "promptTa": "அவர்கள் அடுத்த வருடம் ஒரு புதிய வீடு கட்டிக் கொண்டிருப்பார்கள்.",
+      "options": ["am building", "was building", "will be building", "were building"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "It ___ ___ heavily tomorrow.",
+      "promptTa": "நாளை கடுமையாக மழை பெய்து கொண்டிருக்கும்.",
+      "options": ["am raining", "was raining", "will be raining", "were raining"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "You ___ ___ very fast.",
+      "promptTa": "நீங்கள் மிக வேகமாக ஓடிக் கொண்டிருப்பீர்கள்.",
+      "options": ["am running", "was running", "will be running", "were running"],
+      "correctIndex": 2
+    }
+  ]
+}

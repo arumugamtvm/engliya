@@ -1,0 +1,229 @@
+{
+  "id": "phase3_lesson15_3",
+  "order": 3,
+  "unitId": "phase3_unit15",
+  "title": "Reported Commands",
+  "description": "Learn to report commands, requests, and advice",
+  "level": "B1",
+  "explain": {
+    "ta": "Commands மற்றும் requests-ஐ report செய்ய 'told/asked + person + to + verb' pattern பயன்படுத்துகிறோம். Direct: 'Close the door' → Reported: 'He told me to close the door'. Polite requests-க்கு 'asked' பயன்படுத்துகிறோம். Negative commands-க்கு 'not to' பயன்படுத்துகிறோம். Direct: 'Don't be late' → Reported: 'She told me not to be late'. Advice-க்கு 'advised' பயன்படுத்தலாம். Direct: 'You should rest' → Reported: 'He advised me to rest'.",
+    "en": "To report commands and requests, we use 'told/asked + person + to + verb' pattern. Direct: 'Close the door' → Reported: 'He told me to close the door'. For polite requests, use 'asked'. For negative commands, use 'not to'. Direct: 'Don't be late' → Reported: 'She told me not to be late'. For advice, we can use 'advised'. Direct: 'You should rest' → Reported: 'He advised me to rest'. This structure is essential for reporting instructions and suggestions.",
+    "table": [
+      {
+        "key": "Commands (told to)",
+        "examples": ["'Sit down' → He told me to sit down", "'Open the window' → She told him to open the window", "'Wait here' → He told us to wait there"]
+      },
+      {
+        "key": "Requests (asked to)",
+        "examples": ["'Please help me' → She asked me to help her", "'Could you call?' → He asked me to call", "'Please wait' → She asked him to wait"]
+      },
+      {
+        "key": "Negative Commands (told not to)",
+        "examples": ["'Don't go' → He told me not to go", "'Don't worry' → She told me not to worry", "'Don't be late' → He told us not to be late"]
+      },
+      {
+        "key": "Advice (advised to)",
+        "examples": ["'You should rest' → He advised me to rest", "'You should study' → She advised him to study", "'You should see a doctor' → He advised me to see a doctor"]
+      }
+    ]
+  },
+  "examples": [
+    {
+      "en": "Direct: 'Close the door.' Reported: He told me to close the door.",
+      "ta": "நேரடி: 'கதவை மூடு.' மறைமுக: அவர் என்னிடம் கதவை மூட சொன்னார்.",
+      "audioId": "phase3_l15_3_ex1"
+    },
+    {
+      "en": "Direct: 'Please help me.' Reported: She asked me to help her.",
+      "ta": "நேரடி: 'தயவுசெய்து எனக்கு உதவுங்கள்.' மறைமுக: அவள் என்னிடம் அவளுக்கு உதவ கேட்டாள்.",
+      "audioId": "phase3_l15_3_ex2"
+    },
+    {
+      "en": "Direct: 'Don't be late.' Reported: He told me not to be late.",
+      "ta": "நேரடி: 'தாமதமாக வராதே.' மறைமுக: அவர் என்னிடம் தாமதமாக வர வேண்டாம் என்று சொன்னார்.",
+      "audioId": "phase3_l15_3_ex3"
+    },
+    {
+      "en": "Direct: 'You should rest.' Reported: The doctor advised me to rest.",
+      "ta": "நேரடி: 'நீங்கள் ஓய்வு எடுக்க வேண்டும்.' மறைமுக: மருத்துவர் என்னிடம் ஓய்வு எடுக்க அறிவுறுத்தினார்.",
+      "audioId": "phase3_l15_3_ex4"
+    },
+    {
+      "en": "Direct: 'Wait here.' Reported: She told us to wait there.",
+      "ta": "நேரடி: 'இங்கே காத்திரு.' மறைமுக: அவள் எங்களிடம் அங்கே காத்திருக்க சொன்னாள்.",
+      "audioId": "phase3_l15_3_ex5"
+    },
+    {
+      "en": "Direct: 'Please call me later.' Reported: He asked me to call him later.",
+      "ta": "நேரடி: 'தயவுசெய்து பிறகு அழையுங்கள்.' மறைமுக: அவர் என்னிடம் பிறகு அவரை அழைக்க கேட்டார்.",
+      "audioId": "phase3_l15_3_ex6"
+    },
+    {
+      "en": "Direct: 'Don't forget your keys.' Reported: She told me not to forget my keys.",
+      "ta": "நேரடி: 'உங்கள் சாவியை மறக்காதே.' மறைமுக: அவள் என்னிடம் என் சாவியை மறக்க வேண்டாம் என்று சொன்னாள்.",
+      "audioId": "phase3_l15_3_ex7"
+    },
+    {
+      "en": "Direct: 'Study hard.' Reported: My teacher told me to study hard.",
+      "ta": "நேரடி: 'கடினமாக படி.' மறைமுக: என் ஆசிரியர் என்னிடம் கடினமாக படிக்க சொன்னார்.",
+      "audioId": "phase3_l15_3_ex8"
+    },
+    {
+      "en": "Direct: 'You should see a doctor.' Reported: He advised me to see a doctor.",
+      "ta": "நேரடி: 'நீங்கள் மருத்துவரை பார்க்க வேண்டும்.' மறைமுக: அவர் என்னிடம் மருத்துவரை பார்க்க அறிவுறுத்தினார்.",
+      "audioId": "phase3_l15_3_ex9"
+    }
+  ],
+  "listeningQuestions": [
+    {
+      "audioText": "She told me to finish the work by Friday.",
+      "options": [
+        "She told me to finish the work by Friday.",
+        "She told me finish the work by Friday.",
+        "She told to me finish the work by Friday."
+      ],
+      "correctIndex": 0
+    },
+    {
+      "audioText": "He asked me not to tell anyone.",
+      "options": [
+        "He asked me to not tell anyone.",
+        "He asked me not to tell anyone.",
+        "He asked me don't tell anyone."
+      ],
+      "correctIndex": 1
+    },
+    {
+      "audioText": "The teacher advised us to practice every day.",
+      "options": [
+        "The teacher advised us practice every day.",
+        "The teacher advised to us practice every day.",
+        "The teacher advised us to practice every day."
+      ],
+      "correctIndex": 2
+    }
+  ],
+  "speakSentences": [
+    {
+      "en": "My mother told me to eat healthy food.",
+      "ta": "என் அம்மா என்னிடம் ஆரோக்கியமான உணவு சாப்பிட சொன்னார்."
+    },
+    {
+      "en": "The manager asked us to come early tomorrow.",
+      "ta": "மேலாளர் எங்களிடம் நாளை சீக்கிரம் வர கேட்டார்."
+    },
+    {
+      "en": "She advised me not to worry about the exam.",
+      "ta": "அவள் என்னிடம் தேர்வு பற்றி கவலைப்பட வேண்டாம் என்று அறிவுறுத்தினாள்."
+    }
+  ],
+  "practiceQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "Direct: 'Sit down.' Reported: He told me ___ sit down.",
+      "promptTa": "நேரடி: 'உட்காருங்கள்.' மறைமுக: அவர் என்னிடம் உட்கார ___ சொன்னார்.",
+      "options": ["that", "to", "for"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Direct: 'Please wait.' Reported: She ___ me to wait.",
+      "promptTa": "நேரடி: 'தயவுசெய்து காத்திருங்கள்.' மறைமுக: அவள் என்னிடம் காத்திருக்க ___.",
+      "options": ["told", "asked", "said"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Direct: 'Don't go.' Reported: He told me ___ to go.",
+      "promptTa": "நேரடி: 'போகாதே.' மறைமுக: அவர் என்னிடம் ___ போக வேண்டாம் என்று சொன்னார்.",
+      "options": ["don't", "not", "no"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Direct: 'You should study.' Reported: She ___ me to study.",
+      "promptTa": "நேரடி: 'நீங்கள் படிக்க வேண்டும்.' மறைமுக: அவள் என்னிடம் படிக்க ___.",
+      "options": ["told", "asked", "advised"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Direct: 'Open the window.' Reported: He told me ___ the window.",
+      "promptTa": "நேரடி: 'ஜன்னலை திற.' மறைமுக: அவர் என்னிடம் ஜன்னலை ___ சொன்னார்.",
+      "options": ["open", "to open", "opening"],
+      "correctIndex": 1
+    }
+  ],
+  "masteryQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "Direct: 'Be careful.' Reported: She told me ___ careful.",
+      "promptTa": "நேரடி: 'கவனமாக இரு.' மறைமுக: அவள் என்னிடம் கவனமாக ___ சொன்னாள்.",
+      "options": ["be", "to be", "being"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Direct: 'Please help.' Reported: He ___ me to help.",
+      "promptTa": "நேரடி: 'தயவுசெய்து உதவுங்கள்.' மறைமுக: அவர் என்னிடம் உதவ ___.",
+      "options": ["told", "asked", "said"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Direct: 'Don't smoke.' Reported: The doctor told him ___ to smoke.",
+      "promptTa": "நேரடி: 'புகைபிடிக்காதே.' மறைமுக: மருத்துவர் அவரிடம் ___ புகைபிடிக்க வேண்டாம் என்று சொன்னார்.",
+      "options": ["don't", "not", "no"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Direct: 'You should exercise.' Reported: She ___ me to exercise.",
+      "promptTa": "நேரடி: 'நீங்கள் உடற்பயிற்சி செய்ய வேண்டும்.' மறைமுக: அவள் என்னிடம் உடற்பயிற்சி செய்ய ___.",
+      "options": ["told", "asked", "advised"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Direct: 'Come here.' Reported: He told me ___ there.",
+      "promptTa": "நேரடி: 'இங்கே வா.' மறைமுக: அவர் என்னிடம் அங்கே ___ சொன்னார்.",
+      "options": ["come", "to come", "coming"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Direct: 'Please send the report.' Reported: She ___ me to send the report.",
+      "promptTa": "நேரடி: 'தயவுசெய்து அறிக்கையை அனுப்புங்கள்.' மறைமுக: அவள் என்னிடம் அறிக்கையை அனுப்ப ___.",
+      "options": ["told", "asked", "said"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Direct: 'Don't worry.' Reported: He told me ___ to worry.",
+      "promptTa": "நேரடி: 'கவலைப்படாதே.' மறைமுக: அவர் என்னிடம் ___ கவலைப்பட வேண்டாம் என்று சொன்னார்.",
+      "options": ["don't", "not", "no"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Direct: 'Listen carefully.' Reported: The teacher told us ___ carefully.",
+      "promptTa": "நேரடி: 'கவனமாக கேளுங்கள்.' மறைமுக: ஆசிரியர் எங்களிடம் கவனமாக ___ சொன்னார்.",
+      "options": ["listen", "to listen", "listening"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Direct: 'You should drink water.' Reported: She ___ me to drink water.",
+      "promptTa": "நேரடி: 'நீங்கள் தண்ணீர் குடிக்க வேண்டும்.' மறைமுக: அவள் என்னிடம் தண்ணீர் குடிக்க ___.",
+      "options": ["told", "asked", "advised"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Direct: 'Don't run.' Reported: She told the children ___ to run.",
+      "promptTa": "நேரடி: 'ஓடாதே.' மறைமுக: அவள் குழந்தைகளிடம் ___ ஓட வேண்டாம் என்று சொன்னாள்.",
+      "options": ["don't", "not", "no"],
+      "correctIndex": 1
+    }
+  ]
+}

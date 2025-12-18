@@ -1,0 +1,170 @@
+{
+  "id": "phase2_lesson8_4",
+  "order": 4,
+  "unitId": "phase2_unit8",
+  "title": "Continuous Tenses in Conversation",
+  "description": "Using continuous tenses in real conversations",
+  "level": "A2",
+  "explain": {
+    "ta": "உரையாடல்களில் continuous tenses-ஐ எவ்வாறு பயன்படுத்துவது என்பதை இந்த பாடம் கற்பிக்கிறது. கேள்விகள் கேட்கும்போது மற்றும் பதில் சொல்லும்போது present, past, மற்றும் future continuous tenses-ஐ பயன்படுத்துகிறோம். கேள்வி வடிவம்: Am/Is/Are + subject + V-ing? (நிகழ்காலம்), Was/Were + subject + V-ing? (கடந்த காலம்), Will + subject + be + V-ing? (எதிர்காலம்). இவை இயல்பான உரையாடல்களில் மிகவும் பொதுவானவை.",
+    "en": "This lesson teaches how to use continuous tenses in conversations. We use present, past, and future continuous tenses when asking questions and giving answers. Question forms: Am/Is/Are + subject + V-ing? (present), Was/Were + subject + V-ing? (past), Will + subject + be + V-ing? (future). These are very common in natural conversations.",
+    "table": [
+      {
+        "key": "Present Continuous Questions",
+        "examples": ["What are you doing?", "Is she coming?", "Are they playing?"]
+      },
+      {
+        "key": "Past Continuous Questions",
+        "examples": ["What were you doing?", "Was she cooking?", "Were they studying?"]
+      },
+      {
+        "key": "Future Continuous Questions",
+        "examples": ["What will you be doing?", "Will she be working?", "Will they be coming?"]
+      }
+    ]
+  },
+  "examples": [
+    {
+      "en": "What are you doing? - I am studying English.",
+      "ta": "நீங்கள் என்ன செய்து கொண்டிருக்கிறீர்கள்? - நான் ஆங்கிலம் படித்துக் கொண்டிருக்கிறேன்.",
+      "audioId": "phase2_l8_4_ex1"
+    },
+    {
+      "en": "What were you doing yesterday? - I was watching a movie.",
+      "ta": "நேற்று நீங்கள் என்ன செய்து கொண்டிருந்தீர்கள்? - நான் ஒரு திரைப்படம் பார்த்துக் கொண்டிருந்தேன்.",
+      "audioId": "phase2_l8_4_ex2"
+    },
+    {
+      "en": "What will you be doing tomorrow? - I will be working on my project.",
+      "ta": "நாளை நீங்கள் என்ன செய்து கொண்டிருப்பீர்கள்? - நான் என் திட்டத்தில் வேலை செய்து கொண்டிருப்பேன்.",
+      "audioId": "phase2_l8_4_ex3"
+    },
+    {
+      "en": "Is she coming to the party? - Yes, she is coming.",
+      "ta": "அவள் விருந்துக்கு வருகிறாளா? - ஆம், அவள் வருகிறாள்.",
+      "audioId": "phase2_l8_4_ex4"
+    },
+    {
+      "en": "Were they playing football? - No, they were playing cricket.",
+      "ta": "அவர்கள் கால்பந்து விளையாடிக் கொண்டிருந்தார்களா? - இல்லை, அவர்கள் கிரிக்கெட் விளையாடிக் கொண்டிருந்தார்கள்.",
+      "audioId": "phase2_l8_4_ex5"
+    }
+  ],
+  "listeningQuestions": [
+    {
+      "audioText": "What are you doing? - I am reading a book.",
+      "options": [
+        "What are you doing? - I am reading a book.",
+        "What were you doing? - I am reading a book.",
+        "What are you doing? - I read a book."
+      ],
+      "correctIndex": 0
+    },
+    {
+      "audioText": "Is she cooking dinner? - Yes, she is cooking.",
+      "options": [
+        "Is she cook dinner? - Yes, she is cooking.",
+        "Is she cooking dinner? - Yes, she is cooking.",
+        "Is she cooking dinner? - Yes, she cooks."
+      ],
+      "correctIndex": 1
+    },
+    {
+      "audioText": "Were they studying? - No, they were playing.",
+      "options": [
+        "Were they studying? - No, they play.",
+        "Are they studying? - No, they were playing.",
+        "Were they studying? - No, they were playing."
+      ],
+      "correctIndex": 2
+    }
+  ],
+  "speakSentences": [
+    {
+      "en": "What are you doing now?",
+      "ta": "நீங்கள் இப்போது என்ன செய்து கொண்டிருக்கிறீர்கள்?"
+    },
+    {
+      "en": "I am learning English.",
+      "ta": "நான் ஆங்கிலம் கற்றுக் கொண்டிருக்கிறேன்."
+    },
+    {
+      "en": "What will you be doing tomorrow?",
+      "ta": "நாளை நீங்கள் என்ன செய்து கொண்டிருப்பீர்கள்?"
+    }
+  ],
+  "practiceQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "What ___ you doing? - I am studying.",
+      "promptTa": "நீங்கள் என்ன செய்து கொண்டிருக்கிறீர்கள்? - நான் படித்துக் கொண்டிருக்கிறேன்.",
+      "options": ["am", "is", "are", "be"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "___ she cooking? - Yes, she is.",
+      "promptTa": "அவள் சமைத்துக் கொண்டிருக்கிறாளா? - ஆம், அவள் சமைத்துக் கொண்டிருக்கிறாள்.",
+      "options": ["Am", "Is", "Are", "Be"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "What ___ you doing yesterday? - I was reading.",
+      "promptTa": "நேற்று நீங்கள் என்ன செய்து கொண்டிருந்தீர்கள்? - நான் படித்துக் கொண்டிருந்தேன்.",
+      "options": ["am", "is", "are", "were"],
+      "correctIndex": 3
+    },
+    {
+      "type": "mcq",
+      "promptEn": "___ they playing football? - No, they weren't.",
+      "promptTa": "அவர்கள் கால்பந்து விளையாடிக் கொண்டிருந்தார்களா? - இல்லை.",
+      "options": ["Am", "Is", "Are", "Were"],
+      "correctIndex": 3
+    },
+    {
+      "type": "mcq",
+      "promptEn": "What will you ___ doing tomorrow? - I will be working.",
+      "promptTa": "நாளை நீங்கள் என்ன செய்து கொண்டிருப்பீர்கள்? - நான் வேலை செய்து கொண்டிருப்பேன்.",
+      "options": ["am", "is", "are", "be"],
+      "correctIndex": 3
+    }
+  ],
+  "masteryQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "What are you doing right now? - I ___ ___ to music.",
+      "promptTa": "நீங்கள் இப்போது என்ன செய்து கொண்டிருக்கிறீர்கள்? - நான் இசை கேட்டுக் கொண்டிருக்கிறேன்.",
+      "options": ["am listening", "is listening", "are listening", "was listening"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Is she doing her homework? - Yes, she ___ ___ it.",
+      "promptTa": "அவள் தன் வீட்டுப்பாடம் செய்து கொண்டிருக்கிறாளா? - ஆம், அவள் அதை செய்து கொண்டிருக்கிறாள்.",
+      "options": ["am doing", "is doing", "are doing", "was doing"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "What were they doing at 5 pm? - They ___ ___ football.",
+      "promptTa": "மாலை 5 மணிக்கு அவர்கள் என்ன செய்து கொண்டிருந்தார்கள்? - அவர்கள் கால்பந்து விளையாடிக் கொண்டிருந்தார்கள்.",
+      "options": ["am playing", "is playing", "are playing", "were playing"],
+      "correctIndex": 3
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Will you be working tomorrow? - Yes, I ___ ___ working.",
+      "promptTa": "நாளை நீங்கள் வேலை செய்து கொண்டிருப்பீர்களா? - ஆம், நான் வேலை செய்து கொண்டிருப்பேன்.",
+      "options": ["am be", "will be", "are be", "was be"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Are they coming to the party? - No, they ___ ___ coming.",
+      "promptTa": "அவர்கள் விருந்துக்கு வருகிறார்களா? - இல்லை, அவர்கள் வரவில்லை.",
+      "options": ["am not", "is not", "are not", "was not"],
+      "correctIndex": 2
+    }
+  ]
+}

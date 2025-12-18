@@ -1,0 +1,232 @@
+{
+  "id": "phase4_lesson19_3",
+  "order": 3,
+  "unitId": "phase4_unit19",
+  "title": "Paraphrasing",
+  "description": "Learn to express the same idea using different words",
+  "level": "B2",
+  "explain": {
+    "ta": "மறுவாசிப்பு (Paraphrasing) என்பது ஒரு கருத்தை வேறு சொற்களில் வெளிப்படுத்துவது. இது சரளமான பேச்சுக்கு மிக முக்கியம். நீங்கள் ஒரு சொல் மறந்தால், வேறு வழியில் சொல்லலாம். உத்திகள்: 1) ஒத்த சொற்களைப் பயன்படுத்துங்கள் (synonyms). 2) வாக்கிய அமைப்பை மாற்றுங்கள். 3) எளிய சொற்களில் விளக்குங்கள். எடுத்துக்காட்டு: 'I'm exhausted' = 'I'm very tired' = 'I have no energy'.",
+    "en": "Paraphrasing is expressing the same idea using different words. This is crucial for fluent speaking. If you forget a word, you can say it another way. Strategies: 1) Use synonyms (similar words). 2) Change sentence structure. 3) Explain using simpler words. Example: 'I'm exhausted' = 'I'm very tired' = 'I have no energy'. Paraphrasing helps you communicate even when you don't know the exact word.",
+    "table": [
+      {
+        "key": "Using Synonyms",
+        "examples": ["happy = glad = pleased", "big = large = huge", "fast = quick = rapid", "difficult = hard = challenging"]
+      },
+      {
+        "key": "Changing Structure",
+        "examples": ["I like coffee → Coffee is my favorite drink", "She runs fast → She is a fast runner"]
+      },
+      {
+        "key": "Explaining Simply",
+        "examples": ["exhausted = very very tired", "enormous = very very big", "delicious = very tasty"]
+      },
+      {
+        "key": "Using Descriptions",
+        "examples": ["refrigerator = the machine that keeps food cold", "umbrella = the thing you use when it rains"]
+      }
+    ]
+  },
+  "examples": [
+    {
+      "en": "'I'm exhausted' can be paraphrased as 'I'm very tired' or 'I have no energy'.",
+      "ta": "'நான் களைப்பாக இருக்கிறேன்' என்பதை 'நான் மிகவும் சோர்வாக இருக்கிறேன்' அல்லது 'எனக்கு சக்தி இல்லை' என்று மறுவாசிக்கலாம்.",
+      "audioId": "phase4_l19_3_ex1"
+    },
+    {
+      "en": "'The movie was fantastic' can be paraphrased as 'The movie was really good' or 'I loved the movie'.",
+      "ta": "'திரைப்படம் அருமையாக இருந்தது' என்பதை 'திரைப்படம் மிகவும் நன்றாக இருந்தது' அல்லது 'எனக்கு திரைப்படம் பிடித்தது' என்று மறுவாசிக்கலாம்.",
+      "audioId": "phase4_l19_3_ex2"
+    },
+    {
+      "en": "'I don't have enough money' can be paraphrased as 'I can't afford it' or 'It's too expensive for me'.",
+      "ta": "'என்னிடம் போதுமான பணம் இல்லை' என்பதை 'என்னால் வாங்க முடியாது' அல்லது 'இது எனக்கு மிகவும் விலை அதிகம்' என்று மறுவாசிக்கலாம்.",
+      "audioId": "phase4_l19_3_ex3"
+    },
+    {
+      "en": "'She's intelligent' can be paraphrased as 'She's very smart' or 'She learns things quickly'.",
+      "ta": "'அவள் புத்திசாலி' என்பதை 'அவள் மிகவும் திறமையானவள்' அல்லது 'அவள் விஷயங்களை விரைவாக கற்றுக்கொள்கிறாள்' என்று மறுவாசிக்கலாம்.",
+      "audioId": "phase4_l19_3_ex4"
+    },
+    {
+      "en": "'The food was delicious' can be paraphrased as 'The food was very tasty' or 'I really enjoyed the food'.",
+      "ta": "'உணவு சுவையாக இருந்தது' என்பதை 'உணவு மிகவும் ருசியாக இருந்தது' அல்லது 'நான் உணவை மிகவும் ரசித்தேன்' என்று மறுவாசிக்கலாம்.",
+      "audioId": "phase4_l19_3_ex5"
+    },
+    {
+      "en": "'I'm in a hurry' can be paraphrased as 'I don't have much time' or 'I need to go quickly'.",
+      "ta": "'நான் அவசரத்தில் இருக்கிறேன்' என்பதை 'எனக்கு அதிக நேரம் இல்லை' அல்லது 'நான் விரைவாக செல்ல வேண்டும்' என்று மறுவாசிக்கலாம்.",
+      "audioId": "phase4_l19_3_ex6"
+    },
+    {
+      "en": "'The house is enormous' can be paraphrased as 'The house is very big' or 'The house has a lot of space'.",
+      "ta": "'வீடு மிகப்பெரியது' என்பதை 'வீடு மிகவும் பெரியது' அல்லது 'வீட்டில் நிறைய இடம் உள்ளது' என்று மறுவாசிக்கலாம்.",
+      "audioId": "phase4_l19_3_ex7"
+    },
+    {
+      "en": "'I forgot my umbrella' can be paraphrased as 'I left my umbrella at home' or 'I don't have the thing for rain'.",
+      "ta": "'நான் என் குடையை மறந்துவிட்டேன்' என்பதை 'நான் என் குடையை வீட்டில் விட்டுவிட்டேன்' அல்லது 'மழைக்கான பொருள் என்னிடம் இல்லை' என்று மறுவாசிக்கலாம்.",
+      "audioId": "phase4_l19_3_ex8"
+    }
+  ],
+  "listeningQuestions": [
+    {
+      "audioText": "'I'm exhausted' means the same as 'I'm very tired' or 'I have no energy'.",
+      "options": [
+        "These sentences have different meanings",
+        "These sentences mean the same thing",
+        "'Exhausted' means happy"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "audioText": "Paraphrasing means expressing the same idea using different words.",
+      "options": [
+        "Paraphrasing means copying exactly",
+        "Paraphrasing means using different words for the same idea",
+        "Paraphrasing means speaking faster"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "audioText": "If you forget a word, you can describe it or use simpler words.",
+      "options": [
+        "Stop speaking if you forget a word",
+        "Describe it or use simpler words",
+        "Only use difficult words"
+      ],
+      "correctIndex": 1
+    }
+  ],
+  "speakSentences": [
+    {
+      "en": "I'm exhausted. I mean, I'm very tired.",
+      "ta": "நான் களைப்பாக இருக்கிறேன். அதாவது, நான் மிகவும் சோர்வாக இருக்கிறேன்."
+    },
+    {
+      "en": "The movie was fantastic. In other words, it was really good.",
+      "ta": "திரைப்படம் அருமையாக இருந்தது. வேறு வார்த்தைகளில், இது மிகவும் நன்றாக இருந்தது."
+    },
+    {
+      "en": "I can't afford it. That means I don't have enough money.",
+      "ta": "என்னால் வாங்க முடியாது. அதாவது என்னிடம் போதுமான பணம் இல்லை."
+    },
+    {
+      "en": "She's intelligent. She learns things quickly.",
+      "ta": "அவள் புத்திசாலி. அவள் விஷயங்களை விரைவாக கற்றுக்கொள்கிறாள்."
+    },
+    {
+      "en": "The food was delicious. I really enjoyed it.",
+      "ta": "உணவு சுவையாக இருந்தது. நான் அதை மிகவும் ரசித்தேன்."
+    }
+  ],
+  "practiceQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "What is paraphrasing?",
+      "promptTa": "மறுவாசிப்பு என்றால் என்ன?",
+      "options": ["Copying exactly", "Expressing the same idea in different words", "Speaking faster"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which is a paraphrase of 'I'm happy'?",
+      "promptTa": "'நான் மகிழ்ச்சியாக இருக்கிறேன்' இன் மறுவாசிப்பு எது?",
+      "options": ["I'm sad", "I'm glad", "I'm tired"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which is a paraphrase of 'The test was difficult'?",
+      "promptTa": "'தேர்வு கடினமாக இருந்தது' இன் மறுவாசிப்பு எது?",
+      "options": ["The test was easy", "The test was hard", "The test was short"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which is a synonym for 'big'?",
+      "promptTa": "'big' க்கு ஒத்த சொல் எது?",
+      "options": ["small", "large", "short"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which is a paraphrase of 'I'm exhausted'?",
+      "promptTa": "'நான் களைப்பாக இருக்கிறேன்' இன் மறுவாசிப்பு எது?",
+      "options": ["I'm very tired", "I'm very happy", "I'm very hungry"],
+      "correctIndex": 0
+    }
+  ],
+  "masteryQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "Which is a paraphrase of 'The movie was fantastic'?",
+      "promptTa": "'திரைப்படம் அருமையாக இருந்தது' இன் மறுவாசிப்பு எது?",
+      "options": ["The movie was boring", "The movie was really good", "The movie was short"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which is a paraphrase of 'I don't have enough money'?",
+      "promptTa": "'என்னிடம் போதுமான பணம் இல்லை' இன் மறுவாசிப்பு எது?",
+      "options": ["I'm rich", "I can't afford it", "I have too much money"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which is a paraphrase of 'She's intelligent'?",
+      "promptTa": "'அவள் புத்திசாலி' இன் மறுவாசிப்பு எது?",
+      "options": ["She's slow", "She's very smart", "She's tired"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "How can you describe 'refrigerator' if you forget the word?",
+      "promptTa": "'refrigerator' சொல் மறந்தால் எப்படி விவரிக்கலாம்?",
+      "options": ["The thing for cooking", "The machine that keeps food cold", "The thing for washing"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which is a paraphrase of 'I'm in a hurry'?",
+      "promptTa": "'நான் அவசரத்தில் இருக்கிறேன்' இன் மறுவாசிப்பு எது?",
+      "options": ["I have lots of time", "I don't have much time", "I'm relaxed"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which is a synonym for 'fast'?",
+      "promptTa": "'fast' க்கு ஒத்த சொல் எது?",
+      "options": ["slow", "quick", "heavy"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which is a paraphrase of 'The house is enormous'?",
+      "promptTa": "'வீடு மிகப்பெரியது' இன் மறுவாசிப்பு எது?",
+      "options": ["The house is tiny", "The house is very big", "The house is old"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Why is paraphrasing useful?",
+      "promptTa": "மறுவாசிப்பு ஏன் பயனுள்ளது?",
+      "options": ["It helps when you forget a word", "It makes speech shorter", "It's not useful"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which is a paraphrase of 'The food was delicious'?",
+      "promptTa": "'உணவு சுவையாக இருந்தது' இன் மறுவாசிப்பு எது?",
+      "options": ["The food was bad", "The food was very tasty", "The food was cold"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which phrase introduces a paraphrase?",
+      "promptTa": "எந்த சொற்றொடர் மறுவாசிப்பை அறிமுகப்படுத்துகிறது?",
+      "options": ["However", "In other words", "But"],
+      "correctIndex": 1
+    }
+  ]
+}

@@ -1,0 +1,272 @@
+{
+  "id": "phase4_lesson20_3",
+  "order": 3,
+  "unitId": "phase4_unit20",
+  "title": "Travel & Hotel",
+  "description": "Learn to communicate during travel and at hotels",
+  "level": "B2",
+  "explain": {
+    "ta": "பயணம் மற்றும் ஹோட்டலில் ஆங்கிலத்தில் பேசுவது முக்கியம். விமான நிலையம், ரயில் நிலையம், ஹோட்டல் செக்-இன் போன்ற சூழ்நிலைகளுக்கு தயாராக இருங்கள். முக்கிய சொற்றொடர்கள்: 'I have a reservation', 'What time is check-in?', 'Where is the boarding gate?', 'Can I have a wake-up call?'. தெளிவாக பேசுவது பயணத்தை எளிதாக்கும்.",
+    "en": "Speaking English during travel and at hotels is important. Be prepared for situations at airports, train stations, and hotel check-ins. Key phrases: 'I have a reservation', 'What time is check-in?', 'Where is the boarding gate?', 'Can I have a wake-up call?'. Speaking clearly makes travel easier and more enjoyable.",
+    "table": [
+      {
+        "key": "Airport/Station",
+        "examples": ["Where is the check-in counter?", "What time does the flight depart?", "Where is the boarding gate?", "Is the train on time?"]
+      },
+      {
+        "key": "Hotel Check-in",
+        "examples": ["I have a reservation.", "What time is check-in?", "Can I see the room first?", "Is breakfast included?"]
+      },
+      {
+        "key": "Hotel Services",
+        "examples": ["Can I have a wake-up call?", "Is there Wi-Fi?", "Where is the restaurant?", "Can I extend my stay?"]
+      },
+      {
+        "key": "Check-out",
+        "examples": ["I'd like to check out.", "Can I have a late check-out?", "Can you call a taxi?", "Where can I leave my luggage?"]
+      }
+    ]
+  },
+  "examples": [
+    {
+      "en": "Good morning. I have a reservation under the name Kumar.",
+      "ta": "காலை வணக்கம். குமார் என்ற பெயரில் முன்பதிவு உள்ளது.",
+      "audioId": "phase4_l20_3_ex1"
+    },
+    {
+      "en": "What time is check-in? And what time is check-out?",
+      "ta": "செக்-இன் நேரம் என்ன? செக்-அவுட் நேரம் என்ன?",
+      "audioId": "phase4_l20_3_ex2"
+    },
+    {
+      "en": "Is breakfast included in the room rate?",
+      "ta": "அறை கட்டணத்தில் காலை உணவு சேர்க்கப்பட்டுள்ளதா?",
+      "audioId": "phase4_l20_3_ex3"
+    },
+    {
+      "en": "Can I have a wake-up call at 6 AM tomorrow?",
+      "ta": "நாளை காலை 6 மணிக்கு எழுப்பும் அழைப்பு தர முடியுமா?",
+      "audioId": "phase4_l20_3_ex4"
+    },
+    {
+      "en": "Where is the boarding gate for flight AI-505?",
+      "ta": "AI-505 விமானத்திற்கான போர்டிங் கேட் எங்கே?",
+      "audioId": "phase4_l20_3_ex5"
+    },
+    {
+      "en": "Is the train to Mumbai on time?",
+      "ta": "மும்பைக்கான ரயில் நேரத்தில் உள்ளதா?",
+      "audioId": "phase4_l20_3_ex6"
+    },
+    {
+      "en": "I'd like to check out. Can you prepare my bill?",
+      "ta": "நான் செக்-அவுட் செய்ய விரும்புகிறேன். என் பில் தயார் செய்ய முடியுமா?",
+      "audioId": "phase4_l20_3_ex7"
+    },
+    {
+      "en": "Can you call a taxi to the airport for me?",
+      "ta": "எனக்கு விமான நிலையத்திற்கு டாக்சி அழைக்க முடியுமா?",
+      "audioId": "phase4_l20_3_ex8"
+    }
+  ],
+  "dialogues": [
+    {
+      "roleA": "Guest",
+      "roleB": "Receptionist",
+      "lines": [
+        {"speaker": "Guest", "text": "Good afternoon. I have a reservation under the name Priya."},
+        {"speaker": "Receptionist", "text": "Welcome! Let me check. Yes, a double room for two nights."},
+        {"speaker": "Guest", "text": "That's correct. Is breakfast included?"},
+        {"speaker": "Receptionist", "text": "Yes, breakfast is served from 7 to 10 AM in the restaurant."},
+        {"speaker": "Guest", "text": "Great. Is there Wi-Fi in the room?"},
+        {"speaker": "Receptionist", "text": "Yes, free Wi-Fi. The password is on the card in your room."},
+        {"speaker": "Guest", "text": "Thank you. What time is check-out?"},
+        {"speaker": "Receptionist", "text": "Check-out is at 11 AM. Here's your key. Room 305."}
+      ]
+    },
+    {
+      "roleA": "Traveler",
+      "roleB": "Airport Staff",
+      "lines": [
+        {"speaker": "Traveler", "text": "Excuse me, where is the check-in counter for Air India?"},
+        {"speaker": "Airport Staff", "text": "It's in Terminal 2, counters 15 to 20."},
+        {"speaker": "Traveler", "text": "Thank you. And where is the boarding gate for flight AI-505?"},
+        {"speaker": "Airport Staff", "text": "After security, go to Gate 12. Boarding starts at 2:30 PM."},
+        {"speaker": "Traveler", "text": "Is the flight on time?"},
+        {"speaker": "Airport Staff", "text": "Yes, it's scheduled to depart at 3:00 PM as planned."}
+      ]
+    },
+    {
+      "roleA": "Guest",
+      "roleB": "Receptionist",
+      "lines": [
+        {"speaker": "Guest", "text": "Good morning. I'd like to check out."},
+        {"speaker": "Receptionist", "text": "Of course. Room 305? Let me prepare your bill."},
+        {"speaker": "Guest", "text": "Yes. Can I have a late check-out next time?"},
+        {"speaker": "Receptionist", "text": "Yes, late check-out until 2 PM is available for an extra charge."},
+        {"speaker": "Guest", "text": "I see. Can you call a taxi to the airport for me?"},
+        {"speaker": "Receptionist", "text": "Certainly. The taxi will be here in 10 minutes. Thank you for staying with us!"}
+      ]
+    }
+  ],
+  "listeningQuestions": [
+    {
+      "audioText": "I have a reservation under the name Priya. Yes, a double room for two nights.",
+      "options": [
+        "The reservation is for one night",
+        "The reservation is for two nights",
+        "There is no reservation"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "audioText": "What time is check-out? Check-out is at 11 AM.",
+      "options": [
+        "Check-out is at 10 AM",
+        "Check-out is at 11 AM",
+        "Check-out is at 12 PM"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "audioText": "Where is the boarding gate for flight AI-505? Go to Gate 12.",
+      "options": [
+        "Gate 10",
+        "Gate 12",
+        "Gate 15"
+      ],
+      "correctIndex": 1
+    }
+  ],
+  "speakSentences": [
+    {
+      "en": "I have a reservation under the name Kumar.",
+      "ta": "குமார் என்ற பெயரில் முன்பதிவு உள்ளது."
+    },
+    {
+      "en": "What time is check-in and check-out?",
+      "ta": "செக்-இன் மற்றும் செக்-அவுட் நேரம் என்ன?"
+    },
+    {
+      "en": "Is breakfast included in the room rate?",
+      "ta": "அறை கட்டணத்தில் காலை உணவு சேர்க்கப்பட்டுள்ளதா?"
+    },
+    {
+      "en": "Where is the boarding gate for my flight?",
+      "ta": "என் விமானத்திற்கான போர்டிங் கேட் எங்கே?"
+    },
+    {
+      "en": "I'd like to check out. Can you prepare my bill?",
+      "ta": "நான் செக்-அவுட் செய்ய விரும்புகிறேன். என் பில் தயார் செய்ய முடியுமா?"
+    }
+  ],
+  "practiceQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "How do you say you have a hotel reservation?",
+      "promptTa": "ஹோட்டல் முன்பதிவு உள்ளது என்று எப்படி சொல்வது?",
+      "options": ["I want room.", "I have a reservation.", "Room please."],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "How do you ask about check-in time?",
+      "promptTa": "செக்-இன் நேரம் பற்றி எப்படி கேட்பது?",
+      "options": ["When room?", "What time is check-in?", "Check-in now?"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "How do you ask if breakfast is included?",
+      "promptTa": "காலை உணவு சேர்க்கப்பட்டுள்ளதா என்று எப்படி கேட்பது?",
+      "options": ["Food free?", "Is breakfast included?", "Breakfast?"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "How do you ask for a wake-up call?",
+      "promptTa": "எழுப்பும் அழைப்பு எப்படி கேட்பது?",
+      "options": ["Wake me!", "Can I have a wake-up call?", "Call morning."],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "How do you ask about the boarding gate?",
+      "promptTa": "போர்டிங் கேட் பற்றி எப்படி கேட்பது?",
+      "options": ["Gate where?", "Where is the boarding gate?", "Boarding?"],
+      "correctIndex": 1
+    }
+  ],
+  "masteryQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "What does 'late check-out' mean?",
+      "promptTa": "'late check-out' என்றால் என்ன?",
+      "options": ["Leaving early", "Leaving later than normal time", "Not leaving"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "How do you ask if a flight is on time?",
+      "promptTa": "விமானம் நேரத்தில் உள்ளதா என்று எப்படி கேட்பது?",
+      "options": ["Flight okay?", "Is the flight on time?", "When plane?"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "How do you ask for a taxi?",
+      "promptTa": "டாக்சி எப்படி கேட்பது?",
+      "options": ["Taxi!", "Can you call a taxi for me?", "Car please."],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "What does 'room rate' mean?",
+      "promptTa": "'room rate' என்றால் என்ன?",
+      "options": ["Room number", "Price of the room", "Room size"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "How do you ask about Wi-Fi?",
+      "promptTa": "Wi-Fi பற்றி எப்படி கேட்பது?",
+      "options": ["Internet?", "Is there Wi-Fi in the room?", "Wi-Fi!"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "How do you say you want to leave the hotel?",
+      "promptTa": "ஹோட்டலை விட்டு செல்ல விரும்புவதை எப்படி சொல்வது?",
+      "options": ["I go now.", "I'd like to check out.", "Leaving."],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "What is a 'boarding gate'?",
+      "promptTa": "'boarding gate' என்றால் என்ன?",
+      "options": ["Exit door", "Place to enter the plane", "Ticket counter"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "How do you ask to extend your stay?",
+      "promptTa": "தங்குவதை நீட்டிக்க எப்படி கேட்பது?",
+      "options": ["More days!", "Can I extend my stay?", "Stay long."],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "How do you ask where to leave luggage?",
+      "promptTa": "சாமான்களை எங்கே விடுவது என்று எப்படி கேட்பது?",
+      "options": ["Bags where?", "Where can I leave my luggage?", "Keep bags."],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "What does 'terminal' mean at an airport?",
+      "promptTa": "விமான நிலையத்தில் 'terminal' என்றால் என்ன?",
+      "options": ["End of journey", "Building section for flights", "Parking area"],
+      "correctIndex": 1
+    }
+  ]
+}

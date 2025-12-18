@@ -1,0 +1,166 @@
+{
+  "id": "phase2_lesson8_2",
+  "order": 2,
+  "unitId": "phase2_unit8",
+  "title": "Past Continuous",
+  "description": "was / were + V-ing",
+  "level": "A2",
+  "explain": {
+    "ta": "கடந்த காலத்தில் ஒரு குறிப்பிட்ட நேரத்தில் நடந்து கொண்டிருந்த செயல்களை விவரிக்க Past Continuous Tense பயன்படுத்தப்படுகிறது. இதன் அமைப்பு: was/were + verb-ing. 'I/he/she/it' உடன் 'was' பயன்படுத்துகிறோம் (I was eating, She was reading), 'you/we/they' உடன் 'were' பயன்படுத்துகிறோம் (They were playing, We were studying). இது கடந்த காலத்தில் நடந்து கொண்டிருந்த செயல்கள், குறுக்கிடப்பட்ட செயல்கள், மற்றும் ஒரே நேரத்தில் நடந்த இரண்டு செயல்களுக்கு பயன்படுத்தப்படுகிறது.",
+    "en": "Past Continuous Tense is used to describe actions that were happening at a specific time in the past. The structure is: was/were + verb-ing. We use 'was' with 'I/he/she/it' (I was eating, She was reading), and 'were' with 'you/we/they' (They were playing, We were studying). This tense is used for ongoing past actions, interrupted actions, and two actions happening at the same time in the past.",
+    "table": [
+      {
+        "key": "I/He/She/It was + V-ing",
+        "examples": ["I was studying", "He was working", "She was cooking"]
+      },
+      {
+        "key": "You/We/They were + V-ing",
+        "examples": ["You were learning", "We were playing", "They were talking"]
+      }
+    ]
+  },
+  "examples": [
+    {
+      "en": "I was studying when you called.",
+      "ta": "நீங்கள் அழைத்தபோது நான் படித்துக் கொண்டிருந்தேன்.",
+      "audioId": "phase2_l8_2_ex1"
+    },
+    {
+      "en": "She was cooking dinner at 7 pm yesterday.",
+      "ta": "நேற்று மாலை 7 மணிக்கு அவள் இரவு உணவு சமைத்துக் கொண்டிருந்தாள்.",
+      "audioId": "phase2_l8_2_ex2"
+    },
+    {
+      "en": "They were playing football when it started raining.",
+      "ta": "மழை பெய்ய ஆரம்பித்தபோது அவர்கள் கால்பந்து விளையாடிக் கொண்டிருந்தார்கள்.",
+      "audioId": "phase2_l8_2_ex3"
+    },
+    {
+      "en": "We were watching TV all evening.",
+      "ta": "நாங்கள் மாலை முழுவதும் டிவி பார்த்துக் கொண்டிருந்தோம்.",
+      "audioId": "phase2_l8_2_ex4"
+    },
+    {
+      "en": "He was sleeping when I arrived home.",
+      "ta": "நான் வீட்டிற்கு வந்தபோது அவர் தூங்கிக் கொண்டிருந்தார்.",
+      "audioId": "phase2_l8_2_ex5"
+    }
+  ],
+  "listeningQuestions": [
+    {
+      "audioText": "I was reading a book last night.",
+      "options": [
+        "I was reading a book last night.",
+        "I am reading a book last night.",
+        "I were reading a book last night."
+      ],
+      "correctIndex": 0
+    },
+    {
+      "audioText": "She was writing a letter yesterday.",
+      "options": [
+        "She is writing a letter yesterday.",
+        "She was writing a letter yesterday.",
+        "She were writing a letter yesterday."
+      ],
+      "correctIndex": 1
+    },
+    {
+      "audioText": "They were eating lunch at noon.",
+      "options": [
+        "They was eating lunch at noon.",
+        "They are eating lunch at noon.",
+        "They were eating lunch at noon."
+      ],
+      "correctIndex": 2
+    }
+  ],
+  "speakSentences": [
+    {
+      "en": "I was learning English yesterday.",
+      "ta": "நான் நேற்று ஆங்கிலம் கற்றுக் கொண்டிருந்தேன்."
+    },
+    {
+      "en": "He was working on his computer.",
+      "ta": "அவர் தனது கணினியில் வேலை செய்து கொண்டிருந்தார்."
+    },
+    {
+      "en": "We were going to the market.",
+      "ta": "நாங்கள் சந்தைக்கு செல்லுகிறோம்."
+    }
+  ],
+  "practiceQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "I ___ studying English yesterday.",
+      "promptTa": "நான் நேற்று ஆங்கிலம் படித்துக் கொண்டிருந்தேன்.",
+      "options": ["am", "is", "was", "were"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "She ___ cooking dinner at 6 pm.",
+      "promptTa": "அவள் மாலை 6 மணிக்கு இரவு உணவு சமைத்துக் கொண்டிருந்தாள்.",
+      "options": ["am", "is", "was", "were"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "They ___ playing football yesterday.",
+      "promptTa": "அவர்கள் நேற்று கால்பந்து விளையாடிக் கொண்டிருந்தார்கள்.",
+      "options": ["am", "is", "was", "were"],
+      "correctIndex": 3
+    },
+    {
+      "type": "mcq",
+      "promptEn": "We ___ watching TV last night.",
+      "promptTa": "நாங்கள் நேற்று இரவு டிவி பார்த்துக் கொண்டிருந்தோம்.",
+      "options": ["am", "is", "was", "were"],
+      "correctIndex": 3
+    },
+    {
+      "type": "mcq",
+      "promptEn": "He ___ reading a book.",
+      "promptTa": "அவர் ஒரு புத்தகம் படித்துக் கொண்டிருந்தார்.",
+      "options": ["am", "is", "was", "were"],
+      "correctIndex": 2
+    }
+  ],
+  "masteryQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "I ___ ___ to music when you called.",
+      "promptTa": "நீங்கள் அழைத்தபோது நான் இசை கேட்டுக் கொண்டிருந்தேன்.",
+      "options": ["am listening", "was listening", "were listening", "is listening"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "She ___ ___ her homework at 5 pm.",
+      "promptTa": "அவள் மாலை 5 மணிக்கு தன் வீட்டுப்பாடம் செய்து கொண்டிருந்தாள்.",
+      "options": ["am doing", "was doing", "were doing", "is doing"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "They ___ ___ a new house last year.",
+      "promptTa": "அவர்கள் கடந்த வருடம் ஒரு புதிய வீடு கட்டிக் கொண்டிருந்தார்கள்.",
+      "options": ["am building", "was building", "were building", "is building"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "It ___ ___ heavily yesterday.",
+      "promptTa": "நேற்று கடுமையாக மழை பெய்து கொண்டிருந்தது.",
+      "options": ["am raining", "was raining", "were raining", "is raining"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "You ___ ___ very fast.",
+      "promptTa": "நீங்கள் மிக வேகமாக ஓடிக் கொண்டிருந்தீர்கள்.",
+      "options": ["am running", "was running", "were running", "is running"],
+      "correctIndex": 2
+    }
+  ]
+}

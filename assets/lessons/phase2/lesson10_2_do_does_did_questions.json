@@ -1,0 +1,63 @@
+{
+  "id": "phase2_lesson10_2",
+  "order": 2,
+  "unitId": "phase2_unit10",
+  "title": "Do/Does/Did Questions",
+  "description": "do / does / did question formation",
+  "level": "A2",
+  "explain": {
+    "ta": "செயல் வினைச்சொற்களுடன் கேள்விகள் கேட்க Do/Does/Did பயன்படுத்துகிறோம். நிகழ்காலத்தில் I/You/We/They-க்கு 'Do' பயன்படுத்துகிறோம், He/She/It-க்கு 'Does' பயன்படுத்துகிறோம். இறந்த காலத்திற்கு எல்லோருக்கும் 'Did' பயன்படுத்துகிறோம். கேள்வி வடிவம்: Do/Does/Did + subject + base verb + ...?",
+    "en": "We use Do/Does/Did to form questions with action verbs. In present tense, use 'Do' with I/You/We/They and 'Does' with He/She/It. For past tense, use 'Did' for all subjects. Question format: Do/Does/Did + subject + base verb + ...? Note: The main verb stays in base form."
+  },
+  "examples": [
+    {
+      "en": "Do you like coffee?",
+      "ta": "உங்களுக்கு காபி பிடிக்குமா?",
+      "audioId": "phase2_l10_2_ex1"
+    },
+    {
+      "en": "Does she work here?",
+      "ta": "அவள் இங்கே வேலை செய்கிறாளா?",
+      "audioId": "phase2_l10_2_ex2"
+    },
+    {
+      "en": "Did they go to school?",
+      "ta": "அவர்கள் பள்ளிக்கு சென்றார்களா?",
+      "audioId": "phase2_l10_2_ex3"
+    }
+  ],
+  "listeningQuestions": [],
+  "speakSentences": [],
+  "practiceQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "___ you speak English?",
+      "promptTa": "நீங்கள் ஆங்கிலம் பேசுகிறீர்களா?",
+      "options": ["Do", "Does", "Did", "Are"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "___ he play cricket yesterday?",
+      "promptTa": "அவர் நேற்று கிரிக்கெட் விளையாடினாரா?",
+      "options": ["Do", "Does", "Did", "Was"],
+      "correctIndex": 2
+    }
+  ],
+  "masteryQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "___ she like music?",
+      "promptTa": "அவளுக்கு இசை பிடிக்குமா?",
+      "options": ["Do", "Does", "Did", "Is"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "___ they finish their homework?",
+      "promptTa": "அவர்கள் தங்கள் வீட்டுப்பாடத்தை முடித்தார்களா?",
+      "options": ["Do", "Does", "Did", "Are"],
+      "correctIndex": 2
+    }
+  ]
+}

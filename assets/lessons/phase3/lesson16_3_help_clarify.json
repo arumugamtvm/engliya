@@ -1,0 +1,257 @@
+{
+  "id": "phase3_lesson16_3",
+  "order": 3,
+  "unitId": "phase3_unit16",
+  "title": "Asking for Help & Clarification",
+  "description": "Learn to ask for help and clarify information politely",
+  "level": "B1",
+  "explain": {
+    "ta": "உதவி கேட்பதும் தெளிவுபடுத்துவதும் முக்கியமான திறன்கள். முக்கிய வடிவங்கள்: 'Could you help me with...' (உதவி கேட்பது), 'What do you mean by...' (அர்த்தம் கேட்பது), 'Let me check if I understand' (புரிந்ததை உறுதிப்படுத்துவது), 'Could you explain that again?' (மீண்டும் விளக்கம் கேட்பது), 'I'm not sure I follow' (புரியவில்லை என்று சொல்வது). இந்த வடிவங்கள் கண்ணியமாக உதவி கேட்கவும் தெளிவுபடுத்தவும் உதவுகின்றன.",
+    "en": "Asking for help and clarification are essential communication skills. Key patterns include: 'Could you help me with...' (requesting assistance), 'What do you mean by...' (asking for meaning), 'Let me check if I understand' (confirming understanding), 'Could you explain that again?' (requesting repetition), 'I'm not sure I follow' (expressing confusion politely). These patterns help you get the information you need without appearing rude or confused.",
+    "table": [
+      {
+        "key": "Asking Help",
+        "examples": ["Could you help me with this?", "Can you show me how to do this?", "I need some help, please."]
+      },
+      {
+        "key": "Asking Meaning",
+        "examples": ["What do you mean by that?", "Could you clarify that?", "I don't understand this word."]
+      },
+      {
+        "key": "Confirming",
+        "examples": ["Let me check if I understand.", "So you're saying that...", "Do you mean...?"]
+      },
+      {
+        "key": "Requesting Repetition",
+        "examples": ["Could you repeat that?", "Could you explain that again?", "I didn't catch that."]
+      }
+    ]
+  },
+  "examples": [
+    {
+      "en": "Could you help me with this problem, please?",
+      "ta": "இந்த பிரச்சனையில் நீங்கள் எனக்கு உதவ முடியுமா, தயவுசெய்து?",
+      "audioId": "phase3_l16_3_ex1"
+    },
+    {
+      "en": "What do you mean by 'deadline'? I don't understand that word.",
+      "ta": "'deadline' என்றால் என்ன? அந்த வார்த்தை எனக்கு புரியவில்லை.",
+      "audioId": "phase3_l16_3_ex2"
+    },
+    {
+      "en": "Let me check if I understand. You want me to finish this by Friday, right?",
+      "ta": "நான் புரிந்துகொண்டேனா என்று பார்க்கிறேன். நீங்கள் இதை வெள்ளிக்கிழமைக்குள் முடிக்க வேண்டும் என்று விரும்புகிறீர்கள், இல்லையா?",
+      "audioId": "phase3_l16_3_ex3"
+    },
+    {
+      "en": "I'm sorry, I didn't catch that. Could you repeat it, please?",
+      "ta": "மன்னிக்கவும், எனக்கு கேட்கவில்லை. அதை மீண்டும் சொல்ல முடியுமா, தயவுசெய்து?",
+      "audioId": "phase3_l16_3_ex4"
+    },
+    {
+      "en": "Could you explain that again? I'm not sure I follow.",
+      "ta": "அதை மீண்டும் விளக்க முடியுமா? எனக்கு சரியாக புரியவில்லை.",
+      "audioId": "phase3_l16_3_ex5"
+    },
+    {
+      "en": "Can you show me how to use this software?",
+      "ta": "இந்த மென்பொருளை எப்படி பயன்படுத்துவது என்று காட்ட முடியுமா?",
+      "audioId": "phase3_l16_3_ex6"
+    },
+    {
+      "en": "I need some help with my homework. Could you assist me?",
+      "ta": "எனக்கு என் வீட்டுப்பாடத்தில் உதவி தேவை. நீங்கள் எனக்கு உதவ முடியுமா?",
+      "audioId": "phase3_l16_3_ex7"
+    },
+    {
+      "en": "So you're saying that I should submit the report tomorrow. Is that correct?",
+      "ta": "அதாவது நான் நாளை அறிக்கையை சமர்ப்பிக்க வேண்டும் என்று சொல்கிறீர்கள். அது சரியா?",
+      "audioId": "phase3_l16_3_ex8"
+    },
+    {
+      "en": "Could you clarify what you mean by 'urgent'? How soon do you need it?",
+      "ta": "'urgent' என்றால் என்ன என்று தெளிவுபடுத்த முடியுமா? உங்களுக்கு எவ்வளவு விரைவில் தேவை?",
+      "audioId": "phase3_l16_3_ex9"
+    }
+  ],
+  "listeningQuestions": [
+    {
+      "audioText": "Could you help me with this math problem? I don't understand it.",
+      "options": [
+        "He understands the math problem.",
+        "He needs help with a math problem.",
+        "He's helping someone with math."
+      ],
+      "correctIndex": 1
+    },
+    {
+      "audioText": "Let me check if I understand. You want me to call you tomorrow at 10 AM?",
+      "options": [
+        "She's confirming her understanding.",
+        "She's asking for help.",
+        "She doesn't understand anything."
+      ],
+      "correctIndex": 0
+    },
+    {
+      "audioText": "I'm sorry, I didn't catch that. Could you repeat the address, please?",
+      "options": [
+        "He heard the address clearly.",
+        "He didn't hear the address and wants it repeated.",
+        "He's giving the address."
+      ],
+      "correctIndex": 1
+    }
+  ],
+  "speakSentences": [
+    {
+      "en": "Could you help me with [task/problem], please?",
+      "ta": "[பணி/பிரச்சனை] இல் நீங்கள் எனக்கு உதவ முடியுமா, தயவுசெய்து?"
+    },
+    {
+      "en": "What do you mean by [word/phrase]?",
+      "ta": "[வார்த்தை/சொற்றொடர்] என்றால் என்ன?"
+    },
+    {
+      "en": "Let me check if I understand. You're saying that [statement], right?",
+      "ta": "நான் புரிந்துகொண்டேனா என்று பார்க்கிறேன். நீங்கள் [கூற்று] என்று சொல்கிறீர்கள், இல்லையா?"
+    },
+    {
+      "en": "I'm sorry, I didn't catch that. Could you repeat it, please?",
+      "ta": "மன்னிக்கவும், எனக்கு கேட்கவில்லை. அதை மீண்டும் சொல்ல முடியுமா, தயவுசெய்து?"
+    },
+    {
+      "en": "Could you explain [topic] again? I'm not sure I follow.",
+      "ta": "[தலைப்பு] ஐ மீண்டும் விளக்க முடியுமா? எனக்கு சரியாக புரியவில்லை."
+    }
+  ],
+  "practiceQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "Complete: Could you help me ___ this?",
+      "promptTa": "நிரப்புக: இதில் நீங்கள் எனக்கு உதவ ___ முடியுமா?",
+      "options": ["with", "for", "at"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Complete: What do you ___ by that?",
+      "promptTa": "நிரப்புக: அதன் மூலம் நீங்கள் என்ன ___?",
+      "options": ["mean", "means", "meaning"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Complete: Let me check ___ I understand.",
+      "promptTa": "நிரப்புக: நான் புரிந்துகொண்டேனா என்று ___.",
+      "options": ["if", "that", "what"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Complete: I didn't ___ that.",
+      "promptTa": "நிரப்புக: எனக்கு அது ___.",
+      "options": ["catch", "caught", "catching"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Complete: I'm not sure I ___.",
+      "promptTa": "நிரப்புக: எனக்கு சரியாக ___.",
+      "options": ["follow", "following", "followed"],
+      "correctIndex": 0
+    }
+  ],
+  "masteryQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "Which is the most polite way to ask for help?",
+      "promptTa": "உதவி கேட்க மிகவும் கண்ணியமான வழி எது?",
+      "options": [
+        "Help me.",
+        "Could you help me with this, please?",
+        "I want help."
+      ],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Complete: Can you show me ___ to do this?",
+      "promptTa": "நிரப்புக: இதை எப்படி செய்வது என்று காட்ட ___ முடியுமா?",
+      "options": ["how", "what", "when"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "What should you say if you don't understand a word?",
+      "promptTa": "ஒரு வார்த்தை புரியாவிட்டால் என்ன சொல்ல வேண்டும்?",
+      "options": [
+        "What?",
+        "What do you mean by that word?",
+        "I don't know."
+      ],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Complete: So you're ___ that I should come at 5 PM?",
+      "promptTa": "நிரப்புக: அதாவது நான் மாலை 5 மணிக்கு வர வேண்டும் என்று நீங்கள் ___?",
+      "options": ["say", "saying", "said"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Complete: Could you ___ that?",
+      "promptTa": "நிரப்புக: அதை நீங்கள் ___ முடியுமா?",
+      "options": ["clarify", "clear", "clarifying"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which shows you're confirming understanding?",
+      "promptTa": "நீங்கள் புரிந்துகொண்டதை உறுதிப்படுத்துவது எது?",
+      "options": [
+        "I don't understand.",
+        "Let me check if I understand correctly.",
+        "What?"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Complete: I need some help ___ my project.",
+      "promptTa": "நிரப்புக: எனக்கு என் திட்டத்தில் உதவி ___.",
+      "options": ["with", "for", "in"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "What does 'I didn't catch that' mean?",
+      "promptTa": "'I didn't catch that' என்றால் என்ன?",
+      "options": [
+        "I understood everything.",
+        "I didn't hear or understand what you said.",
+        "I caught something."
+      ],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Complete: Could you explain that ___?",
+      "promptTa": "நிரப்புக: அதை நீங்கள் ___ விளக்க முடியுமா?",
+      "options": ["again", "repeat", "more"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which is the best way to say you don't understand?",
+      "promptTa": "நீங்கள் புரியவில்லை என்று சொல்ல சிறந்த வழி எது?",
+      "options": [
+        "I don't understand.",
+        "I'm not sure I follow. Could you explain that again?",
+        "What are you saying?"
+      ],
+      "correctIndex": 1
+    }
+  ]
+}

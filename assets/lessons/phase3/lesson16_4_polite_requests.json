@@ -1,0 +1,257 @@
+{
+  "id": "phase3_lesson16_4",
+  "order": 4,
+  "unitId": "phase3_unit16",
+  "title": "Polite Requests & Offers",
+  "description": "Master polite ways to request and offer help",
+  "level": "B1",
+  "explain": {
+    "ta": "கண்ணியமான கோரிக்கைகள் மற்றும் வழங்கல்கள் தொழில்முறை மற்றும் சமூக சூழ்நிலைகளில் முக்கியம். முக்கிய வடிவங்கள்: 'Would you mind...' (மிகவும் கண்ணியமான கோரிக்கை), 'Could I possibly...' (அனுமதி கேட்பது), 'Would you like me to...' (உதவி வழங்குவது), 'I'd be happy to...' (மகிழ்ச்சியுடன் செய்வது), 'May I...' (முறையான அனுமதி). இந்த வடிவங்கள் மரியாதையுடன் கேட்கவும் வழங்கவும் உதவுகின்றன.",
+    "en": "Polite requests and offers are essential in professional and social situations. Key patterns include: 'Would you mind...' (very polite request), 'Could I possibly...' (asking permission politely), 'Would you like me to...' (offering help), 'I'd be happy to...' (willing to help), 'May I...' (formal permission). These patterns show respect and consideration, making your communication more effective and building better relationships.",
+    "table": [
+      {
+        "key": "Polite Requests",
+        "examples": ["Would you mind closing the door?", "Could I possibly borrow your pen?", "Would it be okay if I left early?"]
+      },
+      {
+        "key": "Offering Help",
+        "examples": ["Would you like me to help?", "Shall I carry that for you?", "Can I get you anything?"]
+      },
+      {
+        "key": "Accepting Offers",
+        "examples": ["That would be great, thank you.", "Yes, please. I'd appreciate that.", "Thank you, that's very kind."]
+      },
+      {
+        "key": "Declining Politely",
+        "examples": ["Thank you, but I'm fine.", "That's kind of you, but I can manage.", "I appreciate the offer, but no thank you."]
+      }
+    ]
+  },
+  "examples": [
+    {
+      "en": "Would you mind opening the window? It's a bit hot in here.",
+      "ta": "ஜன்னலை திறக்க முடியுமா? இங்கே கொஞ்சம் சூடாக உள்ளது.",
+      "audioId": "phase3_l16_4_ex1"
+    },
+    {
+      "en": "Could I possibly use your phone? Mine is out of battery.",
+      "ta": "உங்கள் தொலைபேசியை பயன்படுத்த முடியுமா? என்னுடையது பேட்டரி தீர்ந்துவிட்டது.",
+      "audioId": "phase3_l16_4_ex2"
+    },
+    {
+      "en": "Would you like me to help you with those bags?",
+      "ta": "அந்த பைகளுடன் நான் உங்களுக்கு உதவ வேண்டுமா?",
+      "audioId": "phase3_l16_4_ex3"
+    },
+    {
+      "en": "I'd be happy to give you a ride to the station.",
+      "ta": "நான் மகிழ்ச்சியுடன் உங்களை நிலையத்திற்கு அழைத்துச் செல்கிறேன்.",
+      "audioId": "phase3_l16_4_ex4"
+    },
+    {
+      "en": "May I ask you a question about the project?",
+      "ta": "திட்டத்தைப் பற்றி நான் உங்களிடம் ஒரு கேள்வி கேட்கலாமா?",
+      "audioId": "phase3_l16_4_ex5"
+    },
+    {
+      "en": "Shall I make some tea for everyone?",
+      "ta": "நான் அனைவருக்கும் தேநீர் தயாரிக்கலாமா?",
+      "audioId": "phase3_l16_4_ex6"
+    },
+    {
+      "en": "Would it be okay if I took a day off next week?",
+      "ta": "அடுத்த வாரம் நான் ஒரு நாள் விடுமுறை எடுத்தால் பரவாயில்லையா?",
+      "audioId": "phase3_l16_4_ex7"
+    },
+    {
+      "en": "Can I get you anything? Coffee? Water?",
+      "ta": "நான் உங்களுக்கு ஏதாவது கொண்டு வரட்டுமா? காபி? தண்ணீர்?",
+      "audioId": "phase3_l16_4_ex8"
+    },
+    {
+      "en": "That's very kind of you, but I can manage. Thank you anyway.",
+      "ta": "நீங்கள் மிகவும் அன்பானவர், ஆனால் என்னால் முடியும். எப்படியும் நன்றி.",
+      "audioId": "phase3_l16_4_ex9"
+    }
+  ],
+  "listeningQuestions": [
+    {
+      "audioText": "Would you mind closing the door? It's quite noisy outside.",
+      "options": [
+        "He's asking someone to close the door politely.",
+        "He's closing the door himself.",
+        "He wants the door to stay open."
+      ],
+      "correctIndex": 0
+    },
+    {
+      "audioText": "Would you like me to help you carry those boxes?",
+      "options": [
+        "He's asking for help with boxes.",
+        "He's offering to help carry boxes.",
+        "He's refusing to help."
+      ],
+      "correctIndex": 1
+    },
+    {
+      "audioText": "Could I possibly leave work an hour early today? I have a doctor's appointment.",
+      "options": [
+        "He's asking permission to leave early.",
+        "He's telling someone to leave early.",
+        "He's staying late at work."
+      ],
+      "correctIndex": 0
+    }
+  ],
+  "speakSentences": [
+    {
+      "en": "Would you mind [action]? [reason]",
+      "ta": "[செயல்] செய்ய முடியுமா? [காரணம்]"
+    },
+    {
+      "en": "Could I possibly [request]? [reason]",
+      "ta": "நான் [கோரிக்கை] முடியுமா? [காரணம்]"
+    },
+    {
+      "en": "Would you like me to [offer]?",
+      "ta": "நான் [வழங்கல்] வேண்டுமா?"
+    },
+    {
+      "en": "I'd be happy to [help/action].",
+      "ta": "நான் மகிழ்ச்சியுடன் [உதவி/செயல்] செய்கிறேன்."
+    },
+    {
+      "en": "That's very kind of you, but [polite decline].",
+      "ta": "நீங்கள் மிகவும் அன்பானவர், ஆனால் [கண்ணியமான மறுப்பு]."
+    }
+  ],
+  "practiceQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "Complete: Would you ___ opening the window?",
+      "promptTa": "நிரப்புக: ஜன்னலை திறக்க நீங்கள் ___?",
+      "options": ["mind", "like", "want"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Complete: Could I ___ use your computer?",
+      "promptTa": "நிரப்புக: உங்கள் கணினியை நான் ___ பயன்படுத்த முடியுமா?",
+      "options": ["possible", "possibly", "possibility"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Complete: Would you like me ___ help?",
+      "promptTa": "நிரப்புக: நான் உதவி ___ வேண்டுமா?",
+      "options": ["to", "for", "with"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Complete: I'd be happy ___ assist you.",
+      "promptTa": "நிரப்புக: நான் மகிழ்ச்சியுடன் உங்களுக்கு உதவி ___.",
+      "options": ["to", "for", "with"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Complete: ___ I ask you a question?",
+      "promptTa": "நிரப்புக: நான் உங்களிடம் ஒரு கேள்வி கேட்க ___?",
+      "options": ["May", "Can", "Should"],
+      "correctIndex": 0
+    }
+  ],
+  "masteryQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "Which is the most polite request?",
+      "promptTa": "மிகவும் கண்ணியமான கோரிக்கை எது?",
+      "options": [
+        "Close the door.",
+        "Can you close the door?",
+        "Would you mind closing the door?"
+      ],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Complete: ___ I carry that for you?",
+      "promptTa": "நிரப்புக: நான் அதை உங்களுக்காக எடுத்துச் செல்ல ___?",
+      "options": ["Shall", "Will", "Would"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "How do you politely decline an offer?",
+      "promptTa": "ஒரு வழங்கலை கண்ணியமாக மறுப்பது எப்படி?",
+      "options": [
+        "No.",
+        "That's kind of you, but I'm fine. Thank you.",
+        "I don't want it."
+      ],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Complete: Would it be okay ___ I left early?",
+      "promptTa": "நிரப்புக: நான் சீக்கிரம் சென்றால் பரவாயில்லையா ___?",
+      "options": ["if", "when", "that"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Complete: Can I get you ___?",
+      "promptTa": "நிரப்புக: நான் உங்களுக்கு ___ கொண்டு வரட்டுமா?",
+      "options": ["something", "anything", "nothing"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which shows you're offering help?",
+      "promptTa": "நீங்கள் உதவி வழங்குவதை காட்டுவது எது?",
+      "options": [
+        "Help me.",
+        "Would you like me to help you?",
+        "I need help."
+      ],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Complete: That would be ___, thank you.",
+      "promptTa": "நிரப்புக: அது ___, நன்றி.",
+      "options": ["great", "good", "nice"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "What does 'Would you mind' mean?",
+      "promptTa": "'Would you mind' என்றால் என்ன?",
+      "options": [
+        "A command",
+        "A very polite request",
+        "A question about thinking"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Complete: I ___ the offer, but no thank you.",
+      "promptTa": "நிரப்புக: நான் வழங்கலை ___, ஆனால் வேண்டாம் நன்றி.",
+      "options": ["appreciate", "accept", "like"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which is the best way to accept an offer?",
+      "promptTa": "ஒரு வழங்கலை ஏற்க சிறந்த வழி எது?",
+      "options": [
+        "OK.",
+        "Yes, please. I'd appreciate that. Thank you.",
+        "Give it to me."
+      ],
+      "correctIndex": 1
+    }
+  ]
+}

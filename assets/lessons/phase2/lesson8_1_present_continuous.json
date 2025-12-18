@@ -1,0 +1,170 @@
+{
+  "id": "phase2_lesson8_1",
+  "order": 1,
+  "unitId": "phase2_unit8",
+  "title": "Present Continuous",
+  "description": "am / is / are + V-ing",
+  "level": "A2",
+  "explain": {
+    "ta": "நிகழ்காலத்தில் நடந்து கொண்டிருக்கும் செயல்களை விவரிக்க Present Continuous Tense பயன்படுத்தப்படுகிறது. இதன் அமைப்பு: am/is/are + verb-ing. 'I' உடன் 'am' பயன்படுத்துகிறோம் (I am eating), 'he/she/it' உடன் 'is' பயன்படுத்துகிறோம் (She is reading), 'you/we/they' உடன் 'are' பயன்படுத்துகிறோம் (They are playing). இப்போது நடக்கும் செயல்கள், தற்காலிக நிலைமைகள், மற்றும் எதிர்காலத்தில் திட்டமிடப்பட்ட செயல்களுக்கு இதைப் பயன்படுத்தலாம்.",
+    "en": "Present Continuous Tense is used to describe actions happening right now or around the present time. The structure is: am/is/are + verb-ing. We use 'am' with 'I' (I am eating), 'is' with 'he/she/it' (She is reading), and 'are' with 'you/we/they' (They are playing). This tense is used for actions happening now, temporary situations, and planned future actions.",
+    "table": [
+      {
+        "key": "I am + V-ing",
+        "examples": ["I am studying", "I am working", "I am eating"]
+      },
+      {
+        "key": "He/She/It is + V-ing",
+        "examples": ["He is sleeping", "She is cooking", "It is raining"]
+      },
+      {
+        "key": "You/We/They are + V-ing",
+        "examples": ["You are learning", "We are playing", "They are talking"]
+      }
+    ]
+  },
+  "examples": [
+    {
+      "en": "I am studying English now.",
+      "ta": "நான் இப்போது ஆங்கிலம் படித்துக் கொண்டிருக்கிறேன்.",
+      "audioId": "phase2_l8_1_ex1"
+    },
+    {
+      "en": "She is cooking dinner in the kitchen.",
+      "ta": "அவள் சமையலறையில் இரவு உணவு சமைத்துக் கொண்டிருக்கிறாள்.",
+      "audioId": "phase2_l8_1_ex2"
+    },
+    {
+      "en": "They are playing football in the park.",
+      "ta": "அவர்கள் பூங்காவில் கால்பந்து விளையாடிக் கொண்டிருக்கிறார்கள்.",
+      "audioId": "phase2_l8_1_ex3"
+    },
+    {
+      "en": "We are watching a movie right now.",
+      "ta": "நாங்கள் இப்போது ஒரு திரைப்படம் பார்த்துக் கொண்டிருக்கிறோம்.",
+      "audioId": "phase2_l8_1_ex4"
+    },
+    {
+      "en": "It is raining outside.",
+      "ta": "வெளியே மழை பெய்து கொண்டிருக்கிறது.",
+      "audioId": "phase2_l8_1_ex5"
+    }
+  ],
+  "listeningQuestions": [
+    {
+      "audioText": "I am reading a book.",
+      "options": [
+        "I am reading a book.",
+        "I read a book.",
+        "I am read a book."
+      ],
+      "correctIndex": 0
+    },
+    {
+      "audioText": "She is writing a letter.",
+      "options": [
+        "She write a letter.",
+        "She is writing a letter.",
+        "She writing a letter."
+      ],
+      "correctIndex": 1
+    },
+    {
+      "audioText": "They are eating lunch.",
+      "options": [
+        "They eat lunch.",
+        "They eating lunch.",
+        "They are eating lunch."
+      ],
+      "correctIndex": 2
+    }
+  ],
+  "speakSentences": [
+    {
+      "en": "I am learning English.",
+      "ta": "நான் ஆங்கிலம் கற்றுக் கொண்டிருக்கிறேன்."
+    },
+    {
+      "en": "He is working on his computer.",
+      "ta": "அவர் தனது கணினியில் வேலை செய்து கொண்டிருக்கிறார்."
+    },
+    {
+      "en": "We are going to the market.",
+      "ta": "நாங்கள் சந்தைக்கு செல்லுகிறோம்."
+    }
+  ],
+  "practiceQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "I ___ studying English now.",
+      "promptTa": "நான் இப்போது ஆங்கிலம் படித்துக் கொண்டிருக்கிறேன்.",
+      "options": ["am", "is", "are", "be"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "She ___ cooking dinner.",
+      "promptTa": "அவள் இரவு உணவு சமைத்துக் கொண்டிருக்கிறாள்.",
+      "options": ["am", "is", "are", "be"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "They ___ playing football.",
+      "promptTa": "அவர்கள் கால்பந்து விளையாடிக் கொண்டிருக்கிறார்கள்.",
+      "options": ["am", "is", "are", "be"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "We ___ watching TV.",
+      "promptTa": "நாங்கள் டிவி பார்த்துக் கொண்டிருக்கிறோம்.",
+      "options": ["am", "is", "are", "be"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "He ___ reading a book.",
+      "promptTa": "அவர் ஒரு புத்தகம் படித்துக் கொண்டிருக்கிறார்.",
+      "options": ["am", "is", "are", "be"],
+      "correctIndex": 1
+    }
+  ],
+  "masteryQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "I ___ ___ to music right now.",
+      "promptTa": "நான் இப்போது இசை கேட்டுக் கொண்டிருக்கிறேன்.",
+      "options": ["am listening", "is listening", "are listening", "am listen"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "She ___ ___ her homework.",
+      "promptTa": "அவள் தன் வீட்டுப்பாடம் செய்து கொண்டிருக்கிறாள்.",
+      "options": ["am doing", "is doing", "are doing", "is do"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "They ___ ___ a new house.",
+      "promptTa": "அவர்கள் ஒரு புதிய வீடு கட்டிக் கொண்டிருக்கிறார்கள்.",
+      "options": ["am building", "is building", "are building", "are build"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "It ___ ___ heavily.",
+      "promptTa": "கடுமையாக மழை பெய்து கொண்டிருக்கிறது.",
+      "options": ["am raining", "is raining", "are raining", "is rain"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "You ___ ___ very fast.",
+      "promptTa": "நீங்கள் மிக வேகமாக ஓடிக் கொண்டிருக்கிறீர்கள்.",
+      "options": ["am running", "is running", "are running", "are run"],
+      "correctIndex": 2
+    }
+  ]
+}

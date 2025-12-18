@@ -1,0 +1,63 @@
+{
+  "id": "phase2_lesson9_4",
+  "order": 4,
+  "unitId": "phase2_unit9",
+  "title": "Present Perfect Continuous",
+  "description": "have / has been + V-ing",
+  "level": "A2",
+  "explain": {
+    "ta": "Present Perfect Continuous Tense என்பது கடந்த காலத்தில் தொடங்கி இன்னும் தொடர்ந்து நடந்து கொண்டிருக்கும் செயலை குறிக்க பயன்படுத்தப்படுகிறது. இதை உருவாக்க have/has been + V-ing (வினைச்சொல் + ing) பயன்படுத்துகிறோம். I, you, we, they-க்கு 'have been' பயன்படுத்துகிறோம். He, she, it-க்கு 'has been' பயன்படுத்துகிறோம். உதாரணம்: I have been studying for 2 hours. She has been working here since 2020.",
+    "en": "The Present Perfect Continuous Tense is used to describe an action that started in the past and is still continuing in the present. We form it using have/has been + V-ing (verb + ing). Use 'have been' with I, you, we, they. Use 'has been' with he, she, it. Examples: I have been studying for 2 hours. She has been working here since 2020."
+  },
+  "examples": [
+    {
+      "en": "I have been studying English for 3 years.",
+      "ta": "நான் 3 வருடங்களாக ஆங்கிலம் படித்து வருகிறேன்.",
+      "audioId": "phase2_l9_4_ex1"
+    },
+    {
+      "en": "She has been working here since 2020.",
+      "ta": "அவள் 2020 முதல் இங்கே வேலை செய்து வருகிறாள்.",
+      "audioId": "phase2_l9_4_ex2"
+    },
+    {
+      "en": "They have been waiting for 30 minutes.",
+      "ta": "அவர்கள் 30 நிமிடங்களாக காத்திருக்கிறார்கள்.",
+      "audioId": "phase2_l9_4_ex3"
+    }
+  ],
+  "listeningQuestions": [],
+  "speakSentences": [],
+  "practiceQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "I ___ been learning Tamil for 6 months.",
+      "promptTa": "நான் 6 மாதங்களாக தமிழ் கற்று வருகிறேன்.",
+      "options": ["have", "has", "had", "am"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "She ___ been reading that book since morning.",
+      "promptTa": "அவள் காலையிலிருந்து அந்த புத்தகத்தை படித்து வருகிறாள்.",
+      "options": ["have", "has", "had", "is"],
+      "correctIndex": 1
+    }
+  ],
+  "masteryQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "They ___ been playing cricket for 2 hours.",
+      "promptTa": "அவர்கள் 2 மணி நேரமாக கிரிக்கெட் விளையாடி வருகிறார்கள்.",
+      "options": ["have", "has", "had", "are"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "He ___ been working on this project since January.",
+      "promptTa": "அவன் ஜனவரி முதல் இந்த திட்டத்தில் வேலை செய்து வருகிறான்.",
+      "options": ["have", "has", "had", "is"],
+      "correctIndex": 1
+    }
+  ]
+}

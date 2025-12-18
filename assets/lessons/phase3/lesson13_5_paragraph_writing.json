@@ -1,0 +1,191 @@
+{
+  "id": "phase3_lesson13_5",
+  "order": 5,
+  "unitId": "phase3_unit13",
+  "title": "Paragraph Writing with Connectors",
+  "description": "Write coherent paragraphs using all connectors",
+  "level": "B1",
+  "explain": {
+    "ta": "ஒரு நல்ல paragraph எழுத, நாம் கற்ற அனைத்து connectors-ஐயும் பயன்படுத்த வேண்டும். ஒரு paragraph-ல் ஒரு முக்கிய எண்ணம் இருக்க வேண்டும். முதல் வாக்கியம் (topic sentence) முக்கிய எண்ணத்தை அறிமுகப்படுத்துகிறது. மற்ற வாக்கியங்கள் (supporting sentences) அதை விளக்குகின்றன. கடைசி வாக்கியம் (concluding sentence) முடிவை கூறுகிறது. AND, BUT, OR, BECAUSE, SO, WHEN, WHILE, ALTHOUGH, HOWEVER போன்ற connectors வாக்கியங்களை இணைத்து paragraph-ஐ smooth-ஆக மாற்றுகின்றன.",
+    "en": "To write a good paragraph, we use all the connectors we learned. A paragraph should have one main idea. The first sentence (topic sentence) introduces the main idea. Other sentences (supporting sentences) explain it with details. The last sentence (concluding sentence) wraps up the idea. Connectors like AND, BUT, OR, BECAUSE, SO, WHEN, WHILE, ALTHOUGH, HOWEVER join sentences smoothly and make your paragraph flow naturally.",
+    "table": [
+      {
+        "key": "Topic Sentence",
+        "examples": ["My daily routine is very busy.", "Learning English is important for me.", "My hometown is a beautiful place."]
+      },
+      {
+        "key": "Supporting Sentences",
+        "examples": ["I wake up at 6 AM and I go for a walk.", "After breakfast, I go to work.", "While I work, I also study English."]
+      },
+      {
+        "key": "Concluding Sentence",
+        "examples": ["Although it's tiring, I enjoy my routine.", "Despite the challenges, I'm making progress.", "Overall, I'm happy with my life."]
+      }
+    ]
+  },
+  "sampleParagraph": "My daily routine is very busy but organized. I wake up at 6 AM and I do some exercise. After exercising, I take a shower and have breakfast. I go to work at 8 AM because I start at 9 AM. While I work, I also learn new things. I finish work at 5 PM, so I have time for my family. In the evening, I study English or I watch educational videos. Before I sleep, I read a book for 30 minutes. Although my days are long, I feel productive and happy.",
+  "examples": [
+    {
+      "en": "My hobby is reading. I read books every day because I love stories. I read fiction and I read non-fiction. While I read, I learn new words. Although some books are difficult, I enjoy the challenge. Reading makes me happy and knowledgeable.",
+      "ta": "என் பொழுதுபோக்கு வாசிப்பு. நான் தினமும் புத்தகங்கள் படிக்கிறேன் ஏனெனில் எனக்கு கதைகள் பிடிக்கும். நான் கற்பனை மற்றும் உண்மை புத்தகங்கள் படிக்கிறேன். நான் படிக்கும்போது, புதிய வார்த்தைகளை கற்கிறேன். சில புத்தகங்கள் கடினமாக இருந்தாலும், சவாலை ரசிக்கிறேன். வாசிப்பு என்னை மகிழ்ச்சியாகவும் அறிவுள்ளவராகவும் ஆக்குகிறது.",
+      "audioId": "phase3_l13_5_ex1"
+    },
+    {
+      "en": "I want to travel the world. I love seeing new places and meeting new people. Although I don't have much money now, I'm saving every month. When I have enough money, I will visit Europe. I will see famous places and I will try local food. Despite the challenges, I believe my dream will come true.",
+      "ta": "நான் உலகம் முழுவதும் பயணம் செய்ய விரும்புகிறேன். புதிய இடங்களை பார்ப்பதும் புதிய மக்களை சந்திப்பதும் எனக்கு பிடிக்கும். இப்போது அதிக பணம் இல்லை என்றாலும், ஒவ்வொரு மாதமும் சேமிக்கிறேன். போதுமான பணம் இருக்கும்போது, ஐரோப்பாவிற்கு செல்வேன். பிரபலமான இடங்களை பார்ப்பேன் மற்றும் உள்ளூர் உணவை முயற்சிப்பேன். சவால்கள் இருந்தாலும், என் கனவு நனவாகும் என்று நம்புகிறேன்.",
+      "audioId": "phase3_l13_5_ex2"
+    }
+  ],
+  "listeningQuestions": [
+    {
+      "audioText": "I study hard because I want to succeed. Although it's difficult, I don't give up.",
+      "options": [
+        "I study hard because I want to succeed. Although it's difficult, I don't give up.",
+        "I study hard, so I want to succeed. Because it's difficult, I don't give up.",
+        "I study hard and I want to succeed. When it's difficult, I don't give up."
+      ],
+      "correctIndex": 0
+    },
+    {
+      "audioText": "My sister is a doctor and she works in a hospital. While she works, she helps many people.",
+      "options": [
+        "My sister is a doctor but she works in a hospital. When she works, she helps many people.",
+        "My sister is a doctor and she works in a hospital. While she works, she helps many people.",
+        "My sister is a doctor, so she works in a hospital. After she works, she helps many people."
+      ],
+      "correctIndex": 1
+    },
+    {
+      "audioText": "I was tired, so I went to bed early. However, I couldn't sleep well.",
+      "options": [
+        "I was tired, so I went to bed early. However, I couldn't sleep well.",
+        "I was tired because I went to bed early. Although I couldn't sleep well.",
+        "I was tired and I went to bed early. When I couldn't sleep well."
+      ],
+      "correctIndex": 0
+    }
+  ],
+  "speakSentences": [
+    {
+      "en": "I love my job because it's interesting and challenging.",
+      "ta": "என் வேலை சுவாரஸ்யமாகவும் சவாலாகவும் இருப்பதால் பிடிக்கும்."
+    },
+    {
+      "en": "Although I'm busy, I always make time for exercise.",
+      "ta": "நான் பிஸியாக இருந்தாலும், உடற்பயிற்சிக்கு எப்போதும் நேரம் ஒதுக்குகிறேன்."
+    },
+    {
+      "en": "I study English every day, so my skills are improving.",
+      "ta": "நான் தினமும் ஆங்கிலம் படிக்கிறேன், அதனால் என் திறன்கள் மேம்படுகின்றன."
+    }
+  ],
+  "practiceQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "Which connector shows addition?",
+      "promptTa": "எந்த connector சேர்த்தலை காட்டுகிறது?",
+      "options": ["and", "but", "because", "although"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which connector shows contrast?",
+      "promptTa": "எந்த connector எதிர்மறையை காட்டுகிறது?",
+      "options": ["and", "so", "because", "although"],
+      "correctIndex": 3
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which connector shows reason?",
+      "promptTa": "எந்த connector காரணத்தை காட்டுகிறது?",
+      "options": ["and", "but", "because", "or"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which connector shows result?",
+      "promptTa": "எந்த connector விளைவை காட்டுகிறது?",
+      "options": ["so", "but", "although", "or"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which connector shows time?",
+      "promptTa": "எந்த connector நேரத்தை காட்டுகிறது?",
+      "options": ["and", "but", "when", "or"],
+      "correctIndex": 2
+    }
+  ],
+  "masteryQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "I work hard ___ I want to succeed.",
+      "promptTa": "நான் வெற்றி பெற விரும்புவதால் கடினமாக உழைக்கிறேன்.",
+      "options": ["and", "because", "but", "or"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "She is smart ___ she is kind.",
+      "promptTa": "அவள் புத்திசாலி மற்றும் அன்பானவள்.",
+      "options": ["and", "but", "because", "so"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "___ I was tired, I finished my work.",
+      "promptTa": "நான் சோர்வாக இருந்தாலும், வேலையை முடித்தேன்.",
+      "options": ["Because", "So", "Although", "And"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "I studied hard, ___ I passed the exam.",
+      "promptTa": "நான் கடினமாக படித்தேன், அதனால் தேர்வில் தேர்ச்சி பெற்றேன்.",
+      "options": ["because", "so", "but", "or"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "___ I was cooking, my phone rang.",
+      "promptTa": "நான் சமைத்துக்கொண்டிருந்தபோது, என் தொலைபேசி ஒலித்தது.",
+      "options": ["When", "While", "After", "Before"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "The movie was long. ___, it was interesting.",
+      "promptTa": "திரைப்படம் நீளமானது. ___, அது சுவாரஸ்யமாக இருந்தது.",
+      "options": ["Because", "So", "However", "And"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Do you want tea ___ coffee?",
+      "promptTa": "உனக்கு தேநீர் வேண்டுமா ___ காபி வேண்டுமா?",
+      "options": ["and", "but", "or", "so"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "___ the rain stopped, we went outside.",
+      "promptTa": "மழை நின்ற பிறகு, நாங்கள் வெளியே சென்றோம்.",
+      "options": ["When", "While", "After", "Before"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "He is poor ___ he is happy.",
+      "promptTa": "அவர் ஏழை ஆனால் மகிழ்ச்சியாக இருக்கிறார்.",
+      "options": ["and", "but", "because", "so"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "I stayed home ___ it was raining.",
+      "promptTa": "மழை பெய்ததால் நான் வீட்டில் இருந்தேன்.",
+      "options": ["and", "but", "because", "or"],
+      "correctIndex": 2
+    }
+  ]
+}

@@ -1,0 +1,225 @@
+{
+  "id": "phase3_lesson14_3",
+  "order": 3,
+  "unitId": "phase3_unit14",
+  "title": "Perfect & Future Passive",
+  "description": "Learn advanced passive forms with perfect and future tenses",
+  "level": "B1",
+  "explain": {
+    "ta": "Perfect மற்றும் future passive forms மிகவும் formal மற்றும் professional contexts-ல் பயன்படுத்தப்படுகின்றன. Present perfect passive: has/have been + past participle ('The work has been completed'). Past perfect passive: had been + past participle ('The work had been completed'). Future passive: will be + past participle ('The work will be completed'). இந்த forms business reports, academic writing, மற்றும் formal announcements-ல் அதிகம் காணப்படுகின்றன.",
+    "en": "Perfect and future passive forms are used in formal and professional contexts. Present perfect passive: has/have been + past participle ('The work has been completed'). Past perfect passive: had been + past participle ('The work had been completed before the deadline'). Future passive: will be + past participle ('The project will be finished next week'). These forms are common in business reports, academic writing, and formal announcements.",
+    "table": [
+      {
+        "key": "Present Perfect",
+        "examples": ["The work has been completed.", "The emails have been sent.", "The problem has been solved."]
+      },
+      {
+        "key": "Past Perfect",
+        "examples": ["The work had been completed.", "The emails had been sent.", "The problem had been solved."]
+      },
+      {
+        "key": "Future",
+        "examples": ["The work will be completed.", "The emails will be sent.", "The problem will be solved."]
+      }
+    ]
+  },
+  "examples": [
+    {
+      "en": "The work has been completed successfully.",
+      "ta": "வேலை வெற்றிகரமாக முடிக்கப்பட்டுள்ளது.",
+      "audioId": "phase3_l14_3_ex1"
+    },
+    {
+      "en": "The project will be finished next month.",
+      "ta": "திட்டம் அடுத்த மாதம் முடிக்கப்படும்.",
+      "audioId": "phase3_l14_3_ex2"
+    },
+    {
+      "en": "The documents have been reviewed by the manager.",
+      "ta": "ஆவணங்கள் மேலாளரால் மதிப்பாய்வு செய்யப்பட்டுள்ளன.",
+      "audioId": "phase3_l14_3_ex3"
+    },
+    {
+      "en": "The building will be opened next year.",
+      "ta": "கட்டிடம் அடுத்த ஆண்டு திறக்கப்படும்.",
+      "audioId": "phase3_l14_3_ex4"
+    },
+    {
+      "en": "The report had been submitted before the deadline.",
+      "ta": "அறிக்கை காலக்கெடுவுக்கு முன்பே சமர்ப்பிக்கப்பட்டிருந்தது.",
+      "audioId": "phase3_l14_3_ex5"
+    },
+    {
+      "en": "The results will be announced tomorrow.",
+      "ta": "முடிவுகள் நாளை அறிவிக்கப்படும்.",
+      "audioId": "phase3_l14_3_ex6"
+    },
+    {
+      "en": "The changes have been implemented.",
+      "ta": "மாற்றங்கள் செயல்படுத்தப்பட்டுள்ளன.",
+      "audioId": "phase3_l14_3_ex7"
+    },
+    {
+      "en": "The meeting will be held on Friday.",
+      "ta": "கூட்டம் வெள்ளிக்கிழமை நடத்தப்படும்.",
+      "audioId": "phase3_l14_3_ex8"
+    },
+    {
+      "en": "The issue had been resolved before we arrived.",
+      "ta": "நாம் வருவதற்கு முன்பே பிரச்சனை தீர்க்கப்பட்டிருந்தது.",
+      "audioId": "phase3_l14_3_ex9"
+    }
+  ],
+  "listeningQuestions": [
+    {
+      "audioText": "The package has been delivered.",
+      "options": [
+        "The package will be delivered.",
+        "The package has been delivered.",
+        "The package had been delivered."
+      ],
+      "correctIndex": 1
+    },
+    {
+      "audioText": "The new policy will be introduced next week.",
+      "options": [
+        "The new policy has been introduced next week.",
+        "The new policy will be introduced next week.",
+        "The new policy had been introduced next week."
+      ],
+      "correctIndex": 1
+    },
+    {
+      "audioText": "The task had been completed before noon.",
+      "options": [
+        "The task has been completed before noon.",
+        "The task will be completed before noon.",
+        "The task had been completed before noon."
+      ],
+      "correctIndex": 2
+    }
+  ],
+  "speakSentences": [
+    {
+      "en": "The application has been approved.",
+      "ta": "விண்ணப்பம் அங்கீகரிக்கப்பட்டுள்ளது."
+    },
+    {
+      "en": "The event will be organized next month.",
+      "ta": "நிகழ்வு அடுத்த மாதம் ஏற்பாடு செய்யப்படும்."
+    },
+    {
+      "en": "The payment had been made before the due date.",
+      "ta": "கட்டணம் நிலுவை தேதிக்கு முன்பே செலுத்தப்பட்டிருந்தது."
+    }
+  ],
+  "practiceQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "Active: They have finished the project. Passive: The project ___.",
+      "promptTa": "Active: அவர்கள் திட்டத்தை முடித்துவிட்டார்கள். Passive: திட்டம் ___.",
+      "options": ["has finished", "has been finished", "have been finished"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Active: They will launch the product. Passive: The product ___.",
+      "promptTa": "Active: அவர்கள் தயாரிப்பை அறிமுகப்படுத்துவார்கள். Passive: தயாரிப்பு ___.",
+      "options": ["will launch", "will be launched", "will been launched"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Active: She has written the book. Passive: The book ___ by her.",
+      "promptTa": "Active: அவள் புத்தகத்தை எழுதியுள்ளாள். Passive: புத்தகம் அவளால் ___.",
+      "options": ["has written", "has been written", "have been written"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Active: They will announce the winner. Passive: The winner ___.",
+      "promptTa": "Active: அவர்கள் வெற்றியாளரை அறிவிப்பார்கள். Passive: வெற்றியாளர் ___.",
+      "options": ["will announce", "will be announced", "will been announced"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Active: He had completed the task. Passive: The task ___ by him.",
+      "promptTa": "Active: அவர் பணியை முடித்திருந்தார். Passive: பணி அவரால் ___.",
+      "options": ["had completed", "had been completed", "has been completed"],
+      "correctIndex": 1
+    }
+  ],
+  "masteryQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "The new system ___ next year.",
+      "promptTa": "புதிய அமைப்பு அடுத்த ஆண்டு ___.",
+      "options": ["will install", "will be installed", "will been installed"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "The files ___ to the cloud.",
+      "promptTa": "கோப்புகள் cloud-க்கு ___.",
+      "options": ["have uploaded", "has been uploaded", "have been uploaded"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "The contract ___ before the meeting.",
+      "promptTa": "ஒப்பந்தம் கூட்டத்திற்கு முன்பு ___.",
+      "options": ["had signed", "had been signed", "has been signed"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "The website ___ by tomorrow.",
+      "promptTa": "இணையதளம் நாளைக்குள் ___.",
+      "options": ["will update", "will be updated", "will been updated"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "The invitations ___ to all guests.",
+      "promptTa": "அழைப்பிதழ்கள் அனைத்து விருந்தினர்களுக்கும் ___.",
+      "options": ["have sent", "has been sent", "have been sent"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "The decision ___ before we knew.",
+      "promptTa": "நாம் அறிவதற்கு முன்பே முடிவு ___.",
+      "options": ["had made", "had been made", "has been made"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "The repairs ___ by next week.",
+      "promptTa": "பழுதுபார்ப்புகள் அடுத்த வாரத்திற்குள் ___.",
+      "options": ["will complete", "will be completed", "will been completed"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "The data ___ successfully.",
+      "promptTa": "தரவு வெற்றிகரமாக ___.",
+      "options": ["has transferred", "has been transferred", "have been transferred"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "The room ___ before the guests arrived.",
+      "promptTa": "விருந்தினர்கள் வருவதற்கு முன்பு அறை ___.",
+      "options": ["had cleaned", "had been cleaned", "has been cleaned"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "The new rules ___ from next month.",
+      "promptTa": "புதிய விதிகள் அடுத்த மாதம் முதல் ___.",
+      "options": ["will apply", "will be applied", "will been applied"],
+      "correctIndex": 1
+    }
+  ]
+}

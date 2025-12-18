@@ -1,0 +1,265 @@
+{
+  "id": "phase3_lesson17_5",
+  "order": 5,
+  "unitId": "phase3_unit17",
+  "title": "Mini Presentation",
+  "description": "Deliver a short 30-60 second presentation",
+  "level": "B1",
+  "explain": {
+    "ta": "குறுகிய விளக்கக்காட்சி என்பது 30-60 விநாடிகளில் ஒரு தலைப்பை தெளிவாக விளக்குவது. நல்ல விளக்கக்காட்சி அமைப்பு: 1) அறிமுகம் (Hello, today I'll talk about...), 2) முக்கிய புள்ளிகள் (First, Second, Finally), 3) முடிவு (In conclusion, Thank you). முக்கிய குறிப்புகள்: தெளிவாக பேசுங்கள், கண் தொடர்பு வைத்திருங்கள், நம்பிக்கையுடன் நில்லுங்கள், நேரத்தை கவனியுங்கள். பொதுவான தலைப்புகள்: உங்கள் பொழுதுபோக்கு, உங்கள் நகரம், உங்கள் கனவு வேலை, ஒரு புத்தகம் அல்லது திரைப்படம்.",
+    "en": "A mini presentation is explaining a topic clearly in 30-60 seconds. Good presentation structure: 1) Introduction (Hello, today I'll talk about...), 2) Main points (First, Second, Finally), 3) Conclusion (In conclusion, Thank you). Key tips: Speak clearly, maintain eye contact, stand confidently, watch your time. Common topics: your hobby, your city, your dream job, a book or movie you like.",
+    "table": [
+      {
+        "key": "Introduction",
+        "examples": ["Hello everyone, today I'll talk about...", "Good morning, I'm here to present...", "Hi, I'd like to share..."]
+      },
+      {
+        "key": "Main Points",
+        "examples": ["First, let me explain...", "Secondly, it's important to note...", "Finally, I want to mention..."]
+      },
+      {
+        "key": "Conclusion",
+        "examples": ["In conclusion...", "To sum up...", "Thank you for listening."]
+      },
+      {
+        "key": "Transitions",
+        "examples": ["Moving on to...", "Now let's look at...", "Another point is..."]
+      }
+    ]
+  },
+  "examples": [
+    {
+      "en": "Hello everyone, today I'll talk about my hobby, which is photography.",
+      "ta": "அனைவருக்கும் வணக்கம், இன்று நான் என் பொழுதுபோக்கான புகைப்படம் எடுப்பதைப் பற்றி பேசுவேன்.",
+      "audioId": "phase3_l17_5_ex1"
+    },
+    {
+      "en": "First, let me explain why I love photography.",
+      "ta": "முதலில், நான் புகைப்படம் எடுப்பதை ஏன் விரும்புகிறேன் என்பதை விளக்குகிறேன்.",
+      "audioId": "phase3_l17_5_ex2"
+    },
+    {
+      "en": "Secondly, I want to share what kind of photos I take.",
+      "ta": "இரண்டாவதாக, நான் என்ன வகையான புகைப்படங்களை எடுக்கிறேன் என்பதைப் பகிர்ந்து கொள்ள விரும்புகிறேன்.",
+      "audioId": "phase3_l17_5_ex3"
+    },
+    {
+      "en": "Finally, photography helps me see the world differently.",
+      "ta": "இறுதியாக, புகைப்படம் எடுப்பது உலகத்தை வித்தியாசமாக பார்க்க எனக்கு உதவுகிறது.",
+      "audioId": "phase3_l17_5_ex4"
+    },
+    {
+      "en": "In conclusion, photography is not just a hobby but a passion for me.",
+      "ta": "முடிவில், புகைப்படம் எடுப்பது எனக்கு ஒரு பொழுதுபோக்கு மட்டுமல்ல, ஒரு ஆர்வம்.",
+      "audioId": "phase3_l17_5_ex5"
+    },
+    {
+      "en": "Thank you for listening to my presentation.",
+      "ta": "என் விளக்கக்காட்சியைக் கேட்டதற்கு நன்றி.",
+      "audioId": "phase3_l17_5_ex6"
+    },
+    {
+      "en": "Good morning, I'm here to present about my hometown, Chennai.",
+      "ta": "காலை வணக்கம், நான் என் சொந்த ஊரான சென்னையைப் பற்றி விளக்க இங்கே இருக்கிறேன்.",
+      "audioId": "phase3_l17_5_ex7"
+    },
+    {
+      "en": "Moving on to the next point, let me talk about the culture.",
+      "ta": "அடுத்த புள்ளிக்கு செல்லும் போது, கலாச்சாரத்தைப் பற்றி பேசுகிறேன்.",
+      "audioId": "phase3_l17_5_ex8"
+    },
+    {
+      "en": "To sum up, this topic is very important and interesting.",
+      "ta": "சுருக்கமாக, இந்த தலைப்பு மிகவும் முக்கியமானது மற்றும் சுவாரஸ்யமானது.",
+      "audioId": "phase3_l17_5_ex9"
+    }
+  ],
+  "listeningQuestions": [
+    {
+      "audioText": "Hello everyone, today I'll talk about my favorite book. First, it's a mystery novel. Second, the story is very exciting. Finally, I recommend it to everyone. Thank you.",
+      "options": [
+        "He talks about a movie.",
+        "He talks about his favorite book with three main points.",
+        "He doesn't give any conclusion."
+      ],
+      "correctIndex": 1
+    },
+    {
+      "audioText": "Good morning, I'm here to present about healthy eating. First, eating vegetables is important. Secondly, we should drink plenty of water. In conclusion, a healthy diet keeps us strong.",
+      "options": [
+        "She presents about exercise.",
+        "She presents about healthy eating with two main points and a conclusion.",
+        "She doesn't mention vegetables."
+      ],
+      "correctIndex": 1
+    },
+    {
+      "audioText": "Hi, I'd like to share about my dream job. I want to be a teacher because I love helping students learn. Teaching is rewarding and meaningful. Thank you for listening.",
+      "options": [
+        "He wants to be a doctor.",
+        "He wants to be a teacher and explains why.",
+        "He doesn't thank the audience."
+      ],
+      "correctIndex": 1
+    }
+  ],
+  "speakSentences": [
+    {
+      "en": "Hello everyone, today I'll talk about [your topic].",
+      "ta": "அனைவருக்கும் வணக்கம், இன்று நான் [உங்கள் தலைப்பு] பற்றி பேசுவேன்."
+    },
+    {
+      "en": "First, [first main point]. Secondly, [second main point]. Finally, [third main point].",
+      "ta": "முதலில், [முதல் முக்கிய புள்ளி]. இரண்டாவதாக, [இரண்டாவது முக்கிய புள்ளி]. இறுதியாக, [மூன்றாவது முக்கிய புள்ளி]."
+    },
+    {
+      "en": "Let me explain why [topic] is important to me.",
+      "ta": "[தலைப்பு] எனக்கு ஏன் முக்கியம் என்பதை விளக்குகிறேன்."
+    },
+    {
+      "en": "In conclusion, [summary of your main message].",
+      "ta": "முடிவில், [உங்கள் முக்கிய செய்தியின் சுருக்கம்]."
+    },
+    {
+      "en": "Thank you for listening to my presentation about [topic].",
+      "ta": "[தலைப்பு] பற்றிய என் விளக்கக்காட்சியைக் கேட்டதற்கு நன்றி."
+    }
+  ],
+  "practiceQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "How should you start a presentation?",
+      "promptTa": "விளக்கக்காட்சியை எப்படி தொடங்க வேண்டும்?",
+      "options": [
+        "Just start talking",
+        "Hello everyone, today I'll talk about...",
+        "The end"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Complete: ___, let me explain the first point.",
+      "promptTa": "நிரப்புக: ___, முதல் புள்ளியை விளக்குகிறேன்.",
+      "options": ["Finally", "First", "Never"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "What should you do at the end of a presentation?",
+      "promptTa": "விளக்கக்காட்சியின் முடிவில் என்ன செய்ய வேண்டும்?",
+      "options": [
+        "Walk away",
+        "Give a conclusion and thank the audience",
+        "Start a new topic"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Complete: ___ on to the next point.",
+      "promptTa": "நிரப்புக: அடுத்த புள்ளிக்கு ___.",
+      "options": ["Moving", "Moved", "Move"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "How long should a mini presentation be?",
+      "promptTa": "குறுகிய விளக்கக்காட்சி எவ்வளவு நேரம் இருக்க வேண்டும்?",
+      "options": ["5 minutes", "30-60 seconds", "2 hours"],
+      "correctIndex": 1
+    }
+  ],
+  "masteryQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "Which is the best presentation opening?",
+      "promptTa": "சிறந்த விளக்கக்காட்சி தொடக்கம் எது?",
+      "options": [
+        "My topic.",
+        "Hello everyone, today I'll talk about my hobby, which is photography.",
+        "Photography."
+      ],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Complete: ___, I want to share what kind of photos I take.",
+      "promptTa": "நிரப்புக: ___, நான் என்ன வகையான புகைப்படங்களை எடுக்கிறேன் என்பதைப் பகிர்ந்து கொள்ள விரும்புகிறேன்.",
+      "options": ["Finally", "Secondly", "Never"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which shows good presentation structure?",
+      "promptTa": "நல்ல விளக்கக்காட்சி அமைப்பைக் காட்டுவது எது?",
+      "options": [
+        "Just talking randomly",
+        "Introduction - Main Points - Conclusion",
+        "No structure"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Complete: ___, photography helps me see the world differently.",
+      "promptTa": "நிரப்புக: ___, புகைப்படம் எடுப்பது உலகத்தை வித்தியாசமாக பார்க்க எனக்கு உதவுகிறது.",
+      "options": ["First", "Finally", "Never"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which is the best conclusion?",
+      "promptTa": "சிறந்த முடிவு எது?",
+      "options": [
+        "That's it.",
+        "In conclusion, photography is not just a hobby but a passion for me. Thank you.",
+        "Bye."
+      ],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Complete: Thank you ___ listening to my presentation.",
+      "promptTa": "நிரப்புக: என் விளக்கக்காட்சியைக் கேட்டதற்கு நன்றி ___.",
+      "options": ["at", "for", "in"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which transition phrase is best?",
+      "promptTa": "சிறந்த மாற்றம் சொற்றொடர் எது?",
+      "options": [
+        "And then...",
+        "Moving on to the next point...",
+        "Something..."
+      ],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Complete: Good morning, I'm here to ___ about my hometown.",
+      "promptTa": "நிரப்புக: காலை வணக்கம், நான் என் சொந்த ஊரைப் பற்றி ___ இங்கே இருக்கிறேன்.",
+      "options": ["present", "presenting", "presented"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "What makes a presentation effective?",
+      "promptTa": "விளக்கக்காட்சியை பயனுள்ளதாக்குவது என்ன?",
+      "options": [
+        "Speaking very fast",
+        "Clear structure, confident delivery, and good timing",
+        "No preparation"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Complete: To ___ up, this topic is very important.",
+      "promptTa": "நிரப்புக: ___, இந்த தலைப்பு மிகவும் முக்கியமானது.",
+      "options": ["sum", "some", "same"],
+      "correctIndex": 0
+    }
+  ]
+}

@@ -1,0 +1,232 @@
+{
+  "id": "phase4_lesson19_1",
+  "order": 1,
+  "unitId": "phase4_unit19",
+  "title": "Speaking Without Stopping",
+  "description": "Learn techniques to speak fluently without long pauses",
+  "level": "B2",
+  "explain": {
+    "ta": "சரளமாக பேசுவது என்பது நிறுத்தாமல் தொடர்ந்து பேசும் திறன். இது பயிற்சியின் மூலம் மேம்படும். முக்கிய உத்திகள்: 1) எளிய வாக்கியங்களில் தொடங்குங்கள். 2) நீங்கள் அறிந்த சொற்களைப் பயன்படுத்துங்கள். 3) தவறு செய்தாலும் தொடருங்கள். 4) 'um', 'uh' போன்ற நிரப்பிகளை குறைக்க முயற்சி செய்யுங்கள். 5) ஒரு தலைப்பில் 30 விநாடிகள் பேசுவதை இலக்காக வைத்து பயிற்சி செய்யுங்கள்.",
+    "en": "Speaking fluently means talking continuously without long pauses. This skill improves with practice. Key strategies: 1) Start with simple sentences. 2) Use words you know well. 3) Keep going even if you make mistakes. 4) Try to reduce fillers like 'um' and 'uh'. 5) Practice speaking on a topic for 30 seconds as a goal. The more you practice, the more natural your speech will become.",
+    "table": [
+      {
+        "key": "Fluency Tips",
+        "examples": ["Start simple", "Use familiar words", "Don't stop for mistakes", "Practice regularly"]
+      },
+      {
+        "key": "Connecting Words",
+        "examples": ["and", "but", "so", "because", "then", "also"]
+      },
+      {
+        "key": "Time Fillers (to avoid)",
+        "examples": ["um...", "uh...", "like...", "you know..."]
+      },
+      {
+        "key": "Better Alternatives",
+        "examples": ["Let me think...", "Well...", "Actually...", "I mean..."]
+      }
+    ]
+  },
+  "examples": [
+    {
+      "en": "I like reading books. I read every day. My favorite books are novels.",
+      "ta": "எனக்கு புத்தகங்கள் படிக்க பிடிக்கும். நான் தினமும் படிக்கிறேன். என் விருப்பமான புத்தகங்கள் நாவல்கள்.",
+      "audioId": "phase4_l19_1_ex1"
+    },
+    {
+      "en": "I work in an office. I start at 9 AM and finish at 5 PM. I enjoy my job.",
+      "ta": "நான் ஒரு அலுவலகத்தில் வேலை செய்கிறேன். காலை 9 மணிக்கு தொடங்கி மாலை 5 மணிக்கு முடிக்கிறேன். எனக்கு என் வேலை பிடிக்கும்.",
+      "audioId": "phase4_l19_1_ex2"
+    },
+    {
+      "en": "My family is small. I have two brothers. We live together in Chennai.",
+      "ta": "என் குடும்பம் சிறியது. எனக்கு இரண்டு சகோதரர்கள் உள்ளனர். நாங்கள் சென்னையில் ஒன்றாக வசிக்கிறோம்.",
+      "audioId": "phase4_l19_1_ex3"
+    },
+    {
+      "en": "I like cooking. I cook dinner every evening. My specialty is biryani.",
+      "ta": "எனக்கு சமைக்க பிடிக்கும். நான் ஒவ்வொரு மாலையும் இரவு உணவு சமைக்கிறேன். என் சிறப்பு பிரியாணி.",
+      "audioId": "phase4_l19_1_ex4"
+    },
+    {
+      "en": "I exercise in the morning. I go for a walk. Then I do some stretching.",
+      "ta": "நான் காலையில் உடற்பயிற்சி செய்கிறேன். நான் நடைப்பயிற்சி செல்கிறேன். பின்னர் சில நீட்சி பயிற்சிகள் செய்கிறேன்.",
+      "audioId": "phase4_l19_1_ex5"
+    },
+    {
+      "en": "I watch movies on weekends. I prefer comedy films. They make me laugh.",
+      "ta": "நான் வார இறுதிகளில் திரைப்படங்கள் பார்க்கிறேன். நான் நகைச்சுவை படங்களை விரும்புகிறேன். அவை என்னை சிரிக்க வைக்கின்றன.",
+      "audioId": "phase4_l19_1_ex6"
+    },
+    {
+      "en": "I'm learning English. I practice every day. I want to speak fluently.",
+      "ta": "நான் ஆங்கிலம் கற்றுக்கொண்டிருக்கிறேன். நான் தினமும் பயிற்சி செய்கிறேன். நான் சரளமாக பேச விரும்புகிறேன்.",
+      "audioId": "phase4_l19_1_ex7"
+    },
+    {
+      "en": "I travel by bus. The journey takes 30 minutes. I listen to music on the way.",
+      "ta": "நான் பேருந்தில் பயணிக்கிறேன். பயணம் 30 நிமிடங்கள் ஆகும். வழியில் நான் இசை கேட்கிறேன்.",
+      "audioId": "phase4_l19_1_ex8"
+    }
+  ],
+  "listeningQuestions": [
+    {
+      "audioText": "I like reading books. I read every day. My favorite books are novels.",
+      "options": [
+        "The speaker reads occasionally",
+        "The speaker reads every day and likes novels",
+        "The speaker doesn't like reading"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "audioText": "I work in an office. I start at 9 AM and finish at 5 PM.",
+      "options": [
+        "The speaker works from home",
+        "The speaker works 9 AM to 5 PM in an office",
+        "The speaker doesn't have a job"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "audioText": "To speak fluently, use connecting words like 'and', 'but', 'so', and 'because'.",
+      "options": [
+        "Avoid using connecting words",
+        "Use connecting words to speak fluently",
+        "Only use 'and' when speaking"
+      ],
+      "correctIndex": 1
+    }
+  ],
+  "speakSentences": [
+    {
+      "en": "I like reading books. I read every day. My favorite books are novels.",
+      "ta": "எனக்கு புத்தகங்கள் படிக்க பிடிக்கும். நான் தினமும் படிக்கிறேன். என் விருப்பமான புத்தகங்கள் நாவல்கள்."
+    },
+    {
+      "en": "I work in an office. I start at 9 AM and finish at 5 PM.",
+      "ta": "நான் ஒரு அலுவலகத்தில் வேலை செய்கிறேன். காலை 9 மணிக்கு தொடங்கி மாலை 5 மணிக்கு முடிக்கிறேன்."
+    },
+    {
+      "en": "My family is small. I have two brothers. We live together.",
+      "ta": "என் குடும்பம் சிறியது. எனக்கு இரண்டு சகோதரர்கள் உள்ளனர். நாங்கள் ஒன்றாக வசிக்கிறோம்."
+    },
+    {
+      "en": "I exercise in the morning. I go for a walk. Then I do stretching.",
+      "ta": "நான் காலையில் உடற்பயிற்சி செய்கிறேன். நான் நடைப்பயிற்சி செல்கிறேன். பின்னர் நீட்சி பயிற்சிகள் செய்கிறேன்."
+    },
+    {
+      "en": "I'm learning English. I practice every day. I want to speak fluently.",
+      "ta": "நான் ஆங்கிலம் கற்றுக்கொண்டிருக்கிறேன். நான் தினமும் பயிற்சி செய்கிறேன். நான் சரளமாக பேச விரும்புகிறேன்."
+    }
+  ],
+  "practiceQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "What is fluent speaking?",
+      "promptTa": "சரளமாக பேசுவது என்றால் என்ன?",
+      "options": ["Speaking very fast", "Speaking continuously without long pauses", "Speaking loudly"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which is a connecting word?",
+      "promptTa": "எது இணைப்பு சொல்?",
+      "options": ["um", "because", "uh"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "What should you do if you make a mistake while speaking?",
+      "promptTa": "பேசும்போது தவறு செய்தால் என்ன செய்ய வேண்டும்?",
+      "options": ["Stop completely", "Keep going", "Start over from the beginning"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which is a filler word to avoid?",
+      "promptTa": "தவிர்க்க வேண்டிய நிரப்பி சொல் எது?",
+      "options": ["and", "um", "but"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "What is a good alternative to 'um'?",
+      "promptTa": "'um' க்கு நல்ல மாற்று என்ன?",
+      "options": ["uh", "Let me think...", "like"],
+      "correctIndex": 1
+    }
+  ],
+  "masteryQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "Which helps you speak more fluently?",
+      "promptTa": "எது உங்களை மேலும் சரளமாக பேச உதவும்?",
+      "options": ["Using complex words", "Using familiar words", "Speaking very slowly"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which is NOT a connecting word?",
+      "promptTa": "எது இணைப்பு சொல் அல்ல?",
+      "options": ["and", "but", "um"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "What is a good practice goal for fluency?",
+      "promptTa": "சரளத்திற்கான நல்ல பயிற்சி இலக்கு என்ன?",
+      "options": ["Speak for 30 seconds on a topic", "Memorize long speeches", "Speak as fast as possible"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which sentence uses connecting words well?",
+      "promptTa": "எந்த வாக்கியம் இணைப்பு சொற்களை நன்றாக பயன்படுத்துகிறது?",
+      "options": ["I like... um... reading", "I like reading and I read every day", "I like reading. Um. Every day."],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "What should you start with when practicing fluency?",
+      "promptTa": "சரளத்தை பயிற்சி செய்யும்போது எதில் தொடங்க வேண்டும்?",
+      "options": ["Complex sentences", "Simple sentences", "Long paragraphs"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which is a better alternative to 'uh'?",
+      "promptTa": "'uh' க்கு சிறந்த மாற்று எது?",
+      "options": ["um", "Well...", "like"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "How does regular practice help fluency?",
+      "promptTa": "வழக்கமான பயிற்சி சரளத்திற்கு எப்படி உதவுகிறது?",
+      "options": ["It doesn't help", "It makes speech more natural", "It makes you speak faster"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which connecting word shows reason?",
+      "promptTa": "எந்த இணைப்பு சொல் காரணத்தைக் காட்டுகிறது?",
+      "options": ["and", "because", "then"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "What is the key to fluent speaking?",
+      "promptTa": "சரளமாக பேசுவதற்கான திறவுகோல் என்ன?",
+      "options": ["Perfect grammar", "Continuous practice", "Speaking loudly"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which shows fluent speaking?",
+      "promptTa": "எது சரளமான பேச்சைக் காட்டுகிறது?",
+      "options": ["I... um... like... uh... books", "I like books and I read every day", "I... like... books..."],
+      "correctIndex": 1
+    }
+  ]
+}

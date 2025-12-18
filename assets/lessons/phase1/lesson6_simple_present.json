@@ -1,0 +1,274 @@
+{
+  "id": "phase1_lesson6",
+  "order": 6,
+  "unitId": "phase1",
+  "title": "Simple Present Sentences",
+  "description": "Making complete sentences",
+  "level": "A1",
+  "explain": {
+    "ta": "Simple present tense என்பது தற்போதைய நிகழ்வுகளை, பழக்கங்களை, மற்றும் உண்மைகளை விவரிக்கப் பயன்படுகிறது. இது நாம் தினமும் செய்யும் செயல்களை விவரிக்க உதவுகிறது. முழுமையான வாக்கியம் எழுத Subject + Verb + Object என்ற வரிசையைப் பின்பற்ற வேண்டும். உதாரணமாக: 'I go to school' - இங்கு 'I' subject, 'go' verb, 'to school' object. He, She, It உடன் verb-க்கு 's' சேர்க்க வேண்டும்.",
+    "en": "Simple present tense is used to describe current events, habits, and facts. It helps us talk about things we do regularly. To make complete sentences, follow the pattern: Subject + Verb + Object. For example: 'I go to school' - here 'I' is the subject, 'go' is the verb, and 'to school' is the object. Remember to add 's' to verbs when using He, She, or It.",
+    "table": [
+      {
+        "pronoun": "Subject",
+        "descriptionEn": "Who or what does the action (I, You, He, She, It, We, They)",
+        "descriptionTa": "செயலைச் செய்பவர் (நான், நீ, அவர், அவள், அது, நாம், அவர்கள்)"
+      },
+      {
+        "pronoun": "Verb",
+        "descriptionEn": "The action word (go, eat, study, play, work)",
+        "descriptionTa": "செயல் சொல் (செல், சாப்பிடு, படி, விளையாடு, வேலை செய்)"
+      },
+      {
+        "pronoun": "Object",
+        "descriptionEn": "What receives the action (to school, food, English)",
+        "descriptionTa": "செயலைப் பெறுவது (பள்ளிக்கு, உணவு, ஆங்கிலம்)"
+      }
+    ]
+  },
+  "examples": [
+    {
+      "en": "I go to school.",
+      "ta": "நான் பள்ளிக்குச் செல்கிறேன்.",
+      "audioId": "phase1_l6_ex1"
+    },
+    {
+      "en": "She studies English.",
+      "ta": "அவள் ஆங்கிலம் படிக்கிறாள்.",
+      "audioId": "phase1_l6_ex2"
+    },
+    {
+      "en": "He plays cricket.",
+      "ta": "அவர் கிரிக்கெட் விளையாடுகிறார்.",
+      "audioId": "phase1_l6_ex3"
+    },
+    {
+      "en": "We eat breakfast.",
+      "ta": "நாங்கள் காலை உணவு சாப்பிடுகிறோம்.",
+      "audioId": "phase1_l6_ex4"
+    },
+    {
+      "en": "They work hard.",
+      "ta": "அவர்கள் கடினமாக உழைக்கிறார்கள்.",
+      "audioId": "phase1_l6_ex5"
+    },
+    {
+      "en": "I read books.",
+      "ta": "நான் புத்தகங்கள் படிக்கிறேன்.",
+      "audioId": "phase1_l6_ex6"
+    },
+    {
+      "en": "She writes letters.",
+      "ta": "அவள் கடிதங்கள் எழுதுகிறாள்.",
+      "audioId": "phase1_l6_ex7"
+    },
+    {
+      "en": "He watches TV.",
+      "ta": "அவர் டிவி பார்க்கிறார்.",
+      "audioId": "phase1_l6_ex8"
+    },
+    {
+      "en": "We speak Tamil.",
+      "ta": "நாங்கள் தமிழ் பேசுகிறோம்.",
+      "audioId": "phase1_l6_ex9"
+    },
+    {
+      "en": "They live in Chennai.",
+      "ta": "அவர்கள் சென்னையில் வசிக்கிறார்கள்.",
+      "audioId": "phase1_l6_ex10"
+    }
+  ],
+  "listeningQuestions": [
+    {
+      "audioText": "I go to school.",
+      "options": ["I go to school.", "I goes to school.", "I going to school."],
+      "correctIndex": 0
+    },
+    {
+      "audioText": "She studies English.",
+      "options": ["She study English.", "She studies English.", "She studying English."],
+      "correctIndex": 1
+    },
+    {
+      "audioText": "They play cricket.",
+      "options": ["They plays cricket.", "They playing cricket.", "They play cricket."],
+      "correctIndex": 2
+    },
+    {
+      "audioText": "He works hard.",
+      "options": ["He work hard.", "He works hard.", "He working hard."],
+      "correctIndex": 1
+    },
+    {
+      "audioText": "We eat breakfast.",
+      "options": ["We eats breakfast.", "We eat breakfast.", "We eating breakfast."],
+      "correctIndex": 1
+    }
+  ],
+  "speakSentences": [
+    {
+      "en": "I go to school.",
+      "ta": "நான் பள்ளிக்குச் செல்கிறேன்."
+    },
+    {
+      "en": "She studies English.",
+      "ta": "அவள் ஆங்கிலம் படிக்கிறாள்."
+    },
+    {
+      "en": "He plays cricket.",
+      "ta": "அவர் கிரிக்கெட் விளையாடுகிறார்."
+    },
+    {
+      "en": "We eat breakfast.",
+      "ta": "நாங்கள் காலை உணவு சாப்பிடுகிறோம்."
+    },
+    {
+      "en": "They work hard.",
+      "ta": "அவர்கள் கடினமாக உழைக்கிறார்கள்."
+    }
+  ],
+  "practiceQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "She ___ to work.",
+      "promptTa": "அவள் வேலைக்கு ___.",
+      "options": ["go", "goes", "going"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "I ___ English.",
+      "promptTa": "நான் ஆங்கிலம் ___.",
+      "options": ["learn", "learns", "learning"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "They ___ football.",
+      "promptTa": "அவர்கள் கால்பந்து ___.",
+      "options": ["play", "plays", "playing"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "He ___ books.",
+      "promptTa": "அவர் புத்தகங்கள் ___.",
+      "options": ["read", "reads", "reading"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "We ___ in Chennai.",
+      "promptTa": "நாங்கள் சென்னையில் ___.",
+      "options": ["live", "lives", "living"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "She ___ letters.",
+      "promptTa": "அவள் கடிதங்கள் ___.",
+      "options": ["write", "writes", "writing"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "I ___ TV.",
+      "promptTa": "நான் டிவி ___.",
+      "options": ["watch", "watches", "watching"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "He ___ Tamil.",
+      "promptTa": "அவர் தமிழ் ___.",
+      "options": ["speak", "speaks", "speaking"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "They ___ hard.",
+      "promptTa": "அவர்கள் கடினமாக ___.",
+      "options": ["work", "works", "working"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "You ___ to school.",
+      "promptTa": "நீ பள்ளிக்கு ___.",
+      "options": ["go", "goes", "going"],
+      "correctIndex": 0
+    }
+  ],
+  "masteryQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "We ___ English.",
+      "promptTa": "நாங்கள் ஆங்கிலம் ___.",
+      "options": ["learn", "learns", "learning"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "She ___ to school.",
+      "promptTa": "அவள் பள்ளிக்கு ___.",
+      "options": ["go", "goes", "going"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "I ___ cricket.",
+      "promptTa": "நான் கிரிக்கெட் ___.",
+      "options": ["play", "plays", "playing"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "He ___ breakfast.",
+      "promptTa": "அவர் காலை உணவு ___.",
+      "options": ["eat", "eats", "eating"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "They ___ in Mumbai.",
+      "promptTa": "அவர்கள் மும்பையில் ___.",
+      "options": ["live", "lives", "living"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "She ___ books.",
+      "promptTa": "அவள் புத்தகங்கள் ___.",
+      "options": ["read", "reads", "reading"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "We ___ hard.",
+      "promptTa": "நாங்கள் கடினமாக ___.",
+      "options": ["work", "works", "working"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "He ___ TV every day.",
+      "promptTa": "அவர் தினமும் டிவி ___.",
+      "options": ["watch", "watches", "watching"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "I ___ Tamil.",
+      "promptTa": "நான் தமிழ் ___.",
+      "options": ["speak", "speaks", "speaking"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "You ___ English well.",
+      "promptTa": "நீ ஆங்கிலம் நன்றாக ___.",
+      "options": ["learn", "learns", "learning"],
+      "correctIndex": 0
+    }
+  ]
+}
