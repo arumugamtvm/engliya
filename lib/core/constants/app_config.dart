@@ -1,13 +1,22 @@
-/// App configuration constants
+import 'package:flutter/foundation.dart';
+
 class AppConfig {
-  /// Development mode flag
-  /// When true, all phases and content are unlocked
-  /// Set to false for production builds
-  static const bool isDevelopmentMode = true;
-  
-  /// App version
+  AppConfig._();
+
   static const String version = '1.0.0';
-  
-  /// Build number
   static const int buildNumber = 1;
+  static const String appName = 'Engliya';
+
+  static bool get isDevelopmentMode => kDebugMode;
+  static bool get isProductionMode => kReleaseMode;
+  static bool get isProfileMode => kProfileMode;
+
+  static const Duration defaultTimeout = Duration(seconds: 30);
+  static const Duration cacheExpiry = Duration(hours: 24);
+
+  static const String defaultLanguageCode = 'en-US';
+  static const String fallbackLanguageCode = 'en';
+
+  static const int maxRetryAttempts = 3;
+  static const Duration retryDelay = Duration(milliseconds: 500);
 }

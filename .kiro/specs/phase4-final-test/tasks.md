@@ -164,46 +164,54 @@
     - "Retry" button if failed (restarts test)
     - _Requirements: 6.4_
 
-- [ ] 13. Create Phase4FinalTestReviewScreen
-  - [ ] 13.1 Implement review screen widget
+- [x] 13. Create Phase4FinalTestReviewScreen
+  - [x] 13.1 Implement review screen widget
     - Display list of incorrect MCQ answers only
     - Show question prompt, correct answer, and user's selection
     - Exclude speaking tasks from review
     - _Requirements: 7.1, 7.2, 7.3_
-  - [ ] 13.2 Implement navigation
+  - [x] 13.2 Implement navigation
     - Back button to return to results
     - Done button to return to home
     - _Requirements: 7.4_
 
-- [ ] 14. Checkpoint - Ensure all tests pass
-  - Ensure all tests pass, ask the user if questions arise.
-
-- [ ] 15. Add routes and navigation
-  - [ ] 15.1 Add Phase 4 Final Test routes to AppRoutes
+- [x] 14. Add routes and navigation
+  - [x] 14.1 Add Phase 4 Final Test routes to AppRoutes
+    - Import Phase4FinalTestScreen, Phase4FinalTestResultScreen, Phase4FinalTestReviewScreen
+    - Import Phase4TestResult and Phase4IncorrectAnswer models
     - Add phase4FinalTest route constant ('/phase4/finalTest')
     - Add phase4FinalTestResult route constant ('/phase4/finalTest/result')
     - Add phase4FinalTestReview route constant ('/phase4/finalTest/review')
-    - Add route handlers in onGenerateRoute
+    - Add route handlers in onGenerateRoute switch statement
     - _Requirements: 11.1, 11.2, 11.3, 11.4_
-  - [ ] 15.2 Update Phase4UnitScreen to show Final Test button
-    - Add Final Test card/button below unit list
-    - Show locked/unlocked status based on lesson mastery
+  - [x] 14.2 Update Phase4UnitScreen to show Final Test button
+    - Add Final Test card/button below unit list in ListView
+    - Show locked/unlocked status based on lesson mastery via GatingService
     - Navigate to Phase4FinalTestScreen when tapped
     - _Requirements: 1.1, 1.2_
 
-- [ ] 16. Register Phase4FinalTestProvider in main.dart
-  - [ ] 16.1 Add provider to MultiProvider
+- [x] 15. Register Phase4FinalTestProvider in main.dart
+  - [x] 15.1 Add Phase4FinalTestService initialization
+    - Import Phase4FinalTestService
+    - Create Phase4FinalTestService instance with storageService and progressRepository
+    - _Requirements: 10.1_
+  - [x] 15.2 Add Phase4FinalTestProvider to MultiProvider
     - Import Phase4FinalTestProvider
     - Add ChangeNotifierProvider for Phase4FinalTestProvider
-    - Wire up dependencies (Phase4FinalTestService, StorageService)
+    - Wire up dependencies (Phase4FinalTestService, GatingService)
     - _Requirements: 10.1_
 
-- [ ] 17. Extend GatingService for Phase 5 unlock
-  - [ ] 17.1 Add Phase 5 unlock checking
-    - Add isPhase5Unlocked() method
-    - Check phase4FinalTestPassed storage key
+- [x] 16. Extend GatingService for Phase 5 unlock
+  - [x] 16.1 Add Phase 5 unlock checking
+    - Add isPhase5Unlocked() method to GatingService
+    - Check phase4_final_test_passed storage key
+    - Return true only if phase4FinalTestPassed is true
+    - _Requirements: 8.4_
+  - [x] 16.2 Add Phase 5 to isPhaseUnlocked() method
+    - Add case 5 to switch statement
+    - Check phase4_final_test_passed or phase5_unlocked storage keys
     - _Requirements: 8.4_
 
-- [ ] 18. Final Checkpoint - Ensure all tests pass
+- [x] 17. Final Checkpoint - Ensure all tests pass
   - Ensure all tests pass, ask the user if questions arise.
 

@@ -13,6 +13,7 @@ import 'debug_service.dart';
 /// - Phase 2 requires passing Phase 1 final test
 /// - Phase 3 requires passing Phase 2 final test
 /// - Phase 4 requires passing Phase 3 final test
+/// - Phase 5 requires passing Phase 4 final test
 /// - Lessons within a phase require the phase to be unlocked
 /// - Final tests require all lessons in the phase to be mastered
 class GatingService {
@@ -24,8 +25,10 @@ class GatingService {
   static const String _keyPhase1TestPassed = 'phase1_final_test_passed';
   static const String _keyPhase2TestPassed = 'phase2_final_test_passed';
   static const String _keyPhase3TestPassed = 'phase3_final_test_passed';
+  static const String _keyPhase4TestPassed = 'phase4_final_test_passed';
   static const String _keyPhase3Unlocked = 'phase3_unlocked';
   static const String _keyPhase4Unlocked = 'phase4_unlocked';
+  static const String _keyPhase5Unlocked = 'phase5_unlocked';
 
   GatingService({
     required StorageService storageService,
@@ -42,9 +45,10 @@ class GatingService {
   /// - Phase 1 (always unlocked), OR
   /// - Phase 2 and Phase 1 final test passed, OR
   /// - Phase 3 and Phase 2 final test passed, OR
-  /// - Phase 4 and Phase 3 final test passed
+  /// - Phase 4 and Phase 3 final test passed, OR
+  /// - Phase 5 and Phase 4 final test passed
   /// 
-  /// [phaseNumber] - The phase number to check (1-4)
+  /// [phaseNumber] - The phase number to check (1-5)
   Future<bool> isPhaseUnlocked(int phaseNumber) async {
     // Debug mode bypass - all phases unlocked
     if (await _debugService.isDebugModeEnabled()) {
@@ -77,9 +81,31 @@ class GatingService {
         final phase3TestPassed2 = _storageService.getBool('phase3FinalTestPassed') ?? false;
         final phase4Unlocked = _storageService.getBool(_keyPhase4Unlocked) ?? false;
         return phase3TestPassed1 || phase3TestPassed2 || phase4Unlocked;
+      case 5:
+        // Phase 5 requires Phase 4 final test passed or explicit unlock
+        // Check both key formats for compatibility
+        final phase4TestPassed1 = _storageService.getBool(_keyPhase4TestPassed) ?? false;
+        final phase4TestPassed2 = _storageService.getBool('phase4FinalTestPassed') ?? false;
+        final phase5Unlocked = _storageService.getBool(_keyPhase5Unlocked) ?? false;
+        return phase4TestPassed1 || phase4TestPassed2 || phase5Unlocked;
       default:
         return false;
     }
+  }
+
+  /// Check if Phase 5 is unlocked
+  /// 
+  /// Returns true if and only if phase4FinalTestPassed is true in storage.
+  /// This is a convenience method that checks the Phase 4 final test passed status.
+  /// 
+  /// Note: Debug mode bypass is NOT applied here - this method checks the actual
+  /// storage state for Phase 5 unlock status.
+  Future<bool> isPhase5Unlocked() async {
+    // Check if Phase 4 final test was passed
+    // Check both key formats for compatibility
+    final phase4TestPassed1 = _storageService.getBool(_keyPhase4TestPassed) ?? false;
+    final phase4TestPassed2 = _storageService.getBool('phase4FinalTestPassed') ?? false;
+    return phase4TestPassed1 || phase4TestPassed2;
   }
 
   /// Check if a lesson is unlocked (with debug mode bypass)

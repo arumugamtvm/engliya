@@ -17,11 +17,19 @@ import '../features/learn/presentation/screens/phase2_final_test_review_screen.d
 import '../features/learn/presentation/screens/phase3_final_test_screen.dart';
 import '../features/learn/presentation/screens/phase3_final_test_result_screen.dart';
 import '../features/learn/presentation/screens/phase3_final_test_review_screen.dart';
+import '../features/learn/presentation/screens/phase4_final_test_screen.dart';
+import '../features/learn/presentation/screens/phase4_final_test_result_screen.dart';
+import '../features/learn/presentation/screens/phase4_final_test_review_screen.dart';
+import '../features/learn/presentation/screens/phase5_final_test_screen.dart';
+import '../features/learn/presentation/screens/phase5_final_test_result_screen.dart';
+import '../features/learn/presentation/screens/phase5_final_test_review_screen.dart';
 import '../features/learn/presentation/screens/debug_screen.dart';
 import '../features/learn/presentation/screens/phase4_unit_screen.dart';
 import '../features/learn/presentation/screens/phase4_lesson_list_screen.dart';
 import '../features/progress/presentation/screens/progress_screen.dart';
 import '../features/learn/data/models/phase3_test_result.dart';
+import '../features/learn/data/models/phase4_test_result.dart';
+import '../features/learn/data/models/phase5_test_result.dart';
 import '../features/learn/data/models/test_result.dart';
 import '../features/learn/data/models/phase2_test_result.dart';
 import '../features/learn/data/models/incorrect_answer.dart';
@@ -50,6 +58,12 @@ class AppRoutes {
   static const String debug = '/debug';
   static const String phase4Unit = '/phase4';
   static const String phase4LessonList = '/phase4/unit/:unitId';
+  static const String phase4FinalTest = '/phase4/finalTest';
+  static const String phase4FinalTestResult = '/phase4/finalTest/result';
+  static const String phase4FinalTestReview = '/phase4/finalTest/review';
+  static const String phase5FinalTest = '/phase5/finalTest';
+  static const String phase5FinalTestResult = '/phase5/finalTest/result';
+  static const String phase5FinalTestReview = '/phase5/finalTest/review';
 
   static Route<dynamic>? onGenerateRoute(RouteSettings settings) {
     // Handle dynamic Phase 3 unit routes first
@@ -167,6 +181,34 @@ class AppRoutes {
           ),
           settings,
         );
+      case phase4FinalTest:
+        return _buildSlideRoute(const Phase4FinalTestScreen(), settings);
+      case phase4FinalTestResult:
+        final result = settings.arguments as Phase4TestResult?;
+        if (result == null) {
+          return _buildRoute(const Scaffold(body: Center(child: Text('Error: Test result not provided'))), settings);
+        }
+        return _buildFadeRoute(Phase4FinalTestResultScreen(testResult: result), settings);
+      case phase4FinalTestReview:
+        final answers = settings.arguments as List<Phase4IncorrectAnswer>?;
+        if (answers == null) {
+          return _buildRoute(const Scaffold(body: Center(child: Text('Error: Incorrect answers not provided'))), settings);
+        }
+        return _buildSlideRoute(Phase4FinalTestReviewScreen(incorrectAnswers: answers), settings);
+      case phase5FinalTest:
+        return _buildSlideRoute(const Phase5FinalTestScreen(), settings);
+      case phase5FinalTestResult:
+        final result = settings.arguments as Phase5TestResult?;
+        if (result == null) {
+          return _buildRoute(const Scaffold(body: Center(child: Text('Error: Test result not provided'))), settings);
+        }
+        return _buildFadeRoute(Phase5FinalTestResultScreen(result: result), settings);
+      case phase5FinalTestReview:
+        final answers = settings.arguments as List<Phase5IncorrectAnswer>?;
+        if (answers == null) {
+          return _buildRoute(const Scaffold(body: Center(child: Text('Error: Incorrect answers not provided'))), settings);
+        }
+        return _buildSlideRoute(Phase5FinalTestReviewScreen(incorrectAnswers: answers), settings);
       default:
         return _buildRoute(const OnboardingScreen(), settings);
     }

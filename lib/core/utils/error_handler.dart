@@ -5,6 +5,7 @@ import '../../features/learn/services/test_exceptions.dart';
 import '../../features/learn/services/debug_service.dart';
 import '../../features/learn/services/gating_service.dart';
 import '../../services/local_storage/storage_service.dart';
+import '../logging/app_logger.dart';
 
 /// Centralized error handling utility
 /// Provides user-friendly error messages and feedback
@@ -135,10 +136,7 @@ class ErrorHandler {
 
   /// Log error for debugging
   static void logError(String context, dynamic error, [StackTrace? stackTrace]) {
-    print('ERROR [$context]: $error');
-    if (stackTrace != null) {
-      print('Stack trace: $stackTrace');
-    }
+    AppLogger.error('[$context]: $error', tag: 'ErrorHandler', error: error, stackTrace: stackTrace);
   }
 
   /// Show error snackbar with retry action

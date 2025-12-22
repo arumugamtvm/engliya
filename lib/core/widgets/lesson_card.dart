@@ -51,8 +51,7 @@ class LessonCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    final status = lessonStatus;
+    final currentStatus = lessonStatus;
 
     return Card(
       elevation: isUnlocked ? 2 : 1,
@@ -69,7 +68,7 @@ class LessonCard extends StatelessWidget {
                 height: 48,
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  color: _getStatusColor(status),
+                  color: _getStatusColor(currentStatus),
                 ),
                 child: Center(
                   child: Text(
@@ -102,7 +101,7 @@ class LessonCard extends StatelessWidget {
                           ),
                         ),
                         const SizedBox(width: 8),
-                        _buildStatusBadge(status),
+                        _buildStatusBadge(currentStatus),
                       ],
                     ),
                     const SizedBox(height: 4),
@@ -121,7 +120,7 @@ class LessonCard extends StatelessWidget {
                         value: progressPercentage,
                         backgroundColor: Colors.grey[300],
                         valueColor: AlwaysStoppedAnimation<Color>(
-                          status == LessonStatus.mastered
+                          currentStatus == LessonStatus.mastered
                               ? AppTheme.masteredColor
                               : AppTheme.primaryColor,
                         ),
