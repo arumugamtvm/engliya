@@ -8,35 +8,8 @@ import '../models/test_question_model.dart';
 import '../models/test_result_model.dart';
 import '../models/lesson.dart';
 import '../../../../services/local_storage/storage_service.dart';
+import '../../services/test_exceptions.dart';
 import 'lesson_repository.dart';
-
-/// Custom exception for test generation errors
-class TestGenerationException implements Exception {
-  final String message;
-  final dynamic originalError;
-
-  TestGenerationException(this.message, {this.originalError});
-
-  @override
-  String toString() => 'TestGenerationException: $message';
-}
-
-/// Custom exception for insufficient questions
-class InsufficientQuestionsException implements Exception {
-  final String message;
-  final int available;
-  final int required;
-
-  InsufficientQuestionsException(
-    this.message, {
-    required this.available,
-    required this.required,
-  });
-
-  @override
-  String toString() =>
-      'InsufficientQuestionsException: $message (available: $available, required: $required)';
-}
 
 /// Implementation of TestRepository that handles all phases
 /// Uses PhaseConfig to determine phase-specific behavior
@@ -67,12 +40,10 @@ class TestRepositoryImpl implements TestRepository {
     }
 
     // Validate we have enough questions
-    final minimumRequired = (config.totalQuestions * 0.8).ceil();
+    final minimumRequired = config.minRequiredQuestions;
     if (questions.length < minimumRequired) {
       throw InsufficientQuestionsException(
         'Not enough questions available for ${config.name}',
-        available: questions.length,
-        required: minimumRequired,
       );
     }
 
@@ -168,7 +139,6 @@ class TestRepositoryImpl implements TestRepository {
     } catch (e) {
       throw TestGenerationException(
         'Failed to load questions from lesson $lessonId',
-        originalError: e,
       );
     }
   }
@@ -235,9 +205,8 @@ class TestRepositoryImpl implements TestRepository {
         await _storageService.setBool(config.keyNextPhaseUnlocked, true);
       }
     } catch (e) {
-      throw TestGenerationException(
+      throw TestStorageException(
         'Failed to save test result for ${config.name}',
-        originalError: e,
       );
     }
   }
@@ -286,7 +255,6 @@ class TestRepositoryImpl implements TestRepository {
     } catch (e) {
       throw TestGenerationException(
         'Failed to clear test data for ${config.name}',
-        originalError: e,
       );
     }
   }

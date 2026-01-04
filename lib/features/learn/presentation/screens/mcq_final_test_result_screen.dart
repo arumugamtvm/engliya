@@ -1,54 +1,324 @@
 import 'package:flutter/material.dart';
-import '../../data/models/phase2_test_result.dart';
+
+import '../../domain/entities/test_result.dart';
 import '../../../../app/theme.dart';
-import 'phase2_final_test_review_screen.dart';
 
-/// Phase 2 Final Test Result Screen
-/// Displays test score, accuracy, unit breakdown, pass/fail status, and action buttons
-/// Requirements: 4.1-4.14, 8.1-8.2
-class Phase2FinalTestResultScreen extends StatefulWidget {
-  final Phase2TestResult testResult;
+class McqUnitBreakdownItem {
+  final String unitId;
+  final String? displayName;
+  final int? expectedTotal;
+  final int delayMs;
+  final bool showWhenMissing;
 
-  const Phase2FinalTestResultScreen({
-    super.key,
-    required this.testResult,
+  const McqUnitBreakdownItem({
+    required this.unitId,
+    this.displayName,
+    this.expectedTotal,
+    this.delayMs = 0,
+    this.showWhenMissing = false,
   });
-
-  @override
-  State<Phase2FinalTestResultScreen> createState() => _Phase2FinalTestResultScreenState();
 }
 
-class _Phase2FinalTestResultScreenState extends State<Phase2FinalTestResultScreen>
+class McqUnitBreakdownStyle {
+  final double highThreshold;
+  final double midThreshold;
+  final Color highColor;
+  final Color midColor;
+  final Color lowColor;
+  final Color highTextColor;
+  final Color midTextColor;
+  final Color lowTextColor;
+  final double borderOpacity;
+  final double borderWidth;
+
+  const McqUnitBreakdownStyle({
+    required this.highThreshold,
+    required this.midThreshold,
+    required this.highColor,
+    required this.midColor,
+    required this.lowColor,
+    required this.highTextColor,
+    required this.midTextColor,
+    required this.lowTextColor,
+    this.borderOpacity = 0.3,
+    this.borderWidth = 1,
+  });
+
+  _PerformanceStyle resolve(double accuracy) {
+    if (accuracy >= highThreshold) {
+      return _PerformanceStyle(
+        color: highColor,
+        textColor: highTextColor,
+        level: 'Excellent',
+        icon: Icons.check_circle,
+      );
+    }
+    if (accuracy >= midThreshold) {
+      return _PerformanceStyle(
+        color: midColor,
+        textColor: midTextColor,
+        level: 'Good',
+        icon: Icons.info,
+      );
+    }
+    return _PerformanceStyle(
+      color: lowColor,
+      textColor: lowTextColor,
+      level: 'Needs Improvement',
+      icon: Icons.warning,
+    );
+  }
+}
+
+class McqUnitBreakdownConfig {
+  final String title;
+  final List<McqUnitBreakdownItem> items;
+  final McqUnitBreakdownStyle style;
+
+  const McqUnitBreakdownConfig({
+    required this.title,
+    required this.items,
+    required this.style,
+  });
+}
+
+class McqFinalTestResultConfig {
+  final String completionTitle;
+  final IconData successIcon;
+  final IconData failureIcon;
+  final String Function(TestResult result) passedMessage;
+  final String Function(TestResult result) failedMessage;
+  final String continueLabel;
+  final IconData continueIcon;
+  final String continueHint;
+  final String continueSemanticLabel;
+  final String continueSnackMessage;
+  final String reviewRouteName;
+  final McqUnitBreakdownConfig? breakdownConfig;
+
+  const McqFinalTestResultConfig({
+    required this.completionTitle,
+    required this.successIcon,
+    required this.failureIcon,
+    required this.passedMessage,
+    required this.failedMessage,
+    required this.continueLabel,
+    required this.continueIcon,
+    required this.continueHint,
+    required this.continueSemanticLabel,
+    required this.continueSnackMessage,
+    required this.reviewRouteName,
+    this.breakdownConfig,
+  });
+
+  static McqFinalTestResultConfig phase1() {
+    return McqFinalTestResultConfig(
+      completionTitle: 'Phase 1 Final Test - Completed!',
+      successIcon: Icons.check_circle,
+      failureIcon: Icons.cancel,
+      passedMessage: (_) => 'You have mastered the entire Phase 1 foundation',
+      failedMessage: (_) => 'Keep practicing to master Phase 1 content',
+      continueLabel: 'Continue to Phase 2',
+      continueIcon: Icons.arrow_forward,
+      continueHint: 'Proceed to the next learning phase',
+      continueSemanticLabel: 'Continue to Phase 2',
+      continueSnackMessage: 'Phase 2 will be unlocked soon!',
+      reviewRouteName: '/phase1/finalTest/review',
+      breakdownConfig: null,
+    );
+  }
+
+  static McqFinalTestResultConfig phase2() {
+    return McqFinalTestResultConfig(
+      completionTitle: 'Phase 2 Final Test Completed!',
+      successIcon: Icons.check_circle,
+      failureIcon: Icons.cancel,
+      passedMessage: (_) => 'You have mastered Phase 2',
+      failedMessage: (result) =>
+          'You scored ${result.accuracy.toStringAsFixed(1)}%. Try again to pass Phase 2',
+      continueLabel: 'Continue',
+      continueIcon: Icons.check,
+      continueHint: 'Return to home screen',
+      continueSemanticLabel: 'Continue',
+      continueSnackMessage: 'Phase 3 is now unlocked!',
+      reviewRouteName: '/phase2/finalTest/review',
+      breakdownConfig: McqUnitBreakdownConfig(
+        title: 'Summary',
+        style: McqUnitBreakdownStyle(
+          highThreshold: 80,
+          midThreshold: 60,
+          highColor: AppTheme.correctColor,
+          midColor: AppTheme.warningColor,
+          lowColor: AppTheme.incorrectColor,
+          highTextColor: AppTheme.correctColor,
+          midTextColor: AppTheme.warningColor,
+          lowTextColor: AppTheme.incorrectColor,
+        ),
+        items: const [
+          McqUnitBreakdownItem(unitId: 'unit7', delayMs: 0),
+          McqUnitBreakdownItem(unitId: 'unit8', delayMs: 100),
+          McqUnitBreakdownItem(unitId: 'unit9', delayMs: 200),
+          McqUnitBreakdownItem(unitId: 'unit10', delayMs: 300),
+          McqUnitBreakdownItem(unitId: 'unit11', delayMs: 400),
+        ],
+      ),
+    );
+  }
+
+  static McqFinalTestResultConfig phase3() {
+    return McqFinalTestResultConfig(
+      completionTitle: 'Phase 3 Final Test Completed!',
+      successIcon: Icons.celebration,
+      failureIcon: Icons.cancel,
+      passedMessage: (_) => 'You have mastered Phase 3',
+      failedMessage: (_) => 'You are close! Review Phase 3 lessons and try again',
+      continueLabel: 'Continue',
+      continueIcon: Icons.check,
+      continueHint: 'Return to home screen. Phase 4 is now unlocked.',
+      continueSemanticLabel: 'Continue',
+      continueSnackMessage: 'Phase 4 is now unlocked!',
+      reviewRouteName: '/phase3/finalTest/review',
+      breakdownConfig: McqUnitBreakdownConfig(
+        title: 'Breakdown:',
+        style: McqUnitBreakdownStyle(
+          highThreshold: 80,
+          midThreshold: 60,
+          highColor: const Color(0xFF2E7D32),
+          midColor: const Color(0xFFE65100),
+          lowColor: const Color(0xFFC62828),
+          highTextColor: const Color(0xFF1B5E20),
+          midTextColor: const Color(0xFFBF360C),
+          lowTextColor: const Color(0xFFB71C1C),
+          borderOpacity: 0.5,
+          borderWidth: 2,
+        ),
+        items: const [
+          McqUnitBreakdownItem(
+            unitId: 'unit12',
+            displayName: 'Stories & Retelling',
+            expectedTotal: 6,
+            delayMs: 0,
+            showWhenMissing: true,
+          ),
+          McqUnitBreakdownItem(
+            unitId: 'unit13',
+            displayName: 'Connectors & Complex Sent.',
+            expectedTotal: 7,
+            delayMs: 100,
+            showWhenMissing: true,
+          ),
+          McqUnitBreakdownItem(
+            unitId: 'unit14',
+            displayName: 'Passive Voice',
+            expectedTotal: 5,
+            delayMs: 200,
+            showWhenMissing: true,
+          ),
+          McqUnitBreakdownItem(
+            unitId: 'unit15',
+            displayName: 'Reported Speech',
+            expectedTotal: 5,
+            delayMs: 300,
+            showWhenMissing: true,
+          ),
+          McqUnitBreakdownItem(
+            unitId: 'unit16',
+            displayName: 'Functional English',
+            expectedTotal: 4,
+            delayMs: 400,
+            showWhenMissing: true,
+          ),
+          McqUnitBreakdownItem(
+            unitId: 'unit17',
+            displayName: 'Projects & General Use',
+            expectedTotal: 3,
+            delayMs: 500,
+            showWhenMissing: true,
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class McqFinalTestResultScreen extends StatefulWidget {
+  final TestResult testResult;
+  final McqFinalTestResultConfig config;
+
+  const McqFinalTestResultScreen({
+    super.key,
+    required this.testResult,
+    required this.config,
+  });
+
+  factory McqFinalTestResultScreen.phase1({
+    Key? key,
+    required TestResult testResult,
+  }) {
+    return McqFinalTestResultScreen(
+      key: key,
+      testResult: testResult,
+      config: McqFinalTestResultConfig.phase1(),
+    );
+  }
+
+  factory McqFinalTestResultScreen.phase2({
+    Key? key,
+    required TestResult testResult,
+  }) {
+    return McqFinalTestResultScreen(
+      key: key,
+      testResult: testResult,
+      config: McqFinalTestResultConfig.phase2(),
+    );
+  }
+
+  factory McqFinalTestResultScreen.phase3({
+    Key? key,
+    required TestResult testResult,
+  }) {
+    return McqFinalTestResultScreen(
+      key: key,
+      testResult: testResult,
+      config: McqFinalTestResultConfig.phase3(),
+    );
+  }
+
+  @override
+  State<McqFinalTestResultScreen> createState() => _McqFinalTestResultScreenState();
+}
+
+class _McqFinalTestResultScreenState extends State<McqFinalTestResultScreen>
     with SingleTickerProviderStateMixin {
   late AnimationController _animationController;
   late Animation<double> _fadeAnimation;
   late Animation<double> _scaleAnimation;
 
+  McqFinalTestResultConfig get _config => widget.config;
+
   @override
   void initState() {
     super.initState();
-    
-    // Initialize animation controller for result screen entry
+
     _animationController = AnimationController(
       duration: const Duration(milliseconds: 400),
       vsync: this,
     );
-    
+
     _fadeAnimation = Tween<double>(begin: 0.0, end: 1.0).animate(
       CurvedAnimation(
         parent: _animationController,
         curve: Curves.easeIn,
       ),
     );
-    
+
     _scaleAnimation = Tween<double>(begin: 0.8, end: 1.0).animate(
       CurvedAnimation(
         parent: _animationController,
         curve: Curves.easeOutBack,
       ),
     );
-    
-    // Start animation
+
     _animationController.forward();
   }
 
@@ -66,8 +336,6 @@ class _Phase2FinalTestResultScreenState extends State<Phase2FinalTestResultScree
     );
   }
 
-  /// Build AppBar with back button and title
-  /// Requirement: 4.1
   PreferredSizeWidget _buildAppBar(BuildContext context) {
     return AppBar(
       leading: Semantics(
@@ -90,7 +358,6 @@ class _Phase2FinalTestResultScreenState extends State<Phase2FinalTestResultScree
     );
   }
 
-  /// Build main body content with animations
   Widget _buildBody(BuildContext context) {
     return SafeArea(
       child: SingleChildScrollView(
@@ -101,16 +368,11 @@ class _Phase2FinalTestResultScreenState extends State<Phase2FinalTestResultScree
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               const SizedBox(height: AppTheme.spacingL),
-              
-              // Score display section with scale animation
               ScaleTransition(
                 scale: _scaleAnimation,
                 child: _buildScoreSection(),
               ),
-              
               const SizedBox(height: AppTheme.spacingXL),
-              
-              // Status message with delayed fade
               TweenAnimationBuilder<double>(
                 duration: const Duration(milliseconds: 600),
                 tween: Tween<double>(begin: 0.0, end: 1.0),
@@ -123,26 +385,22 @@ class _Phase2FinalTestResultScreenState extends State<Phase2FinalTestResultScree
                 },
                 child: _buildStatusMessage(),
               ),
-              
+              if (_config.breakdownConfig != null) ...[
+                const SizedBox(height: AppTheme.spacingXL),
+                TweenAnimationBuilder<double>(
+                  duration: const Duration(milliseconds: 800),
+                  tween: Tween<double>(begin: 0.0, end: 1.0),
+                  curve: Curves.easeIn,
+                  builder: (context, value, child) {
+                    return Opacity(
+                      opacity: value,
+                      child: child,
+                    );
+                  },
+                  child: _buildUnitBreakdownSection(_config.breakdownConfig!),
+                ),
+              ],
               const SizedBox(height: AppTheme.spacingXL),
-              
-              // Unit breakdown section with delayed fade
-              TweenAnimationBuilder<double>(
-                duration: const Duration(milliseconds: 800),
-                tween: Tween<double>(begin: 0.0, end: 1.0),
-                curve: Curves.easeIn,
-                builder: (context, value, child) {
-                  return Opacity(
-                    opacity: value,
-                    child: child,
-                  );
-                },
-                child: _buildUnitBreakdownSection(),
-              ),
-              
-              const SizedBox(height: AppTheme.spacingXL),
-              
-              // Action buttons with delayed fade
               TweenAnimationBuilder<double>(
                 duration: const Duration(milliseconds: 1000),
                 tween: Tween<double>(begin: 0.0, end: 1.0),
@@ -162,15 +420,14 @@ class _Phase2FinalTestResultScreenState extends State<Phase2FinalTestResultScree
     );
   }
 
-  /// Build score display section with icon, title, score, and accuracy
-  /// Requirement: 4.1, 4.2, 4.3, 8.1, 8.2
   Widget _buildScoreSection() {
     final passed = widget.testResult.passed;
     final iconColor = passed ? AppTheme.correctColor : AppTheme.incorrectColor;
     final scoreColor = passed ? AppTheme.correctColor : AppTheme.incorrectColor;
     final statusText = passed ? 'Passed' : 'Failed';
-    
-    final semanticLabel = 'Test $statusText. You scored ${widget.testResult.correctAnswers} out of ${widget.testResult.totalQuestions}. Accuracy: ${widget.testResult.accuracy.toStringAsFixed(1)} percent';
+
+    final semanticLabel =
+        'Test $statusText. You scored ${widget.testResult.correctAnswers} out of ${widget.testResult.totalQuestions}. Accuracy: ${widget.testResult.accuracy.toStringAsFixed(1)} percent';
 
     return Semantics(
       label: semanticLabel,
@@ -184,7 +441,6 @@ class _Phase2FinalTestResultScreenState extends State<Phase2FinalTestResultScree
         ),
         child: Column(
           children: [
-            // Success/Failure Icon with pulse animation
             ExcludeSemantics(
               child: TweenAnimationBuilder<double>(
                 duration: const Duration(milliseconds: 500),
@@ -197,20 +453,17 @@ class _Phase2FinalTestResultScreenState extends State<Phase2FinalTestResultScree
                   );
                 },
                 child: Icon(
-                  passed ? Icons.check_circle : Icons.cancel,
+                  passed ? _config.successIcon : _config.failureIcon,
                   size: 80,
                   color: iconColor,
                 ),
               ),
             ),
-            
             const SizedBox(height: AppTheme.spacingL),
-            
-            // Completion Title
-            const ExcludeSemantics(
+            ExcludeSemantics(
               child: Text(
-                'Phase 2 Final Test Completed!',
-                style: TextStyle(
+                _config.completionTitle,
+                style: const TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
                   color: AppTheme.textPrimary,
@@ -218,10 +471,7 @@ class _Phase2FinalTestResultScreenState extends State<Phase2FinalTestResultScree
                 textAlign: TextAlign.center,
               ),
             ),
-            
             const SizedBox(height: AppTheme.spacingXL),
-            
-            // Score Display with count-up animation
             ExcludeSemantics(
               child: TweenAnimationBuilder<int>(
                 duration: const Duration(milliseconds: 800),
@@ -240,10 +490,7 @@ class _Phase2FinalTestResultScreenState extends State<Phase2FinalTestResultScree
                 },
               ),
             ),
-            
             const SizedBox(height: AppTheme.spacingM),
-            
-            // Accuracy Display with count-up animation
             ExcludeSemantics(
               child: TweenAnimationBuilder<double>(
                 duration: const Duration(milliseconds: 1000),
@@ -268,13 +515,11 @@ class _Phase2FinalTestResultScreenState extends State<Phase2FinalTestResultScree
     );
   }
 
-  /// Build status message based on pass/fail
-  /// Requirement: 4.10, 4.11
   Widget _buildStatusMessage() {
     final passed = widget.testResult.passed;
     final message = passed
-        ? 'You have mastered Phase 2'
-        : 'You scored ${widget.testResult.accuracy.toStringAsFixed(1)}%. Try again to pass Phase 2';
+        ? _config.passedMessage(widget.testResult)
+        : _config.failedMessage(widget.testResult);
     final messageColor = passed ? AppTheme.correctColor : AppTheme.incorrectColor;
 
     return Semantics(
@@ -283,9 +528,7 @@ class _Phase2FinalTestResultScreenState extends State<Phase2FinalTestResultScree
       child: Container(
         padding: const EdgeInsets.all(AppTheme.spacingL),
         decoration: BoxDecoration(
-          color: passed
-              ? const Color(0xFFE8F5E9) // Light green
-              : const Color(0xFFFFEBEE), // Light red
+          color: passed ? const Color(0xFFE8F5E9) : const Color(0xFFFFEBEE),
           borderRadius: BorderRadius.circular(AppTheme.radiusL),
           border: Border.all(
             color: messageColor.withValues(alpha: 0.3),
@@ -321,9 +564,7 @@ class _Phase2FinalTestResultScreenState extends State<Phase2FinalTestResultScree
     );
   }
 
-  /// Build unit breakdown section showing performance by unit
-  /// Requirement: 4.4, 4.5, 4.6, 4.7, 4.8, 4.9
-  Widget _buildUnitBreakdownSection() {
+  Widget _buildUnitBreakdownSection(McqUnitBreakdownConfig config) {
     return Container(
       padding: const EdgeInsets.all(AppTheme.spacingL),
       decoration: BoxDecoration(
@@ -334,62 +575,46 @@ class _Phase2FinalTestResultScreenState extends State<Phase2FinalTestResultScree
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // Section header
-          const Text(
-            'Summary',
-            style: TextStyle(
+          Text(
+            config.title,
+            style: const TextStyle(
               fontSize: 18,
               fontWeight: FontWeight.bold,
               color: AppTheme.textPrimary,
             ),
           ),
           const SizedBox(height: AppTheme.spacingM),
-          
-          // Unit performance items with staggered animation
-          _buildUnitPerformanceItem('unit7', 0),
-          const SizedBox(height: AppTheme.spacingS),
-          _buildUnitPerformanceItem('unit8', 100),
-          const SizedBox(height: AppTheme.spacingS),
-          _buildUnitPerformanceItem('unit9', 200),
-          const SizedBox(height: AppTheme.spacingS),
-          _buildUnitPerformanceItem('unit10', 300),
-          const SizedBox(height: AppTheme.spacingS),
-          _buildUnitPerformanceItem('unit11', 400),
+          for (final item in config.items) ...[
+            _buildUnitPerformanceItem(item, config.style),
+            const SizedBox(height: AppTheme.spacingS),
+          ],
         ],
       ),
     );
   }
 
-  /// Build individual unit performance item with color coding
-  /// Requirement: 4.4, 4.5, 4.6, 4.7, 4.8, 4.9
-  /// Accessibility: Don't rely solely on color - includes text labels and icons
-  Widget _buildUnitPerformanceItem(String unitId, int delayMs) {
-    final unitPerformance = widget.testResult.unitBreakdown[unitId];
-    
-    if (unitPerformance == null) {
+  Widget _buildUnitPerformanceItem(
+    McqUnitBreakdownItem item,
+    McqUnitBreakdownStyle style,
+  ) {
+    final unitPerformance = widget.testResult.unitBreakdown?[item.unitId];
+    if (unitPerformance == null && !item.showWhenMissing) {
       return const SizedBox.shrink();
     }
-    
-    // Determine color and performance level based on accuracy
-    Color performanceColor;
-    String performanceLevel;
-    IconData performanceIcon;
-    
-    if (unitPerformance.accuracy >= 80) {
-      performanceColor = AppTheme.correctColor; // Green for 80%+
-      performanceLevel = 'Excellent';
-      performanceIcon = Icons.check_circle;
-    } else if (unitPerformance.accuracy >= 60) {
-      performanceColor = AppTheme.warningColor; // Orange for 60-79%
-      performanceLevel = 'Good';
-      performanceIcon = Icons.info;
-    } else {
-      performanceColor = AppTheme.incorrectColor; // Red for <60%
-      performanceLevel = 'Needs Improvement';
-      performanceIcon = Icons.warning;
+
+    final correctAnswers = unitPerformance?.correctAnswers ?? 0;
+    final totalQuestions = unitPerformance?.totalQuestions ?? item.expectedTotal ?? 0;
+    if (totalQuestions == 0) {
+      return const SizedBox.shrink();
     }
-    
-    final semanticLabel = '${unitPerformance.unitName}: ${unitPerformance.correctAnswers} out of ${unitPerformance.totalQuestions} correct. ${unitPerformance.accuracy.toStringAsFixed(0)} percent. Performance: $performanceLevel';
+
+    final accuracy = (correctAnswers / totalQuestions) * 100;
+    final performance = style.resolve(accuracy);
+    final displayName =
+        item.displayName ?? unitPerformance?.unitName ?? item.unitId;
+
+    final semanticLabel =
+        '$displayName: $correctAnswers out of $totalQuestions correct. ${accuracy.toStringAsFixed(0)} percent. Performance: ${performance.level}';
 
     return TweenAnimationBuilder<double>(
       duration: const Duration(milliseconds: 400),
@@ -413,30 +638,27 @@ class _Phase2FinalTestResultScreenState extends State<Phase2FinalTestResultScree
             vertical: AppTheme.spacingS,
           ),
           decoration: BoxDecoration(
-            color: performanceColor.withValues(alpha: 0.1),
+            color: performance.color.withValues(alpha: 0.1),
             borderRadius: BorderRadius.circular(AppTheme.radiusM),
             border: Border.all(
-              color: performanceColor.withValues(alpha: 0.3),
-              width: 1,
+              color: performance.color.withValues(alpha: style.borderOpacity),
+              width: style.borderWidth,
             ),
           ),
           child: Row(
             children: [
-              // Performance icon (not relying solely on color)
               ExcludeSemantics(
                 child: Icon(
-                  performanceIcon,
+                  performance.icon,
                   size: 20,
-                  color: performanceColor,
+                  color: performance.color,
                 ),
               ),
               const SizedBox(width: AppTheme.spacingM),
-              
-              // Unit name and score
               Expanded(
                 child: ExcludeSemantics(
                   child: Text(
-                    '${unitPerformance.unitName}: ${unitPerformance.correctAnswers} / ${unitPerformance.totalQuestions}',
+                    '$displayName: $correctAnswers / $totalQuestions',
                     style: const TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.w500,
@@ -445,27 +667,25 @@ class _Phase2FinalTestResultScreenState extends State<Phase2FinalTestResultScree
                   ),
                 ),
               ),
-              
-              // Accuracy percentage with performance level
               ExcludeSemantics(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.end,
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Text(
-                      '${unitPerformance.accuracy.toStringAsFixed(0)}%',
+                      '${accuracy.toStringAsFixed(0)}%',
                       style: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
-                        color: performanceColor,
+                        color: performance.textColor,
                       ),
                     ),
                     Text(
-                      performanceLevel,
+                      performance.level,
                       style: TextStyle(
                         fontSize: 11,
-                        fontWeight: FontWeight.w500,
-                        color: performanceColor,
+                        fontWeight: FontWeight.w600,
+                        color: performance.textColor,
                       ),
                     ),
                   ],
@@ -478,8 +698,6 @@ class _Phase2FinalTestResultScreenState extends State<Phase2FinalTestResultScree
     );
   }
 
-  /// Build action buttons section
-  /// Requirement: 4.12, 4.13, 4.14
   Widget _buildActionButtons(BuildContext context) {
     final passed = widget.testResult.passed;
     final hasMistakes = widget.testResult.incorrectQuestionDetails.isNotEmpty;
@@ -487,18 +705,13 @@ class _Phase2FinalTestResultScreenState extends State<Phase2FinalTestResultScree
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        // Review Mistakes button (visible if mistakes exist)
         if (hasMistakes) ...[
           _buildReviewMistakesButton(context),
           const SizedBox(height: AppTheme.spacingM),
         ],
-        
-        // Continue button (only if passed)
         if (passed) ...[
           _buildContinueButton(context),
         ],
-        
-        // Retry Test button (only if failed)
         if (!passed) ...[
           _buildRetryTestButton(context),
         ],
@@ -506,11 +719,9 @@ class _Phase2FinalTestResultScreenState extends State<Phase2FinalTestResultScree
     );
   }
 
-  /// Build Review Mistakes button
-  /// Requirement: 4.12
   Widget _buildReviewMistakesButton(BuildContext context) {
     final mistakeCount = widget.testResult.incorrectQuestionDetails.length;
-    
+
     return Semantics(
       button: true,
       label: 'Review $mistakeCount mistake${mistakeCount == 1 ? '' : 's'}',
@@ -541,13 +752,11 @@ class _Phase2FinalTestResultScreenState extends State<Phase2FinalTestResultScree
     );
   }
 
-  /// Build Continue button (for passed test)
-  /// Requirement: 4.13
   Widget _buildContinueButton(BuildContext context) {
     return Semantics(
       button: true,
-      label: 'Continue',
-      hint: 'Return to home screen',
+      label: _config.continueSemanticLabel,
+      hint: _config.continueHint,
       child: ElevatedButton.icon(
         onPressed: () => _navigateToHome(context),
         style: ElevatedButton.styleFrom(
@@ -559,10 +768,10 @@ class _Phase2FinalTestResultScreenState extends State<Phase2FinalTestResultScree
           ),
           elevation: 2,
         ),
-        icon: const Icon(Icons.check),
-        label: const Text(
-          'Continue',
-          style: TextStyle(
+        icon: Icon(_config.continueIcon),
+        label: Text(
+          _config.continueLabel,
+          style: const TextStyle(
             fontSize: 16,
             fontWeight: FontWeight.w600,
           ),
@@ -571,8 +780,6 @@ class _Phase2FinalTestResultScreenState extends State<Phase2FinalTestResultScree
     );
   }
 
-  /// Build Retry Test button (for failed test)
-  /// Requirement: 4.14
   Widget _buildRetryTestButton(BuildContext context) {
     return Semantics(
       button: true,
@@ -601,39 +808,21 @@ class _Phase2FinalTestResultScreenState extends State<Phase2FinalTestResultScree
     );
   }
 
-  /// Navigate to review screen
-  /// Requirement: 4.12
-  /// Handles navigation errors gracefully
   void _navigateToReviewScreen(BuildContext context) {
     try {
       if (!context.mounted) {
-        print('Context not mounted, cannot navigate to review screen');
         return;
       }
 
-      Navigator.of(context).push(
-        MaterialPageRoute(
-          builder: (context) => Phase2FinalTestReviewScreen(
-            incorrectAnswers: widget.testResult.incorrectQuestionDetails,
-          ),
-        ),
-      ).catchError((error) {
-        print('Navigation error to review screen: $error');
-        if (context.mounted) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(
-              content: Text('Unable to open review screen. Please try again.'),
-              backgroundColor: Colors.red,
-            ),
-          );
-        }
-      });
+      Navigator.of(context).pushNamed(
+        _config.reviewRouteName,
+        arguments: widget.testResult.incorrectQuestionDetails,
+      );
     } catch (e) {
-      print('Error navigating to review screen: $e');
       if (context.mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(
-            content: Text('Navigation error occurred. Please try again.'),
+            content: Text('Unable to open review screen. Please try again.'),
             backgroundColor: Colors.red,
           ),
         );
@@ -641,38 +830,25 @@ class _Phase2FinalTestResultScreenState extends State<Phase2FinalTestResultScree
     }
   }
 
-  /// Navigate to home screen
-  /// Requirement: 4.13
-  /// Handles navigation errors gracefully
   void _navigateToHome(BuildContext context) {
     try {
       if (!context.mounted) {
-        print('Context not mounted, cannot navigate to home');
         return;
       }
 
-      // Pop all routes and return to home
       Navigator.of(context).popUntil((route) => route.isFirst);
-      
+
       if (context.mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(
-            content: Text('Phase 3 is now unlocked!'),
+          SnackBar(
+            content: Text(_config.continueSnackMessage),
             backgroundColor: AppTheme.correctColor,
-            duration: Duration(seconds: 3),
+            duration: const Duration(seconds: 3),
           ),
         );
       }
     } catch (e) {
-      print('Error navigating to home: $e');
       if (context.mounted) {
-        // Try alternative navigation
-        try {
-          Navigator.of(context).pop();
-        } catch (popError) {
-          print('Error popping route: $popError');
-        }
-        
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(
             content: Text('Navigation error. Please use back button.'),
@@ -683,19 +859,14 @@ class _Phase2FinalTestResultScreenState extends State<Phase2FinalTestResultScree
     }
   }
 
-  /// Retry test
-  /// Requirement: 4.14
-  /// Handles navigation errors gracefully
   void _retryTest(BuildContext context) {
     try {
       if (!context.mounted) {
-        print('Context not mounted, cannot retry test');
         return;
       }
 
-      // Pop back to test screen to retry
       Navigator.of(context).pop();
-      
+
       if (context.mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(
@@ -706,7 +877,6 @@ class _Phase2FinalTestResultScreenState extends State<Phase2FinalTestResultScree
         );
       }
     } catch (e) {
-      print('Error retrying test: $e');
       if (context.mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(
@@ -717,4 +887,18 @@ class _Phase2FinalTestResultScreenState extends State<Phase2FinalTestResultScree
       }
     }
   }
+}
+
+class _PerformanceStyle {
+  final Color color;
+  final Color textColor;
+  final String level;
+  final IconData icon;
+
+  const _PerformanceStyle({
+    required this.color,
+    required this.textColor,
+    required this.level,
+    required this.icon,
+  });
 }

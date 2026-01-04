@@ -17,6 +17,7 @@ class PhaseConfig {
   final String assetPath;
   final int passingScore;
   final int totalQuestions;
+  final int minRequiredQuestions;
   final int maxScore;
   final Map<String, int> questionDistribution;
   final Map<String, String> unitNames;
@@ -31,6 +32,7 @@ class PhaseConfig {
     required this.assetPath,
     required this.passingScore,
     required this.totalQuestions,
+    required this.minRequiredQuestions,
     required this.maxScore,
     required this.questionDistribution,
     required this.unitNames,
@@ -85,6 +87,7 @@ class PhaseConfig {
     assetPath: 'assets/lessons/phase1/',
     passingScore: 16,
     totalQuestions: 20,
+    minRequiredQuestions: 15,
     maxScore: 20,
     questionDistribution: {
       'phase1_lesson1': 4, // Pronouns
@@ -122,6 +125,7 @@ class PhaseConfig {
     assetPath: 'assets/lessons/phase2/',
     passingScore: 20,
     totalQuestions: 25,
+    minRequiredQuestions: 20,
     maxScore: 25,
     questionDistribution: {
       'unit7': 5,  // Time & Place Prepositions
@@ -184,6 +188,7 @@ class PhaseConfig {
     assetPath: 'assets/lessons/phase3/',
     passingScore: 24,
     totalQuestions: 30,
+    minRequiredQuestions: 24,
     maxScore: 30,
     questionDistribution: {
       'unit12': 6, // Story Listening & Retelling
@@ -255,6 +260,7 @@ class PhaseConfig {
     assetPath: 'assets/lessons/phase4/',
     passingScore: 18,
     totalQuestions: 20,
+    minRequiredQuestions: 20,
     maxScore: 24, // 16 MCQ + 12 speaking (4 tasks × 3 points)
     questionDistribution: {
       'pronunciation': 6,
@@ -308,6 +314,7 @@ class PhaseConfig {
     assetPath: 'assets/lessons/phase5/',
     passingScore: 45,
     totalQuestions: 35,
+    minRequiredQuestions: 35,
     maxScore: 60, // 27 MCQ + 32 speaking (8 tasks × 4 points)
     questionDistribution: {
       'businessEnglish': 8,

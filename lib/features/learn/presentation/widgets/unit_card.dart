@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import '../../domain/entities/unit.dart';
 
-/// Reusable widget for displaying unit information (Phase 2 or Phase 3)
+/// Reusable widget for displaying unit information
 /// Shows unit number, title, description, and mastery progress
 class UnitCard extends StatelessWidget {
-  final dynamic unit; // Accepts Phase2Unit or Phase3Unit
+  final Unit unit;
   final VoidCallback onTap;
 
   const UnitCard({

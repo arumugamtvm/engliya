@@ -24,10 +24,61 @@
       "en": "They didn't go to school.",
       "ta": "அவர்கள் பள்ளிக்கு செல்லவில்லை.",
       "audioId": "phase2_l10_4_ex3"
+    },
+    {
+      "en": "He wasn't at home.",
+      "ta": "அவர் வீட்டில் இல்லை.",
+      "audioId": "phase2_l10_4_ex4"
+    },
+    {
+      "en": "We weren't ready.",
+      "ta": "நாம் தயாராக இல்லை.",
+      "audioId": "phase2_l10_4_ex5"
     }
   ],
-  "listeningQuestions": [],
-  "speakSentences": [],
+  "listeningQuestions": [
+    {
+      "audioText": "I don't have money.",
+      "options": [
+        "I don't have money.",
+        "I doesn't have money.",
+        "I didn't have money."
+      ],
+      "correctIndex": 0
+    },
+    {
+      "audioText": "She doesn't like fish.",
+      "options": [
+        "She doesn't like fish.",
+        "She don't like fish.",
+        "She didn't like fish."
+      ],
+      "correctIndex": 0
+    },
+    {
+      "audioText": "They weren't at the meeting.",
+      "options": [
+        "They weren't at the meeting.",
+        "They wasn't at the meeting.",
+        "They aren't at the meeting."
+      ],
+      "correctIndex": 0
+    }
+  ],
+  "speakSentences": [
+    {
+      "en": "I don't know the answer.",
+      "ta": "எனக்கு பதில் தெரியவில்லை."
+    },
+    {
+      "en": "He didn't call me.",
+      "ta": "அவர் என்னை அழைக்கவில்லை."
+    },
+    {
+      "en": "We aren't late.",
+      "ta": "நாம் தாமதமாக இல்லை."
+    }
+  ],
   "practiceQuestions": [
     {
       "type": "mcq",
@@ -41,6 +92,27 @@
       "promptEn": "He ___ come yesterday.",
       "promptTa": "அவர் நேற்று வரவில்லை.",
       "options": ["don't", "doesn't", "didn't", "wasn't"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "She ___ like milk.",
+      "promptTa": "அவளுக்கு பால் பிடிக்காது.",
+      "options": ["don't", "doesn't", "didn't", "isn't"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "They ___ at home yesterday.",
+      "promptTa": "அவர்கள் நேற்று வீட்டில் இல்லை.",
+      "options": ["don't", "doesn't", "didn't", "weren't"],
+      "correctIndex": 3
+    },
+    {
+      "type": "mcq",
+      "promptEn": "He ___ here now.",
+      "promptTa": "அவர் இப்போது இங்கே இல்லை.",
+      "options": ["don't", "doesn't", "isn't", "didn't"],
       "correctIndex": 2
     }
   ],
@@ -58,6 +130,27 @@
       "promptTa": "அவர்கள் நேற்று இரவு வீட்டில் இல்லை.",
       "options": ["don't", "doesn't", "didn't", "weren't"],
       "correctIndex": 3
+    },
+    {
+      "type": "mcq",
+      "promptEn": "I ___ watch TV yesterday.",
+      "promptTa": "நான் நேற்று டிவி பார்க்கவில்லை.",
+      "options": ["don't", "doesn't", "didn't", "isn't"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "He ___ a doctor.",
+      "promptTa": "அவர் மருத்துவர் இல்லை.",
+      "options": ["don't", "doesn't", "isn't", "didn't"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "We ___ ready at 7 pm.",
+      "promptTa": "நாம் மாலை 7 மணிக்கு தயாராக இல்லை.",
+      "options": ["don't", "doesn't", "weren't", "isn't"],
+      "correctIndex": 2
     }
   ]
 }

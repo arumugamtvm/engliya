@@ -24,10 +24,61 @@
       "en": "Did they go to school?",
       "ta": "அவர்கள் பள்ளிக்கு சென்றார்களா?",
       "audioId": "phase2_l10_2_ex3"
+    },
+    {
+      "en": "Do we need tickets?",
+      "ta": "நமக்கு டிக்கெட் தேவைப்படுமா?",
+      "audioId": "phase2_l10_2_ex4"
+    },
+    {
+      "en": "Did he call you?",
+      "ta": "அவர் உங்களை அழைத்தாரா?",
+      "audioId": "phase2_l10_2_ex5"
     }
   ],
-  "listeningQuestions": [],
-  "speakSentences": [],
+  "listeningQuestions": [
+    {
+      "audioText": "Do you play football?",
+      "options": [
+        "Do you play football?",
+        "Does you play football?",
+        "Did you play football?"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "audioText": "Does he speak Tamil?",
+      "options": [
+        "Does he speak Tamil?",
+        "Do he speak Tamil?",
+        "Did he speak Tamil?"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "audioText": "Did she finish her work?",
+      "options": [
+        "Did she finish her work?",
+        "Does she finished her work?",
+        "Do she finish her work?"
+      ],
+      "correctIndex": 0
+    }
+  ],
+  "speakSentences": [
+    {
+      "en": "Do they live here?",
+      "ta": "அவர்கள் இங்கே வசிக்கிறார்களா?"
+    },
+    {
+      "en": "Does it rain in June?",
+      "ta": "ஜூனில் மழை பெய்யுமா?"
+    },
+    {
+      "en": "Did you watch the movie?",
+      "ta": "நீங்கள் அந்த படத்தை பார்த்தீர்களா?"
+    }
+  ],
   "practiceQuestions": [
     {
       "type": "mcq",
@@ -41,6 +92,27 @@
       "promptEn": "___ he play cricket yesterday?",
       "promptTa": "அவர் நேற்று கிரிக்கெட் விளையாடினாரா?",
       "options": ["Do", "Does", "Did", "Was"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "___ she like tea?",
+      "promptTa": "அவளுக்கு தேநீர் பிடிக்குமா?",
+      "options": ["Do", "Does", "Did", "Is"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "___ they go by bus today?",
+      "promptTa": "அவர்கள் இன்று பஸில் செல்கிறார்களா?",
+      "options": ["Do", "Does", "Did", "Are"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "___ we meet last week?",
+      "promptTa": "நாம் கடந்த வாரம் சந்தித்தோமா?",
+      "options": ["Do", "Does", "Did", "Are"],
       "correctIndex": 2
     }
   ],
@@ -58,6 +130,27 @@
       "promptTa": "அவர்கள் தங்கள் வீட்டுப்பாடத்தை முடித்தார்களா?",
       "options": ["Do", "Does", "Did", "Are"],
       "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "___ your brother work here?",
+      "promptTa": "உங்கள் சகோதரன் இங்கே வேலை செய்கிறாரா?",
+      "options": ["Do", "Does", "Did", "Is"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "___ you call me yesterday?",
+      "promptTa": "நீங்கள் நேற்று என்னை அழைத்தீர்களா?",
+      "options": ["Do", "Does", "Did", "Are"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "___ we need to hurry?",
+      "promptTa": "நாம் அவசரப்பட வேண்டுமா?",
+      "options": ["Do", "Does", "Did", "Are"],
+      "correctIndex": 0
     }
   ]
 }

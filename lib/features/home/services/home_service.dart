@@ -1,6 +1,7 @@
 import '../../learn/data/repositories/lesson_repository.dart';
 import '../../learn/data/repositories/progress_repository.dart';
 import '../../learn/data/models/user_lesson_status.dart';
+import '../../learn/domain/entities/phase_units.dart';
 import '../../learn/services/gating_service.dart';
 import '../../../services/local_storage/storage_service.dart';
 import '../../../core/constants/app_config.dart';
@@ -35,8 +36,8 @@ class HomeService {
       totalLessons += phase1Lessons.length;
       
       // Load Phase 2 lessons (Units 7-11)
-      final phase2Units = ['phase2_unit7', 'phase2_unit8', 'phase2_unit9', 'phase2_unit10', 'phase2_unit11'];
-      for (final unitId in phase2Units) {
+      for (final unit in PhaseUnits.phase2) {
+        final unitId = unit.id;
         try {
           final unitLessons = await _lessonRepo.loadUnitLessons(unitId);
           totalLessons += unitLessons.length;
@@ -47,8 +48,8 @@ class HomeService {
       }
       
       // Load Phase 3 lessons (Units 12-17)
-      final phase3Units = ['phase3_unit12', 'phase3_unit13', 'phase3_unit14', 'phase3_unit15', 'phase3_unit16', 'phase3_unit17'];
-      for (final unitId in phase3Units) {
+      for (final unit in PhaseUnits.phase3) {
+        final unitId = unit.id;
         try {
           final unitLessons = await _lessonRepo.loadUnitLessons(unitId);
           totalLessons += unitLessons.length;

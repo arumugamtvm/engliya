@@ -1,62 +1,309 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../providers/phase4_final_test_provider.dart';
+
 import '../../data/models/phase4_final_test_question.dart';
 import '../../data/models/phase4_test_result.dart';
+import '../../data/models/phase5_final_test_question.dart';
+import '../../data/models/phase5_test_result.dart';
+import '../providers/final_test_provider.dart';
+import '../providers/hybrid_final_test_provider.dart';
 import '../../../../app/theme.dart';
+import '../../../../core/constants/app_config.dart';
 import '../../../../core/utils/animations.dart';
 import '../../../../core/utils/error_handler.dart';
-import '../../../../core/constants/app_config.dart';
 
-/// Phase 4 Final Test Screen
-/// Displays a 20-question hybrid test covering all Phase 4 units (Units 18-21)
-/// 
-/// Test composition:
-/// - 6 Pronunciation MCQs (1 point each)
-/// - 6 Dialogue Response MCQs (1 point each)
-/// - 4 Listening MCQs (1 point each)
-/// - 4 Speaking Tasks (0-3 points each)
-/// 
-/// Requirements: 1.2, 12.1, 12.2, 12.3, 12.4
-/// Accessibility: Semantic labels, screen reader announcements, focus management
-class Phase4FinalTestScreen extends StatefulWidget {
-  const Phase4FinalTestScreen({super.key});
+class SpeakingResultViewData {
+  final int score;
+  final int maxScore;
+  final String feedback;
+  final String? recognizedText;
+  final int wordCount;
 
-  @override
-  State<Phase4FinalTestScreen> createState() => _Phase4FinalTestScreenState();
+  const SpeakingResultViewData({
+    required this.score,
+    required this.maxScore,
+    required this.feedback,
+    required this.recognizedText,
+    required this.wordCount,
+  });
 }
 
-class _Phase4FinalTestScreenState extends State<Phase4FinalTestScreen>
+class FinalTestScreenConfig<TQuestion, TSpeakingResult, TResult> {
+  final String title;
+  final String subtitle;
+  final String semanticsLabel;
+  final String lockedDescription;
+  final String lockedSemanticsLabel;
+  final String resultRoute;
+  final int maxRecordingSeconds;
+  final bool autoStopRecording;
+  final bool submitOnSkipLast;
+  final String speakingInstruction;
+  final bool showRecognizedText;
+  final String Function(TQuestion question) questionId;
+  final String Function(TQuestion question) prompt;
+  final List<String>? Function(TQuestion question) options;
+  final String? Function(TQuestion question) audioText;
+  final String Function(TQuestion question) questionTypeLabel;
+  final Color Function(TQuestion question) questionTypeColor;
+  final String Function(int seconds) mockSpeechText;
+  final TSpeakingResult Function({
+    required String taskId,
+    required String prompt,
+    String? recognizedText,
+  }) createSpeakingResult;
+  final SpeakingResultViewData Function(TSpeakingResult result) speakingResultViewData;
+
+  const FinalTestScreenConfig({
+    required this.title,
+    required this.subtitle,
+    required this.semanticsLabel,
+    required this.lockedDescription,
+    required this.lockedSemanticsLabel,
+    required this.resultRoute,
+    required this.maxRecordingSeconds,
+    required this.autoStopRecording,
+    required this.submitOnSkipLast,
+    required this.speakingInstruction,
+    required this.showRecognizedText,
+    required this.questionId,
+    required this.prompt,
+    required this.options,
+    required this.audioText,
+    required this.questionTypeLabel,
+    required this.questionTypeColor,
+    required this.mockSpeechText,
+    required this.createSpeakingResult,
+    required this.speakingResultViewData,
+  });
+
+  static FinalTestScreenConfig<Phase4FinalTestQuestion, SpeakingResult, Phase4TestResult>
+      phase4() {
+    return FinalTestScreenConfig(
+      title: 'Phase 4 - Final Test',
+      subtitle: 'Fluency & Pronunciation Check',
+      semanticsLabel: 'Phase 4 Final Test, Fluency and Pronunciation Check',
+      lockedDescription:
+          'Please master all Phase 4 lessons before taking the Final Test',
+      lockedSemanticsLabel:
+          'Test locked. Please master all Phase 4 lessons before taking the final test.',
+      resultRoute: '/phase4/finalTest/result',
+      maxRecordingSeconds: 30,
+      autoStopRecording: true,
+      submitOnSkipLast: true,
+      speakingInstruction:
+          'Speak for 20-30 seconds. Try to use 20+ words for full points.',
+      showRecognizedText: true,
+      questionId: (question) => question.id,
+      prompt: (question) => question.prompt,
+      options: (question) => question.options,
+      audioText: (question) => question.audioText,
+      questionTypeLabel: (question) {
+        switch (question.type) {
+          case Phase4QuestionType.pronunciation:
+            return 'Pronunciation';
+          case Phase4QuestionType.dialogue:
+            return 'Dialogue Response';
+          case Phase4QuestionType.listening:
+            return 'Listening';
+          case Phase4QuestionType.speaking:
+            return 'Speaking Task';
+        }
+      },
+      questionTypeColor: (question) {
+        switch (question.type) {
+          case Phase4QuestionType.pronunciation:
+            return Colors.purple;
+          case Phase4QuestionType.dialogue:
+            return Colors.teal;
+          case Phase4QuestionType.listening:
+            return Colors.orange;
+          case Phase4QuestionType.speaking:
+            return Colors.blue;
+        }
+      },
+      mockSpeechText: _buildPhase4MockSpeechText,
+      createSpeakingResult: ({
+        required String taskId,
+        required String prompt,
+        String? recognizedText,
+      }) {
+        return SpeakingResult.fromRecognition(
+          taskId: taskId,
+          prompt: prompt,
+          recognizedText: recognizedText,
+        );
+      },
+      speakingResultViewData: (result) {
+        return SpeakingResultViewData(
+          score: result.score,
+          maxScore: 3,
+          feedback: result.feedback,
+          recognizedText: result.recognizedText,
+          wordCount: result.wordCount,
+        );
+      },
+    );
+  }
+
+  static FinalTestScreenConfig<Phase5FinalTestQuestion, Phase5SpeakingResult, Phase5TestResult>
+      phase5() {
+    return FinalTestScreenConfig(
+      title: 'Phase 5 - Final Test',
+      subtitle: 'Professional English Mastery',
+      semanticsLabel: 'Phase 5 Final Test, Professional English Mastery',
+      lockedDescription:
+          'Please master all Phase 5 lessons before taking the Final Test',
+      lockedSemanticsLabel:
+          'Test locked. Please master all Phase 5 lessons before taking the final test.',
+      resultRoute: '/phase5/finalTest/result',
+      maxRecordingSeconds: 60,
+      autoStopRecording: false,
+      submitOnSkipLast: false,
+      speakingInstruction:
+          'Speak for 30-60 seconds. Aim for 40+ words for full points.',
+      showRecognizedText: false,
+      questionId: (question) => question.id,
+      prompt: (question) => question.prompt,
+      options: (question) => question.options,
+      audioText: (_) => null,
+      questionTypeLabel: (question) {
+        switch (question.type) {
+          case Phase5QuestionType.businessEnglish:
+            return 'Business English';
+          case Phase5QuestionType.interview:
+            return 'Interview';
+          case Phase5QuestionType.presentation:
+            return 'Presentation';
+          case Phase5QuestionType.writing:
+            return 'Writing';
+          case Phase5QuestionType.speaking:
+            return 'Speaking';
+        }
+      },
+      questionTypeColor: (question) {
+        switch (question.type) {
+          case Phase5QuestionType.businessEnglish:
+            return Colors.blue;
+          case Phase5QuestionType.interview:
+            return Colors.green;
+          case Phase5QuestionType.presentation:
+            return Colors.orange;
+          case Phase5QuestionType.writing:
+            return Colors.purple;
+          case Phase5QuestionType.speaking:
+            return Colors.red;
+        }
+      },
+      mockSpeechText: _buildPhase5MockSpeechText,
+      createSpeakingResult: ({
+        required String taskId,
+        required String prompt,
+        String? recognizedText,
+      }) {
+        return Phase5SpeakingResult.fromRecognition(
+          taskId: taskId,
+          prompt: prompt,
+          recognizedText: recognizedText,
+        );
+      },
+      speakingResultViewData: (result) {
+        return SpeakingResultViewData(
+          score: result.score,
+          maxScore: 4,
+          feedback: result.feedback,
+          recognizedText: result.recognizedText,
+          wordCount: result.wordCount,
+        );
+      },
+    );
+  }
+}
+
+class FinalTestScreen<
+        TProvider extends HybridFinalTestProvider<TQuestion, TSpeakingResult, TResult>,
+        TQuestion,
+        TSpeakingResult,
+        TResult>
+    extends StatefulWidget {
+  final FinalTestScreenConfig<TQuestion, TSpeakingResult, TResult> config;
+
+  const FinalTestScreen({
+    required this.config,
+    super.key,
+  });
+
+  static FinalTestScreen<
+          FinalTestProvider<Phase4FinalTestQuestion, SpeakingResult, Phase4TestResult>,
+          Phase4FinalTestQuestion,
+          SpeakingResult,
+          Phase4TestResult>
+      phase4({Key? key}) {
+    return FinalTestScreen<
+        FinalTestProvider<Phase4FinalTestQuestion, SpeakingResult, Phase4TestResult>,
+        Phase4FinalTestQuestion,
+        SpeakingResult,
+        Phase4TestResult>(
+      key: key,
+      config: FinalTestScreenConfig.phase4(),
+    );
+  }
+
+  static FinalTestScreen<
+          FinalTestProvider<Phase5FinalTestQuestion, Phase5SpeakingResult, Phase5TestResult>,
+          Phase5FinalTestQuestion,
+          Phase5SpeakingResult,
+          Phase5TestResult>
+      phase5({Key? key}) {
+    return FinalTestScreen<
+        FinalTestProvider<Phase5FinalTestQuestion, Phase5SpeakingResult, Phase5TestResult>,
+        Phase5FinalTestQuestion,
+        Phase5SpeakingResult,
+        Phase5TestResult>(
+      key: key,
+      config: FinalTestScreenConfig.phase5(),
+    );
+  }
+
+  @override
+  State<FinalTestScreen<TProvider, TQuestion, TSpeakingResult, TResult>>
+      createState() => _FinalTestScreenState<TProvider, TQuestion, TSpeakingResult, TResult>();
+}
+
+class _FinalTestScreenState<
+        TProvider extends HybridFinalTestProvider<TQuestion, TSpeakingResult, TResult>,
+        TQuestion,
+        TSpeakingResult,
+        TResult>
+    extends State<FinalTestScreen<TProvider, TQuestion, TSpeakingResult, TResult>>
     with SingleTickerProviderStateMixin {
   late AnimationController _questionAnimationController;
   late Animation<double> _fadeAnimation;
   late Animation<Offset> _slideAnimation;
   int _previousQuestionIndex = -1;
-  
-  // Focus node for keyboard navigation
+
   final FocusNode _questionFocusNode = FocusNode();
-  
-  // Speaking task state
   bool _isRecording = false;
   int _recordingSeconds = 0;
+
+  FinalTestScreenConfig<TQuestion, TSpeakingResult, TResult> get _config => widget.config;
 
   @override
   void initState() {
     super.initState();
-    
-    // Initialize animation controller for question transitions (300ms)
+
     _questionAnimationController = AnimationController(
       duration: AppAnimations.medium,
       vsync: this,
     );
-    
+
     _fadeAnimation = Tween<double>(begin: 0.0, end: 1.0).animate(
       CurvedAnimation(
         parent: _questionAnimationController,
         curve: Curves.easeInOut,
       ),
     );
-    
+
     _slideAnimation = Tween<Offset>(
       begin: const Offset(0.1, 0.0),
       end: Offset.zero,
@@ -66,9 +313,9 @@ class _Phase4FinalTestScreenState extends State<Phase4FinalTestScreen>
         curve: Curves.easeOutCubic,
       ),
     );
-    
+
     _questionAnimationController.forward();
-    
+
     WidgetsBinding.instance.addPostFrameCallback((_) {
       _initializeTest();
     });
@@ -82,14 +329,13 @@ class _Phase4FinalTestScreenState extends State<Phase4FinalTestScreen>
   }
 
   Future<void> _initializeTest() async {
-    final provider = context.read<Phase4FinalTestProvider>();
-    
+    final provider = context.read<TProvider>();
     final canTake = AppConfig.isDevelopmentMode || await provider.canTakeTest();
-    
+
     if (!canTake) {
       return;
     }
-    
+
     try {
       await provider.startTest();
       _questionAnimationController.forward();
@@ -100,7 +346,7 @@ class _Phase4FinalTestScreenState extends State<Phase4FinalTestScreen>
 
   Future<void> _retryInitializeTest() async {
     try {
-      await context.read<Phase4FinalTestProvider>().retryStartTest();
+      await context.read<TProvider>().retryStartTest();
       _questionAnimationController.forward();
     } catch (e) {
       print('Test retry failed: $e');
@@ -111,7 +357,7 @@ class _Phase4FinalTestScreenState extends State<Phase4FinalTestScreen>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: _buildAppBar(context),
-      body: Consumer<Phase4FinalTestProvider>(
+      body: Consumer<TProvider>(
         builder: (context, provider, child) {
           if (provider.isLoading) {
             return const Center(
@@ -127,7 +373,7 @@ class _Phase4FinalTestScreenState extends State<Phase4FinalTestScreen>
                   child: CircularProgressIndicator(),
                 );
               }
-              
+
               final canTake = AppConfig.isDevelopmentMode || (snapshot.data ?? false);
               if (!canTake) {
                 return _buildLockedState(context);
@@ -151,8 +397,6 @@ class _Phase4FinalTestScreenState extends State<Phase4FinalTestScreen>
     );
   }
 
-  /// Build AppBar with title and subtitle
-  /// Requirement: 12.1
   PreferredSizeWidget _buildAppBar(BuildContext context) {
     return AppBar(
       leading: IconButton(
@@ -161,20 +405,20 @@ class _Phase4FinalTestScreenState extends State<Phase4FinalTestScreen>
         tooltip: 'Back',
       ),
       title: Semantics(
-        label: 'Phase 4 Final Test, Fluency and Pronunciation Check',
+        label: _config.semanticsLabel,
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            const Text(
-              'Phase 4 – Final Test',
-              style: TextStyle(
+            Text(
+              _config.title,
+              style: const TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
               ),
             ),
             const SizedBox(height: 2),
             Text(
-              'Fluency & Pronunciation Check',
+              _config.subtitle,
               style: TextStyle(
                 fontSize: 14,
                 fontWeight: FontWeight.normal,
@@ -188,11 +432,9 @@ class _Phase4FinalTestScreenState extends State<Phase4FinalTestScreen>
     );
   }
 
-  /// Build locked state UI when lessons not mastered
-  /// Requirement: 1.2
   Widget _buildLockedState(BuildContext context) {
     return Semantics(
-      label: 'Test locked. Please master all Phase 4 lessons before taking the final test.',
+      label: _config.lockedSemanticsLabel,
       child: Center(
         child: Padding(
           padding: const EdgeInsets.all(AppTheme.spacingL),
@@ -215,8 +457,8 @@ class _Phase4FinalTestScreenState extends State<Phase4FinalTestScreen>
                 textAlign: TextAlign.center,
               ),
               const SizedBox(height: AppTheme.spacingM),
-              const Text(
-                'Please master all Phase 4 lessons before taking the Final Test',
+              Text(
+                _config.lockedDescription,
                 textAlign: TextAlign.center,
                 style: AppTheme.bodyText1,
               ),
@@ -237,8 +479,7 @@ class _Phase4FinalTestScreenState extends State<Phase4FinalTestScreen>
     );
   }
 
-  /// Build error state UI with retry mechanism
-  Widget _buildErrorState(BuildContext context, Phase4FinalTestProvider provider) {
+  Widget _buildErrorState(BuildContext context, TProvider provider) {
     return Semantics(
       label: 'Error loading test. ${provider.error}. Please check your connection and try again.',
       child: Center(
@@ -254,7 +495,7 @@ class _Phase4FinalTestScreenState extends State<Phase4FinalTestScreen>
               ),
               const SizedBox(height: AppTheme.spacingM),
               Text(
-                provider.error!,
+                provider.error ?? 'An error occurred',
                 textAlign: TextAlign.center,
                 style: AppTheme.bodyText1,
               ),
@@ -275,7 +516,7 @@ class _Phase4FinalTestScreenState extends State<Phase4FinalTestScreen>
                     button: true,
                     label: 'Retry loading test',
                     child: ElevatedButton.icon(
-                      onPressed: () => _retryInitializeTest(),
+                      onPressed: _retryInitializeTest,
                       icon: const Icon(Icons.refresh),
                       label: const Text('Retry'),
                       style: ElevatedButton.styleFrom(
@@ -303,9 +544,7 @@ class _Phase4FinalTestScreenState extends State<Phase4FinalTestScreen>
     );
   }
 
-  /// Build main test content
-  /// Requirement: 12.1
-  Widget _buildTestContent(BuildContext context, Phase4FinalTestProvider provider) {
+  Widget _buildTestContent(BuildContext context, TProvider provider) {
     return FocusTraversalGroup(
       policy: OrderedTraversalPolicy(),
       child: Column(
@@ -333,9 +572,7 @@ class _Phase4FinalTestScreenState extends State<Phase4FinalTestScreen>
     );
   }
 
-  /// Build progress section with counter and progress bar
-  /// Requirement: 12.1
-  Widget _buildProgressSection(Phase4FinalTestProvider provider) {
+  Widget _buildProgressSection(TProvider provider) {
     final currentQuestion = provider.currentQuestionIndex + 1;
     final totalQuestions = provider.totalQuestions;
     final progress = provider.progress;
@@ -397,22 +634,20 @@ class _Phase4FinalTestScreenState extends State<Phase4FinalTestScreen>
     );
   }
 
-  /// Build question display section
-  Widget _buildQuestionSection(Phase4FinalTestProvider provider) {
+  Widget _buildQuestionSection(TProvider provider) {
     final question = provider.currentQuestion;
     if (question == null) return const SizedBox.shrink();
 
     if (_previousQuestionIndex != provider.currentQuestionIndex) {
       _previousQuestionIndex = provider.currentQuestionIndex;
       _questionAnimationController.forward(from: 0.0);
-      // Reset speaking state when question changes
       _isRecording = false;
       _recordingSeconds = 0;
     }
-    
+
     final questionNum = provider.currentQuestionIndex + 1;
     final totalQuestions = provider.totalQuestions;
-    final questionTypeLabel = _getQuestionTypeLabel(question.type);
+    final questionTypeLabel = _config.questionTypeLabel(question);
 
     return SlideTransition(
       position: _slideAnimation,
@@ -421,7 +656,7 @@ class _Phase4FinalTestScreenState extends State<Phase4FinalTestScreen>
         child: Focus(
           focusNode: _questionFocusNode,
           child: Semantics(
-            label: 'Question $questionNum of $totalQuestions. $questionTypeLabel. ${question.prompt}',
+            label: 'Question $questionNum of $totalQuestions. $questionTypeLabel. ${_config.prompt(question)}',
             readOnly: true,
             liveRegion: true,
             child: Container(
@@ -434,14 +669,13 @@ class _Phase4FinalTestScreenState extends State<Phase4FinalTestScreen>
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  // Question type badge
                   Container(
                     padding: const EdgeInsets.symmetric(
                       horizontal: AppTheme.spacingS,
                       vertical: AppTheme.spacingXS,
                     ),
                     decoration: BoxDecoration(
-                      color: _getQuestionTypeColor(question.type).withValues(alpha: 0.1),
+                      color: _config.questionTypeColor(question).withValues(alpha: 0.1),
                       borderRadius: BorderRadius.circular(AppTheme.radiusS),
                     ),
                     child: Text(
@@ -449,13 +683,12 @@ class _Phase4FinalTestScreenState extends State<Phase4FinalTestScreen>
                       style: TextStyle(
                         fontSize: 12,
                         fontWeight: FontWeight.w600,
-                        color: _getQuestionTypeColor(question.type),
+                        color: _config.questionTypeColor(question),
                       ),
                     ),
                   ),
                   const SizedBox(height: AppTheme.spacingM),
-                  // Audio text for listening questions
-                  if (question.type == Phase4QuestionType.listening && question.audioText != null) ...[
+                  if (_config.audioText(question) != null) ...[
                     Container(
                       padding: const EdgeInsets.all(AppTheme.spacingM),
                       decoration: BoxDecoration(
@@ -470,7 +703,7 @@ class _Phase4FinalTestScreenState extends State<Phase4FinalTestScreen>
                           const SizedBox(width: AppTheme.spacingS),
                           Expanded(
                             child: Text(
-                              question.audioText!,
+                              _config.audioText(question) ?? '',
                               style: const TextStyle(
                                 fontSize: 15,
                                 fontStyle: FontStyle.italic,
@@ -484,10 +717,9 @@ class _Phase4FinalTestScreenState extends State<Phase4FinalTestScreen>
                     ),
                     const SizedBox(height: AppTheme.spacingM),
                   ],
-                  // Question prompt
                   ExcludeSemantics(
                     child: Text(
-                      question.prompt,
+                      _config.prompt(question),
                       style: const TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.w500,
@@ -505,38 +737,12 @@ class _Phase4FinalTestScreenState extends State<Phase4FinalTestScreen>
     );
   }
 
-  String _getQuestionTypeLabel(Phase4QuestionType type) {
-    switch (type) {
-      case Phase4QuestionType.pronunciation:
-        return 'Pronunciation';
-      case Phase4QuestionType.dialogue:
-        return 'Dialogue Response';
-      case Phase4QuestionType.listening:
-        return 'Listening';
-      case Phase4QuestionType.speaking:
-        return 'Speaking Task';
-    }
-  }
-
-  Color _getQuestionTypeColor(Phase4QuestionType type) {
-    switch (type) {
-      case Phase4QuestionType.pronunciation:
-        return Colors.purple;
-      case Phase4QuestionType.dialogue:
-        return Colors.teal;
-      case Phase4QuestionType.listening:
-        return Colors.orange;
-      case Phase4QuestionType.speaking:
-        return Colors.blue;
-    }
-  }
-
-
-  /// Build MCQ answer options
-  /// Requirement: 12.2
-  Widget _buildMcqOptions(Phase4FinalTestProvider provider) {
+  Widget _buildMcqOptions(TProvider provider) {
     final question = provider.currentQuestion;
-    if (question == null || question.options == null) return const SizedBox.shrink();
+    if (question == null) return const SizedBox.shrink();
+
+    final options = _config.options(question);
+    if (options == null) return const SizedBox.shrink();
 
     final selectedAnswer = provider.selectedMcqAnswer;
 
@@ -546,10 +752,10 @@ class _Phase4FinalTestScreenState extends State<Phase4FinalTestScreen>
         opacity: _fadeAnimation,
         child: Column(
           children: List.generate(
-            question.options!.length,
+            options.length,
             (index) => _buildOptionTile(
               context: context,
-              option: question.options![index],
+              option: options[index],
               index: index,
               isSelected: selectedAnswer == index,
               onTap: () => provider.selectMcqAnswer(index),
@@ -560,8 +766,6 @@ class _Phase4FinalTestScreenState extends State<Phase4FinalTestScreen>
     );
   }
 
-  /// Build individual option tile
-  /// Requirement: 12.2
   Widget _buildOptionTile({
     required BuildContext context,
     required String option,
@@ -570,7 +774,7 @@ class _Phase4FinalTestScreenState extends State<Phase4FinalTestScreen>
     required VoidCallback onTap,
   }) {
     final optionLabel = String.fromCharCode(65 + index);
-    
+
     return Padding(
       padding: const EdgeInsets.only(bottom: AppTheme.spacingM),
       child: FocusTraversalOrder(
@@ -584,9 +788,7 @@ class _Phase4FinalTestScreenState extends State<Phase4FinalTestScreen>
             scale: isSelected ? 1.02 : 1.0,
             duration: AppAnimations.fast,
             child: Material(
-              color: isSelected
-                  ? const Color(0xFFE3F2FD)
-                  : Colors.white,
+              color: isSelected ? const Color(0xFFE3F2FD) : Colors.white,
               borderRadius: BorderRadius.circular(AppTheme.radiusL),
               elevation: isSelected ? 2 : 1,
               child: InkWell(
@@ -638,9 +840,8 @@ class _Phase4FinalTestScreenState extends State<Phase4FinalTestScreen>
                             option,
                             style: TextStyle(
                               fontSize: 16,
-                              fontWeight: isSelected
-                                  ? FontWeight.w500
-                                  : FontWeight.normal,
+                              fontWeight:
+                                  isSelected ? FontWeight.w500 : FontWeight.normal,
                               color: AppTheme.textPrimary,
                               height: 1.5,
                             ),
@@ -658,14 +859,15 @@ class _Phase4FinalTestScreenState extends State<Phase4FinalTestScreen>
     );
   }
 
-  /// Build speaking task UI
-  /// Requirement: 12.3
-  Widget _buildSpeakingTask(Phase4FinalTestProvider provider) {
+  Widget _buildSpeakingTask(TProvider provider) {
     final question = provider.currentQuestion;
     if (question == null) return const SizedBox.shrink();
 
     final speakingResult = provider.currentSpeakingResult;
     final hasRecorded = speakingResult != null;
+    final resultData = speakingResult != null
+        ? _config.speakingResultViewData(speakingResult)
+        : null;
 
     return SlideTransition(
       position: _slideAnimation,
@@ -680,7 +882,6 @@ class _Phase4FinalTestScreenState extends State<Phase4FinalTestScreen>
           ),
           child: Column(
             children: [
-              // Instructions
               Container(
                 padding: const EdgeInsets.all(AppTheme.spacingM),
                 decoration: BoxDecoration(
@@ -693,7 +894,7 @@ class _Phase4FinalTestScreenState extends State<Phase4FinalTestScreen>
                     const SizedBox(width: AppTheme.spacingS),
                     Expanded(
                       child: Text(
-                        'Speak for 20-30 seconds. Try to use 20+ words for full points.',
+                        _config.speakingInstruction,
                         style: TextStyle(
                           fontSize: 14,
                           color: Colors.blue[700],
@@ -704,13 +905,11 @@ class _Phase4FinalTestScreenState extends State<Phase4FinalTestScreen>
                 ),
               ),
               const SizedBox(height: AppTheme.spacingL),
-              
-              // Microphone button
               Semantics(
                 button: true,
-                label: _isRecording 
+                label: _isRecording
                     ? 'Stop recording. Recording for $_recordingSeconds seconds'
-                    : hasRecorded 
+                    : hasRecorded
                         ? 'Re-record your response'
                         : 'Start recording your response',
                 child: GestureDetector(
@@ -721,25 +920,26 @@ class _Phase4FinalTestScreenState extends State<Phase4FinalTestScreen>
                     height: 100,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
-                      color: _isRecording 
-                          ? AppTheme.incorrectColor 
-                          : hasRecorded 
+                      color: _isRecording
+                          ? AppTheme.incorrectColor
+                          : hasRecorded
                               ? AppTheme.correctColor
                               : AppTheme.primaryColor,
                       boxShadow: [
                         BoxShadow(
-                          color: (_isRecording 
-                              ? AppTheme.incorrectColor 
-                              : AppTheme.primaryColor).withValues(alpha: 0.3),
+                          color: (_isRecording
+                                  ? AppTheme.incorrectColor
+                                  : AppTheme.primaryColor)
+                              .withValues(alpha: 0.3),
                           blurRadius: _isRecording ? 20 : 10,
                           spreadRadius: _isRecording ? 5 : 0,
                         ),
                       ],
                     ),
                     child: Icon(
-                      _isRecording 
-                          ? Icons.stop 
-                          : hasRecorded 
+                      _isRecording
+                          ? Icons.stop
+                          : hasRecorded
                               ? Icons.refresh
                               : Icons.mic,
                       size: 48,
@@ -749,8 +949,6 @@ class _Phase4FinalTestScreenState extends State<Phase4FinalTestScreen>
                 ),
               ),
               const SizedBox(height: AppTheme.spacingM),
-              
-              // Recording status
               if (_isRecording) ...[
                 Text(
                   'Recording... $_recordingSeconds s',
@@ -768,7 +966,7 @@ class _Phase4FinalTestScreenState extends State<Phase4FinalTestScreen>
                     color: AppTheme.textSecondary,
                   ),
                 ),
-              ] else if (hasRecorded) ...[
+              ] else if (hasRecorded && resultData != null) ...[
                 const Icon(
                   Icons.check_circle,
                   color: AppTheme.correctColor,
@@ -776,7 +974,7 @@ class _Phase4FinalTestScreenState extends State<Phase4FinalTestScreen>
                 ),
                 const SizedBox(height: AppTheme.spacingS),
                 Text(
-                  'Recorded! Score: ${speakingResult.score}/3',
+                  'Recorded! Score: ${resultData.score}/${resultData.maxScore}',
                   style: const TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.w500,
@@ -785,15 +983,16 @@ class _Phase4FinalTestScreenState extends State<Phase4FinalTestScreen>
                 ),
                 const SizedBox(height: AppTheme.spacingXS),
                 Text(
-                  speakingResult.feedback,
+                  resultData.feedback,
                   style: const TextStyle(
                     fontSize: 14,
                     color: AppTheme.textSecondary,
                   ),
                   textAlign: TextAlign.center,
                 ),
-                if (speakingResult.recognizedText != null && 
-                    speakingResult.recognizedText!.isNotEmpty) ...[
+                if (_config.showRecognizedText &&
+                    resultData.recognizedText != null &&
+                    resultData.recognizedText!.isNotEmpty) ...[
                   const SizedBox(height: AppTheme.spacingM),
                   Container(
                     padding: const EdgeInsets.all(AppTheme.spacingM),
@@ -814,7 +1013,7 @@ class _Phase4FinalTestScreenState extends State<Phase4FinalTestScreen>
                         ),
                         const SizedBox(height: AppTheme.spacingXS),
                         Text(
-                          speakingResult.recognizedText!,
+                          resultData.recognizedText!,
                           style: const TextStyle(
                             fontSize: 14,
                             color: AppTheme.textPrimary,
@@ -822,13 +1021,22 @@ class _Phase4FinalTestScreenState extends State<Phase4FinalTestScreen>
                         ),
                         const SizedBox(height: AppTheme.spacingXS),
                         Text(
-                          '${speakingResult.wordCount} words',
+                          '${resultData.wordCount} words',
                           style: const TextStyle(
                             fontSize: 12,
                             color: AppTheme.textSecondary,
                           ),
                         ),
                       ],
+                    ),
+                  ),
+                ] else if (!_config.showRecognizedText) ...[
+                  const SizedBox(height: AppTheme.spacingXS),
+                  Text(
+                    '${resultData.wordCount} words',
+                    style: const TextStyle(
+                      fontSize: 12,
+                      color: AppTheme.textSecondary,
                     ),
                   ),
                 ],
@@ -855,94 +1063,50 @@ class _Phase4FinalTestScreenState extends State<Phase4FinalTestScreen>
     );
   }
 
-  /// Toggle recording state for speaking tasks
-  /// Uses mock scoring when STT is unavailable
-  /// Requirement: 12.3
-  void _toggleRecording(Phase4FinalTestProvider provider, Phase4FinalTestQuestion question) {
+  void _toggleRecording(TProvider provider, TQuestion question) {
     if (_isRecording) {
-      // Stop recording and score
       setState(() {
         _isRecording = false;
       });
-      
-      // Use mock scoring - simulate recognized text based on recording duration
-      // In a real implementation, this would use STT service
-      final mockText = _generateMockSpeechText(_recordingSeconds);
-      
-      final result = SpeakingResult.fromRecognition(
-        taskId: question.id,
-        prompt: question.prompt,
+
+      final mockText = _config.mockSpeechText(_recordingSeconds);
+      final result = _config.createSpeakingResult(
+        taskId: _config.questionId(question),
+        prompt: _config.prompt(question),
         recognizedText: mockText,
       );
-      
+
       provider.recordSpeakingResult(result);
     } else {
-      // Start recording
       setState(() {
         _isRecording = true;
         _recordingSeconds = 0;
       });
-      
-      // Start timer to track recording duration
-      _startRecordingTimer();
+
+      _startRecordingTimer(provider, question);
     }
   }
 
-  /// Start a timer to track recording duration
-  void _startRecordingTimer() {
+  void _startRecordingTimer(TProvider provider, TQuestion question) {
     Future.doWhile(() async {
       await Future.delayed(const Duration(seconds: 1));
       if (!_isRecording || !mounted) return false;
       setState(() {
         _recordingSeconds++;
       });
-      // Auto-stop after 30 seconds
-      if (_recordingSeconds >= 30) {
-        final provider = context.read<Phase4FinalTestProvider>();
-        final question = provider.currentQuestion;
-        if (question != null) {
+
+      if (_recordingSeconds >= _config.maxRecordingSeconds) {
+        if (_config.autoStopRecording) {
           _toggleRecording(provider, question);
         }
         return false;
       }
+
       return true;
     });
   }
 
-  /// Generate mock speech text based on recording duration
-  /// Used when STT is unavailable
-  String _generateMockSpeechText(int seconds) {
-    // Simulate approximately 2 words per second of speech
-    final wordCount = (seconds * 2).clamp(0, 60);
-    
-    final sampleWords = [
-      'I', 'like', 'to', 'talk', 'about', 'my', 'daily', 'routine',
-      'Every', 'morning', 'I', 'wake', 'up', 'early', 'and', 'have',
-      'breakfast', 'Then', 'I', 'go', 'to', 'work', 'or', 'school',
-      'In', 'the', 'evening', 'I', 'spend', 'time', 'with', 'family',
-      'I', 'enjoy', 'reading', 'books', 'and', 'watching', 'movies',
-      'On', 'weekends', 'I', 'like', 'to', 'relax', 'and', 'meet',
-      'friends', 'We', 'often', 'go', 'shopping', 'or', 'eat', 'out',
-      'This', 'is', 'how', 'I', 'spend', 'my', 'time',
-    ];
-    
-    if (wordCount == 0) return '';
-    
-    final result = <String>[];
-    for (int i = 0; i < wordCount && i < sampleWords.length; i++) {
-      result.add(sampleWords[i]);
-    }
-    
-    return result.join(' ');
-  }
-
-
-  /// Build navigation controls (Skip and Next buttons)
-  /// Requirement: 12.4
-  Widget _buildNavigationControls(
-    BuildContext context,
-    Phase4FinalTestProvider provider,
-  ) {
+  Widget _buildNavigationControls(BuildContext context, TProvider provider) {
     final canProceed = provider.canProceed;
     final isLastQuestion = provider.isLastQuestion;
     final buttonText = isLastQuestion ? 'Submit Test' : 'Next';
@@ -965,7 +1129,6 @@ class _Phase4FinalTestScreenState extends State<Phase4FinalTestScreen>
       child: SafeArea(
         child: Row(
           children: [
-            // Skip button
             Semantics(
               button: true,
               label: 'Skip this question',
@@ -984,8 +1147,6 @@ class _Phase4FinalTestScreenState extends State<Phase4FinalTestScreen>
               ),
             ),
             const SizedBox(width: AppTheme.spacingM),
-            
-            // Next/Submit button
             Expanded(
               child: Semantics(
                 button: true,
@@ -997,9 +1158,8 @@ class _Phase4FinalTestScreenState extends State<Phase4FinalTestScreen>
                   child: ElevatedButton(
                     onPressed: canProceed ? () => _handleNext(context, provider) : null,
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: canProceed
-                          ? AppTheme.primaryColor
-                          : Colors.grey[400],
+                      backgroundColor:
+                          canProceed ? AppTheme.primaryColor : Colors.grey[400],
                       disabledBackgroundColor: Colors.grey[400],
                       padding: const EdgeInsets.symmetric(vertical: AppTheme.spacingM),
                       shape: RoundedRectangleBorder(
@@ -1026,28 +1186,21 @@ class _Phase4FinalTestScreenState extends State<Phase4FinalTestScreen>
     );
   }
 
-  /// Handle skip button press
-  /// Requirement: 12.4
-  void _handleSkip(
-    BuildContext context,
-    Phase4FinalTestProvider provider,
-  ) {
+  void _handleSkip(BuildContext context, TProvider provider) {
     provider.skipQuestion();
-    
+
     if (provider.isLastQuestion) {
-      _submitTest(context, provider);
-    } else {
-      provider.nextQuestion();
-      _announceQuestionChange(context, provider);
+      if (_config.submitOnSkipLast) {
+        _submitTest(context, provider);
+      }
+      return;
     }
+
+    provider.nextQuestion();
+    _announceQuestionChange(context, provider);
   }
 
-  /// Handle next button press
-  /// Requirement: 12.4
-  Future<void> _handleNext(
-    BuildContext context,
-    Phase4FinalTestProvider provider,
-  ) async {
+  Future<void> _handleNext(BuildContext context, TProvider provider) async {
     if (provider.isLastQuestion) {
       await _submitTest(context, provider);
     } else {
@@ -1055,28 +1208,23 @@ class _Phase4FinalTestScreenState extends State<Phase4FinalTestScreen>
       _announceQuestionChange(context, provider);
     }
   }
-  
-  /// Announce question change to screen readers
-  void _announceQuestionChange(BuildContext context, Phase4FinalTestProvider provider) {
+
+  void _announceQuestionChange(BuildContext context, TProvider provider) {
     final question = provider.currentQuestion;
-    
+
     if (question != null && context.mounted) {
       _questionFocusNode.requestFocus();
     }
   }
 
-  /// Submit test and navigate to result screen
-  Future<void> _submitTest(
-    BuildContext context,
-    Phase4FinalTestProvider provider,
-  ) async {
+  Future<void> _submitTest(BuildContext context, TProvider provider) async {
     if (provider.isLoading) {
       return;
     }
 
     try {
       if (!context.mounted) return;
-      
+
       showDialog(
         context: context,
         barrierDismissible: false,
@@ -1098,7 +1246,6 @@ class _Phase4FinalTestScreenState extends State<Phase4FinalTestScreen>
         }
       }
 
-      // Show warning if there was a storage error but results were calculated
       if (context.mounted && provider.error != null && provider.testResult != null) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
@@ -1128,25 +1275,21 @@ class _Phase4FinalTestScreenState extends State<Phase4FinalTestScreen>
         );
       }
 
-      // Navigate to result screen if we have results
       if (context.mounted && provider.testResult != null) {
         try {
           await Navigator.of(context).pushReplacementNamed(
-            '/phase4/finalTest/result',
+            _config.resultRoute,
             arguments: provider.testResult,
           );
         } catch (navError) {
-          print('Navigation error: $navError');
-          ErrorHandler.logError('Phase4FinalTestScreen._submitTest - Navigation', navError);
-          
+          ErrorHandler.logError('FinalTestScreen._submitTest - Navigation', navError);
+
           if (context.mounted) {
             ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(
-                content: Text(
-                  'Test completed! Score: ${provider.testResult!.totalScore}/${provider.testResult!.maxScore}',
-                ),
+              const SnackBar(
+                content: Text('Test completed!'),
                 backgroundColor: AppTheme.correctColor,
-                duration: const Duration(seconds: 4),
+                duration: Duration(seconds: 4),
               ),
             );
             Navigator.of(context).pop();
@@ -1167,13 +1310,13 @@ class _Phase4FinalTestScreenState extends State<Phase4FinalTestScreen>
         );
       }
     } catch (e, stackTrace) {
-      ErrorHandler.logError('Phase4FinalTestScreen._submitTest', e, stackTrace);
-      
+      ErrorHandler.logError('FinalTestScreen._submitTest', e, stackTrace);
+
       if (context.mounted) {
         try {
           Navigator.of(context).pop();
         } catch (_) {}
-        
+
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             content: Text('Error: ${ErrorHandler.getUserMessage(e)}'),
@@ -1189,4 +1332,86 @@ class _Phase4FinalTestScreenState extends State<Phase4FinalTestScreen>
       }
     }
   }
+}
+
+const List<String> _phase4SampleWords = [
+  'I',
+  'like',
+  'to',
+  'talk',
+  'about',
+  'my',
+  'daily',
+  'routine',
+  'Every',
+  'morning',
+  'I',
+  'wake',
+  'up',
+  'early',
+  'and',
+  'have',
+  'breakfast',
+  'Then',
+  'I',
+  'go',
+  'to',
+  'work',
+  'or',
+  'school',
+  'In',
+  'the',
+  'evening',
+  'I',
+  'spend',
+  'time',
+  'with',
+  'family',
+  'I',
+  'enjoy',
+  'reading',
+  'books',
+  'and',
+  'watching',
+  'movies',
+  'On',
+  'weekends',
+  'I',
+  'like',
+  'to',
+  'relax',
+  'and',
+  'meet',
+  'friends',
+  'We',
+  'often',
+  'go',
+  'shopping',
+  'or',
+  'eat',
+  'out',
+  'This',
+  'is',
+  'how',
+  'I',
+  'spend',
+  'my',
+  'time',
+];
+
+String _buildPhase4MockSpeechText(int seconds) {
+  final wordCount = (seconds * 2).clamp(0, 60);
+  if (wordCount == 0) return '';
+
+  final result = <String>[];
+  for (int i = 0; i < wordCount && i < _phase4SampleWords.length; i++) {
+    result.add(_phase4SampleWords[i]);
+  }
+
+  return result.join(' ');
+}
+
+String _buildPhase5MockSpeechText(int seconds) {
+  return 'This is a mock response for testing purposes. The actual implementation would use '
+      'speech-to-text to capture the user response and score it based on word count and clarity.';
 }

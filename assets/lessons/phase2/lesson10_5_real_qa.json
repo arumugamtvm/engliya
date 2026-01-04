@@ -24,10 +24,61 @@
       "en": "Q: Where did you go yesterday? A: I went to the market.",
       "ta": "கே: நீங்கள் நேற்று எங்கே சென்றீர்கள்? ப: நான் சந்தைக்கு சென்றேன்.",
       "audioId": "phase2_l10_5_ex3"
+    },
+    {
+      "en": "Q: Are you free now? A: No, I am not. I am busy.",
+      "ta": "கே: நீங்கள் இப்போது காலியாக இருக்கிறீர்களா? ப: இல்லை, நான் காலியாக இல்லை. நான் பிஸியாக இருக்கிறேன்.",
+      "audioId": "phase2_l10_5_ex4"
+    },
+    {
+      "en": "Q: How do you go to work? A: I go by bus.",
+      "ta": "கே: நீங்கள் வேலைக்கு எப்படி செல்கிறீர்கள்? ப: நான் பஸில் செல்கிறேன்.",
+      "audioId": "phase2_l10_5_ex5"
     }
   ],
-  "listeningQuestions": [],
-  "speakSentences": [],
+  "listeningQuestions": [
+    {
+      "audioText": "Q: Where are you from? A: I am from Madurai.",
+      "options": [
+        "Q: Where are you from? A: I am from Madurai.",
+        "Q: Where are you from? A: I am from Chennai.",
+        "Q: Where are you from? A: I am from Salem."
+      ],
+      "correctIndex": 0
+    },
+    {
+      "audioText": "Q: Do you like tea? A: Yes, I do.",
+      "options": [
+        "Q: Do you like tea? A: Yes, I do.",
+        "Q: Do you like tea? A: No, I am.",
+        "Q: Do you like tea? A: Yes, I am."
+      ],
+      "correctIndex": 0
+    },
+    {
+      "audioText": "Q: What time is it? A: It is 6 o'clock.",
+      "options": [
+        "Q: What time is it? A: It is 6 o'clock.",
+        "Q: What time is it? A: It is Monday.",
+        "Q: What time is it? A: It is in the morning."
+      ],
+      "correctIndex": 0
+    }
+  ],
+  "speakSentences": [
+    {
+      "en": "Q: Are you ready? A: Yes, I am.",
+      "ta": "கே: நீங்கள் தயாரா? ப: ஆம், நான் தயாராக இருக்கிறேன்."
+    },
+    {
+      "en": "Q: Where do you live? A: I live in Chennai.",
+      "ta": "கே: நீங்கள் எங்கே வசிக்கிறீர்கள்? ப: நான் சென்னையில் வசிக்கிறேன்."
+    },
+    {
+      "en": "Q: Did you eat breakfast? A: Yes, I did.",
+      "ta": "கே: நீங்கள் காலை உணவு சாப்பிட்டீர்களா? ப: ஆம், சாப்பிட்டேன்."
+    }
+  ],
   "practiceQuestions": [
     {
       "type": "mcq",
@@ -42,6 +93,27 @@
       "promptTa": "கே: அவள் எங்கே வசிக்கிறாள்? ப: அவள் சென்னையில் வசிக்கிறாள்.",
       "options": ["What", "When", "Where", "Who"],
       "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Q: ___ he a doctor? A: No, he isn't.",
+      "promptTa": "கே: அவர் மருத்துவரா? ப: இல்லை, அவர் இல்லை.",
+      "options": ["Am", "Is", "Are", "Do"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Q: ___ do you study? A: I study at home.",
+      "promptTa": "கே: நீங்கள் எங்கே படிக்கிறீர்கள்? ப: நான் வீட்டில் படிக்கிறேன்.",
+      "options": ["What", "Where", "When", "Who"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Q: ___ they play football? A: Yes, they do.",
+      "promptTa": "கே: அவர்கள் கால்பந்து விளையாடுகிறார்களா? ப: ஆம், விளையாடுகிறார்கள்.",
+      "options": ["Do", "Does", "Did", "Are"],
+      "correctIndex": 0
     }
   ],
   "masteryQuestions": [
@@ -57,6 +129,27 @@
       "promptEn": "Q: ___ did you eat for breakfast? A: I ate idli.",
       "promptTa": "கே: நீங்கள் காலை உணவாக என்ன சாப்பிட்டீர்கள்? ப: நான் இட்லி சாப்பிட்டேன்.",
       "options": ["What", "When", "Where", "Why"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Q: ___ you free tomorrow? A: Yes, I am.",
+      "promptTa": "கே: நீங்கள் நாளை காலியாக இருப்பீர்களா? ப: ஆம், நான் இருப்பேன்.",
+      "options": ["Am", "Is", "Are", "Do"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Q: ___ did she go yesterday? A: She went to the hospital.",
+      "promptTa": "கே: அவள் நேற்று எங்கே சென்றாள்? ப: அவள் மருத்துவமனைக்குச் சென்றாள்.",
+      "options": ["What", "Where", "When", "Why"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Q: ___ you like this book? A: No, I don't.",
+      "promptTa": "கே: உங்களுக்கு இந்த புத்தகம் பிடிக்குமா? ப: இல்லை, பிடிக்காது.",
+      "options": ["Do", "Does", "Did", "Are"],
       "correctIndex": 0
     }
   ]

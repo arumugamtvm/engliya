@@ -6,23 +6,20 @@ import '../../features/onboarding/services/onboarding_service.dart';
 import '../../features/onboarding/presentation/providers/onboarding_provider.dart';
 import '../../features/learn/data/repositories/lesson_repository.dart';
 import '../../features/learn/data/repositories/progress_repository.dart';
+import '../../features/learn/data/repositories/test_repository_impl.dart';
+import '../../features/learn/data/models/phase4_final_test_question.dart';
+import '../../features/learn/data/models/phase4_test_result.dart';
+import '../../features/learn/data/models/phase5_final_test_question.dart';
+import '../../features/learn/data/models/phase5_test_result.dart';
+import '../../features/learn/domain/repositories/test_repository.dart';
 import '../../features/learn/services/audio_service.dart';
 import '../../features/learn/services/mastery_service.dart';
-import '../../features/learn/services/phase1_final_test_service.dart';
-import '../../features/learn/services/phase2_final_test_service.dart';
-import '../../features/learn/services/phase3_final_test_service.dart';
-import '../../features/learn/services/phase4_final_test_service.dart';
+import '../../features/learn/services/final_test_service.dart';
 import '../../features/learn/services/debug_service.dart';
 import '../../features/learn/services/gating_service.dart';
 import '../../features/learn/presentation/providers/lesson_provider.dart';
 import '../../features/learn/presentation/providers/progress_provider.dart';
 import '../../features/learn/presentation/providers/final_test_provider.dart';
-import '../../features/learn/presentation/providers/phase2_unit_provider.dart';
-import '../../features/learn/presentation/providers/phase2_final_test_provider.dart';
-import '../../features/learn/presentation/providers/phase3_unit_provider.dart';
-import '../../features/learn/presentation/providers/phase3_final_test_provider.dart';
-import '../../features/learn/presentation/providers/phase4_unit_provider.dart';
-import '../../features/learn/presentation/providers/phase4_final_test_provider.dart';
 import '../../features/learn/presentation/providers/debug_provider.dart';
 import '../../features/home/services/home_service.dart';
 import '../../features/home/presentation/providers/home_provider.dart';
@@ -39,15 +36,16 @@ class ServiceContainer {
   late final OnboardingService _onboardingService;
   late final LessonRepository _lessonRepository;
   late final ProgressRepository _progressRepository;
+  late final TestRepository _testRepository;
   late final AudioService _audioService;
   late final MasteryService _masteryService;
   late final DebugService _debugService;
   late final GatingService _gatingService;
   late final HomeService _homeService;
-  late final Phase1FinalTestService _phase1FinalTestService;
-  late final Phase2FinalTestService _phase2FinalTestService;
-  late final Phase3FinalTestService _phase3FinalTestService;
-  late final Phase4FinalTestService _phase4FinalTestService;
+  late final FinalTestService<Phase4FinalTestQuestion, SpeakingResult, Phase4TestResult>
+      _phase4FinalTestService;
+  late final FinalTestService<Phase5FinalTestQuestion, Phase5SpeakingResult, Phase5TestResult>
+      _phase5FinalTestService;
   late final ProgressProvider _progressProvider;
 
   bool _isInitialized = false;
@@ -56,15 +54,12 @@ class ServiceContainer {
   OnboardingService get onboardingService => _onboardingService;
   LessonRepository get lessonRepository => _lessonRepository;
   ProgressRepository get progressRepository => _progressRepository;
+  TestRepository get testRepository => _testRepository;
   AudioService get audioService => _audioService;
   MasteryService get masteryService => _masteryService;
   DebugService get debugService => _debugService;
   GatingService get gatingService => _gatingService;
   HomeService get homeService => _homeService;
-  Phase1FinalTestService get phase1FinalTestService => _phase1FinalTestService;
-  Phase2FinalTestService get phase2FinalTestService => _phase2FinalTestService;
-  Phase3FinalTestService get phase3FinalTestService => _phase3FinalTestService;
-  Phase4FinalTestService get phase4FinalTestService => _phase4FinalTestService;
   ProgressProvider get progressProvider => _progressProvider;
 
   Future<void> initialize() async {
@@ -79,6 +74,10 @@ class ServiceContainer {
     _onboardingService = OnboardingService(storageService: _storageService);
     _lessonRepository = LessonRepository();
     _progressRepository = ProgressRepository(_storageService);
+    _testRepository = TestRepositoryImpl(
+      lessonRepository: _lessonRepository,
+      storageService: _storageService,
+    );
     
     _audioService = AudioService();
     await _audioService.init();
@@ -104,24 +103,13 @@ class ServiceContainer {
       gatingService: _gatingService,
     );
 
-    _phase1FinalTestService = Phase1FinalTestService(
-      lessonRepository: _lessonRepository,
-      storageService: _storageService,
-    );
-
-    _phase2FinalTestService = Phase2FinalTestService(
-      lessonRepository: _lessonRepository,
+    _phase4FinalTestService = FinalTestService.phase4(
       storageService: _storageService,
       progressRepository: _progressRepository,
-    );
-
-    _phase3FinalTestService = Phase3FinalTestService(
+      debugService: _debugService,
       lessonRepository: _lessonRepository,
-      storageService: _storageService,
-      progressRepository: _progressRepository,
     );
-
-    _phase4FinalTestService = Phase4FinalTestService(
+    _phase5FinalTestService = FinalTestService.phase5(
       storageService: _storageService,
       progressRepository: _progressRepository,
       debugService: _debugService,
@@ -147,13 +135,16 @@ class ServiceContainer {
     Provider<OnboardingService>.value(value: _onboardingService),
     Provider<LessonRepository>.value(value: _lessonRepository),
     Provider<ProgressRepository>.value(value: _progressRepository),
+    Provider<TestRepository>.value(value: _testRepository),
     Provider<AudioService>.value(value: _audioService),
     Provider<MasteryService>.value(value: _masteryService),
     Provider<HomeService>.value(value: _homeService),
-    Provider<Phase1FinalTestService>.value(value: _phase1FinalTestService),
-    Provider<Phase2FinalTestService>.value(value: _phase2FinalTestService),
-    Provider<Phase3FinalTestService>.value(value: _phase3FinalTestService),
-    Provider<Phase4FinalTestService>.value(value: _phase4FinalTestService),
+    Provider<FinalTestService<Phase4FinalTestQuestion, SpeakingResult, Phase4TestResult>>.value(
+      value: _phase4FinalTestService,
+    ),
+    Provider<FinalTestService<Phase5FinalTestQuestion, Phase5SpeakingResult, Phase5TestResult>>.value(
+      value: _phase5FinalTestService,
+    ),
     Provider<DebugService>.value(value: _debugService),
     Provider<GatingService>.value(value: _gatingService),
     ChangeNotifierProvider(
@@ -170,35 +161,20 @@ class ServiceContainer {
       create: (_) => HomeProvider(homeService: _homeService),
     ),
     ChangeNotifierProvider(
-      create: (_) => FinalTestProvider(
-        testService: _phase1FinalTestService,
-        gatingService: _gatingService,
-      ),
-    ),
-    ChangeNotifierProvider(
-      create: (context) => Phase2UnitProvider(context.read<ProgressProvider>()),
-    ),
-    ChangeNotifierProvider(
-      create: (_) => Phase2FinalTestProvider(
-        testService: _phase2FinalTestService,
-        gatingService: _gatingService,
-      ),
-    ),
-    ChangeNotifierProvider(
-      create: (context) => Phase3UnitProvider(context.read<ProgressProvider>()),
-    ),
-    ChangeNotifierProvider(
-      create: (_) => Phase3FinalTestProvider(
-        testService: _phase3FinalTestService,
-        gatingService: _gatingService,
-      ),
-    ),
-    ChangeNotifierProvider(
-      create: (context) => Phase4UnitProvider(context.read<ProgressProvider>()),
-    ),
-    ChangeNotifierProvider(
-      create: (_) => Phase4FinalTestProvider(
+      create: (_) => FinalTestProvider<
+          Phase4FinalTestQuestion,
+          SpeakingResult,
+          Phase4TestResult>(
         testService: _phase4FinalTestService,
+        gatingService: _gatingService,
+      ),
+    ),
+    ChangeNotifierProvider(
+      create: (_) => FinalTestProvider<
+          Phase5FinalTestQuestion,
+          Phase5SpeakingResult,
+          Phase5TestResult>(
+        testService: _phase5FinalTestService,
         gatingService: _gatingService,
       ),
     ),

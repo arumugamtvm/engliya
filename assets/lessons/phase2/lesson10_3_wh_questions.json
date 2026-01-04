@@ -24,10 +24,61 @@
       "en": "Why did she leave?",
       "ta": "அவள் ஏன் சென்றாள்?",
       "audioId": "phase2_l10_3_ex3"
+    },
+    {
+      "en": "When does the class start?",
+      "ta": "வகுப்பு எப்போது தொடங்குகிறது?",
+      "audioId": "phase2_l10_3_ex4"
+    },
+    {
+      "en": "How are you today?",
+      "ta": "இன்று நீங்கள் எப்படி இருக்கிறீர்கள்?",
+      "audioId": "phase2_l10_3_ex5"
     }
   ],
-  "listeningQuestions": [],
-  "speakSentences": [],
+  "listeningQuestions": [
+    {
+      "audioText": "Where are you going?",
+      "options": [
+        "Where are you going?",
+        "When are you going?",
+        "Why are you going?"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "audioText": "Who is your friend?",
+      "options": [
+        "Who is your friend?",
+        "What is your friend?",
+        "Where is your friend?"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "audioText": "How did you come?",
+      "options": [
+        "How did you come?",
+        "Why did you come?",
+        "When did you come?"
+      ],
+      "correctIndex": 0
+    }
+  ],
+  "speakSentences": [
+    {
+      "en": "What do you want?",
+      "ta": "நீங்கள் என்ன விரும்புகிறீர்கள்?"
+    },
+    {
+      "en": "When did he arrive?",
+      "ta": "அவர் எப்போது வந்தார்?"
+    },
+    {
+      "en": "Why are they sad?",
+      "ta": "அவர்கள் ஏன் வருத்தமாக இருக்கிறார்கள்?"
+    }
+  ],
   "practiceQuestions": [
     {
       "type": "mcq",
@@ -41,6 +92,27 @@
       "promptEn": "___ is your teacher?",
       "promptTa": "உங்கள் ஆசிரியர் யார்?",
       "options": ["What", "When", "Where", "Who"],
+      "correctIndex": 3
+    },
+    {
+      "type": "mcq",
+      "promptEn": "___ is this?",
+      "promptTa": "இது என்ன?",
+      "options": ["What", "When", "Where", "Who"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "___ do they live?",
+      "promptTa": "அவர்கள் எங்கே வசிக்கிறார்கள்?",
+      "options": ["What", "When", "Where", "Who"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "___ are you crying?",
+      "promptTa": "நீங்கள் ஏன் அழுகிறீர்கள்?",
+      "options": ["What", "When", "Where", "Why"],
       "correctIndex": 3
     }
   ],
@@ -57,6 +129,27 @@
       "promptEn": "___ did you come late?",
       "promptTa": "நீங்கள் ஏன் தாமதமாக வந்தீர்கள்?",
       "options": ["What", "How", "Where", "Why"],
+      "correctIndex": 3
+    },
+    {
+      "type": "mcq",
+      "promptEn": "___ are you doing?",
+      "promptTa": "நீங்கள் என்ன செய்கிறீர்கள்?",
+      "options": ["What", "When", "Where", "Who"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "___ is your birthday?",
+      "promptTa": "உங்கள் பிறந்தநாள் எப்போது?",
+      "options": ["What", "When", "Where", "Why"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "___ did he fix it?",
+      "promptTa": "அவர் அதை எப்படி சரி செய்தார்?",
+      "options": ["What", "When", "Where", "How"],
       "correctIndex": 3
     }
   ]

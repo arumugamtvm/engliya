@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import '../../../learn/presentation/providers/progress_provider.dart';
 import '../../../learn/data/models/lesson.dart';
 import '../../../learn/data/models/user_lesson_status.dart';
+import '../../../learn/domain/entities/phase_units.dart';
 import '../../../../app/theme.dart';
 import '../../../../app/routes.dart';
 import '../../../../core/widgets/status_badge.dart';
@@ -514,10 +515,10 @@ class _ProgressScreenState extends State<ProgressScreen> {
 
   /// Build Phase 2 lessons list
   List<Widget> _buildPhase2Lessons(ProgressProvider provider) {
-    final phase2Units = ['phase2_unit7', 'phase2_unit8', 'phase2_unit9', 'phase2_unit10', 'phase2_unit11'];
     final widgets = <Widget>[];
     
-    for (final unitId in phase2Units) {
+    for (final unit in PhaseUnits.phase2) {
+      final unitId = unit.id;
       final lessons = provider.getUnitLessons(unitId);
       for (final lesson in lessons) {
         final status = provider.getLessonStatus(lesson.id);
@@ -536,10 +537,10 @@ class _ProgressScreenState extends State<ProgressScreen> {
 
   /// Build Phase 3 lessons list
   List<Widget> _buildPhase3Lessons(ProgressProvider provider) {
-    final phase3Units = ['phase3_unit12', 'phase3_unit13', 'phase3_unit14', 'phase3_unit15', 'phase3_unit16', 'phase3_unit17'];
     final widgets = <Widget>[];
     
-    for (final unitId in phase3Units) {
+    for (final unit in PhaseUnits.phase3) {
+      final unitId = unit.id;
       final lessons = provider.getUnitLessons(unitId);
       for (final lesson in lessons) {
         final status = provider.getLessonStatus(lesson.id);

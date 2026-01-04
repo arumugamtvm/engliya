@@ -3,37 +3,23 @@ import '../features/onboarding/presentation/screens/onboarding_screen.dart';
 import '../features/home/presentation/screens/home_screen.dart';
 import '../features/ai_tutor/ai_tutor.dart';
 import '../features/learn/presentation/screens/phase1_unit_screen.dart';
-import '../features/learn/presentation/screens/phase2_unit_screen.dart';
-import '../features/learn/presentation/screens/phase2_lesson_list_screen.dart';
-import '../features/learn/presentation/screens/phase3_unit_screen.dart';
-import '../features/learn/presentation/screens/phase3_lesson_list_screen.dart';
+import '../features/learn/presentation/screens/phase_lesson_list_screen.dart';
 import '../features/learn/presentation/screens/lesson_screen.dart';
-import '../features/learn/presentation/screens/phase1_final_test_screen.dart';
-import '../features/learn/presentation/screens/phase1_final_test_result_screen.dart';
-import '../features/learn/presentation/screens/phase1_final_test_review_screen.dart';
-import '../features/learn/presentation/screens/phase2_final_test_screen.dart';
-import '../features/learn/presentation/screens/phase2_final_test_result_screen.dart';
-import '../features/learn/presentation/screens/phase2_final_test_review_screen.dart';
-import '../features/learn/presentation/screens/phase3_final_test_screen.dart';
-import '../features/learn/presentation/screens/phase3_final_test_result_screen.dart';
-import '../features/learn/presentation/screens/phase3_final_test_review_screen.dart';
-import '../features/learn/presentation/screens/phase4_final_test_screen.dart';
-import '../features/learn/presentation/screens/phase4_final_test_result_screen.dart';
-import '../features/learn/presentation/screens/phase4_final_test_review_screen.dart';
-import '../features/learn/presentation/screens/phase5_final_test_screen.dart';
-import '../features/learn/presentation/screens/phase5_final_test_result_screen.dart';
-import '../features/learn/presentation/screens/phase5_final_test_review_screen.dart';
+import '../features/learn/presentation/screens/mcq_final_test_screen.dart';
+import '../features/learn/presentation/screens/mcq_final_test_result_screen.dart';
+import '../features/learn/presentation/screens/mcq_final_test_review_screen.dart';
+import '../features/learn/presentation/screens/final_test_screen.dart';
+import '../features/learn/presentation/screens/final_test_result_screen.dart';
+import '../features/learn/presentation/screens/final_test_review_screen.dart';
 import '../features/learn/presentation/screens/debug_screen.dart';
-import '../features/learn/presentation/screens/phase4_unit_screen.dart';
-import '../features/learn/presentation/screens/phase4_lesson_list_screen.dart';
+import '../features/learn/presentation/screens/phase_unit_screen.dart';
 import '../features/progress/presentation/screens/progress_screen.dart';
-import '../features/learn/data/models/phase3_test_result.dart';
 import '../features/learn/data/models/phase4_test_result.dart';
 import '../features/learn/data/models/phase5_test_result.dart';
-import '../features/learn/data/models/test_result.dart';
-import '../features/learn/data/models/phase2_test_result.dart';
-import '../features/learn/data/models/incorrect_answer.dart';
+import '../features/learn/domain/entities/phase_config.dart';
+import '../features/learn/domain/entities/test_result.dart';
 import '../core/utils/animations.dart';
+import '../core/navigation/route_arguments.dart';
 
 class AppRoutes {
   static const String onboarding = '/onboarding';
@@ -68,20 +54,28 @@ class AppRoutes {
   static Route<dynamic>? onGenerateRoute(RouteSettings settings) {
     // Handle dynamic Phase 3 unit routes first
     if (settings.name?.startsWith('/phase3/unit/') == true && settings.name != phase3LessonList) {
-      final args = settings.arguments as Map<String, dynamic>?;
-      if (args != null && args['unitId'] != null) {
-        return _buildRoute(Phase3LessonListScreen(unitId: args['unitId'] as String), settings);
+      final (unitId, unitTitle) =
+          RouteArgumentsParser.parseUnitArgs(settings.arguments);
+      if (unitId != null) {
+        return _buildRoute(
+          PhaseLessonListScreen(
+            unitId: unitId,
+            unitTitle: unitTitle,
+          ),
+          settings,
+        );
       }
     }
 
     // Handle dynamic Phase 4 unit routes
     if (settings.name?.startsWith('/phase4/unit/') == true && settings.name != phase4LessonList) {
-      final args = settings.arguments as Map<String, dynamic>?;
-      if (args != null && args['unitId'] != null) {
+      final (unitId, unitTitle) =
+          RouteArgumentsParser.parseUnitArgs(settings.arguments);
+      if (unitId != null) {
         return _buildRoute(
-          Phase4LessonListScreen(
-            unitId: args['unitId'] as String,
-            unitTitle: args['unitTitle'] as String?,
+          PhaseLessonListScreen(
+            unitId: unitId,
+            unitTitle: unitTitle,
           ),
           settings,
         );
@@ -97,35 +91,55 @@ class AppRoutes {
       case phase1Unit:
         return _buildRoute(const Phase1UnitScreen(), settings);
       case phase2Unit:
-        return _buildRoute(const Phase2UnitScreen(), settings);
+        return _buildRoute(
+          const PhaseUnitScreen(phaseType: PhaseType.phase2),
+          settings,
+        );
       case phase2LessonList:
-        final args = settings.arguments as Map<String, dynamic>?;
-        if (args == null || args['unitId'] == null) {
+        final (unitId, unitTitle) =
+            RouteArgumentsParser.parseUnitArgs(settings.arguments);
+        if (unitId == null) {
           return _buildRoute(const Scaffold(body: Center(child: Text('Error: Unit ID not provided'))), settings);
         }
-        return _buildRoute(Phase2LessonListScreen(unitId: args['unitId'] as String), settings);
+        return _buildRoute(
+          PhaseLessonListScreen(
+            unitId: unitId,
+            unitTitle: unitTitle,
+          ),
+          settings,
+        );
       case phase3Unit:
-        return _buildRoute(const Phase3UnitScreen(), settings);
+        return _buildRoute(
+          const PhaseUnitScreen(phaseType: PhaseType.phase3),
+          settings,
+        );
       case phase3LessonList:
-        final args = settings.arguments as Map<String, dynamic>?;
-        if (args == null || args['unitId'] == null) {
+        final (unitId, unitTitle) =
+            RouteArgumentsParser.parseUnitArgs(settings.arguments);
+        if (unitId == null) {
           return _buildRoute(const Scaffold(body: Center(child: Text('Error: Unit ID not provided'))), settings);
         }
-        return _buildRoute(Phase3LessonListScreen(unitId: args['unitId'] as String), settings);
+        return _buildRoute(
+          PhaseLessonListScreen(
+            unitId: unitId,
+            unitTitle: unitTitle,
+          ),
+          settings,
+        );
       case phase3FinalTest:
-        return _buildSlideRoute(const Phase3FinalTestScreen(), settings);
+        return _buildSlideRoute(McqFinalTestScreen.phase3(), settings);
       case phase3FinalTestResult:
-        final result = settings.arguments as Phase3TestResult?;
+        final result = settings.arguments as TestResult?;
         if (result == null) {
           return _buildRoute(const Scaffold(body: Center(child: Text('Error: Test result not provided'))), settings);
         }
-        return _buildFadeRoute(Phase3FinalTestResultScreen(testResult: result), settings);
+        return _buildFadeRoute(McqFinalTestResultScreen.phase3(testResult: result), settings);
       case phase3FinalTestReview:
         final answers = settings.arguments as List<IncorrectAnswer>?;
         if (answers == null) {
           return _buildRoute(const Scaffold(body: Center(child: Text('Error: Incorrect answers not provided'))), settings);
         }
-        return _buildSlideRoute(Phase3FinalTestReviewScreen(incorrectAnswers: answers), settings);
+        return _buildSlideRoute(McqFinalTestReviewScreen.phase3(incorrectAnswers: answers), settings);
       case lesson:
         final lessonId = settings.arguments as String?;
         if (lessonId == null) {
@@ -133,33 +147,33 @@ class AppRoutes {
         }
         return _buildRoute(LessonScreen(lessonId: lessonId), settings);
       case phase1FinalTest:
-        return _buildRoute(const Phase1FinalTestScreen(), settings);
+        return _buildRoute(McqFinalTestScreen.phase1(), settings);
       case phase1FinalTestResult:
         final result = settings.arguments as TestResult?;
         if (result == null) {
           return _buildRoute(const Scaffold(body: Center(child: Text('Error: Test result not provided'))), settings);
         }
-        return _buildRoute(Phase1FinalTestResultScreen(testResult: result), settings);
+        return _buildRoute(McqFinalTestResultScreen.phase1(testResult: result), settings);
       case phase1FinalTestReview:
         final answers = settings.arguments as List<IncorrectAnswer>?;
         if (answers == null) {
           return _buildRoute(const Scaffold(body: Center(child: Text('Error: Incorrect answers not provided'))), settings);
         }
-        return _buildRoute(Phase1FinalTestReviewScreen(incorrectAnswers: answers), settings);
+        return _buildRoute(McqFinalTestReviewScreen.phase1(incorrectAnswers: answers), settings);
       case phase2FinalTest:
-        return _buildSlideRoute(const Phase2FinalTestScreen(), settings);
+        return _buildSlideRoute(McqFinalTestScreen.phase2(), settings);
       case phase2FinalTestResult:
-        final result = settings.arguments as Phase2TestResult?;
+        final result = settings.arguments as TestResult?;
         if (result == null) {
           return _buildRoute(const Scaffold(body: Center(child: Text('Error: Test result not provided'))), settings);
         }
-        return _buildFadeRoute(Phase2FinalTestResultScreen(testResult: result), settings);
+        return _buildFadeRoute(McqFinalTestResultScreen.phase2(testResult: result), settings);
       case phase2FinalTestReview:
         final answers = settings.arguments as List<IncorrectAnswer>?;
         if (answers == null) {
           return _buildRoute(const Scaffold(body: Center(child: Text('Error: Incorrect answers not provided'))), settings);
         }
-        return _buildSlideRoute(Phase2FinalTestReviewScreen(incorrectAnswers: answers), settings);
+        return _buildSlideRoute(McqFinalTestReviewScreen.phase2(incorrectAnswers: answers), settings);
       case progress:
         return _buildRoute(const ProgressScreen(), settings);
       case aiChat:
@@ -168,47 +182,63 @@ class AppRoutes {
       case debug:
         return _buildSlideRoute(const DebugScreen(), settings);
       case phase4Unit:
-        return _buildRoute(const Phase4UnitScreen(), settings);
+        return _buildRoute(
+          const PhaseUnitScreen(phaseType: PhaseType.phase4),
+          settings,
+        );
       case phase4LessonList:
-        final args = settings.arguments as Map<String, dynamic>?;
-        if (args == null || args['unitId'] == null) {
+        final (unitId, unitTitle) =
+            RouteArgumentsParser.parseUnitArgs(settings.arguments);
+        if (unitId == null) {
           return _buildRoute(const Scaffold(body: Center(child: Text('Error: Unit ID not provided'))), settings);
         }
         return _buildRoute(
-          Phase4LessonListScreen(
-            unitId: args['unitId'] as String,
-            unitTitle: args['unitTitle'] as String?,
+          PhaseLessonListScreen(
+            unitId: unitId,
+            unitTitle: unitTitle,
           ),
           settings,
         );
       case phase4FinalTest:
-        return _buildSlideRoute(const Phase4FinalTestScreen(), settings);
+        return _buildSlideRoute(FinalTestScreen.phase4(), settings);
       case phase4FinalTestResult:
         final result = settings.arguments as Phase4TestResult?;
         if (result == null) {
           return _buildRoute(const Scaffold(body: Center(child: Text('Error: Test result not provided'))), settings);
         }
-        return _buildFadeRoute(Phase4FinalTestResultScreen(testResult: result), settings);
+        return _buildFadeRoute(
+          FinalTestResultScreen.phase4(result: result),
+          settings,
+        );
       case phase4FinalTestReview:
         final answers = settings.arguments as List<Phase4IncorrectAnswer>?;
         if (answers == null) {
           return _buildRoute(const Scaffold(body: Center(child: Text('Error: Incorrect answers not provided'))), settings);
         }
-        return _buildSlideRoute(Phase4FinalTestReviewScreen(incorrectAnswers: answers), settings);
+        return _buildSlideRoute(
+          FinalTestReviewScreen.phase4(incorrectAnswers: answers),
+          settings,
+        );
       case phase5FinalTest:
-        return _buildSlideRoute(const Phase5FinalTestScreen(), settings);
+        return _buildSlideRoute(FinalTestScreen.phase5(), settings);
       case phase5FinalTestResult:
         final result = settings.arguments as Phase5TestResult?;
         if (result == null) {
           return _buildRoute(const Scaffold(body: Center(child: Text('Error: Test result not provided'))), settings);
         }
-        return _buildFadeRoute(Phase5FinalTestResultScreen(result: result), settings);
+        return _buildFadeRoute(
+          FinalTestResultScreen.phase5(result: result),
+          settings,
+        );
       case phase5FinalTestReview:
         final answers = settings.arguments as List<Phase5IncorrectAnswer>?;
         if (answers == null) {
           return _buildRoute(const Scaffold(body: Center(child: Text('Error: Incorrect answers not provided'))), settings);
         }
-        return _buildSlideRoute(Phase5FinalTestReviewScreen(incorrectAnswers: answers), settings);
+        return _buildSlideRoute(
+          FinalTestReviewScreen.phase5(incorrectAnswers: answers),
+          settings,
+        );
       default:
         return _buildRoute(const OnboardingScreen(), settings);
     }

@@ -3,6 +3,7 @@ import '../../data/models/lesson.dart';
 import '../../data/models/user_lesson_status.dart';
 import '../../data/repositories/lesson_repository.dart';
 import '../../data/repositories/progress_repository.dart';
+import '../../domain/entities/phase_units.dart';
 import '../../services/gating_service.dart';
 import '../../../../core/utils/error_handler.dart';
 import '../../../../services/local_storage/storage_service.dart';
@@ -204,8 +205,8 @@ class ProgressProvider extends ChangeNotifier {
       allLessons.addAll(phase1Lessons);
       
       // Load Phase 2 lessons (Units 7-11)
-      final phase2Units = ['phase2_unit7', 'phase2_unit8', 'phase2_unit9', 'phase2_unit10', 'phase2_unit11'];
-      for (final unitId in phase2Units) {
+      for (final unit in PhaseUnits.phase2) {
+        final unitId = unit.id;
         try {
           final unitLessons = await _lessonRepo.loadUnitLessons(unitId);
           allLessons.addAll(unitLessons);
@@ -216,8 +217,8 @@ class ProgressProvider extends ChangeNotifier {
       }
       
       // Load Phase 3 lessons (Units 12-17)
-      final phase3Units = ['phase3_unit12', 'phase3_unit13', 'phase3_unit14', 'phase3_unit15', 'phase3_unit16', 'phase3_unit17'];
-      for (final unitId in phase3Units) {
+      for (final unit in PhaseUnits.phase3) {
+        final unitId = unit.id;
         try {
           final unitLessons = await _lessonRepo.loadUnitLessons(unitId);
           allLessons.addAll(unitLessons);
@@ -228,8 +229,8 @@ class ProgressProvider extends ChangeNotifier {
       }
       
       // Load Phase 4 lessons (Units 18-21)
-      final phase4Units = ['phase4_unit18', 'phase4_unit19', 'phase4_unit20', 'phase4_unit21'];
-      for (final unitId in phase4Units) {
+      for (final unit in PhaseUnits.phase4) {
+        final unitId = unit.id;
         try {
           final unitLessons = await _lessonRepo.loadUnitLessons(unitId);
           allLessons.addAll(unitLessons);

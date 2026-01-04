@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../providers/progress_provider.dart';
+import '../providers/mcq_final_test_provider.dart';
 import '../../../../core/widgets/lesson_card.dart';
 import '../../../../app/routes.dart';
-import '../../../../core/utils/error_handler.dart';
 import '../../../../core/constants/app_config.dart';
-import '../../services/phase1_final_test_service.dart';
-import '../../data/repositories/lesson_repository.dart';
-import '../../../../services/local_storage/storage_service.dart';
+import '../../domain/entities/phase_config.dart';
+import '../../domain/repositories/test_repository.dart';
+import '../../data/repositories/progress_repository.dart';
+import '../../services/gating_service.dart';
 
 class Phase1UnitScreen extends StatefulWidget {
   const Phase1UnitScreen({super.key});
@@ -17,7 +18,6 @@ class Phase1UnitScreen extends StatefulWidget {
 }
 
 class _Phase1UnitScreenState extends State<Phase1UnitScreen> {
-  Phase1FinalTestService? _testService;
   bool _isLesson6Completed = false;
   bool _hasPassedTest = false;
   int? _lastTestScore;
@@ -36,24 +36,15 @@ class _Phase1UnitScreenState extends State<Phase1UnitScreen> {
     try {
       // Wait for progress data to load
       await context.read<ProgressProvider>().loadAllData();
-      // Then initialize test service with loaded data
-      await _initializeTestService();
+      await _loadTestStatus();
     } catch (e) {
       debugPrint('Error loading data: $e');
     }
   }
 
-  /// Initialize the test service and check test status
-  Future<void> _initializeTestService() async {
+  /// Check test status and update local state
+  Future<void> _loadTestStatus() async {
     try {
-      final lessonRepo = context.read<LessonRepository>();
-      final storageService = context.read<StorageService>();
-      
-      _testService = Phase1FinalTestService(
-        lessonRepository: lessonRepo,
-        storageService: storageService,
-      );
-
       // Check if Lesson 6 is completed
       final progressProvider = context.read<ProgressProvider>();
       final lesson6Status = progressProvider.getLessonStatus('phase1_lesson6');
@@ -62,9 +53,14 @@ class _Phase1UnitScreenState extends State<Phase1UnitScreen> {
       // Otherwise, only show when lesson 6 is mastered
       _isLesson6Completed = AppConfig.isDevelopmentMode || (lesson6Status?.isMastered ?? false);
 
-      // Check if test has been passed
-      _hasPassedTest = await _testService!.hasPassedTest();
-      _lastTestScore = await _testService!.getLastTestScore();
+      final testProvider = McqFinalTestProvider(
+        config: PhaseConfig.phase1,
+        testRepository: context.read<TestRepository>(),
+        progressRepository: context.read<ProgressRepository>(),
+        gatingService: context.read<GatingService>(),
+      );
+      _hasPassedTest = await testProvider.hasPassedBefore();
+      _lastTestScore = await testProvider.getLastTestScore();
 
       if (mounted) {
         setState(() {});
@@ -72,6 +68,10 @@ class _Phase1UnitScreenState extends State<Phase1UnitScreen> {
     } catch (e) {
       debugPrint('Error initializing test service: $e');
     }
+  }
+
+  Future<void> _initializeTestService() async {
+    await _loadTestStatus();
   }
 
   @override

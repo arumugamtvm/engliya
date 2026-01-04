@@ -24,10 +24,61 @@
       "en": "Were they at the party?",
       "ta": "அவர்கள் விருந்தில் இருந்தார்களா?",
       "audioId": "phase2_l10_1_ex3"
+    },
+    {
+      "en": "Am I late?",
+      "ta": "நான் தாமதமாக வந்தேனா?",
+      "audioId": "phase2_l10_1_ex4"
+    },
+    {
+      "en": "Was he at home yesterday?",
+      "ta": "அவர் நேற்று வீட்டில் இருந்தாரா?",
+      "audioId": "phase2_l10_1_ex5"
     }
   ],
-  "listeningQuestions": [],
-  "speakSentences": [],
+  "listeningQuestions": [
+    {
+      "audioText": "Are you hungry?",
+      "options": [
+        "Are you hungry?",
+        "Is you hungry?",
+        "Were you hungry?"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "audioText": "Was she at school?",
+      "options": [
+        "Was she at school?",
+        "Is she at school?",
+        "Were she at school?"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "audioText": "Were they late?",
+      "options": [
+        "Were they late?",
+        "Was they late?",
+        "Are they late?"
+      ],
+      "correctIndex": 0
+    }
+  ],
+  "speakSentences": [
+    {
+      "en": "Am I early?",
+      "ta": "நான் சீக்கிரமாக வந்தேனா?"
+    },
+    {
+      "en": "Is it cold today?",
+      "ta": "இன்று குளிராக உள்ளதா?"
+    },
+    {
+      "en": "Were we ready?",
+      "ta": "நாம் தயாராக இருந்தோமா?"
+    }
+  ],
   "practiceQuestions": [
     {
       "type": "mcq",
@@ -42,6 +93,27 @@
       "promptTa": "அவள் நேற்று வீட்டில் இருந்தாளா?",
       "options": ["Am", "Is", "Are", "Was"],
       "correctIndex": 3
+    },
+    {
+      "type": "mcq",
+      "promptEn": "___ I late for class?",
+      "promptTa": "நான் வகுப்பிற்கு தாமதமாக வந்தேனா?",
+      "options": ["Am", "Is", "Are", "Was"],
+      "correctIndex": 0
+    },
+    {
+      "type": "mcq",
+      "promptEn": "___ they in the classroom now?",
+      "promptTa": "அவர்கள் இப்போது வகுப்பறையில் இருக்கிறார்களா?",
+      "options": ["Am", "Is", "Are", "Were"],
+      "correctIndex": 2
+    },
+    {
+      "type": "mcq",
+      "promptEn": "___ he sick last night?",
+      "promptTa": "அவர் நேற்று இரவு உடல்நலமில்லையா?",
+      "options": ["Is", "Are", "Was", "Were"],
+      "correctIndex": 2
     }
   ],
   "masteryQuestions": [
@@ -57,6 +129,27 @@
       "promptEn": "___ I late for the meeting?",
       "promptTa": "நான் கூட்டத்திற்கு தாமதமாக வந்தேனா?",
       "options": ["Am", "Is", "Are", "Was"],
+      "correctIndex": 3
+    },
+    {
+      "type": "mcq",
+      "promptEn": "___ we at the park yesterday?",
+      "promptTa": "நாம் நேற்று பூங்காவில் இருந்தோமா?",
+      "options": ["Am", "Is", "Are", "Were"],
+      "correctIndex": 3
+    },
+    {
+      "type": "mcq",
+      "promptEn": "___ it your book?",
+      "promptTa": "இது உங்கள் புத்தகமா?",
+      "options": ["Am", "Is", "Are", "Were"],
+      "correctIndex": 1
+    },
+    {
+      "type": "mcq",
+      "promptEn": "___ you at home last night?",
+      "promptTa": "நீங்கள் நேற்று இரவு வீட்டில் இருந்தீர்களா?",
+      "options": ["Am", "Was", "Are", "Were"],
       "correctIndex": 3
     }
   ]
