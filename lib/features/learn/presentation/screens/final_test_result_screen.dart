@@ -158,7 +158,7 @@ class FinalTestResultViewData {
           },
         ),
         FinalTestAction(
-          label: 'Retry Test',
+          label: 'Try Again',
           icon: Icons.refresh,
           style: FinalTestActionStyle.filled,
           backgroundColor: AppTheme.primaryColor,
@@ -257,7 +257,7 @@ class FinalTestResultViewData {
           },
         ),
         FinalTestAction(
-          label: 'Retry Test',
+          label: 'Try Again',
           icon: Icons.refresh,
           style: FinalTestActionStyle.outlined,
           visible: !passed,

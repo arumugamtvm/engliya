@@ -1,16 +1,17 @@
 import 'package:flutter/foundation.dart';
 
+import '../../domain/entities/phase_config.dart';
 import '../../domain/entities/unit.dart';
 import 'progress_provider.dart';
 import '../../../../core/utils/error_handler.dart';
 
 class PhaseUnitProvider extends ChangeNotifier {
   final ProgressProvider _progressProvider;
-  final List<Unit> _unitDefinitions;
+  final PhaseType _phaseType;
 
   PhaseUnitProvider(
     this._progressProvider,
-    this._unitDefinitions,
+    this._phaseType,
   );
 
   List<Unit> _units = [];
@@ -27,9 +28,7 @@ class PhaseUnitProvider extends ChangeNotifier {
     notifyListeners();
 
     try {
-      _units = _unitDefinitions
-          .map((unit) => unit.withMasteredCount(_calculateUnitMasteredCount(unit.id)))
-          .toList(growable: false);
+      _units = _progressProvider.getUnitsForPhase(_phaseType);
 
       _isLoading = false;
       notifyListeners();
@@ -38,19 +37,6 @@ class PhaseUnitProvider extends ChangeNotifier {
       _error = ErrorHandler.getUserMessage(e);
       _isLoading = false;
       notifyListeners();
-    }
-  }
-
-  int _calculateUnitMasteredCount(String unitId) {
-    try {
-      final lessons = _progressProvider.getUnitLessons(unitId);
-      return lessons
-          .where((lesson) =>
-              _progressProvider.getLessonStatus(lesson.id)?.isMastered ?? false)
-          .length;
-    } catch (e) {
-      ErrorHandler.logError('PhaseUnitProvider._calculateUnitMasteredCount', e);
-      return 0;
     }
   }
 

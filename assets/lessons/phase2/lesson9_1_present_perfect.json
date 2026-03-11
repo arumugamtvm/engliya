@@ -26,21 +26,72 @@
       "audioId": "phase2_l9_1_ex3"
     }
   ],
-  "listeningQuestions": [],
-  "speakSentences": [],
+  "listeningQuestions": [
+    {
+      "audioText": "I have finished my homework.",
+      "options": [
+        "I have finished my homework.",
+        "She has visited many countries.",
+        "They have lived here for 5 years."
+      ],
+      "correctIndex": 0
+    },
+    {
+      "audioText": "She has visited many countries.",
+      "options": [
+        "I have finished my homework.",
+        "They have lived here for 5 years.",
+        "She has visited many countries."
+      ],
+      "correctIndex": 2
+    },
+    {
+      "audioText": "They have lived here for 5 years.",
+      "options": [
+        "She has visited many countries.",
+        "They have lived here for 5 years.",
+        "I have finished my homework."
+      ],
+      "correctIndex": 1
+    }
+  ],
+  "speakSentences": [
+    {
+      "en": "I have finished my homework.",
+      "ta": "நான் என் வீட்டுப்பாடத்தை முடித்துவிட்டேன்."
+    },
+    {
+      "en": "She has visited many countries.",
+      "ta": "அவள் பல நாடுகளுக்கு சென்றிருக்கிறாள்."
+    },
+    {
+      "en": "They have lived here for 5 years.",
+      "ta": "அவர்கள் 5 வருடங்களாக இங்கே வசித்து வருகிறார்கள்."
+    }
+  ],
   "practiceQuestions": [
     {
       "type": "mcq",
       "promptEn": "I ___ already eaten breakfast.",
       "promptTa": "நான் ஏற்கனவே காலை உணவு சாப்பிட்டுவிட்டேன்.",
-      "options": ["have", "has", "had", "am"],
+      "options": [
+        "have",
+        "has",
+        "had",
+        "am"
+      ],
       "correctIndex": 0
     },
     {
       "type": "mcq",
       "promptEn": "She ___ finished her work.",
       "promptTa": "அவள் தன் வேலையை முடித்துவிட்டாள்.",
-      "options": ["have", "has", "had", "is"],
+      "options": [
+        "have",
+        "has",
+        "had",
+        "is"
+      ],
       "correctIndex": 1
     }
   ],
@@ -49,14 +100,24 @@
       "type": "mcq",
       "promptEn": "They ___ visited the museum.",
       "promptTa": "அவர்கள் அருங்காட்சியகத்திற்கு சென்றிருக்கிறார்கள்.",
-      "options": ["have", "has", "had", "are"],
+      "options": [
+        "have",
+        "has",
+        "had",
+        "are"
+      ],
       "correctIndex": 0
     },
     {
       "type": "mcq",
       "promptEn": "He ___ learned English for 3 years.",
       "promptTa": "அவன் 3 வருடங்களாக ஆங்கிலம் கற்று வருகிறான்.",
-      "options": ["have", "has", "had", "is"],
+      "options": [
+        "have",
+        "has",
+        "had",
+        "is"
+      ],
       "correctIndex": 1
     }
   ]

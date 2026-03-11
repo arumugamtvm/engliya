@@ -192,6 +192,43 @@ class PhaseConfigs {
     },
   );
 
+  static const PhaseConfig phase5 = PhaseConfig(
+    phaseNumber: 5,
+    phaseId: 'phase5',
+    phaseName: 'Advanced Mastery',
+    totalUnits: 4,
+    totalLessons: 16,
+    testQuestionCount: 35,
+    passingScore: 0.7,
+    unitIds: ['unit22', 'unit23', 'unit24', 'unit25'],
+    lessonsByUnit: {
+      'unit22': [
+        'lesson22_1_professional_email',
+        'lesson22_2_formal_meetings',
+        'lesson22_3_negotiation_language',
+        'lesson22_4_register_shift',
+      ],
+      'unit23': [
+        'lesson23_1_interview_opening',
+        'lesson23_2_strengths_weaknesses',
+        'lesson23_3_behavioral_answers',
+        'lesson23_4_follow_up_questions',
+      ],
+      'unit24': [
+        'lesson24_1_presentation_opening',
+        'lesson24_2_signposting_transitions',
+        'lesson24_3_data_commentary',
+        'lesson24_4_qna_handling',
+      ],
+      'unit25': [
+        'lesson25_1_argument_essay',
+        'lesson25_2_synthesis_summary',
+        'lesson25_3_paraphrase_precision',
+        'lesson25_4_critical_response',
+      ],
+    },
+  );
+
   static PhaseConfig getConfig(int phaseNumber) {
     switch (phaseNumber) {
       case 1:
@@ -202,6 +239,8 @@ class PhaseConfigs {
         return phase3;
       case 4:
         return phase4;
+      case 5:
+        return phase5;
       default:
         throw ArgumentError('Invalid phase number: $phaseNumber');
     }
@@ -217,12 +256,14 @@ class PhaseConfigs {
         return phase3;
       case 'phase4':
         return phase4;
+      case 'phase5':
+        return phase5;
       default:
         return null;
     }
   }
 
-  static List<PhaseConfig> get all => [phase1, phase2, phase3, phase4];
+  static List<PhaseConfig> get all => [phase1, phase2, phase3, phase4, phase5];
 
   static int get totalPhases => 4;
 

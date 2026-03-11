@@ -26,21 +26,72 @@
       "audioId": "phase2_l9_3_ex3"
     }
   ],
-  "listeningQuestions": [],
-  "speakSentences": [],
+  "listeningQuestions": [
+    {
+      "audioText": "I will have finished my work by 5 pm.",
+      "options": [
+        "I will have finished my work by 5 pm.",
+        "She will have completed the course by next month.",
+        "They will have left before we arrive."
+      ],
+      "correctIndex": 0
+    },
+    {
+      "audioText": "She will have completed the course by next month.",
+      "options": [
+        "I will have finished my work by 5 pm.",
+        "They will have left before we arrive.",
+        "She will have completed the course by next month."
+      ],
+      "correctIndex": 2
+    },
+    {
+      "audioText": "They will have left before we arrive.",
+      "options": [
+        "She will have completed the course by next month.",
+        "They will have left before we arrive.",
+        "I will have finished my work by 5 pm."
+      ],
+      "correctIndex": 1
+    }
+  ],
+  "speakSentences": [
+    {
+      "en": "I will have finished my work by 5 pm.",
+      "ta": "நான் மாலை 5 மணிக்குள் என் வேலையை முடித்திருப்பேன்."
+    },
+    {
+      "en": "She will have completed the course by next month.",
+      "ta": "அவள் அடுத்த மாதத்திற்குள் பாடத்தை முடித்திருப்பாள்."
+    },
+    {
+      "en": "They will have left before we arrive.",
+      "ta": "நாம் வருவதற்கு முன் அவர்கள் சென்றிருப்பார்கள்."
+    }
+  ],
   "practiceQuestions": [
     {
       "type": "mcq",
       "promptEn": "I ___ finished my homework by 8 pm.",
       "promptTa": "நான் இரவு 8 மணிக்குள் என் வீட்டுப்பாடத்தை முடித்திருப்பேன்.",
-      "options": ["will have", "will has", "have will", "has will"],
+      "options": [
+        "will have",
+        "will has",
+        "have will",
+        "has will"
+      ],
       "correctIndex": 0
     },
     {
       "type": "mcq",
       "promptEn": "She ___ graduated by next year.",
       "promptTa": "அவள் அடுத்த வருடத்திற்குள் பட்டம் பெற்றிருப்பாள்.",
-      "options": ["will have", "will has", "have will", "has will"],
+      "options": [
+        "will have",
+        "will has",
+        "have will",
+        "has will"
+      ],
       "correctIndex": 0
     }
   ],
@@ -49,14 +100,24 @@
       "type": "mcq",
       "promptEn": "They ___ completed the project by Friday.",
       "promptTa": "அவர்கள் வெள்ளிக்கிழமைக்குள் திட்டத்தை முடித்திருப்பார்கள்.",
-      "options": ["will have", "will has", "have will", "has will"],
+      "options": [
+        "will have",
+        "will has",
+        "have will",
+        "has will"
+      ],
       "correctIndex": 0
     },
     {
       "type": "mcq",
       "promptEn": "He ___ learned 1000 words by the end of this month.",
       "promptTa": "அவன் இந்த மாத இறுதிக்குள் 1000 வார்த்தைகளை கற்றிருப்பான்.",
-      "options": ["will have", "will has", "have will", "has will"],
+      "options": [
+        "will have",
+        "will has",
+        "have will",
+        "has will"
+      ],
       "correctIndex": 0
     }
   ]

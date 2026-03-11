@@ -29,6 +29,17 @@ class _PracticeTabState extends State<PracticeTab> {
       _answeredCorrectly[questionIndex] = (optionIndex == correctIndex);
     });
 
+    final lessonProvider = context.read<LessonProvider>();
+    final lesson = lessonProvider.currentLesson;
+    final totalQuestions = lesson?.practiceQuestions.length ?? 0;
+    final correctCount = _answeredCorrectly.values.where((correct) => correct).length;
+    final accuracy = totalQuestions == 0 ? 0.0 : (correctCount / totalQuestions);
+    lessonProvider.updatePracticeProgress(
+      answeredCount: _selectedAnswers.length,
+      totalCount: totalQuestions,
+      accuracy: accuracy,
+    );
+
     // Check if all questions are answered
     _checkCompletion();
   }
@@ -59,6 +70,21 @@ class _PracticeTabState extends State<PracticeTab> {
     }
   }
 
+  void _retryPractice() {
+    setState(() {
+      _selectedAnswers.clear();
+      _answeredCorrectly.clear();
+      _hasMarkedComplete = false;
+      _showFinalScore = false;
+    });
+
+    context.read<LessonProvider>().updatePracticeProgress(
+      answeredCount: 0,
+      totalCount: context.read<LessonProvider>().currentLesson?.practiceQuestions.length ?? 0,
+      accuracy: 0.0,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final lessonProvider = context.watch<LessonProvider>();
@@ -83,6 +109,11 @@ class _PracticeTabState extends State<PracticeTab> {
     double scorePercentage = _selectedAnswers.isEmpty 
         ? 0.0 
         : correctCount / questions.length;
+    lessonProvider.updatePracticeProgress(
+      answeredCount: _selectedAnswers.length,
+      totalCount: questions.length,
+      accuracy: scorePercentage,
+    );
 
     return Column(
       children: [
@@ -190,6 +221,19 @@ class _PracticeTabState extends State<PracticeTab> {
                     color: Colors.grey[600],
                   ),
                 ),
+                if (scorePercentage < 0.6) ...[
+                  const SizedBox(height: 12),
+                  ElevatedButton.icon(
+                    onPressed: _retryPractice,
+                    icon: const Icon(Icons.refresh),
+                    label: const Text('Retry Practice'),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: AppTheme.primaryColor,
+                      foregroundColor: Colors.white,
+                      minimumSize: const Size(double.infinity, 44),
+                    ),
+                  ),
+                ],
               ],
             ),
           ),

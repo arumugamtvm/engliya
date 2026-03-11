@@ -81,6 +81,7 @@ flutter:
     - assets/lessons/phase2/
     - assets/lessons/phase3/
     - assets/lessons/phase4/
+    - assets/lessons/phase5/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

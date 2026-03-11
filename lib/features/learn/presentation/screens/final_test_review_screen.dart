@@ -125,10 +125,7 @@ class FinalTestReviewScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(config.title),
-        centerTitle: true,
-      ),
+      appBar: AppBar(title: Text(config.title), centerTitle: true),
       body: items.isEmpty
           ? _buildNoMistakesView(context)
           : _buildMistakesList(context),
@@ -250,10 +247,7 @@ class FinalTestReviewScreen extends StatelessWidget {
             const SizedBox(height: AppTheme.spacingM),
             Text(
               item.question,
-              style: const TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.w500,
-              ),
+              style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
             ),
             const SizedBox(height: AppTheme.spacingM),
             _buildAnswerRow(
@@ -301,15 +295,9 @@ class FinalTestReviewScreen extends StatelessWidget {
               children: [
                 Text(
                   label,
-                  style: TextStyle(
-                    fontSize: 12,
-                    color: Colors.grey[600],
-                  ),
+                  style: TextStyle(fontSize: 12, color: Colors.grey[600]),
                 ),
-                Text(
-                  answer,
-                  style: const TextStyle(fontSize: 14),
-                ),
+                Text(answer, style: const TextStyle(fontSize: 14)),
               ],
             ),
           ),
@@ -379,7 +367,15 @@ String _phase5QuestionTypeLabel(Phase5QuestionType type) {
       return 'Presentation';
     case Phase5QuestionType.writing:
       return 'Writing';
-    case Phase5QuestionType.speaking:
+    case Phase5QuestionType.shortAnswer:
+      return 'Short Answer';
+    case Phase5QuestionType.rewrite:
+      return 'Rewrite';
+    case Phase5QuestionType.ordering:
+      return 'Ordering';
+    case Phase5QuestionType.speakingRubricScored:
       return 'Speaking';
+    case Phase5QuestionType.writingRubricScored:
+      return 'Writing Task';
   }
 }

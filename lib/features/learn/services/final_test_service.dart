@@ -37,7 +37,12 @@ class FinalTestService<Q, S, R> {
 
   FinalTestService._(this._delegate);
 
-  static FinalTestService<Phase4FinalTestQuestion, SpeakingResult, Phase4TestResult> phase4({
+  static FinalTestService<
+    Phase4FinalTestQuestion,
+    SpeakingResult,
+    Phase4TestResult
+  >
+  phase4({
     required StorageService storageService,
     required ProgressRepository progressRepository,
     required DebugService debugService,
@@ -53,7 +58,12 @@ class FinalTestService<Q, S, R> {
     );
   }
 
-  static FinalTestService<Phase5FinalTestQuestion, Phase5SpeakingResult, Phase5TestResult> phase5({
+  static FinalTestService<
+    Phase5FinalTestQuestion,
+    Phase5SpeakingResult,
+    Phase5TestResult
+  >
+  phase5({
     required StorageService storageService,
     required ProgressRepository progressRepository,
     required DebugService debugService,
@@ -100,7 +110,11 @@ class FinalTestService<Q, S, R> {
 
 class Phase4FinalTestService
     implements
-        _FinalTestServiceDelegate<Phase4FinalTestQuestion, SpeakingResult, Phase4TestResult> {
+        _FinalTestServiceDelegate<
+          Phase4FinalTestQuestion,
+          SpeakingResult,
+          Phase4TestResult
+        > {
   final StorageService _storageService;
   final ProgressRepository _progressRepository;
   final DebugService _debugService;
@@ -123,19 +137,32 @@ class Phase4FinalTestService
   // Scoring constants
   static const int passingScore = 18;
   static const int maxScore = 24;
-  static const int maxMcqScore = 16;  // 6 + 6 + 4 = 16 MCQs
-  static const int maxSpeakingScore = 12;  // 4 tasks × 3 points
+  static const int maxMcqScore = 16; // 6 + 6 + 4 = 16 MCQs
+  static const int maxSpeakingScore = 12; // 4 tasks × 3 points
 
   // Required lessons for test access (all Phase 4 lessons from Units 18-21)
   static const List<String> requiredLessonIds = [
     // Unit 18: Pronunciation & Sound (4 lessons)
-    'phase4_lesson18_1', 'phase4_lesson18_2', 'phase4_lesson18_3', 'phase4_lesson18_4',
+    'phase4_lesson18_1',
+    'phase4_lesson18_2',
+    'phase4_lesson18_3',
+    'phase4_lesson18_4',
     // Unit 19: Fluency Techniques (4 lessons)
-    'phase4_lesson19_1', 'phase4_lesson19_2', 'phase4_lesson19_3', 'phase4_lesson19_4',
+    'phase4_lesson19_1',
+    'phase4_lesson19_2',
+    'phase4_lesson19_3',
+    'phase4_lesson19_4',
     // Unit 20: Real-Life Conversations (5 lessons)
-    'phase4_lesson20_1', 'phase4_lesson20_2', 'phase4_lesson20_3', 'phase4_lesson20_4', 'phase4_lesson20_5',
+    'phase4_lesson20_1',
+    'phase4_lesson20_2',
+    'phase4_lesson20_3',
+    'phase4_lesson20_4',
+    'phase4_lesson20_5',
     // Unit 21: Discussion & Opinion Skills (4 lessons)
-    'phase4_lesson21_1', 'phase4_lesson21_2', 'phase4_lesson21_3', 'phase4_lesson21_4',
+    'phase4_lesson21_1',
+    'phase4_lesson21_2',
+    'phase4_lesson21_3',
+    'phase4_lesson21_4',
   ];
 
   @override
@@ -151,7 +178,8 @@ class Phase4FinalTestService
   bool isMcq(Phase4FinalTestQuestion question) => question.isMcq;
 
   @override
-  bool isSpeakingTask(Phase4FinalTestQuestion question) => question.isSpeakingTask;
+  bool isSpeakingTask(Phase4FinalTestQuestion question) =>
+      question.isSpeakingTask;
 
   @override
   String questionId(Phase4FinalTestQuestion question) => question.id;
@@ -173,17 +201,17 @@ class Phase4FinalTestService
     required ProgressRepository progressRepository,
     required DebugService debugService,
     LessonRepository? lessonRepository,
-  })  : _storageService = storageService,
-        _progressRepository = progressRepository,
-        _debugService = debugService,
-        _lessonRepository = lessonRepository ?? LessonRepository();
+  }) : _storageService = storageService,
+       _progressRepository = progressRepository,
+       _debugService = debugService,
+       _lessonRepository = lessonRepository ?? LessonRepository();
 
   /// Check if the user can take the Phase 4 Final Test
-  /// 
+  ///
   /// Returns true if:
   /// - Debug mode is enabled (bypasses all checks), OR
   /// - All Phase 4 lessons (Units 18-21) are mastered
-  /// 
+  ///
   /// Returns false on error to prevent test access when mastery cannot be verified
   Future<bool> canTakeTest() async {
     try {
@@ -205,7 +233,7 @@ class Phase4FinalTestService
 
   /// Check if all required Phase 4 lessons are mastered
   /// Required before taking the final test
-  /// 
+  ///
   /// Returns false on error to prevent test access when mastery cannot be verified
   Future<bool> areAllPhase4LessonsMastered() async {
     try {
@@ -217,17 +245,19 @@ class Phase4FinalTestService
       // Check if all required Phase 4 lessons are mastered
       for (final lessonId in requiredLessonIds) {
         final progress = allProgress[lessonId];
-        
+
         // If lesson has no progress or is not mastered, return false
         if (progress == null || !progress.isMastered) {
           print('Lesson $lessonId is not mastered');
           return false;
         }
-        
+
         masteredCount++;
       }
 
-      print('All required Phase 4 lessons mastered: $masteredCount/$totalRequired');
+      print(
+        'All required Phase 4 lessons mastered: $masteredCount/$totalRequired',
+      );
       return true;
     } catch (e) {
       print('Error: Failed to check Phase 4 lesson mastery: $e');
@@ -258,38 +288,38 @@ class Phase4FinalTestService
   }
 
   /// Generate a Phase 4 Final Test with 20 questions
-  /// 
+  ///
   /// Question distribution:
   /// - 6 Pronunciation MCQs from Unit 18 lessons
   /// - 6 Dialogue Response MCQs from Unit 20-21 lessons
   /// - 4 Listening MCQs from Phase 4 lessons
   /// - 4 Speaking Tasks from Unit 19 lessons
-  /// 
+  ///
   /// Uses fallback hardcoded questions when lesson content is insufficient
   Future<List<Phase4FinalTestQuestion>> generateTest() async {
     final random = Random();
     final questions = <Phase4FinalTestQuestion>[];
-    
+
     // Collect questions from lessons
     final pronunciationQuestions = <Phase4FinalTestQuestion>[];
     final dialogueQuestions = <Phase4FinalTestQuestion>[];
     final listeningQuestions = <Phase4FinalTestQuestion>[];
     final speakingPrompts = <Phase4FinalTestQuestion>[];
-    
+
     try {
       // Load Unit 18 lessons for pronunciation questions
       await _loadUnit18Questions(pronunciationQuestions, listeningQuestions);
-      
+
       // Load Unit 19 lessons for speaking prompts
       await _loadUnit19SpeakingPrompts(speakingPrompts);
-      
+
       // Load Unit 20-21 lessons for dialogue questions
       await _loadUnit20And21Questions(dialogueQuestions, listeningQuestions);
     } catch (e) {
       print('Warning: Error loading lesson content: $e');
       // Continue with fallback questions
     }
-    
+
     // Select pronunciation questions (6 needed)
     _selectQuestions(
       questions,
@@ -298,7 +328,7 @@ class Phase4FinalTestService
       _getFallbackPronunciationQuestions(),
       random,
     );
-    
+
     // Select dialogue questions (6 needed)
     _selectQuestions(
       questions,
@@ -307,7 +337,7 @@ class Phase4FinalTestService
       _getFallbackDialogueQuestions(),
       random,
     );
-    
+
     // Select listening questions (4 needed)
     _selectQuestions(
       questions,
@@ -316,7 +346,7 @@ class Phase4FinalTestService
       _getFallbackListeningQuestions(),
       random,
     );
-    
+
     // Select speaking prompts (4 needed)
     _selectQuestions(
       questions,
@@ -325,10 +355,10 @@ class Phase4FinalTestService
       _getFallbackSpeakingPrompts(),
       random,
     );
-    
+
     // Shuffle all questions for variety
     questions.shuffle(random);
-    
+
     return questions;
   }
 
@@ -343,14 +373,14 @@ class Phase4FinalTestService
       'phase4_lesson18_3',
       'phase4_lesson18_4',
     ];
-    
+
     for (final lessonId in unit18LessonIds) {
       try {
         final lesson = await _lessonRepository.loadLesson(lessonId);
-        
+
         // Extract pronunciation questions from practice and mastery questions
         _extractPronunciationQuestions(lesson, pronunciationQuestions);
-        
+
         // Extract listening questions
         _extractListeningQuestions(lesson, listeningQuestions);
       } catch (e) {
@@ -369,11 +399,11 @@ class Phase4FinalTestService
       'phase4_lesson19_3',
       'phase4_lesson19_4',
     ];
-    
+
     for (final lessonId in unit19LessonIds) {
       try {
         final lesson = await _lessonRepository.loadLesson(lessonId);
-        
+
         // Extract speaking prompts from speakSentences
         _extractSpeakingPrompts(lesson, speakingPrompts);
       } catch (e) {
@@ -400,14 +430,14 @@ class Phase4FinalTestService
       'phase4_lesson21_3',
       'phase4_lesson21_4',
     ];
-    
+
     for (final lessonId in unitLessonIds) {
       try {
         final lesson = await _lessonRepository.loadLesson(lessonId);
-        
+
         // Extract dialogue questions from practice and mastery questions
         _extractDialogueQuestions(lesson, dialogueQuestions);
-        
+
         // Extract listening questions
         _extractListeningQuestions(lesson, listeningQuestions);
       } catch (e) {
@@ -422,30 +452,34 @@ class Phase4FinalTestService
     List<Phase4FinalTestQuestion> questions,
   ) {
     int questionIndex = 0;
-    
+
     // Extract from practice questions
     for (final q in lesson.practiceQuestions) {
-      questions.add(Phase4FinalTestQuestion.pronunciation(
-        id: '${lesson.id}_pron_practice_$questionIndex',
-        unitId: lesson.unitId,
-        lessonId: lesson.id,
-        prompt: q.promptEn,
-        options: q.options,
-        correctIndex: q.correctIndex,
-      ));
+      questions.add(
+        Phase4FinalTestQuestion.pronunciation(
+          id: '${lesson.id}_pron_practice_$questionIndex',
+          unitId: lesson.unitId,
+          lessonId: lesson.id,
+          prompt: q.promptEn,
+          options: q.options,
+          correctIndex: q.correctIndex,
+        ),
+      );
       questionIndex++;
     }
-    
+
     // Extract from mastery questions
     for (final q in lesson.masteryQuestions) {
-      questions.add(Phase4FinalTestQuestion.pronunciation(
-        id: '${lesson.id}_pron_mastery_$questionIndex',
-        unitId: lesson.unitId,
-        lessonId: lesson.id,
-        prompt: q.promptEn,
-        options: q.options,
-        correctIndex: q.correctIndex,
-      ));
+      questions.add(
+        Phase4FinalTestQuestion.pronunciation(
+          id: '${lesson.id}_pron_mastery_$questionIndex',
+          unitId: lesson.unitId,
+          lessonId: lesson.id,
+          prompt: q.promptEn,
+          options: q.options,
+          correctIndex: q.correctIndex,
+        ),
+      );
       questionIndex++;
     }
   }
@@ -456,30 +490,34 @@ class Phase4FinalTestService
     List<Phase4FinalTestQuestion> questions,
   ) {
     int questionIndex = 0;
-    
+
     // Extract from practice questions
     for (final q in lesson.practiceQuestions) {
-      questions.add(Phase4FinalTestQuestion.dialogue(
-        id: '${lesson.id}_dial_practice_$questionIndex',
-        unitId: lesson.unitId,
-        lessonId: lesson.id,
-        prompt: q.promptEn,
-        options: q.options,
-        correctIndex: q.correctIndex,
-      ));
+      questions.add(
+        Phase4FinalTestQuestion.dialogue(
+          id: '${lesson.id}_dial_practice_$questionIndex',
+          unitId: lesson.unitId,
+          lessonId: lesson.id,
+          prompt: q.promptEn,
+          options: q.options,
+          correctIndex: q.correctIndex,
+        ),
+      );
       questionIndex++;
     }
-    
+
     // Extract from mastery questions
     for (final q in lesson.masteryQuestions) {
-      questions.add(Phase4FinalTestQuestion.dialogue(
-        id: '${lesson.id}_dial_mastery_$questionIndex',
-        unitId: lesson.unitId,
-        lessonId: lesson.id,
-        prompt: q.promptEn,
-        options: q.options,
-        correctIndex: q.correctIndex,
-      ));
+      questions.add(
+        Phase4FinalTestQuestion.dialogue(
+          id: '${lesson.id}_dial_mastery_$questionIndex',
+          unitId: lesson.unitId,
+          lessonId: lesson.id,
+          prompt: q.promptEn,
+          options: q.options,
+          correctIndex: q.correctIndex,
+        ),
+      );
       questionIndex++;
     }
   }
@@ -490,17 +528,19 @@ class Phase4FinalTestService
     List<Phase4FinalTestQuestion> questions,
   ) {
     int questionIndex = 0;
-    
+
     for (final q in lesson.listeningQuestions) {
-      questions.add(Phase4FinalTestQuestion.listening(
-        id: '${lesson.id}_listen_$questionIndex',
-        unitId: lesson.unitId,
-        lessonId: lesson.id,
-        prompt: 'Based on the dialogue, answer the question:',
-        options: q.options,
-        correctIndex: q.correctIndex,
-        audioText: q.audioText,
-      ));
+      questions.add(
+        Phase4FinalTestQuestion.listening(
+          id: '${lesson.id}_listen_$questionIndex',
+          unitId: lesson.unitId,
+          lessonId: lesson.id,
+          prompt: 'Based on the dialogue, answer the question:',
+          options: q.options,
+          correctIndex: q.correctIndex,
+          audioText: q.audioText,
+        ),
+      );
       questionIndex++;
     }
   }
@@ -511,16 +551,18 @@ class Phase4FinalTestService
     List<Phase4FinalTestQuestion> prompts,
   ) {
     int promptIndex = 0;
-    
+
     // Create speaking prompts from speakSentences
     // Group sentences into speaking tasks
     for (final s in lesson.speakSentences) {
-      prompts.add(Phase4FinalTestQuestion.speaking(
-        id: '${lesson.id}_speak_$promptIndex',
-        unitId: lesson.unitId,
-        lessonId: lesson.id,
-        prompt: 'Speak about this topic in 3-4 sentences: ${s.en}',
-      ));
+      prompts.add(
+        Phase4FinalTestQuestion.speaking(
+          id: '${lesson.id}_speak_$promptIndex',
+          unitId: lesson.unitId,
+          lessonId: lesson.id,
+          prompt: 'Speak about this topic in 3-4 sentences: ${s.en}',
+        ),
+      );
       promptIndex++;
     }
   }
@@ -535,17 +577,17 @@ class Phase4FinalTestService
   ) {
     // Shuffle available questions
     available.shuffle(random);
-    
+
     // Take up to 'count' questions from available
     final selected = available.take(count).toList();
-    
+
     // If not enough, add from fallback
     if (selected.length < count) {
       final needed = count - selected.length;
       fallback.shuffle(random);
       selected.addAll(fallback.take(needed));
     }
-    
+
     target.addAll(selected);
   }
 
@@ -691,11 +733,7 @@ class Phase4FinalTestService
         unitId: 'phase4_unit20',
         lessonId: 'fallback',
         prompt: 'How do you ask for the price of something?',
-        options: [
-          'What is this?',
-          'How much is this?',
-          'Where is this?',
-        ],
+        options: ['What is this?', 'How much is this?', 'Where is this?'],
         correctIndex: 1,
       ),
       Phase4FinalTestQuestion.dialogue(
@@ -739,20 +777,18 @@ class Phase4FinalTestService
           'The customer wants to leave.',
         ],
         correctIndex: 1,
-        audioText: 'Customer: "Excuse me, how much is this blue shirt?" Shopkeeper: "That one is 800 rupees."',
+        audioText:
+            'Customer: "Excuse me, how much is this blue shirt?" Shopkeeper: "That one is 800 rupees."',
       ),
       Phase4FinalTestQuestion.listening(
         id: 'fallback_listen_2',
         unitId: 'phase4_unit20',
         lessonId: 'fallback',
         prompt: 'Where is the fitting room?',
-        options: [
-          'On the left',
-          'On the right',
-          'Upstairs',
-        ],
+        options: ['On the left', 'On the right', 'Upstairs'],
         correctIndex: 1,
-        audioText: 'Customer: "Can I try this on?" Shopkeeper: "Of course. The fitting room is on your right."',
+        audioText:
+            'Customer: "Can I try this on?" Shopkeeper: "Of course. The fitting room is on your right."',
       ),
       Phase4FinalTestQuestion.listening(
         id: 'fallback_listen_3',
@@ -765,31 +801,25 @@ class Phase4FinalTestService
           'The speaker likes swimming.',
         ],
         correctIndex: 1,
-        audioText: 'I like reading books. I read every day. My favorite books are novels.',
+        audioText:
+            'I like reading books. I read every day. My favorite books are novels.',
       ),
       Phase4FinalTestQuestion.listening(
         id: 'fallback_listen_4',
         unitId: 'phase4_unit20',
         lessonId: 'fallback',
         prompt: 'What payment methods does the shop accept?',
-        options: [
-          'Only cash',
-          'Cards and UPI',
-          'Only credit cards',
-        ],
+        options: ['Only cash', 'Cards and UPI', 'Only credit cards'],
         correctIndex: 1,
-        audioText: 'Customer: "Can I pay by card?" Shopkeeper: "Yes, we accept cards and UPI."',
+        audioText:
+            'Customer: "Can I pay by card?" Shopkeeper: "Yes, we accept cards and UPI."',
       ),
       Phase4FinalTestQuestion.listening(
         id: 'fallback_listen_5',
         unitId: 'phase4_unit18',
         lessonId: 'fallback',
         prompt: 'How many syllables does "happy" have?',
-        options: [
-          '1 syllable',
-          '2 syllables',
-          '3 syllables',
-        ],
+        options: ['1 syllable', '2 syllables', '3 syllables'],
         correctIndex: 1,
         audioText: 'The word "happy" has two syllables: hap-py.',
       ),
@@ -804,7 +834,8 @@ class Phase4FinalTestService
           'Speaking very fast',
         ],
         correctIndex: 1,
-        audioText: 'To speak fluently, use connecting words like "and", "but", "so", and "because".',
+        audioText:
+            'To speak fluently, use connecting words like "and", "but", "so", and "because".',
       ),
     ];
   }
@@ -852,31 +883,31 @@ class Phase4FinalTestService
   }
 
   /// Validate an MCQ answer by comparing selected index with correct index
-  /// 
+  ///
   /// Returns true if the selected answer matches the correct answer, false otherwise.
   /// For speaking tasks (which have null correctIndex), always returns false.
-  /// 
+  ///
   /// Requirements: 2.3, 3.3, 4.3
   bool validateMcqAnswer(Phase4FinalTestQuestion question, int selectedIndex) {
     // Speaking tasks don't have a correct index - they're scored differently
     if (question.correctIndex == null) {
       return false;
     }
-    
+
     // Compare selected index with correct index
     return selectedIndex == question.correctIndex;
   }
 
   /// Score a speaking task based on word count in recognized text
-  /// 
+  ///
   /// Scoring tiers:
   /// - 3 points: 20+ words (good fluency, clear recognition)
   /// - 2 points: 10-19 words (okay but short)
   /// - 1 point: 1-9 words (very short)
   /// - 0 points: 0 words (no output)
-  /// 
+  ///
   /// Returns a SpeakingScoreResult with score and feedback message.
-  /// 
+  ///
   /// Requirements: 5.3, 5.4, 5.5
   SpeakingScoreResult scoreSpeakingTask(String? recognizedText) {
     // Handle null or empty text
@@ -887,15 +918,15 @@ class Phase4FinalTestService
         feedback: 'No speech detected. Please try again.',
       );
     }
-    
+
     // Count words by splitting on whitespace
     final words = recognizedText.trim().split(RegExp(r'\s+'));
     final wordCount = words.where((w) => w.isNotEmpty).length;
-    
+
     // Determine score based on word count tiers
     int score;
     String feedback;
-    
+
     if (wordCount >= 20) {
       score = 3;
       feedback = 'Great fluency! Clear and natural speech.';
@@ -909,7 +940,7 @@ class Phase4FinalTestService
       score = 0;
       feedback = 'No speech detected. Please try again.';
     }
-    
+
     return SpeakingScoreResult(
       score: score,
       wordCount: wordCount,
@@ -918,18 +949,18 @@ class Phase4FinalTestService
   }
 
   /// Calculate the final test result from questions and answers
-  /// 
+  ///
   /// Parameters:
   /// - questions: List of all 20 test questions
   /// - mcqAnswers: Map of question ID to selected answer index (for MCQ questions)
   /// - speakingResults: List of SpeakingResult for speaking tasks
-  /// 
+  ///
   /// Returns a Phase4TestResult with:
   /// - Total score (MCQ correct + speaking scores)
   /// - Percentage (totalScore / 24 * 100)
   /// - Pass/fail status (>= 18 points to pass)
   /// - List of incorrect MCQ answers for review
-  /// 
+  ///
   /// Requirements: 6.1, 6.2, 6.3, 7.1
   Phase4TestResult calculateResult({
     required List<Phase4FinalTestQuestion> questions,
@@ -939,43 +970,47 @@ class Phase4FinalTestService
     int mcqCorrect = 0;
     int speakingScore = 0;
     final incorrectMcqAnswers = <Phase4IncorrectAnswer>[];
-    
+
     // Process each question
     for (final question in questions) {
       if (question.isMcq) {
         // MCQ question - check if answer is correct
         final selectedIndex = mcqAnswers[question.id];
-        
+
         if (selectedIndex != null && question.correctIndex != null) {
           if (selectedIndex == question.correctIndex) {
             // Correct answer - add 1 point
             mcqCorrect++;
           } else {
             // Incorrect answer - add to review list
-            incorrectMcqAnswers.add(Phase4IncorrectAnswer(
-              question: question,
-              selectedIndex: selectedIndex,
-              selectedAnswer: question.options![selectedIndex],
-              correctAnswer: question.options![question.correctIndex!],
-            ));
+            incorrectMcqAnswers.add(
+              Phase4IncorrectAnswer(
+                question: question,
+                selectedIndex: selectedIndex,
+                selectedAnswer: question.options![selectedIndex],
+                correctAnswer: question.options![question.correctIndex!],
+              ),
+            );
           }
         } else if (selectedIndex == null && question.correctIndex != null) {
           // Question was skipped - treat as incorrect
-          incorrectMcqAnswers.add(Phase4IncorrectAnswer(
-            question: question,
-            selectedIndex: -1, // Indicates skipped
-            selectedAnswer: 'Skipped',
-            correctAnswer: question.options![question.correctIndex!],
-          ));
+          incorrectMcqAnswers.add(
+            Phase4IncorrectAnswer(
+              question: question,
+              selectedIndex: -1, // Indicates skipped
+              selectedAnswer: 'Skipped',
+              correctAnswer: question.options![question.correctIndex!],
+            ),
+          );
         }
       }
     }
-    
+
     // Sum speaking scores (0-3 each, max 12 total)
     for (final result in speakingResults) {
       speakingScore += result.score;
     }
-    
+
     // Create and return the result using the factory constructor
     return Phase4TestResult.calculate(
       mcqCorrect: mcqCorrect,
@@ -987,38 +1022,45 @@ class Phase4FinalTestService
   }
 
   /// Save the test result to persistent storage
-  /// 
+  ///
   /// Persists:
   /// - phase4FinalTestPassed: true if passed, false otherwise
   /// - phase4FinalTestScore: the total score achieved
   /// - phase5Unlocked: true if test was passed (unlocks Phase 5)
   /// - phase4FinalTestResult: full result JSON for later retrieval
   /// - phase4FinalTestTakenAt: timestamp of when test was completed
-  /// 
+  ///
   /// Requirements: 8.1, 8.2, 8.3
   Future<void> saveTestResult(Phase4TestResult result) async {
     try {
       // Save pass/fail status
       await _storageService.setBool(keyTestPassed, result.passed);
-      
+
       // Save the total score
       await _storageService.setInt(keyTestScore, result.totalScore);
-      
+
       // If passed, unlock Phase 5
       if (result.passed) {
         await _storageService.setBool(keyPhase5Unlocked, true);
-        print('Phase 5 unlocked! Test passed with score: ${result.totalScore}/${result.maxScore}');
+        print(
+          'Phase 5 unlocked! Test passed with score: ${result.totalScore}/${result.maxScore}',
+        );
       } else {
-        print('Test not passed. Score: ${result.totalScore}/${result.maxScore} (need $passingScore to pass)');
+        print(
+          'Test not passed. Score: ${result.totalScore}/${result.maxScore} (need $passingScore to pass)',
+        );
       }
-      
+
       // Save the full result JSON for later retrieval
       final resultJson = result.toJson();
       await _storageService.setString(keyTestResult, resultJson.toString());
-      
+
       // Save the completion timestamp
-      await _storageService.setString(keyTestDate, result.completedAt.toIso8601String());
-      
+      await _storageService.setString(
+        keyTestDate,
+        result.completedAt.toIso8601String(),
+      );
+
       print('Phase 4 Final Test result saved successfully');
     } catch (e) {
       print('Error: Failed to save test result: $e');
@@ -1027,9 +1069,9 @@ class Phase4FinalTestService
   }
 
   /// Check if Phase 5 is unlocked
-  /// 
+  ///
   /// Returns true if and only if phase4FinalTestPassed is true in storage.
-  /// 
+  ///
   /// Requirements: 8.4
   Future<bool> isPhase5Unlocked() async {
     try {
@@ -1042,15 +1084,15 @@ class Phase4FinalTestService
   }
 
   /// Get incorrect MCQ answers from a test result for review
-  /// 
+  ///
   /// Filters out speaking tasks from the incorrect answers list.
   /// Returns only MCQ questions (pronunciation, dialogue, listening) where
   /// the user selected an incorrect answer.
-  /// 
+  ///
   /// This method is used by the review screen to display only reviewable
   /// mistakes - speaking tasks are excluded as they cannot be reviewed
   /// in the same way as MCQs.
-  /// 
+  ///
   /// Requirements: 7.1, 7.3
   List<Phase4IncorrectAnswer> getIncorrectMcqAnswers(Phase4TestResult result) {
     // The incorrectMcqAnswers list in Phase4TestResult already contains
@@ -1068,7 +1110,7 @@ class SpeakingScoreResult {
   final int score;
   final int wordCount;
   final String feedback;
-  
+
   const SpeakingScoreResult({
     required this.score,
     required this.wordCount,
@@ -1076,10 +1118,13 @@ class SpeakingScoreResult {
   });
 }
 
-
 class Phase5FinalTestService
     implements
-        _FinalTestServiceDelegate<Phase5FinalTestQuestion, Phase5SpeakingResult, Phase5TestResult> {
+        _FinalTestServiceDelegate<
+          Phase5FinalTestQuestion,
+          Phase5SpeakingResult,
+          Phase5TestResult
+        > {
   final StorageService _storageService;
   final ProgressRepository _progressRepository;
   final DebugService _debugService;
@@ -1101,21 +1146,33 @@ class Phase5FinalTestService
   static const int totalQuestionCount = 35;
 
   // Scoring constants
-  static const int passingScore = 45;
+  static const int passingScore = 42;
   static const int maxScore = 60;
-  static const int maxMcqScore = 27;  // 8 + 7 + 6 + 6 = 27 MCQs
-  static const int maxSpeakingScore = 32;  // 8 tasks × 4 points
+  static const int maxMcqScore = 27; // 8 + 7 + 6 + 6 = 27 MCQs
+  static const int maxSpeakingScore = 32; // 8 tasks × 4 points
 
   // Required lessons for test access (all Phase 5 lessons from Units 22-25)
   static const List<String> requiredLessonIds = [
     // Unit 22: Business Communication (4 lessons)
-    'phase5_lesson22_1', 'phase5_lesson22_2', 'phase5_lesson22_3', 'phase5_lesson22_4',
+    'phase5_lesson22_1',
+    'phase5_lesson22_2',
+    'phase5_lesson22_3',
+    'phase5_lesson22_4',
     // Unit 23: Interview English (4 lessons)
-    'phase5_lesson23_1', 'phase5_lesson23_2', 'phase5_lesson23_3', 'phase5_lesson23_4',
+    'phase5_lesson23_1',
+    'phase5_lesson23_2',
+    'phase5_lesson23_3',
+    'phase5_lesson23_4',
     // Unit 24: Presentation Skills (4 lessons)
-    'phase5_lesson24_1', 'phase5_lesson24_2', 'phase5_lesson24_3', 'phase5_lesson24_4',
+    'phase5_lesson24_1',
+    'phase5_lesson24_2',
+    'phase5_lesson24_3',
+    'phase5_lesson24_4',
     // Unit 25: Advanced Writing (4 lessons)
-    'phase5_lesson25_1', 'phase5_lesson25_2', 'phase5_lesson25_3', 'phase5_lesson25_4',
+    'phase5_lesson25_1',
+    'phase5_lesson25_2',
+    'phase5_lesson25_3',
+    'phase5_lesson25_4',
   ];
 
   @override
@@ -1131,13 +1188,16 @@ class Phase5FinalTestService
   bool isMcq(Phase5FinalTestQuestion question) => question.isMcq;
 
   @override
-  bool isSpeakingTask(Phase5FinalTestQuestion question) => question.isSpeakingTask;
+  bool isSpeakingTask(Phase5FinalTestQuestion question) =>
+      question.isSpeakingTask;
 
   @override
   String questionId(Phase5FinalTestQuestion question) => question.id;
 
   @override
-  Phase5SpeakingResult createEmptySpeakingResult(Phase5FinalTestQuestion question) {
+  Phase5SpeakingResult createEmptySpeakingResult(
+    Phase5FinalTestQuestion question,
+  ) {
     return Phase5SpeakingResult(
       taskId: question.id,
       prompt: question.prompt,
@@ -1153,17 +1213,17 @@ class Phase5FinalTestService
     required ProgressRepository progressRepository,
     required DebugService debugService,
     LessonRepository? lessonRepository,
-  })  : _storageService = storageService,
-        _progressRepository = progressRepository,
-        _debugService = debugService,
-        _lessonRepository = lessonRepository ?? LessonRepository();
+  }) : _storageService = storageService,
+       _progressRepository = progressRepository,
+       _debugService = debugService,
+       _lessonRepository = lessonRepository ?? LessonRepository();
 
   /// Check if the user can take the Phase 5 Final Test
-  /// 
+  ///
   /// Returns true if:
   /// - Debug mode is enabled (bypasses all checks), OR
   /// - All Phase 5 lessons (Units 22-25) are mastered
-  /// 
+  ///
   /// Returns false on error to prevent test access when mastery cannot be verified
   Future<bool> canTakeTest() async {
     try {
@@ -1185,7 +1245,7 @@ class Phase5FinalTestService
 
   /// Check if all required Phase 5 lessons are mastered
   /// Required before taking the final test
-  /// 
+  ///
   /// Returns false on error to prevent test access when mastery cannot be verified
   Future<bool> areAllPhase5LessonsMastered() async {
     try {
@@ -1197,17 +1257,19 @@ class Phase5FinalTestService
       // Check if all required Phase 5 lessons are mastered
       for (final lessonId in requiredLessonIds) {
         final progress = allProgress[lessonId];
-        
+
         // If lesson has no progress or is not mastered, return false
         if (progress == null || !progress.isMastered) {
           print('Lesson $lessonId is not mastered');
           return false;
         }
-        
+
         masteredCount++;
       }
 
-      print('All required Phase 5 lessons mastered: $masteredCount/$totalRequired');
+      print(
+        'All required Phase 5 lessons mastered: $masteredCount/$totalRequired',
+      );
       return true;
     } catch (e) {
       print('Error: Failed to check Phase 5 lesson mastery: $e');
@@ -1263,43 +1325,43 @@ class Phase5FinalTestService
   }
 
   /// Generate a Phase 5 Final Test with 35 tasks
-  /// 
+  ///
   /// Question distribution:
   /// - 8 Business English MCQs from Unit 22 lessons
   /// - 7 Interview Response MCQs from Unit 23 lessons
   /// - 6 Presentation Language MCQs from Unit 24 lessons
   /// - 6 Writing Logic MCQs from Unit 25 lessons
   /// - 8 Professional Speaking Tasks from all Phase 5 lessons
-  /// 
+  ///
   /// Uses fallback hardcoded questions when lesson content is insufficient
   Future<List<Phase5FinalTestQuestion>> generateTest() async {
     final random = Random();
     final questions = <Phase5FinalTestQuestion>[];
-    
+
     // Collect questions from lessons
     final businessQuestions = <Phase5FinalTestQuestion>[];
     final interviewQuestions = <Phase5FinalTestQuestion>[];
     final presentationQuestions = <Phase5FinalTestQuestion>[];
     final writingQuestions = <Phase5FinalTestQuestion>[];
     final speakingPrompts = <Phase5FinalTestQuestion>[];
-    
+
     try {
       // Load Unit 22 lessons for business English questions
       await _loadUnit22Questions(businessQuestions, speakingPrompts);
-      
+
       // Load Unit 23 lessons for interview questions
       await _loadUnit23Questions(interviewQuestions, speakingPrompts);
-      
+
       // Load Unit 24 lessons for presentation questions
       await _loadUnit24Questions(presentationQuestions, speakingPrompts);
-      
+
       // Load Unit 25 lessons for writing questions and speaking prompts
       await _loadUnit25Questions(writingQuestions, speakingPrompts);
     } catch (e) {
       print('Warning: Error loading lesson content: $e');
       // Continue with fallback questions
     }
-    
+
     // Select business English questions (8 needed)
     _selectQuestions(
       questions,
@@ -1308,7 +1370,7 @@ class Phase5FinalTestService
       _getFallbackBusinessEnglishQuestions(),
       random,
     );
-    
+
     // Select interview questions (7 needed)
     _selectQuestions(
       questions,
@@ -1317,7 +1379,7 @@ class Phase5FinalTestService
       _getFallbackInterviewQuestions(),
       random,
     );
-    
+
     // Select presentation questions (6 needed)
     _selectQuestions(
       questions,
@@ -1326,7 +1388,7 @@ class Phase5FinalTestService
       _getFallbackPresentationQuestions(),
       random,
     );
-    
+
     // Select writing questions (6 needed)
     _selectQuestions(
       questions,
@@ -1335,7 +1397,7 @@ class Phase5FinalTestService
       _getFallbackWritingQuestions(),
       random,
     );
-    
+
     // Select speaking prompts (8 needed)
     _selectQuestions(
       questions,
@@ -1344,10 +1406,10 @@ class Phase5FinalTestService
       _getFallbackSpeakingPrompts(),
       random,
     );
-    
+
     // Shuffle all questions for variety
     questions.shuffle(random);
-    
+
     return questions;
   }
 
@@ -1362,7 +1424,7 @@ class Phase5FinalTestService
       'phase5_lesson22_3',
       'phase5_lesson22_4',
     ];
-    
+
     for (final lessonId in unit22LessonIds) {
       try {
         final lesson = await _lessonRepository.loadLesson(lessonId);
@@ -1385,7 +1447,7 @@ class Phase5FinalTestService
       'phase5_lesson23_3',
       'phase5_lesson23_4',
     ];
-    
+
     for (final lessonId in unit23LessonIds) {
       try {
         final lesson = await _lessonRepository.loadLesson(lessonId);
@@ -1408,7 +1470,7 @@ class Phase5FinalTestService
       'phase5_lesson24_3',
       'phase5_lesson24_4',
     ];
-    
+
     for (final lessonId in unit24LessonIds) {
       try {
         final lesson = await _lessonRepository.loadLesson(lessonId);
@@ -1431,7 +1493,7 @@ class Phase5FinalTestService
       'phase5_lesson25_3',
       'phase5_lesson25_4',
     ];
-    
+
     for (final lessonId in unit25LessonIds) {
       try {
         final lesson = await _lessonRepository.loadLesson(lessonId);
@@ -1449,30 +1511,34 @@ class Phase5FinalTestService
     List<Phase5FinalTestQuestion> questions,
   ) {
     int questionIndex = 0;
-    
+
     // Extract from practice questions
     for (final q in lesson.practiceQuestions) {
-      questions.add(Phase5FinalTestQuestion.businessEnglish(
-        id: '${lesson.id}_business_practice_$questionIndex',
-        unitId: lesson.unitId,
-        lessonId: lesson.id,
-        prompt: q.promptEn,
-        options: q.options,
-        correctIndex: q.correctIndex,
-      ));
+      questions.add(
+        Phase5FinalTestQuestion.businessEnglish(
+          id: '${lesson.id}_business_practice_$questionIndex',
+          unitId: lesson.unitId,
+          lessonId: lesson.id,
+          prompt: q.promptEn,
+          options: q.options,
+          correctIndex: q.correctIndex,
+        ),
+      );
       questionIndex++;
     }
-    
+
     // Extract from mastery questions
     for (final q in lesson.masteryQuestions) {
-      questions.add(Phase5FinalTestQuestion.businessEnglish(
-        id: '${lesson.id}_business_mastery_$questionIndex',
-        unitId: lesson.unitId,
-        lessonId: lesson.id,
-        prompt: q.promptEn,
-        options: q.options,
-        correctIndex: q.correctIndex,
-      ));
+      questions.add(
+        Phase5FinalTestQuestion.businessEnglish(
+          id: '${lesson.id}_business_mastery_$questionIndex',
+          unitId: lesson.unitId,
+          lessonId: lesson.id,
+          prompt: q.promptEn,
+          options: q.options,
+          correctIndex: q.correctIndex,
+        ),
+      );
       questionIndex++;
     }
   }
@@ -1483,28 +1549,32 @@ class Phase5FinalTestService
     List<Phase5FinalTestQuestion> questions,
   ) {
     int questionIndex = 0;
-    
+
     for (final q in lesson.practiceQuestions) {
-      questions.add(Phase5FinalTestQuestion.interview(
-        id: '${lesson.id}_interview_practice_$questionIndex',
-        unitId: lesson.unitId,
-        lessonId: lesson.id,
-        prompt: q.promptEn,
-        options: q.options,
-        correctIndex: q.correctIndex,
-      ));
+      questions.add(
+        Phase5FinalTestQuestion.interview(
+          id: '${lesson.id}_interview_practice_$questionIndex',
+          unitId: lesson.unitId,
+          lessonId: lesson.id,
+          prompt: q.promptEn,
+          options: q.options,
+          correctIndex: q.correctIndex,
+        ),
+      );
       questionIndex++;
     }
-    
+
     for (final q in lesson.masteryQuestions) {
-      questions.add(Phase5FinalTestQuestion.interview(
-        id: '${lesson.id}_interview_mastery_$questionIndex',
-        unitId: lesson.unitId,
-        lessonId: lesson.id,
-        prompt: q.promptEn,
-        options: q.options,
-        correctIndex: q.correctIndex,
-      ));
+      questions.add(
+        Phase5FinalTestQuestion.interview(
+          id: '${lesson.id}_interview_mastery_$questionIndex',
+          unitId: lesson.unitId,
+          lessonId: lesson.id,
+          prompt: q.promptEn,
+          options: q.options,
+          correctIndex: q.correctIndex,
+        ),
+      );
       questionIndex++;
     }
   }
@@ -1515,28 +1585,32 @@ class Phase5FinalTestService
     List<Phase5FinalTestQuestion> questions,
   ) {
     int questionIndex = 0;
-    
+
     for (final q in lesson.practiceQuestions) {
-      questions.add(Phase5FinalTestQuestion.presentation(
-        id: '${lesson.id}_presentation_practice_$questionIndex',
-        unitId: lesson.unitId,
-        lessonId: lesson.id,
-        prompt: q.promptEn,
-        options: q.options,
-        correctIndex: q.correctIndex,
-      ));
+      questions.add(
+        Phase5FinalTestQuestion.presentation(
+          id: '${lesson.id}_presentation_practice_$questionIndex',
+          unitId: lesson.unitId,
+          lessonId: lesson.id,
+          prompt: q.promptEn,
+          options: q.options,
+          correctIndex: q.correctIndex,
+        ),
+      );
       questionIndex++;
     }
-    
+
     for (final q in lesson.masteryQuestions) {
-      questions.add(Phase5FinalTestQuestion.presentation(
-        id: '${lesson.id}_presentation_mastery_$questionIndex',
-        unitId: lesson.unitId,
-        lessonId: lesson.id,
-        prompt: q.promptEn,
-        options: q.options,
-        correctIndex: q.correctIndex,
-      ));
+      questions.add(
+        Phase5FinalTestQuestion.presentation(
+          id: '${lesson.id}_presentation_mastery_$questionIndex',
+          unitId: lesson.unitId,
+          lessonId: lesson.id,
+          prompt: q.promptEn,
+          options: q.options,
+          correctIndex: q.correctIndex,
+        ),
+      );
       questionIndex++;
     }
   }
@@ -1547,28 +1621,32 @@ class Phase5FinalTestService
     List<Phase5FinalTestQuestion> questions,
   ) {
     int questionIndex = 0;
-    
+
     for (final q in lesson.practiceQuestions) {
-      questions.add(Phase5FinalTestQuestion.writing(
-        id: '${lesson.id}_writing_practice_$questionIndex',
-        unitId: lesson.unitId,
-        lessonId: lesson.id,
-        prompt: q.promptEn,
-        options: q.options,
-        correctIndex: q.correctIndex,
-      ));
+      questions.add(
+        Phase5FinalTestQuestion.writing(
+          id: '${lesson.id}_writing_practice_$questionIndex',
+          unitId: lesson.unitId,
+          lessonId: lesson.id,
+          prompt: q.promptEn,
+          options: q.options,
+          correctIndex: q.correctIndex,
+        ),
+      );
       questionIndex++;
     }
-    
+
     for (final q in lesson.masteryQuestions) {
-      questions.add(Phase5FinalTestQuestion.writing(
-        id: '${lesson.id}_writing_mastery_$questionIndex',
-        unitId: lesson.unitId,
-        lessonId: lesson.id,
-        prompt: q.promptEn,
-        options: q.options,
-        correctIndex: q.correctIndex,
-      ));
+      questions.add(
+        Phase5FinalTestQuestion.writing(
+          id: '${lesson.id}_writing_mastery_$questionIndex',
+          unitId: lesson.unitId,
+          lessonId: lesson.id,
+          prompt: q.promptEn,
+          options: q.options,
+          correctIndex: q.correctIndex,
+        ),
+      );
       questionIndex++;
     }
   }
@@ -1579,14 +1657,16 @@ class Phase5FinalTestService
     List<Phase5FinalTestQuestion> prompts,
   ) {
     int promptIndex = 0;
-    
+
     for (final s in lesson.speakSentences) {
-      prompts.add(Phase5FinalTestQuestion.speaking(
-        id: '${lesson.id}_speak_$promptIndex',
-        unitId: lesson.unitId,
-        lessonId: lesson.id,
-        prompt: s.en,
-      ));
+      prompts.add(
+        Phase5FinalTestQuestion.speakingRubricScored(
+          id: '${lesson.id}_speak_$promptIndex',
+          unitId: lesson.unitId,
+          lessonId: lesson.id,
+          prompt: s.en,
+        ),
+      );
       promptIndex++;
     }
   }
@@ -1601,20 +1681,19 @@ class Phase5FinalTestService
   ) {
     // Shuffle available questions
     available.shuffle(random);
-    
+
     // Take up to 'count' questions from available
     final selected = available.take(count).toList();
-    
+
     // If not enough, add from fallback
     if (selected.length < count) {
       final needed = count - selected.length;
       fallback.shuffle(random);
       selected.addAll(fallback.take(needed));
     }
-    
+
     target.addAll(selected);
   }
-
 
   /// Fallback business English questions when lesson content is insufficient
   List<Phase5FinalTestQuestion> _getFallbackBusinessEnglishQuestions() {
@@ -1637,12 +1716,7 @@ class Phase5FinalTestService
         unitId: 'phase5_unit22',
         lessonId: 'fallback',
         prompt: 'Which is the most appropriate way to start a formal email?',
-        options: [
-          'Hey there!',
-          'Dear Mr. Johnson,',
-          'Hi buddy,',
-          'Yo!',
-        ],
+        options: ['Hey there!', 'Dear Mr. Johnson,', 'Hi buddy,', 'Yo!'],
         correctIndex: 1,
       ),
       Phase5FinalTestQuestion.businessEnglish(
@@ -1650,12 +1724,7 @@ class Phase5FinalTestService
         unitId: 'phase5_unit22',
         lessonId: 'fallback',
         prompt: 'Select the most professional closing for a business email:',
-        options: [
-          'Later!',
-          'See ya!',
-          'Best regards,',
-          'Bye bye!',
-        ],
+        options: ['Later!', 'See ya!', 'Best regards,', 'Bye bye!'],
         correctIndex: 2,
       ),
       Phase5FinalTestQuestion.businessEnglish(
@@ -1701,7 +1770,8 @@ class Phase5FinalTestService
         id: 'fallback_business_7',
         unitId: 'phase5_unit22',
         lessonId: 'fallback',
-        prompt: 'Which is the best way to introduce yourself in a business meeting?',
+        prompt:
+            'Which is the best way to introduce yourself in a business meeting?',
         options: [
           'I\'m John.',
           'Hello, I\'m John Smith from the Marketing Department.',
@@ -1714,7 +1784,8 @@ class Phase5FinalTestService
         id: 'fallback_business_8',
         unitId: 'phase5_unit22',
         lessonId: 'fallback',
-        prompt: 'How should you professionally follow up on an unanswered email?',
+        prompt:
+            'How should you professionally follow up on an unanswered email?',
         options: [
           'Why haven\'t you replied?',
           'Hello? Anyone there?',
@@ -1727,7 +1798,8 @@ class Phase5FinalTestService
         id: 'fallback_business_9',
         unitId: 'phase5_unit22',
         lessonId: 'fallback',
-        prompt: 'Which phrase is best for expressing disagreement professionally?',
+        prompt:
+            'Which phrase is best for expressing disagreement professionally?',
         options: [
           'You\'re wrong.',
           'That\'s stupid.',
@@ -1759,7 +1831,8 @@ class Phase5FinalTestService
         id: 'fallback_interview_1',
         unitId: 'phase5_unit23',
         lessonId: 'fallback',
-        prompt: 'Interviewer: "What is your biggest strength?" Choose the best answer:',
+        prompt:
+            'Interviewer: "What is your biggest strength?" Choose the best answer:',
         options: [
           'I am very hardworking.',
           'I don\'t know.',
@@ -1772,7 +1845,8 @@ class Phase5FinalTestService
         id: 'fallback_interview_2',
         unitId: 'phase5_unit23',
         lessonId: 'fallback',
-        prompt: 'Interviewer: "Tell me about yourself." Choose the best response:',
+        prompt:
+            'Interviewer: "Tell me about yourself." Choose the best response:',
         options: [
           'I like movies and pizza.',
           'I\'m a software developer with 3 years of experience in web development.',
@@ -1785,7 +1859,8 @@ class Phase5FinalTestService
         id: 'fallback_interview_3',
         unitId: 'phase5_unit23',
         lessonId: 'fallback',
-        prompt: 'Interviewer: "Why do you want to work here?" Choose the best answer:',
+        prompt:
+            'Interviewer: "Why do you want to work here?" Choose the best answer:',
         options: [
           'I need money.',
           'Your company\'s innovative approach aligns with my career goals.',
@@ -1798,7 +1873,8 @@ class Phase5FinalTestService
         id: 'fallback_interview_4',
         unitId: 'phase5_unit23',
         lessonId: 'fallback',
-        prompt: 'Interviewer: "What is your biggest weakness?" Choose the best answer:',
+        prompt:
+            'Interviewer: "What is your biggest weakness?" Choose the best answer:',
         options: [
           'I have no weaknesses.',
           'I\'m terrible at everything.',
@@ -1811,7 +1887,8 @@ class Phase5FinalTestService
         id: 'fallback_interview_5',
         unitId: 'phase5_unit23',
         lessonId: 'fallback',
-        prompt: 'Interviewer: "Where do you see yourself in 5 years?" Choose the best answer:',
+        prompt:
+            'Interviewer: "Where do you see yourself in 5 years?" Choose the best answer:',
         options: [
           'I don\'t know.',
           'In your position.',
@@ -1824,7 +1901,8 @@ class Phase5FinalTestService
         id: 'fallback_interview_6',
         unitId: 'phase5_unit23',
         lessonId: 'fallback',
-        prompt: 'Interviewer: "Do you have any questions for us?" Choose the best response:',
+        prompt:
+            'Interviewer: "Do you have any questions for us?" Choose the best response:',
         options: [
           'No, I\'m good.',
           'How much vacation time do I get?',
@@ -1837,7 +1915,8 @@ class Phase5FinalTestService
         id: 'fallback_interview_7',
         unitId: 'phase5_unit23',
         lessonId: 'fallback',
-        prompt: 'Interviewer: "Why did you leave your last job?" Choose the best answer:',
+        prompt:
+            'Interviewer: "Why did you leave your last job?" Choose the best answer:',
         options: [
           'My boss was terrible.',
           'I was looking for new challenges and opportunities for professional growth.',
@@ -1850,7 +1929,8 @@ class Phase5FinalTestService
         id: 'fallback_interview_8',
         unitId: 'phase5_unit23',
         lessonId: 'fallback',
-        prompt: 'Interviewer: "How do you handle stress?" Choose the best answer:',
+        prompt:
+            'Interviewer: "How do you handle stress?" Choose the best answer:',
         options: [
           'I don\'t get stressed.',
           'I panic.',
@@ -1863,7 +1943,8 @@ class Phase5FinalTestService
         id: 'fallback_interview_9',
         unitId: 'phase5_unit23',
         lessonId: 'fallback',
-        prompt: 'Interviewer: "Describe a challenge you faced at work." Choose the best answer:',
+        prompt:
+            'Interviewer: "Describe a challenge you faced at work." Choose the best answer:',
         options: [
           'I never had any challenges.',
           'When our project deadline was moved up, I reorganized priorities and led the team to deliver on time.',
@@ -1947,7 +2028,8 @@ class Phase5FinalTestService
         id: 'fallback_presentation_6',
         unitId: 'phase5_unit24',
         lessonId: 'fallback',
-        prompt: 'How should you handle a question you don\'t know the answer to?',
+        prompt:
+            'How should you handle a question you don\'t know the answer to?',
         options: [
           'I don\'t know.',
           'That\'s a great question. Let me research that and get back to you.',
@@ -2005,7 +2087,8 @@ class Phase5FinalTestService
         id: 'fallback_writing_2',
         unitId: 'phase5_unit25',
         lessonId: 'fallback',
-        prompt: 'Which is the best topic sentence for a paragraph about climate change?',
+        prompt:
+            'Which is the best topic sentence for a paragraph about climate change?',
         options: [
           'Climate change is bad.',
           'Climate change poses significant challenges to global food security.',
@@ -2032,12 +2115,7 @@ class Phase5FinalTestService
         unitId: 'phase5_unit25',
         lessonId: 'fallback',
         prompt: 'Which transition word best shows contrast?',
-        options: [
-          'And',
-          'Also',
-          'However',
-          'Then',
-        ],
+        options: ['And', 'Also', 'However', 'Then'],
         correctIndex: 2,
       ),
       Phase5FinalTestQuestion.writing(
@@ -2098,97 +2176,99 @@ class Phase5FinalTestService
   /// Fallback speaking prompts when lesson content is insufficient
   List<Phase5FinalTestQuestion> _getFallbackSpeakingPrompts() {
     return [
-      Phase5FinalTestQuestion.speaking(
+      Phase5FinalTestQuestion.speakingRubricScored(
         id: 'fallback_speak_1',
         unitId: 'phase5_unit25',
         lessonId: 'fallback',
         prompt: 'Introduce yourself as a software developer in 30 seconds.',
       ),
-      Phase5FinalTestQuestion.speaking(
+      Phase5FinalTestQuestion.speakingRubricScored(
         id: 'fallback_speak_2',
         unitId: 'phase5_unit25',
         lessonId: 'fallback',
         prompt: 'Explain a project you worked on recently.',
       ),
-      Phase5FinalTestQuestion.speaking(
+      Phase5FinalTestQuestion.speakingRubricScored(
         id: 'fallback_speak_3',
         unitId: 'phase5_unit25',
         lessonId: 'fallback',
         prompt: 'Give a short opinion on remote work.',
       ),
-      Phase5FinalTestQuestion.speaking(
+      Phase5FinalTestQuestion.speakingRubricScored(
         id: 'fallback_speak_4',
         unitId: 'phase5_unit25',
         lessonId: 'fallback',
         prompt: 'Describe your strengths and weaknesses.',
       ),
-      Phase5FinalTestQuestion.speaking(
+      Phase5FinalTestQuestion.speakingRubricScored(
         id: 'fallback_speak_5',
         unitId: 'phase5_unit25',
         lessonId: 'fallback',
         prompt: 'Explain why you are interested in this position.',
       ),
-      Phase5FinalTestQuestion.speaking(
+      Phase5FinalTestQuestion.speakingRubricScored(
         id: 'fallback_speak_6',
         unitId: 'phase5_unit25',
         lessonId: 'fallback',
-        prompt: 'Describe a challenging situation at work and how you handled it.',
+        prompt:
+            'Describe a challenging situation at work and how you handled it.',
       ),
-      Phase5FinalTestQuestion.speaking(
+      Phase5FinalTestQuestion.speakingRubricScored(
         id: 'fallback_speak_7',
         unitId: 'phase5_unit25',
         lessonId: 'fallback',
         prompt: 'Present the main benefits of your product or service.',
       ),
-      Phase5FinalTestQuestion.speaking(
+      Phase5FinalTestQuestion.speakingRubricScored(
         id: 'fallback_speak_8',
         unitId: 'phase5_unit25',
         lessonId: 'fallback',
         prompt: 'Summarize your career goals for the next five years.',
       ),
-      Phase5FinalTestQuestion.speaking(
+      Phase5FinalTestQuestion.speakingRubricScored(
         id: 'fallback_speak_9',
         unitId: 'phase5_unit25',
         lessonId: 'fallback',
-        prompt: 'Explain how you prioritize tasks when you have multiple deadlines.',
+        prompt:
+            'Explain how you prioritize tasks when you have multiple deadlines.',
       ),
-      Phase5FinalTestQuestion.speaking(
+      Phase5FinalTestQuestion.speakingRubricScored(
         id: 'fallback_speak_10',
         unitId: 'phase5_unit25',
         lessonId: 'fallback',
-        prompt: 'Describe a time when you had to work with a difficult team member.',
+        prompt:
+            'Describe a time when you had to work with a difficult team member.',
       ),
     ];
   }
 
-
   /// Validate an MCQ answer by comparing selected index with correct index
-  /// 
+  ///
   /// Returns true if the selected answer matches the correct answer, false otherwise.
   /// For speaking tasks (which have null correctIndex), always returns false.
-  /// 
+  ///
   /// Requirements: 2.3, 3.3, 4.3, 5.3
   bool validateMcqAnswer(Phase5FinalTestQuestion question, int selectedIndex) {
     // Speaking tasks don't have a correct index - they're scored differently
     if (question.correctIndex == null) {
       return false;
     }
-    
+
     // Compare selected index with correct index
     return selectedIndex == question.correctIndex;
   }
 
   /// Score a speaking task based on word count in recognized text
-  /// 
+  ///
   /// Scoring tiers (enhanced for professional level):
   /// - 4 points: 40-80 words (clear, confident, well-structured)
   /// - 3 points: 25-39 words (good but slightly short)
   /// - 2 points: 10-24 words (basic, lacks structure)
   /// - 1 point: 1-9 words (very weak)
   /// - 0 points: 0 words (no output)
-  /// 
+  ///
   /// Returns a Phase5SpeakingScoreResult with score and feedback message.
-  /// 
+  ///
   /// Requirements: 6.3, 6.4, 6.5
   Phase5SpeakingScoreResult scoreSpeakingTask(String? recognizedText) {
     // Handle null or empty text
@@ -2199,15 +2279,15 @@ class Phase5FinalTestService
         feedback: 'No speech detected. Please try again.',
       );
     }
-    
+
     // Count words by splitting on whitespace
     final words = recognizedText.trim().split(RegExp(r'\s+'));
     final wordCount = words.where((w) => w.isNotEmpty).length;
-    
+
     // Determine score based on word count tiers (enhanced for professional level)
     int score;
     String feedback;
-    
+
     if (wordCount >= 40 && wordCount <= 80) {
       score = 4;
       feedback = 'Excellent! Clear, confident, and well-structured response.';
@@ -2224,7 +2304,7 @@ class Phase5FinalTestService
       score = 0;
       feedback = 'No speech detected. Please try again.';
     }
-    
+
     return Phase5SpeakingScoreResult(
       score: score,
       wordCount: wordCount,
@@ -2233,18 +2313,18 @@ class Phase5FinalTestService
   }
 
   /// Calculate the final test result from questions and answers
-  /// 
+  ///
   /// Parameters:
   /// - questions: List of all 35 test questions
   /// - mcqAnswers: Map of question ID to selected answer index (for MCQ questions)
   /// - speakingResults: List of Phase5SpeakingResult for speaking tasks
-  /// 
+  ///
   /// Returns a Phase5TestResult with:
   /// - Total score (MCQ correct + speaking scores)
   /// - Percentage (totalScore / 60 * 100)
   /// - Pass/fail status (>= 45 points to pass)
   /// - List of incorrect MCQ answers for review
-  /// 
+  ///
   /// Requirements: 7.1, 7.2, 7.3, 8.1
   Phase5TestResult calculateResult({
     required List<Phase5FinalTestQuestion> questions,
@@ -2254,43 +2334,110 @@ class Phase5FinalTestService
     int mcqCorrect = 0;
     int speakingScore = 0;
     final incorrectMcqAnswers = <Phase5IncorrectAnswer>[];
-    
+    int listeningTotal = 0;
+    int listeningCorrect = 0;
+    int readingTotal = 0;
+    int readingCorrect = 0;
+    int writingTotal = 0;
+    int writingCorrect = 0;
+
     // Process each question
     for (final question in questions) {
       if (question.isMcq) {
+        switch (question.type) {
+          case Phase5QuestionType.presentation:
+            listeningTotal++;
+            break;
+          case Phase5QuestionType.writing:
+          case Phase5QuestionType.shortAnswer:
+          case Phase5QuestionType.rewrite:
+          case Phase5QuestionType.ordering:
+          case Phase5QuestionType.writingRubricScored:
+            writingTotal++;
+            break;
+          case Phase5QuestionType.businessEnglish:
+          case Phase5QuestionType.interview:
+          case Phase5QuestionType.speakingRubricScored:
+            readingTotal++;
+            break;
+        }
+
         // MCQ question - check if answer is correct
         final selectedIndex = mcqAnswers[question.id];
-        
+
         if (selectedIndex != null && question.correctIndex != null) {
           if (selectedIndex == question.correctIndex) {
             // Correct answer - add 1 point
             mcqCorrect++;
+            switch (question.type) {
+              case Phase5QuestionType.presentation:
+                listeningCorrect++;
+                break;
+              case Phase5QuestionType.writing:
+              case Phase5QuestionType.shortAnswer:
+              case Phase5QuestionType.rewrite:
+              case Phase5QuestionType.ordering:
+              case Phase5QuestionType.writingRubricScored:
+                writingCorrect++;
+                break;
+              case Phase5QuestionType.businessEnglish:
+              case Phase5QuestionType.interview:
+              case Phase5QuestionType.speakingRubricScored:
+                readingCorrect++;
+                break;
+            }
           } else {
             // Incorrect answer - add to review list
-            incorrectMcqAnswers.add(Phase5IncorrectAnswer(
-              question: question,
-              selectedIndex: selectedIndex,
-              selectedAnswer: question.options![selectedIndex],
-              correctAnswer: question.options![question.correctIndex!],
-            ));
+            incorrectMcqAnswers.add(
+              Phase5IncorrectAnswer(
+                question: question,
+                selectedIndex: selectedIndex,
+                selectedAnswer: question.options![selectedIndex],
+                correctAnswer: question.options![question.correctIndex!],
+              ),
+            );
           }
         } else if (selectedIndex == null && question.correctIndex != null) {
           // Question was skipped - treat as incorrect
-          incorrectMcqAnswers.add(Phase5IncorrectAnswer(
-            question: question,
-            selectedIndex: -1, // Indicates skipped
-            selectedAnswer: 'Skipped',
-            correctAnswer: question.options![question.correctIndex!],
-          ));
+          incorrectMcqAnswers.add(
+            Phase5IncorrectAnswer(
+              question: question,
+              selectedIndex: -1, // Indicates skipped
+              selectedAnswer: 'Skipped',
+              correctAnswer: question.options![question.correctIndex!],
+            ),
+          );
         }
       }
     }
-    
+
     // Sum speaking scores (0-4 each, max 32 total)
     for (final result in speakingResults) {
       speakingScore += result.score;
     }
-    
+
+    final double listeningPercent = listeningTotal == 0
+        ? 0.0
+        : (listeningCorrect / listeningTotal) * 100.0;
+    final double readingGrammarPercent = readingTotal == 0
+        ? 0.0
+        : (readingCorrect / readingTotal) * 100.0;
+    final double writingMcqPercent = writingTotal == 0
+        ? 0.0
+        : (writingCorrect / writingTotal) * 100.0;
+    final double speakingPercent = speakingResults.isEmpty
+        ? 0.0
+        : (speakingResults
+                      .map((result) => result.rubricScore100)
+                      .fold<int>(0, (sum, score) => sum + score) /
+                  speakingResults.length)
+              .clamp(0, 100)
+              .toDouble();
+
+    // For current UI, writing productive tasks are not yet captured in final test input.
+    // Use the writing section objective score as writing section baseline.
+    final double writingPercent = writingMcqPercent;
+
     // Create and return the result using the factory constructor
     return Phase5TestResult.calculate(
       mcqCorrect: mcqCorrect,
@@ -2298,35 +2445,46 @@ class Phase5FinalTestService
       completedAt: DateTime.now(),
       incorrectMcqAnswers: incorrectMcqAnswers,
       speakingResults: speakingResults,
+      listeningPercent: listeningPercent,
+      readingGrammarPercent: readingGrammarPercent,
+      speakingPercent: speakingPercent,
+      writingPercent: writingPercent,
     );
   }
 
   /// Save the test result to persistent storage
-  /// 
+  ///
   /// Persists:
   /// - phase5FinalTestPassed: true if passed, false otherwise
   /// - phase5FinalTestScore: the total score achieved
   /// - phase5FinalTestDate: timestamp of when test was completed
   /// - englishMasteryCompleted: true if test was passed (marks program completion)
-  /// 
+  ///
   /// Requirements: 9.1, 9.2, 9.3, 9.4
   Future<void> saveTestResult(Phase5TestResult result) async {
     try {
       // Save pass/fail status
       await _storageService.setBool(keyTestPassed, result.passed);
-      
+
       // Save the total score
       await _storageService.setInt(keyTestScore, result.totalScore);
-      
+
       // Save the test date
-      await _storageService.setString(keyTestDate, result.completedAt.toIso8601String());
-      
+      await _storageService.setString(
+        keyTestDate,
+        result.completedAt.toIso8601String(),
+      );
+
       // If passed, mark English Mastery as completed
       if (result.passed) {
         await _storageService.setBool(keyMasteryCompleted, true);
-        print('English Mastery Completed! Test passed with score: ${result.totalScore}/${result.maxScore}');
+        print(
+          'English Mastery Completed! Test passed with score: ${result.totalScore}/${result.maxScore}',
+        );
       } else {
-        print('Test not passed. Score: ${result.totalScore}/${result.maxScore}');
+        print(
+          'Test not passed. Score: ${result.totalScore}/${result.maxScore}',
+        );
       }
     } catch (e) {
       print('Error: Failed to save test result: $e');

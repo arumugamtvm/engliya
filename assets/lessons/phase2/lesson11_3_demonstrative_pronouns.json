@@ -26,21 +26,72 @@
       "audioId": "phase2_l11_3_ex3"
     }
   ],
-  "listeningQuestions": [],
-  "speakSentences": [],
+  "listeningQuestions": [
+    {
+      "audioText": "This is my phone. That is yours.",
+      "options": [
+        "This is my phone. That is yours.",
+        "These are fresh apples. Those are old.",
+        "Is that your car over there?"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "audioText": "These are fresh apples. Those are old.",
+      "options": [
+        "This is my phone. That is yours.",
+        "Is that your car over there?",
+        "These are fresh apples. Those are old."
+      ],
+      "correctIndex": 2
+    },
+    {
+      "audioText": "Is that your car over there?",
+      "options": [
+        "These are fresh apples. Those are old.",
+        "Is that your car over there?",
+        "This is my phone. That is yours."
+      ],
+      "correctIndex": 1
+    }
+  ],
+  "speakSentences": [
+    {
+      "en": "This is my phone. That is yours.",
+      "ta": "இது என் தொலைபேசி. அது உங்களுடையது."
+    },
+    {
+      "en": "These are fresh apples. Those are old.",
+      "ta": "இவை புதிய ஆப்பிள்கள். அவை பழையவை."
+    },
+    {
+      "en": "Is that your car over there?",
+      "ta": "அங்கே இருப்பது உங்கள் கார் தானா?"
+    }
+  ],
   "practiceQuestions": [
     {
       "type": "mcq",
       "promptEn": "___ is my book. (near)",
       "promptTa": "இது என் புத்தகம். (அருகில்)",
-      "options": ["This", "That", "These", "Those"],
+      "options": [
+        "This",
+        "That",
+        "These",
+        "Those"
+      ],
       "correctIndex": 0
     },
     {
       "type": "mcq",
       "promptEn": "___ are beautiful flowers. (near)",
       "promptTa": "இவை அழகான பூக்கள். (அருகில்)",
-      "options": ["This", "That", "These", "Those"],
+      "options": [
+        "This",
+        "That",
+        "These",
+        "Those"
+      ],
       "correctIndex": 2
     }
   ],
@@ -49,14 +100,24 @@
       "type": "mcq",
       "promptEn": "___ is your house? (far)",
       "promptTa": "அது உங்கள் வீடா? (தொலைவில்)",
-      "options": ["This", "That", "These", "Those"],
+      "options": [
+        "This",
+        "That",
+        "These",
+        "Those"
+      ],
       "correctIndex": 1
     },
     {
       "type": "mcq",
       "promptEn": "___ are my friends. (far)",
       "promptTa": "அவர்கள் என் நண்பர்கள். (தொலைவில்)",
-      "options": ["This", "That", "These", "Those"],
+      "options": [
+        "This",
+        "That",
+        "These",
+        "Those"
+      ],
       "correctIndex": 3
     }
   ]

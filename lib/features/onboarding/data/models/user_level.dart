@@ -24,23 +24,28 @@ class UserLevel {
   );
 
   // Available levels
-  static const List<UserLevel> availableLevels = [
-    beginner,
-    schoolStudent,
-  ];
+  static const List<UserLevel> availableLevels = [beginner, schoolStudent];
+
+  static UserLevel? fromId(String id) {
+    for (final level in availableLevels) {
+      if (level.id == id) return level;
+    }
+    return null;
+  }
 
   // JSON serialization
   Map<String, dynamic> toJson() {
-    return {
-      'id': id,
-      'name': name,
-      'description': description,
-    };
+    return {'id': id, 'name': name, 'description': description};
   }
 
   factory UserLevel.fromJson(Map<String, dynamic> json) {
+    final id = json['id'] as String;
+    final predefined = fromId(id);
+    if (predefined != null) {
+      return predefined;
+    }
     return UserLevel(
-      id: json['id'] as String,
+      id: id,
       name: json['name'] as String,
       description: json['description'] as String,
     );

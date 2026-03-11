@@ -26,21 +26,72 @@
       "audioId": "phase2_l11_2_ex3"
     }
   ],
-  "listeningQuestions": [],
-  "speakSentences": [],
+  "listeningQuestions": [
+    {
+      "audioText": "She looked at herself in the mirror.",
+      "options": [
+        "She looked at herself in the mirror.",
+        "We enjoyed ourselves at the party.",
+        "They taught themselves English."
+      ],
+      "correctIndex": 0
+    },
+    {
+      "audioText": "We enjoyed ourselves at the party.",
+      "options": [
+        "She looked at herself in the mirror.",
+        "They taught themselves English.",
+        "We enjoyed ourselves at the party."
+      ],
+      "correctIndex": 2
+    },
+    {
+      "audioText": "They taught themselves English.",
+      "options": [
+        "We enjoyed ourselves at the party.",
+        "They taught themselves English.",
+        "She looked at herself in the mirror."
+      ],
+      "correctIndex": 1
+    }
+  ],
+  "speakSentences": [
+    {
+      "en": "She looked at herself in the mirror.",
+      "ta": "அவள் கண்ணாடியில் தன்னைப் பார்த்தாள்."
+    },
+    {
+      "en": "We enjoyed ourselves at the party.",
+      "ta": "நாங்கள் விருந்தில் மகிழ்ந்தோம்."
+    },
+    {
+      "en": "They taught themselves English.",
+      "ta": "அவர்கள் தாங்களாகவே ஆங்கிலம் கற்றுக்கொண்டார்கள்."
+    }
+  ],
   "practiceQuestions": [
     {
       "type": "mcq",
       "promptEn": "I hurt ___ while cooking.",
       "promptTa": "நான் சமைக்கும்போது என்னைக் காயப்படுத்திக்கொண்டேன்.",
-      "options": ["me", "myself", "mine", "my"],
+      "options": [
+        "me",
+        "myself",
+        "mine",
+        "my"
+      ],
       "correctIndex": 1
     },
     {
       "type": "mcq",
       "promptEn": "He can do it ___.",
       "promptTa": "அவன் அதை தானாகவே செய்ய முடியும்.",
-      "options": ["him", "his", "himself", "he"],
+      "options": [
+        "him",
+        "his",
+        "himself",
+        "he"
+      ],
       "correctIndex": 2
     }
   ],
@@ -49,14 +100,24 @@
       "type": "mcq",
       "promptEn": "Did you enjoy ___ at the concert?",
       "promptTa": "நீங்கள் இசை நிகழ்ச்சியில் மகிழ்ந்தீர்களா?",
-      "options": ["you", "your", "yours", "yourself"],
+      "options": [
+        "you",
+        "your",
+        "yours",
+        "yourself"
+      ],
       "correctIndex": 3
     },
     {
       "type": "mcq",
       "promptEn": "The children dressed ___.",
       "promptTa": "குழந்தைகள் தாங்களாகவே உடை அணிந்தார்கள்.",
-      "options": ["them", "their", "theirs", "themselves"],
+      "options": [
+        "them",
+        "their",
+        "theirs",
+        "themselves"
+      ],
       "correctIndex": 3
     }
   ]

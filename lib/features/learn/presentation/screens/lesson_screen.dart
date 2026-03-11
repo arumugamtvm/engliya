@@ -8,15 +8,14 @@ import '../widgets/tabs/speak_tab.dart';
 import '../widgets/tabs/practice_tab.dart';
 import '../widgets/tabs/mastery_tab.dart';
 import '../widgets/lesson_bottom_nav.dart';
-import '../../../../core/utils/error_handler.dart';
+import '../../../../core/widgets/app_error_state.dart';
+import '../../../../core/widgets/app_empty_state.dart';
+import '../../../../core/widgets/app_loading_state.dart';
 
 class LessonScreen extends StatefulWidget {
   final String lessonId;
 
-  const LessonScreen({
-    super.key,
-    required this.lessonId,
-  });
+  const LessonScreen({super.key, required this.lessonId});
 
   @override
   State<LessonScreen> createState() => _LessonScreenState();
@@ -25,6 +24,27 @@ class LessonScreen extends StatefulWidget {
 class _LessonScreenState extends State<LessonScreen>
     with SingleTickerProviderStateMixin {
   late TabController _tabController;
+
+  Tab _buildTab({
+    required bool unlocked,
+    required IconData icon,
+    required String text,
+  }) {
+    final iconColor = unlocked ? null : Colors.grey.shade500;
+    final textColor = unlocked ? null : Colors.grey.shade500;
+
+    return Tab(
+      height: 48,
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Icon(unlocked ? icon : Icons.lock_outline, size: 20, color: iconColor),
+          const SizedBox(width: 6),
+          Text(text, style: TextStyle(color: textColor)),
+        ],
+      ),
+    );
+  }
 
   @override
   void initState() {
@@ -39,7 +59,12 @@ class _LessonScreenState extends State<LessonScreen>
     // Sync tab controller with provider
     _tabController.addListener(() {
       if (!_tabController.indexIsChanging) {
-        context.read<LessonProvider>().goToTab(_tabController.index);
+        final provider = context.read<LessonProvider>();
+        if (provider.canAccessTab(_tabController.index)) {
+          provider.goToTab(_tabController.index);
+        } else {
+          _tabController.animateTo(provider.currentTabIndex);
+        }
       }
     });
   }
@@ -61,40 +86,18 @@ class _LessonScreenState extends State<LessonScreen>
 
         if (lessonProvider.isLoading) {
           return Scaffold(
-            appBar: AppBar(
-              title: const Text('Loading...'),
-            ),
-            body: const Center(
-              child: CircularProgressIndicator(),
-            ),
+            appBar: AppBar(title: const Text('Loading...')),
+            body: const AppLoadingState(message: 'Loading lesson...'),
           );
         }
 
         if (lessonProvider.error != null) {
           return Scaffold(
-            appBar: AppBar(
-              title: const Text('Error'),
-            ),
-            body: Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const Icon(Icons.error_outline, size: 64, color: Colors.red),
-                  const SizedBox(height: 16),
-                  Text(
-                    lessonProvider.error!,
-                    textAlign: TextAlign.center,
-                    style: const TextStyle(fontSize: 16),
-                  ),
-                  const SizedBox(height: 24),
-                  ElevatedButton(
-                    onPressed: () {
-                      lessonProvider.loadLesson(widget.lessonId);
-                    },
-                    child: const Text('Retry'),
-                  ),
-                ],
-              ),
+            appBar: AppBar(title: const Text('Error')),
+            body: AppErrorState(
+              message: lessonProvider.error!,
+              retryLabel: 'Retry',
+              onRetry: () => lessonProvider.loadLesson(widget.lessonId),
             ),
           );
         }
@@ -102,11 +105,10 @@ class _LessonScreenState extends State<LessonScreen>
         final lesson = lessonProvider.currentLesson;
         if (lesson == null) {
           return Scaffold(
-            appBar: AppBar(
-              title: const Text('Lesson'),
-            ),
-            body: const Center(
-              child: Text('No lesson data available'),
+            appBar: AppBar(title: const Text('Lesson')),
+            body: const AppEmptyState(
+              title: 'No lesson data available',
+              subtitle: 'Please return to lesson list and try again.',
             ),
           );
         }
@@ -134,10 +136,7 @@ class _LessonScreenState extends State<LessonScreen>
               title: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    lesson.title,
-                    style: const TextStyle(fontSize: 18),
-                  ),
+                  Text(lesson.title, style: const TextStyle(fontSize: 18)),
                   Text(
                     '$completedTabs / 6 completed',
                     style: const TextStyle(
@@ -154,36 +153,52 @@ class _LessonScreenState extends State<LessonScreen>
                   isScrollable: true,
                   tabAlignment: TabAlignment.start,
                   padding: const EdgeInsets.symmetric(horizontal: 8),
-                  tabs: const [
-                    Tab(
-                      icon: Icon(Icons.menu_book, size: 20),
+                  onTap: (index) {
+                    final canAccess = lessonProvider.canAccessTab(index);
+                    if (!canAccess) {
+                      final blocking = lessonProvider
+                          .getBlockingValidationForTab(index);
+                      final message =
+                          blocking?.message ??
+                          'Complete the current step before moving ahead.';
+                      ScaffoldMessenger.of(
+                        context,
+                      ).showSnackBar(SnackBar(content: Text(message)));
+                      _tabController.animateTo(lessonProvider.currentTabIndex);
+                      return;
+                    }
+                    lessonProvider.goToTab(index);
+                  },
+                  tabs: [
+                    _buildTab(
+                      unlocked: lessonProvider.isTabUnlocked(0),
+                      icon: Icons.menu_book,
                       text: 'Explain',
-                      height: 48,
                     ),
-                    Tab(
-                      icon: Icon(Icons.lightbulb_outline, size: 20),
+                    _buildTab(
+                      unlocked: lessonProvider.isTabUnlocked(1),
+                      icon: Icons.lightbulb_outline,
                       text: 'Examples',
-                      height: 48,
                     ),
-                    Tab(
-                      icon: Icon(Icons.headphones, size: 20),
+                    _buildTab(
+                      unlocked: lessonProvider.isTabUnlocked(2),
+                      icon: Icons.headphones,
                       text: 'Listen',
-                      height: 48,
                     ),
-                    Tab(
-                      icon: Icon(Icons.mic, size: 20),
+                    _buildTab(
+                      unlocked: lessonProvider.isTabUnlocked(3),
+                      icon: Icons.mic,
                       text: 'Speak',
-                      height: 48,
                     ),
-                    Tab(
-                      icon: Icon(Icons.quiz, size: 20),
+                    _buildTab(
+                      unlocked: lessonProvider.isTabUnlocked(4),
+                      icon: Icons.quiz,
                       text: 'Practice',
-                      height: 48,
                     ),
-                    Tab(
-                      icon: Icon(Icons.star, size: 20),
+                    _buildTab(
+                      unlocked: lessonProvider.isTabUnlocked(5),
+                      icon: Icons.star,
                       text: 'Mastery',
-                      height: 48,
                     ),
                   ],
                 ),
@@ -191,6 +206,9 @@ class _LessonScreenState extends State<LessonScreen>
             ),
             body: TabBarView(
               controller: _tabController,
+              physics: lessonProvider.strictProgressionEnabled
+                  ? const NeverScrollableScrollPhysics()
+                  : null,
               children: const [
                 ExplainTab(),
                 ExamplesTab(),
@@ -200,6 +218,29 @@ class _LessonScreenState extends State<LessonScreen>
                 MasteryTab(),
               ],
             ),
+            persistentFooterButtons: lessonProvider.contentNotice == null
+                ? null
+                : [
+                    Container(
+                      width: double.infinity,
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 12,
+                        vertical: 8,
+                      ),
+                      decoration: BoxDecoration(
+                        color: Colors.amber.shade50,
+                        borderRadius: BorderRadius.circular(8),
+                        border: Border.all(color: Colors.amber.shade300),
+                      ),
+                      child: Text(
+                        lessonProvider.contentNotice!,
+                        style: TextStyle(
+                          color: Colors.amber.shade900,
+                          fontSize: 12,
+                        ),
+                      ),
+                    ),
+                  ],
             bottomNavigationBar: const LessonBottomNav(),
           ),
         );

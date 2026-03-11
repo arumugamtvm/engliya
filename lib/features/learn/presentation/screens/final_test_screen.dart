@@ -11,6 +11,9 @@ import '../../../../app/theme.dart';
 import '../../../../core/constants/app_config.dart';
 import '../../../../core/utils/animations.dart';
 import '../../../../core/utils/error_handler.dart';
+import '../../../../core/widgets/app_empty_state.dart';
+import '../../../../core/widgets/app_error_state.dart';
+import '../../../../core/widgets/app_loading_state.dart';
 
 class SpeakingResultViewData {
   final int score;
@@ -51,8 +54,10 @@ class FinalTestScreenConfig<TQuestion, TSpeakingResult, TResult> {
     required String taskId,
     required String prompt,
     String? recognizedText,
-  }) createSpeakingResult;
-  final SpeakingResultViewData Function(TSpeakingResult result) speakingResultViewData;
+  })
+  createSpeakingResult;
+  final SpeakingResultViewData Function(TSpeakingResult result)
+  speakingResultViewData;
 
   const FinalTestScreenConfig({
     required this.title,
@@ -77,8 +82,12 @@ class FinalTestScreenConfig<TQuestion, TSpeakingResult, TResult> {
     required this.speakingResultViewData,
   });
 
-  static FinalTestScreenConfig<Phase4FinalTestQuestion, SpeakingResult, Phase4TestResult>
-      phase4() {
+  static FinalTestScreenConfig<
+    Phase4FinalTestQuestion,
+    SpeakingResult,
+    Phase4TestResult
+  >
+  phase4() {
     return FinalTestScreenConfig(
       title: 'Phase 4 - Final Test',
       subtitle: 'Fluency & Pronunciation Check',
@@ -123,17 +132,18 @@ class FinalTestScreenConfig<TQuestion, TSpeakingResult, TResult> {
         }
       },
       mockSpeechText: _buildPhase4MockSpeechText,
-      createSpeakingResult: ({
-        required String taskId,
-        required String prompt,
-        String? recognizedText,
-      }) {
-        return SpeakingResult.fromRecognition(
-          taskId: taskId,
-          prompt: prompt,
-          recognizedText: recognizedText,
-        );
-      },
+      createSpeakingResult:
+          ({
+            required String taskId,
+            required String prompt,
+            String? recognizedText,
+          }) {
+            return SpeakingResult.fromRecognition(
+              taskId: taskId,
+              prompt: prompt,
+              recognizedText: recognizedText,
+            );
+          },
       speakingResultViewData: (result) {
         return SpeakingResultViewData(
           score: result.score,
@@ -146,8 +156,12 @@ class FinalTestScreenConfig<TQuestion, TSpeakingResult, TResult> {
     );
   }
 
-  static FinalTestScreenConfig<Phase5FinalTestQuestion, Phase5SpeakingResult, Phase5TestResult>
-      phase5() {
+  static FinalTestScreenConfig<
+    Phase5FinalTestQuestion,
+    Phase5SpeakingResult,
+    Phase5TestResult
+  >
+  phase5() {
     return FinalTestScreenConfig(
       title: 'Phase 5 - Final Test',
       subtitle: 'Professional English Mastery',
@@ -177,8 +191,16 @@ class FinalTestScreenConfig<TQuestion, TSpeakingResult, TResult> {
             return 'Presentation';
           case Phase5QuestionType.writing:
             return 'Writing';
-          case Phase5QuestionType.speaking:
+          case Phase5QuestionType.shortAnswer:
+            return 'Short Answer';
+          case Phase5QuestionType.rewrite:
+            return 'Rewrite';
+          case Phase5QuestionType.ordering:
+            return 'Ordering';
+          case Phase5QuestionType.speakingRubricScored:
             return 'Speaking';
+          case Phase5QuestionType.writingRubricScored:
+            return 'Writing Task';
         }
       },
       questionTypeColor: (question) {
@@ -191,22 +213,31 @@ class FinalTestScreenConfig<TQuestion, TSpeakingResult, TResult> {
             return Colors.orange;
           case Phase5QuestionType.writing:
             return Colors.purple;
-          case Phase5QuestionType.speaking:
+          case Phase5QuestionType.shortAnswer:
+            return Colors.teal;
+          case Phase5QuestionType.rewrite:
+            return Colors.cyan;
+          case Phase5QuestionType.ordering:
+            return Colors.indigo;
+          case Phase5QuestionType.speakingRubricScored:
             return Colors.red;
+          case Phase5QuestionType.writingRubricScored:
+            return Colors.brown;
         }
       },
       mockSpeechText: _buildPhase5MockSpeechText,
-      createSpeakingResult: ({
-        required String taskId,
-        required String prompt,
-        String? recognizedText,
-      }) {
-        return Phase5SpeakingResult.fromRecognition(
-          taskId: taskId,
-          prompt: prompt,
-          recognizedText: recognizedText,
-        );
-      },
+      createSpeakingResult:
+          ({
+            required String taskId,
+            required String prompt,
+            String? recognizedText,
+          }) {
+            return Phase5SpeakingResult.fromRecognition(
+              taskId: taskId,
+              prompt: prompt,
+              recognizedText: recognizedText,
+            );
+          },
       speakingResultViewData: (result) {
         return SpeakingResultViewData(
           score: result.score,
@@ -221,61 +252,78 @@ class FinalTestScreenConfig<TQuestion, TSpeakingResult, TResult> {
 }
 
 class FinalTestScreen<
-        TProvider extends HybridFinalTestProvider<TQuestion, TSpeakingResult, TResult>,
-        TQuestion,
-        TSpeakingResult,
-        TResult>
+  TProvider
+      extends HybridFinalTestProvider<TQuestion, TSpeakingResult, TResult>,
+  TQuestion,
+  TSpeakingResult,
+  TResult
+>
     extends StatefulWidget {
   final FinalTestScreenConfig<TQuestion, TSpeakingResult, TResult> config;
 
-  const FinalTestScreen({
-    required this.config,
-    super.key,
-  });
+  const FinalTestScreen({required this.config, super.key});
 
   static FinalTestScreen<
-          FinalTestProvider<Phase4FinalTestQuestion, SpeakingResult, Phase4TestResult>,
-          Phase4FinalTestQuestion,
-          SpeakingResult,
-          Phase4TestResult>
-      phase4({Key? key}) {
+    FinalTestProvider<
+      Phase4FinalTestQuestion,
+      SpeakingResult,
+      Phase4TestResult
+    >,
+    Phase4FinalTestQuestion,
+    SpeakingResult,
+    Phase4TestResult
+  >
+  phase4({Key? key}) {
     return FinalTestScreen<
-        FinalTestProvider<Phase4FinalTestQuestion, SpeakingResult, Phase4TestResult>,
+      FinalTestProvider<
         Phase4FinalTestQuestion,
         SpeakingResult,
-        Phase4TestResult>(
-      key: key,
-      config: FinalTestScreenConfig.phase4(),
-    );
+        Phase4TestResult
+      >,
+      Phase4FinalTestQuestion,
+      SpeakingResult,
+      Phase4TestResult
+    >(key: key, config: FinalTestScreenConfig.phase4());
   }
 
   static FinalTestScreen<
-          FinalTestProvider<Phase5FinalTestQuestion, Phase5SpeakingResult, Phase5TestResult>,
-          Phase5FinalTestQuestion,
-          Phase5SpeakingResult,
-          Phase5TestResult>
-      phase5({Key? key}) {
+    FinalTestProvider<
+      Phase5FinalTestQuestion,
+      Phase5SpeakingResult,
+      Phase5TestResult
+    >,
+    Phase5FinalTestQuestion,
+    Phase5SpeakingResult,
+    Phase5TestResult
+  >
+  phase5({Key? key}) {
     return FinalTestScreen<
-        FinalTestProvider<Phase5FinalTestQuestion, Phase5SpeakingResult, Phase5TestResult>,
+      FinalTestProvider<
         Phase5FinalTestQuestion,
         Phase5SpeakingResult,
-        Phase5TestResult>(
-      key: key,
-      config: FinalTestScreenConfig.phase5(),
-    );
+        Phase5TestResult
+      >,
+      Phase5FinalTestQuestion,
+      Phase5SpeakingResult,
+      Phase5TestResult
+    >(key: key, config: FinalTestScreenConfig.phase5());
   }
 
   @override
   State<FinalTestScreen<TProvider, TQuestion, TSpeakingResult, TResult>>
-      createState() => _FinalTestScreenState<TProvider, TQuestion, TSpeakingResult, TResult>();
+  createState() =>
+      _FinalTestScreenState<TProvider, TQuestion, TSpeakingResult, TResult>();
 }
 
 class _FinalTestScreenState<
-        TProvider extends HybridFinalTestProvider<TQuestion, TSpeakingResult, TResult>,
-        TQuestion,
-        TSpeakingResult,
-        TResult>
-    extends State<FinalTestScreen<TProvider, TQuestion, TSpeakingResult, TResult>>
+  TProvider
+      extends HybridFinalTestProvider<TQuestion, TSpeakingResult, TResult>,
+  TQuestion,
+  TSpeakingResult,
+  TResult
+>
+    extends
+        State<FinalTestScreen<TProvider, TQuestion, TSpeakingResult, TResult>>
     with SingleTickerProviderStateMixin {
   late AnimationController _questionAnimationController;
   late Animation<double> _fadeAnimation;
@@ -285,8 +333,10 @@ class _FinalTestScreenState<
   final FocusNode _questionFocusNode = FocusNode();
   bool _isRecording = false;
   int _recordingSeconds = 0;
+  bool _isRetryingInitialize = false;
 
-  FinalTestScreenConfig<TQuestion, TSpeakingResult, TResult> get _config => widget.config;
+  FinalTestScreenConfig<TQuestion, TSpeakingResult, TResult> get _config =>
+      widget.config;
 
   @override
   void initState() {
@@ -304,15 +354,13 @@ class _FinalTestScreenState<
       ),
     );
 
-    _slideAnimation = Tween<Offset>(
-      begin: const Offset(0.1, 0.0),
-      end: Offset.zero,
-    ).animate(
-      CurvedAnimation(
-        parent: _questionAnimationController,
-        curve: Curves.easeOutCubic,
-      ),
-    );
+    _slideAnimation =
+        Tween<Offset>(begin: const Offset(0.1, 0.0), end: Offset.zero).animate(
+          CurvedAnimation(
+            parent: _questionAnimationController,
+            curve: Curves.easeOutCubic,
+          ),
+        );
 
     _questionAnimationController.forward();
 
@@ -330,7 +378,7 @@ class _FinalTestScreenState<
 
   Future<void> _initializeTest() async {
     final provider = context.read<TProvider>();
-    final canTake = AppConfig.isDevelopmentMode || await provider.canTakeTest();
+    final canTake = AppConfig.devMode || await provider.canTakeTest();
 
     if (!canTake) {
       return;
@@ -345,11 +393,21 @@ class _FinalTestScreenState<
   }
 
   Future<void> _retryInitializeTest() async {
+    if (_isRetryingInitialize) return;
+    setState(() {
+      _isRetryingInitialize = true;
+    });
     try {
       await context.read<TProvider>().retryStartTest();
       _questionAnimationController.forward();
     } catch (e) {
       print('Test retry failed: $e');
+    } finally {
+      if (mounted) {
+        setState(() {
+          _isRetryingInitialize = false;
+        });
+      }
     }
   }
 
@@ -360,21 +418,19 @@ class _FinalTestScreenState<
       body: Consumer<TProvider>(
         builder: (context, provider, child) {
           if (provider.isLoading) {
-            return const Center(
-              child: CircularProgressIndicator(),
-            );
+            return const AppLoadingState(message: 'Loading test...');
           }
 
           return FutureBuilder<bool>(
             future: provider.canTakeTest(),
             builder: (context, snapshot) {
               if (snapshot.connectionState == ConnectionState.waiting) {
-                return const Center(
-                  child: CircularProgressIndicator(),
+                return const AppLoadingState(
+                  message: 'Checking test eligibility...',
                 );
               }
 
-              final canTake = AppConfig.isDevelopmentMode || (snapshot.data ?? false);
+              final canTake = AppConfig.devMode || (snapshot.data ?? false);
               if (!canTake) {
                 return _buildLockedState(context);
               }
@@ -384,8 +440,9 @@ class _FinalTestScreenState<
               }
 
               if (provider.questions.isEmpty) {
-                return const Center(
-                  child: Text('No questions available'),
+                return const AppEmptyState(
+                  title: 'No questions available',
+                  subtitle: 'Please try again in a moment.',
                 );
               }
 
@@ -411,10 +468,7 @@ class _FinalTestScreenState<
           children: [
             Text(
               _config.title,
-              style: const TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-              ),
+              style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 2),
             Text(
@@ -481,65 +535,11 @@ class _FinalTestScreenState<
 
   Widget _buildErrorState(BuildContext context, TProvider provider) {
     return Semantics(
-      label: 'Error loading test. ${provider.error}. Please check your connection and try again.',
-      child: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(AppTheme.spacingL),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const Icon(
-                Icons.error_outline,
-                size: 64,
-                color: AppTheme.incorrectColor,
-              ),
-              const SizedBox(height: AppTheme.spacingM),
-              Text(
-                provider.error ?? 'An error occurred',
-                textAlign: TextAlign.center,
-                style: AppTheme.bodyText1,
-              ),
-              const SizedBox(height: AppTheme.spacingS),
-              const Text(
-                'Please check your connection and try again.',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 14,
-                  color: AppTheme.textSecondary,
-                ),
-              ),
-              const SizedBox(height: AppTheme.spacingL),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Semantics(
-                    button: true,
-                    label: 'Retry loading test',
-                    child: ElevatedButton.icon(
-                      onPressed: _retryInitializeTest,
-                      icon: const Icon(Icons.refresh),
-                      label: const Text('Retry'),
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: AppTheme.primaryColor,
-                        foregroundColor: Colors.white,
-                      ),
-                    ),
-                  ),
-                  const SizedBox(width: AppTheme.spacingM),
-                  Semantics(
-                    button: true,
-                    label: 'Go back to previous screen',
-                    child: OutlinedButton.icon(
-                      onPressed: () => Navigator.of(context).pop(),
-                      icon: const Icon(Icons.arrow_back),
-                      label: const Text('Go Back'),
-                    ),
-                  ),
-                ],
-              ),
-            ],
-          ),
-        ),
+      label: 'Error loading test. ${provider.error}. Please try again.',
+      child: AppErrorState(
+        message: provider.error ?? 'An error occurred while loading test.',
+        retryLabel: _isRetryingInitialize ? 'Retrying...' : 'Retry',
+        onRetry: _isRetryingInitialize ? () {} : _retryInitializeTest,
       ),
     );
   }
@@ -579,7 +579,8 @@ class _FinalTestScreenState<
     final progressPercent = (progress * 100).toInt();
 
     return Semantics(
-      label: 'Question $currentQuestion of $totalQuestions. Progress: $progressPercent percent',
+      label:
+          'Question $currentQuestion of $totalQuestions. Progress: $progressPercent percent',
       child: Container(
         padding: const EdgeInsets.symmetric(
           horizontal: AppTheme.spacingM,
@@ -656,7 +657,8 @@ class _FinalTestScreenState<
         child: Focus(
           focusNode: _questionFocusNode,
           child: Semantics(
-            label: 'Question $questionNum of $totalQuestions. $questionTypeLabel. ${_config.prompt(question)}',
+            label:
+                'Question $questionNum of $totalQuestions. $questionTypeLabel. ${_config.prompt(question)}',
             readOnly: true,
             liveRegion: true,
             child: Container(
@@ -675,7 +677,9 @@ class _FinalTestScreenState<
                       vertical: AppTheme.spacingXS,
                     ),
                     decoration: BoxDecoration(
-                      color: _config.questionTypeColor(question).withValues(alpha: 0.1),
+                      color: _config
+                          .questionTypeColor(question)
+                          .withValues(alpha: 0.1),
                       borderRadius: BorderRadius.circular(AppTheme.radiusS),
                     ),
                     child: Text(
@@ -699,7 +703,11 @@ class _FinalTestScreenState<
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Icon(Icons.volume_up, color: AppTheme.primaryColor, size: 20),
+                          Icon(
+                            Icons.volume_up,
+                            color: AppTheme.primaryColor,
+                            size: 20,
+                          ),
                           const SizedBox(width: AppTheme.spacingS),
                           Expanded(
                             child: Text(
@@ -840,8 +848,9 @@ class _FinalTestScreenState<
                             option,
                             style: TextStyle(
                               fontSize: 16,
-                              fontWeight:
-                                  isSelected ? FontWeight.w500 : FontWeight.normal,
+                              fontWeight: isSelected
+                                  ? FontWeight.w500
+                                  : FontWeight.normal,
                               color: AppTheme.textPrimary,
                               height: 1.5,
                             ),
@@ -895,10 +904,7 @@ class _FinalTestScreenState<
                     Expanded(
                       child: Text(
                         _config.speakingInstruction,
-                        style: TextStyle(
-                          fontSize: 14,
-                          color: Colors.blue[700],
-                        ),
+                        style: TextStyle(fontSize: 14, color: Colors.blue[700]),
                       ),
                     ),
                   ],
@@ -910,8 +916,8 @@ class _FinalTestScreenState<
                 label: _isRecording
                     ? 'Stop recording. Recording for $_recordingSeconds seconds'
                     : hasRecorded
-                        ? 'Re-record your response'
-                        : 'Start recording your response',
+                    ? 'Re-record your response'
+                    : 'Start recording your response',
                 child: GestureDetector(
                   onTap: () => _toggleRecording(provider, question),
                   child: AnimatedContainer(
@@ -923,14 +929,15 @@ class _FinalTestScreenState<
                       color: _isRecording
                           ? AppTheme.incorrectColor
                           : hasRecorded
-                              ? AppTheme.correctColor
-                              : AppTheme.primaryColor,
+                          ? AppTheme.correctColor
+                          : AppTheme.primaryColor,
                       boxShadow: [
                         BoxShadow(
-                          color: (_isRecording
-                                  ? AppTheme.incorrectColor
-                                  : AppTheme.primaryColor)
-                              .withValues(alpha: 0.3),
+                          color:
+                              (_isRecording
+                                      ? AppTheme.incorrectColor
+                                      : AppTheme.primaryColor)
+                                  .withValues(alpha: 0.3),
                           blurRadius: _isRecording ? 20 : 10,
                           spreadRadius: _isRecording ? 5 : 0,
                         ),
@@ -940,8 +947,8 @@ class _FinalTestScreenState<
                       _isRecording
                           ? Icons.stop
                           : hasRecorded
-                              ? Icons.refresh
-                              : Icons.mic,
+                          ? Icons.refresh
+                          : Icons.mic,
                       size: 48,
                       color: Colors.white,
                     ),
@@ -961,10 +968,7 @@ class _FinalTestScreenState<
                 const SizedBox(height: AppTheme.spacingS),
                 const Text(
                   'Tap to stop',
-                  style: TextStyle(
-                    fontSize: 14,
-                    color: AppTheme.textSecondary,
-                  ),
+                  style: TextStyle(fontSize: 14, color: AppTheme.textSecondary),
                 ),
               ] else if (hasRecorded && resultData != null) ...[
                 const Icon(
@@ -1111,7 +1115,9 @@ class _FinalTestScreenState<
     final isLastQuestion = provider.isLastQuestion;
     final buttonText = isLastQuestion ? 'Submit Test' : 'Next';
     final semanticLabel = canProceed
-        ? (isLastQuestion ? 'Submit test and view results' : 'Go to next question')
+        ? (isLastQuestion
+              ? 'Submit test and view results'
+              : 'Go to next question')
         : 'Please answer the question to continue';
 
     return Container(
@@ -1156,12 +1162,17 @@ class _FinalTestScreenState<
                   scale: canProceed ? 1.0 : 0.98,
                   duration: AppAnimations.normal,
                   child: ElevatedButton(
-                    onPressed: canProceed ? () => _handleNext(context, provider) : null,
+                    onPressed: canProceed
+                        ? () => _handleNext(context, provider)
+                        : null,
                     style: ElevatedButton.styleFrom(
-                      backgroundColor:
-                          canProceed ? AppTheme.primaryColor : Colors.grey[400],
+                      backgroundColor: canProceed
+                          ? AppTheme.primaryColor
+                          : Colors.grey[400],
                       disabledBackgroundColor: Colors.grey[400],
-                      padding: const EdgeInsets.symmetric(vertical: AppTheme.spacingM),
+                      padding: const EdgeInsets.symmetric(
+                        vertical: AppTheme.spacingM,
+                      ),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(AppTheme.radiusL),
                       ),
@@ -1230,9 +1241,7 @@ class _FinalTestScreenState<
         barrierDismissible: false,
         builder: (context) => PopScope(
           canPop: false,
-          child: const Center(
-            child: CircularProgressIndicator(),
-          ),
+          child: const Center(child: CircularProgressIndicator()),
         ),
       );
 
@@ -1246,7 +1255,9 @@ class _FinalTestScreenState<
         }
       }
 
-      if (context.mounted && provider.error != null && provider.testResult != null) {
+      if (context.mounted &&
+          provider.error != null &&
+          provider.testResult != null) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             content: Text(provider.error!),
@@ -1282,7 +1293,10 @@ class _FinalTestScreenState<
             arguments: provider.testResult,
           );
         } catch (navError) {
-          ErrorHandler.logError('FinalTestScreen._submitTest - Navigation', navError);
+          ErrorHandler.logError(
+            'FinalTestScreen._submitTest - Navigation',
+            navError,
+          );
 
           if (context.mounted) {
             ScaffoldMessenger.of(context).showSnackBar(
@@ -1298,7 +1312,9 @@ class _FinalTestScreenState<
       } else if (context.mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: const Text('Failed to calculate test results. Please try again.'),
+            content: const Text(
+              'Failed to calculate test results. Please try again.',
+            ),
             backgroundColor: AppTheme.incorrectColor,
             duration: const Duration(seconds: 5),
             action: SnackBarAction(

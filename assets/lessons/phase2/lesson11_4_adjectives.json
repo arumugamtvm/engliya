@@ -26,21 +26,72 @@
       "audioId": "phase2_l11_4_ex3"
     }
   ],
-  "listeningQuestions": [],
-  "speakSentences": [],
+  "listeningQuestions": [
+    {
+      "audioText": "She lives in a big house.",
+      "options": [
+        "She lives in a big house.",
+        "This is a beautiful garden.",
+        "He gave an outstanding performance."
+      ],
+      "correctIndex": 0
+    },
+    {
+      "audioText": "This is a beautiful garden.",
+      "options": [
+        "She lives in a big house.",
+        "He gave an outstanding performance.",
+        "This is a beautiful garden."
+      ],
+      "correctIndex": 2
+    },
+    {
+      "audioText": "He gave an outstanding performance.",
+      "options": [
+        "This is a beautiful garden.",
+        "He gave an outstanding performance.",
+        "She lives in a big house."
+      ],
+      "correctIndex": 1
+    }
+  ],
+  "speakSentences": [
+    {
+      "en": "She lives in a big house.",
+      "ta": "அவள் ஒரு பெரிய வீட்டில் வசிக்கிறாள்."
+    },
+    {
+      "en": "This is a beautiful garden.",
+      "ta": "இது ஒரு அழகான தோட்டம்."
+    },
+    {
+      "en": "He gave an outstanding performance.",
+      "ta": "அவர் ஒரு சிறந்த நடிப்பை வழங்கினார்."
+    }
+  ],
   "practiceQuestions": [
     {
       "type": "mcq",
       "promptEn": "I have a ___ car.",
       "promptTa": "என்னிடம் ஒரு சிறிய கார் உள்ளது.",
-      "options": ["big", "small", "clean", "exciting"],
+      "options": [
+        "big",
+        "small",
+        "clean",
+        "exciting"
+      ],
       "correctIndex": 1
     },
     {
       "type": "mcq",
       "promptEn": "The room is very ___.",
       "promptTa": "அறை மிகவும் சுத்தமாக உள்ளது.",
-      "options": ["beautiful", "clean", "small", "outstanding"],
+      "options": [
+        "beautiful",
+        "clean",
+        "small",
+        "outstanding"
+      ],
       "correctIndex": 1
     }
   ],
@@ -49,14 +100,24 @@
       "type": "mcq",
       "promptEn": "It was an ___ movie.",
       "promptTa": "அது ஒரு உற்சாகமான திரைப்படம்.",
-      "options": ["exciting", "clean", "small", "big"],
+      "options": [
+        "exciting",
+        "clean",
+        "small",
+        "big"
+      ],
       "correctIndex": 0
     },
     {
       "type": "mcq",
       "promptEn": "She wore a ___ dress.",
       "promptTa": "அவள் ஒரு அழகான உடை அணிந்திருந்தாள்.",
-      "options": ["big", "small", "beautiful", "clean"],
+      "options": [
+        "big",
+        "small",
+        "beautiful",
+        "clean"
+      ],
       "correctIndex": 2
     }
   ]

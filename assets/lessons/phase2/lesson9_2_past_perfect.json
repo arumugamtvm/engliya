@@ -26,21 +26,72 @@
       "audioId": "phase2_l9_2_ex3"
     }
   ],
-  "listeningQuestions": [],
-  "speakSentences": [],
+  "listeningQuestions": [
+    {
+      "audioText": "I had finished my work before he came.",
+      "options": [
+        "I had finished my work before he came.",
+        "She had already eaten when I called her.",
+        "They had left before the rain started."
+      ],
+      "correctIndex": 0
+    },
+    {
+      "audioText": "She had already eaten when I called her.",
+      "options": [
+        "I had finished my work before he came.",
+        "They had left before the rain started.",
+        "She had already eaten when I called her."
+      ],
+      "correctIndex": 2
+    },
+    {
+      "audioText": "They had left before the rain started.",
+      "options": [
+        "She had already eaten when I called her.",
+        "They had left before the rain started.",
+        "I had finished my work before he came."
+      ],
+      "correctIndex": 1
+    }
+  ],
+  "speakSentences": [
+    {
+      "en": "I had finished my work before he came.",
+      "ta": "அவன் வருவதற்கு முன் நான் என் வேலையை முடித்துவிட்டேன்."
+    },
+    {
+      "en": "She had already eaten when I called her.",
+      "ta": "நான் அவளை அழைத்தபோது அவள் ஏற்கனவே சாப்பிட்டுவிட்டாள்."
+    },
+    {
+      "en": "They had left before the rain started.",
+      "ta": "மழை தொடங்குவதற்கு முன் அவர்கள் சென்றுவிட்டார்கள்."
+    }
+  ],
   "practiceQuestions": [
     {
       "type": "mcq",
       "promptEn": "I ___ finished my homework before dinner.",
       "promptTa": "இரவு உணவுக்கு முன் நான் என் வீட்டுப்பாடத்தை முடித்துவிட்டேன்.",
-      "options": ["have", "has", "had", "was"],
+      "options": [
+        "have",
+        "has",
+        "had",
+        "was"
+      ],
       "correctIndex": 2
     },
     {
       "type": "mcq",
       "promptEn": "She ___ already left when I arrived.",
       "promptTa": "நான் வந்தபோது அவள் ஏற்கனவே சென்றுவிட்டாள்.",
-      "options": ["have", "has", "had", "was"],
+      "options": [
+        "have",
+        "has",
+        "had",
+        "was"
+      ],
       "correctIndex": 2
     }
   ],
@@ -49,14 +100,24 @@
       "type": "mcq",
       "promptEn": "They ___ studied English before they moved to America.",
       "promptTa": "அவர்கள் அமெரிக்காவுக்கு செல்வதற்கு முன் ஆங்கிலம் படித்திருந்தார்கள்.",
-      "options": ["have", "has", "had", "were"],
+      "options": [
+        "have",
+        "has",
+        "had",
+        "were"
+      ],
       "correctIndex": 2
     },
     {
       "type": "mcq",
       "promptEn": "He ___ never seen snow before he visited Kashmir.",
       "promptTa": "அவன் காஷ்மீருக்கு செல்வதற்கு முன் பனியை பார்த்ததே இல்லை.",
-      "options": ["have", "has", "had", "was"],
+      "options": [
+        "have",
+        "has",
+        "had",
+        "was"
+      ],
       "correctIndex": 2
     }
   ]

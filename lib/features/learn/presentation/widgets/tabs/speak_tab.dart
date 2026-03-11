@@ -183,6 +183,12 @@ class _SpeakTabState extends State<SpeakTab> with TickerProviderStateMixin {
       averageScore = totalScore / _attemptScores.length;
     }
 
+    lessonProvider.updateSpeakProgress(
+      practicedCount: _attemptScores.length,
+      totalCount: sentences.length,
+      averageScore: averageScore / 100.0,
+    );
+
     return Column(
       children: [
         // Progress indicator

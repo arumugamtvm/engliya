@@ -22,10 +22,10 @@ class McqFinalTestProvider extends ChangeNotifier
     required TestRepository testRepository,
     ProgressRepository? progressRepository,
     GatingService? gatingService,
-  })  : _config = config,
-        _testRepository = testRepository,
-        _progressRepository = progressRepository,
-        _gatingService = gatingService;
+  }) : _config = config,
+       _testRepository = testRepository,
+       _progressRepository = progressRepository,
+       _gatingService = gatingService;
 
   // State properties
   List<TestQuestion> _questions = [];
@@ -51,7 +51,8 @@ class McqFinalTestProvider extends ChangeNotifier
   }
 
   int? get selectedAnswer {
-    if (_selectedAnswers.isEmpty || _currentQuestionIndex >= _selectedAnswers.length) {
+    if (_selectedAnswers.isEmpty ||
+        _currentQuestionIndex >= _selectedAnswers.length) {
       return null;
     }
     return _selectedAnswers[_currentQuestionIndex];
@@ -76,7 +77,8 @@ class McqFinalTestProvider extends ChangeNotifier
     try {
       final canTake = await canTakeTest();
       if (!canTake) {
-        _error = 'Please master all ${_phaseLabel()} lessons before taking the final test';
+        _error =
+            'Please master all ${_phaseLabel()} lessons before taking the final test';
         _isLoading = false;
         notifyListeners();
         throw Exception(_error);
@@ -92,7 +94,8 @@ class McqFinalTestProvider extends ChangeNotifier
       }
 
       if (_questions.length < _config.minRequiredQuestions) {
-        _error = 'Insufficient questions available (${_questions.length}/${_config.totalQuestions}). Please complete more lessons.';
+        _error =
+            'Insufficient questions available (${_questions.length}/${_config.totalQuestions}). Please complete more lessons.';
         _isLoading = false;
         notifyListeners();
         throw Exception(_error);
@@ -206,8 +209,12 @@ class McqFinalTestProvider extends ChangeNotifier
         await _testRepository.saveTestResult(_config, _testResult!);
         _error = null;
       } catch (storageError) {
-        ErrorHandler.logError('McqFinalTestProvider.submitTest - Storage', storageError);
-        _error = 'Results calculated but may not be fully saved. You can still view your score.';
+        ErrorHandler.logError(
+          'McqFinalTestProvider.submitTest - Storage',
+          storageError,
+        );
+        _error =
+            'Results calculated but may not be fully saved. You can still view your score.';
       }
 
       _isLoading = false;
@@ -233,7 +240,11 @@ class McqFinalTestProvider extends ChangeNotifier
       _isLoading = false;
       notifyListeners();
     } catch (e, stackTrace) {
-      ErrorHandler.logError('McqFinalTestProvider.loadPreviousResult', e, stackTrace);
+      ErrorHandler.logError(
+        'McqFinalTestProvider.loadPreviousResult',
+        e,
+        stackTrace,
+      );
       _error = ErrorHandler.getUserMessage(e);
       _isLoading = false;
       notifyListeners();
@@ -271,7 +282,7 @@ class McqFinalTestProvider extends ChangeNotifier
 
   @override
   Future<bool> canTakeTest() async {
-    if (AppConfig.isDevelopmentMode) return true;
+    if (AppConfig.devMode) return true;
 
     if (_gatingService != null) {
       try {

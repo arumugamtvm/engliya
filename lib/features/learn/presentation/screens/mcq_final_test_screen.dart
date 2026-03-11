@@ -13,18 +13,23 @@ import '../../../../app/theme.dart';
 import '../../../../core/constants/app_config.dart';
 import '../../../../core/utils/animations.dart';
 import '../../../../core/utils/error_handler.dart';
+import '../../../../core/widgets/app_empty_state.dart';
+import '../../../../core/widgets/app_error_state.dart';
+import '../../../../core/widgets/app_loading_state.dart';
 
-typedef QuestionLabelBuilder = String Function(
-  TestQuestion question,
-  int questionNumber,
-  int totalQuestions,
-);
+typedef QuestionLabelBuilder =
+    String Function(
+      TestQuestion question,
+      int questionNumber,
+      int totalQuestions,
+    );
 
-typedef AnnouncementLabelBuilder = String Function(
-  TestQuestion question,
-  int questionNumber,
-  int totalQuestions,
-);
+typedef AnnouncementLabelBuilder =
+    String Function(
+      TestQuestion question,
+      int questionNumber,
+      int totalQuestions,
+    );
 
 class McqFinalTestScreenConfig {
   final PhaseConfig phaseConfig;
@@ -162,10 +167,7 @@ class McqFinalTestScreenConfig {
 class McqFinalTestScreen extends StatelessWidget {
   final McqFinalTestScreenConfig config;
 
-  const McqFinalTestScreen({
-    super.key,
-    required this.config,
-  });
+  const McqFinalTestScreen({super.key, required this.config});
 
   factory McqFinalTestScreen.phase1({Key? key}) {
     return McqFinalTestScreen(
@@ -205,9 +207,7 @@ class McqFinalTestScreen extends StatelessWidget {
 class _McqFinalTestScreenBody extends StatefulWidget {
   final McqFinalTestScreenConfig config;
 
-  const _McqFinalTestScreenBody({
-    required this.config,
-  });
+  const _McqFinalTestScreenBody({required this.config});
 
   @override
   State<_McqFinalTestScreenBody> createState() =>
@@ -221,6 +221,7 @@ class _McqFinalTestScreenBodyState extends State<_McqFinalTestScreenBody>
   Animation<Offset>? _slideAnimation;
   int _previousQuestionIndex = -1;
   final FocusNode _questionFocusNode = FocusNode();
+  bool _isRetryingInitialize = false;
 
   McqFinalTestScreenConfig get _config => widget.config;
 
@@ -241,15 +242,16 @@ class _McqFinalTestScreenBodyState extends State<_McqFinalTestScreenBody>
     );
 
     if (_config.useSlideAnimation) {
-      _slideAnimation = Tween<Offset>(
-        begin: const Offset(0.1, 0.0),
-        end: Offset.zero,
-      ).animate(
-        CurvedAnimation(
-          parent: _questionAnimationController,
-          curve: Curves.easeOutCubic,
-        ),
-      );
+      _slideAnimation =
+          Tween<Offset>(
+            begin: const Offset(0.1, 0.0),
+            end: Offset.zero,
+          ).animate(
+            CurvedAnimation(
+              parent: _questionAnimationController,
+              curve: Curves.easeOutCubic,
+            ),
+          );
     }
 
     _questionAnimationController.forward();
@@ -270,7 +272,7 @@ class _McqFinalTestScreenBodyState extends State<_McqFinalTestScreenBody>
     final provider = context.read<McqFinalTestProvider>();
 
     if (_config.checkAccess) {
-      final canTake = AppConfig.isDevelopmentMode || await provider.canTakeTest();
+      final canTake = AppConfig.devMode || await provider.canTakeTest();
       if (!canTake) {
         return;
       }
@@ -285,11 +287,21 @@ class _McqFinalTestScreenBodyState extends State<_McqFinalTestScreenBody>
   }
 
   Future<void> _retryInitializeTest() async {
+    if (_isRetryingInitialize) return;
+    setState(() {
+      _isRetryingInitialize = true;
+    });
     try {
       await context.read<McqFinalTestProvider>().retryStartTest();
       _questionAnimationController.forward();
     } catch (e) {
       print('Test retry failed: $e');
+    } finally {
+      if (mounted) {
+        setState(() {
+          _isRetryingInitialize = false;
+        });
+      }
     }
   }
 
@@ -300,9 +312,7 @@ class _McqFinalTestScreenBodyState extends State<_McqFinalTestScreenBody>
       body: Consumer<McqFinalTestProvider>(
         builder: (context, provider, child) {
           if (provider.isLoading) {
-            return const Center(
-              child: CircularProgressIndicator(),
-            );
+            return const AppLoadingState(message: 'Loading test...');
           }
 
           if (_config.checkAccess) {
@@ -310,13 +320,12 @@ class _McqFinalTestScreenBodyState extends State<_McqFinalTestScreenBody>
               future: provider.canTakeTest(),
               builder: (context, snapshot) {
                 if (snapshot.connectionState == ConnectionState.waiting) {
-                  return const Center(
-                    child: CircularProgressIndicator(),
+                  return const AppLoadingState(
+                    message: 'Checking test eligibility...',
                   );
                 }
 
-                final canTake =
-                    AppConfig.isDevelopmentMode || (snapshot.data ?? false);
+                final canTake = AppConfig.devMode || (snapshot.data ?? false);
                 if (!canTake) {
                   return _buildLockedState(context);
                 }
@@ -338,8 +347,9 @@ class _McqFinalTestScreenBodyState extends State<_McqFinalTestScreenBody>
     }
 
     if (provider.questions.isEmpty) {
-      return const Center(
-        child: Text('No questions available'),
+      return const AppEmptyState(
+        title: 'No questions available',
+        subtitle: 'Please try again in a moment.',
       );
     }
 
@@ -360,10 +370,7 @@ class _McqFinalTestScreenBodyState extends State<_McqFinalTestScreenBody>
           children: [
             Text(
               _config.title,
-              style: const TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-              ),
+              style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 2),
             Text(
@@ -430,71 +437,19 @@ class _McqFinalTestScreenBodyState extends State<_McqFinalTestScreenBody>
 
   Widget _buildErrorState(BuildContext context, McqFinalTestProvider provider) {
     return Semantics(
-      label:
-          'Error loading test. ${provider.error}. Please check your connection and try again.',
-      child: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(AppTheme.spacingL),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const Icon(
-                Icons.error_outline,
-                size: 64,
-                color: AppTheme.incorrectColor,
-              ),
-              const SizedBox(height: AppTheme.spacingM),
-              Text(
-                provider.error ?? 'An error occurred',
-                textAlign: TextAlign.center,
-                style: AppTheme.bodyText1,
-              ),
-              const SizedBox(height: AppTheme.spacingS),
-              const Text(
-                'Please check your connection and try again.',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 14,
-                  color: AppTheme.textSecondary,
-                ),
-              ),
-              const SizedBox(height: AppTheme.spacingL),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Semantics(
-                    button: true,
-                    label: 'Retry loading test',
-                    child: ElevatedButton.icon(
-                      onPressed: _retryInitializeTest,
-                      icon: const Icon(Icons.refresh),
-                      label: const Text('Retry'),
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: AppTheme.primaryColor,
-                        foregroundColor: Colors.white,
-                      ),
-                    ),
-                  ),
-                  const SizedBox(width: AppTheme.spacingM),
-                  Semantics(
-                    button: true,
-                    label: 'Go back to previous screen',
-                    child: OutlinedButton.icon(
-                      onPressed: () => Navigator.of(context).pop(),
-                      icon: const Icon(Icons.arrow_back),
-                      label: const Text('Go Back'),
-                    ),
-                  ),
-                ],
-              ),
-            ],
-          ),
-        ),
+      label: 'Error loading test. ${provider.error}. Please retry.',
+      child: AppErrorState(
+        message: provider.error ?? 'An error occurred while loading test.',
+        retryLabel: _isRetryingInitialize ? 'Retrying...' : 'Retry',
+        onRetry: _isRetryingInitialize ? () {} : _retryInitializeTest,
       ),
     );
   }
 
-  Widget _buildTestContent(BuildContext context, McqFinalTestProvider provider) {
+  Widget _buildTestContent(
+    BuildContext context,
+    McqFinalTestProvider provider,
+  ) {
     final content = Column(
       children: [
         _buildProgressSection(provider),
@@ -599,8 +554,11 @@ class _McqFinalTestScreenBodyState extends State<_McqFinalTestScreenBody>
 
     final questionNumber = provider.currentQuestionIndex + 1;
     final totalQuestions = provider.totalQuestions;
-    final semanticsLabel =
-        _config.questionSemanticsLabel(question, questionNumber, totalQuestions);
+    final semanticsLabel = _config.questionSemanticsLabel(
+      question,
+      questionNumber,
+      totalQuestions,
+    );
 
     final content = Container(
       padding: const EdgeInsets.all(AppTheme.spacingL),
@@ -630,10 +588,7 @@ class _McqFinalTestScreenBodyState extends State<_McqFinalTestScreenBody>
     );
 
     final focusWrapper = _config.useQuestionFocus
-        ? Focus(
-            focusNode: _questionFocusNode,
-            child: semanticsWidget,
-          )
+        ? Focus(focusNode: _questionFocusNode, child: semanticsWidget)
         : semanticsWidget;
 
     return _wrapAnimated(focusWrapper);
@@ -665,17 +620,11 @@ class _McqFinalTestScreenBodyState extends State<_McqFinalTestScreenBody>
     if (_config.useSlideAnimation && _slideAnimation != null) {
       return SlideTransition(
         position: _slideAnimation!,
-        child: FadeTransition(
-          opacity: _fadeAnimation,
-          child: child,
-        ),
+        child: FadeTransition(opacity: _fadeAnimation, child: child),
       );
     }
 
-    return FadeTransition(
-      opacity: _fadeAnimation,
-      child: child,
-    );
+    return FadeTransition(opacity: _fadeAnimation, child: child);
   }
 
   Widget _buildOptionTile({
@@ -750,8 +699,9 @@ class _McqFinalTestScreenBodyState extends State<_McqFinalTestScreenBody>
                         option,
                         style: TextStyle(
                           fontSize: 16,
-                          fontWeight:
-                              isSelected ? FontWeight.w500 : FontWeight.normal,
+                          fontWeight: isSelected
+                              ? FontWeight.w500
+                              : FontWeight.normal,
                           color: AppTheme.textPrimary,
                           height: 1.5,
                         ),
@@ -791,8 +741,8 @@ class _McqFinalTestScreenBodyState extends State<_McqFinalTestScreenBody>
     final buttonText = isLastQuestion ? 'Submit Test' : 'Next';
     final semanticLabel = canProceed
         ? (isLastQuestion
-            ? 'Submit test and view results'
-            : 'Go to next question')
+              ? 'Submit test and view results'
+              : 'Go to next question')
         : 'Please answer the question to continue';
 
     final nextButton = Semantics(
@@ -865,10 +815,7 @@ class _McqFinalTestScreenBodyState extends State<_McqFinalTestScreenBody>
                   Expanded(child: nextButton),
                 ],
               )
-            : SizedBox(
-                width: double.infinity,
-                child: nextButton,
-              ),
+            : SizedBox(width: double.infinity, child: nextButton),
       ),
     );
   }
@@ -912,8 +859,11 @@ class _McqFinalTestScreenBodyState extends State<_McqFinalTestScreenBody>
     if (_config.useSemanticsAnnouncement) {
       final questionNumber = provider.currentQuestionIndex + 1;
       final totalQuestions = provider.totalQuestions;
-      final announcement =
-          _config.announcementLabel(question, questionNumber, totalQuestions);
+      final announcement = _config.announcementLabel(
+        question,
+        questionNumber,
+        totalQuestions,
+      );
       SemanticsService.announce(announcement, TextDirection.ltr);
     }
   }
@@ -934,9 +884,7 @@ class _McqFinalTestScreenBodyState extends State<_McqFinalTestScreenBody>
         barrierDismissible: false,
         builder: (context) => PopScope(
           canPop: false,
-          child: const Center(
-            child: CircularProgressIndicator(),
-          ),
+          child: const Center(child: CircularProgressIndicator()),
         ),
       );
 
@@ -950,7 +898,9 @@ class _McqFinalTestScreenBodyState extends State<_McqFinalTestScreenBody>
         }
       }
 
-      if (context.mounted && provider.error != null && provider.testResult != null) {
+      if (context.mounted &&
+          provider.error != null &&
+          provider.testResult != null) {
         final action = _config.showRetrySaveAction
             ? SnackBarAction(
                 label: 'Retry Save',
@@ -991,17 +941,19 @@ class _McqFinalTestScreenBodyState extends State<_McqFinalTestScreenBody>
               arguments: provider.testResult,
             );
           } else {
-            await Navigator.of(context).pushNamed(
-              _config.resultRoute,
-              arguments: provider.testResult,
-            );
+            await Navigator.of(
+              context,
+            ).pushNamed(_config.resultRoute, arguments: provider.testResult);
           }
 
           if (_config.popAfterResult && context.mounted) {
             Navigator.of(context).pop();
           }
         } catch (navError) {
-          ErrorHandler.logError('McqFinalTestScreen._submitTest - Navigation', navError);
+          ErrorHandler.logError(
+            'McqFinalTestScreen._submitTest - Navigation',
+            navError,
+          );
           if (context.mounted) {
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(
@@ -1018,8 +970,9 @@ class _McqFinalTestScreenBodyState extends State<_McqFinalTestScreenBody>
       } else if (context.mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content:
-                const Text('Failed to calculate test results. Please try again.'),
+            content: const Text(
+              'Failed to calculate test results. Please try again.',
+            ),
             backgroundColor: AppTheme.incorrectColor,
             duration: const Duration(seconds: 5),
             action: SnackBarAction(

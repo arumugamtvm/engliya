@@ -42,10 +42,18 @@ class ServiceContainer {
   late final DebugService _debugService;
   late final GatingService _gatingService;
   late final HomeService _homeService;
-  late final FinalTestService<Phase4FinalTestQuestion, SpeakingResult, Phase4TestResult>
-      _phase4FinalTestService;
-  late final FinalTestService<Phase5FinalTestQuestion, Phase5SpeakingResult, Phase5TestResult>
-      _phase5FinalTestService;
+  late final FinalTestService<
+    Phase4FinalTestQuestion,
+    SpeakingResult,
+    Phase4TestResult
+  >
+  _phase4FinalTestService;
+  late final FinalTestService<
+    Phase5FinalTestQuestion,
+    Phase5SpeakingResult,
+    Phase5TestResult
+  >
+  _phase5FinalTestService;
   late final ProgressProvider _progressProvider;
 
   bool _isInitialized = false;
@@ -78,7 +86,7 @@ class ServiceContainer {
       lessonRepository: _lessonRepository,
       storageService: _storageService,
     );
-    
+
     _audioService = AudioService();
     await _audioService.init();
     AppLogger.debug('Audio service initialized', tag: 'DI');
@@ -93,7 +101,6 @@ class ServiceContainer {
     _gatingService = GatingService(
       storageService: _storageService,
       progressRepository: _progressRepository,
-      debugService: _debugService,
     );
 
     _homeService = HomeService(
@@ -139,12 +146,20 @@ class ServiceContainer {
     Provider<AudioService>.value(value: _audioService),
     Provider<MasteryService>.value(value: _masteryService),
     Provider<HomeService>.value(value: _homeService),
-    Provider<FinalTestService<Phase4FinalTestQuestion, SpeakingResult, Phase4TestResult>>.value(
-      value: _phase4FinalTestService,
-    ),
-    Provider<FinalTestService<Phase5FinalTestQuestion, Phase5SpeakingResult, Phase5TestResult>>.value(
-      value: _phase5FinalTestService,
-    ),
+    Provider<
+      FinalTestService<
+        Phase4FinalTestQuestion,
+        SpeakingResult,
+        Phase4TestResult
+      >
+    >.value(value: _phase4FinalTestService),
+    Provider<
+      FinalTestService<
+        Phase5FinalTestQuestion,
+        Phase5SpeakingResult,
+        Phase5TestResult
+      >
+    >.value(value: _phase5FinalTestService),
     Provider<DebugService>.value(value: _debugService),
     Provider<GatingService>.value(value: _gatingService),
     ChangeNotifierProvider(
@@ -161,22 +176,26 @@ class ServiceContainer {
       create: (_) => HomeProvider(homeService: _homeService),
     ),
     ChangeNotifierProvider(
-      create: (_) => FinalTestProvider<
-          Phase4FinalTestQuestion,
-          SpeakingResult,
-          Phase4TestResult>(
-        testService: _phase4FinalTestService,
-        gatingService: _gatingService,
-      ),
+      create: (_) =>
+          FinalTestProvider<
+            Phase4FinalTestQuestion,
+            SpeakingResult,
+            Phase4TestResult
+          >(
+            testService: _phase4FinalTestService,
+            gatingService: _gatingService,
+          ),
     ),
     ChangeNotifierProvider(
-      create: (_) => FinalTestProvider<
-          Phase5FinalTestQuestion,
-          Phase5SpeakingResult,
-          Phase5TestResult>(
-        testService: _phase5FinalTestService,
-        gatingService: _gatingService,
-      ),
+      create: (_) =>
+          FinalTestProvider<
+            Phase5FinalTestQuestion,
+            Phase5SpeakingResult,
+            Phase5TestResult
+          >(
+            testService: _phase5FinalTestService,
+            gatingService: _gatingService,
+          ),
     ),
     ChangeNotifierProvider(
       create: (_) => DebugProvider(debugService: _debugService),

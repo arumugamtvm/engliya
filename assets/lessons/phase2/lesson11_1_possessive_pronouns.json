@@ -26,21 +26,72 @@
       "audioId": "phase2_l11_1_ex3"
     }
   ],
-  "listeningQuestions": [],
-  "speakSentences": [],
+  "listeningQuestions": [
+    {
+      "audioText": "This is my pen. The pen is mine.",
+      "options": [
+        "This is my pen. The pen is mine.",
+        "That is her bag. The bag is hers.",
+        "These are our books. The books are ours."
+      ],
+      "correctIndex": 0
+    },
+    {
+      "audioText": "That is her bag. The bag is hers.",
+      "options": [
+        "This is my pen. The pen is mine.",
+        "These are our books. The books are ours.",
+        "That is her bag. The bag is hers."
+      ],
+      "correctIndex": 2
+    },
+    {
+      "audioText": "These are our books. The books are ours.",
+      "options": [
+        "That is her bag. The bag is hers.",
+        "These are our books. The books are ours.",
+        "This is my pen. The pen is mine."
+      ],
+      "correctIndex": 1
+    }
+  ],
+  "speakSentences": [
+    {
+      "en": "This is my pen. The pen is mine.",
+      "ta": "இது என் பேனா. இந்த பேனா என்னுடையது."
+    },
+    {
+      "en": "That is her bag. The bag is hers.",
+      "ta": "அது அவளுடைய பை. அந்த பை அவளுடையது."
+    },
+    {
+      "en": "These are our books. The books are ours.",
+      "ta": "இவை எங்கள் புத்தகங்கள். இந்த புத்தகங்கள் எங்களுடையவை."
+    }
+  ],
   "practiceQuestions": [
     {
       "type": "mcq",
       "promptEn": "This is ___ car.",
       "promptTa": "இது என் கார்.",
-      "options": ["my", "mine", "me", "I"],
+      "options": [
+        "my",
+        "mine",
+        "me",
+        "I"
+      ],
       "correctIndex": 0
     },
     {
       "type": "mcq",
       "promptEn": "The house is ___.",
       "promptTa": "இந்த வீடு அவர்களுடையது.",
-      "options": ["their", "theirs", "them", "they"],
+      "options": [
+        "their",
+        "theirs",
+        "them",
+        "they"
+      ],
       "correctIndex": 1
     }
   ],
@@ -49,14 +100,24 @@
       "type": "mcq",
       "promptEn": "Is this pen ___?",
       "promptTa": "இந்த பேனா உங்களுடையதா?",
-      "options": ["your", "yours", "you", "you're"],
+      "options": [
+        "your",
+        "yours",
+        "you",
+        "you're"
+      ],
       "correctIndex": 1
     },
     {
       "type": "mcq",
       "promptEn": "That is ___ dog.",
       "promptTa": "அது அவனுடைய நாய்.",
-      "options": ["he", "him", "his", "he's"],
+      "options": [
+        "he",
+        "him",
+        "his",
+        "he's"
+      ],
       "correctIndex": 2
     }
   ]

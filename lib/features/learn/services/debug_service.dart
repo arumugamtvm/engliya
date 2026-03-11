@@ -1,10 +1,11 @@
 import '../data/models/user_lesson_status.dart';
 import '../data/repositories/progress_repository.dart';
 import '../../../services/local_storage/storage_service.dart';
+import '../../../core/constants/app_config.dart';
 
 /// Service for managing debug mode operations
 /// Provides functionality to bypass gating logic, unlock all content, and reset progress
-/// 
+///
 /// Debug mode is activated by long-pressing the app title 5 times consecutively
 /// When enabled, all phases and lessons become accessible regardless of completion status
 class DebugService {
@@ -33,41 +34,40 @@ class DebugService {
   DebugService({
     required StorageService storageService,
     required ProgressRepository progressRepository,
-  })  : _storageService = storageService,
-        _progressRepository = progressRepository;
+  }) : _storageService = storageService,
+       _progressRepository = progressRepository;
 
   /// Check if debug mode is currently enabled
   /// Returns false if the value cannot be read from storage
   Future<bool> isDebugModeEnabled() async {
-    try {
-      return _storageService.getBool(_keyDebugMode) ?? false;
-    } catch (e) {
-      print('Warning: Failed to check debug mode status: $e');
-      return false;
-    }
+    return AppConfig.devMode;
   }
 
   /// Enable or disable debug mode
   /// Persists the setting across app sessions
-  /// 
+  ///
   /// Throws [DebugServiceException] if the operation fails
   Future<void> setDebugMode(bool enabled) async {
+    // Dev mode is code-level only.
+    // Keep this method for compatibility with existing call sites.
     try {
       await _storageService.setBool(_keyDebugMode, enabled);
       print('Debug mode ${enabled ? 'enabled' : 'disabled'}');
     } catch (e) {
       print('Error: Failed to set debug mode: $e');
-      throw DebugServiceException('Failed to ${enabled ? 'enable' : 'disable'} debug mode');
+      throw DebugServiceException(
+        'Failed to ${enabled ? 'enable' : 'disable'} debug mode',
+      );
     }
   }
 
   /// Unlock all phases and mark all lessons as mastered
-  /// 
+  ///
   /// This operation:
   /// - Sets all phase final test passed flags to true
   /// - Sets all phase unlock flags to true
   /// - Creates/updates UserLessonStatus for every lesson with mastered status
-  /// 
+  ///
   /// Throws [DebugServiceException] if the operation fails
   Future<void> unlockAll() async {
     try {
@@ -110,7 +110,9 @@ class DebugService {
       // Save all progress at once
       await _progressRepository.saveAllProgress(existingProgress);
 
-      print('All content unlocked successfully: ${allLessonIds.length} lessons mastered');
+      print(
+        'All content unlocked successfully: ${allLessonIds.length} lessons mastered',
+      );
     } catch (e) {
       print('Error: Failed to unlock all content: $e');
       throw DebugServiceException('Failed to unlock all content: $e');
@@ -118,14 +120,14 @@ class DebugService {
   }
 
   /// Reset all progress to a fresh state
-  /// 
+  ///
   /// This operation:
   /// - Clears all UserLessonStatus data
   /// - Sets all phase test passed flags to false
   /// - Clears all test scores
   /// - Sets all phase unlock flags to false
   /// - Disables debug mode
-  /// 
+  ///
   /// Throws [DebugServiceException] if the operation fails
   Future<void> resetAll() async {
     try {
@@ -173,7 +175,7 @@ class DebugService {
   }
 
   /// Get all lesson IDs across all phases
-  /// 
+  ///
   /// Returns lesson IDs for:
   /// - Phase 1: lesson1 to lesson6
   /// - Phase 2: lesson7_1 to lesson11_5

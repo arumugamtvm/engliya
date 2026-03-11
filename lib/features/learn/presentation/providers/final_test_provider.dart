@@ -15,8 +15,8 @@ class FinalTestProvider<Q, S, R> extends ChangeNotifier
   FinalTestProvider({
     required FinalTestService<Q, S, R> testService,
     GatingService? gatingService,
-  })  : _testService = testService,
-        _gatingService = gatingService;
+  }) : _testService = testService,
+       _gatingService = gatingService;
 
   List<Q> _questions = [];
   List<dynamic> _answers = [];
@@ -151,9 +151,15 @@ class FinalTestProvider<Q, S, R> extends ChangeNotifier
       _isLoading = false;
       notifyListeners();
 
-      print('${_testService.phaseLabel} test started successfully with ${_questions.length} questions');
+      print(
+        '${_testService.phaseLabel} test started successfully with ${_questions.length} questions',
+      );
     } catch (e, stackTrace) {
-      ErrorHandler.logError('FinalTestProvider.startTest (${_testService.phaseLabel})', e, stackTrace);
+      ErrorHandler.logError(
+        'FinalTestProvider.startTest (${_testService.phaseLabel})',
+        e,
+        stackTrace,
+      );
 
       if (_error == null) {
         _error = ErrorHandler.getUserMessage(e);
@@ -264,7 +270,9 @@ class FinalTestProvider<Q, S, R> extends ChangeNotifier
           if (answer is S) {
             speakingResults.add(answer);
           } else {
-            speakingResults.add(_testService.createEmptySpeakingResult(question));
+            speakingResults.add(
+              _testService.createEmptySpeakingResult(question),
+            );
           }
         }
       }
@@ -276,7 +284,10 @@ class FinalTestProvider<Q, S, R> extends ChangeNotifier
           speakingResults: speakingResults,
         );
       } catch (e) {
-        ErrorHandler.logError('FinalTestProvider.submitTest - Calculation (${_testService.phaseLabel})', e);
+        ErrorHandler.logError(
+          'FinalTestProvider.submitTest - Calculation (${_testService.phaseLabel})',
+          e,
+        );
         _error = 'Failed to calculate test results. Please try again.';
         _isLoading = false;
         notifyListeners();
@@ -294,14 +305,22 @@ class FinalTestProvider<Q, S, R> extends ChangeNotifier
         await _testService.saveTestResult(_testResult!);
         _error = null;
       } catch (storageError) {
-        ErrorHandler.logError('FinalTestProvider.submitTest - Storage (${_testService.phaseLabel})', storageError);
-        _error = 'Results calculated but may not be fully saved. You can still view your score.';
+        ErrorHandler.logError(
+          'FinalTestProvider.submitTest - Storage (${_testService.phaseLabel})',
+          storageError,
+        );
+        _error =
+            'Results calculated but may not be fully saved. You can still view your score.';
       }
 
       _isLoading = false;
       notifyListeners();
     } catch (e, stackTrace) {
-      ErrorHandler.logError('FinalTestProvider.submitTest (${_testService.phaseLabel})', e, stackTrace);
+      ErrorHandler.logError(
+        'FinalTestProvider.submitTest (${_testService.phaseLabel})',
+        e,
+        stackTrace,
+      );
 
       if (_error == null) {
         _error = ErrorHandler.getUserMessage(e);
@@ -326,7 +345,10 @@ class FinalTestProvider<Q, S, R> extends ChangeNotifier
         _isLoading = false;
         notifyListeners();
       } catch (e) {
-        ErrorHandler.logError('FinalTestProvider.retrySubmitTest (${_testService.phaseLabel})', e);
+        ErrorHandler.logError(
+          'FinalTestProvider.retrySubmitTest (${_testService.phaseLabel})',
+          e,
+        );
         _error = 'Still unable to save results. You can continue anyway.';
         _isLoading = false;
         notifyListeners();
@@ -346,13 +368,19 @@ class FinalTestProvider<Q, S, R> extends ChangeNotifier
       final passed = await _testService.hasPassedTest();
 
       if (score != null) {
-        print('${_testService.phaseLabel} previous test result: score=$score, passed=$passed');
+        print(
+          '${_testService.phaseLabel} previous test result: score=$score, passed=$passed',
+        );
       }
 
       _isLoading = false;
       notifyListeners();
     } catch (e, stackTrace) {
-      ErrorHandler.logError('FinalTestProvider.loadPreviousResult (${_testService.phaseLabel})', e, stackTrace);
+      ErrorHandler.logError(
+        'FinalTestProvider.loadPreviousResult (${_testService.phaseLabel})',
+        e,
+        stackTrace,
+      );
       _error = ErrorHandler.getUserMessage(e);
       _isLoading = false;
       notifyListeners();
@@ -373,18 +401,23 @@ class FinalTestProvider<Q, S, R> extends ChangeNotifier
     try {
       return await _testService.hasPassedTest();
     } catch (e) {
-      ErrorHandler.logError('FinalTestProvider.hasPassedBefore (${_testService.phaseLabel})', e);
+      ErrorHandler.logError(
+        'FinalTestProvider.hasPassedBefore (${_testService.phaseLabel})',
+        e,
+      );
       return false;
     }
   }
 
   @override
   Future<bool> canTakeTest() async {
-    if (AppConfig.isDevelopmentMode) return true;
+    if (AppConfig.devMode) return true;
 
     if (_gatingService != null) {
       try {
-        return await _gatingService!.isFinalTestAccessible(_testService.phaseNumber);
+        return await _gatingService!.isFinalTestAccessible(
+          _testService.phaseNumber,
+        );
       } catch (e) {
         print('Warning: GatingService error, falling back to direct check: $e');
       }
@@ -393,7 +426,10 @@ class FinalTestProvider<Q, S, R> extends ChangeNotifier
     try {
       return await _testService.canTakeTest();
     } catch (e) {
-      ErrorHandler.logError('FinalTestProvider.canTakeTest (${_testService.phaseLabel})', e);
+      ErrorHandler.logError(
+        'FinalTestProvider.canTakeTest (${_testService.phaseLabel})',
+        e,
+      );
       return false;
     }
   }
@@ -403,7 +439,10 @@ class FinalTestProvider<Q, S, R> extends ChangeNotifier
     try {
       return await _testService.getLastTestScore();
     } catch (e) {
-      ErrorHandler.logError('FinalTestProvider.getLastTestScore (${_testService.phaseLabel})', e);
+      ErrorHandler.logError(
+        'FinalTestProvider.getLastTestScore (${_testService.phaseLabel})',
+        e,
+      );
       return null;
     }
   }

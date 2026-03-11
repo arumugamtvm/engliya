@@ -783,7 +783,7 @@ class _McqFinalTestResultScreenState extends State<McqFinalTestResultScreen>
   Widget _buildRetryTestButton(BuildContext context) {
     return Semantics(
       button: true,
-      label: 'Retry test',
+      label: 'Try again',
       hint: 'Take the test again to improve your score',
       child: ElevatedButton.icon(
         onPressed: () => _retryTest(context),
@@ -798,7 +798,7 @@ class _McqFinalTestResultScreenState extends State<McqFinalTestResultScreen>
         ),
         icon: const Icon(Icons.refresh),
         label: const Text(
-          'Retry Test',
+          'Try Again',
           style: TextStyle(
             fontSize: 16,
             fontWeight: FontWeight.w600,

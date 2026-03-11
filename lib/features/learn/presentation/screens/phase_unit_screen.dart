@@ -7,6 +7,8 @@ import '../../domain/entities/unit.dart';
 import '../../domain/repositories/test_repository.dart';
 import '../../data/models/phase4_final_test_question.dart';
 import '../../data/models/phase4_test_result.dart';
+import '../../data/models/phase5_final_test_question.dart';
+import '../../data/models/phase5_test_result.dart';
 import '../../data/repositories/progress_repository.dart';
 import '../../services/gating_service.dart';
 import '../providers/final_test_provider.dart';
@@ -84,8 +86,9 @@ class PhaseUnitScreenConfig {
         return 3;
       case PhaseType.phase4:
         return 4;
-      case PhaseType.phase1:
       case PhaseType.phase5:
+        return 5;
+      case PhaseType.phase1:
         throw ArgumentError('Phase $phaseType does not use unit screens');
     }
   }
@@ -98,8 +101,9 @@ class PhaseUnitScreenConfig {
         return 'Phase 3: Real-Life Communication';
       case PhaseType.phase4:
         return 'Phase 4: Fluency & Pronunciation';
-      case PhaseType.phase1:
       case PhaseType.phase5:
+        return 'Phase 5: Professional English';
+      case PhaseType.phase1:
         throw ArgumentError('Phase $phaseType does not use unit screens');
     }
   }
@@ -111,8 +115,9 @@ class PhaseUnitScreenConfig {
       case PhaseType.phase3:
       case PhaseType.phase4:
         return Colors.purple;
-      case PhaseType.phase1:
       case PhaseType.phase5:
+        return Colors.deepOrange;
+      case PhaseType.phase1:
         throw ArgumentError('Phase $phaseType does not use unit screens');
     }
   }
@@ -125,8 +130,9 @@ class PhaseUnitScreenConfig {
         return AppRoutes.phase3FinalTest;
       case PhaseType.phase4:
         return AppRoutes.phase4FinalTest;
-      case PhaseType.phase1:
       case PhaseType.phase5:
+        return AppRoutes.phase5FinalTest;
+      case PhaseType.phase1:
         throw ArgumentError('Phase $phaseType does not use unit screens');
     }
   }
@@ -139,8 +145,9 @@ class PhaseUnitScreenConfig {
         return AppRoutes.phase3LessonList;
       case PhaseType.phase4:
         return AppRoutes.phase4LessonList;
-      case PhaseType.phase1:
       case PhaseType.phase5:
+        return AppRoutes.phase5LessonList;
+      case PhaseType.phase1:
         throw ArgumentError('Phase $phaseType does not use unit screens');
     }
   }
@@ -149,10 +156,7 @@ class PhaseUnitScreenConfig {
 class PhaseUnitScreen extends StatefulWidget {
   final PhaseType phaseType;
 
-  const PhaseUnitScreen({
-    super.key,
-    required this.phaseType,
-  });
+  const PhaseUnitScreen({super.key, required this.phaseType});
 
   @override
   State<PhaseUnitScreen> createState() => _PhaseUnitScreenState();
@@ -172,7 +176,7 @@ class _PhaseUnitScreenState extends State<PhaseUnitScreen> {
     _config = PhaseUnitScreenConfig.forPhase(widget.phaseType);
     _unitProvider = PhaseUnitProvider(
       context.read<ProgressProvider>(),
-      _config.units,
+      widget.phaseType,
     );
     WidgetsBinding.instance.addPostFrameCallback((_) => _loadData());
   }
@@ -190,11 +194,27 @@ class _PhaseUnitScreenState extends State<PhaseUnitScreen> {
       case PhaseType.phase3:
         return _buildMcqProvider(context, PhaseConfig.phase3);
       case PhaseType.phase4:
-        return context.read<
-            FinalTestProvider<Phase4FinalTestQuestion, SpeakingResult, Phase4TestResult>>();
-      case PhaseType.phase1:
+        return context
+            .read<
+              FinalTestProvider<
+                Phase4FinalTestQuestion,
+                SpeakingResult,
+                Phase4TestResult
+              >
+            >();
       case PhaseType.phase5:
-        throw ArgumentError('Phase ${widget.phaseType} has no final test status provider');
+        return context
+            .read<
+              FinalTestProvider<
+                Phase5FinalTestQuestion,
+                Phase5SpeakingResult,
+                Phase5TestResult
+              >
+            >();
+      case PhaseType.phase1:
+        throw ArgumentError(
+          'Phase ${widget.phaseType} has no final test status provider',
+        );
     }
   }
 
@@ -224,8 +244,7 @@ class _PhaseUnitScreenState extends State<PhaseUnitScreen> {
   Future<void> _loadTestStatus() async {
     try {
       final testProvider = _testProvider(context);
-      final canTake =
-          AppConfig.isDevelopmentMode || await testProvider.canTakeTest();
+      final canTake = AppConfig.devMode || await testProvider.canTakeTest();
       final passed = await testProvider.hasPassedBefore();
       final score = await testProvider.getLastTestScore();
       if (mounted) {
@@ -259,15 +278,20 @@ class _PhaseUnitScreenState extends State<PhaseUnitScreen> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const Icon(Icons.error_outline, size: 64, color: Colors.red),
+                    const Icon(
+                      Icons.error_outline,
+                      size: 64,
+                      color: Colors.red,
+                    ),
                     const SizedBox(height: 16),
-                    Text('Error loading units',
-                        style: Theme.of(context).textTheme.titleLarge),
+                    Text(
+                      'Error loading units',
+                      style: Theme.of(context).textTheme.titleLarge,
+                    ),
                     const SizedBox(height: 8),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 32),
-                      child:
-                          Text(provider.error!, textAlign: TextAlign.center),
+                      child: Text(provider.error!, textAlign: TextAlign.center),
                     ),
                     const SizedBox(height: 24),
                     ElevatedButton(
@@ -355,10 +379,9 @@ class _PhaseUnitScreenState extends State<PhaseUnitScreen> {
                     children: [
                       Text(
                         _config.finalTestTitle,
-                        style: Theme.of(context)
-                            .textTheme
-                            .titleLarge
-                            ?.copyWith(fontWeight: FontWeight.bold),
+                        style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                       const SizedBox(height: 4),
                       Text(
@@ -368,7 +391,9 @@ class _PhaseUnitScreenState extends State<PhaseUnitScreen> {
                       const SizedBox(height: 8),
                       Container(
                         padding: const EdgeInsets.symmetric(
-                            horizontal: 12, vertical: 6),
+                          horizontal: 12,
+                          vertical: 6,
+                        ),
                         decoration: BoxDecoration(
                           color: statusColor.withValues(alpha: 0.1),
                           borderRadius: BorderRadius.circular(8),
@@ -411,10 +436,7 @@ class _PhaseUnitScreenState extends State<PhaseUnitScreen> {
     await Navigator.pushNamed(
       context,
       _config.lessonListRoute,
-      arguments: {
-        'unitId': unitId,
-        'unitTitle': unitTitle,
-      },
+      arguments: {'unitId': unitId, 'unitTitle': unitTitle},
     );
     if (mounted) await _unitProvider.reload();
   }

@@ -3,7 +3,9 @@ import '../../data/models/lesson.dart';
 import '../../data/models/user_lesson_status.dart';
 import '../../data/repositories/lesson_repository.dart';
 import '../../data/repositories/progress_repository.dart';
+import '../../domain/entities/phase_config.dart';
 import '../../domain/entities/phase_units.dart';
+import '../../domain/entities/unit.dart';
 import '../../services/gating_service.dart';
 import '../../../../core/utils/error_handler.dart';
 import '../../../../services/local_storage/storage_service.dart';
@@ -14,21 +16,22 @@ class ProgressProvider extends ChangeNotifier {
   final LessonRepository _lessonRepo;
   final StorageService _storageService;
   final GatingService? _gatingService;
-  
+
   // Cached phase unlock status (updated asynchronously)
   bool _isPhase2UnlockedCached = false;
   bool _isPhase3UnlockedCached = false;
   bool _isPhase4UnlockedCached = false;
+  bool _isPhase5UnlockedCached = false;
 
   ProgressProvider({
     required ProgressRepository progressRepo,
     required LessonRepository lessonRepo,
     required StorageService storageService,
     GatingService? gatingService,
-  })  : _progressRepo = progressRepo,
-        _lessonRepo = lessonRepo,
-        _storageService = storageService,
-        _gatingService = gatingService;
+  }) : _progressRepo = progressRepo,
+       _lessonRepo = lessonRepo,
+       _storageService = storageService,
+       _gatingService = gatingService;
 
   Map<String, UserLessonStatus> _allProgress = {};
   List<Lesson> _allLessons = [];
@@ -68,45 +71,50 @@ class ProgressProvider extends ChangeNotifier {
   /// Check if Phase 2 is unlocked (synchronous getter using cached value)
   /// Uses GatingService for centralized access control with debug mode bypass
   /// In development mode, always returns true
-  /// 
+  ///
   /// Note: This is a synchronous getter that uses cached values.
   /// Call refreshPhaseUnlockStatus() to update the cache from GatingService.
-  /// 
+  ///
   /// Requirements: 12.1, 12.6, 12.7
   bool get isPhase2Unlocked {
-    if (AppConfig.isDevelopmentMode) return true;
+    if (AppConfig.devMode) return true;
     return _isPhase2UnlockedCached;
   }
 
   /// Check if Phase 3 is unlocked (synchronous getter using cached value)
   /// Uses GatingService for centralized access control with debug mode bypass
   /// In development mode, always returns true
-  /// 
+  ///
   /// Note: This is a synchronous getter that uses cached values.
   /// Call refreshPhaseUnlockStatus() to update the cache from GatingService.
-  /// 
+  ///
   /// Requirements: 12.1, 12.6, 12.7
   bool get isPhase3Unlocked {
-    if (AppConfig.isDevelopmentMode) return true;
+    if (AppConfig.devMode) return true;
     return _isPhase3UnlockedCached;
   }
 
   /// Check if Phase 4 is unlocked (synchronous getter using cached value)
   /// Uses GatingService for centralized access control with debug mode bypass
   /// In development mode, always returns true
-  /// 
+  ///
   /// Note: This is a synchronous getter that uses cached values.
   /// Call refreshPhaseUnlockStatus() to update the cache from GatingService.
-  /// 
+  ///
   /// Requirements: 1.1, 1.3
   bool get isPhase4Unlocked {
-    if (AppConfig.isDevelopmentMode) return true;
+    if (AppConfig.devMode) return true;
     return _isPhase4UnlockedCached;
   }
-  
+
+  bool get isPhase5Unlocked {
+    if (AppConfig.devMode) return true;
+    return _isPhase5UnlockedCached;
+  }
+
   /// Refresh phase unlock status from GatingService
   /// Should be called when loading data or when debug mode changes
-  /// 
+  ///
   /// Requirements: 12.1, 12.6, 12.7
   Future<void> refreshPhaseUnlockStatus() async {
     if (_gatingService != null) {
@@ -114,8 +122,11 @@ class ProgressProvider extends ChangeNotifier {
         _isPhase2UnlockedCached = await _gatingService.isPhaseUnlocked(2);
         _isPhase3UnlockedCached = await _gatingService.isPhaseUnlocked(3);
         _isPhase4UnlockedCached = await _gatingService.isPhaseUnlocked(4);
+        _isPhase5UnlockedCached = await _gatingService.isPhaseUnlocked(5);
       } catch (e) {
-        print('Warning: Failed to refresh phase unlock status from GatingService: $e');
+        print(
+          'Warning: Failed to refresh phase unlock status from GatingService: $e',
+        );
         // Fall back to direct storage check
         _refreshPhaseUnlockStatusFromStorage();
       }
@@ -124,30 +135,38 @@ class ProgressProvider extends ChangeNotifier {
       _refreshPhaseUnlockStatusFromStorage();
     }
   }
-  
+
   /// Fallback method to refresh phase unlock status directly from storage
   void _refreshPhaseUnlockStatusFromStorage() {
-    _isPhase2UnlockedCached = (_storageService.getBool('phase1FinalTestPassed') ?? false) ||
-                              (_storageService.getBool('phase1_final_test_passed') ?? false) ||
-                              (_storageService.getBool('phase2_unlocked') ?? false);
-    _isPhase3UnlockedCached = (_storageService.getBool('phase2FinalTestPassed') ?? false) ||
-                              (_storageService.getBool('phase2_final_test_passed') ?? false) ||
-                              (_storageService.getBool('phase3_unlocked') ?? false);
-    _isPhase4UnlockedCached = (_storageService.getBool('phase3FinalTestPassed') ?? false) ||
-                              (_storageService.getBool('phase3_final_test_passed') ?? false) ||
-                              (_storageService.getBool('phase4_unlocked') ?? false);
+    _isPhase2UnlockedCached =
+        (_storageService.getBool('phase1FinalTestPassed') ?? false) ||
+        (_storageService.getBool('phase1_final_test_passed') ?? false) ||
+        (_storageService.getBool('phase2_unlocked') ?? false);
+    _isPhase3UnlockedCached =
+        (_storageService.getBool('phase2FinalTestPassed') ?? false) ||
+        (_storageService.getBool('phase2_final_test_passed') ?? false) ||
+        (_storageService.getBool('phase3_unlocked') ?? false);
+    _isPhase4UnlockedCached =
+        (_storageService.getBool('phase3FinalTestPassed') ?? false) ||
+        (_storageService.getBool('phase3_final_test_passed') ?? false) ||
+        (_storageService.getBool('phase4_unlocked') ?? false);
+    _isPhase5UnlockedCached =
+        (_storageService.getBool('phase4FinalTestPassed') ?? false) ||
+        (_storageService.getBool('phase4_final_test_passed') ?? false) ||
+        (_storageService.getBool('phase5_unlocked') ?? false);
   }
 
   /// Get Phase 2 progress summary
   /// Returns the count of mastered lessons out of total Phase 2 lessons
   Phase2Progress get phase2Progress {
-    final phase2Lessons = _allLessons
-        .where((l) => l.unitId.startsWith('phase2_unit'));
-    
+    final phase2Lessons = _allLessons.where(
+      (l) => l.unitId.startsWith('phase2_unit'),
+    );
+
     final mastered = phase2Lessons
         .where((l) => _allProgress[l.id]?.isMastered ?? false)
         .length;
-    
+
     return Phase2Progress(
       totalLessons: phase2Lessons.length,
       masteredLessons: mastered,
@@ -157,13 +176,14 @@ class ProgressProvider extends ChangeNotifier {
   /// Get Phase 3 progress summary
   /// Returns the count of mastered lessons out of total Phase 3 lessons
   Phase3Progress get phase3Progress {
-    final phase3Lessons = _allLessons
-        .where((l) => l.unitId.startsWith('phase3_unit'));
-    
+    final phase3Lessons = _allLessons.where(
+      (l) => l.unitId.startsWith('phase3_unit'),
+    );
+
     final mastered = phase3Lessons
         .where((l) => _allProgress[l.id]?.isMastered ?? false)
         .length;
-    
+
     return Phase3Progress(
       totalLessons: phase3Lessons.length,
       masteredLessons: mastered,
@@ -173,15 +193,30 @@ class ProgressProvider extends ChangeNotifier {
   /// Get Phase 4 progress summary
   /// Returns the count of mastered lessons out of total Phase 4 lessons
   Phase4Progress get phase4Progress {
-    final phase4Lessons = _allLessons
-        .where((l) => l.unitId.startsWith('phase4_unit'));
-    
+    final phase4Lessons = _allLessons.where(
+      (l) => l.unitId.startsWith('phase4_unit'),
+    );
+
     final mastered = phase4Lessons
         .where((l) => _allProgress[l.id]?.isMastered ?? false)
         .length;
-    
+
     return Phase4Progress(
       totalLessons: phase4Lessons.length,
+      masteredLessons: mastered,
+    );
+  }
+
+  Phase4Progress get phase5Progress {
+    final phase5Lessons = _allLessons.where(
+      (l) => l.unitId.startsWith('phase5_unit'),
+    );
+    final mastered = phase5Lessons
+        .where((l) => _allProgress[l.id]?.isMastered ?? false)
+        .length;
+
+    return Phase4Progress(
+      totalLessons: phase5Lessons.length,
       masteredLessons: mastered,
     );
   }
@@ -196,51 +231,22 @@ class ProgressProvider extends ChangeNotifier {
       // Refresh phase unlock status from GatingService (includes debug mode bypass)
       // Requirements: 12.1, 12.6, 12.7
       await refreshPhaseUnlockStatus();
-      
-      // Load all lessons for all phases
-      final allLessons = <Lesson>[];
-      
-      // Load Phase 1 lessons
-      final phase1Lessons = await _lessonRepo.loadUnitLessons('phase1');
-      allLessons.addAll(phase1Lessons);
-      
-      // Load Phase 2 lessons (Units 7-11)
-      for (final unit in PhaseUnits.phase2) {
-        final unitId = unit.id;
+
+      // Load all lessons from whatever phase assets are actually bundled.
+      final allLessonsById = <String, Lesson>{};
+      for (int phase = 1; phase <= 5; phase++) {
         try {
-          final unitLessons = await _lessonRepo.loadUnitLessons(unitId);
-          allLessons.addAll(unitLessons);
+          final phaseLessons = await _lessonRepo.loadLessonsForPhase(phase);
+          for (final lesson in phaseLessons) {
+            allLessonsById[lesson.id] = lesson;
+          }
         } catch (e) {
-          // Log but continue loading other units
-          print('Warning: Failed to load $unitId: $e');
+          print('Warning: Failed to load phase $phase lessons: $e');
         }
       }
-      
-      // Load Phase 3 lessons (Units 12-17)
-      for (final unit in PhaseUnits.phase3) {
-        final unitId = unit.id;
-        try {
-          final unitLessons = await _lessonRepo.loadUnitLessons(unitId);
-          allLessons.addAll(unitLessons);
-        } catch (e) {
-          // Log but continue loading other units
-          print('Warning: Failed to load $unitId: $e');
-        }
-      }
-      
-      // Load Phase 4 lessons (Units 18-21)
-      for (final unit in PhaseUnits.phase4) {
-        final unitId = unit.id;
-        try {
-          final unitLessons = await _lessonRepo.loadUnitLessons(unitId);
-          allLessons.addAll(unitLessons);
-        } catch (e) {
-          // Log but continue loading other units
-          print('Warning: Failed to load $unitId: $e');
-        }
-      }
-      
-      _allLessons = allLessons;
+
+      _allLessons = allLessonsById.values.toList(growable: false)
+        ..sort((a, b) => a.order.compareTo(b.order));
 
       // Load all progress with retry
       _allProgress = await _loadProgressWithRetry();
@@ -290,7 +296,9 @@ class ProgressProvider extends ChangeNotifier {
   }
 
   // Save progress with retry logic
-  Future<void> _saveProgressWithRetry(Map<String, UserLessonStatus> progress) async {
+  Future<void> _saveProgressWithRetry(
+    Map<String, UserLessonStatus> progress,
+  ) async {
     int retryCount = 0;
     const maxRetries = 2;
 
@@ -311,20 +319,74 @@ class ProgressProvider extends ChangeNotifier {
   /// Get all lessons for a specific unit
   /// Filters lessons by unitId and returns them sorted by order
   List<Lesson> getUnitLessons(String unitId) {
-    return _allLessons
-        .where((lesson) => lesson.unitId == unitId)
-        .toList()
+    return _allLessons.where((lesson) => lesson.unitId == unitId).toList()
       ..sort((a, b) => a.order.compareTo(b.order));
+  }
+
+  List<Unit> getUnitsForPhase(PhaseType phaseType) {
+    final phasePrefix = 'phase${_phaseNumberFromType(phaseType)}_';
+    final phaseLessons = _allLessons
+        .where((lesson) => lesson.id.startsWith(phasePrefix))
+        .toList(growable: false);
+
+    final lessonsByUnit = <String, List<Lesson>>{};
+    for (final lesson in phaseLessons) {
+      lessonsByUnit.putIfAbsent(lesson.unitId, () => <Lesson>[]).add(lesson);
+    }
+
+    final units = lessonsByUnit.entries.map((entry) {
+      final unitId = entry.key;
+      final lessons = entry.value..sort((a, b) => a.order.compareTo(b.order));
+      final unitOrder = _extractUnitOrder(unitId) ?? lessons.first.order;
+      final unitDef = PhaseUnits.findById(unitId);
+      final masteredCount = lessons
+          .where((lesson) => _allProgress[lesson.id]?.isMastered ?? false)
+          .length;
+
+      return Unit(
+        id: unitId,
+        order: unitOrder,
+        title: unitDef?.title ?? 'Unit $unitOrder',
+        description:
+            unitDef?.description ?? '${lessons.length} lessons available',
+        lessonCount: lessons.length,
+        masteredCount: masteredCount,
+      );
+    }).toList(growable: false)
+      ..sort((a, b) => a.order.compareTo(b.order));
+
+    return units;
+  }
+
+  int? _extractUnitOrder(String unitId) {
+    final match = RegExp(r'_unit(\d+)$').firstMatch(unitId);
+    if (match == null) return null;
+    return int.tryParse(match.group(1)!);
+  }
+
+  int _phaseNumberFromType(PhaseType phaseType) {
+    switch (phaseType) {
+      case PhaseType.phase1:
+        return 1;
+      case PhaseType.phase2:
+        return 2;
+      case PhaseType.phase3:
+        return 3;
+      case PhaseType.phase4:
+        return 4;
+      case PhaseType.phase5:
+        return 5;
+    }
   }
 
   /// Check if a lesson is unlocked
   /// Uses cached phase unlock status which is updated via GatingService
   /// This includes debug mode bypass when GatingService is configured
-  /// 
+  ///
   /// Requirements: 12.2, 12.6, 12.7
   bool isLessonUnlocked(String lessonId) {
     // Development mode: all lessons are unlocked
-    if (AppConfig.isDevelopmentMode) {
+    if (AppConfig.devMode) {
       return true;
     }
 
@@ -398,6 +460,19 @@ class ProgressProvider extends ChangeNotifier {
       if (previousLessonId == null) return false;
 
       // Check if previous lesson is mastered
+      final previousStatus = _allProgress[previousLessonId];
+      return previousStatus?.isMastered ?? false;
+    }
+
+    // Phase 5 logic - uses cached isPhase5Unlocked
+    if (lessonId.startsWith('phase5_')) {
+      if (!isPhase5Unlocked) return false;
+
+      if (lessonId == 'phase5_lesson22_1') return true;
+
+      final previousLessonId = _getPhase5PreviousLessonId(lessonId);
+      if (previousLessonId == null) return false;
+
       final previousStatus = _allProgress[previousLessonId];
       return previousStatus?.isMastered ?? false;
     }
@@ -510,6 +585,33 @@ class ProgressProvider extends ChangeNotifier {
     return lessonSequence[lessonId];
   }
 
+  /// Get the previous lesson ID in the Phase 5 sequence
+  String? _getPhase5PreviousLessonId(String lessonId) {
+    final lessonSequence = {
+      // Unit 22
+      'phase5_lesson22_2': 'phase5_lesson22_1',
+      'phase5_lesson22_3': 'phase5_lesson22_2',
+      'phase5_lesson22_4': 'phase5_lesson22_3',
+      // Unit 23
+      'phase5_lesson23_1': 'phase5_lesson22_4',
+      'phase5_lesson23_2': 'phase5_lesson23_1',
+      'phase5_lesson23_3': 'phase5_lesson23_2',
+      'phase5_lesson23_4': 'phase5_lesson23_3',
+      // Unit 24
+      'phase5_lesson24_1': 'phase5_lesson23_4',
+      'phase5_lesson24_2': 'phase5_lesson24_1',
+      'phase5_lesson24_3': 'phase5_lesson24_2',
+      'phase5_lesson24_4': 'phase5_lesson24_3',
+      // Unit 25
+      'phase5_lesson25_1': 'phase5_lesson24_4',
+      'phase5_lesson25_2': 'phase5_lesson25_1',
+      'phase5_lesson25_3': 'phase5_lesson25_2',
+      'phase5_lesson25_4': 'phase5_lesson25_3',
+    };
+
+    return lessonSequence[lessonId];
+  }
+
   // Get lesson status
   UserLessonStatus? getLessonStatus(String lessonId) {
     return _allProgress[lessonId];
@@ -547,10 +649,7 @@ class Phase2Progress {
   final int totalLessons;
   final int masteredLessons;
 
-  Phase2Progress({
-    required this.totalLessons,
-    required this.masteredLessons,
-  });
+  Phase2Progress({required this.totalLessons, required this.masteredLessons});
 
   double get progressPercentage {
     if (totalLessons == 0) return 0.0;
@@ -563,10 +662,7 @@ class Phase3Progress {
   final int totalLessons;
   final int masteredLessons;
 
-  Phase3Progress({
-    required this.totalLessons,
-    required this.masteredLessons,
-  });
+  Phase3Progress({required this.totalLessons, required this.masteredLessons});
 
   double get progressPercentage {
     if (totalLessons == 0) return 0.0;
@@ -579,10 +675,7 @@ class Phase4Progress {
   final int totalLessons;
   final int masteredLessons;
 
-  Phase4Progress({
-    required this.totalLessons,
-    required this.masteredLessons,
-  });
+  Phase4Progress({required this.totalLessons, required this.masteredLessons});
 
   double get progressPercentage {
     if (totalLessons == 0) return 0.0;

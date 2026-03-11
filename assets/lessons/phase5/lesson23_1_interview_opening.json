@@ -1,0 +1,427 @@
+{
+  "id": "phase5_lesson23_1",
+  "order": 1,
+  "unitId": "phase5_unit23",
+  "title": "Interview Opening Strategy",
+  "description": "Deliver strong opening responses in interviews",
+  "level": "C1",
+  "explain": {
+    "en": "This lesson trains you to handle interview opening at a C1 level for real-life and professional communication. You will practice accurate grammar, precise vocabulary, coherent structure, and purposeful tone while keeping your message clear for different audiences.",
+    "ta": "இந்த பாடம் interview opening திறனை C1 நிலை ஆங்கிலத்தில் பயிற்சி செய்ய உதவுகிறது. துல்லியமான இலக்கணம், சரியான சொற்தேர்வு, தெளிவான அமைப்பு மற்றும் பொருத்தமான தொனி ஆகியவற்றை பயன்படுத்தி நடைமுறை மற்றும் தொழில்முறை சூழலில் பேசவும் எழுதவும் கற்றுக் கொள்வீர்கள்.",
+    "table": [
+      {
+        "key": "Core Focus",
+        "examples": [
+          "Interview Opening",
+          "Tone control",
+          "Audience awareness"
+        ]
+      },
+      {
+        "key": "Output Goal",
+        "examples": [
+          "Clear structure",
+          "Accurate language",
+          "Confident delivery"
+        ]
+      }
+    ]
+  },
+  "examples": [
+    {
+      "en": "I would like to clarify our expectations before we proceed with this interview opening.",
+      "ta": "இந்த interview opening செயல்முறையை தொடரும் முன் எங்கள் எதிர்பார்ப்புகளை தெளிவுபடுத்த விரும்புகிறேன்.",
+      "audioId": "phase5_lesson23_1_ex1"
+    },
+    {
+      "en": "Could you share your perspective so we can align on the next steps?",
+      "ta": "அடுத்த கட்டங்களில் ஒருமித்த கருத்துக்கு வர உங்கள் பார்வையை பகிர முடியுமா?",
+      "audioId": "phase5_lesson23_1_ex2"
+    },
+    {
+      "en": "From a practical standpoint, this option offers better long-term value.",
+      "ta": "நடைமுறை பார்வையில் இந்த விருப்பம் நீண்டகால மதிப்பை வழங்குகிறது.",
+      "audioId": "phase5_lesson23_1_ex3"
+    },
+    {
+      "en": "Let me summarize the key points before we make a decision.",
+      "ta": "நாம் முடிவு எடுப்பதற்கு முன் முக்கிய அம்சங்களை சுருக்கமாக கூறுகிறேன்.",
+      "audioId": "phase5_lesson23_1_ex4"
+    },
+    {
+      "en": "I appreciate your point; however, we need stronger evidence.",
+      "ta": "உங்கள் கருத்தை மதிக்கிறேன்; இருப்பினும், நமக்கு அதிக ஆதாரம் தேவை.",
+      "audioId": "phase5_lesson23_1_ex5"
+    },
+    {
+      "en": "In conclusion, we should adopt a balanced and measurable approach.",
+      "ta": "முடிவாக, சமநிலையான மற்றும் அளவிடக்கூடிய அணுகுமுறையைப் பின்பற்ற வேண்டும்.",
+      "audioId": "phase5_lesson23_1_ex6"
+    }
+  ],
+  "listeningQuestions": [
+    {
+      "audioText": "The speaker proposes a balanced strategy to improve interview opening.",
+      "options": [
+        "The speaker rejects all strategies",
+        "The speaker proposes a balanced strategy",
+        "The speaker avoids the topic",
+        "The speaker is confused"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "audioText": "Could we review the timeline before final approval?",
+      "options": [
+        "Requesting a timeline review",
+        "Cancelling the project",
+        "Giving a compliment",
+        "Changing the subject"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "audioText": "I see your concern, but the data supports this direction.",
+      "options": [
+        "Full agreement",
+        "Polite disagreement with evidence",
+        "No opinion",
+        "A personal story"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "audioText": "Let us close with three key actions for next week.",
+      "options": [
+        "Opening statement",
+        "Question from audience",
+        "Closing with action plan",
+        "Informal joke"
+      ],
+      "correctIndex": 2
+    }
+  ],
+  "speakSentences": [
+    {
+      "en": "I would like to present a clear plan for interview opening.",
+      "ta": " interview opening க்கு தெளிவான திட்டத்தை வழங்க விரும்புகிறேன்."
+    },
+    {
+      "en": "My recommendation is based on evidence and expected impact.",
+      "ta": "என் பரிந்துரை ஆதாரங்களும் எதிர்பார்க்கப்படும் விளைவுகளும் அடிப்படையாக கொண்டது."
+    },
+    {
+      "en": "Could you clarify your concern so I can address it directly?",
+      "ta": "நேரடியாக பதிலளிக்க உங்கள் கவலை என்ன என்பதை தெளிவுபடுத்த முடியுமா?"
+    },
+    {
+      "en": "To conclude, this approach is realistic, scalable, and measurable.",
+      "ta": "முடிவாக, இந்த அணுகுமுறை நடைமுறைசார்ந்தது, விரிவாக்கக்கூடியது, அளவிடக்கூடியது."
+    }
+  ],
+  "practiceQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "Which sentence is most appropriate for professional interview opening?",
+      "promptTa": "interview opening க்கு தொழில்முறை சூழலில் எந்த வாக்கியம் பொருத்தமானது?",
+      "options": [
+        "Do it now.",
+        "Could we review this together before finalizing?",
+        "No idea.",
+        "Whatever you want."
+      ],
+      "correctIndex": 1
+    },
+    {
+      "type": "ordering",
+      "promptEn": "Choose the best order for a clear response.",
+      "promptTa": "தெளிவான பதிலுக்கான சரியான வரிசையைத் தேர்ந்தெடுக்கவும்.",
+      "options": [
+        "Conclusion -> Evidence -> Claim",
+        "Claim -> Evidence -> Conclusion",
+        "Evidence -> Conclusion -> Claim",
+        "Question -> Greeting -> Evidence"
+      ],
+      "correctIndex": 1,
+      "orderingItems": [
+        "Claim",
+        "Evidence",
+        "Conclusion"
+      ]
+    },
+    {
+      "type": "rewrite",
+      "promptEn": "Select the best formal rewrite.",
+      "promptTa": "சரியான மரியாதையான மறுஎழுத்தைத் தேர்ந்தெடுக்கவும்.",
+      "options": [
+        "I want this fast.",
+        "I would appreciate a timely update on this item.",
+        "Send quickly.",
+        "Do this today only."
+      ],
+      "correctIndex": 1,
+      "expectedAnswerEn": "I would appreciate a timely update on this item."
+    },
+    {
+      "type": "short_answer",
+      "promptEn": "Pick the strongest concise answer.",
+      "promptTa": "மிகவும் வலுவான சுருக்கமான பதிலைத் தேர்வுசெய்க.",
+      "options": [
+        "Because yes.",
+        "The evidence suggests this option reduces risk and cost.",
+        "I just feel it.",
+        "No comments."
+      ],
+      "correctIndex": 1,
+      "expectedAnswerEn": "The evidence suggests this option reduces risk and cost."
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which phrase signals respectful disagreement?",
+      "promptTa": "மரியாதையான மறுப்பை காட்டும் சொற்றொடர் எது?",
+      "options": [
+        "You are wrong.",
+        "I see your point, however...",
+        "That is nonsense.",
+        "Absolutely not."
+      ],
+      "correctIndex": 1
+    },
+    {
+      "type": "ordering",
+      "promptEn": "Choose the best structure for closing.",
+      "promptTa": "முடிப்பதற்கான சிறந்த அமைப்பைத் தேர்வுசெய்க.",
+      "options": [
+        "Recap -> Action -> Thanks",
+        "Action -> Thanks -> Recap",
+        "Thanks -> Recap -> New topic",
+        "Question -> Data -> Action"
+      ],
+      "correctIndex": 0,
+      "orderingItems": [
+        "Recap",
+        "Action",
+        "Thanks"
+      ]
+    }
+  ],
+  "masteryQuestions": [
+    {
+      "type": "mcq",
+      "promptEn": "What is the best C1-level response style?",
+      "promptTa": "C1 நிலைக்கு பொருத்தமான பதில் முறை எது?",
+      "options": [
+        "Emotional and vague",
+        "Structured, precise, evidence-based",
+        "Very short and casual",
+        "Only personal opinions"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "type": "short_answer",
+      "promptEn": "Choose the most coherent summary sentence.",
+      "promptTa": "மிகவும் ஒழுங்கான சுருக்க வாக்கியத்தைத் தேர்வுசெய்க.",
+      "options": [
+        "Done.",
+        "Overall, the proposal is feasible if we phase implementation and track outcomes.",
+        "Maybe later.",
+        "No clue."
+      ],
+      "correctIndex": 1,
+      "expectedAnswerEn": "Overall, the proposal is feasible if we phase implementation and track outcomes."
+    },
+    {
+      "type": "rewrite",
+      "promptEn": "Choose the strongest rewrite for clarity.",
+      "promptTa": "தெளிவுக்கான சிறந்த மறுஎழுத்தைத் தேர்வுசெய்க.",
+      "options": [
+        "Thing is good.",
+        "This initiative improves efficiency while maintaining quality standards.",
+        "It works maybe.",
+        "All okay."
+      ],
+      "correctIndex": 1,
+      "expectedAnswerEn": "This initiative improves efficiency while maintaining quality standards."
+    },
+    {
+      "type": "ordering",
+      "promptEn": "Pick the best argument sequence.",
+      "promptTa": "சரியான வாத வரிசையைத் தேர்வுசெய்க.",
+      "options": [
+        "Claim -> Reason -> Example",
+        "Example -> Joke -> Claim",
+        "Question -> Question -> Claim",
+        "Reason -> Claim -> Goodbye"
+      ],
+      "correctIndex": 0,
+      "orderingItems": [
+        "Claim",
+        "Reason",
+        "Example"
+      ]
+    },
+    {
+      "type": "mcq",
+      "promptEn": "Which phrase best manages tone in disagreement?",
+      "promptTa": "மறுப்பின் போது தொனியை கட்டுப்படுத்த சிறந்த சொற்றொடர் எது?",
+      "options": [
+        "You are mistaken.",
+        "I understand your point, though I interpret the data differently.",
+        "No way.",
+        "That is bad."
+      ],
+      "correctIndex": 1
+    },
+    {
+      "type": "short_answer",
+      "promptEn": "Select the best action-oriented close.",
+      "promptTa": "செயல் நோக்குடைய சிறந்த முடிப்பைத் தேர்வுசெய்க.",
+      "options": [
+        "Thanks.",
+        "If you agree, I will circulate a draft plan by Friday.",
+        "Okay bye.",
+        "Nothing else."
+      ],
+      "correctIndex": 1,
+      "expectedAnswerEn": "If you agree, I will circulate a draft plan by Friday."
+    }
+  ],
+  "writingTasks": [
+    {
+      "id": "phase5_lesson23_1_wt1",
+      "promptEn": "Write a 120-150 word response applying interview opening in a professional scenario.",
+      "promptTa": "interview opening திறனை பயன்படுத்தி 120-150 சொற்களுடன் தொழில்முறை பதில் எழுதுங்கள்.",
+      "rubricKeys": [
+        "grammar_accuracy",
+        "lexical_range",
+        "coherence",
+        "task_achievement"
+      ],
+      "modelAnswerAnchors": [
+        "clear context",
+        "specific evidence",
+        "logical conclusion"
+      ],
+      "errorCategories": [
+        "grammar",
+        "word_choice",
+        "cohesion"
+      ]
+    },
+    {
+      "id": "phase5_lesson23_1_wt2",
+      "promptEn": "Draft a concise message that balances clarity, politeness, and impact for interview opening.",
+      "promptTa": "interview opening க்கு தெளிவு, மரியாதை, தாக்கம் ஆகியவற்றை சமநிலைப்படுத்தி சுருக்கமான செய்தி உருவாக்குங்கள்.",
+      "rubricKeys": [
+        "grammar_accuracy",
+        "task_achievement",
+        "coherence"
+      ],
+      "modelAnswerAnchors": [
+        "purpose statement",
+        "supporting point",
+        "next-step request"
+      ],
+      "errorCategories": [
+        "tone",
+        "organization"
+      ]
+    }
+  ],
+  "rolePlayTasks": [
+    {
+      "id": "phase5_lesson23_1_rp1",
+      "scenarioEn": "You and your manager are discussing interview opening. Reach a practical agreement.",
+      "scenarioTa": "நீங்கள் மற்றும் மேலாளர் interview opening பற்றி பேசுகிறீர்கள். நடைமுறை உடன்பாட்டை அடையவும்.",
+      "learnerRoleEn": "You are the project lead.",
+      "partnerRoleEn": "Partner is a cautious manager.",
+      "mustUsePhrases": [
+        "I understand your concern",
+        "Could we consider",
+        "To summarize"
+      ]
+    },
+    {
+      "id": "phase5_lesson23_1_rp2",
+      "scenarioEn": "Negotiate responsibilities with a teammate for a time-sensitive task.",
+      "scenarioTa": "அவசர பணிக்கான பொறுப்புகளை குழுவினருடன் பேசி உடன்படிக்கை செய்யவும்.",
+      "learnerRoleEn": "You are coordinating delivery.",
+      "partnerRoleEn": "Partner has limited bandwidth.",
+      "mustUsePhrases": [
+        "Let us align on",
+        "Would you be able to",
+        "Next, I will"
+      ]
+    }
+  ],
+  "errorCorrectionItems": [
+    {
+      "id": "phase5_lesson23_1_ec1",
+      "incorrectEn": "I am agree with this approach.",
+      "hintTa": "be verb + agree",
+      "correctedEn": "I agree with this approach.",
+      "category": "grammar"
+    },
+    {
+      "id": "phase5_lesson23_1_ec2",
+      "incorrectEn": "We discussed about the issue yesterday.",
+      "hintTa": "discuss verb pattern",
+      "correctedEn": "We discussed the issue yesterday.",
+      "category": "grammar"
+    }
+  ],
+  "targetVocabulary": [
+    {
+      "lemma": "align",
+      "cefr": "C1",
+      "collocations": [
+        "align priorities",
+        "align expectations"
+      ]
+    },
+    {
+      "lemma": "feasible",
+      "cefr": "C1",
+      "collocations": [
+        "financially feasible",
+        "operationally feasible"
+      ]
+    },
+    {
+      "lemma": "mitigate",
+      "cefr": "C1",
+      "collocations": [
+        "mitigate risk",
+        "mitigate delays"
+      ]
+    },
+    {
+      "lemma": "stakeholder",
+      "cefr": "C1",
+      "collocations": [
+        "key stakeholder",
+        "stakeholder feedback"
+      ]
+    },
+    {
+      "lemma": "nuanced",
+      "cefr": "C1",
+      "collocations": [
+        "nuanced position",
+        "nuanced response"
+      ]
+    },
+    {
+      "lemma": "sustainability",
+      "cefr": "C1",
+      "collocations": [
+        "long-term sustainability",
+        "financial sustainability"
+      ]
+    }
+  ],
+  "canDoOutcomes": [
+    "I can communicate about interview opening with clear structure, precise tone, and audience awareness."
+  ]
+}

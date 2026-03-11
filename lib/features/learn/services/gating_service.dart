@@ -1,13 +1,13 @@
 import '../data/repositories/progress_repository.dart';
 import '../../../services/local_storage/storage_service.dart';
-import 'debug_service.dart';
+import '../../../core/constants/app_config.dart';
 
 /// Centralized service for checking access permissions with debug mode bypass
-/// 
+///
 /// This service provides a single point of control for all gating logic in the app.
 /// When debug mode is enabled, all access checks return true, allowing developers
 /// to test any feature without completing prerequisites.
-/// 
+///
 /// When debug mode is disabled, normal gating logic is enforced:
 /// - Phase 1 is always unlocked
 /// - Phase 2 requires passing Phase 1 final test
@@ -19,7 +19,6 @@ import 'debug_service.dart';
 class GatingService {
   final StorageService _storageService;
   final ProgressRepository _progressRepository;
-  final DebugService _debugService;
 
   // Storage keys for phase unlock status
   static const String _keyPhase1TestPassed = 'phase1_final_test_passed';
@@ -33,13 +32,11 @@ class GatingService {
   GatingService({
     required StorageService storageService,
     required ProgressRepository progressRepository,
-    required DebugService debugService,
-  })  : _storageService = storageService,
-        _progressRepository = progressRepository,
-        _debugService = debugService;
+  }) : _storageService = storageService,
+       _progressRepository = progressRepository;
 
   /// Check if a phase is unlocked (with debug mode bypass)
-  /// 
+  ///
   /// Returns true if:
   /// - Debug mode is enabled, OR
   /// - Phase 1 (always unlocked), OR
@@ -47,11 +44,11 @@ class GatingService {
   /// - Phase 3 and Phase 2 final test passed, OR
   /// - Phase 4 and Phase 3 final test passed, OR
   /// - Phase 5 and Phase 4 final test passed
-  /// 
+  ///
   /// [phaseNumber] - The phase number to check (1-5)
   Future<bool> isPhaseUnlocked(int phaseNumber) async {
     // Debug mode bypass - all phases unlocked
-    if (await _debugService.isDebugModeEnabled()) {
+    if (AppConfig.devMode) {
       return true;
     }
 
@@ -64,29 +61,40 @@ class GatingService {
         // Phase 2 requires Phase 1 final test passed
         // Check both key formats for compatibility
         final passed1 = _storageService.getBool(_keyPhase1TestPassed) ?? false;
-        final passed2 = _storageService.getBool('phase1FinalTestPassed') ?? false;
-        final phase2Unlocked = _storageService.getBool('phase2_unlocked') ?? false;
+        final passed2 =
+            _storageService.getBool('phase1FinalTestPassed') ?? false;
+        final phase2Unlocked =
+            _storageService.getBool('phase2_unlocked') ?? false;
         return passed1 || passed2 || phase2Unlocked;
       case 3:
         // Phase 3 requires Phase 2 final test passed or explicit unlock
         // Check both key formats for compatibility
-        final phase2TestPassed1 = _storageService.getBool(_keyPhase2TestPassed) ?? false;
-        final phase2TestPassed2 = _storageService.getBool('phase2FinalTestPassed') ?? false;
-        final phase3Unlocked = _storageService.getBool(_keyPhase3Unlocked) ?? false;
+        final phase2TestPassed1 =
+            _storageService.getBool(_keyPhase2TestPassed) ?? false;
+        final phase2TestPassed2 =
+            _storageService.getBool('phase2FinalTestPassed') ?? false;
+        final phase3Unlocked =
+            _storageService.getBool(_keyPhase3Unlocked) ?? false;
         return phase2TestPassed1 || phase2TestPassed2 || phase3Unlocked;
       case 4:
         // Phase 4 requires Phase 3 final test passed or explicit unlock
         // Check both key formats for compatibility
-        final phase3TestPassed1 = _storageService.getBool(_keyPhase3TestPassed) ?? false;
-        final phase3TestPassed2 = _storageService.getBool('phase3FinalTestPassed') ?? false;
-        final phase4Unlocked = _storageService.getBool(_keyPhase4Unlocked) ?? false;
+        final phase3TestPassed1 =
+            _storageService.getBool(_keyPhase3TestPassed) ?? false;
+        final phase3TestPassed2 =
+            _storageService.getBool('phase3FinalTestPassed') ?? false;
+        final phase4Unlocked =
+            _storageService.getBool(_keyPhase4Unlocked) ?? false;
         return phase3TestPassed1 || phase3TestPassed2 || phase4Unlocked;
       case 5:
         // Phase 5 requires Phase 4 final test passed or explicit unlock
         // Check both key formats for compatibility
-        final phase4TestPassed1 = _storageService.getBool(_keyPhase4TestPassed) ?? false;
-        final phase4TestPassed2 = _storageService.getBool('phase4FinalTestPassed') ?? false;
-        final phase5Unlocked = _storageService.getBool(_keyPhase5Unlocked) ?? false;
+        final phase4TestPassed1 =
+            _storageService.getBool(_keyPhase4TestPassed) ?? false;
+        final phase4TestPassed2 =
+            _storageService.getBool('phase4FinalTestPassed') ?? false;
+        final phase5Unlocked =
+            _storageService.getBool(_keyPhase5Unlocked) ?? false;
         return phase4TestPassed1 || phase4TestPassed2 || phase5Unlocked;
       default:
         return false;
@@ -94,30 +102,32 @@ class GatingService {
   }
 
   /// Check if Phase 5 is unlocked
-  /// 
+  ///
   /// Returns true if and only if phase4FinalTestPassed is true in storage.
   /// This is a convenience method that checks the Phase 4 final test passed status.
-  /// 
+  ///
   /// Note: Debug mode bypass is NOT applied here - this method checks the actual
   /// storage state for Phase 5 unlock status.
   Future<bool> isPhase5Unlocked() async {
     // Check if Phase 4 final test was passed
     // Check both key formats for compatibility
-    final phase4TestPassed1 = _storageService.getBool(_keyPhase4TestPassed) ?? false;
-    final phase4TestPassed2 = _storageService.getBool('phase4FinalTestPassed') ?? false;
+    final phase4TestPassed1 =
+        _storageService.getBool(_keyPhase4TestPassed) ?? false;
+    final phase4TestPassed2 =
+        _storageService.getBool('phase4FinalTestPassed') ?? false;
     return phase4TestPassed1 || phase4TestPassed2;
   }
 
   /// Check if a lesson is unlocked (with debug mode bypass)
-  /// 
+  ///
   /// Returns true if:
   /// - Debug mode is enabled, OR
   /// - The lesson's phase is unlocked
-  /// 
+  ///
   /// [lessonId] - The lesson ID to check (e.g., 'phase1_lesson1', 'phase2_lesson7_1')
   Future<bool> isLessonUnlocked(String lessonId) async {
     // Debug mode bypass - all lessons unlocked
-    if (await _debugService.isDebugModeEnabled()) {
+    if (AppConfig.devMode) {
       return true;
     }
 
@@ -133,15 +143,15 @@ class GatingService {
   }
 
   /// Check if final test is accessible (with debug mode bypass)
-  /// 
+  ///
   /// Returns true if:
   /// - Debug mode is enabled, OR
   /// - All required lessons in the phase are mastered
-  /// 
+  ///
   /// [phaseNumber] - The phase number for the final test (1-3)
   Future<bool> isFinalTestAccessible(int phaseNumber) async {
     // Debug mode bypass - all tests accessible
-    if (await _debugService.isDebugModeEnabled()) {
+    if (AppConfig.devMode) {
       return true;
     }
 
@@ -155,8 +165,8 @@ class GatingService {
   }
 
   /// Get the phase number from a lesson ID
-  /// 
-  /// Returns the phase number (1-4) or null if the format is unrecognized
+  ///
+  /// Returns the phase number (1-5) or null if the format is unrecognized
   int? _getPhaseFromLessonId(String lessonId) {
     if (lessonId.startsWith('phase1_')) {
       return 1;
@@ -166,12 +176,14 @@ class GatingService {
       return 3;
     } else if (lessonId.startsWith('phase4_')) {
       return 4;
+    } else if (lessonId.startsWith('phase5_')) {
+      return 5;
     }
     return null;
   }
 
   /// Check if all required lessons in a phase are mastered
-  /// 
+  ///
   /// For Phase 3, Unit 17 (project lessons) are optional
   Future<bool> _areAllPhaseLessonsMastered(int phaseNumber) async {
     try {
@@ -193,7 +205,7 @@ class GatingService {
   }
 
   /// Get the required lesson IDs for a phase
-  /// 
+  ///
   /// For Phase 3, Unit 17 lessons are excluded (optional for test access)
   List<String> _getRequiredLessonIds(int phaseNumber) {
     switch (phaseNumber) {
@@ -205,6 +217,8 @@ class GatingService {
         return _getPhase3RequiredLessonIds();
       case 4:
         return _getPhase4RequiredLessonIds();
+      case 5:
+        return _getPhase5RequiredLessonIds();
       default:
         return [];
     }
@@ -317,7 +331,7 @@ class GatingService {
   }
 
   /// Get Phase 4 required lesson IDs (Units 18-21)
-  /// 
+  ///
   /// Phase 4 focuses on Fluency & Pronunciation with 17 lessons total:
   /// - Unit 18: Pronunciation & Sound (4 lessons)
   /// - Unit 19: Fluency Techniques (4 lessons)
@@ -360,6 +374,28 @@ class GatingService {
     ]);
 
     return lessonIds;
+  }
+
+  /// Get Phase 5 lesson IDs (lesson22_1 to lesson25_4)
+  List<String> _getPhase5RequiredLessonIds() {
+    return [
+      'phase5_lesson22_1',
+      'phase5_lesson22_2',
+      'phase5_lesson22_3',
+      'phase5_lesson22_4',
+      'phase5_lesson23_1',
+      'phase5_lesson23_2',
+      'phase5_lesson23_3',
+      'phase5_lesson23_4',
+      'phase5_lesson24_1',
+      'phase5_lesson24_2',
+      'phase5_lesson24_3',
+      'phase5_lesson24_4',
+      'phase5_lesson25_1',
+      'phase5_lesson25_2',
+      'phase5_lesson25_3',
+      'phase5_lesson25_4',
+    ];
   }
 }
 

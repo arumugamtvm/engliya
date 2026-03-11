@@ -7,6 +7,10 @@ class AppConfig {
   static const int buildNumber = 1;
   static const String appName = 'Engliya';
 
+  /// Single source of truth for developer bypass mode.
+  /// When true, all phase/lesson/tab/test gating is bypassed.
+  static const bool devMode = true;
+
   static bool get isDevelopmentMode => kDebugMode;
   static bool get isProductionMode => kReleaseMode;
   static bool get isProfileMode => kProfileMode;

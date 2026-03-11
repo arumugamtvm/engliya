@@ -4,6 +4,10 @@ import 'example_sentence.dart';
 import 'listening_question.dart';
 import 'speak_sentence.dart';
 import 'quiz_question.dart';
+import 'writing_task.dart';
+import 'role_play_task.dart';
+import 'error_correction_item.dart';
+import 'target_vocabulary_item.dart';
 
 @immutable
 class Lesson {
@@ -19,6 +23,11 @@ class Lesson {
   final List<SpeakSentence> speakSentences;
   final List<QuizQuestion> practiceQuestions;
   final List<QuizQuestion> masteryQuestions;
+  final List<WritingTask> writingTasks;
+  final List<RolePlayTask> rolePlayTasks;
+  final List<ErrorCorrectionItem> errorCorrectionItems;
+  final List<TargetVocabularyItem> targetVocabulary;
+  final List<String> canDoOutcomes;
 
   const Lesson({
     required this.id,
@@ -33,6 +42,11 @@ class Lesson {
     required this.speakSentences,
     required this.practiceQuestions,
     required this.masteryQuestions,
+    this.writingTasks = const [],
+    this.rolePlayTasks = const [],
+    this.errorCorrectionItems = const [],
+    this.targetVocabulary = const [],
+    this.canDoOutcomes = const [],
   });
 
   int get totalExamples => examples.length;
@@ -58,21 +72,78 @@ class Lesson {
       explain: LessonExplain.fromJson(
         (json['explain'] as Map<String, dynamic>?) ?? {},
       ),
-      examples: (json['examples'] as List?)
-          ?.map((item) => ExampleSentence.fromJson(item as Map<String, dynamic>))
-          .toList() ?? [],
-      listeningQuestions: (json['listeningQuestions'] as List?)
-          ?.map((item) => ListeningQuestion.fromJson(item as Map<String, dynamic>))
-          .toList() ?? [],
-      speakSentences: (json['speakSentences'] as List?)
-          ?.map((item) => SpeakSentence.fromJson(item as Map<String, dynamic>))
-          .toList() ?? [],
-      practiceQuestions: (json['practiceQuestions'] as List?)
-          ?.map((item) => QuizQuestion.fromJson(item as Map<String, dynamic>))
-          .toList() ?? [],
-      masteryQuestions: (json['masteryQuestions'] as List?)
-          ?.map((item) => QuizQuestion.fromJson(item as Map<String, dynamic>))
-          .toList() ?? [],
+      examples:
+          (json['examples'] as List?)
+              ?.map(
+                (item) =>
+                    ExampleSentence.fromJson(item as Map<String, dynamic>),
+              )
+              .toList() ??
+          [],
+      listeningQuestions:
+          (json['listeningQuestions'] as List?)
+              ?.map(
+                (item) =>
+                    ListeningQuestion.fromJson(item as Map<String, dynamic>),
+              )
+              .toList() ??
+          [],
+      speakSentences:
+          (json['speakSentences'] as List?)
+              ?.map(
+                (item) => SpeakSentence.fromJson(item as Map<String, dynamic>),
+              )
+              .toList() ??
+          [],
+      practiceQuestions:
+          (json['practiceQuestions'] as List?)
+              ?.map(
+                (item) => QuizQuestion.fromJson(item as Map<String, dynamic>),
+              )
+              .toList() ??
+          [],
+      masteryQuestions:
+          (json['masteryQuestions'] as List?)
+              ?.map(
+                (item) => QuizQuestion.fromJson(item as Map<String, dynamic>),
+              )
+              .toList() ??
+          [],
+      writingTasks:
+          (json['writingTasks'] as List?)
+              ?.map(
+                (item) => WritingTask.fromJson(item as Map<String, dynamic>),
+              )
+              .toList() ??
+          [],
+      rolePlayTasks:
+          (json['rolePlayTasks'] as List?)
+              ?.map(
+                (item) => RolePlayTask.fromJson(item as Map<String, dynamic>),
+              )
+              .toList() ??
+          [],
+      errorCorrectionItems:
+          (json['errorCorrectionItems'] as List?)
+              ?.map(
+                (item) =>
+                    ErrorCorrectionItem.fromJson(item as Map<String, dynamic>),
+              )
+              .toList() ??
+          [],
+      targetVocabulary:
+          (json['targetVocabulary'] as List?)
+              ?.map(
+                (item) =>
+                    TargetVocabularyItem.fromJson(item as Map<String, dynamic>),
+              )
+              .toList() ??
+          [],
+      canDoOutcomes:
+          (json['canDoOutcomes'] as List?)
+              ?.map((item) => item as String)
+              .toList() ??
+          [],
     );
   }
 
@@ -89,6 +160,13 @@ class Lesson {
     'speakSentences': speakSentences.map((s) => s.toJson()).toList(),
     'practiceQuestions': practiceQuestions.map((q) => q.toJson()).toList(),
     'masteryQuestions': masteryQuestions.map((q) => q.toJson()).toList(),
+    'writingTasks': writingTasks.map((q) => q.toJson()).toList(),
+    'rolePlayTasks': rolePlayTasks.map((q) => q.toJson()).toList(),
+    'errorCorrectionItems': errorCorrectionItems
+        .map((q) => q.toJson())
+        .toList(),
+    'targetVocabulary': targetVocabulary.map((q) => q.toJson()).toList(),
+    'canDoOutcomes': canDoOutcomes,
   };
 
   Lesson copyWith({
@@ -104,6 +182,11 @@ class Lesson {
     List<SpeakSentence>? speakSentences,
     List<QuizQuestion>? practiceQuestions,
     List<QuizQuestion>? masteryQuestions,
+    List<WritingTask>? writingTasks,
+    List<RolePlayTask>? rolePlayTasks,
+    List<ErrorCorrectionItem>? errorCorrectionItems,
+    List<TargetVocabularyItem>? targetVocabulary,
+    List<String>? canDoOutcomes,
   }) {
     return Lesson(
       id: id ?? this.id,
@@ -118,6 +201,11 @@ class Lesson {
       speakSentences: speakSentences ?? this.speakSentences,
       practiceQuestions: practiceQuestions ?? this.practiceQuestions,
       masteryQuestions: masteryQuestions ?? this.masteryQuestions,
+      writingTasks: writingTasks ?? this.writingTasks,
+      rolePlayTasks: rolePlayTasks ?? this.rolePlayTasks,
+      errorCorrectionItems: errorCorrectionItems ?? this.errorCorrectionItems,
+      targetVocabulary: targetVocabulary ?? this.targetVocabulary,
+      canDoOutcomes: canDoOutcomes ?? this.canDoOutcomes,
     );
   }
 

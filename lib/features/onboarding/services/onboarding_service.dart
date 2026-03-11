@@ -6,9 +6,8 @@ import '../data/models/user_level.dart';
 class OnboardingService {
   final StorageService _storageService;
 
-  OnboardingService({
-    required StorageService storageService,
-  }) : _storageService = storageService;
+  OnboardingService({required StorageService storageService})
+    : _storageService = storageService;
 
   /// Check if user has completed onboarding
   Future<bool> hasCompletedOnboarding() async {
@@ -37,6 +36,9 @@ class OnboardingService {
   /// Save user's selected level
   Future<void> saveUserLevel(UserLevel level) async {
     try {
+      if (UserLevel.fromId(level.id) == null) {
+        throw OnboardingException('Unknown learning level: ${level.id}');
+      }
       await _storageService.setJson(
         AppConstants.selectedLevelKey,
         level.toJson(),
@@ -53,7 +55,13 @@ class OnboardingService {
       if (json == null) {
         return null;
       }
-      return UserLevel.fromJson(json);
+      final saved = UserLevel.fromJson(json);
+      final validated = UserLevel.fromId(saved.id);
+      if (validated == null) {
+        await _storageService.remove(AppConstants.selectedLevelKey);
+        return null;
+      }
+      return validated;
     } catch (e) {
       throw OnboardingException('Failed to get user level: $e');
     }

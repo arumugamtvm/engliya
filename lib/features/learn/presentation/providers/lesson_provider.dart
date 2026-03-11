@@ -3,6 +3,9 @@ import '../../data/models/lesson.dart';
 import '../../data/models/user_lesson_status.dart';
 import '../../data/repositories/lesson_repository.dart';
 import '../../data/repositories/progress_repository.dart';
+import '../../domain/entities/tab_validation_result.dart';
+import '../../services/lesson_flow_validation_service.dart';
+import '../../../../core/constants/app_config.dart';
 import '../../../../core/utils/error_handler.dart';
 
 class LessonProvider extends ChangeNotifier {
@@ -12,14 +15,24 @@ class LessonProvider extends ChangeNotifier {
   LessonProvider({
     required LessonRepository lessonRepo,
     required ProgressRepository progressRepo,
-  })  : _lessonRepo = lessonRepo,
-        _progressRepo = progressRepo;
+  }) : _lessonRepo = lessonRepo,
+       _progressRepo = progressRepo;
 
   Lesson? _currentLesson;
   UserLessonStatus? _currentStatus;
   int _currentTabIndex = 0;
   bool _isLoading = false;
   String? _error;
+  String? _contentNotice;
+  final LessonFlowValidationService _validationService =
+      LessonFlowValidationService();
+
+  TabProgressSnapshot _explainProgress = const TabProgressSnapshot();
+  TabProgressSnapshot _examplesProgress = const TabProgressSnapshot();
+  TabProgressSnapshot _listenProgress = const TabProgressSnapshot();
+  TabProgressSnapshot _speakProgress = const TabProgressSnapshot();
+  TabProgressSnapshot _practiceProgress = const TabProgressSnapshot();
+  TabProgressSnapshot _masteryProgress = const TabProgressSnapshot();
 
   // Getters
   Lesson? get currentLesson => _currentLesson;
@@ -27,19 +40,31 @@ class LessonProvider extends ChangeNotifier {
   int get currentTabIndex => _currentTabIndex;
   bool get isLoading => _isLoading;
   String? get error => _error;
+  String? get contentNotice => _contentNotice;
 
   bool get canGoNext => _currentTabIndex < 5;
   bool get canGoPrevious => _currentTabIndex > 0;
+  bool get isOnFinalTab => _currentTabIndex == 5;
+  bool get strictProgressionEnabled => !AppConfig.devMode;
 
   // Load lesson with error handling
   Future<void> loadLesson(String lessonId) async {
     _isLoading = true;
     _error = null;
+    _contentNotice = null;
     notifyListeners();
 
     try {
-      _currentLesson = await _lessonRepo.loadLesson(lessonId);
+      final validatedLesson = await _lessonRepo.loadLessonWithFallback(
+        lessonId,
+      );
+      _currentLesson = validatedLesson.lesson;
+      if (validatedLesson.source == 'fallback') {
+        _contentNotice =
+            'We loaded a validated backup lesson to keep your learning on track.';
+      }
       _currentStatus = await _progressRepo.loadLessonProgress(lessonId);
+      _resetTabProgress();
 
       // Initialize progress if it doesn't exist
       if (_currentStatus == null) {
@@ -62,6 +87,181 @@ class LessonProvider extends ChangeNotifier {
     }
   }
 
+  TabValidationResult validateTab(int tabIndex) {
+    final status = _currentStatus;
+    if (status == null) {
+      return const TabValidationResult.invalid(
+        message: 'Lesson progress is unavailable. Retry loading the lesson.',
+        severity: ValidationSeverity.error,
+        actionLabel: 'Retry',
+      );
+    }
+
+    switch (tabIndex) {
+      case 0:
+        return _validationService.validateExplain(
+          explainDone: status.explainDone,
+          snapshot: _explainProgress,
+        );
+      case 1:
+        return _validationService.validateExamples(
+          examplesDone: status.examplesDone,
+          snapshot: _examplesProgress,
+        );
+      case 2:
+        return _validationService.validateListen(
+          listeningScore: status.listeningScore,
+          snapshot: _listenProgress,
+        );
+      case 3:
+        return _validationService.validateSpeak(
+          speakingScore: status.speakingScore,
+          snapshot: _speakProgress,
+        );
+      case 4:
+        return _validationService.validatePractice(
+          quizBestScore: status.quizBestScore,
+          snapshot: _practiceProgress,
+        );
+      case 5:
+        return _validationService.validateMastery(
+          isMastered: status.isMastered,
+          masteryBestScore: status.masteryBestScore,
+          snapshot: _masteryProgress,
+        );
+      default:
+        return const TabValidationResult.valid();
+    }
+  }
+
+  TabValidationResult validateCurrentTab() => validateTab(_currentTabIndex);
+
+  int get maxAccessibleTabIndex {
+    if (AppConfig.devMode) return 5;
+    int maxIndex = 0;
+    for (int i = 1; i <= 5; i++) {
+      if (isTabUnlocked(i)) {
+        maxIndex = i;
+      } else {
+        break;
+      }
+    }
+    return maxIndex;
+  }
+
+  bool isTabUnlocked(int tabIndex) {
+    if (tabIndex < 0 || tabIndex > 5) return false;
+    if (AppConfig.devMode) return true;
+    if (tabIndex == 0) return true;
+
+    for (int i = 0; i < tabIndex; i++) {
+      final validation = validateTab(i);
+      if (!validation.isValid) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  bool canAccessTab(int tabIndex) {
+    if (tabIndex < 0 || tabIndex > 5) return false;
+    if (tabIndex == _currentTabIndex) return true;
+    if (!isTabUnlocked(tabIndex)) return false;
+
+    // Keep strict sequential navigation: users can only move to current or next unlocked step.
+    if (!AppConfig.devMode && tabIndex > _currentTabIndex + 1) {
+      return false;
+    }
+    return true;
+  }
+
+  TabValidationResult? getBlockingValidationForTab(int tabIndex) {
+    if (AppConfig.devMode || tabIndex <= 0) return null;
+
+    final maxCheckIndex = tabIndex > _currentTabIndex + 1
+        ? _currentTabIndex + 1
+        : tabIndex;
+    for (int i = 0; i < maxCheckIndex; i++) {
+      final validation = validateTab(i);
+      if (!validation.isValid) {
+        return validation;
+      }
+    }
+
+    if (!AppConfig.devMode && tabIndex > _currentTabIndex + 1) {
+      return const TabValidationResult.invalid(
+        message: 'Complete the current step to unlock the next tab.',
+        actionLabel: 'Continue lesson',
+      );
+    }
+
+    return null;
+  }
+
+  void updateExplainProgress({required bool scrolledToBottom}) {
+    _explainProgress = TabProgressSnapshot(
+      explainScrolledToBottom: scrolledToBottom,
+    );
+  }
+
+  void updateExamplesProgress({
+    required int playedCount,
+    required int totalCount,
+  }) {
+    _examplesProgress = TabProgressSnapshot(
+      playedCount: playedCount,
+      totalCount: totalCount,
+    );
+  }
+
+  void updateListenProgress({
+    required int answeredCount,
+    required int totalCount,
+    required double accuracy,
+  }) {
+    _listenProgress = TabProgressSnapshot(
+      answeredCount: answeredCount,
+      totalCount: totalCount,
+      accuracy: accuracy,
+    );
+  }
+
+  void updateSpeakProgress({
+    required int practicedCount,
+    required int totalCount,
+    required double averageScore,
+  }) {
+    _speakProgress = TabProgressSnapshot(
+      practicedCount: practicedCount,
+      totalCount: totalCount,
+      averageScore: averageScore,
+    );
+  }
+
+  void updatePracticeProgress({
+    required int answeredCount,
+    required int totalCount,
+    required double accuracy,
+  }) {
+    _practiceProgress = TabProgressSnapshot(
+      answeredCount: answeredCount,
+      totalCount: totalCount,
+      accuracy: accuracy,
+    );
+  }
+
+  void updateMasteryProgress({
+    required int answeredCount,
+    required int totalCount,
+    required double accuracy,
+  }) {
+    _masteryProgress = TabProgressSnapshot(
+      answeredCount: answeredCount,
+      totalCount: totalCount,
+      accuracy: accuracy,
+    );
+  }
+
   // Tab navigation
   void goToNextTab() {
     if (canGoNext) {
@@ -78,7 +278,7 @@ class LessonProvider extends ChangeNotifier {
   }
 
   void goToTab(int index) {
-    if (index >= 0 && index < 6) {
+    if (index >= 0 && index < 6 && canAccessTab(index)) {
       _currentTabIndex = index;
       notifyListeners();
     }
@@ -186,12 +386,24 @@ class LessonProvider extends ChangeNotifier {
     _currentTabIndex = 0;
     _isLoading = false;
     _error = null;
+    _contentNotice = null;
+    _resetTabProgress();
     notifyListeners();
   }
 
   // Clear error
   void clearError() {
     _error = null;
+    _contentNotice = null;
     notifyListeners();
+  }
+
+  void _resetTabProgress() {
+    _explainProgress = const TabProgressSnapshot();
+    _examplesProgress = const TabProgressSnapshot();
+    _listenProgress = const TabProgressSnapshot();
+    _speakProgress = const TabProgressSnapshot();
+    _practiceProgress = const TabProgressSnapshot();
+    _masteryProgress = const TabProgressSnapshot();
   }
 }

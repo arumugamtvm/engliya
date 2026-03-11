@@ -26,21 +26,72 @@
       "audioId": "phase2_l9_5_ex3"
     }
   ],
-  "listeningQuestions": [],
-  "speakSentences": [],
+  "listeningQuestions": [
+    {
+      "audioText": "I visited Chennai last year. (Simple Past)",
+      "options": [
+        "I visited Chennai last year. (Simple Past)",
+        "I have visited Chennai. (Present Perfect)",
+        "She finished her work yesterday. vs She has finished her work."
+      ],
+      "correctIndex": 0
+    },
+    {
+      "audioText": "I have visited Chennai. (Present Perfect)",
+      "options": [
+        "I visited Chennai last year. (Simple Past)",
+        "She finished her work yesterday. vs She has finished her work.",
+        "I have visited Chennai. (Present Perfect)"
+      ],
+      "correctIndex": 2
+    },
+    {
+      "audioText": "She finished her work yesterday. vs She has finished her work.",
+      "options": [
+        "I have visited Chennai. (Present Perfect)",
+        "She finished her work yesterday. vs She has finished her work.",
+        "I visited Chennai last year. (Simple Past)"
+      ],
+      "correctIndex": 1
+    }
+  ],
+  "speakSentences": [
+    {
+      "en": "I visited Chennai last year. (Simple Past)",
+      "ta": "நான் கடந்த வருடம் சென்னைக்கு சென்றேன். (Simple Past)"
+    },
+    {
+      "en": "I have visited Chennai. (Present Perfect)",
+      "ta": "நான் சென்னைக்கு சென்றிருக்கிறேன். (Present Perfect)"
+    },
+    {
+      "en": "She finished her work yesterday. vs She has finished her work.",
+      "ta": "அவள் நேற்று தன் வேலையை முடித்தாள். vs அவள் தன் வேலையை முடித்துவிட்டாள்."
+    }
+  ],
   "practiceQuestions": [
     {
       "type": "mcq",
       "promptEn": "I ___ to Delhi last month.",
       "promptTa": "நான் கடந்த மாதம் டெல்லிக்கு சென்றேன்.",
-      "options": ["went", "have gone", "has gone", "go"],
+      "options": [
+        "went",
+        "have gone",
+        "has gone",
+        "go"
+      ],
       "correctIndex": 0
     },
     {
       "type": "mcq",
       "promptEn": "I ___ never ___ to Mumbai.",
       "promptTa": "நான் மும்பைக்கு சென்றதே இல்லை.",
-      "options": ["did / go", "have / gone", "has / gone", "do / go"],
+      "options": [
+        "did / go",
+        "have / gone",
+        "has / gone",
+        "do / go"
+      ],
       "correctIndex": 1
     }
   ],
@@ -49,14 +100,24 @@
       "type": "mcq",
       "promptEn": "She ___ her homework yesterday.",
       "promptTa": "அவள் நேற்று தன் வீட்டுப்பாடத்தை முடித்தாள்.",
-      "options": ["finished", "has finished", "have finished", "finish"],
+      "options": [
+        "finished",
+        "has finished",
+        "have finished",
+        "finish"
+      ],
       "correctIndex": 0
     },
     {
       "type": "mcq",
       "promptEn": "They ___ already ___ their lunch.",
       "promptTa": "அவர்கள் ஏற்கனவே மதிய உணவு சாப்பிட்டுவிட்டார்கள்.",
-      "options": ["did / eat", "have / eaten", "has / eaten", "do / eat"],
+      "options": [
+        "did / eat",
+        "have / eaten",
+        "has / eaten",
+        "do / eat"
+      ],
       "correctIndex": 1
     }
   ]

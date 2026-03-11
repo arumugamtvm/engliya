@@ -48,10 +48,11 @@ class _Phase1UnitScreenState extends State<Phase1UnitScreen> {
       // Check if Lesson 6 is completed
       final progressProvider = context.read<ProgressProvider>();
       final lesson6Status = progressProvider.getLessonStatus('phase1_lesson6');
-      
+
       // In development mode, always show the final test card
       // Otherwise, only show when lesson 6 is mastered
-      _isLesson6Completed = AppConfig.isDevelopmentMode || (lesson6Status?.isMastered ?? false);
+      _isLesson6Completed =
+          AppConfig.devMode || (lesson6Status?.isMastered ?? false);
 
       final testProvider = McqFinalTestProvider(
         config: PhaseConfig.phase1,
@@ -77,16 +78,12 @@ class _Phase1UnitScreenState extends State<Phase1UnitScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Phase 1: Basic English'),
-      ),
+      appBar: AppBar(title: const Text('Phase 1: Basic English')),
       body: Consumer<ProgressProvider>(
         builder: (context, progressProvider, child) {
           // Show loading indicator
           if (progressProvider.isLoading) {
-            return const Center(
-              child: CircularProgressIndicator(),
-            );
+            return const Center(child: CircularProgressIndicator());
           }
 
           // Show error message
@@ -95,11 +92,7 @@ class _Phase1UnitScreenState extends State<Phase1UnitScreen> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Icon(
-                    Icons.error_outline,
-                    size: 64,
-                    color: Colors.red,
-                  ),
+                  const Icon(Icons.error_outline, size: 64, color: Colors.red),
                   const SizedBox(height: 16),
                   Text(
                     'Error loading lessons',
@@ -130,9 +123,7 @@ class _Phase1UnitScreenState extends State<Phase1UnitScreen> {
           final lessons = progressProvider.getUnitLessons('phase1');
 
           if (lessons.isEmpty) {
-            return const Center(
-              child: Text('No lessons available'),
-            );
+            return const Center(child: Text('No lessons available'));
           }
 
           return ListView.builder(
@@ -152,11 +143,7 @@ class _Phase1UnitScreenState extends State<Phase1UnitScreen> {
                 lesson: lesson,
                 status: status,
                 isUnlocked: isUnlocked,
-                onTap: () => _handleLessonTap(
-                  context,
-                  lesson.id,
-                  isUnlocked,
-                ),
+                onTap: () => _handleLessonTap(context, lesson.id, isUnlocked),
               );
             },
           );
@@ -165,15 +152,15 @@ class _Phase1UnitScreenState extends State<Phase1UnitScreen> {
     );
   }
 
-  void _handleLessonTap(BuildContext context, String lessonId, bool isUnlocked) async {
+  void _handleLessonTap(
+    BuildContext context,
+    String lessonId,
+    bool isUnlocked,
+  ) async {
     if (isUnlocked) {
       // Navigate to lesson screen
-      await Navigator.pushNamed(
-        context,
-        AppRoutes.lesson,
-        arguments: lessonId,
-      );
-      
+      await Navigator.pushNamed(context, AppRoutes.lesson, arguments: lessonId);
+
       // Refresh progress after returning from lesson
       if (mounted) {
         await context.read<ProgressProvider>().reload();
@@ -197,9 +184,7 @@ class _Phase1UnitScreenState extends State<Phase1UnitScreen> {
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
       child: Card(
         elevation: 4,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(16),
-        ),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
         child: InkWell(
           onTap: _handleFinalTestTap,
           borderRadius: BorderRadius.circular(16),
@@ -268,11 +253,7 @@ class _Phase1UnitScreenState extends State<Phase1UnitScreen> {
                   ),
                   child: Row(
                     children: [
-                      const Icon(
-                        Icons.quiz,
-                        color: Colors.white,
-                        size: 20,
-                      ),
+                      const Icon(Icons.quiz, color: Colors.white, size: 20),
                       const SizedBox(width: 8),
                       const Text(
                         '20 Questions',
@@ -319,10 +300,7 @@ class _Phase1UnitScreenState extends State<Phase1UnitScreen> {
   /// Handle final test card tap
   void _handleFinalTestTap() async {
     // Navigate to final test screen
-    await Navigator.pushNamed(
-      context,
-      AppRoutes.phase1FinalTest,
-    );
+    await Navigator.pushNamed(context, AppRoutes.phase1FinalTest);
 
     // Refresh test status after returning
     if (mounted) {

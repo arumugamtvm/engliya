@@ -65,6 +65,12 @@ class _ExamplesTabState extends State<ExamplesTab> {
       
       // Mark this example as played
       _playedExamples.add(index);
+      if (mounted) {
+        context.read<LessonProvider>().updateExamplesProgress(
+          playedCount: _playedExamples.length,
+          totalCount: context.read<LessonProvider>().currentLesson?.examples.length ?? 0,
+        );
+      }
       
       // Check if we've played 3+ examples
       if (_playedExamples.length >= 3 && !_hasMarkedComplete) {
@@ -103,6 +109,10 @@ class _ExamplesTabState extends State<ExamplesTab> {
     }
 
     final examples = lesson.examples;
+    lessonProvider.updateExamplesProgress(
+      playedCount: _playedExamples.length,
+      totalCount: examples.length,
+    );
 
     if (examples.isEmpty) {
       return const Center(

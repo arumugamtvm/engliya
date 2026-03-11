@@ -73,13 +73,16 @@ class _ExplainTabState extends State<ExplainTab> {
   }
 
   void _onScroll() {
+    final lessonProvider = context.read<LessonProvider>();
+    final isAtBottom = _scrollController.position.pixels >=
+        _scrollController.position.maxScrollExtent - 50;
+    lessonProvider.updateExplainProgress(scrolledToBottom: isAtBottom);
+
     if (_hasMarkedComplete) return;
 
     // Check if scrolled to bottom
-    if (_scrollController.position.pixels >=
-        _scrollController.position.maxScrollExtent - 50) {
+    if (isAtBottom) {
       _hasMarkedComplete = true;
-      final lessonProvider = context.read<LessonProvider>();
       lessonProvider.markExplainDone();
     }
   }

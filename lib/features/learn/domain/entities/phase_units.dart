@@ -116,11 +116,38 @@ class PhaseUnits {
     ),
   ];
 
-  static List<Unit> get all => [
-        ...phase2,
-        ...phase3,
-        ...phase4,
-      ];
+  static const List<Unit> phase5 = [
+    Unit(
+      id: 'phase5_unit22',
+      order: 22,
+      title: 'Business Communication',
+      description: 'Master formal workplace communication and negotiation',
+      lessonCount: 4,
+    ),
+    Unit(
+      id: 'phase5_unit23',
+      order: 23,
+      title: 'Interview English',
+      description: 'Handle interviews with precise and persuasive answers',
+      lessonCount: 4,
+    ),
+    Unit(
+      id: 'phase5_unit24',
+      order: 24,
+      title: 'Presentation Skills',
+      description: 'Deliver structured, high-impact presentations',
+      lessonCount: 4,
+    ),
+    Unit(
+      id: 'phase5_unit25',
+      order: 25,
+      title: 'Advanced Writing',
+      description: 'Write clear arguments, syntheses, and critical responses',
+      lessonCount: 4,
+    ),
+  ];
+
+  static List<Unit> get all => [...phase2, ...phase3, ...phase4, ...phase5];
 
   static Unit? findById(String unitId) {
     for (final unit in all) {
@@ -137,8 +164,9 @@ class PhaseUnits {
         return phase3;
       case PhaseType.phase4:
         return phase4;
-      case PhaseType.phase1:
       case PhaseType.phase5:
+        return phase5;
+      case PhaseType.phase1:
         throw ArgumentError('No unit list configured for $type');
     }
   }

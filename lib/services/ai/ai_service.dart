@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
+import 'ai_response_validator.dart';
 
 /// AI Service for Bedrock integration
 /// Provides chat, image generation, and learning assistance
@@ -9,13 +10,16 @@ class AIService {
   static const String _baseUrl = 'https://bedrock-proxy.aimodel.workers.dev';
 
   // Available models - optimized for English learning
-  static const String modelClaudeSonnet = 'us.anthropic.claude-sonnet-4-20250514-v1:0';
-  static const String modelClaudeHaiku = 'anthropic.claude-3-haiku-20240307-v1:0';
+  static const String modelClaudeSonnet =
+      'us.anthropic.claude-sonnet-4-20250514-v1:0';
+  static const String modelClaudeHaiku =
+      'anthropic.claude-3-haiku-20240307-v1:0';
   static const String modelGemma = 'google.gemma-3-27b-it';
 
   String _currentModel = modelClaudeHaiku;
   int _maxRetries = 2;
   Duration _timeout = const Duration(seconds: 60);
+  final AIResponseValidator _responseValidator = AIResponseValidator();
 
   /// Set the AI model to use
   void setModel(String model) {
@@ -34,6 +38,7 @@ class AIService {
     String? systemPrompt,
     List<Map<String, String>>? history,
   }) async {
+    final sanitizedMessage = _responseValidator.sanitizeStudentPrompt(message);
     return _executeWithRetry(() async {
       final messages = <Map<String, String>>[];
 
@@ -43,7 +48,8 @@ class AIService {
       } else {
         messages.add({
           'role': 'system',
-          'content': '''You are a friendly, patient English teacher helping Tamil speakers learn English.
+          'content':
+              '''You are a friendly, patient English teacher helping Tamil speakers learn English.
 
 Your teaching style:
 • Keep explanations simple and clear
@@ -57,7 +63,7 @@ Format your responses clearly with:
 • Bullet points for lists
 • Bold for important words (use *word*)
 • Examples in context
-• Tamil translations in parentheses when useful'''
+• Tamil translations in parentheses when useful''',
         });
       }
 
@@ -73,12 +79,12 @@ Format your responses clearly with:
           }
         }
         if (lastRole == 'user') {
-          messages.last['content'] = message;
+          messages.last['content'] = sanitizedMessage;
         } else {
-          messages.add({'role': 'user', 'content': message});
+          messages.add({'role': 'user', 'content': sanitizedMessage});
         }
       } else {
-        messages.add({'role': 'user', 'content': message});
+        messages.add({'role': 'user', 'content': sanitizedMessage});
       }
 
       final response = await http
@@ -96,7 +102,9 @@ Format your responses clearly with:
 
       if (response.statusCode == 200) {
         final data = jsonDecode(response.body);
-        return data['choices'][0]['message']['content'] ?? 'No response';
+        final content =
+            data['choices'][0]['message']['content'] ?? 'No response';
+        return _responseValidator.validateTutorResponse(content);
       } else {
         final error = jsonDecode(response.body);
         throw AIServiceException(
@@ -113,7 +121,8 @@ Format your responses clearly with:
     required String userLevel,
   }) async {
     return chat(
-      message: '''Explain "$topic" for a $userLevel level Tamil speaker learning English.
+      message:
+          '''Explain "$topic" for a $userLevel level Tamil speaker learning English.
 
 Please structure your response as:
 
@@ -137,7 +146,8 @@ Please structure your response as:
   /// Check and correct a sentence with detailed feedback
   Future<Map<String, dynamic>> checkSentence(String sentence) async {
     final response = await chat(
-      message: '''Check this English sentence and respond in JSON format only:
+      message:
+          '''Check this English sentence and respond in JSON format only:
 Sentence: "$sentence"
 
 {
@@ -149,7 +159,8 @@ Sentence: "$sentence"
   "score": 0-100,
   "suggestions": ["improvement suggestions"]
 }''',
-      systemPrompt: 'You are an English grammar checker. Always respond with valid JSON only, no other text.',
+      systemPrompt:
+          'You are an English grammar checker. Always respond with valid JSON only, no other text.',
     );
 
     try {
@@ -179,7 +190,8 @@ Sentence: "$sentence"
     int turns = 4,
   }) async {
     final response = await chat(
-      message: '''Create a realistic $turns-turn English conversation about "$topic" for $level level learners.
+      message:
+          '''Create a realistic $turns-turn English conversation about "$topic" for $level level learners.
 
 Format as JSON array only:
 [
@@ -188,14 +200,21 @@ Format as JSON array only:
 ]
 
 Make it natural, practical, and include common phrases used in real situations.''',
-      systemPrompt: 'You are creating English learning content. Respond with valid JSON array only.',
+      systemPrompt:
+          'You are creating English learning content. Respond with valid JSON array only.',
     );
 
     try {
       final jsonMatch = RegExp(r'\[[\s\S]*\]').firstMatch(response);
       if (jsonMatch != null) {
         final list = jsonDecode(jsonMatch.group(0)!) as List;
-        return list.map((e) => Map<String, String>.from(e.map((k, v) => MapEntry(k.toString(), v.toString())))).toList();
+        return list
+            .map(
+              (e) => Map<String, String>.from(
+                e.map((k, v) => MapEntry(k.toString(), v.toString())),
+              ),
+            )
+            .toList();
       }
     } catch (e) {
       debugPrint('Conversation parse error: $e');
@@ -210,7 +229,8 @@ Make it natural, practical, and include common phrases used in real situations.'
     int count = 5,
   }) async {
     final response = await chat(
-      message: '''Generate $count English vocabulary words about "$topic" with Tamil translations.
+      message:
+          '''Generate $count English vocabulary words about "$topic" with Tamil translations.
 
 Format as JSON array only:
 [
@@ -225,7 +245,8 @@ Format as JSON array only:
     "difficulty": "easy/medium/hard"
   }
 ]''',
-      systemPrompt: 'You are creating vocabulary content. Respond with valid JSON array only.',
+      systemPrompt:
+          'You are creating vocabulary content. Respond with valid JSON array only.',
     );
 
     try {
@@ -246,9 +267,11 @@ Format as JSON array only:
     required String question,
     required String lessonContext,
   }) async {
-    return chat(
-      message: question,
-      systemPrompt: '''You are helping a Tamil speaker learn English.
+    try {
+      final response = await chat(
+        message: question,
+        systemPrompt:
+            '''You are helping a Tamil speaker learn English.
 
 Current lesson context: $lessonContext
 
@@ -258,7 +281,16 @@ Guidelines:
 • Give practical examples
 • If the question is not about English learning, politely redirect to the lesson
 • Be encouraging and patient''',
-    );
+      );
+      return _responseValidator.validateTutorResponse(
+        response,
+        lessonContext: lessonContext,
+      );
+    } on AIResponseValidationException {
+      return _responseValidator.safeFallbackResponse(
+        lessonContext: lessonContext,
+      );
+    }
   }
 
   /// Generate a quiz question with multiple formats
@@ -268,7 +300,8 @@ Guidelines:
     String type = 'mcq',
   }) async {
     final response = await chat(
-      message: '''Create one $type question about "$topic" for $level level.
+      message:
+          '''Create one $type question about "$topic" for $level level.
 
 Format as JSON only:
 {
@@ -281,7 +314,8 @@ Format as JSON only:
   "explanationTamil": "Tamil explanation",
   "hint": "optional hint for learners"
 }''',
-      systemPrompt: 'You are creating quiz content. Respond with valid JSON only.',
+      systemPrompt:
+          'You are creating quiz content. Respond with valid JSON only.',
     );
 
     try {
@@ -299,7 +333,8 @@ Format as JSON only:
   /// Get pronunciation guide for a word or phrase
   Future<Map<String, dynamic>> getPronunciationGuide(String text) async {
     final response = await chat(
-      message: '''Provide a pronunciation guide for: "$text"
+      message:
+          '''Provide a pronunciation guide for: "$text"
 
 Format as JSON only:
 {
@@ -312,7 +347,8 @@ Format as JSON only:
   "commonMistakes": ["mistakes to avoid"],
   "similarWords": ["words that sound similar"]
 }''',
-      systemPrompt: 'You are a pronunciation expert. Respond with valid JSON only.',
+      systemPrompt:
+          'You are a pronunciation expert. Respond with valid JSON only.',
     );
 
     try {
@@ -354,5 +390,6 @@ class AIServiceException implements Exception {
   AIServiceException(this.message, {this.statusCode});
 
   @override
-  String toString() => 'AIServiceException: $message${statusCode != null ? ' (Status: $statusCode)' : ''}';
+  String toString() =>
+      'AIServiceException: $message${statusCode != null ? ' (Status: $statusCode)' : ''}';
 }

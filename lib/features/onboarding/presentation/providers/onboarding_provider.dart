@@ -5,9 +5,8 @@ import '../../data/models/user_level.dart';
 class OnboardingProvider extends ChangeNotifier {
   final OnboardingService _onboardingService;
 
-  OnboardingProvider({
-    required OnboardingService onboardingService,
-  }) : _onboardingService = onboardingService;
+  OnboardingProvider({required OnboardingService onboardingService})
+    : _onboardingService = onboardingService;
 
   UserLevel? _selectedLevel;
   bool _isLoading = false;
@@ -21,7 +20,13 @@ class OnboardingProvider extends ChangeNotifier {
 
   // Select level
   void selectLevel(UserLevel level) {
+    if (UserLevel.fromId(level.id) == null) {
+      _error = 'Please choose a valid learning level';
+      notifyListeners();
+      return;
+    }
     _selectedLevel = level;
+    _error = null;
     notifyListeners();
   }
 

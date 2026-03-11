@@ -26,21 +26,72 @@
       "audioId": "phase2_l11_5_ex3"
     }
   ],
-  "listeningQuestions": [],
-  "speakSentences": [],
+  "listeningQuestions": [
+    {
+      "audioText": "She speaks English slowly.",
+      "options": [
+        "She speaks English slowly.",
+        "He always comes on time.",
+        "They often visit their grandparents."
+      ],
+      "correctIndex": 0
+    },
+    {
+      "audioText": "He always comes on time.",
+      "options": [
+        "She speaks English slowly.",
+        "They often visit their grandparents.",
+        "He always comes on time."
+      ],
+      "correctIndex": 2
+    },
+    {
+      "audioText": "They often visit their grandparents.",
+      "options": [
+        "He always comes on time.",
+        "They often visit their grandparents.",
+        "She speaks English slowly."
+      ],
+      "correctIndex": 1
+    }
+  ],
+  "speakSentences": [
+    {
+      "en": "She speaks English slowly.",
+      "ta": "அவள் ஆங்கிலம் மெதுவாக பேசுகிறாள்."
+    },
+    {
+      "en": "He always comes on time.",
+      "ta": "அவன் எப்போதும் சரியான நேரத்தில் வருகிறான்."
+    },
+    {
+      "en": "They often visit their grandparents.",
+      "ta": "அவர்கள் அடிக்கடி தங்கள் தாத்தா பாட்டியை சந்திக்கிறார்கள்."
+    }
+  ],
   "practiceQuestions": [
     {
       "type": "mcq",
       "promptEn": "Please drive ___.",
       "promptTa": "தயவுசெய்து கவனமாக ஓட்டுங்கள்.",
-      "options": ["slowly", "quickly", "carefully", "often"],
+      "options": [
+        "slowly",
+        "quickly",
+        "carefully",
+        "often"
+      ],
       "correctIndex": 2
     },
     {
       "type": "mcq",
       "promptEn": "She ___ goes to the gym.",
       "promptTa": "அவள் அடிக்கடி ஜிம்மிற்கு செல்கிறாள்.",
-      "options": ["slowly", "quickly", "carefully", "often"],
+      "options": [
+        "slowly",
+        "quickly",
+        "carefully",
+        "often"
+      ],
       "correctIndex": 3
     }
   ],
@@ -49,14 +100,24 @@
       "type": "mcq",
       "promptEn": "He finished his work ___.",
       "promptTa": "அவன் தன் வேலையை விரைவாக முடித்தான்.",
-      "options": ["slowly", "quickly", "carefully", "always"],
+      "options": [
+        "slowly",
+        "quickly",
+        "carefully",
+        "always"
+      ],
       "correctIndex": 1
     },
     {
       "type": "mcq",
       "promptEn": "I ___ brush my teeth in the morning.",
       "promptTa": "நான் எப்போதும் காலையில் பல் துலக்குகிறேன்.",
-      "options": ["slowly", "quickly", "often", "always"],
+      "options": [
+        "slowly",
+        "quickly",
+        "often",
+        "always"
+      ],
       "correctIndex": 3
     }
   ]

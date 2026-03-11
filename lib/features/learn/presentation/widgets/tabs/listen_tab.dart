@@ -91,6 +91,18 @@ class _ListenTabState extends State<ListenTab> {
       _answeredCorrectly[questionIndex] = (optionIndex == correctIndex);
     });
 
+    final answeredCount = _selectedAnswers.length;
+    final lessonProvider = context.read<LessonProvider>();
+    final lesson = lessonProvider.currentLesson;
+    final totalCount = lesson?.listeningQuestions.length ?? 0;
+    final correctCount = _answeredCorrectly.values.where((correct) => correct).length;
+    final accuracy = answeredCount == 0 ? 0.0 : (correctCount / answeredCount);
+    lessonProvider.updateListenProgress(
+      answeredCount: answeredCount,
+      totalCount: totalCount,
+      accuracy: accuracy,
+    );
+
     // Check if we should mark as complete
     _checkCompletion();
   }
@@ -115,6 +127,20 @@ class _ListenTabState extends State<ListenTab> {
     }
   }
 
+  void _retryListen() {
+    setState(() {
+      _selectedAnswers.clear();
+      _answeredCorrectly.clear();
+      _hasMarkedComplete = false;
+    });
+
+    context.read<LessonProvider>().updateListenProgress(
+      answeredCount: 0,
+      totalCount: context.read<LessonProvider>().currentLesson?.listeningQuestions.length ?? 0,
+      accuracy: 0.0,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final lessonProvider = context.watch<LessonProvider>();
@@ -137,6 +163,13 @@ class _ListenTabState extends State<ListenTab> {
     // Calculate current accuracy
     int correctCount = _answeredCorrectly.values.where((correct) => correct).length;
     double accuracy = _selectedAnswers.isEmpty ? 0.0 : correctCount / _selectedAnswers.length;
+    final hasCompletedAll = _selectedAnswers.length == questions.length;
+    final needsRetry = hasCompletedAll && accuracy < 0.7;
+    lessonProvider.updateListenProgress(
+      answeredCount: _selectedAnswers.length,
+      totalCount: questions.length,
+      accuracy: accuracy,
+    );
 
     return Column(
       children: [
@@ -181,6 +214,43 @@ class _ListenTabState extends State<ListenTab> {
             ],
           ),
         ),
+
+        if (needsRetry)
+          Container(
+            margin: const EdgeInsets.fromLTRB(16, 16, 16, 0),
+            padding: const EdgeInsets.all(16),
+            decoration: BoxDecoration(
+              color: AppTheme.incorrectColor.withOpacity(0.1),
+              borderRadius: BorderRadius.circular(12),
+              border: Border.all(
+                color: AppTheme.incorrectColor.withOpacity(0.5),
+                width: 1.5,
+              ),
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Text(
+                  'You answered all questions, but need at least 70% to continue.',
+                  style: AppTheme.bodyText2.copyWith(
+                    color: Colors.black87,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+                const SizedBox(height: 10),
+                ElevatedButton.icon(
+                  onPressed: _retryListen,
+                  icon: const Icon(Icons.refresh),
+                  label: const Text('Retry Listening'),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: AppTheme.primaryColor,
+                    foregroundColor: Colors.white,
+                    minimumSize: const Size(double.infinity, 44),
+                  ),
+                ),
+              ],
+            ),
+          ),
 
         // Questions list
         Expanded(
