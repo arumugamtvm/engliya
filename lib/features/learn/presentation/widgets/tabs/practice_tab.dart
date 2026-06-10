@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../providers/lesson_provider.dart';
 import '../../../../../app/theme.dart';
+import '../../../../../core/constants/app_strings.dart';
 
 /// Practice tab widget for quiz practice
 /// Requirements: 10.1, 10.2, 10.3, 10.4, 10.5, 10.6, 10.7
@@ -92,7 +93,10 @@ class _PracticeTabState extends State<PracticeTab> {
 
     if (lesson == null) {
       return const Center(
-        child: Text('No lesson data available'),
+        child: Text(
+          AppStrings.noLessonData,
+          textAlign: TextAlign.center,
+        ),
       );
     }
 
@@ -120,7 +124,7 @@ class _PracticeTabState extends State<PracticeTab> {
         // Progress indicator
         Container(
           padding: const EdgeInsets.all(16),
-          color: AppTheme.primaryColor.withOpacity(0.1),
+          color: AppTheme.primaryColor.withValues(alpha: 0.1),
           child: Row(
             children: [
               Icon(
@@ -134,9 +138,18 @@ class _PracticeTabState extends State<PracticeTab> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Answer all questions to complete',
+                      AppStrings.practiceRuleEn,
                       style: AppTheme.bodyText1.copyWith(
                         fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    const SizedBox(height: 2),
+                    Text(
+                      AppStrings.practiceRuleTa,
+                      style: AppTheme.bodyText2.copyWith(
+                        fontSize: 14,
+                        color: AppTheme.primaryColor,
+                        fontWeight: FontWeight.w600,
                       ),
                     ),
                     const SizedBox(height: 4),
@@ -166,8 +179,8 @@ class _PracticeTabState extends State<PracticeTab> {
             padding: const EdgeInsets.all(20),
             decoration: BoxDecoration(
               color: scorePercentage >= 0.6
-                  ? AppTheme.correctColor.withOpacity(0.1)
-                  : AppTheme.incorrectColor.withOpacity(0.1),
+                  ? AppTheme.correctColor.withValues(alpha: 0.1)
+                  : AppTheme.incorrectColor.withValues(alpha: 0.1),
               borderRadius: BorderRadius.circular(12),
               border: Border.all(
                 color: scorePercentage >= 0.6
@@ -207,16 +220,17 @@ class _PracticeTabState extends State<PracticeTab> {
                 const SizedBox(height: 8),
                 Text(
                   scorePercentage >= 0.6
-                      ? 'Great job! You passed!'
-                      : 'Keep practicing to improve!',
+                      ? AppStrings.practicePassed
+                      : AppStrings.practiceFailed,
                   style: AppTheme.bodyText2.copyWith(
                     color: Colors.grey[700],
+                    height: 1.5,
                   ),
                   textAlign: TextAlign.center,
                 ),
                 const SizedBox(height: 4),
                 Text(
-                  '${correctCount} / ${questions.length} correct',
+                  '$correctCount / ${questions.length} correct',
                   style: AppTheme.bodyText2.copyWith(
                     color: Colors.grey[600],
                   ),
@@ -226,7 +240,7 @@ class _PracticeTabState extends State<PracticeTab> {
                   ElevatedButton.icon(
                     onPressed: _retryPractice,
                     icon: const Icon(Icons.refresh),
-                    label: const Text('Retry Practice'),
+                    label: const Text(AppStrings.tryAgain),
                     style: ElevatedButton.styleFrom(
                       backgroundColor: AppTheme.primaryColor,
                       foregroundColor: Colors.white,
@@ -257,8 +271,8 @@ class _PracticeTabState extends State<PracticeTab> {
                   side: BorderSide(
                     color: isAnswered
                         ? (isCorrect
-                            ? AppTheme.correctColor.withOpacity(0.3)
-                            : AppTheme.incorrectColor.withOpacity(0.3))
+                            ? AppTheme.correctColor.withValues(alpha: 0.3)
+                            : AppTheme.incorrectColor.withValues(alpha: 0.3))
                         : Colors.transparent,
                     width: 2,
                   ),
@@ -323,7 +337,7 @@ class _PracticeTabState extends State<PracticeTab> {
                             }
                           } else if (isCorrectOption) {
                             // Show correct answer if user selected wrong
-                            buttonColor = AppTheme.correctColor.withOpacity(0.3);
+                            buttonColor = AppTheme.correctColor.withValues(alpha: 0.3);
                             textColor = AppTheme.correctColor;
                             icon = Icons.check_circle;
                           }
@@ -392,7 +406,9 @@ class _PracticeTabState extends State<PracticeTab> {
                               ),
                               const SizedBox(width: 8),
                               Text(
-                                isCorrect ? 'Correct!' : 'Incorrect',
+                                isCorrect
+                                    ? AppStrings.correct
+                                    : AppStrings.incorrect,
                                 style: AppTheme.bodyText2.copyWith(
                                   color: isCorrect
                                       ? AppTheme.correctColor

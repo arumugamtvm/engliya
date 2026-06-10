@@ -16,6 +16,7 @@ import '../../../../core/utils/error_handler.dart';
 import '../../../../core/widgets/app_empty_state.dart';
 import '../../../../core/widgets/app_error_state.dart';
 import '../../../../core/widgets/app_loading_state.dart';
+import '../../../../core/logging/app_logger.dart';
 
 typedef QuestionLabelBuilder =
     String Function(
@@ -98,7 +99,7 @@ class McqFinalTestScreenConfig {
       replaceOnResult: true,
       popAfterResult: false,
       showRetrySaveAction: false,
-      questionSemanticsLabel: (question, _, __) =>
+      questionSemanticsLabel: (question, _, _) =>
           'Question: ${question.promptEn}',
       announcementLabel: (question, number, total) =>
           'Question $number of $total. ${question.promptEn}',
@@ -127,7 +128,7 @@ class McqFinalTestScreenConfig {
       replaceOnResult: false,
       popAfterResult: true,
       showRetrySaveAction: true,
-      questionSemanticsLabel: (question, _, __) =>
+      questionSemanticsLabel: (question, _, _) =>
           'Question: ${question.promptEn}',
       announcementLabel: (question, number, total) =>
           'Question $number of $total. ${question.promptEn}',
@@ -282,7 +283,7 @@ class _McqFinalTestScreenBodyState extends State<_McqFinalTestScreenBody>
       await provider.startTest();
       _questionAnimationController.forward();
     } catch (e) {
-      print('Test initialization failed: $e');
+      AppLogger.debug('Test initialization failed: $e');
     }
   }
 
@@ -295,7 +296,7 @@ class _McqFinalTestScreenBodyState extends State<_McqFinalTestScreenBody>
       await context.read<McqFinalTestProvider>().retryStartTest();
       _questionAnimationController.forward();
     } catch (e) {
-      print('Test retry failed: $e');
+      AppLogger.debug('Test retry failed: $e');
     } finally {
       if (mounted) {
         setState(() {
@@ -864,7 +865,11 @@ class _McqFinalTestScreenBodyState extends State<_McqFinalTestScreenBody>
         questionNumber,
         totalQuestions,
       );
-      SemanticsService.announce(announcement, TextDirection.ltr);
+      SemanticsService.sendAnnouncement(
+        View.of(context),
+        announcement,
+        TextDirection.ltr,
+      );
     }
   }
 
@@ -894,7 +899,7 @@ class _McqFinalTestScreenBodyState extends State<_McqFinalTestScreenBody>
         try {
           Navigator.of(context).pop();
         } catch (e) {
-          print('Error closing loading dialog: $e');
+          AppLogger.error('Error closing loading dialog: $e');
         }
       }
 
@@ -917,7 +922,7 @@ class _McqFinalTestScreenBodyState extends State<_McqFinalTestScreenBody>
                       );
                     }
                   } catch (e) {
-                    print('Retry save failed: $e');
+                    AppLogger.debug('Retry save failed: $e');
                   }
                 },
               )

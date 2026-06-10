@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:engliya/features/onboarding/data/models/user_level.dart';
 import 'package:engliya/features/onboarding/services/onboarding_service.dart';
 import 'package:engliya/services/local_storage/storage_service.dart';
@@ -7,11 +7,14 @@ import 'package:engliya/features/learn/data/repositories/progress_repository.dar
 import 'package:engliya/features/learn/data/models/user_lesson_status.dart';
 
 void main() {
+  TestWidgetsFlutterBinding.ensureInitialized();
+
   group('Onboarding Tests', () {
     late StorageService storageService;
     late OnboardingService onboardingService;
 
     setUp(() async {
+      SharedPreferences.setMockInitialValues({});
       storageService = StorageService();
       await storageService.init();
       onboardingService = OnboardingService(storageService: storageService);
@@ -63,6 +66,7 @@ void main() {
     late ProgressRepository progressRepository;
 
     setUp(() async {
+      SharedPreferences.setMockInitialValues({});
       storageService = StorageService();
       await storageService.init();
       progressRepository = ProgressRepository(storageService);

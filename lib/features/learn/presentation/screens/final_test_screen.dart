@@ -14,6 +14,7 @@ import '../../../../core/utils/error_handler.dart';
 import '../../../../core/widgets/app_empty_state.dart';
 import '../../../../core/widgets/app_error_state.dart';
 import '../../../../core/widgets/app_loading_state.dart';
+import '../../../../core/logging/app_logger.dart';
 
 class SpeakingResultViewData {
   final int score;
@@ -388,7 +389,7 @@ class _FinalTestScreenState<
       await provider.startTest();
       _questionAnimationController.forward();
     } catch (e) {
-      print('Test initialization failed: $e');
+      AppLogger.debug('Test initialization failed: $e');
     }
   }
 
@@ -401,7 +402,7 @@ class _FinalTestScreenState<
       await context.read<TProvider>().retryStartTest();
       _questionAnimationController.forward();
     } catch (e) {
-      print('Test retry failed: $e');
+      AppLogger.debug('Test retry failed: $e');
     } finally {
       if (mounted) {
         setState(() {
@@ -1251,7 +1252,7 @@ class _FinalTestScreenState<
         try {
           Navigator.of(context).pop();
         } catch (e) {
-          print('Error closing loading dialog: $e');
+          AppLogger.error('Error closing loading dialog: $e');
         }
       }
 
@@ -1278,7 +1279,7 @@ class _FinalTestScreenState<
                     );
                   }
                 } catch (e) {
-                  print('Retry save failed: $e');
+                  AppLogger.debug('Retry save failed: $e');
                 }
               },
             ),

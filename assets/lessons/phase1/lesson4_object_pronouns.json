@@ -101,27 +101,47 @@
   "listeningQuestions": [
     {
       "audioText": "She likes me.",
-      "options": ["She likes me.", "She likes I.", "She likes my."],
+      "options": [
+        "She likes me.",
+        "She likes I.",
+        "She likes my."
+      ],
       "correctIndex": 0
     },
     {
       "audioText": "I know him.",
-      "options": ["I know he.", "I know him.", "I know his."],
+      "options": [
+        "I know he.",
+        "I know him.",
+        "I know his."
+      ],
       "correctIndex": 1
     },
     {
       "audioText": "They help us.",
-      "options": ["They help we.", "They help our.", "They help us."],
+      "options": [
+        "They help we.",
+        "They help our.",
+        "They help us."
+      ],
       "correctIndex": 2
     },
     {
       "audioText": "We see her.",
-      "options": ["We see she.", "We see her.", "We see hers."],
+      "options": [
+        "We see she.",
+        "We see her.",
+        "We see hers."
+      ],
       "correctIndex": 1
     },
     {
       "audioText": "He calls them.",
-      "options": ["He calls they.", "He calls their.", "He calls them."],
+      "options": [
+        "He calls they.",
+        "He calls their.",
+        "He calls them."
+      ],
       "correctIndex": 2
     }
   ],
@@ -152,142 +172,222 @@
       "type": "mcq",
       "promptEn": "He helps ___.",
       "promptTa": "அவர் ___ உதவுகிறார்.",
-      "options": ["I", "me", "my"],
+      "options": [
+        "I",
+        "me",
+        "my"
+      ],
       "correctIndex": 1
     },
     {
       "type": "mcq",
       "promptEn": "She knows ___.",
       "promptTa": "அவள் ___ அறிவாள்.",
-      "options": ["he", "him", "his"],
+      "options": [
+        "he",
+        "him",
+        "his"
+      ],
       "correctIndex": 1
     },
     {
       "type": "mcq",
       "promptEn": "They see ___.",
       "promptTa": "அவர்கள் ___ பார்க்கிறார்கள்.",
-      "options": ["we", "us", "our"],
+      "options": [
+        "we",
+        "us",
+        "our"
+      ],
       "correctIndex": 1
     },
     {
       "type": "mcq",
       "promptEn": "I like ___.",
       "promptTa": "நான் ___ விரும்புகிறேன்.",
-      "options": ["she", "her", "hers"],
+      "options": [
+        "she",
+        "her",
+        "hers"
+      ],
       "correctIndex": 1
     },
     {
       "type": "mcq",
       "promptEn": "We call ___.",
       "promptTa": "நாங்கள் ___ அழைக்கிறோம்.",
-      "options": ["they", "them", "their"],
+      "options": [
+        "they",
+        "them",
+        "their"
+      ],
       "correctIndex": 1
     },
     {
       "type": "mcq",
       "promptEn": "She teaches ___.",
       "promptTa": "அவர் ___ கற்பிக்கிறார்.",
-      "options": ["I", "me", "my"],
+      "options": [
+        "I",
+        "me",
+        "my"
+      ],
       "correctIndex": 1
     },
     {
       "type": "mcq",
       "promptEn": "He loves ___.",
       "promptTa": "அவர் ___ விரும்புகிறார்.",
-      "options": ["it", "its", "it's"],
+      "options": [
+        "it",
+        "its",
+        "it's"
+      ],
       "correctIndex": 0
     },
     {
       "type": "mcq",
       "promptEn": "They invite ___.",
       "promptTa": "அவர்கள் ___ அழைக்கிறார்கள்.",
-      "options": ["you", "your", "yours"],
+      "options": [
+        "you",
+        "your",
+        "yours"
+      ],
       "correctIndex": 0
     },
     {
       "type": "mcq",
       "promptEn": "I tell ___ a story.",
       "promptTa": "நான் ___ ஒரு கதை சொல்கிறேன்.",
-      "options": ["he", "him", "his"],
+      "options": [
+        "he",
+        "him",
+        "his"
+      ],
       "correctIndex": 1
     },
     {
       "type": "mcq",
       "promptEn": "We thank ___.",
       "promptTa": "நாங்கள் ___ நன்றி சொல்கிறோம்.",
-      "options": ["they", "them", "their"],
+      "options": [
+        "they",
+        "them",
+        "their"
+      ],
       "correctIndex": 1
     }
   ],
   "masteryQuestions": [
     {
       "type": "mcq",
-      "promptEn": "They see ___.",
-      "promptTa": "அவர்கள் ___ பார்க்கிறார்கள்.",
-      "options": ["we", "us", "our"],
+      "promptEn": "The teacher praises ___.",
+      "promptTa": "ஆசிரியர் ___ பாராட்டுகிறார்.",
+      "options": [
+        "we",
+        "us",
+        "our"
+      ],
       "correctIndex": 1
     },
     {
       "type": "mcq",
       "promptEn": "She helps ___.",
       "promptTa": "அவள் ___ உதவுகிறாள்.",
-      "options": ["I", "me", "my"],
+      "options": [
+        "I",
+        "me",
+        "my"
+      ],
       "correctIndex": 1
     },
     {
       "type": "mcq",
       "promptEn": "I know ___.",
       "promptTa": "நான் ___ அறிவேன்.",
-      "options": ["she", "her", "hers"],
+      "options": [
+        "she",
+        "her",
+        "hers"
+      ],
       "correctIndex": 1
     },
     {
       "type": "mcq",
       "promptEn": "He calls ___.",
       "promptTa": "அவர் ___ அழைக்கிறார்.",
-      "options": ["they", "them", "their"],
+      "options": [
+        "they",
+        "them",
+        "their"
+      ],
       "correctIndex": 1
     },
     {
       "type": "mcq",
       "promptEn": "We like ___.",
       "promptTa": "நாங்கள் ___ விரும்புகிறோம்.",
-      "options": ["he", "him", "his"],
+      "options": [
+        "he",
+        "him",
+        "his"
+      ],
       "correctIndex": 1
     },
     {
       "type": "mcq",
       "promptEn": "They teach ___.",
       "promptTa": "அவர்கள் ___ கற்பிக்கிறார்கள்.",
-      "options": ["we", "us", "our"],
+      "options": [
+        "we",
+        "us",
+        "our"
+      ],
       "correctIndex": 1
     },
     {
       "type": "mcq",
       "promptEn": "She loves ___.",
       "promptTa": "அவள் ___ விரும்புகிறாள்.",
-      "options": ["it", "its", "it's"],
+      "options": [
+        "it",
+        "its",
+        "it's"
+      ],
       "correctIndex": 0
     },
     {
       "type": "mcq",
       "promptEn": "I see ___.",
       "promptTa": "நான் ___ பார்க்கிறேன்.",
-      "options": ["you", "your", "yours"],
+      "options": [
+        "you",
+        "your",
+        "yours"
+      ],
       "correctIndex": 0
     },
     {
       "type": "mcq",
       "promptEn": "He tells ___ stories.",
       "promptTa": "அவர் ___ கதைகள் சொல்கிறார்.",
-      "options": ["we", "us", "our"],
+      "options": [
+        "we",
+        "us",
+        "our"
+      ],
       "correctIndex": 1
     },
     {
       "type": "mcq",
       "promptEn": "We invite ___.",
       "promptTa": "நாங்கள் ___ அழைக்கிறோம்.",
-      "options": ["they", "them", "their"],
+      "options": [
+        "they",
+        "them",
+        "their"
+      ],
       "correctIndex": 1
     }
   ]

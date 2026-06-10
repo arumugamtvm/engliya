@@ -1,5 +1,6 @@
 /// Shared exception classes for test services
 /// Used by both Phase 1 and Phase 2 final test services
+library;
 
 /// Custom exception for test generation errors
 class TestGenerationException implements Exception {

@@ -1,5 +1,7 @@
 import 'dart:math';
 
+import '../../../core/logging/app_logger.dart';
+
 import '../data/models/lesson.dart';
 import '../data/models/phase4_final_test_question.dart';
 import '../data/models/phase4_test_result.dart';
@@ -213,19 +215,26 @@ class Phase4FinalTestService
   /// - All Phase 4 lessons (Units 18-21) are mastered
   ///
   /// Returns false on error to prevent test access when mastery cannot be verified
+  @override
   Future<bool> canTakeTest() async {
     try {
       // Check if debug mode is enabled - bypasses all requirements
       final isDebugEnabled = await _debugService.isDebugModeEnabled();
       if (isDebugEnabled) {
-        print('Debug mode enabled - Phase 4 Final Test access granted');
+        AppLogger.info(
+        'Debug mode enabled - Phase 4 Final Test access granted',
+        tag: 'FinalTestService',
+      );
         return true;
       }
 
       // Check if all Phase 4 lessons are mastered
       return await areAllPhase4LessonsMastered();
     } catch (e) {
-      print('Error: Failed to check test access: $e');
+      AppLogger.error(
+        'Failed to check test access: $e',
+        tag: 'FinalTestService',
+      );
       // Return false to prevent test access when verification fails
       return false;
     }
@@ -248,41 +257,56 @@ class Phase4FinalTestService
 
         // If lesson has no progress or is not mastered, return false
         if (progress == null || !progress.isMastered) {
-          print('Lesson $lessonId is not mastered');
+          AppLogger.info(
+        'Lesson $lessonId is not mastered',
+        tag: 'FinalTestService',
+      );
           return false;
         }
 
         masteredCount++;
       }
 
-      print(
+      AppLogger.info(
         'All required Phase 4 lessons mastered: $masteredCount/$totalRequired',
+        tag: 'FinalTestService',
       );
       return true;
     } catch (e) {
-      print('Error: Failed to check Phase 4 lesson mastery: $e');
+      AppLogger.error(
+        'Failed to check Phase 4 lesson mastery: $e',
+        tag: 'FinalTestService',
+      );
       // Return false to prevent test access when verification fails
       return false;
     }
   }
 
   /// Check if student has passed the test
+  @override
   Future<bool> hasPassedTest() async {
     try {
       return _storageService.getBool(keyTestPassed) ?? false;
     } catch (e) {
-      print('Warning: Failed to check test pass status: $e');
+      AppLogger.warning(
+        'Failed to check test pass status: $e',
+        tag: 'FinalTestService',
+      );
       return false;
     }
   }
 
   /// Get the last test score
   /// Returns null if no test has been taken
+  @override
   Future<int?> getLastTestScore() async {
     try {
       return _storageService.getInt(keyTestScore);
     } catch (e) {
-      print('Warning: Failed to get last test score: $e');
+      AppLogger.warning(
+        'Failed to get last test score: $e',
+        tag: 'FinalTestService',
+      );
       return null;
     }
   }
@@ -296,6 +320,7 @@ class Phase4FinalTestService
   /// - 4 Speaking Tasks from Unit 19 lessons
   ///
   /// Uses fallback hardcoded questions when lesson content is insufficient
+  @override
   Future<List<Phase4FinalTestQuestion>> generateTest() async {
     final random = Random();
     final questions = <Phase4FinalTestQuestion>[];
@@ -316,7 +341,10 @@ class Phase4FinalTestService
       // Load Unit 20-21 lessons for dialogue questions
       await _loadUnit20And21Questions(dialogueQuestions, listeningQuestions);
     } catch (e) {
-      print('Warning: Error loading lesson content: $e');
+      AppLogger.warning(
+        'Error loading lesson content: $e',
+        tag: 'FinalTestService',
+      );
       // Continue with fallback questions
     }
 
@@ -384,7 +412,10 @@ class Phase4FinalTestService
         // Extract listening questions
         _extractListeningQuestions(lesson, listeningQuestions);
       } catch (e) {
-        print('Warning: Failed to load $lessonId: $e');
+        AppLogger.warning(
+        'Failed to load $lessonId: $e',
+        tag: 'FinalTestService',
+      );
       }
     }
   }
@@ -407,7 +438,10 @@ class Phase4FinalTestService
         // Extract speaking prompts from speakSentences
         _extractSpeakingPrompts(lesson, speakingPrompts);
       } catch (e) {
-        print('Warning: Failed to load $lessonId: $e');
+        AppLogger.warning(
+        'Failed to load $lessonId: $e',
+        tag: 'FinalTestService',
+      );
       }
     }
   }
@@ -441,7 +475,10 @@ class Phase4FinalTestService
         // Extract listening questions
         _extractListeningQuestions(lesson, listeningQuestions);
       } catch (e) {
-        print('Warning: Failed to load $lessonId: $e');
+        AppLogger.warning(
+        'Failed to load $lessonId: $e',
+        tag: 'FinalTestService',
+      );
       }
     }
   }
@@ -962,6 +999,7 @@ class Phase4FinalTestService
   /// - List of incorrect MCQ answers for review
   ///
   /// Requirements: 6.1, 6.2, 6.3, 7.1
+  @override
   Phase4TestResult calculateResult({
     required List<Phase4FinalTestQuestion> questions,
     required Map<String, int> mcqAnswers,
@@ -1031,6 +1069,7 @@ class Phase4FinalTestService
   /// - phase4FinalTestTakenAt: timestamp of when test was completed
   ///
   /// Requirements: 8.1, 8.2, 8.3
+  @override
   Future<void> saveTestResult(Phase4TestResult result) async {
     try {
       // Save pass/fail status
@@ -1042,13 +1081,15 @@ class Phase4FinalTestService
       // If passed, unlock Phase 5
       if (result.passed) {
         await _storageService.setBool(keyPhase5Unlocked, true);
-        print(
-          'Phase 5 unlocked! Test passed with score: ${result.totalScore}/${result.maxScore}',
-        );
+        AppLogger.info(
+        'Phase 5 unlocked! Test passed with score: ${result.totalScore}/${result.maxScore}',
+        tag: 'FinalTestService',
+      );
       } else {
-        print(
-          'Test not passed. Score: ${result.totalScore}/${result.maxScore} (need $passingScore to pass)',
-        );
+        AppLogger.info(
+        'Test not passed. Score: ${result.totalScore}/${result.maxScore} (need $passingScore to pass)',
+        tag: 'FinalTestService',
+      );
       }
 
       // Save the full result JSON for later retrieval
@@ -1061,9 +1102,15 @@ class Phase4FinalTestService
         result.completedAt.toIso8601String(),
       );
 
-      print('Phase 4 Final Test result saved successfully');
+      AppLogger.info(
+        'Phase 4 Final Test result saved successfully',
+        tag: 'FinalTestService',
+      );
     } catch (e) {
-      print('Error: Failed to save test result: $e');
+      AppLogger.error(
+        'Failed to save test result: $e',
+        tag: 'FinalTestService',
+      );
       rethrow;
     }
   }
@@ -1078,7 +1125,10 @@ class Phase4FinalTestService
       // Phase 5 is unlocked only if the Phase 4 Final Test was passed
       return _storageService.getBool(keyTestPassed) ?? false;
     } catch (e) {
-      print('Warning: Failed to check Phase 5 unlock status: $e');
+      AppLogger.warning(
+        'Failed to check Phase 5 unlock status: $e',
+        tag: 'FinalTestService',
+      );
       return false;
     }
   }
@@ -1225,19 +1275,26 @@ class Phase5FinalTestService
   /// - All Phase 5 lessons (Units 22-25) are mastered
   ///
   /// Returns false on error to prevent test access when mastery cannot be verified
+  @override
   Future<bool> canTakeTest() async {
     try {
       // Check if debug mode is enabled - bypasses all requirements
       final isDebugEnabled = await _debugService.isDebugModeEnabled();
       if (isDebugEnabled) {
-        print('Debug mode enabled - Phase 5 Final Test access granted');
+        AppLogger.info(
+        'Debug mode enabled - Phase 5 Final Test access granted',
+        tag: 'FinalTestService',
+      );
         return true;
       }
 
       // Check if all Phase 5 lessons are mastered
       return await areAllPhase5LessonsMastered();
     } catch (e) {
-      print('Error: Failed to check test access: $e');
+      AppLogger.error(
+        'Failed to check test access: $e',
+        tag: 'FinalTestService',
+      );
       // Return false to prevent test access when verification fails
       return false;
     }
@@ -1260,30 +1317,41 @@ class Phase5FinalTestService
 
         // If lesson has no progress or is not mastered, return false
         if (progress == null || !progress.isMastered) {
-          print('Lesson $lessonId is not mastered');
+          AppLogger.info(
+        'Lesson $lessonId is not mastered',
+        tag: 'FinalTestService',
+      );
           return false;
         }
 
         masteredCount++;
       }
 
-      print(
+      AppLogger.info(
         'All required Phase 5 lessons mastered: $masteredCount/$totalRequired',
+        tag: 'FinalTestService',
       );
       return true;
     } catch (e) {
-      print('Error: Failed to check Phase 5 lesson mastery: $e');
+      AppLogger.error(
+        'Failed to check Phase 5 lesson mastery: $e',
+        tag: 'FinalTestService',
+      );
       // Return false to prevent test access when verification fails
       return false;
     }
   }
 
   /// Check if student has passed the test
+  @override
   Future<bool> hasPassedTest() async {
     try {
       return _storageService.getBool(keyTestPassed) ?? false;
     } catch (e) {
-      print('Warning: Failed to check test pass status: $e');
+      AppLogger.warning(
+        'Failed to check test pass status: $e',
+        tag: 'FinalTestService',
+      );
       return false;
     }
   }
@@ -1293,18 +1361,25 @@ class Phase5FinalTestService
     try {
       return _storageService.getBool(keyMasteryCompleted) ?? false;
     } catch (e) {
-      print('Warning: Failed to check English mastery status: $e');
+      AppLogger.warning(
+        'Failed to check English mastery status: $e',
+        tag: 'FinalTestService',
+      );
       return false;
     }
   }
 
   /// Get the last test score
   /// Returns null if no test has been taken
+  @override
   Future<int?> getLastTestScore() async {
     try {
       return _storageService.getInt(keyTestScore);
     } catch (e) {
-      print('Warning: Failed to get last test score: $e');
+      AppLogger.warning(
+        'Failed to get last test score: $e',
+        tag: 'FinalTestService',
+      );
       return null;
     }
   }
@@ -1319,7 +1394,10 @@ class Phase5FinalTestService
       }
       return null;
     } catch (e) {
-      print('Warning: Failed to get last test date: $e');
+      AppLogger.warning(
+        'Failed to get last test date: $e',
+        tag: 'FinalTestService',
+      );
       return null;
     }
   }
@@ -1334,6 +1412,7 @@ class Phase5FinalTestService
   /// - 8 Professional Speaking Tasks from all Phase 5 lessons
   ///
   /// Uses fallback hardcoded questions when lesson content is insufficient
+  @override
   Future<List<Phase5FinalTestQuestion>> generateTest() async {
     final random = Random();
     final questions = <Phase5FinalTestQuestion>[];
@@ -1358,7 +1437,10 @@ class Phase5FinalTestService
       // Load Unit 25 lessons for writing questions and speaking prompts
       await _loadUnit25Questions(writingQuestions, speakingPrompts);
     } catch (e) {
-      print('Warning: Error loading lesson content: $e');
+      AppLogger.warning(
+        'Error loading lesson content: $e',
+        tag: 'FinalTestService',
+      );
       // Continue with fallback questions
     }
 
@@ -1431,7 +1513,10 @@ class Phase5FinalTestService
         _extractBusinessEnglishQuestions(lesson, businessQuestions);
         _extractSpeakingPrompts(lesson, speakingPrompts);
       } catch (e) {
-        print('Warning: Failed to load $lessonId: $e');
+        AppLogger.warning(
+        'Failed to load $lessonId: $e',
+        tag: 'FinalTestService',
+      );
       }
     }
   }
@@ -1454,7 +1539,10 @@ class Phase5FinalTestService
         _extractInterviewQuestions(lesson, interviewQuestions);
         _extractSpeakingPrompts(lesson, speakingPrompts);
       } catch (e) {
-        print('Warning: Failed to load $lessonId: $e');
+        AppLogger.warning(
+        'Failed to load $lessonId: $e',
+        tag: 'FinalTestService',
+      );
       }
     }
   }
@@ -1477,7 +1565,10 @@ class Phase5FinalTestService
         _extractPresentationQuestions(lesson, presentationQuestions);
         _extractSpeakingPrompts(lesson, speakingPrompts);
       } catch (e) {
-        print('Warning: Failed to load $lessonId: $e');
+        AppLogger.warning(
+        'Failed to load $lessonId: $e',
+        tag: 'FinalTestService',
+      );
       }
     }
   }
@@ -1500,7 +1591,10 @@ class Phase5FinalTestService
         _extractWritingQuestions(lesson, writingQuestions);
         _extractSpeakingPrompts(lesson, speakingPrompts);
       } catch (e) {
-        print('Warning: Failed to load $lessonId: $e');
+        AppLogger.warning(
+        'Failed to load $lessonId: $e',
+        tag: 'FinalTestService',
+      );
       }
     }
   }
@@ -2326,6 +2420,7 @@ class Phase5FinalTestService
   /// - List of incorrect MCQ answers for review
   ///
   /// Requirements: 7.1, 7.2, 7.3, 8.1
+  @override
   Phase5TestResult calculateResult({
     required List<Phase5FinalTestQuestion> questions,
     required Map<String, int> mcqAnswers,
@@ -2461,6 +2556,7 @@ class Phase5FinalTestService
   /// - englishMasteryCompleted: true if test was passed (marks program completion)
   ///
   /// Requirements: 9.1, 9.2, 9.3, 9.4
+  @override
   Future<void> saveTestResult(Phase5TestResult result) async {
     try {
       // Save pass/fail status
@@ -2478,16 +2574,21 @@ class Phase5FinalTestService
       // If passed, mark English Mastery as completed
       if (result.passed) {
         await _storageService.setBool(keyMasteryCompleted, true);
-        print(
-          'English Mastery Completed! Test passed with score: ${result.totalScore}/${result.maxScore}',
-        );
+        AppLogger.info(
+        'English Mastery Completed! Test passed with score: ${result.totalScore}/${result.maxScore}',
+        tag: 'FinalTestService',
+      );
       } else {
-        print(
-          'Test not passed. Score: ${result.totalScore}/${result.maxScore}',
-        );
+        AppLogger.info(
+        'Test not passed. Score: ${result.totalScore}/${result.maxScore}',
+        tag: 'FinalTestService',
+      );
       }
     } catch (e) {
-      print('Error: Failed to save test result: $e');
+      AppLogger.error(
+        'Failed to save test result: $e',
+        tag: 'FinalTestService',
+      );
       rethrow;
     }
   }

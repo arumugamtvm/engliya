@@ -11,6 +11,7 @@ import '../widgets/lesson_bottom_nav.dart';
 import '../../../../core/widgets/app_error_state.dart';
 import '../../../../core/widgets/app_empty_state.dart';
 import '../../../../core/widgets/app_loading_state.dart';
+import '../../../../core/constants/app_strings.dart';
 
 class LessonScreen extends StatefulWidget {
   final String lessonId;
@@ -86,17 +87,17 @@ class _LessonScreenState extends State<LessonScreen>
 
         if (lessonProvider.isLoading) {
           return Scaffold(
-            appBar: AppBar(title: const Text('Loading...')),
-            body: const AppLoadingState(message: 'Loading lesson...'),
+            appBar: AppBar(title: const Text(AppStrings.loading)),
+            body: const AppLoadingState(message: AppStrings.loadingLesson),
           );
         }
 
         if (lessonProvider.error != null) {
           return Scaffold(
-            appBar: AppBar(title: const Text('Error')),
+            appBar: AppBar(title: const Text(AppStrings.errorTitle)),
             body: AppErrorState(
               message: lessonProvider.error!,
-              retryLabel: 'Retry',
+              retryLabel: AppStrings.tryAgain,
               onRetry: () => lessonProvider.loadLesson(widget.lessonId),
             ),
           );
@@ -107,8 +108,8 @@ class _LessonScreenState extends State<LessonScreen>
           return Scaffold(
             appBar: AppBar(title: const Text('Lesson')),
             body: const AppEmptyState(
-              title: 'No lesson data available',
-              subtitle: 'Please return to lesson list and try again.',
+              title: AppStrings.noLessonData,
+              subtitle: AppStrings.goBackTryAgain,
             ),
           );
         }
@@ -125,11 +126,12 @@ class _LessonScreenState extends State<LessonScreen>
           if (status.isMastered) completedTabs++;
         }
 
-        return WillPopScope(
-          onWillPop: () async {
+        return PopScope(
+          onPopInvokedWithResult: (didPop, result) {
             // Save progress before navigating back
-            await lessonProvider.saveProgress();
-            return true;
+            if (didPop) {
+              lessonProvider.saveProgress();
+            }
           },
           child: Scaffold(
             appBar: AppBar(

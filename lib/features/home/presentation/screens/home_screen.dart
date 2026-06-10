@@ -5,6 +5,7 @@ import '../../../learn/presentation/providers/progress_provider.dart';
 import '../../../../app/theme.dart';
 import '../../../../app/routes.dart';
 import '../../../../core/constants/app_config.dart';
+import '../../../../core/constants/app_strings.dart';
 import '../../../../services/local_storage/storage_service.dart';
 import '../../../../core/widgets/app_error_state.dart';
 import '../../../../core/widgets/app_loading_state.dart';
@@ -104,7 +105,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
           end: Alignment.bottomCenter,
           colors: [
             AppTheme.primaryColor,
-            AppTheme.primaryColor.withOpacity(0.85),
+            AppTheme.primaryColor.withValues(alpha: 0.85),
             AppTheme.scaffoldBackground,
           ],
           stops: const [0.0, 0.30, 0.54],
@@ -185,7 +186,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                   colors: [
                     AppTheme.primaryDark,
                     AppTheme.primaryColor,
-                    AppTheme.accentColor.withOpacity(0.58),
+                    AppTheme.accentColor.withValues(alpha: 0.58),
                   ],
                 ),
               ),
@@ -196,7 +197,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                   child: Container(
                     height: 14,
                     decoration: BoxDecoration(
-                      color: Colors.white.withOpacity(0.14),
+                      color: Colors.white.withValues(alpha: 0.14),
                       borderRadius: const BorderRadius.vertical(
                         top: Radius.circular(20),
                       ),
@@ -241,11 +242,11 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(24),
                 border: Border.all(
-                  color: AppTheme.primaryColor.withOpacity(0.10),
+                  color: AppTheme.primaryColor.withValues(alpha: 0.10),
                 ),
                 boxShadow: [
                   BoxShadow(
-                    color: AppTheme.primaryColor.withOpacity(0.10),
+                    color: AppTheme.primaryColor.withValues(alpha: 0.10),
                     blurRadius: 16,
                     offset: const Offset(0, 8),
                   ),
@@ -262,8 +263,16 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              'Your Progress',
+                              AppStrings.yourProgressEn,
                               style: AppTheme.headline3.copyWith(fontSize: 18),
+                            ),
+                            Text(
+                              AppStrings.yourProgressTa,
+                              style: AppTheme.caption.copyWith(
+                                fontSize: 13,
+                                color: AppTheme.primaryColor,
+                                fontWeight: FontWeight.w600,
+                              ),
                             ),
                             const SizedBox(height: AppTheme.spacingXS),
                             Text(
@@ -330,7 +339,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
           height: 92,
           padding: const EdgeInsets.all(6),
           decoration: BoxDecoration(
-            color: AppTheme.primaryColor.withOpacity(0.06),
+            color: AppTheme.primaryColor.withValues(alpha: 0.06),
             shape: BoxShape.circle,
           ),
           child: Stack(
@@ -398,9 +407,9 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
       decoration: BoxDecoration(
-        color: color.withOpacity(0.08),
+        color: color.withValues(alpha: 0.08),
         borderRadius: BorderRadius.circular(14),
-        border: Border.all(color: color.withOpacity(0.20)),
+        border: Border.all(color: color.withValues(alpha: 0.20)),
       ),
       child: Column(
         children: [
@@ -476,7 +485,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
             gradient: LinearGradient(
               colors: [
                 AppTheme.accentColor,
-                AppTheme.accentColor.withOpacity(0.86),
+                AppTheme.accentColor.withValues(alpha: 0.86),
               ],
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
@@ -484,7 +493,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
             borderRadius: BorderRadius.circular(24),
             boxShadow: [
               BoxShadow(
-                color: AppTheme.accentColor.withOpacity(0.20),
+                color: AppTheme.accentColor.withValues(alpha: 0.20),
                 blurRadius: 14,
                 offset: const Offset(0, 8),
               ),
@@ -501,10 +510,10 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                       width: 64,
                       height: 64,
                       decoration: BoxDecoration(
-                        color: Colors.white.withOpacity(0.18),
+                        color: Colors.white.withValues(alpha: 0.18),
                         borderRadius: BorderRadius.circular(16),
                         border: Border.all(
-                          color: Colors.white.withOpacity(0.20),
+                          color: Colors.white.withValues(alpha: 0.20),
                         ),
                       ),
                       child: const Icon(
@@ -525,7 +534,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                     Text(
                       'Continue Learning',
                       style: AppTheme.caption.copyWith(
-                        color: Colors.white.withOpacity(0.90),
+                        color: Colors.white.withValues(alpha: 0.90),
                         fontWeight: FontWeight.w600,
                         fontSize: 14,
                       ),
@@ -572,7 +581,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
             context: context,
             index: 0,
             title: 'Phase 1',
-            subtitle: 'Foundation',
+            subtitle: AppStrings.phaseFoundationLabel,
             description: 'Core lessons from assets',
             icon: Icons.foundation,
             color: AppTheme.primaryColor,
@@ -587,7 +596,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
             context: context,
             index: 1,
             title: 'Phase 2',
-            subtitle: 'Intermediate',
+            subtitle: AppStrings.phaseIntermediateLabel,
             description: 'Lessons loaded from assets',
             icon: Icons.trending_up,
             color: Colors.indigo,
@@ -604,7 +613,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
             context: context,
             index: 2,
             title: 'Phase 3',
-            subtitle: 'Real-Life',
+            subtitle: AppStrings.phaseRealLifeLabel,
             description: 'Lessons loaded from assets',
             icon: Icons.chat_bubble,
             color: Colors.purple,
@@ -621,7 +630,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
             context: context,
             index: 3,
             title: 'Phase 4',
-            subtitle: 'Fluency',
+            subtitle: AppStrings.phaseFluencyLabel,
             description: 'Lessons loaded from assets',
             icon: Icons.record_voice_over,
             color: Colors.teal,
@@ -635,7 +644,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
             context: context,
             index: 4,
             title: 'Phase 5',
-            subtitle: 'Professional',
+            subtitle: AppStrings.phaseProfessionalLabel,
             description: 'Lessons loaded from assets',
             icon: Icons.workspace_premium,
             color: Colors.deepOrange,
@@ -717,13 +726,13 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
             borderRadius: BorderRadius.circular(24),
             border: Border.all(
               color: isUnlocked
-                  ? color.withOpacity(0.32)
-                  : Colors.grey.withOpacity(0.25),
+                  ? color.withValues(alpha: 0.32)
+                  : Colors.grey.withValues(alpha: 0.25),
               width: 2,
             ),
             boxShadow: [
               BoxShadow(
-                color: (isUnlocked ? color : Colors.grey).withOpacity(0.08),
+                color: (isUnlocked ? color : Colors.grey).withValues(alpha: 0.08),
                 blurRadius: 10,
                 offset: const Offset(0, 5),
               ),
@@ -736,7 +745,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                 height: 68,
                 decoration: BoxDecoration(
                   gradient: isUnlocked
-                      ? LinearGradient(colors: [color, color.withOpacity(0.70)])
+                      ? LinearGradient(colors: [color, color.withValues(alpha: 0.70)])
                       : LinearGradient(
                           colors: [Colors.grey[400]!, Colors.grey[300]!],
                         ),
@@ -756,37 +765,37 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                   children: [
                     Row(
                       children: [
-                        Expanded(
-                          child: Text(
-                            title,
-                            style: AppTheme.headline3.copyWith(
-                              fontSize: 20,
-                              height: 1.2,
-                            ),
-                            maxLines: 1,
-                            overflow: TextOverflow.ellipsis,
+                        Text(
+                          title,
+                          style: AppTheme.headline3.copyWith(
+                            fontSize: 20,
+                            height: 1.2,
                           ),
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
                         ),
                         const SizedBox(width: AppTheme.spacingS),
-                        Container(
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 10,
-                            vertical: 5,
-                          ),
-                          decoration: BoxDecoration(
-                            color: (isUnlocked ? color : Colors.grey)
-                                .withOpacity(0.12),
-                            borderRadius: BorderRadius.circular(12),
-                          ),
-                          child: Text(
-                            subtitle,
-                            style: TextStyle(
-                              fontSize: 11.5,
-                              fontWeight: FontWeight.w700,
-                              color: isUnlocked ? color : Colors.grey[700],
+                        Flexible(
+                          child: Container(
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 10,
+                              vertical: 5,
                             ),
-                            maxLines: 1,
-                            overflow: TextOverflow.ellipsis,
+                            decoration: BoxDecoration(
+                              color: (isUnlocked ? color : Colors.grey)
+                                  .withValues(alpha: 0.12),
+                              borderRadius: BorderRadius.circular(12),
+                            ),
+                            child: Text(
+                              subtitle,
+                              style: TextStyle(
+                                fontSize: 11.5,
+                                fontWeight: FontWeight.w700,
+                                color: isUnlocked ? color : Colors.grey[700],
+                              ),
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
+                            ),
                           ),
                         ),
                       ],
@@ -803,11 +812,12 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                     if (!isUnlocked) ...[
                       const SizedBox(height: 6),
                       Text(
-                        'Complete previous phase to unlock',
+                        AppStrings.lockedPhase,
                         style: AppTheme.caption.copyWith(
                           fontSize: 12,
                           color: Colors.orange[800],
                           fontWeight: FontWeight.w600,
+                          height: 1.35,
                         ),
                       ),
                     ],
@@ -831,8 +841,9 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     return FutureBuilder<Map<String, dynamic>>(
       future: _getPhase1TestStatus(context),
       builder: (context, snapshot) {
-        if (snapshot.connectionState == ConnectionState.waiting)
+        if (snapshot.connectionState == ConnectionState.waiting) {
           return const SizedBox.shrink();
+        }
         final data = snapshot.data ?? {};
         final hasPassedTest = data['passed'] ?? false;
         final testScore = data['score'] as int?;
@@ -868,8 +879,8 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
               ? Navigator.pushNamed(context, AppRoutes.phase1FinalTest)
               : _showLockedDialog(
                   context,
-                  'Phase 1 Test Locked',
-                  'Master all Phase 1 lessons first.',
+                  AppStrings.phaseTestLockedTitle(1),
+                  AppStrings.masterAllPhaseLessonsFirst(1),
                 ),
         );
       },
@@ -914,8 +925,8 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
               ? Navigator.pushNamed(context, AppRoutes.phase2FinalTest)
               : _showLockedDialog(
                   context,
-                  'Phase 2 Test Locked',
-                  'Master all Phase 2 lessons first.',
+                  AppStrings.phaseTestLockedTitle(2),
+                  AppStrings.masterAllPhaseLessonsFirst(2),
                 ),
         );
       },
@@ -926,8 +937,9 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     return FutureBuilder<Map<String, dynamic>>(
       future: _getPhase3TestStatus(context),
       builder: (context, snapshot) {
-        if (snapshot.connectionState == ConnectionState.waiting)
+        if (snapshot.connectionState == ConnectionState.waiting) {
           return const SizedBox.shrink();
+        }
         final data = snapshot.data ?? {};
         final hasPassedTest = data['passed'] ?? false;
         final testScore = data['score'] as int?;
@@ -963,8 +975,8 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
               ? Navigator.pushNamed(context, AppRoutes.phase3FinalTest)
               : _showLockedDialog(
                   context,
-                  'Phase 3 Test Locked',
-                  'Master all Phase 3 lessons first.',
+                  AppStrings.phaseTestLockedTitle(3),
+                  AppStrings.masterAllPhaseLessonsFirst(3),
                 ),
         );
       },
@@ -989,10 +1001,10 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
           margin: const EdgeInsets.only(left: 82),
           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
           decoration: BoxDecoration(
-            color: statusColor.withOpacity(0.10),
+            color: statusColor.withValues(alpha: 0.10),
             borderRadius: BorderRadius.circular(18),
             border: Border.all(
-              color: statusColor.withOpacity(0.35),
+              color: statusColor.withValues(alpha: 0.35),
               width: 1.4,
             ),
           ),
@@ -1094,13 +1106,19 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
       builder: (context) => AlertDialog(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
         title: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const Icon(Icons.lock, color: Colors.orange),
             const SizedBox(width: 8),
-            Text(title),
+            Expanded(
+              child: Text(
+                title,
+                style: const TextStyle(fontSize: 18, height: 1.3),
+              ),
+            ),
           ],
         ),
-        content: Text(message),
+        content: Text(message, style: const TextStyle(height: 1.45)),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
@@ -1115,8 +1133,8 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     if (!isUnlocked) {
       _showLockedDialog(
         context,
-        'Phase 2 Locked',
-        'Complete Phase 1 Final Test to unlock Phase 2.',
+        AppStrings.phaseLockedTitle(2),
+        AppStrings.completeFinalTestToUnlock(1, 2),
       );
     } else {
       Navigator.pushNamed(context, AppRoutes.phase2Unit);
@@ -1127,8 +1145,8 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     if (!isUnlocked) {
       _showLockedDialog(
         context,
-        'Phase 3 Locked',
-        'Complete Phase 2 Final Test to unlock Phase 3.',
+        AppStrings.phaseLockedTitle(3),
+        AppStrings.completeFinalTestToUnlock(2, 3),
       );
     } else {
       Navigator.pushNamed(context, AppRoutes.phase3Unit);
@@ -1139,8 +1157,8 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     if (!isUnlocked) {
       _showLockedDialog(
         context,
-        'Phase 4 Locked',
-        'Finish Phase 3 Final Test to unlock Phase 4 Fluency Training.',
+        AppStrings.phaseLockedTitle(4),
+        AppStrings.completeFinalTestToUnlock(3, 4),
       );
     } else {
       Navigator.pushNamed(context, AppRoutes.phase4Unit);
@@ -1151,8 +1169,8 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     if (!isUnlocked) {
       _showLockedDialog(
         context,
-        'Phase 5 Locked',
-        'Finish Phase 4 Final Test to unlock Phase 5 Professional English.',
+        AppStrings.phaseLockedTitle(5),
+        AppStrings.completeFinalTestToUnlock(4, 5),
       );
     } else {
       Navigator.pushNamed(context, AppRoutes.phase5Unit);

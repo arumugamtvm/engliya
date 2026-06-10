@@ -3,9 +3,6 @@ import 'dart:math';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:kiri_check/kiri_check.dart';
 import 'package:engliya/features/learn/domain/entities/phase_config.dart';
-import 'package:engliya/features/learn/domain/entities/test_question.dart';
-import 'package:engliya/features/learn/domain/entities/test_result.dart';
-import 'package:engliya/features/learn/domain/repositories/test_repository.dart';
 import 'package:engliya/features/learn/data/repositories/test_repository_impl.dart';
 import 'package:engliya/features/learn/data/repositories/lesson_repository.dart';
 import 'package:engliya/features/learn/data/models/lesson.dart';
@@ -279,8 +276,6 @@ void main() {
             final questions = await repository.generateTest(config1);
 
             // Verify no questions have lessonIds from phase 2
-            final phase2LessonIds = config2.lessonToUnitMapping.keys.toSet();
-
             for (final question in questions) {
               // Only check if the lesson ID patterns are different
               // (e.g., phase1_lesson1 vs phase2_lesson7_1)

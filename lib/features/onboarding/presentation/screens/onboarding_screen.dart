@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../../../app/theme.dart';
 import '../../../../app/routes.dart';
+import '../../../../core/constants/app_strings.dart';
 import '../../data/models/user_level.dart';
 import '../providers/onboarding_provider.dart';
 
@@ -42,7 +43,7 @@ class OnboardingScreen extends StatelessWidget {
                             borderRadius: BorderRadius.circular(28),
                             boxShadow: [
                               BoxShadow(
-                                color: AppTheme.primaryColor.withOpacity(0.4),
+                                color: AppTheme.primaryColor.withValues(alpha: 0.4),
                                 blurRadius: 20,
                                 offset: const Offset(0, 8),
                               ),
@@ -56,15 +57,27 @@ class OnboardingScreen extends StatelessWidget {
                         ),
                         const SizedBox(height: 32),
                         Text(
-                          'Welcome to Engliya',
+                          AppStrings.welcomeTitleEn,
                           style: AppTheme.headline1.copyWith(fontSize: 34),
+                          textAlign: TextAlign.center,
+                        ),
+                        const SizedBox(height: 6),
+                        Text(
+                          AppStrings.welcomeTitleTa,
+                          style: AppTheme.headline2.copyWith(
+                            fontSize: 20,
+                            color: AppTheme.primaryColor,
+                          ),
                           textAlign: TextAlign.center,
                         ),
                         const SizedBox(height: 12),
                         Text(
-                          'Learn English step by step',
+                          AppStrings.bilingual(
+                            AppStrings.welcomeSubtitleEn,
+                            AppStrings.welcomeSubtitleTa,
+                          ),
                           style: AppTheme.bodyText1.copyWith(
-                            fontSize: 18,
+                            fontSize: 16,
                             color: Colors.grey[600],
                           ),
                           textAlign: TextAlign.center,
@@ -79,12 +92,24 @@ class OnboardingScreen extends StatelessWidget {
                   flex: 3,
                   child: Column(
                     children: [
-                      const Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 24),
-                        child: Text(
-                          'Choose your level',
-                          style: AppTheme.headline2,
-                          textAlign: TextAlign.center,
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 24),
+                        child: Column(
+                          children: [
+                            const Text(
+                              AppStrings.chooseLevelEn,
+                              style: AppTheme.headline2,
+                              textAlign: TextAlign.center,
+                            ),
+                            const SizedBox(height: 4),
+                            Text(
+                              AppStrings.chooseLevelTa,
+                              style: AppTheme.bodyText2.copyWith(
+                                color: Colors.grey[700],
+                              ),
+                              textAlign: TextAlign.center,
+                            ),
+                          ],
                         ),
                       ),
                       const SizedBox(height: 24),
@@ -152,7 +177,10 @@ class OnboardingScreen extends StatelessWidget {
                                     ),
                                   ),
                                 )
-                              : const Text('Continue'),
+                              : const Text(
+                                  AppStrings.continueLabel,
+                                  textAlign: TextAlign.center,
+                                ),
                         ),
                       ),
                     ],
@@ -211,8 +239,8 @@ class _LevelSelectionCard extends StatelessWidget {
               ? BoxDecoration(
                   gradient: LinearGradient(
                     colors: [
-                      AppTheme.primaryColor.withOpacity(0.08),
-                      AppTheme.accentColor.withOpacity(0.04),
+                      AppTheme.primaryColor.withValues(alpha: 0.08),
+                      AppTheme.accentColor.withValues(alpha: 0.04),
                     ],
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight,
@@ -239,7 +267,7 @@ class _LevelSelectionCard extends StatelessWidget {
                   boxShadow: isSelected
                       ? [
                           BoxShadow(
-                            color: AppTheme.primaryColor.withOpacity(0.3),
+                            color: AppTheme.primaryColor.withValues(alpha: 0.3),
                             blurRadius: 8,
                             offset: const Offset(0, 2),
                           ),
@@ -262,9 +290,9 @@ class _LevelSelectionCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      level.name,
+                      level.displayName,
                       style: AppTheme.headline2.copyWith(
-                        fontSize: 20,
+                        fontSize: 18,
                         fontWeight: isSelected ? FontWeight.bold : FontWeight.w600,
                         color: isSelected
                             ? AppTheme.primaryColor
@@ -273,10 +301,11 @@ class _LevelSelectionCard extends StatelessWidget {
                     ),
                     const SizedBox(height: 6),
                     Text(
-                      level.description,
+                      level.displayDescription,
                       style: AppTheme.bodyText2.copyWith(
                         color: Colors.grey.shade600,
-                        fontSize: 15,
+                        fontSize: 14,
+                        height: 1.4,
                       ),
                     ),
                   ],

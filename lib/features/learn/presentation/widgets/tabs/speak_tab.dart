@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../providers/lesson_provider.dart';
 import '../../../../../app/theme.dart';
+import '../../../../../core/constants/app_strings.dart';
 import 'dart:async';
 
 /// Speak tab widget with enhanced UI and mock scoring
@@ -112,7 +113,7 @@ class _SpeakTabState extends State<SpeakTab> with TickerProviderStateMixin {
         final variations = [
           words.join(' ').toLowerCase(), // All lowercase
           words.map((w) => w.toLowerCase()).join(' '), // Lowercase words
-          words.sublist(0, words.length - 1).join(' ') + ' ' + words.last.toLowerCase(),
+          '${words.sublist(0, words.length - 1).join(' ')} ${words.last.toLowerCase()}',
         ];
         return variations[_random.nextInt(variations.length)];
       }
@@ -122,7 +123,7 @@ class _SpeakTabState extends State<SpeakTab> with TickerProviderStateMixin {
       if (words.length > 2) {
         final variations = [
           words.sublist(0, words.length - 1).join(' '), // Missing last word
-          words.first + ' ... ' + words.last, // Missing middle
+          '${words.first} ... ${words.last}', // Missing middle
           words.map((w) => w.toLowerCase()).take(words.length - 1).join(' '),
         ];
         return variations[_random.nextInt(variations.length)];
@@ -135,15 +136,15 @@ class _SpeakTabState extends State<SpeakTab> with TickerProviderStateMixin {
       if (words.length > 1) {
         final variations = [
           words.first.toLowerCase(), // Only first word
-          words.first.toLowerCase() + '...', // Incomplete
-          '...' + words.last.toLowerCase(), // Only last word
+          '${words.first.toLowerCase()}...', // Incomplete
+          '...${words.last.toLowerCase()}', // Only last word
         ];
         return variations[_random.nextInt(variations.length)];
       }
-      return expected.substring(0, (expected.length * 0.6).toInt()) + '...';
+      return '${expected.substring(0, (expected.length * 0.6).toInt())}...';
     } else {
       // Very poor: Barely recognized
-      return words.isNotEmpty ? words.first.toLowerCase() + '...' : 'unclear speech';
+      return words.isNotEmpty ? '${words.first.toLowerCase()}...' : 'unclear speech';
     }
   }
 
@@ -169,7 +170,12 @@ class _SpeakTabState extends State<SpeakTab> with TickerProviderStateMixin {
     final lesson = lessonProvider.currentLesson;
 
     if (lesson == null) {
-      return const Center(child: Text('No lesson data available'));
+      return const Center(
+        child: Text(
+          AppStrings.noLessonData,
+          textAlign: TextAlign.center,
+        ),
+      );
     }
 
     final sentences = lesson.speakSentences;
@@ -197,8 +203,8 @@ class _SpeakTabState extends State<SpeakTab> with TickerProviderStateMixin {
           decoration: BoxDecoration(
             gradient: LinearGradient(
               colors: [
-                AppTheme.primaryColor.withOpacity(0.1),
-                AppTheme.accentColor.withOpacity(0.05),
+                AppTheme.primaryColor.withValues(alpha: 0.1),
+                AppTheme.accentColor.withValues(alpha: 0.05),
               ],
             ),
           ),
@@ -207,7 +213,7 @@ class _SpeakTabState extends State<SpeakTab> with TickerProviderStateMixin {
               Container(
                 padding: const EdgeInsets.all(8),
                 decoration: BoxDecoration(
-                  color: AppTheme.primaryColor.withOpacity(0.2),
+                  color: AppTheme.primaryColor.withValues(alpha: 0.2),
                   shape: BoxShape.circle,
                 ),
                 child: const Icon(
@@ -222,9 +228,18 @@ class _SpeakTabState extends State<SpeakTab> with TickerProviderStateMixin {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Practice at least 3 sentences with 70%+ average',
+                      AppStrings.speakRuleEn,
                       style: AppTheme.bodyText1.copyWith(
                         fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    const SizedBox(height: 2),
+                    Text(
+                      AppStrings.speakRuleTa,
+                      style: AppTheme.bodyText2.copyWith(
+                        fontSize: 14,
+                        color: AppTheme.primaryColor,
+                        fontWeight: FontWeight.w600,
                       ),
                     ),
                     const SizedBox(height: 4),
@@ -241,7 +256,7 @@ class _SpeakTabState extends State<SpeakTab> with TickerProviderStateMixin {
                 Container(
                   padding: const EdgeInsets.all(8),
                   decoration: BoxDecoration(
-                    color: AppTheme.correctColor.withOpacity(0.2),
+                    color: AppTheme.correctColor.withValues(alpha: 0.2),
                     shape: BoxShape.circle,
                   ),
                   child: const Icon(
@@ -272,7 +287,7 @@ class _SpeakTabState extends State<SpeakTab> with TickerProviderStateMixin {
                   borderRadius: BorderRadius.circular(16),
                   side: BorderSide(
                     color: hasAttempted
-                        ? AppTheme.primaryColor.withOpacity(0.5)
+                        ? AppTheme.primaryColor.withValues(alpha: 0.5)
                         : Colors.transparent,
                     width: 2,
                   ),
@@ -291,7 +306,7 @@ class _SpeakTabState extends State<SpeakTab> with TickerProviderStateMixin {
                               vertical: 6,
                             ),
                             decoration: BoxDecoration(
-                              color: AppTheme.primaryColor.withOpacity(0.1),
+                              color: AppTheme.primaryColor.withValues(alpha: 0.1),
                               borderRadius: BorderRadius.circular(20),
                             ),
                             child: Text(
@@ -311,15 +326,15 @@ class _SpeakTabState extends State<SpeakTab> with TickerProviderStateMixin {
                               ),
                               decoration: BoxDecoration(
                                 gradient: LinearGradient(
-                                  colors: score! >= 70
-                                      ? [AppTheme.correctColor, AppTheme.correctColor.withOpacity(0.8)]
-                                      : [AppTheme.warningColor, AppTheme.warningColor.withOpacity(0.8)],
+                                  colors: score >= 70
+                                      ? [AppTheme.correctColor, AppTheme.correctColor.withValues(alpha: 0.8)]
+                                      : [AppTheme.warningColor, AppTheme.warningColor.withValues(alpha: 0.8)],
                                 ),
                                 borderRadius: BorderRadius.circular(20),
                                 boxShadow: [
                                   BoxShadow(
                                     color: (score >= 70 ? AppTheme.correctColor : AppTheme.warningColor)
-                                        .withOpacity(0.3),
+                                        .withValues(alpha: 0.3),
                                     blurRadius: 8,
                                     offset: const Offset(0, 2),
                                   ),
@@ -359,12 +374,14 @@ class _SpeakTabState extends State<SpeakTab> with TickerProviderStateMixin {
                                   color: AppTheme.primaryColor,
                                 ),
                                 const SizedBox(width: 8),
-                                Text(
-                                  'Say this:',
-                                  style: AppTheme.bodyText2.copyWith(
-                                    color: AppTheme.primaryColor,
-                                    fontWeight: FontWeight.w600,
-                                    fontSize: 14,
+                                Expanded(
+                                  child: Text(
+                                    AppStrings.sayThis,
+                                    style: AppTheme.bodyText2.copyWith(
+                                      color: AppTheme.primaryColor,
+                                      fontWeight: FontWeight.w600,
+                                      fontSize: 14,
+                                    ),
                                   ),
                                 ),
                               ],
@@ -410,8 +427,14 @@ class _SpeakTabState extends State<SpeakTab> with TickerProviderStateMixin {
                             size: 28,
                           ),
                           label: Text(
-                            isRecording ? 'Listening...' : 'Tap to Speak',
-                            style: AppTheme.buttonText.copyWith(fontSize: 16),
+                            isRecording
+                                ? AppStrings.listening
+                                : AppStrings.tapToSpeak,
+                            textAlign: TextAlign.center,
+                            style: AppTheme.buttonText.copyWith(
+                              fontSize: 15,
+                              height: 1.3,
+                            ),
                           ),
                           style: ElevatedButton.styleFrom(
                             backgroundColor: isRecording
@@ -434,7 +457,7 @@ class _SpeakTabState extends State<SpeakTab> with TickerProviderStateMixin {
                       // Result display
                       if (hasAttempted) ...[
                         const SizedBox(height: 20),
-                        _buildResultDisplay(index, sentence.en, score!),
+                        _buildResultDisplay(index, sentence.en, score),
                       ],
                     ],
                   ),
@@ -454,7 +477,7 @@ class _SpeakTabState extends State<SpeakTab> with TickerProviderStateMixin {
       height: 80,
       padding: const EdgeInsets.symmetric(horizontal: 20),
       decoration: BoxDecoration(
-        color: AppTheme.primaryColor.withOpacity(0.05),
+        color: AppTheme.primaryColor.withValues(alpha: 0.05),
         borderRadius: BorderRadius.circular(12),
       ),
       child: Row(
@@ -507,8 +530,8 @@ class _SpeakTabState extends State<SpeakTab> with TickerProviderStateMixin {
       decoration: BoxDecoration(
         gradient: LinearGradient(
           colors: [
-            scoreColor.withOpacity(0.1),
-            scoreColor.withOpacity(0.05),
+            scoreColor.withValues(alpha: 0.1),
+            scoreColor.withValues(alpha: 0.05),
           ],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
@@ -539,14 +562,15 @@ class _SpeakTabState extends State<SpeakTab> with TickerProviderStateMixin {
               Expanded(
                 child: Text(
                   isExcellent
-                      ? 'Excellent! 🎉'
+                      ? AppStrings.excellent
                       : isGoodScore
-                          ? 'Great job! 👍'
+                          ? AppStrings.greatJob
                           : isFairScore
-                              ? 'Good try! Keep practicing 💪'
-                              : 'Try again! Listen carefully 🎧',
+                              ? AppStrings.goodTry
+                              : AppStrings.tryAgainListen,
                   style: AppTheme.headline3.copyWith(
-                    fontSize: 20,
+                    fontSize: isGoodScore ? 18 : 15,
+                    height: 1.3,
                     color: scoreColor,
                   ),
                 ),
@@ -651,10 +675,10 @@ class _SpeakTabState extends State<SpeakTab> with TickerProviderStateMixin {
             Container(
               padding: const EdgeInsets.all(14),
               decoration: BoxDecoration(
-                color: AppTheme.infoColor.withOpacity(0.1),
+                color: AppTheme.infoColor.withValues(alpha: 0.1),
                 borderRadius: BorderRadius.circular(12),
                 border: Border.all(
-                  color: AppTheme.infoColor.withOpacity(0.3),
+                  color: AppTheme.infoColor.withValues(alpha: 0.3),
                   width: 1,
                 ),
               ),

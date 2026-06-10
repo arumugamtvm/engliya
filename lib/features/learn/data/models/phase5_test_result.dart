@@ -396,10 +396,10 @@ class Phase5TestResult {
     required DateTime completedAt,
     required List<Phase5IncorrectAnswer> incorrectMcqAnswers,
     required List<Phase5SpeakingResult> speakingResults,
-    double listeningPercent = 70,
-    double readingGrammarPercent = 70,
-    double speakingPercent = 70,
-    double writingPercent = 70,
+    required double listeningPercent,
+    required double readingGrammarPercent,
+    required double speakingPercent,
+    required double writingPercent,
   }) {
     final totalScore = mcqCorrect + speakingScore;
     final percentage = (totalScore / maxPossibleScore) * 100;

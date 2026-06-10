@@ -1,3 +1,5 @@
+import '../../../../core/constants/app_strings.dart';
+
 /// Model representing a user's learning level
 class UserLevel {
   final String id;
@@ -9,6 +11,44 @@ class UserLevel {
     required this.name,
     required this.description,
   });
+
+  /// Bilingual display name (English / Tamil) for UI only.
+  /// Stored [name] and serialized values are unchanged.
+  String get displayName {
+    switch (id) {
+      case 'beginner':
+        return AppStrings.inline(
+          AppStrings.levelBeginnerEn,
+          AppStrings.levelBeginnerTa,
+        );
+      case 'school_student':
+        return AppStrings.inline(
+          AppStrings.levelSchoolStudentEn,
+          AppStrings.levelSchoolStudentTa,
+        );
+      default:
+        return name;
+    }
+  }
+
+  /// Bilingual display description (English + Tamil on two lines) for UI
+  /// only. Stored [description] and serialized values are unchanged.
+  String get displayDescription {
+    switch (id) {
+      case 'beginner':
+        return AppStrings.bilingual(
+          AppStrings.levelBeginnerDescEn,
+          AppStrings.levelBeginnerDescTa,
+        );
+      case 'school_student':
+        return AppStrings.bilingual(
+          AppStrings.levelSchoolStudentDescEn,
+          AppStrings.levelSchoolStudentDescTa,
+        );
+      default:
+        return description;
+    }
+  }
 
   // Predefined levels
   static const UserLevel beginner = UserLevel(

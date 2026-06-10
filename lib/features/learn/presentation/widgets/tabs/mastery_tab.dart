@@ -4,7 +4,9 @@ import '../../providers/lesson_provider.dart';
 import '../../providers/progress_provider.dart';
 import '../../../services/mastery_service.dart';
 import '../../../data/models/quiz_question.dart';
+import '../../../data/models/user_lesson_status.dart';
 import '../../../../../app/theme.dart';
+import '../../../../../core/constants/app_strings.dart';
 
 enum MasteryTestLifecycle {
   preTest,
@@ -131,7 +133,12 @@ class _MasteryTabState extends State<MasteryTab> {
     final status = lessonProvider.currentStatus;
 
     if (lesson == null || status == null) {
-      return const Center(child: Text('No lesson data available'));
+      return const Center(
+        child: Text(
+          AppStrings.noLessonData,
+          textAlign: TextAlign.center,
+        ),
+      );
     }
 
     if (_lifecycle == MasteryTestLifecycle.preTest) {
@@ -141,7 +148,7 @@ class _MasteryTabState extends State<MasteryTab> {
     return _buildTestView();
   }
 
-  Widget _buildSummaryView(status) {
+  Widget _buildSummaryView(UserLessonStatus status) {
     return SingleChildScrollView(
       padding: const EdgeInsets.all(16),
       child: Column(
@@ -162,8 +169,18 @@ class _MasteryTabState extends State<MasteryTab> {
                   ),
                   const SizedBox(height: 8),
                   Text(
-                    'Complete this test with 80% or higher to master this lesson',
+                    AppStrings.masteryRuleEn,
                     style: AppTheme.bodyText2.copyWith(color: Colors.grey[700]),
+                    textAlign: TextAlign.center,
+                  ),
+                  const SizedBox(height: 6),
+                  Text(
+                    AppStrings.masteryRuleTa,
+                    style: AppTheme.bodyText2.copyWith(
+                      fontSize: 14,
+                      color: AppTheme.primaryColor,
+                      fontWeight: FontWeight.w600,
+                    ),
                     textAlign: TextAlign.center,
                   ),
                 ],
@@ -226,7 +243,7 @@ class _MasteryTabState extends State<MasteryTab> {
           children: [
             Container(
               padding: const EdgeInsets.all(12),
-              decoration: BoxDecoration(color: color.withOpacity(0.1), shape: BoxShape.circle),
+              decoration: BoxDecoration(color: color.withValues(alpha: 0.1), shape: BoxShape.circle),
               child: Icon(icon, color: color, size: 24),
             ),
             const SizedBox(width: 16),
@@ -259,7 +276,7 @@ class _MasteryTabState extends State<MasteryTab> {
       children: [
         Container(
           padding: const EdgeInsets.all(16),
-          color: AppTheme.primaryColor.withOpacity(0.1),
+          color: AppTheme.primaryColor.withValues(alpha: 0.1),
           child: Row(
             children: [
               Icon(Icons.emoji_events, color: AppTheme.primaryColor, size: 24),
@@ -286,7 +303,7 @@ class _MasteryTabState extends State<MasteryTab> {
             margin: const EdgeInsets.all(16),
             padding: const EdgeInsets.all(20),
             decoration: BoxDecoration(
-              color: isPass ? AppTheme.correctColor.withOpacity(0.1) : AppTheme.incorrectColor.withOpacity(0.1),
+              color: isPass ? AppTheme.correctColor.withValues(alpha: 0.1) : AppTheme.incorrectColor.withValues(alpha: 0.1),
               borderRadius: BorderRadius.circular(12),
               border: Border.all(color: isPass ? AppTheme.correctColor : AppTheme.incorrectColor, width: 2),
             ),
@@ -299,8 +316,9 @@ class _MasteryTabState extends State<MasteryTab> {
                 ),
                 const SizedBox(height: 12),
                 Text(
-                  isPass ? 'Lesson Mastered!' : 'Keep Practicing',
+                  isPass ? AppStrings.lessonMastered : AppStrings.keepPracticing,
                   style: AppTheme.bodyText1.copyWith(fontWeight: FontWeight.bold),
+                  textAlign: TextAlign.center,
                 ),
                 const SizedBox(height: 8),
                 Text(
@@ -313,9 +331,12 @@ class _MasteryTabState extends State<MasteryTab> {
                 const SizedBox(height: 8),
                 Text(
                   isPass
-                      ? 'Congratulations! You mastered this lesson.'
-                      : 'You need 80% or higher to master this lesson.',
-                  style: AppTheme.bodyText2.copyWith(color: Colors.grey[700]),
+                      ? AppStrings.masteryPassedDetail
+                      : AppStrings.masteryFailedDetail,
+                  style: AppTheme.bodyText2.copyWith(
+                    color: Colors.grey[700],
+                    height: 1.5,
+                  ),
                   textAlign: TextAlign.center,
                 ),
                 const SizedBox(height: 4),
@@ -336,7 +357,9 @@ class _MasteryTabState extends State<MasteryTab> {
                               child: CircularProgressIndicator(strokeWidth: 2, color: Colors.white),
                             )
                           : const Icon(Icons.refresh),
-                      label: Text(_isResetting ? 'Restarting...' : 'Try Again'),
+                      label: Text(
+                        _isResetting ? 'Restarting...' : AppStrings.tryAgain,
+                      ),
                     ),
                   ),
                 ],
@@ -360,7 +383,7 @@ class _MasteryTabState extends State<MasteryTab> {
                   borderRadius: BorderRadius.circular(12),
                   side: BorderSide(
                     color: isAnswered
-                        ? (isCorrect ? AppTheme.correctColor.withOpacity(0.3) : AppTheme.incorrectColor.withOpacity(0.3))
+                        ? (isCorrect ? AppTheme.correctColor.withValues(alpha: 0.3) : AppTheme.incorrectColor.withValues(alpha: 0.3))
                         : Colors.transparent,
                     width: 2,
                   ),
@@ -408,7 +431,7 @@ class _MasteryTabState extends State<MasteryTab> {
                               icon = Icons.cancel;
                             }
                           } else if (isCorrectOption) {
-                            buttonColor = AppTheme.correctColor.withOpacity(0.3);
+                            buttonColor = AppTheme.correctColor.withValues(alpha: 0.3);
                             textColor = AppTheme.correctColor;
                             icon = Icons.check_circle;
                           }

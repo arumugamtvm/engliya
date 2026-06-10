@@ -44,7 +44,7 @@ class McqUnitBreakdownStyle {
     this.borderWidth = 1,
   });
 
-  _PerformanceStyle resolve(double accuracy) {
+  _PerformanceStyle _resolve(double accuracy) {
     if (accuracy >= highThreshold) {
       return _PerformanceStyle(
         color: highColor,
@@ -609,7 +609,7 @@ class _McqFinalTestResultScreenState extends State<McqFinalTestResultScreen>
     }
 
     final accuracy = (correctAnswers / totalQuestions) * 100;
-    final performance = style.resolve(accuracy);
+    final performance = style._resolve(accuracy);
     final displayName =
         item.displayName ?? unitPerformance?.unitName ?? item.unitId;
 

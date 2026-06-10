@@ -2,6 +2,7 @@ import '../data/models/user_lesson_status.dart';
 import '../data/repositories/progress_repository.dart';
 import '../../../services/local_storage/storage_service.dart';
 import '../../../core/constants/app_config.dart';
+import '../../../core/logging/app_logger.dart';
 
 /// Service for managing debug mode operations
 /// Provides functionality to bypass gating logic, unlock all content, and reset progress
@@ -22,9 +23,12 @@ class DebugService {
   static const String _keyPhase1TestPassed = 'phase1_final_test_passed';
   static const String _keyPhase2TestPassed = 'phase2_final_test_passed';
   static const String _keyPhase3TestPassed = 'phase3_final_test_passed';
+  static const String _keyPhase4TestPassed = 'phase4_final_test_passed';
+  static const String _keyPhase5TestPassed = 'phase5_final_test_passed';
   static const String _keyPhase2Unlocked = 'phase2_unlocked';
   static const String _keyPhase3Unlocked = 'phase3_unlocked';
   static const String _keyPhase4Unlocked = 'phase4_unlocked';
+  static const String _keyPhase5Unlocked = 'phase5_unlocked';
 
   // Storage keys for test scores
   static const String _keyPhase1TestScore = 'phase1_final_test_score';
@@ -40,7 +44,12 @@ class DebugService {
   /// Check if debug mode is currently enabled
   /// Returns false if the value cannot be read from storage
   Future<bool> isDebugModeEnabled() async {
-    return AppConfig.devMode;
+    if (AppConfig.devMode) return true;
+    try {
+      return _storageService.getBool(_keyDebugMode) ?? false;
+    } catch (_) {
+      return false;
+    }
   }
 
   /// Enable or disable debug mode
@@ -52,9 +61,9 @@ class DebugService {
     // Keep this method for compatibility with existing call sites.
     try {
       await _storageService.setBool(_keyDebugMode, enabled);
-      print('Debug mode ${enabled ? 'enabled' : 'disabled'}');
+      AppLogger.debug('Debug mode ${enabled ? 'enabled' : 'disabled'}');
     } catch (e) {
-      print('Error: Failed to set debug mode: $e');
+      AppLogger.error('Error: Failed to set debug mode: $e');
       throw DebugServiceException(
         'Failed to ${enabled ? 'enable' : 'disable'} debug mode',
       );
@@ -78,11 +87,16 @@ class DebugService {
       await _storageService.setBool('phase2FinalTestPassed', true);
       await _storageService.setBool(_keyPhase3TestPassed, true);
       await _storageService.setBool('phase3FinalTestPassed', true);
+      await _storageService.setBool(_keyPhase4TestPassed, true);
+      await _storageService.setBool('phase4FinalTestPassed', true);
+      await _storageService.setBool(_keyPhase5TestPassed, true);
+      await _storageService.setBool('phase5FinalTestPassed', true);
 
       // Set all phase unlock flags
       await _storageService.setBool(_keyPhase2Unlocked, true);
       await _storageService.setBool(_keyPhase3Unlocked, true);
       await _storageService.setBool(_keyPhase4Unlocked, true);
+      await _storageService.setBool(_keyPhase5Unlocked, true);
 
       // Get all lesson IDs and create mastered status for each
       final allLessonIds = _getAllLessonIds();
@@ -110,11 +124,11 @@ class DebugService {
       // Save all progress at once
       await _progressRepository.saveAllProgress(existingProgress);
 
-      print(
+      AppLogger.debug(
         'All content unlocked successfully: ${allLessonIds.length} lessons mastered',
       );
     } catch (e) {
-      print('Error: Failed to unlock all content: $e');
+      AppLogger.error('Error: Failed to unlock all content: $e');
       throw DebugServiceException('Failed to unlock all content: $e');
     }
   }
@@ -141,6 +155,10 @@ class DebugService {
       await _storageService.setBool('phase2FinalTestPassed', false);
       await _storageService.setBool(_keyPhase3TestPassed, false);
       await _storageService.setBool('phase3FinalTestPassed', false);
+      await _storageService.setBool(_keyPhase4TestPassed, false);
+      await _storageService.setBool('phase4FinalTestPassed', false);
+      await _storageService.setBool(_keyPhase5TestPassed, false);
+      await _storageService.setBool('phase5FinalTestPassed', false);
 
       // Clear all test scores (remove the keys)
       try {
@@ -163,13 +181,14 @@ class DebugService {
       await _storageService.setBool(_keyPhase2Unlocked, false);
       await _storageService.setBool(_keyPhase3Unlocked, false);
       await _storageService.setBool(_keyPhase4Unlocked, false);
+      await _storageService.setBool(_keyPhase5Unlocked, false);
 
       // Disable debug mode
       await _storageService.setBool(_keyDebugMode, false);
 
-      print('All progress reset successfully');
+      AppLogger.debug('All progress reset successfully');
     } catch (e) {
-      print('Error: Failed to reset all progress: $e');
+      AppLogger.error('Error: Failed to reset all progress: $e');
       throw DebugServiceException('Failed to reset all progress: $e');
     }
   }
@@ -180,6 +199,8 @@ class DebugService {
   /// - Phase 1: lesson1 to lesson6
   /// - Phase 2: lesson7_1 to lesson11_5
   /// - Phase 3: lesson12_1 to lesson17_5
+  /// - Phase 4: lesson18_1 to lesson21_4
+  /// - Phase 5: lesson22_1 to lesson25_4
   List<String> _getAllLessonIds() {
     final lessonIds = <String>[];
 
@@ -281,6 +302,73 @@ class DebugService {
       'phase3_lesson17_3',
       'phase3_lesson17_4',
       'phase3_lesson17_5',
+    ]);
+
+    // Phase 4 lessons (lesson18_1 to lesson21_4)
+    // Unit 18: Pronunciation (4 lessons)
+    lessonIds.addAll([
+      'phase4_lesson18_1',
+      'phase4_lesson18_2',
+      'phase4_lesson18_3',
+      'phase4_lesson18_4',
+    ]);
+
+    // Unit 19: Fluency Building (4 lessons)
+    lessonIds.addAll([
+      'phase4_lesson19_1',
+      'phase4_lesson19_2',
+      'phase4_lesson19_3',
+      'phase4_lesson19_4',
+    ]);
+
+    // Unit 20: Real-Life Situations (5 lessons)
+    lessonIds.addAll([
+      'phase4_lesson20_1',
+      'phase4_lesson20_2',
+      'phase4_lesson20_3',
+      'phase4_lesson20_4',
+      'phase4_lesson20_5',
+    ]);
+
+    // Unit 21: Discussions & Opinions (4 lessons)
+    lessonIds.addAll([
+      'phase4_lesson21_1',
+      'phase4_lesson21_2',
+      'phase4_lesson21_3',
+      'phase4_lesson21_4',
+    ]);
+
+    // Phase 5 lessons (lesson22_1 to lesson25_4)
+    // Unit 22: Professional Communication (4 lessons)
+    lessonIds.addAll([
+      'phase5_lesson22_1',
+      'phase5_lesson22_2',
+      'phase5_lesson22_3',
+      'phase5_lesson22_4',
+    ]);
+
+    // Unit 23: Interviews (4 lessons)
+    lessonIds.addAll([
+      'phase5_lesson23_1',
+      'phase5_lesson23_2',
+      'phase5_lesson23_3',
+      'phase5_lesson23_4',
+    ]);
+
+    // Unit 24: Presentations (4 lessons)
+    lessonIds.addAll([
+      'phase5_lesson24_1',
+      'phase5_lesson24_2',
+      'phase5_lesson24_3',
+      'phase5_lesson24_4',
+    ]);
+
+    // Unit 25: Academic Writing (4 lessons)
+    lessonIds.addAll([
+      'phase5_lesson25_1',
+      'phase5_lesson25_2',
+      'phase5_lesson25_3',
+      'phase5_lesson25_4',
     ]);
 
     return lessonIds;

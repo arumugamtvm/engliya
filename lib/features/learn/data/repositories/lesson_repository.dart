@@ -1,4 +1,5 @@
 import 'dart:convert';
+import '../../../../core/logging/app_logger.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import '../models/lesson.dart';
@@ -99,6 +100,10 @@ class LessonRepository {
             .toList(growable: false)
           ..sort((a, b) => a.order.compareTo(b.order));
 
+        if (filtered.isEmpty) {
+          throw LessonLoadException('Unknown unit ID: $unitId');
+        }
+
         return filtered;
       }
 
@@ -126,7 +131,11 @@ class LessonRepository {
         final validated = await loadLessonWithFallback(lessonId);
         lessons.add(validated.lesson);
       } catch (e) {
-        print('Warning: Failed to load $lessonId: $e');
+        AppLogger.warning(
+          'Failed to load $lessonId',
+          tag: 'LessonRepository',
+          error: e,
+        );
       }
     }
 
@@ -207,144 +216,6 @@ class LessonRepository {
       }
     }
     return fallback;
-  }
-
-  /// Load Phase 2 unit lessons
-  /// Returns list of lessons for the specified Phase 2 unit
-  Future<List<Lesson>> _loadPhase2UnitLessons(String unitId) async {
-    final lessons = <Lesson>[];
-    final lessonIds = _getPhase2LessonIds(unitId);
-
-    for (final lessonId in lessonIds) {
-      try {
-        final validated = await loadLessonWithFallback(lessonId);
-        lessons.add(validated.lesson);
-      } catch (e) {
-        // Log error but continue loading other lessons
-        print('Warning: Failed to load $lessonId: $e');
-      }
-    }
-
-    // Sort by order to ensure correct sequence
-    lessons.sort((a, b) => a.order.compareTo(b.order));
-
-    return lessons;
-  }
-
-  /// Get lesson IDs for a Phase 2 unit
-  List<String> _getPhase2LessonIds(String unitId) {
-    switch (unitId) {
-      case 'phase2_unit7':
-        return ['phase2_lesson7_1', 'phase2_lesson7_2', 'phase2_lesson7_3'];
-      case 'phase2_unit8':
-        return [
-          'phase2_lesson8_1',
-          'phase2_lesson8_2',
-          'phase2_lesson8_3',
-          'phase2_lesson8_4',
-        ];
-      case 'phase2_unit9':
-        return [
-          'phase2_lesson9_1',
-          'phase2_lesson9_2',
-          'phase2_lesson9_3',
-          'phase2_lesson9_4',
-          'phase2_lesson9_5',
-        ];
-      case 'phase2_unit10':
-        return [
-          'phase2_lesson10_1',
-          'phase2_lesson10_2',
-          'phase2_lesson10_3',
-          'phase2_lesson10_4',
-          'phase2_lesson10_5',
-        ];
-      case 'phase2_unit11':
-        return [
-          'phase2_lesson11_1',
-          'phase2_lesson11_2',
-          'phase2_lesson11_3',
-          'phase2_lesson11_4',
-          'phase2_lesson11_5',
-        ];
-      default:
-        throw LessonLoadException('Unknown Phase 2 unit: $unitId');
-    }
-  }
-
-  /// Load Phase 3 unit lessons
-  /// Returns list of lessons for the specified Phase 3 unit
-  Future<List<Lesson>> _loadPhase3UnitLessons(String unitId) async {
-    final lessons = <Lesson>[];
-    final lessonIds = _getPhase3LessonIds(unitId);
-
-    for (final lessonId in lessonIds) {
-      try {
-        final validated = await loadLessonWithFallback(lessonId);
-        lessons.add(validated.lesson);
-      } catch (e) {
-        // Log error but continue loading other lessons
-        print('Warning: Failed to load $lessonId: $e');
-      }
-    }
-
-    // Sort by order to ensure correct sequence
-    lessons.sort((a, b) => a.order.compareTo(b.order));
-
-    return lessons;
-  }
-
-  /// Get lesson IDs for a Phase 3 unit
-  List<String> _getPhase3LessonIds(String unitId) {
-    switch (unitId) {
-      case 'phase3_unit12':
-        return [
-          'phase3_lesson12_1',
-          'phase3_lesson12_2',
-          'phase3_lesson12_3',
-          'phase3_lesson12_4',
-        ];
-      case 'phase3_unit13':
-        return [
-          'phase3_lesson13_1',
-          'phase3_lesson13_2',
-          'phase3_lesson13_3',
-          'phase3_lesson13_4',
-          'phase3_lesson13_5',
-        ];
-      case 'phase3_unit14':
-        return [
-          'phase3_lesson14_1',
-          'phase3_lesson14_2',
-          'phase3_lesson14_3',
-          'phase3_lesson14_4',
-        ];
-      case 'phase3_unit15':
-        return [
-          'phase3_lesson15_1',
-          'phase3_lesson15_2',
-          'phase3_lesson15_3',
-          'phase3_lesson15_4',
-        ];
-      case 'phase3_unit16':
-        return [
-          'phase3_lesson16_1',
-          'phase3_lesson16_2',
-          'phase3_lesson16_3',
-          'phase3_lesson16_4',
-          'phase3_lesson16_5',
-        ];
-      case 'phase3_unit17':
-        return [
-          'phase3_lesson17_1',
-          'phase3_lesson17_2',
-          'phase3_lesson17_3',
-          'phase3_lesson17_4',
-          'phase3_lesson17_5',
-        ];
-      default:
-        throw LessonLoadException('Unknown Phase 3 unit: $unitId');
-    }
   }
 
   /// Construct asset path from lesson ID
@@ -498,65 +369,6 @@ class LessonRepository {
     return 'assets/lessons/phase3/$fileName';
   }
 
-  /// Load Phase 4 unit lessons
-  /// Returns list of lessons for the specified Phase 4 unit
-  Future<List<Lesson>> _loadPhase4UnitLessons(String unitId) async {
-    final lessons = <Lesson>[];
-    final lessonIds = _getPhase4LessonIds(unitId);
-
-    for (final lessonId in lessonIds) {
-      try {
-        final validated = await loadLessonWithFallback(lessonId);
-        lessons.add(validated.lesson);
-      } catch (e) {
-        // Log error but continue loading other lessons
-        print('Warning: Failed to load $lessonId: $e');
-      }
-    }
-
-    // Sort by order to ensure correct sequence
-    lessons.sort((a, b) => a.order.compareTo(b.order));
-
-    return lessons;
-  }
-
-  /// Get lesson IDs for a Phase 4 unit
-  List<String> _getPhase4LessonIds(String unitId) {
-    switch (unitId) {
-      case 'phase4_unit18':
-        return [
-          'phase4_lesson18_1',
-          'phase4_lesson18_2',
-          'phase4_lesson18_3',
-          'phase4_lesson18_4',
-        ];
-      case 'phase4_unit19':
-        return [
-          'phase4_lesson19_1',
-          'phase4_lesson19_2',
-          'phase4_lesson19_3',
-          'phase4_lesson19_4',
-        ];
-      case 'phase4_unit20':
-        return [
-          'phase4_lesson20_1',
-          'phase4_lesson20_2',
-          'phase4_lesson20_3',
-          'phase4_lesson20_4',
-          'phase4_lesson20_5',
-        ];
-      case 'phase4_unit21':
-        return [
-          'phase4_lesson21_1',
-          'phase4_lesson21_2',
-          'phase4_lesson21_3',
-          'phase4_lesson21_4',
-        ];
-      default:
-        throw LessonLoadException('Unknown Phase 4 unit: $unitId');
-    }
-  }
-
   /// Map Phase 4 lesson IDs to file names
   /// Returns the asset path for a Phase 4 lesson
   String _getPhase4AssetPath(String lessonId) {
@@ -593,58 +405,6 @@ class LessonRepository {
     }
 
     return 'assets/lessons/phase4/$fileName';
-  }
-
-  Future<List<Lesson>> _loadPhase5UnitLessons(String unitId) async {
-    final lessons = <Lesson>[];
-    final lessonIds = _getPhase5LessonIds(unitId);
-
-    for (final lessonId in lessonIds) {
-      try {
-        final validated = await loadLessonWithFallback(lessonId);
-        lessons.add(validated.lesson);
-      } catch (e) {
-        print('Warning: Failed to load $lessonId: $e');
-      }
-    }
-
-    lessons.sort((a, b) => a.order.compareTo(b.order));
-    return lessons;
-  }
-
-  List<String> _getPhase5LessonIds(String unitId) {
-    switch (unitId) {
-      case 'phase5_unit22':
-        return [
-          'phase5_lesson22_1',
-          'phase5_lesson22_2',
-          'phase5_lesson22_3',
-          'phase5_lesson22_4',
-        ];
-      case 'phase5_unit23':
-        return [
-          'phase5_lesson23_1',
-          'phase5_lesson23_2',
-          'phase5_lesson23_3',
-          'phase5_lesson23_4',
-        ];
-      case 'phase5_unit24':
-        return [
-          'phase5_lesson24_1',
-          'phase5_lesson24_2',
-          'phase5_lesson24_3',
-          'phase5_lesson24_4',
-        ];
-      case 'phase5_unit25':
-        return [
-          'phase5_lesson25_1',
-          'phase5_lesson25_2',
-          'phase5_lesson25_3',
-          'phase5_lesson25_4',
-        ];
-      default:
-        throw LessonLoadException('Unknown Phase 5 unit: $unitId');
-    }
   }
 
   String _getPhase5AssetPath(String lessonId) {

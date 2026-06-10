@@ -22,12 +22,17 @@ class AppTheme {
   static const Color textSecondary = Colors.black54;
   static const Color textDisabled = Colors.grey;
 
+  // Font fallback so Tamil script (தமிழ்) renders correctly alongside the
+  // primary Latin font. Bilingual UI strings (see AppStrings) rely on this.
+  static const List<String> tamilFontFallback = ['Noto Sans Tamil'];
+
   // Text styles - Large, readable fonts suitable for school-age students
   static const TextStyle headline1 = TextStyle(
     fontSize: 32,
     fontWeight: FontWeight.bold,
     color: textPrimary,
     height: 1.2,
+    fontFamilyFallback: tamilFontFallback,
   );
 
   static const TextStyle headline2 = TextStyle(
@@ -35,6 +40,7 @@ class AppTheme {
     fontWeight: FontWeight.bold,
     color: textPrimary,
     height: 1.3,
+    fontFamilyFallback: tamilFontFallback,
   );
 
   static const TextStyle headline3 = TextStyle(
@@ -42,18 +48,21 @@ class AppTheme {
     fontWeight: FontWeight.w600,
     color: textPrimary,
     height: 1.3,
+    fontFamilyFallback: tamilFontFallback,
   );
 
   static const TextStyle bodyText1 = TextStyle(
     fontSize: 18,
     color: textPrimary,
     height: 1.5,
+    fontFamilyFallback: tamilFontFallback,
   );
 
   static const TextStyle bodyText2 = TextStyle(
     fontSize: 16,
     color: textPrimary,
     height: 1.5,
+    fontFamilyFallback: tamilFontFallback,
   );
 
   static const TextStyle buttonText = TextStyle(
@@ -61,12 +70,14 @@ class AppTheme {
     fontWeight: FontWeight.w600,
     color: Colors.white,
     letterSpacing: 0.5,
+    fontFamilyFallback: tamilFontFallback,
   );
 
   static const TextStyle caption = TextStyle(
     fontSize: 14,
     color: textSecondary,
     height: 1.4,
+    fontFamilyFallback: tamilFontFallback,
   );
 
   // Spacing constants
@@ -94,6 +105,8 @@ class AppTheme {
       primaryColor: primaryColor,
       scaffoldBackgroundColor: scaffoldBackground,
       fontFamily: 'Roboto',
+      // Ensures Tamil script falls back to a font with full Tamil coverage.
+      fontFamilyFallback: tamilFontFallback,
       colorScheme: ColorScheme.fromSeed(
         seedColor: primaryColor,
         secondary: accentColor,
@@ -229,7 +242,7 @@ class AppTheme {
   // Helper method to create a box shadow
   static List<BoxShadow> get cardShadow => [
         BoxShadow(
-          color: Colors.black.withOpacity(0.1),
+          color: Colors.black.withValues(alpha: 0.1),
           blurRadius: 8,
           offset: const Offset(0, 2),
         ),

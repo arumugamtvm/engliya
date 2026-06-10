@@ -162,7 +162,7 @@ class _Phase1UnitScreenState extends State<Phase1UnitScreen> {
       await Navigator.pushNamed(context, AppRoutes.lesson, arguments: lessonId);
 
       // Refresh progress after returning from lesson
-      if (mounted) {
+      if (context.mounted) {
         await context.read<ProgressProvider>().reload();
         await _initializeTestService();
       }

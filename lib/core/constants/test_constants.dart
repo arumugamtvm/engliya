@@ -9,7 +9,9 @@ class TestConstants {
   static const int phase2QuestionCount = 30;
   static const int phase3QuestionCount = 30;
   static const int phase4QuestionCount = 25;
-  static const int phase5QuestionCount = 30;
+  /// Phase 5 final test has 35 questions (27 MCQ + 8 speaking tasks),
+  /// matching Phase5TestResult.totalTestQuestions.
+  static const int phase5QuestionCount = 35;
 
   static const Map<String, int> phase1Distribution = {
     'lesson1_pronouns': 3,

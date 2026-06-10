@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 import '../../services/debug_service.dart';
 import '../../../../core/utils/error_handler.dart';
+import '../../../../core/logging/app_logger.dart';
 
 /// Provider for managing Debug Mode state
 /// Handles debug mode toggle, unlock all, and reset all operations
@@ -32,7 +33,7 @@ class DebugProvider extends ChangeNotifier {
     try {
       _isDebugModeEnabled = await _debugService.isDebugModeEnabled();
       notifyListeners();
-      print('Debug mode initialized: $_isDebugModeEnabled');
+      AppLogger.debug('Debug mode initialized: $_isDebugModeEnabled');
     } catch (e, stackTrace) {
       ErrorHandler.logError('DebugProvider.initialize', e, stackTrace);
       // Default to false if we can't read the state
@@ -56,7 +57,7 @@ class DebugProvider extends ChangeNotifier {
       _statusMessage = enabled 
           ? '✓ Debug mode enabled' 
           : '✓ Debug mode disabled';
-      print('Debug mode toggled: $enabled');
+      AppLogger.debug('Debug mode toggled: $enabled');
     } catch (e, stackTrace) {
       ErrorHandler.logError('DebugProvider.toggleDebugMode', e, stackTrace);
       _statusMessage = 'Failed to ${enabled ? 'enable' : 'disable'} debug mode';
@@ -81,7 +82,7 @@ class DebugProvider extends ChangeNotifier {
     try {
       await _debugService.unlockAll();
       _statusMessage = '✓ All content unlocked successfully';
-      print('All content unlocked via debug mode');
+      AppLogger.debug('All content unlocked via debug mode');
     } catch (e, stackTrace) {
       ErrorHandler.logError('DebugProvider.unlockAll', e, stackTrace);
       _statusMessage = 'Failed to unlock content: ${ErrorHandler.getUserMessage(e)}';
@@ -109,7 +110,7 @@ class DebugProvider extends ChangeNotifier {
       // Debug mode is disabled as part of reset
       _isDebugModeEnabled = false;
       _statusMessage = '✓ All progress reset successfully';
-      print('All progress reset via debug mode');
+      AppLogger.debug('All progress reset via debug mode');
     } catch (e, stackTrace) {
       ErrorHandler.logError('DebugProvider.resetAll', e, stackTrace);
       _statusMessage = 'Failed to reset progress: ${ErrorHandler.getUserMessage(e)}';

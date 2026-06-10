@@ -10,6 +10,7 @@ import '../../services/gating_service.dart';
 import '../../../../core/utils/error_handler.dart';
 import '../../../../services/local_storage/storage_service.dart';
 import '../../../../core/constants/app_config.dart';
+import '../../../../core/logging/app_logger.dart';
 
 class ProgressProvider extends ChangeNotifier {
   final ProgressRepository _progressRepo;
@@ -78,7 +79,7 @@ class ProgressProvider extends ChangeNotifier {
   /// Requirements: 12.1, 12.6, 12.7
   bool get isPhase2Unlocked {
     if (AppConfig.devMode) return true;
-    return _isPhase2UnlockedCached;
+    return _isPhase2UnlockedCached || _isPhaseUnlockedInStorage(2);
   }
 
   /// Check if Phase 3 is unlocked (synchronous getter using cached value)
@@ -91,7 +92,7 @@ class ProgressProvider extends ChangeNotifier {
   /// Requirements: 12.1, 12.6, 12.7
   bool get isPhase3Unlocked {
     if (AppConfig.devMode) return true;
-    return _isPhase3UnlockedCached;
+    return _isPhase3UnlockedCached || _isPhaseUnlockedInStorage(3);
   }
 
   /// Check if Phase 4 is unlocked (synchronous getter using cached value)
@@ -104,12 +105,12 @@ class ProgressProvider extends ChangeNotifier {
   /// Requirements: 1.1, 1.3
   bool get isPhase4Unlocked {
     if (AppConfig.devMode) return true;
-    return _isPhase4UnlockedCached;
+    return _isPhase4UnlockedCached || _isPhaseUnlockedInStorage(4);
   }
 
   bool get isPhase5Unlocked {
     if (AppConfig.devMode) return true;
-    return _isPhase5UnlockedCached;
+    return _isPhase5UnlockedCached || _isPhaseUnlockedInStorage(5);
   }
 
   /// Refresh phase unlock status from GatingService
@@ -124,7 +125,7 @@ class ProgressProvider extends ChangeNotifier {
         _isPhase4UnlockedCached = await _gatingService.isPhaseUnlocked(4);
         _isPhase5UnlockedCached = await _gatingService.isPhaseUnlocked(5);
       } catch (e) {
-        print(
+        AppLogger.debug(
           'Warning: Failed to refresh phase unlock status from GatingService: $e',
         );
         // Fall back to direct storage check
@@ -136,24 +137,47 @@ class ProgressProvider extends ChangeNotifier {
     }
   }
 
-  /// Fallback method to refresh phase unlock status directly from storage
+  /// Fallback method to refresh phase unlock status directly from storage.
+  ///
+  /// Uses the same storage keys as [GatingService.isPhaseUnlocked]:
+  /// the canonical 'phaseN_final_test_passed' key (written when a final test
+  /// passes), the legacy camelCase key (backward compatibility), and the
+  /// explicit 'phaseN_unlocked' flag.
   void _refreshPhaseUnlockStatusFromStorage() {
-    _isPhase2UnlockedCached =
-        (_storageService.getBool('phase1FinalTestPassed') ?? false) ||
-        (_storageService.getBool('phase1_final_test_passed') ?? false) ||
-        (_storageService.getBool('phase2_unlocked') ?? false);
-    _isPhase3UnlockedCached =
-        (_storageService.getBool('phase2FinalTestPassed') ?? false) ||
-        (_storageService.getBool('phase2_final_test_passed') ?? false) ||
-        (_storageService.getBool('phase3_unlocked') ?? false);
-    _isPhase4UnlockedCached =
-        (_storageService.getBool('phase3FinalTestPassed') ?? false) ||
-        (_storageService.getBool('phase3_final_test_passed') ?? false) ||
-        (_storageService.getBool('phase4_unlocked') ?? false);
-    _isPhase5UnlockedCached =
-        (_storageService.getBool('phase4FinalTestPassed') ?? false) ||
-        (_storageService.getBool('phase4_final_test_passed') ?? false) ||
-        (_storageService.getBool('phase5_unlocked') ?? false);
+    _isPhase2UnlockedCached = _isPhaseUnlockedInStorage(2);
+    _isPhase3UnlockedCached = _isPhaseUnlockedInStorage(3);
+    _isPhase4UnlockedCached = _isPhaseUnlockedInStorage(4);
+    _isPhase5UnlockedCached = _isPhaseUnlockedInStorage(5);
+  }
+
+  /// Synchronous storage check for whether [phase] (2-5) is unlocked.
+  ///
+  /// Used both as the fallback refresh source and directly by the
+  /// isPhaseNUnlocked getters so unlock state is correct even before the
+  /// async GatingService refresh completes (e.g. right after construction).
+  bool _isPhaseUnlockedInStorage(int phase) {
+    bool read(String key) => _storageService.getBool(key) ?? false;
+
+    switch (phase) {
+      case 2:
+        return read(GatingService.keyPhase1TestPassed) ||
+            read(GatingService.legacyKeyPhase1TestPassed) ||
+            read(GatingService.keyPhase2Unlocked);
+      case 3:
+        return read(GatingService.keyPhase2TestPassed) ||
+            read(GatingService.legacyKeyPhase2TestPassed) ||
+            read(GatingService.keyPhase3Unlocked);
+      case 4:
+        return read(GatingService.keyPhase3TestPassed) ||
+            read(GatingService.legacyKeyPhase3TestPassed) ||
+            read(GatingService.keyPhase4Unlocked);
+      case 5:
+        return read(GatingService.keyPhase4TestPassed) ||
+            read(GatingService.legacyKeyPhase4TestPassed) ||
+            read(GatingService.keyPhase5Unlocked);
+      default:
+        return false;
+    }
   }
 
   /// Get Phase 2 progress summary
@@ -241,7 +265,7 @@ class ProgressProvider extends ChangeNotifier {
             allLessonsById[lesson.id] = lesson;
           }
         } catch (e) {
-          print('Warning: Failed to load phase $phase lessons: $e');
+          AppLogger.warning('Warning: Failed to load phase $phase lessons: $e');
         }
       }
 

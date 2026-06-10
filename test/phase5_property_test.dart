@@ -131,12 +131,18 @@ void main() {
           final mcqCorrect = values.$1;
           final speakingScore = values.$2;
 
+          // Section percents are set high enough to satisfy every section
+          // floor, so pass/fail depends only on the total-score threshold.
           final result = Phase5TestResult.calculate(
             mcqCorrect: mcqCorrect,
             speakingScore: speakingScore,
             completedAt: DateTime.now(),
             incorrectMcqAnswers: [],
             speakingResults: [],
+            listeningPercent: 100,
+            readingGrammarPercent: 100,
+            speakingPercent: 100,
+            writingPercent: 100,
           );
 
           final totalScore = mcqCorrect + speakingScore;
@@ -168,6 +174,10 @@ void main() {
             completedAt: DateTime.now(),
             incorrectMcqAnswers: [],
             speakingResults: [],
+            listeningPercent: 100,
+            readingGrammarPercent: 100,
+            speakingPercent: 100,
+            writingPercent: 100,
           );
 
           expect(result.totalScore, mcqCorrect + speakingScore);

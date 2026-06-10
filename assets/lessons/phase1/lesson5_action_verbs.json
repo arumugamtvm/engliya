@@ -91,27 +91,47 @@
   "listeningQuestions": [
     {
       "audioText": "I eat rice.",
-      "options": ["I eat rice.", "I eats rice.", "I eating rice."],
+      "options": [
+        "I eat rice.",
+        "I eats rice.",
+        "I eating rice."
+      ],
       "correctIndex": 0
     },
     {
       "audioText": "She drinks water.",
-      "options": ["She drink water.", "She drinks water.", "She drinking water."],
+      "options": [
+        "She drink water.",
+        "She drinks water.",
+        "She drinking water."
+      ],
       "correctIndex": 1
     },
     {
       "audioText": "They run fast.",
-      "options": ["They runs fast.", "They running fast.", "They run fast."],
+      "options": [
+        "They runs fast.",
+        "They running fast.",
+        "They run fast."
+      ],
       "correctIndex": 2
     },
     {
       "audioText": "He sleeps early.",
-      "options": ["He sleep early.", "He sleeps early.", "He sleeping early."],
+      "options": [
+        "He sleep early.",
+        "He sleeps early.",
+        "He sleeping early."
+      ],
       "correctIndex": 1
     },
     {
       "audioText": "We walk to school.",
-      "options": ["We walks to school.", "We walk to school.", "We walking to school."],
+      "options": [
+        "We walks to school.",
+        "We walk to school.",
+        "We walking to school."
+      ],
       "correctIndex": 1
     }
   ],
@@ -142,142 +162,222 @@
       "type": "mcq",
       "promptEn": "She ___ water.",
       "promptTa": "அவள் தண்ணீர் ___.",
-      "options": ["drink", "drinks", "drinking"],
+      "options": [
+        "drink",
+        "drinks",
+        "drinking"
+      ],
       "correctIndex": 1
     },
     {
       "type": "mcq",
       "promptEn": "I ___ breakfast.",
       "promptTa": "நான் காலை உணவு ___.",
-      "options": ["eat", "eats", "eating"],
+      "options": [
+        "eat",
+        "eats",
+        "eating"
+      ],
       "correctIndex": 0
     },
     {
       "type": "mcq",
       "promptEn": "They ___ fast.",
       "promptTa": "அவர்கள் வேகமாக ___.",
-      "options": ["run", "runs", "running"],
+      "options": [
+        "run",
+        "runs",
+        "running"
+      ],
       "correctIndex": 0
     },
     {
       "type": "mcq",
       "promptEn": "He ___ at night.",
       "promptTa": "அவர் இரவில் ___.",
-      "options": ["sleep", "sleeps", "sleeping"],
+      "options": [
+        "sleep",
+        "sleeps",
+        "sleeping"
+      ],
       "correctIndex": 1
     },
     {
       "type": "mcq",
       "promptEn": "We ___ to school.",
       "promptTa": "நாங்கள் பள்ளிக்கு ___.",
-      "options": ["walk", "walks", "walking"],
+      "options": [
+        "walk",
+        "walks",
+        "walking"
+      ],
       "correctIndex": 0
     },
     {
       "type": "mcq",
       "promptEn": "She ___ slowly.",
       "promptTa": "அவள் மெதுவாக ___.",
-      "options": ["walk", "walks", "walking"],
+      "options": [
+        "walk",
+        "walks",
+        "walking"
+      ],
       "correctIndex": 1
     },
     {
       "type": "mcq",
       "promptEn": "I ___ milk.",
       "promptTa": "நான் பால் ___.",
-      "options": ["drink", "drinks", "drinking"],
+      "options": [
+        "drink",
+        "drinks",
+        "drinking"
+      ],
       "correctIndex": 0
     },
     {
       "type": "mcq",
       "promptEn": "He ___ vegetables.",
       "promptTa": "அவர் காய்கறிகள் ___.",
-      "options": ["eat", "eats", "eating"],
+      "options": [
+        "eat",
+        "eats",
+        "eating"
+      ],
       "correctIndex": 1
     },
     {
       "type": "mcq",
       "promptEn": "They ___ early.",
       "promptTa": "அவர்கள் சீக்கிரம் ___.",
-      "options": ["sleep", "sleeps", "sleeping"],
+      "options": [
+        "sleep",
+        "sleeps",
+        "sleeping"
+      ],
       "correctIndex": 0
     },
     {
       "type": "mcq",
       "promptEn": "You ___ very fast.",
       "promptTa": "நீ மிகவும் வேகமாக ___.",
-      "options": ["run", "runs", "running"],
+      "options": [
+        "run",
+        "runs",
+        "running"
+      ],
       "correctIndex": 0
     }
   ],
   "masteryQuestions": [
     {
       "type": "mcq",
-      "promptEn": "They ___ fast.",
-      "promptTa": "அவர்கள் வேகமாக ___.",
-      "options": ["run", "runs", "running"],
+      "promptEn": "The children ___ in the park.",
+      "promptTa": "குழந்தைகள் பூங்காவில் ___.",
+      "options": [
+        "play",
+        "plays",
+        "playing"
+      ],
       "correctIndex": 0
     },
     {
       "type": "mcq",
       "promptEn": "She ___ rice.",
       "promptTa": "அவள் சாதம் ___.",
-      "options": ["eat", "eats", "eating"],
+      "options": [
+        "eat",
+        "eats",
+        "eating"
+      ],
       "correctIndex": 1
     },
     {
       "type": "mcq",
       "promptEn": "I ___ water.",
       "promptTa": "நான் தண்ணீர் ___.",
-      "options": ["drink", "drinks", "drinking"],
+      "options": [
+        "drink",
+        "drinks",
+        "drinking"
+      ],
       "correctIndex": 0
     },
     {
       "type": "mcq",
       "promptEn": "He ___ well.",
       "promptTa": "அவர் நன்றாக ___.",
-      "options": ["sleep", "sleeps", "sleeping"],
+      "options": [
+        "sleep",
+        "sleeps",
+        "sleeping"
+      ],
       "correctIndex": 1
     },
     {
       "type": "mcq",
       "promptEn": "We ___ together.",
       "promptTa": "நாங்கள் ஒன்றாக ___.",
-      "options": ["walk", "walks", "walking"],
+      "options": [
+        "walk",
+        "walks",
+        "walking"
+      ],
       "correctIndex": 0
     },
     {
       "type": "mcq",
       "promptEn": "It ___ quickly.",
       "promptTa": "அது வேகமாக ___.",
-      "options": ["run", "runs", "running"],
+      "options": [
+        "run",
+        "runs",
+        "running"
+      ],
       "correctIndex": 1
     },
     {
       "type": "mcq",
       "promptEn": "You ___ breakfast.",
       "promptTa": "நீ காலை உணவு ___.",
-      "options": ["eat", "eats", "eating"],
+      "options": [
+        "eat",
+        "eats",
+        "eating"
+      ],
       "correctIndex": 0
     },
     {
       "type": "mcq",
       "promptEn": "She ___ juice.",
       "promptTa": "அவள் ஜூஸ் ___.",
-      "options": ["drink", "drinks", "drinking"],
+      "options": [
+        "drink",
+        "drinks",
+        "drinking"
+      ],
       "correctIndex": 1
     },
     {
       "type": "mcq",
       "promptEn": "They ___ at home.",
       "promptTa": "அவர்கள் வீட்டில் ___.",
-      "options": ["sleep", "sleeps", "sleeping"],
+      "options": [
+        "sleep",
+        "sleeps",
+        "sleeping"
+      ],
       "correctIndex": 0
     },
     {
       "type": "mcq",
       "promptEn": "He ___ to work.",
       "promptTa": "அவர் வேலைக்கு ___.",
-      "options": ["walk", "walks", "walking"],
+      "options": [
+        "walk",
+        "walks",
+        "walking"
+      ],
       "correctIndex": 1
     }
   ]

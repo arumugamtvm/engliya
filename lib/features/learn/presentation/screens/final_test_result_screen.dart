@@ -199,7 +199,7 @@ class FinalTestResultViewData {
       score: result.totalScore,
       maxScore: result.maxScore,
       percentage: result.percentage,
-      passingScoreText: 'Passing Score: 45/60 (75%)',
+      passingScoreText: 'Passing Score: 42/60 (70%)',
       breakdownItems: [
         FinalTestScoreBreakdownItem(
           label: 'MCQ Questions',
@@ -731,7 +731,7 @@ class _FinalTestResultScreenState extends State<FinalTestResultScreen>
   }
 
   Widget _buildActionButton(BuildContext context, FinalTestAction action) {
-    final onPressed = () => action.onPressed(context);
+    void onPressed() => action.onPressed(context);
     final buttonStyle = _buttonStyle(action);
 
     if (action.style == FinalTestActionStyle.text) {
@@ -784,7 +784,7 @@ class _FinalTestResultScreenState extends State<FinalTestResultScreen>
   ButtonStyle _buttonStyle(FinalTestAction action) {
     final base = ButtonStyle(
       padding:
-          MaterialStateProperty.all(const EdgeInsets.all(AppTheme.spacingM)),
+          WidgetStateProperty.all(const EdgeInsets.all(AppTheme.spacingM)),
     );
 
     if (action.style == FinalTestActionStyle.text) {
@@ -794,20 +794,20 @@ class _FinalTestResultScreenState extends State<FinalTestResultScreen>
     if (action.style == FinalTestActionStyle.outlined) {
       return base.copyWith(
         foregroundColor: action.foregroundColor != null
-            ? MaterialStateProperty.all(action.foregroundColor)
+            ? WidgetStateProperty.all(action.foregroundColor)
             : null,
         side: action.borderColor != null
-            ? MaterialStateProperty.all(BorderSide(color: action.borderColor!))
+            ? WidgetStateProperty.all(BorderSide(color: action.borderColor!))
             : null,
       );
     }
 
     return base.copyWith(
       backgroundColor: action.backgroundColor != null
-          ? MaterialStateProperty.all(action.backgroundColor)
+          ? WidgetStateProperty.all(action.backgroundColor)
           : null,
       foregroundColor: action.foregroundColor != null
-          ? MaterialStateProperty.all(action.foregroundColor)
+          ? WidgetStateProperty.all(action.foregroundColor)
           : null,
     );
   }
