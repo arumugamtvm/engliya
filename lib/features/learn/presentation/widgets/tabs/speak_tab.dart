@@ -180,7 +180,12 @@ class _SpeakTabState extends State<SpeakTab> with TickerProviderStateMixin {
 
     final sentences = lesson.speakSentences;
     if (sentences.isEmpty) {
-      return const Center(child: Text('No speaking exercises available'));
+      return const Center(
+        child: Text(
+          AppStrings.noSpeakingExercises,
+          textAlign: TextAlign.center,
+        ),
+      );
     }
 
     double averageScore = 0.0;

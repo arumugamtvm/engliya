@@ -5,6 +5,7 @@ import '../../data/models/phase4_test_result.dart';
 import '../../data/models/phase5_final_test_question.dart';
 import '../../data/models/phase5_test_result.dart';
 import '../../../../app/theme.dart';
+import '../../../../core/constants/app_strings.dart';
 
 class FinalTestReviewItem {
   final String question;
@@ -47,30 +48,29 @@ class FinalTestReviewConfig {
 
   factory FinalTestReviewConfig.phase4() {
     return const FinalTestReviewConfig(
-      title: 'Review Mistakes',
-      emptyTitle: 'No mistakes to review!',
+      title: AppStrings.review,
+      emptyTitle: AppStrings.noMistakes,
       emptyMessage: null,
-      emptyButtonLabel: 'Go Back',
+      emptyButtonLabel: AppStrings.goBack,
       showInfoBanner: false,
       showBottomActions: false,
-      backButtonLabel: 'Back to Results',
-      doneButtonLabel: 'Done',
+      backButtonLabel: AppStrings.backToResults,
+      doneButtonLabel: AppStrings.done,
       showDoneButton: false,
     );
   }
 
   factory FinalTestReviewConfig.phase5() {
     return FinalTestReviewConfig(
-      title: 'Review Mistakes',
-      emptyTitle: 'Perfect Score!',
-      emptyMessage: 'You answered all MCQ questions correctly.',
-      emptyButtonLabel: 'Go Back',
+      title: AppStrings.review,
+      emptyTitle: AppStrings.perfectScore,
+      emptyMessage: AppStrings.allMcqCorrect,
+      emptyButtonLabel: AppStrings.goBack,
       showInfoBanner: true,
-      infoBannerText: (count) =>
-          '$count incorrect answer${count == 1 ? '' : 's'} to review',
+      infoBannerText: AppStrings.incorrectAnswersToReview,
       showBottomActions: true,
-      backButtonLabel: 'Back to Results',
-      doneButtonLabel: 'Done',
+      backButtonLabel: AppStrings.backToResults,
+      doneButtonLabel: AppStrings.done,
       showDoneButton: true,
     );
   }
@@ -253,7 +253,7 @@ class FinalTestReviewScreen extends StatelessWidget {
             _buildAnswerRow(
               icon: Icons.close,
               iconColor: Colors.red,
-              label: 'Your answer:',
+              label: AppStrings.yourAnswer,
               answer: item.selectedAnswer,
               backgroundColor: Colors.red[50]!,
             ),
@@ -261,7 +261,7 @@ class FinalTestReviewScreen extends StatelessWidget {
             _buildAnswerRow(
               icon: Icons.check,
               iconColor: Colors.green,
-              label: 'Correct answer:',
+              label: AppStrings.correctAnswer,
               answer: item.correctAnswer,
               backgroundColor: Colors.green[50]!,
             ),

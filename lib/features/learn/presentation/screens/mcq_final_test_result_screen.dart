@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../domain/entities/test_result.dart';
 import '../../../../app/theme.dart';
+import '../../../../core/constants/app_strings.dart';
 
 class McqUnitBreakdownItem {
   final String unitId;
@@ -113,16 +114,16 @@ class McqFinalTestResultConfig {
 
   static McqFinalTestResultConfig phase1() {
     return McqFinalTestResultConfig(
-      completionTitle: 'Phase 1 Final Test - Completed!',
+      completionTitle: AppStrings.finalTestCompletedTitle(1),
       successIcon: Icons.check_circle,
       failureIcon: Icons.cancel,
-      passedMessage: (_) => 'You have mastered the entire Phase 1 foundation',
-      failedMessage: (_) => 'Keep practicing to master Phase 1 content',
-      continueLabel: 'Continue to Phase 2',
+      passedMessage: (_) => AppStrings.phase1FoundationMastered,
+      failedMessage: (_) => AppStrings.keepPracticingPhase(1),
+      continueLabel: AppStrings.continueToPhase(2),
       continueIcon: Icons.arrow_forward,
       continueHint: 'Proceed to the next learning phase',
       continueSemanticLabel: 'Continue to Phase 2',
-      continueSnackMessage: 'Phase 2 will be unlocked soon!',
+      continueSnackMessage: AppStrings.phaseUnlockedSoon(2),
       reviewRouteName: '/phase1/finalTest/review',
       breakdownConfig: null,
     );
@@ -130,20 +131,22 @@ class McqFinalTestResultConfig {
 
   static McqFinalTestResultConfig phase2() {
     return McqFinalTestResultConfig(
-      completionTitle: 'Phase 2 Final Test Completed!',
+      completionTitle: AppStrings.finalTestCompletedTitle(2),
       successIcon: Icons.check_circle,
       failureIcon: Icons.cancel,
-      passedMessage: (_) => 'You have mastered Phase 2',
-      failedMessage: (result) =>
-          'You scored ${result.accuracy.toStringAsFixed(1)}%. Try again to pass Phase 2',
-      continueLabel: 'Continue',
+      passedMessage: (_) => AppStrings.phaseMasteredMessage(2),
+      failedMessage: (result) => AppStrings.scoredTryAgainMessage(
+        result.accuracy.toStringAsFixed(1),
+        2,
+      ),
+      continueLabel: AppStrings.continueLabel,
       continueIcon: Icons.check,
       continueHint: 'Return to home screen',
       continueSemanticLabel: 'Continue',
-      continueSnackMessage: 'Phase 3 is now unlocked!',
+      continueSnackMessage: AppStrings.phaseNowUnlocked(3),
       reviewRouteName: '/phase2/finalTest/review',
       breakdownConfig: McqUnitBreakdownConfig(
-        title: 'Summary',
+        title: AppStrings.summary,
         style: McqUnitBreakdownStyle(
           highThreshold: 80,
           midThreshold: 60,
@@ -167,19 +170,19 @@ class McqFinalTestResultConfig {
 
   static McqFinalTestResultConfig phase3() {
     return McqFinalTestResultConfig(
-      completionTitle: 'Phase 3 Final Test Completed!',
+      completionTitle: AppStrings.finalTestCompletedTitle(3),
       successIcon: Icons.celebration,
       failureIcon: Icons.cancel,
-      passedMessage: (_) => 'You have mastered Phase 3',
-      failedMessage: (_) => 'You are close! Review Phase 3 lessons and try again',
-      continueLabel: 'Continue',
+      passedMessage: (_) => AppStrings.phaseMasteredMessage(3),
+      failedMessage: (_) => AppStrings.reviewPhaseTryAgain(3),
+      continueLabel: AppStrings.continueLabel,
       continueIcon: Icons.check,
       continueHint: 'Return to home screen. Phase 4 is now unlocked.',
       continueSemanticLabel: 'Continue',
-      continueSnackMessage: 'Phase 4 is now unlocked!',
+      continueSnackMessage: AppStrings.phaseNowUnlocked(4),
       reviewRouteName: '/phase3/finalTest/review',
       breakdownConfig: McqUnitBreakdownConfig(
-        title: 'Breakdown:',
+        title: AppStrings.breakdown,
         style: McqUnitBreakdownStyle(
           highThreshold: 80,
           midThreshold: 60,
@@ -348,7 +351,7 @@ class _McqFinalTestResultScreenState extends State<McqFinalTestResultScreen>
         ),
       ),
       title: const Text(
-        'Test Results',
+        AppStrings.testResults,
         style: TextStyle(
           fontSize: 20,
           fontWeight: FontWeight.bold,
@@ -742,7 +745,7 @@ class _McqFinalTestResultScreenState extends State<McqFinalTestResultScreen>
         ),
         icon: const Icon(Icons.rate_review),
         label: const Text(
-          'Review Mistakes',
+          AppStrings.reviewMistakes,
           style: TextStyle(
             fontSize: 16,
             fontWeight: FontWeight.w600,
@@ -798,7 +801,7 @@ class _McqFinalTestResultScreenState extends State<McqFinalTestResultScreen>
         ),
         icon: const Icon(Icons.refresh),
         label: const Text(
-          'Try Again',
+          AppStrings.tryAgain,
           style: TextStyle(
             fontSize: 16,
             fontWeight: FontWeight.w600,
@@ -870,7 +873,7 @@ class _McqFinalTestResultScreenState extends State<McqFinalTestResultScreen>
       if (context.mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(
-            content: Text('Starting a new test...'),
+            content: Text(AppStrings.startingNewTest),
             duration: Duration(seconds: 2),
             backgroundColor: AppTheme.primaryColor,
           ),

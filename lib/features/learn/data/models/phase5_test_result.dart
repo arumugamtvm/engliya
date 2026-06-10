@@ -111,6 +111,15 @@ class Phase5SpeakingResult {
              },
            );
 
+  /// Weighted rubric quality score on a 0-100 scale.
+  ///
+  /// Phase 5 speaking uses two deliberate scoring views:
+  /// - [score] (0-4 points per task) feeds the overall test score
+  ///   (totalScore out of 60, pass threshold 42).
+  /// - [rubricScore100] feeds the speaking SECTION floor in
+  ///   [Phase5TestResult.calculate] (speakingPercent >= 60), measuring
+  ///   quality across grammar/lexis/coherence/task/pronunciation rather
+  ///   than just points earned.
   int get rubricScore100 => rubric.weightedScore100;
 
   factory Phase5SpeakingResult.fromRecognition({

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../providers/lesson_provider.dart';
 import '../../../../../app/theme.dart';
+import '../../../../../core/constants/app_strings.dart';
 import 'dart:async';
 
 /// Speak tab widget with enhanced UI and mock scoring (fallback version)
@@ -133,7 +134,12 @@ class _SpeakTabFallbackState extends State<SpeakTabFallback> with TickerProvider
 
     final sentences = lesson.speakSentences;
     if (sentences.isEmpty) {
-      return const Center(child: Text('No speaking exercises available'));
+      return const Center(
+        child: Text(
+          AppStrings.noSpeakingExercises,
+          textAlign: TextAlign.center,
+        ),
+      );
     }
 
     double averageScore = 0.0;

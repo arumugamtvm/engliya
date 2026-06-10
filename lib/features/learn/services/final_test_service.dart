@@ -1180,7 +1180,12 @@ class Phase5FinalTestService
   final DebugService _debugService;
   final LessonRepository _lessonRepository;
 
-  // Storage keys for Phase 5 test data
+  // Storage keys for Phase 5 test data.
+  //
+  // Phase 5 is the final phase, so keyTestPassed does not gate a next phase
+  // (GatingService unlocks Phase 5 from the Phase 4 result). It is kept as
+  // the course-completion record together with keyMasteryCompleted, and is
+  // used by result/certificate screens and progress summaries.
   static const String keyTestPassed = 'phase5_final_test_passed';
   static const String keyTestScore = 'phase5_final_test_score';
   static const String keyTestDate = 'phase5_final_test_date';
@@ -2436,7 +2441,18 @@ class Phase5FinalTestService
     int writingTotal = 0;
     int writingCorrect = 0;
 
-    // Process each question
+    // Process each question.
+    //
+    // NOTE on section mapping: Phase 5 question types are domain-based
+    // (business English, interview, presentation, writing), not skill-based.
+    // For the section pass-floors in Phase5TestResult they are mapped onto
+    // skill sections as a deliberate, deterministic proxy:
+    //   - presentation MCQs        -> listening section (spoken-delivery focus)
+    //   - writing-family MCQs      -> writing section
+    //   - business/interview MCQs  -> reading & grammar section
+    //   - speaking rubric tasks    -> speaking section (scored separately)
+    // If the test blueprint changes, update this mapping together with the
+    // section thresholds in Phase5TestResult.calculate.
     for (final question in questions) {
       if (question.isMcq) {
         switch (question.type) {

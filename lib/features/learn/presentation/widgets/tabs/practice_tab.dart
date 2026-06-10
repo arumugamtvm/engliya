@@ -104,7 +104,10 @@ class _PracticeTabState extends State<PracticeTab> {
 
     if (questions.isEmpty) {
       return const Center(
-        child: Text('No practice questions available'),
+        child: Text(
+          AppStrings.noPracticeQuestions,
+          textAlign: TextAlign.center,
+        ),
       );
     }
 

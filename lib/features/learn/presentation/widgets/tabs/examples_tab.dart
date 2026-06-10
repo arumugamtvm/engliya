@@ -120,7 +120,10 @@ class _ExamplesTabState extends State<ExamplesTab> {
 
     if (examples.isEmpty) {
       return const Center(
-        child: Text('No examples available'),
+        child: Text(
+          AppStrings.noExamples,
+          textAlign: TextAlign.center,
+        ),
       );
     }
 

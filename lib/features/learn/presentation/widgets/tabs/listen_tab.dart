@@ -160,7 +160,10 @@ class _ListenTabState extends State<ListenTab> {
 
     if (questions.isEmpty) {
       return const Center(
-        child: Text('No listening questions available'),
+        child: Text(
+          AppStrings.noListeningQuestions,
+          textAlign: TextAlign.center,
+        ),
       );
     }
 

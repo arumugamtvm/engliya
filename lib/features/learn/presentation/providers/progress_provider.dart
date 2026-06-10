@@ -120,10 +120,16 @@ class ProgressProvider extends ChangeNotifier {
   Future<void> refreshPhaseUnlockStatus() async {
     if (_gatingService != null) {
       try {
-        _isPhase2UnlockedCached = await _gatingService.isPhaseUnlocked(2);
-        _isPhase3UnlockedCached = await _gatingService.isPhaseUnlocked(3);
-        _isPhase4UnlockedCached = await _gatingService.isPhaseUnlocked(4);
-        _isPhase5UnlockedCached = await _gatingService.isPhaseUnlocked(5);
+        // Compute all values first, then assign together so readers never
+        // observe a partially refreshed unlock state across the awaits.
+        final phase2 = await _gatingService.isPhaseUnlocked(2);
+        final phase3 = await _gatingService.isPhaseUnlocked(3);
+        final phase4 = await _gatingService.isPhaseUnlocked(4);
+        final phase5 = await _gatingService.isPhaseUnlocked(5);
+        _isPhase2UnlockedCached = phase2;
+        _isPhase3UnlockedCached = phase3;
+        _isPhase4UnlockedCached = phase4;
+        _isPhase5UnlockedCached = phase5;
       } catch (e) {
         AppLogger.debug(
           'Warning: Failed to refresh phase unlock status from GatingService: $e',

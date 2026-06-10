@@ -9,6 +9,7 @@ import '../providers/final_test_provider.dart';
 import '../providers/hybrid_final_test_provider.dart';
 import '../../../../app/theme.dart';
 import '../../../../core/constants/app_config.dart';
+import '../../../../core/constants/app_strings.dart';
 import '../../../../core/utils/animations.dart';
 import '../../../../core/utils/error_handler.dart';
 import '../../../../core/widgets/app_empty_state.dart';
@@ -93,8 +94,7 @@ class FinalTestScreenConfig<TQuestion, TSpeakingResult, TResult> {
       title: 'Phase 4 - Final Test',
       subtitle: 'Fluency & Pronunciation Check',
       semanticsLabel: 'Phase 4 Final Test, Fluency and Pronunciation Check',
-      lockedDescription:
-          'Please master all Phase 4 lessons before taking the Final Test',
+      lockedDescription: AppStrings.finalTestLockedDescription(4),
       lockedSemanticsLabel:
           'Test locked. Please master all Phase 4 lessons before taking the final test.',
       resultRoute: '/phase4/finalTest/result',
@@ -167,8 +167,7 @@ class FinalTestScreenConfig<TQuestion, TSpeakingResult, TResult> {
       title: 'Phase 5 - Final Test',
       subtitle: 'Professional English Mastery',
       semanticsLabel: 'Phase 5 Final Test, Professional English Mastery',
-      lockedDescription:
-          'Please master all Phase 5 lessons before taking the Final Test',
+      lockedDescription: AppStrings.finalTestLockedDescription(5),
       lockedSemanticsLabel:
           'Test locked. Please master all Phase 5 lessons before taking the final test.',
       resultRoute: '/phase5/finalTest/result',
@@ -442,8 +441,8 @@ class _FinalTestScreenState<
 
               if (provider.questions.isEmpty) {
                 return const AppEmptyState(
-                  title: 'No questions available',
-                  subtitle: 'Please try again in a moment.',
+                  title: AppStrings.noQuestions,
+                  subtitle: AppStrings.tryAgainMoment,
                 );
               }
 
@@ -503,7 +502,7 @@ class _FinalTestScreenState<
               ),
               const SizedBox(height: AppTheme.spacingM),
               const Text(
-                'Test Locked',
+                AppStrings.testLocked,
                 style: TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
@@ -524,7 +523,7 @@ class _FinalTestScreenState<
                 child: ElevatedButton.icon(
                   onPressed: () => Navigator.of(context).pop(),
                   icon: const Icon(Icons.arrow_back),
-                  label: const Text('Go Back'),
+                  label: const Text(AppStrings.goBack),
                 ),
               ),
             ],
@@ -538,8 +537,9 @@ class _FinalTestScreenState<
     return Semantics(
       label: 'Error loading test. ${provider.error}. Please try again.',
       child: AppErrorState(
-        message: provider.error ?? 'An error occurred while loading test.',
-        retryLabel: _isRetryingInitialize ? 'Retrying...' : 'Retry',
+        message: provider.error ?? AppStrings.unableToLoadTest,
+        retryLabel:
+            _isRetryingInitialize ? AppStrings.retrying : AppStrings.retry,
         onRetry: _isRetryingInitialize ? () {} : _retryInitializeTest,
       ),
     );
@@ -1114,7 +1114,8 @@ class _FinalTestScreenState<
   Widget _buildNavigationControls(BuildContext context, TProvider provider) {
     final canProceed = provider.canProceed;
     final isLastQuestion = provider.isLastQuestion;
-    final buttonText = isLastQuestion ? 'Submit Test' : 'Next';
+    final buttonText =
+        isLastQuestion ? AppStrings.submitTest : AppStrings.next;
     final semanticLabel = canProceed
         ? (isLastQuestion
               ? 'Submit test and view results'
@@ -1150,7 +1151,7 @@ class _FinalTestScreenState<
                     borderRadius: BorderRadius.circular(AppTheme.radiusL),
                   ),
                 ),
-                child: const Text('Skip'),
+                child: const Text(AppStrings.skip),
               ),
             ),
             const SizedBox(width: AppTheme.spacingM),
