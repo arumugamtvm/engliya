@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../domain/entities/test_question.dart';
 import '../../domain/entities/test_result.dart';
 import '../../../../app/theme.dart';
+import '../../../../core/constants/app_strings.dart';
 import '../../../../core/utils/animations.dart';
 
 class ReviewHeaderConfig {
@@ -76,8 +77,7 @@ class McqFinalTestReviewConfig {
   static McqFinalTestReviewConfig phase1() {
     return McqFinalTestReviewConfig(
       header: ReviewHeaderConfig(
-        textBuilder: (count) =>
-            'You got $count question${count == 1 ? '' : 's'} wrong. Review them below:',
+        textBuilder: AppStrings.questionsWrongReview,
         backgroundColor: const Color(0xFFFFEBEE),
         borderColor: AppTheme.incorrectColor.withValues(alpha: 0.3),
         textColor: AppTheme.textPrimary,
@@ -85,8 +85,8 @@ class McqFinalTestReviewConfig {
         iconColor: AppTheme.incorrectColor,
       ),
       emptyState: ReviewEmptyStateConfig(
-        title: 'Perfect Score!',
-        subtitle: 'No mistakes to review',
+        title: AppStrings.perfectScore,
+        subtitle: AppStrings.noMistakes,
         semanticsLabel: 'Perfect Score! No mistakes to review',
         iconColor: AppTheme.correctColor,
         animated: false,
@@ -101,8 +101,7 @@ class McqFinalTestReviewConfig {
   static McqFinalTestReviewConfig phase2() {
     return McqFinalTestReviewConfig(
       header: ReviewHeaderConfig(
-        textBuilder: (count) =>
-            'You made $count mistake${count == 1 ? '' : 's'}',
+        textBuilder: AppStrings.youMadeMistakes,
         backgroundColor: AppTheme.incorrectColor.withValues(alpha: 0.1),
         borderColor: AppTheme.incorrectColor.withValues(alpha: 0.3),
         textColor: AppTheme.incorrectColor,
@@ -110,8 +109,8 @@ class McqFinalTestReviewConfig {
         iconColor: AppTheme.incorrectColor,
       ),
       emptyState: ReviewEmptyStateConfig(
-        title: 'Perfect Score!',
-        subtitle: 'No mistakes to review',
+        title: AppStrings.perfectScore,
+        subtitle: AppStrings.noMistakes,
         semanticsLabel: 'Perfect Score! No mistakes to review',
         iconColor: AppTheme.correctColor,
         animated: true,
@@ -133,8 +132,7 @@ class McqFinalTestReviewConfig {
   static McqFinalTestReviewConfig phase3() {
     return McqFinalTestReviewConfig(
       header: ReviewHeaderConfig(
-        textBuilder: (count) =>
-            'You made $count mistake${count == 1 ? '' : 's'}',
+        textBuilder: AppStrings.youMadeMistakes,
         backgroundColor: AppTheme.incorrectColor.withValues(alpha: 0.1),
         borderColor: AppTheme.incorrectColor.withValues(alpha: 0.3),
         textColor: AppTheme.incorrectColor,
@@ -142,8 +140,8 @@ class McqFinalTestReviewConfig {
         iconColor: AppTheme.incorrectColor,
       ),
       emptyState: ReviewEmptyStateConfig(
-        title: 'Perfect Score!',
-        subtitle: 'No mistakes to review',
+        title: AppStrings.perfectScore,
+        subtitle: AppStrings.noMistakes,
         semanticsLabel: 'Perfect Score! No mistakes to review',
         iconColor: AppTheme.correctColor,
         animated: true,
@@ -227,7 +225,7 @@ class McqFinalTestReviewScreen extends StatelessWidget {
         ),
       ),
       title: const Text(
-        'Review Mistakes',
+        AppStrings.review,
         style: TextStyle(
           fontSize: 20,
           fontWeight: FontWeight.bold,
@@ -308,7 +306,7 @@ class McqFinalTestReviewScreen extends StatelessWidget {
             ),
             icon: const Icon(Icons.arrow_back),
             label: const Text(
-              'Back to Results',
+              AppStrings.backToResults,
               style: TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.w600,
@@ -443,13 +441,13 @@ class McqFinalTestReviewScreen extends StatelessWidget {
               _buildQuestionTextSimple(question.promptEn),
               const SizedBox(height: AppTheme.spacingL),
               _buildAnswerOption(
-                label: 'Your Answer',
+                label: AppStrings.yourAnswer,
                 answer: incorrectAnswer.selectedAnswer,
                 isCorrect: false,
               ),
               const SizedBox(height: AppTheme.spacingM),
               _buildAnswerOption(
-                label: 'Correct Answer',
+                label: AppStrings.correctAnswer,
                 answer: incorrectAnswer.correctAnswer,
                 isCorrect: true,
               ),
@@ -515,7 +513,7 @@ class McqFinalTestReviewScreen extends StatelessWidget {
             ),
             const SizedBox(width: AppTheme.spacingS),
             Text(
-              'Question $questionNumber',
+              AppStrings.questionNumberLabel(questionNumber),
               style: const TextStyle(
                 fontSize: 14,
                 fontWeight: FontWeight.w600,
@@ -756,7 +754,7 @@ class McqFinalTestReviewScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Your Answer',
+                    AppStrings.yourAnswer,
                     style: TextStyle(
                       fontSize: 14,
                       fontWeight: FontWeight.bold,
@@ -808,7 +806,7 @@ class McqFinalTestReviewScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Correct Answer',
+                    AppStrings.correctAnswer,
                     style: TextStyle(
                       fontSize: 14,
                       fontWeight: FontWeight.bold,
@@ -865,7 +863,7 @@ class McqFinalTestReviewScreen extends StatelessWidget {
             ),
             icon: const Icon(Icons.arrow_back),
             label: const Text(
-              'Back to Results',
+              AppStrings.backToResults,
               style: TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.w600,

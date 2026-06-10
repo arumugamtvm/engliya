@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../providers/lesson_provider.dart';
 import '../../../../../app/theme.dart';
+import '../../../../../core/constants/app_strings.dart';
 import 'dart:async';
 
 /// Speak tab widget with enhanced UI and mock scoring (fallback version)
@@ -100,7 +101,7 @@ class _SpeakTabFallbackState extends State<SpeakTabFallback> with TickerProvider
       // More variation
       final words = expected.split(' ');
       if (words.length > 1) {
-        return words.sublist(0, words.length - 1).join(' ') + '...';
+        return '${words.sublist(0, words.length - 1).join(' ')}...';
       }
       return expected.toLowerCase();
     }
@@ -133,7 +134,12 @@ class _SpeakTabFallbackState extends State<SpeakTabFallback> with TickerProvider
 
     final sentences = lesson.speakSentences;
     if (sentences.isEmpty) {
-      return const Center(child: Text('No speaking exercises available'));
+      return const Center(
+        child: Text(
+          AppStrings.noSpeakingExercises,
+          textAlign: TextAlign.center,
+        ),
+      );
     }
 
     double averageScore = 0.0;
@@ -150,8 +156,8 @@ class _SpeakTabFallbackState extends State<SpeakTabFallback> with TickerProvider
           decoration: BoxDecoration(
             gradient: LinearGradient(
               colors: [
-                AppTheme.primaryColor.withOpacity(0.1),
-                AppTheme.accentColor.withOpacity(0.05),
+                AppTheme.primaryColor.withValues(alpha: 0.1),
+                AppTheme.accentColor.withValues(alpha: 0.05),
               ],
             ),
           ),
@@ -160,7 +166,7 @@ class _SpeakTabFallbackState extends State<SpeakTabFallback> with TickerProvider
               Container(
                 padding: const EdgeInsets.all(8),
                 decoration: BoxDecoration(
-                  color: AppTheme.primaryColor.withOpacity(0.2),
+                  color: AppTheme.primaryColor.withValues(alpha: 0.2),
                   shape: BoxShape.circle,
                 ),
                 child: const Icon(
@@ -194,7 +200,7 @@ class _SpeakTabFallbackState extends State<SpeakTabFallback> with TickerProvider
                 Container(
                   padding: const EdgeInsets.all(8),
                   decoration: BoxDecoration(
-                    color: AppTheme.correctColor.withOpacity(0.2),
+                    color: AppTheme.correctColor.withValues(alpha: 0.2),
                     shape: BoxShape.circle,
                   ),
                   child: const Icon(
@@ -225,7 +231,7 @@ class _SpeakTabFallbackState extends State<SpeakTabFallback> with TickerProvider
                   borderRadius: BorderRadius.circular(16),
                   side: BorderSide(
                     color: hasAttempted
-                        ? AppTheme.primaryColor.withOpacity(0.5)
+                        ? AppTheme.primaryColor.withValues(alpha: 0.5)
                         : Colors.transparent,
                     width: 2,
                   ),
@@ -244,7 +250,7 @@ class _SpeakTabFallbackState extends State<SpeakTabFallback> with TickerProvider
                               vertical: 6,
                             ),
                             decoration: BoxDecoration(
-                              color: AppTheme.primaryColor.withOpacity(0.1),
+                              color: AppTheme.primaryColor.withValues(alpha: 0.1),
                               borderRadius: BorderRadius.circular(20),
                             ),
                             child: Text(
@@ -264,15 +270,15 @@ class _SpeakTabFallbackState extends State<SpeakTabFallback> with TickerProvider
                               ),
                               decoration: BoxDecoration(
                                 gradient: LinearGradient(
-                                  colors: score! >= 70
-                                      ? [AppTheme.correctColor, AppTheme.correctColor.withOpacity(0.8)]
-                                      : [AppTheme.warningColor, AppTheme.warningColor.withOpacity(0.8)],
+                                  colors: score >= 70
+                                      ? [AppTheme.correctColor, AppTheme.correctColor.withValues(alpha: 0.8)]
+                                      : [AppTheme.warningColor, AppTheme.warningColor.withValues(alpha: 0.8)],
                                 ),
                                 borderRadius: BorderRadius.circular(20),
                                 boxShadow: [
                                   BoxShadow(
                                     color: (score >= 70 ? AppTheme.correctColor : AppTheme.warningColor)
-                                        .withOpacity(0.3),
+                                        .withValues(alpha: 0.3),
                                     blurRadius: 8,
                                     offset: const Offset(0, 2),
                                   ),
@@ -387,7 +393,7 @@ class _SpeakTabFallbackState extends State<SpeakTabFallback> with TickerProvider
                       // Result display
                       if (hasAttempted) ...[
                         const SizedBox(height: 20),
-                        _buildResultDisplay(index, sentence.en, score!),
+                        _buildResultDisplay(index, sentence.en, score),
                       ],
                     ],
                   ),
@@ -407,7 +413,7 @@ class _SpeakTabFallbackState extends State<SpeakTabFallback> with TickerProvider
       height: 80,
       padding: const EdgeInsets.symmetric(horizontal: 20),
       decoration: BoxDecoration(
-        color: AppTheme.primaryColor.withOpacity(0.05),
+        color: AppTheme.primaryColor.withValues(alpha: 0.05),
         borderRadius: BorderRadius.circular(12),
       ),
       child: Row(
@@ -451,11 +457,11 @@ class _SpeakTabFallbackState extends State<SpeakTabFallback> with TickerProvider
         gradient: LinearGradient(
           colors: [
             isGoodScore
-                ? AppTheme.correctColor.withOpacity(0.1)
-                : AppTheme.warningColor.withOpacity(0.1),
+                ? AppTheme.correctColor.withValues(alpha: 0.1)
+                : AppTheme.warningColor.withValues(alpha: 0.1),
             isGoodScore
-                ? AppTheme.correctColor.withOpacity(0.05)
-                : AppTheme.warningColor.withOpacity(0.05),
+                ? AppTheme.correctColor.withValues(alpha: 0.05)
+                : AppTheme.warningColor.withValues(alpha: 0.05),
           ],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
@@ -594,10 +600,10 @@ class _SpeakTabFallbackState extends State<SpeakTabFallback> with TickerProvider
             Container(
               padding: const EdgeInsets.all(14),
               decoration: BoxDecoration(
-                color: AppTheme.infoColor.withOpacity(0.1),
+                color: AppTheme.infoColor.withValues(alpha: 0.1),
                 borderRadius: BorderRadius.circular(12),
                 border: Border.all(
-                  color: AppTheme.infoColor.withOpacity(0.3),
+                  color: AppTheme.infoColor.withValues(alpha: 0.3),
                   width: 1,
                 ),
               ),

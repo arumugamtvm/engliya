@@ -1,6 +1,7 @@
 import '../data/repositories/progress_repository.dart';
 import '../../../services/local_storage/storage_service.dart';
 import '../../../core/constants/app_config.dart';
+import '../../../core/logging/app_logger.dart';
 
 /// Centralized service for checking access permissions with debug mode bypass
 ///
@@ -20,20 +21,50 @@ class GatingService {
   final StorageService _storageService;
   final ProgressRepository _progressRepository;
 
-  // Storage keys for phase unlock status
-  static const String _keyPhase1TestPassed = 'phase1_final_test_passed';
-  static const String _keyPhase2TestPassed = 'phase2_final_test_passed';
-  static const String _keyPhase3TestPassed = 'phase3_final_test_passed';
-  static const String _keyPhase4TestPassed = 'phase4_final_test_passed';
-  static const String _keyPhase3Unlocked = 'phase3_unlocked';
-  static const String _keyPhase4Unlocked = 'phase4_unlocked';
-  static const String _keyPhase5Unlocked = 'phase5_unlocked';
+  // CANONICAL storage keys for "final test passed" status.
+  //
+  // These are the keys actually written when a final test passes:
+  // - Phases 1-3: TestRepositoryImpl writes PhaseConfig.keyTestPassed,
+  //   which is '${storageKeyPrefix}_final_test_passed' (e.g.
+  //   'phase1_final_test_passed').
+  // - Phases 4-5: FinalTestService writes 'phase4_final_test_passed' /
+  //   'phase5_final_test_passed'.
+  static const String keyPhase1TestPassed = 'phase1_final_test_passed';
+  static const String keyPhase2TestPassed = 'phase2_final_test_passed';
+  static const String keyPhase3TestPassed = 'phase3_final_test_passed';
+  static const String keyPhase4TestPassed = 'phase4_final_test_passed';
+
+  // LEGACY camelCase keys. Older builds (and DebugService, which writes both
+  // formats) used these. They are read-only here for backward compatibility
+  // with existing user data; new code must write the canonical keys above.
+  static const String legacyKeyPhase1TestPassed = 'phase1FinalTestPassed';
+  static const String legacyKeyPhase2TestPassed = 'phase2FinalTestPassed';
+  static const String legacyKeyPhase3TestPassed = 'phase3FinalTestPassed';
+  static const String legacyKeyPhase4TestPassed = 'phase4FinalTestPassed';
+
+  // Explicit phase unlock flags (set by DebugService.unlockAll and similar
+  // developer/maintenance flows).
+  static const String keyPhase2Unlocked = 'phase2_unlocked';
+  static const String keyPhase3Unlocked = 'phase3_unlocked';
+  static const String keyPhase4Unlocked = 'phase4_unlocked';
+  static const String keyPhase5Unlocked = 'phase5_unlocked';
+
+  // Runtime debug-mode flag, toggled from the in-app debug screen
+  // (debug builds only). Same key as DebugService uses.
+  static const String keyDebugModeEnabled = 'debug_mode_enabled';
 
   GatingService({
     required StorageService storageService,
     required ProgressRepository progressRepository,
   }) : _storageService = storageService,
        _progressRepository = progressRepository;
+
+  /// Whether the developer bypass is active: either the compile-time
+  /// [AppConfig.devMode] flag or the runtime debug-mode toggle.
+  bool get _isDebugBypassEnabled {
+    if (AppConfig.devMode) return true;
+    return _storageService.getBool(keyDebugModeEnabled) ?? false;
+  }
 
   /// Check if a phase is unlocked (with debug mode bypass)
   ///
@@ -48,7 +79,7 @@ class GatingService {
   /// [phaseNumber] - The phase number to check (1-5)
   Future<bool> isPhaseUnlocked(int phaseNumber) async {
     // Debug mode bypass - all phases unlocked
-    if (AppConfig.devMode) {
+    if (_isDebugBypassEnabled) {
       return true;
     }
 
@@ -59,42 +90,42 @@ class GatingService {
         return true;
       case 2:
         // Phase 2 requires Phase 1 final test passed
-        // Check both key formats for compatibility
-        final passed1 = _storageService.getBool(_keyPhase1TestPassed) ?? false;
+        // Reads canonical key, legacy camelCase key, and explicit unlock flag
+        final passed1 = _storageService.getBool(keyPhase1TestPassed) ?? false;
         final passed2 =
-            _storageService.getBool('phase1FinalTestPassed') ?? false;
+            _storageService.getBool(legacyKeyPhase1TestPassed) ?? false;
         final phase2Unlocked =
-            _storageService.getBool('phase2_unlocked') ?? false;
+            _storageService.getBool(keyPhase2Unlocked) ?? false;
         return passed1 || passed2 || phase2Unlocked;
       case 3:
         // Phase 3 requires Phase 2 final test passed or explicit unlock
-        // Check both key formats for compatibility
+        // Reads canonical key, legacy camelCase key, and explicit unlock flag
         final phase2TestPassed1 =
-            _storageService.getBool(_keyPhase2TestPassed) ?? false;
+            _storageService.getBool(keyPhase2TestPassed) ?? false;
         final phase2TestPassed2 =
-            _storageService.getBool('phase2FinalTestPassed') ?? false;
+            _storageService.getBool(legacyKeyPhase2TestPassed) ?? false;
         final phase3Unlocked =
-            _storageService.getBool(_keyPhase3Unlocked) ?? false;
+            _storageService.getBool(keyPhase3Unlocked) ?? false;
         return phase2TestPassed1 || phase2TestPassed2 || phase3Unlocked;
       case 4:
         // Phase 4 requires Phase 3 final test passed or explicit unlock
-        // Check both key formats for compatibility
+        // Reads canonical key, legacy camelCase key, and explicit unlock flag
         final phase3TestPassed1 =
-            _storageService.getBool(_keyPhase3TestPassed) ?? false;
+            _storageService.getBool(keyPhase3TestPassed) ?? false;
         final phase3TestPassed2 =
-            _storageService.getBool('phase3FinalTestPassed') ?? false;
+            _storageService.getBool(legacyKeyPhase3TestPassed) ?? false;
         final phase4Unlocked =
-            _storageService.getBool(_keyPhase4Unlocked) ?? false;
+            _storageService.getBool(keyPhase4Unlocked) ?? false;
         return phase3TestPassed1 || phase3TestPassed2 || phase4Unlocked;
       case 5:
         // Phase 5 requires Phase 4 final test passed or explicit unlock
-        // Check both key formats for compatibility
+        // Reads canonical key, legacy camelCase key, and explicit unlock flag
         final phase4TestPassed1 =
-            _storageService.getBool(_keyPhase4TestPassed) ?? false;
+            _storageService.getBool(keyPhase4TestPassed) ?? false;
         final phase4TestPassed2 =
-            _storageService.getBool('phase4FinalTestPassed') ?? false;
+            _storageService.getBool(legacyKeyPhase4TestPassed) ?? false;
         final phase5Unlocked =
-            _storageService.getBool(_keyPhase5Unlocked) ?? false;
+            _storageService.getBool(keyPhase5Unlocked) ?? false;
         return phase4TestPassed1 || phase4TestPassed2 || phase5Unlocked;
       default:
         return false;
@@ -110,11 +141,11 @@ class GatingService {
   /// storage state for Phase 5 unlock status.
   Future<bool> isPhase5Unlocked() async {
     // Check if Phase 4 final test was passed
-    // Check both key formats for compatibility
+    // Reads canonical key and legacy camelCase key for compatibility
     final phase4TestPassed1 =
-        _storageService.getBool(_keyPhase4TestPassed) ?? false;
+        _storageService.getBool(keyPhase4TestPassed) ?? false;
     final phase4TestPassed2 =
-        _storageService.getBool('phase4FinalTestPassed') ?? false;
+        _storageService.getBool(legacyKeyPhase4TestPassed) ?? false;
     return phase4TestPassed1 || phase4TestPassed2;
   }
 
@@ -127,7 +158,7 @@ class GatingService {
   /// [lessonId] - The lesson ID to check (e.g., 'phase1_lesson1', 'phase2_lesson7_1')
   Future<bool> isLessonUnlocked(String lessonId) async {
     // Debug mode bypass - all lessons unlocked
-    if (AppConfig.devMode) {
+    if (_isDebugBypassEnabled) {
       return true;
     }
 
@@ -151,7 +182,7 @@ class GatingService {
   /// [phaseNumber] - The phase number for the final test (1-3)
   Future<bool> isFinalTestAccessible(int phaseNumber) async {
     // Debug mode bypass - all tests accessible
-    if (AppConfig.devMode) {
+    if (_isDebugBypassEnabled) {
       return true;
     }
 
@@ -199,7 +230,7 @@ class GatingService {
 
       return true;
     } catch (e) {
-      print('Warning: Failed to check lesson mastery: $e');
+      AppLogger.warning('Warning: Failed to check lesson mastery: $e');
       return false;
     }
   }

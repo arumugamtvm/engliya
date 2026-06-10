@@ -9,6 +9,7 @@ import '../../services/gating_service.dart';
 import 'final_test_status_provider.dart';
 import '../../../../core/utils/error_handler.dart';
 import '../../../../core/constants/app_config.dart';
+import '../../../../core/logging/app_logger.dart';
 
 class McqFinalTestProvider extends ChangeNotifier
     implements FinalTestStatusProvider {
@@ -109,9 +110,7 @@ class McqFinalTestProvider extends ChangeNotifier
       notifyListeners();
     } catch (e, stackTrace) {
       ErrorHandler.logError('McqFinalTestProvider.startTest', e, stackTrace);
-      if (_error == null) {
-        _error = ErrorHandler.getUserMessage(e);
-      }
+      _error ??= ErrorHandler.getUserMessage(e);
       _isLoading = false;
       notifyListeners();
       rethrow;
@@ -124,7 +123,7 @@ class McqFinalTestProvider extends ChangeNotifier
     try {
       await startTest();
     } catch (e) {
-      print('Retry failed: $e');
+      AppLogger.debug('Retry failed: $e');
     }
   }
 
@@ -221,9 +220,7 @@ class McqFinalTestProvider extends ChangeNotifier
       notifyListeners();
     } catch (e, stackTrace) {
       ErrorHandler.logError('McqFinalTestProvider.submitTest', e, stackTrace);
-      if (_error == null) {
-        _error = ErrorHandler.getUserMessage(e);
-      }
+      _error ??= ErrorHandler.getUserMessage(e);
       _isLoading = false;
       notifyListeners();
       rethrow;
@@ -286,9 +283,9 @@ class McqFinalTestProvider extends ChangeNotifier
 
     if (_gatingService != null) {
       try {
-        return await _gatingService!.isFinalTestAccessible(_phaseNumber());
+        return await _gatingService.isFinalTestAccessible(_phaseNumber());
       } catch (e) {
-        print('Warning: GatingService error, falling back to direct check: $e');
+        AppLogger.warning('Warning: GatingService error, falling back to direct check: $e');
         if (_config.type == PhaseType.phase1) {
           return true;
         }
@@ -304,7 +301,7 @@ class McqFinalTestProvider extends ChangeNotifier
     }
 
     try {
-      final allProgress = await _progressRepository!.loadAllProgress();
+      final allProgress = await _progressRepository.loadAllProgress();
       for (final lessonId in _config.requiredLessonIds) {
         final progress = allProgress[lessonId];
         if (progress == null || !progress.isMastered) {

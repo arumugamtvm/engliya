@@ -6,7 +6,7 @@ import 'core/logging/app_logger.dart';
 import 'features/learn/presentation/providers/lesson_provider.dart';
 import 'features/learn/presentation/providers/progress_provider.dart';
 
-final GlobalKey<_AppLifecycleManagerState> appLifecycleKey = GlobalKey();
+final GlobalKey<_AppLifecycleManagerState> _appLifecycleKey = GlobalKey();
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -18,7 +18,7 @@ void main() async {
     MultiProvider(
       providers: container.providers,
       child: AppLifecycleManager(
-        key: appLifecycleKey,
+        key: _appLifecycleKey,
         child: EngliyaApp(onboardingService: container.onboardingService),
       ),
     ),

@@ -4,6 +4,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 import 'package:speech_to_text/speech_to_text.dart' as stt;
 import 'dart:convert';
+import '../../../../core/logging/app_logger.dart';
 import '../../../../services/ai/ai_service.dart';
 import '../../../../app/theme.dart';
 
@@ -29,7 +30,7 @@ class _AIChatScreenState extends State<AIChatScreen>
   bool _isListening = false;
   bool _isSpeaking = false;
   bool _speechAvailable = false;
-  String _selectedModel = AIService.modelClaudeHaiku;
+  final String _selectedModel = AIService.modelClaudeHaiku;
   String? _speakingId;
   late AnimationController _typingController;
   late AnimationController _micController;
@@ -53,13 +54,25 @@ class _AIChatScreenState extends State<AIChatScreen>
   Future<void> _initTts() async {
     await _flutterTts.setVolume(1.0);
     await _flutterTts.setSpeechRate(0.45);
-    await _flutterTts.setLanguage('en-US');
+    // Prefer Indian English; fall back to US English if unavailable
+    try {
+      final available = await _flutterTts.isLanguageAvailable('en-IN');
+      await _flutterTts.setLanguage(available == true ? 'en-IN' : 'en-US');
+    } catch (e) {
+      AppLogger.warning(
+        'Could not set en-IN TTS language; falling back to en-US',
+        tag: 'AIChatScreen',
+        error: e,
+      );
+      await _flutterTts.setLanguage('en-US');
+    }
     _flutterTts.setCompletionHandler(() {
-      if (mounted)
+      if (mounted) {
         setState(() {
           _isSpeaking = false;
           _speakingId = null;
         });
+      }
     });
   }
 
@@ -70,28 +83,31 @@ class _AIChatScreenState extends State<AIChatScreen>
   Future<void> _toggleListening() async {
     if (_isListening) {
       await _speech.stop();
-      setState(() => _isListening = false);
+      if (mounted) setState(() => _isListening = false);
     } else if (_speechAvailable) {
       await _speech.listen(
         onResult: (result) {
+          if (!mounted) return;
           setState(() => _controller.text = result.recognizedWords);
           if (result.finalResult && _controller.text.isNotEmpty) _sendMessage();
         },
         listenFor: const Duration(seconds: 30),
       );
-      setState(() => _isListening = true);
+      if (mounted) setState(() => _isListening = true);
     }
   }
 
   Future<void> _speak(String text, String id) async {
     if (_isSpeaking && _speakingId == id) {
       await _flutterTts.stop();
+      if (!mounted) return;
       setState(() {
         _isSpeaking = false;
         _speakingId = null;
       });
     } else {
       if (_isSpeaking) await _flutterTts.stop();
+      if (!mounted) return;
       setState(() {
         _isSpeaking = true;
         _speakingId = id;
@@ -105,16 +121,31 @@ class _AIChatScreenState extends State<AIChatScreen>
   Future<void> _loadChatHistory() async {
     try {
       final prefs = await SharedPreferences.getInstance();
+      if (!mounted) return;
       final json = prefs.getString('ai_chat_history');
       if (json != null) {
-        setState(
-          () => _messages.addAll(
-            (jsonDecode(json) as List).map((m) => ChatMessage.fromJson(m)),
-          ),
-        );
+        final decoded = jsonDecode(json);
+        if (decoded is List) {
+          setState(
+            () => _messages.addAll(
+              decoded.map((m) => ChatMessage.fromJson(m)),
+            ),
+          );
+        } else {
+          AppLogger.warning(
+            'Stored chat history is not a list; ignoring it',
+            tag: 'AIChatScreen',
+          );
+        }
       }
       if (_messages.isEmpty) _addWelcome();
-    } catch (_) {
+    } catch (e, stackTrace) {
+      AppLogger.warning(
+        'Failed to load chat history; starting fresh',
+        tag: 'AIChatScreen',
+        error: e,
+        stackTrace: stackTrace,
+      );
       _addWelcome();
     }
   }
@@ -132,7 +163,7 @@ class _AIChatScreenState extends State<AIChatScreen>
       ChatMessage(
         id: '0',
         text:
-            'Hello! I\'m your AI English tutor. 👋\n\n🎤 Tap mic to speak\n🔊 Tap speaker to hear responses\n\nHow can I help you today?',
+            'Hello! I\'m your AI English tutor. 👋\nவணக்கம்! நான் உங்கள் AI ஆங்கில ஆசிரியர்.\n\n🎤 Tap mic to speak / பேச மைக்கை தட்டவும்\n🔊 Tap speaker to listen / கேட்க ஸ்பீக்கரை தட்டவும்\n\nHow can I help you today?\nஇன்று நான் எப்படி உதவ வேண்டும்?',
         isUser: false,
         timestamp: DateTime.now(),
       ),
@@ -171,40 +202,45 @@ class _AIChatScreenState extends State<AIChatScreen>
               lessonContext: widget.lessonContext!,
             )
           : await _aiService.chat(message: msg, history: history);
-      setState(
-        () => _messages.add(
-          ChatMessage(
-            id: DateTime.now().millisecondsSinceEpoch.toString(),
-            text: response,
-            isUser: false,
-            timestamp: DateTime.now(),
+      if (mounted) {
+        setState(
+          () => _messages.add(
+            ChatMessage(
+              id: DateTime.now().millisecondsSinceEpoch.toString(),
+              text: response,
+              isUser: false,
+              timestamp: DateTime.now(),
+            ),
           ),
-        ),
-      );
+        );
+      }
       await _saveHistory();
     } catch (e) {
       final message = e.toString().contains('Please enter a question first')
-          ? 'Please enter a question first.'
-          : 'Error occurred. Please try again.';
-      setState(
-        () => _messages.add(
-          ChatMessage(
-            id: DateTime.now().millisecondsSinceEpoch.toString(),
-            text: message,
-            isUser: false,
-            timestamp: DateTime.now(),
-            isError: true,
+          ? 'Please enter a question first. / முதலில் ஒரு கேள்வியை உள்ளிடவும்.'
+          : 'Error occurred. Please try again. / பிழை ஏற்பட்டது. மீண்டும் முயற்சிக்கவும்.';
+      if (mounted) {
+        setState(
+          () => _messages.add(
+            ChatMessage(
+              id: DateTime.now().millisecondsSinceEpoch.toString(),
+              text: message,
+              isUser: false,
+              timestamp: DateTime.now(),
+              isError: true,
+            ),
           ),
-        ),
-      );
+        );
+      }
     } finally {
-      setState(() => _isLoading = false);
+      if (mounted) setState(() => _isLoading = false);
       _scrollToBottom();
     }
   }
 
   void _scrollToBottom() {
     Future.delayed(const Duration(milliseconds: 100), () {
+      if (!mounted) return;
       if (_scrollController.hasClients) {
         _scrollController.animateTo(
           _scrollController.position.maxScrollExtent,
@@ -302,13 +338,15 @@ class _AIChatScreenState extends State<AIChatScreen>
                 3,
                 (i) => AnimatedBuilder(
                   animation: _typingController,
-                  builder: (_, __) => Container(
+                  builder: (_, _) => Container(
                     margin: const EdgeInsets.symmetric(horizontal: 2),
                     width: 8,
                     height: 8,
                     decoration: BoxDecoration(
-                      color: AppTheme.primaryColor.withOpacity(
-                        0.3 + ((_typingController.value + i * 0.2) % 1.0) * 0.7,
+                      color: AppTheme.primaryColor.withValues(
+                        alpha:
+                            0.3 +
+                            ((_typingController.value + i * 0.2) % 1.0) * 0.7,
                       ),
                       shape: BoxShape.circle,
                     ),
@@ -378,7 +416,7 @@ class _AIChatScreenState extends State<AIChatScreen>
                     ),
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.black.withOpacity(0.05),
+                        color: Colors.black.withValues(alpha: 0.05),
                         blurRadius: 5,
                       ),
                     ],
@@ -487,7 +525,7 @@ class _AIChatScreenState extends State<AIChatScreen>
         color: Colors.white,
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.05),
+            color: Colors.black.withValues(alpha: 0.05),
             blurRadius: 10,
             offset: const Offset(0, -5),
           ),
@@ -500,12 +538,12 @@ class _AIChatScreenState extends State<AIChatScreen>
             // Mic button
             AnimatedBuilder(
               animation: _micController,
-              builder: (_, __) => Container(
+              builder: (_, _) => Container(
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   color: _isListening
-                      ? Colors.red.withOpacity(0.1 + _micController.value * 0.2)
-                      : Colors.grey.withOpacity(0.1),
+                      ? Colors.red.withValues(alpha: 0.1 + _micController.value * 0.2)
+                      : Colors.grey.withValues(alpha: 0.1),
                 ),
                 child: IconButton(
                   icon: Icon(

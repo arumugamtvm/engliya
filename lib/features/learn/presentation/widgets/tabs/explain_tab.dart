@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 import '../../providers/lesson_provider.dart';
 import '../../../../../app/theme.dart';
+import '../../../../../core/constants/app_strings.dart';
 
 class ExplainTab extends StatefulWidget {
   const ExplainTab({super.key});
@@ -94,7 +95,10 @@ class _ExplainTabState extends State<ExplainTab> {
 
     if (lesson == null) {
       return const Center(
-        child: Text('No lesson data available'),
+        child: Text(
+          AppStrings.noLessonData,
+          textAlign: TextAlign.center,
+        ),
       );
     }
 
@@ -156,10 +160,15 @@ class _ExplainTabState extends State<ExplainTab> {
             const SizedBox(height: 8),
             Center(
               child: Text(
-                'Scroll to bottom to complete',
+                AppStrings.bilingual(
+                  AppStrings.scrollToCompleteEn,
+                  AppStrings.scrollToCompleteTa,
+                ),
+                textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 14,
                   color: Colors.grey[600],
+                  height: 1.5,
                 ),
               ),
             ),
@@ -172,9 +181,10 @@ class _ExplainTabState extends State<ExplainTab> {
               ),
             ),
             const SizedBox(height: 8),
-            Center(
+            const Center(
               child: Text(
-                'Completed!',
+                AppStrings.completed,
+                textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 14,
                   color: AppTheme.correctColor,
@@ -239,7 +249,7 @@ class _ExplainTabState extends State<ExplainTab> {
           decoration: BoxDecoration(
             color: isSpeaking
                 ? AppTheme.accentColor
-                : AppTheme.primaryColor.withOpacity(0.1),
+                : AppTheme.primaryColor.withValues(alpha: 0.1),
             shape: BoxShape.circle,
           ),
           child: IconButton(
@@ -278,13 +288,13 @@ class _ExplainTabState extends State<ExplainTab> {
                   Icon(
                     Icons.play_circle_outline,
                     size: 64,
-                    color: Colors.white.withOpacity(0.8),
+                    color: Colors.white.withValues(alpha: 0.8),
                   ),
                   const SizedBox(height: 8),
                   Text(
                     'Video Explanation',
                     style: TextStyle(
-                      color: Colors.white.withOpacity(0.8),
+                      color: Colors.white.withValues(alpha: 0.8),
                       fontSize: 16,
                     ),
                   ),
@@ -292,7 +302,7 @@ class _ExplainTabState extends State<ExplainTab> {
                   Text(
                     'Tap to play',
                     style: TextStyle(
-                      color: Colors.white.withOpacity(0.6),
+                      color: Colors.white.withValues(alpha: 0.6),
                       fontSize: 14,
                     ),
                   ),
@@ -349,10 +359,10 @@ class _ExplainTabState extends State<ExplainTab> {
         Container(
           padding: const EdgeInsets.all(12),
           decoration: BoxDecoration(
-            color: AppTheme.infoColor.withOpacity(0.1),
+            color: AppTheme.infoColor.withValues(alpha: 0.1),
             borderRadius: BorderRadius.circular(8),
             border: Border.all(
-              color: AppTheme.infoColor.withOpacity(0.3),
+              color: AppTheme.infoColor.withValues(alpha: 0.3),
             ),
           ),
           child: Row(
@@ -387,7 +397,7 @@ class _ExplainTabState extends State<ExplainTab> {
         borderRadius: BorderRadius.circular(12),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.05),
+            color: Colors.black.withValues(alpha: 0.05),
             blurRadius: 4,
             offset: const Offset(0, 2),
           ),
@@ -430,7 +440,7 @@ class _ExplainTabState extends State<ExplainTab> {
         borderRadius: BorderRadius.circular(12),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.05),
+            color: Colors.black.withValues(alpha: 0.05),
             blurRadius: 4,
             offset: const Offset(0, 2),
           ),
@@ -450,7 +460,7 @@ class _ExplainTabState extends State<ExplainTab> {
           // Header row
           TableRow(
             decoration: BoxDecoration(
-              color: AppTheme.primaryColor.withOpacity(0.1),
+              color: AppTheme.primaryColor.withValues(alpha: 0.1),
             ),
             children: [
               _buildTableCell('Pronoun', isHeader: true),
@@ -467,7 +477,7 @@ class _ExplainTabState extends State<ExplainTab> {
                 _buildTableCell(row.descriptionTa ?? ''),
               ],
             );
-          }).toList(),
+          }),
         ],
       ),
     );

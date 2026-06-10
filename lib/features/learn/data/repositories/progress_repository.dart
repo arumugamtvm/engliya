@@ -1,5 +1,6 @@
 import '../models/user_lesson_status.dart';
 import '../../../../services/local_storage/storage_service.dart';
+import '../../../../core/logging/app_logger.dart';
 
 /// Repository for managing user progress data
 /// Handles loading, saving, and initializing progress using local storage
@@ -32,7 +33,7 @@ class ProgressRepository {
           }
         } catch (e) {
           // Log error but continue loading other progress entries
-          print('Warning: Failed to parse progress for $lessonId: $e');
+          AppLogger.warning('Warning: Failed to parse progress for $lessonId: $e');
         }
       });
 
@@ -110,7 +111,7 @@ class ProgressRepository {
       await _storage.setJson(_progressKey, progressJson);
     } catch (e) {
       // Retry once
-      print('First save attempt failed, retrying...');
+      AppLogger.debug('First save attempt failed, retrying...');
       await Future.delayed(const Duration(milliseconds: 100));
       await _storage.setJson(_progressKey, progressJson);
     }

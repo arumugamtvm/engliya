@@ -6,6 +6,7 @@ import 'final_test_status_provider.dart';
 import 'hybrid_final_test_provider.dart';
 import '../../../../core/constants/app_config.dart';
 import '../../../../core/utils/error_handler.dart';
+import '../../../../core/logging/app_logger.dart';
 
 class FinalTestProvider<Q, S, R> extends ChangeNotifier
     implements FinalTestStatusProvider, HybridFinalTestProvider<Q, S, R> {
@@ -151,7 +152,7 @@ class FinalTestProvider<Q, S, R> extends ChangeNotifier
       _isLoading = false;
       notifyListeners();
 
-      print(
+      AppLogger.debug(
         '${_testService.phaseLabel} test started successfully with ${_questions.length} questions',
       );
     } catch (e, stackTrace) {
@@ -161,9 +162,7 @@ class FinalTestProvider<Q, S, R> extends ChangeNotifier
         stackTrace,
       );
 
-      if (_error == null) {
-        _error = ErrorHandler.getUserMessage(e);
-      }
+      _error ??= ErrorHandler.getUserMessage(e);
 
       _isLoading = false;
       notifyListeners();
@@ -179,7 +178,7 @@ class FinalTestProvider<Q, S, R> extends ChangeNotifier
     try {
       await startTest();
     } catch (e) {
-      print('Retry failed: $e');
+      AppLogger.debug('Retry failed: $e');
     }
   }
 
@@ -187,7 +186,7 @@ class FinalTestProvider<Q, S, R> extends ChangeNotifier
   void selectMcqAnswer(int index) {
     final question = currentQuestion;
     if (question == null || !_testService.isMcq(question)) {
-      print('Warning: Cannot select MCQ answer for non-MCQ question');
+      AppLogger.warning('Warning: Cannot select MCQ answer for non-MCQ question');
       return;
     }
 
@@ -201,7 +200,7 @@ class FinalTestProvider<Q, S, R> extends ChangeNotifier
   void recordSpeakingResult(S result) {
     final question = currentQuestion;
     if (question == null || !_testService.isSpeakingTask(question)) {
-      print('Warning: Cannot record speaking result for non-speaking question');
+      AppLogger.warning('Warning: Cannot record speaking result for non-speaking question');
       return;
     }
 
@@ -302,7 +301,7 @@ class FinalTestProvider<Q, S, R> extends ChangeNotifier
       }
 
       try {
-        await _testService.saveTestResult(_testResult!);
+        await _testService.saveTestResult(_testResult as R);
         _error = null;
       } catch (storageError) {
         ErrorHandler.logError(
@@ -322,9 +321,7 @@ class FinalTestProvider<Q, S, R> extends ChangeNotifier
         stackTrace,
       );
 
-      if (_error == null) {
-        _error = ErrorHandler.getUserMessage(e);
-      }
+      _error ??= ErrorHandler.getUserMessage(e);
 
       _isLoading = false;
       notifyListeners();
@@ -340,7 +337,7 @@ class FinalTestProvider<Q, S, R> extends ChangeNotifier
       notifyListeners();
 
       try {
-        await _testService.saveTestResult(_testResult!);
+        await _testService.saveTestResult(_testResult as R);
         _error = null;
         _isLoading = false;
         notifyListeners();
@@ -368,7 +365,7 @@ class FinalTestProvider<Q, S, R> extends ChangeNotifier
       final passed = await _testService.hasPassedTest();
 
       if (score != null) {
-        print(
+        AppLogger.debug(
           '${_testService.phaseLabel} previous test result: score=$score, passed=$passed',
         );
       }
@@ -415,11 +412,11 @@ class FinalTestProvider<Q, S, R> extends ChangeNotifier
 
     if (_gatingService != null) {
       try {
-        return await _gatingService!.isFinalTestAccessible(
+        return await _gatingService.isFinalTestAccessible(
           _testService.phaseNumber,
         );
       } catch (e) {
-        print('Warning: GatingService error, falling back to direct check: $e');
+        AppLogger.warning('Warning: GatingService error, falling back to direct check: $e');
       }
     }
 

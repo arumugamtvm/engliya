@@ -1,6 +1,7 @@
+import 'dart:async';
 import 'dart:convert';
-import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
+import '../../core/logging/app_logger.dart';
 import 'ai_response_validator.dart';
 
 /// AI Service for Bedrock integration
@@ -87,32 +88,96 @@ Format your responses clearly with:
         messages.add({'role': 'user', 'content': sanitizedMessage});
       }
 
-      final response = await http
-          .post(
-            Uri.parse('$_baseUrl/v1/chat/completions'),
-            headers: {'Content-Type': 'application/json'},
-            body: jsonEncode({
-              'model': _currentModel,
-              'messages': messages,
-              'max_tokens': 1500,
-              'temperature': 0.7,
-            }),
-          )
-          .timeout(_timeout);
+      final http.Response response;
+      try {
+        response = await http
+            .post(
+              Uri.parse('$_baseUrl/v1/chat/completions'),
+              headers: {'Content-Type': 'application/json'},
+              body: jsonEncode({
+                'model': _currentModel,
+                'messages': messages,
+                'max_tokens': 1500,
+                'temperature': 0.7,
+              }),
+            )
+            .timeout(_timeout);
+      } on TimeoutException catch (e, stackTrace) {
+        AppLogger.warning(
+          'AI request timed out after ${_timeout.inSeconds}s',
+          tag: 'AIService',
+          error: e,
+          stackTrace: stackTrace,
+        );
+        throw AIServiceException(
+          'The network is slow right now. Please check your internet connection and try again.',
+        );
+      }
 
       if (response.statusCode == 200) {
-        final data = jsonDecode(response.body);
-        final content =
-            data['choices'][0]['message']['content'] ?? 'No response';
+        final String content;
+        try {
+          content = _extractContent(response.body);
+        } catch (e, stackTrace) {
+          AppLogger.error(
+            'Failed to parse AI response',
+            tag: 'AIService',
+            error: e,
+            stackTrace: stackTrace,
+          );
+          throw AIServiceException(
+            'The AI tutor sent an unexpected response. Please try again.',
+          );
+        }
         return _responseValidator.validateTutorResponse(content);
       } else {
-        final error = jsonDecode(response.body);
+        String errorMessage =
+            'The AI tutor could not respond right now (status ${response.statusCode}). Please try again.';
+        try {
+          final error = jsonDecode(response.body);
+          if (error is Map<String, dynamic> && error['error'] != null) {
+            errorMessage = error['error'].toString();
+          }
+        } catch (e) {
+          AppLogger.warning(
+            'Could not parse error body for status ${response.statusCode}',
+            tag: 'AIService',
+            error: e,
+          );
+        }
         throw AIServiceException(
-          error['error']?.toString() ?? 'Failed to get response',
+          errorMessage,
           statusCode: response.statusCode,
         );
       }
     });
+  }
+
+  /// Extract the assistant message content from an OpenAI-style response
+  /// body, validating each level of the structure.
+  /// Throws [FormatException] if the structure is not as expected.
+  String _extractContent(String body) {
+    final data = jsonDecode(body);
+    if (data is! Map<String, dynamic>) {
+      throw const FormatException('Response body is not a JSON object');
+    }
+    final choices = data['choices'];
+    if (choices is! List || choices.isEmpty) {
+      throw const FormatException('Response contains no choices');
+    }
+    final firstChoice = choices.first;
+    if (firstChoice is! Map<String, dynamic>) {
+      throw const FormatException('First choice is not a JSON object');
+    }
+    final message = firstChoice['message'];
+    if (message is! Map<String, dynamic>) {
+      throw const FormatException('Choice message is not a JSON object');
+    }
+    final content = message['content'];
+    if (content is! String || content.isEmpty) {
+      throw const FormatException('Choice message has no text content');
+    }
+    return content;
   }
 
   /// Explain a grammar concept with structured output
@@ -168,8 +233,17 @@ Sentence: "$sentence"
       if (jsonMatch != null) {
         return jsonDecode(jsonMatch.group(0)!);
       }
-    } catch (e) {
-      debugPrint('JSON parse error: $e');
+      AppLogger.warning(
+        'checkSentence: no JSON object found in AI response; using fallback',
+        tag: 'AIService',
+      );
+    } catch (e, stackTrace) {
+      AppLogger.warning(
+        'checkSentence: failed to parse AI response as JSON; using fallback',
+        tag: 'AIService',
+        error: e,
+        stackTrace: stackTrace,
+      );
     }
 
     return {
@@ -216,8 +290,17 @@ Make it natural, practical, and include common phrases used in real situations.'
             )
             .toList();
       }
-    } catch (e) {
-      debugPrint('Conversation parse error: $e');
+      AppLogger.warning(
+        'generateConversation: no JSON array found in AI response; returning empty list',
+        tag: 'AIService',
+      );
+    } catch (e, stackTrace) {
+      AppLogger.warning(
+        'generateConversation: failed to parse AI response as JSON; returning empty list',
+        tag: 'AIService',
+        error: e,
+        stackTrace: stackTrace,
+      );
     }
 
     return [];
@@ -255,8 +338,17 @@ Format as JSON array only:
         final list = jsonDecode(jsonMatch.group(0)!) as List;
         return list.map((e) => Map<String, dynamic>.from(e)).toList();
       }
-    } catch (e) {
-      debugPrint('Vocabulary parse error: $e');
+      AppLogger.warning(
+        'generateVocabulary: no JSON array found in AI response; returning empty list',
+        tag: 'AIService',
+      );
+    } catch (e, stackTrace) {
+      AppLogger.warning(
+        'generateVocabulary: failed to parse AI response as JSON; returning empty list',
+        tag: 'AIService',
+        error: e,
+        stackTrace: stackTrace,
+      );
     }
 
     return [];
@@ -323,8 +415,17 @@ Format as JSON only:
       if (jsonMatch != null) {
         return jsonDecode(jsonMatch.group(0)!);
       }
-    } catch (e) {
-      debugPrint('Quiz parse error: $e');
+      AppLogger.warning(
+        'generateQuizQuestion: no JSON object found in AI response; returning empty map',
+        tag: 'AIService',
+      );
+    } catch (e, stackTrace) {
+      AppLogger.warning(
+        'generateQuizQuestion: failed to parse AI response as JSON; returning empty map',
+        tag: 'AIService',
+        error: e,
+        stackTrace: stackTrace,
+      );
     }
 
     return {};
@@ -356,8 +457,17 @@ Format as JSON only:
       if (jsonMatch != null) {
         return jsonDecode(jsonMatch.group(0)!);
       }
-    } catch (e) {
-      debugPrint('Pronunciation parse error: $e');
+      AppLogger.warning(
+        'getPronunciationGuide: no JSON object found in AI response; using fallback',
+        tag: 'AIService',
+      );
+    } catch (e, stackTrace) {
+      AppLogger.warning(
+        'getPronunciationGuide: failed to parse AI response as JSON; using fallback',
+        tag: 'AIService',
+        error: e,
+        stackTrace: stackTrace,
+      );
     }
 
     return {'text': text, 'phonetic': text};
@@ -376,7 +486,7 @@ Format as JSON only:
         }
         // Wait before retry with exponential backoff
         await Future.delayed(Duration(milliseconds: 500 * attempts));
-        debugPrint('AI Service retry attempt $attempts');
+        AppLogger.info('Retry attempt $attempts', tag: 'AIService');
       }
     }
   }

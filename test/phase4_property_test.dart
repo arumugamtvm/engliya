@@ -1,35 +1,30 @@
-import 'dart:convert';
-import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:kiri_check/kiri_check.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:engliya/features/learn/data/models/phase4_unit.dart';
+import 'package:engliya/features/learn/domain/entities/unit.dart';
 import 'package:engliya/features/learn/data/models/phase4_final_test_question.dart';
 import 'package:engliya/features/learn/data/models/phase4_test_result.dart';
 import 'package:engliya/features/learn/data/models/user_lesson_status.dart';
 import 'package:engliya/features/learn/data/models/lesson.dart';
 import 'package:engliya/features/learn/data/models/lesson_explain.dart';
-import 'package:engliya/features/learn/presentation/providers/phase4_unit_provider.dart';
-import 'package:engliya/features/learn/presentation/providers/progress_provider.dart';
 import 'package:engliya/features/learn/data/repositories/lesson_repository.dart';
 import 'package:engliya/features/learn/data/repositories/progress_repository.dart';
 import 'package:engliya/features/learn/services/gating_service.dart';
 import 'package:engliya/features/learn/services/debug_service.dart';
-import 'package:engliya/features/learn/services/phase4_final_test_service.dart';
+import 'package:engliya/features/learn/services/final_test_service.dart';
+import 'package:engliya/core/constants/app_config.dart';
 import 'package:engliya/services/local_storage/storage_service.dart';
 
 void main() {
   group('Phase 4 Property Tests', () {
     late StorageService storageService;
     late ProgressRepository progressRepository;
-    late LessonRepository lessonRepository;
 
     setUp(() async {
       SharedPreferences.setMockInitialValues({});
       storageService = StorageService();
       await storageService.init();
       progressRepository = ProgressRepository(storageService);
-      lessonRepository = LessonRepository();
       await progressRepository.clearAllProgress();
     });
 
@@ -55,7 +50,7 @@ void main() {
 
           // Create Phase4Unit instances with the generated mastered counts
           final units = [
-            Phase4Unit(
+            Unit(
               id: 'phase4_unit18',
               order: 18,
               title: 'Pronunciation & Sound',
@@ -63,7 +58,7 @@ void main() {
               lessonCount: 4,
               masteredCount: unit18Mastered,
             ),
-            Phase4Unit(
+            Unit(
               id: 'phase4_unit19',
               order: 19,
               title: 'Fluency Techniques',
@@ -71,7 +66,7 @@ void main() {
               lessonCount: 4,
               masteredCount: unit19Mastered,
             ),
-            Phase4Unit(
+            Unit(
               id: 'phase4_unit20',
               order: 20,
               title: 'Real-Life Conversations',
@@ -79,7 +74,7 @@ void main() {
               lessonCount: 5,
               masteredCount: unit20Mastered,
             ),
-            Phase4Unit(
+            Unit(
               id: 'phase4_unit21',
               order: 21,
               title: 'Discussion & Opinion Skills',
@@ -94,25 +89,25 @@ void main() {
           // where M is the mastered count and N is the total lesson count
           
           // Unit 18: 4 lessons
-          expect(units[0].progressDisplay, '$unit18Mastered/4 mastered',
+          expect(units[0].progressDisplay, '$unit18Mastered / 4 lessons mastered',
               reason: 'Unit 18 progress should show $unit18Mastered/4 mastered');
           expect(units[0].masteredCount, unit18Mastered);
           expect(units[0].lessonCount, 4);
           
           // Unit 19: 4 lessons
-          expect(units[1].progressDisplay, '$unit19Mastered/4 mastered',
+          expect(units[1].progressDisplay, '$unit19Mastered / 4 lessons mastered',
               reason: 'Unit 19 progress should show $unit19Mastered/4 mastered');
           expect(units[1].masteredCount, unit19Mastered);
           expect(units[1].lessonCount, 4);
           
           // Unit 20: 5 lessons
-          expect(units[2].progressDisplay, '$unit20Mastered/5 mastered',
+          expect(units[2].progressDisplay, '$unit20Mastered / 5 lessons mastered',
               reason: 'Unit 20 progress should show $unit20Mastered/5 mastered');
           expect(units[2].masteredCount, unit20Mastered);
           expect(units[2].lessonCount, 5);
           
           // Unit 21: 4 lessons
-          expect(units[3].progressDisplay, '$unit21Mastered/4 mastered',
+          expect(units[3].progressDisplay, '$unit21Mastered / 4 lessons mastered',
               reason: 'Unit 21 progress should show $unit21Mastered/4 mastered');
           expect(units[3].masteredCount, unit21Mastered);
           expect(units[3].lessonCount, 4);
@@ -151,7 +146,7 @@ void main() {
           final masteredCount = values.$2;
           
           // Create a unit with potentially invalid mastered count
-          final unit = Phase4Unit(
+          final unit = Unit(
             id: 'test_unit',
             order: 1,
             title: 'Test Unit',
@@ -161,7 +156,8 @@ void main() {
           );
 
           // The model stores whatever is passed, but the display should be accurate
-          expect(unit.progressDisplay, '$masteredCount/$lessonCount mastered');
+          expect(unit.progressDisplay,
+              '$masteredCount / $lessonCount lessons mastered');
           
           // Progress percentage should handle edge cases
           if (lessonCount == 0) {
@@ -182,28 +178,28 @@ void main() {
     property('Property 3: Unit navigation consistency - tapping unit navigates with correct unitId', () {
       // Define all Phase 4 units with their expected IDs
       final phase4Units = [
-        Phase4Unit(
+        Unit(
           id: 'phase4_unit18',
           order: 18,
           title: 'Pronunciation & Sound',
           description: 'Learn English sounds, syllables, and stress patterns',
           lessonCount: 4,
         ),
-        Phase4Unit(
+        Unit(
           id: 'phase4_unit19',
           order: 19,
           title: 'Fluency Techniques',
           description: 'Speak more smoothly and naturally',
           lessonCount: 4,
         ),
-        Phase4Unit(
+        Unit(
           id: 'phase4_unit20',
           order: 20,
           title: 'Real-Life Conversations',
           description: 'Practice everyday communication scenarios',
           lessonCount: 5,
         ),
-        Phase4Unit(
+        Unit(
           id: 'phase4_unit21',
           order: 21,
           title: 'Discussion & Opinion Skills',
@@ -286,9 +282,8 @@ void main() {
           final gatingService = GatingService(
             storageService: storage,
             progressRepository: progressRepo,
-            debugService: debugService,
           );
-          
+
           // Verify debug mode is enabled
           final isDebugEnabled = await debugService.isDebugModeEnabled();
           expect(isDebugEnabled, true, reason: 'Debug mode should be enabled');
@@ -518,18 +513,28 @@ void main() {
           final gatingService = GatingService(
             storageService: storage,
             progressRepository: progressRepo,
-            debugService: debugService,
           );
-          
+
+          // Sanity check: debug mode is active when either the compile-time
+          // AppConfig.devMode flag or the stored runtime toggle is set.
+          final isDebugEnabled = await debugService.isDebugModeEnabled();
+          expect(isDebugEnabled, AppConfig.devMode || debugModeEnabled,
+              reason:
+                  'DebugService should reflect AppConfig.devMode or the stored flag');
+
           // Check Phase 4 unlock status
           final isPhase4Unlocked = await gatingService.isPhaseUnlocked(4);
-          
-          // Expected: Phase 4 is unlocked if debug mode is enabled OR phase 3 test passed
-          final expectedUnlocked = debugModeEnabled || phase3TestPassed;
-          
+
+          // Expected: GatingService bypasses all gating when debug mode is
+          // active (compile-time or runtime); otherwise Phase 4 is unlocked
+          // only when the Phase 3 final test has been passed.
+          final expectedUnlocked =
+              AppConfig.devMode || debugModeEnabled || phase3TestPassed;
+
           expect(isPhase4Unlocked, expectedUnlocked,
               reason: 'Phase 4 unlock status should be $expectedUnlocked '
-                  '(debugMode=$debugModeEnabled, phase3TestPassed=$phase3TestPassed)');
+                  '(devMode=${AppConfig.devMode}, debugMode=$debugModeEnabled, '
+                  'phase3TestPassed=$phase3TestPassed)');
         },
       );
     });
@@ -933,12 +938,15 @@ void main() {
           );
           
           final canTake = await service.canTakeTest();
-          
-          // Property 1: canTakeTest should return true ONLY when ALL lessons are mastered
+
+          // Property 1: canTakeTest should return true ONLY when ALL lessons
+          // are mastered. Dev mode (AppConfig.devMode) is compile-time and
+          // bypasses this gating entirely when enabled.
           final allMastered = masteredCount == phase4LessonIds.length;
-          expect(canTake, allMastered,
-              reason: 'With $masteredCount/${phase4LessonIds.length} lessons mastered, '
-                  'canTakeTest should be $allMastered');
+          final expectedCanTake = AppConfig.devMode || allMastered;
+          expect(canTake, expectedCanTake,
+              reason: 'With $masteredCount/${phase4LessonIds.length} lessons mastered '
+                  'and devMode=${AppConfig.devMode}, canTakeTest should be $expectedCanTake');
         },
       );
     });
@@ -1006,17 +1014,18 @@ void main() {
           
           final canTake = await service.canTakeTest();
           
-          // Property 2: When debug mode is enabled, canTakeTest should ALWAYS return true
-          // regardless of mastery state
-          if (debugModeEnabled) {
+          // Property 2: When debug mode is active (compile-time devMode or
+          // the stored runtime toggle), canTakeTest should ALWAYS return true
+          // regardless of mastery state.
+          if (AppConfig.devMode || debugModeEnabled) {
             expect(canTake, true,
                 reason: 'With debug mode enabled, canTakeTest should always be true '
                     '(even with only $masteredCount/${phase4LessonIds.length} lessons mastered)');
           } else {
-            // When debug mode is disabled, normal gating applies
+            // When debug mode is fully disabled, normal gating applies
             final allMastered = masteredCount == phase4LessonIds.length;
             expect(canTake, allMastered,
-                reason: 'With debug mode disabled and $masteredCount/${phase4LessonIds.length} '
+                reason: 'With dev mode disabled and $masteredCount/${phase4LessonIds.length} '
                     'lessons mastered, canTakeTest should be $allMastered');
           }
         },

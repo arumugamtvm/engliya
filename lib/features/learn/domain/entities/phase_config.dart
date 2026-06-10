@@ -312,7 +312,7 @@ class PhaseConfig {
     id: 'phase5',
     name: 'Phase 5: Professional English',
     assetPath: 'assets/lessons/phase5/',
-    passingScore: 45,
+    passingScore: 42, // 70% of 60 (matches Phase5TestResult.passingScore)
     totalQuestions: 35,
     minRequiredQuestions: 35,
     maxScore: 60, // 27 MCQ + 32 speaking (8 tasks × 4 points)

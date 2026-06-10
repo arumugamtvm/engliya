@@ -9,6 +9,7 @@ import '../../domain/entities/phase_config.dart';
 import '../../domain/repositories/test_repository.dart';
 import '../../data/repositories/progress_repository.dart';
 import '../../services/gating_service.dart';
+import '../../../../core/constants/app_strings.dart';
 
 class Phase1UnitScreen extends StatefulWidget {
   const Phase1UnitScreen({super.key});
@@ -95,7 +96,8 @@ class _Phase1UnitScreenState extends State<Phase1UnitScreen> {
                   const Icon(Icons.error_outline, size: 64, color: Colors.red),
                   const SizedBox(height: 16),
                   Text(
-                    'Error loading lessons',
+                    AppStrings.errorLoadingLessons,
+                    textAlign: TextAlign.center,
                     style: Theme.of(context).textTheme.titleLarge,
                   ),
                   const SizedBox(height: 8),
@@ -112,7 +114,7 @@ class _Phase1UnitScreenState extends State<Phase1UnitScreen> {
                     onPressed: () {
                       progressProvider.reload();
                     },
-                    child: const Text('Retry'),
+                    child: const Text(AppStrings.tryAgain),
                   ),
                 ],
               ),
@@ -123,7 +125,12 @@ class _Phase1UnitScreenState extends State<Phase1UnitScreen> {
           final lessons = progressProvider.getUnitLessons('phase1');
 
           if (lessons.isEmpty) {
-            return const Center(child: Text('No lessons available'));
+            return const Center(
+            child: Text(
+              AppStrings.noLessonsAvailable,
+              textAlign: TextAlign.center,
+            ),
+          );
           }
 
           return ListView.builder(
@@ -162,7 +169,7 @@ class _Phase1UnitScreenState extends State<Phase1UnitScreen> {
       await Navigator.pushNamed(context, AppRoutes.lesson, arguments: lessonId);
 
       // Refresh progress after returning from lesson
-      if (mounted) {
+      if (context.mounted) {
         await context.read<ProgressProvider>().reload();
         await _initializeTestService();
       }

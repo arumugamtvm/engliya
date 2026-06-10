@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import '../features/onboarding/presentation/screens/onboarding_screen.dart';
 import '../features/home/presentation/screens/home_screen.dart';
@@ -12,6 +13,7 @@ import '../features/learn/presentation/screens/final_test_screen.dart';
 import '../features/learn/presentation/screens/final_test_result_screen.dart';
 import '../features/learn/presentation/screens/final_test_review_screen.dart';
 import '../features/learn/presentation/screens/phase_unit_screen.dart';
+import '../features/learn/presentation/screens/debug_screen.dart';
 import '../features/progress/presentation/screens/progress_screen.dart';
 import '../features/learn/data/models/phase4_test_result.dart';
 import '../features/learn/data/models/phase5_test_result.dart';
@@ -50,6 +52,9 @@ class AppRoutes {
   static const String phase5FinalTest = '/phase5/finalTest';
   static const String phase5FinalTestResult = '/phase5/finalTest/result';
   static const String phase5FinalTestReview = '/phase5/finalTest/review';
+
+  /// Developer-only route. Only resolves in debug builds (kDebugMode).
+  static const String debug = '/debug';
 
   static Route<dynamic>? onGenerateRoute(RouteSettings settings) {
     // Handle dynamic Phase 3 unit routes first
@@ -368,6 +373,13 @@ class AppRoutes {
           FinalTestReviewScreen.phase5(incorrectAnswers: answers),
           settings,
         );
+      case debug:
+        // Developer tools screen: only available in debug builds. In release
+        // builds this route does not resolve and falls back to the default.
+        if (kDebugMode) {
+          return _buildRoute(const DebugScreen(), settings);
+        }
+        return _buildRoute(const OnboardingScreen(), settings);
       default:
         return _buildRoute(const OnboardingScreen(), settings);
     }

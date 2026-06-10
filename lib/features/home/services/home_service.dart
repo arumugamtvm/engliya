@@ -4,6 +4,7 @@ import '../../learn/data/models/user_lesson_status.dart';
 import '../../learn/services/gating_service.dart';
 import '../../../services/local_storage/storage_service.dart';
 import '../../../core/constants/app_config.dart';
+import '../../../core/logging/app_logger.dart';
 
 /// Service for home screen data operations
 /// Provides progress summary and last accessed lesson information
@@ -34,7 +35,11 @@ class HomeService {
           final phaseLessons = await _lessonRepo.loadLessonsForPhase(phase);
           totalLessons += phaseLessons.length;
         } catch (e) {
-          print('Warning: Failed to load phase $phase lessons: $e');
+          AppLogger.warning(
+            'Failed to load phase $phase lessons',
+            tag: 'HomeService',
+            error: e,
+          );
         }
       }
 
@@ -86,7 +91,15 @@ class HomeService {
             phaseNumber,
           );
           continue;
-        } catch (_) {}
+        } catch (e, stackTrace) {
+          AppLogger.warning(
+            'GatingService failed for phase $phaseNumber; '
+            'falling back to storage check',
+            tag: 'HomeService',
+            error: e,
+            stackTrace: stackTrace,
+          );
+        }
       }
 
       unlockMap[phaseNumber] = _isPhaseUnlockedFromStorage(phaseNumber);

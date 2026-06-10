@@ -81,27 +81,47 @@
   "listeningQuestions": [
     {
       "audioText": "I have a book.",
-      "options": ["I have a book.", "I have an book.", "I have the book."],
+      "options": [
+        "I have a book.",
+        "I have an book.",
+        "I have the book."
+      ],
       "correctIndex": 0
     },
     {
       "audioText": "She has an apple.",
-      "options": ["She has a apple.", "She has an apple.", "She has the apple."],
+      "options": [
+        "She has a apple.",
+        "She has an apple.",
+        "She has the apple."
+      ],
       "correctIndex": 1
     },
     {
       "audioText": "The cat is sleeping.",
-      "options": ["A cat is sleeping.", "An cat is sleeping.", "The cat is sleeping."],
+      "options": [
+        "A cat is sleeping.",
+        "An cat is sleeping.",
+        "The cat is sleeping."
+      ],
       "correctIndex": 2
     },
     {
       "audioText": "I need an umbrella.",
-      "options": ["I need a umbrella.", "I need an umbrella.", "I need the umbrella."],
+      "options": [
+        "I need a umbrella.",
+        "I need an umbrella.",
+        "I need the umbrella."
+      ],
       "correctIndex": 1
     },
     {
       "audioText": "He sees a dog.",
-      "options": ["He sees a dog.", "He sees an dog.", "He sees the dog."],
+      "options": [
+        "He sees a dog.",
+        "He sees an dog.",
+        "He sees the dog."
+      ],
       "correctIndex": 0
     }
   ],
@@ -132,142 +152,222 @@
       "type": "mcq",
       "promptEn": "I have ___ apple.",
       "promptTa": "என்னிடம் ___ ஆப்பிள் உள்ளது.",
-      "options": ["a", "an", "the"],
+      "options": [
+        "a",
+        "an",
+        "the"
+      ],
       "correctIndex": 1
     },
     {
       "type": "mcq",
       "promptEn": "She has ___ cat.",
       "promptTa": "அவளிடம் ___ பூனை உள்ளது.",
-      "options": ["a", "an", "the"],
+      "options": [
+        "a",
+        "an",
+        "the"
+      ],
       "correctIndex": 0
     },
     {
       "type": "mcq",
       "promptEn": "___ sun is bright.",
       "promptTa": "___ சூரியன் பிரகாசமாக இருக்கிறது.",
-      "options": ["A", "An", "The"],
+      "options": [
+        "A",
+        "An",
+        "The"
+      ],
       "correctIndex": 2
     },
     {
       "type": "mcq",
       "promptEn": "I need ___ umbrella.",
       "promptTa": "எனக்கு ___ குடை தேவை.",
-      "options": ["a", "an", "the"],
+      "options": [
+        "a",
+        "an",
+        "the"
+      ],
       "correctIndex": 1
     },
     {
       "type": "mcq",
       "promptEn": "He sees ___ dog.",
       "promptTa": "அவர் ___ நாயைப் பார்க்கிறார்.",
-      "options": ["a", "an", "the"],
+      "options": [
+        "a",
+        "an",
+        "the"
+      ],
       "correctIndex": 0
     },
     {
       "type": "mcq",
       "promptEn": "I want ___ orange.",
       "promptTa": "எனக்கு ___ ஆரஞ்சு வேண்டும்.",
-      "options": ["a", "an", "the"],
+      "options": [
+        "a",
+        "an",
+        "the"
+      ],
       "correctIndex": 1
     },
     {
       "type": "mcq",
       "promptEn": "___ moon is beautiful.",
       "promptTa": "___ சந்திரன் அழகாக இருக்கிறது.",
-      "options": ["A", "An", "The"],
+      "options": [
+        "A",
+        "An",
+        "The"
+      ],
       "correctIndex": 2
     },
     {
       "type": "mcq",
       "promptEn": "She has ___ pen.",
       "promptTa": "அவளிடம் ___ பேனா உள்ளது.",
-      "options": ["a", "an", "the"],
+      "options": [
+        "a",
+        "an",
+        "the"
+      ],
       "correctIndex": 0
     },
     {
       "type": "mcq",
       "promptEn": "I eat ___ egg.",
       "promptTa": "நான் ___ முட்டை சாப்பிடுகிறேன்.",
-      "options": ["a", "an", "the"],
+      "options": [
+        "a",
+        "an",
+        "the"
+      ],
       "correctIndex": 1
     },
     {
       "type": "mcq",
       "promptEn": "He reads ___ book.",
       "promptTa": "அவர் ___ புத்தகம் படிக்கிறார்.",
-      "options": ["a", "an", "the"],
+      "options": [
+        "a",
+        "an",
+        "the"
+      ],
       "correctIndex": 0
     }
   ],
   "masteryQuestions": [
     {
       "type": "mcq",
-      "promptEn": "She has ___ cat.",
-      "promptTa": "அவளிடம் ___ பூனை உள்ளது.",
-      "options": ["a", "an", "the"],
-      "correctIndex": 0
+      "promptEn": "We saw ___ owl in the tree.",
+      "promptTa": "மரத்தில் ஒரு ஆந்தையை ___ பார்த்தோம்.",
+      "options": [
+        "a",
+        "an",
+        "the"
+      ],
+      "correctIndex": 1
     },
     {
       "type": "mcq",
       "promptEn": "I need ___ eraser.",
       "promptTa": "எனக்கு ___ அழிப்பான் தேவை.",
-      "options": ["a", "an", "the"],
+      "options": [
+        "a",
+        "an",
+        "the"
+      ],
       "correctIndex": 1
     },
     {
       "type": "mcq",
       "promptEn": "___ sky is blue.",
       "promptTa": "___ வானம் நீலமாக இருக்கிறது.",
-      "options": ["A", "An", "The"],
+      "options": [
+        "A",
+        "An",
+        "The"
+      ],
       "correctIndex": 2
     },
     {
       "type": "mcq",
       "promptEn": "He has ___ ball.",
       "promptTa": "அவரிடம் ___ பந்து உள்ளது.",
-      "options": ["a", "an", "the"],
+      "options": [
+        "a",
+        "an",
+        "the"
+      ],
       "correctIndex": 0
     },
     {
       "type": "mcq",
       "promptEn": "I see ___ elephant.",
       "promptTa": "நான் ___ யானையைப் பார்க்கிறேன்.",
-      "options": ["a", "an", "the"],
+      "options": [
+        "a",
+        "an",
+        "the"
+      ],
       "correctIndex": 1
     },
     {
       "type": "mcq",
       "promptEn": "She wants ___ ice cream.",
       "promptTa": "அவளுக்கு ___ ஐஸ்கிரீம் வேண்டும்.",
-      "options": ["a", "an", "the"],
+      "options": [
+        "a",
+        "an",
+        "the"
+      ],
       "correctIndex": 1
     },
     {
       "type": "mcq",
       "promptEn": "___ earth is round.",
       "promptTa": "___ பூமி உருண்டையானது.",
-      "options": ["A", "An", "The"],
+      "options": [
+        "A",
+        "An",
+        "The"
+      ],
       "correctIndex": 2
     },
     {
       "type": "mcq",
       "promptEn": "I have ___ toy.",
       "promptTa": "என்னிடம் ___ பொம்மை உள்ளது.",
-      "options": ["a", "an", "the"],
+      "options": [
+        "a",
+        "an",
+        "the"
+      ],
       "correctIndex": 0
     },
     {
       "type": "mcq",
       "promptEn": "He eats ___ apple.",
       "promptTa": "அவர் ___ ஆப்பிள் சாப்பிடுகிறார்.",
-      "options": ["a", "an", "the"],
+      "options": [
+        "a",
+        "an",
+        "the"
+      ],
       "correctIndex": 1
     },
     {
       "type": "mcq",
       "promptEn": "We see ___ stars at night.",
       "promptTa": "நாங்கள் இரவில் ___ நட்சத்திரங்களைப் பார்க்கிறோம்.",
-      "options": ["a", "an", "the"],
+      "options": [
+        "a",
+        "an",
+        "the"
+      ],
       "correctIndex": 2
     }
   ]

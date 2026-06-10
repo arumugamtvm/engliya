@@ -9,7 +9,10 @@ class AppConfig {
 
   /// Single source of truth for developer bypass mode.
   /// When true, all phase/lesson/tab/test gating is bypassed.
-  static const bool devMode = true;
+  /// Must remain false for production builds so learners progress
+  /// through phases in the intended order. Runtime debug unlocking is
+  /// available through the in-app debug screen in debug builds only.
+  static const bool devMode = false;
 
   static bool get isDevelopmentMode => kDebugMode;
   static bool get isProductionMode => kReleaseMode;

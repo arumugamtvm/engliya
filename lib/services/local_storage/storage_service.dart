@@ -160,8 +160,13 @@ class StorageService {
   /// Converts Map to JSON string before storing
   Future<void> setJson(String key, Map<String, dynamic> json) async {
     _ensureInitialized();
+    final String jsonString;
     try {
-      final jsonString = jsonEncode(json);
+      jsonString = jsonEncode(json);
+    } catch (e) {
+      throw StorageException('Failed to encode JSON for key "$key": $e');
+    }
+    try {
       await setString(key, jsonString);
     } catch (e) {
       throw StorageException('Error saving JSON for key $key: $e');

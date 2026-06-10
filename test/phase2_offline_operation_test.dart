@@ -1,33 +1,45 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart' show rootBundle;
 import 'package:flutter_test/flutter_test.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:engliya/features/home/presentation/screens/home_screen.dart';
 import 'package:engliya/features/home/presentation/providers/home_provider.dart';
 import 'package:engliya/features/home/services/home_service.dart';
-import 'package:engliya/features/learn/presentation/screens/phase2_unit_screen.dart';
-import 'package:engliya/features/learn/presentation/screens/phase2_lesson_list_screen.dart';
+import 'package:engliya/features/learn/presentation/screens/phase_unit_screen.dart';
+import 'package:engliya/features/learn/presentation/screens/phase_lesson_list_screen.dart';
 import 'package:engliya/features/learn/presentation/screens/lesson_screen.dart';
 import 'package:engliya/features/learn/presentation/providers/progress_provider.dart';
 import 'package:engliya/features/learn/presentation/providers/lesson_provider.dart';
-import 'package:engliya/features/learn/presentation/providers/phase2_unit_provider.dart';
 import 'package:engliya/features/learn/data/repositories/lesson_repository.dart';
 import 'package:engliya/features/learn/data/repositories/progress_repository.dart';
+import 'package:engliya/features/learn/data/repositories/test_repository_impl.dart';
+import 'package:engliya/features/learn/domain/entities/phase_config.dart';
+import 'package:engliya/features/learn/domain/repositories/test_repository.dart';
+import 'package:engliya/features/learn/services/gating_service.dart';
 import 'package:engliya/services/local_storage/storage_service.dart';
 import 'package:engliya/features/learn/data/models/user_lesson_status.dart';
 import 'package:engliya/app/routes.dart';
 
 void main() {
+  TestWidgetsFlutterBinding.ensureInitialized();
+
   group('Phase 2 Offline Operation Tests', () {
     late StorageService storageService;
     late ProgressRepository progressRepository;
     late LessonRepository lessonRepository;
     late HomeService homeService;
+    late GatingService gatingService;
+    late TestRepository testRepository;
 
     setUp(() async {
+      // Drop any asset futures left pending by a previous widget test's
+      // fake-async zone (they would never complete in this test).
+      rootBundle.clear();
+
       // Initialize mock SharedPreferences (simulates offline storage)
       SharedPreferences.setMockInitialValues({});
-      
+
       storageService = StorageService();
       await storageService.init();
       progressRepository = ProgressRepository(storageService);
@@ -37,17 +49,69 @@ void main() {
         progressRepo: progressRepository,
         storageService: storageService,
       );
-      
+      gatingService = GatingService(
+        storageService: storageService,
+        progressRepository: progressRepository,
+      );
+      testRepository = TestRepositoryImpl(
+        lessonRepository: lessonRepository,
+        storageService: storageService,
+      );
+
       // Clear any existing data
       await progressRepository.clearAllProgress();
-      
-      // Unlock Phase 2
+
+      // Unlock Phase 2 (legacy key is still honored by gating)
       await storageService.setBool('phase1FinalTestPassed', true);
     });
 
     tearDown(() {
       lessonRepository.clearCache();
     });
+
+    /// Pump a number of frames so async loads and entrance animations finish.
+    /// (HomeScreen has a repeating pulse animation, so pumpAndSettle would
+    /// never settle - timed pumps are required.)
+    Future<void> pumpUi(WidgetTester tester, {int frames = 12}) async {
+      await tester.pump();
+      for (var i = 0; i < frames; i++) {
+        await tester.pump(const Duration(milliseconds: 200));
+      }
+    }
+
+    /// Make sure [text] is visible, scrolling the nearest Scrollable when the
+    /// widget is not currently built (ListViews build children lazily, so a
+    /// previously scrolled list may have disposed off-screen items).
+    Future<void> revealText(WidgetTester tester, String text) async {
+      final finder = find.text(text);
+      if (finder.evaluate().isEmpty) {
+        final scrollable = find.byType(Scrollable).first;
+        // Jump back to the top first - the target may be above the viewport.
+        await tester.fling(scrollable, const Offset(0, 2000), 5000);
+        await tester.pump();
+        await tester.pump(const Duration(seconds: 1));
+        if (finder.evaluate().isEmpty) {
+          await tester.scrollUntilVisible(finder, 150, scrollable: scrollable);
+        }
+      } else {
+        await tester.ensureVisible(finder);
+      }
+      await tester.pump();
+    }
+
+    /// Create a ProgressProvider with the unlock-status cache refreshed.
+    /// With gating active (no dev bypass), the cached phase unlock flags must
+    /// be refreshed from storage before unlock getters return valid values.
+    Future<ProgressProvider> createProgressProvider() async {
+      final provider = ProgressProvider(
+        progressRepo: progressRepository,
+        lessonRepo: lessonRepository,
+        storageService: storageService,
+        gatingService: gatingService,
+      );
+      await provider.refreshPhaseUnlockStatus();
+      return provider;
+    }
 
     /// Helper to create test app with providers (simulating offline environment)
     Widget createOfflineTestApp({required Widget home}) {
@@ -56,21 +120,19 @@ void main() {
           Provider<StorageService>.value(value: storageService),
           Provider<LessonRepository>.value(value: lessonRepository),
           Provider<ProgressRepository>.value(value: progressRepository),
+          Provider<GatingService>.value(value: gatingService),
+          Provider<TestRepository>.value(value: testRepository),
           ChangeNotifierProvider(
             create: (_) => ProgressProvider(
               progressRepo: progressRepository,
               lessonRepo: lessonRepository,
               storageService: storageService,
+              gatingService: gatingService,
             ),
           ),
           ChangeNotifierProvider(
             create: (_) => HomeProvider(
               homeService: homeService,
-            ),
-          ),
-          ChangeNotifierProvider(
-            create: (context) => Phase2UnitProvider(
-              context.read<ProgressProvider>(),
             ),
           ),
           ChangeNotifierProvider(
@@ -94,46 +156,45 @@ void main() {
         await tester.pumpWidget(createOfflineTestApp(
           home: const HomeScreen(),
         ));
-        
-        await tester.pump();
-        await tester.pump(const Duration(milliseconds: 500));
+
+        await pumpUi(tester);
 
         // Verify Phase 2 tile is displayed
-        expect(find.text('Phase 2: Intermediate English'), findsOneWidget);
-        expect(find.text('25 lessons across 5 units'), findsOneWidget);
+        expect(find.text('Phase 2'), findsOneWidget);
       });
 
-      testWidgets('Phase2UnitScreen loads all units offline',
+      testWidgets('Phase 2 unit screen loads all units offline',
           (WidgetTester tester) async {
-        // Navigate to Phase2UnitScreen
+        // Navigate to the Phase 2 unit screen
         await tester.pumpWidget(createOfflineTestApp(
-          home: const Phase2UnitScreen(),
+          home: const PhaseUnitScreen(phaseType: PhaseType.phase2),
         ));
-        
-        await tester.pump();
-        await tester.pump(const Duration(milliseconds: 500));
+
+        await pumpUi(tester);
 
         // Verify all 5 units are displayed
         expect(find.text('Time & Place Language'), findsOneWidget);
         expect(find.text('Continuous Tenses'), findsOneWidget);
         expect(find.text('Perfect & Perfect Continuous'), findsOneWidget);
         expect(find.text('Questions & Negatives'), findsOneWidget);
-        expect(find.text('Advanced Pronouns, Adjectives & Adverbs'), findsOneWidget);
-        
+        expect(find.text('Advanced Pronouns, Adjectives & Adverbs'),
+            findsOneWidget);
+
         // Verify unit descriptions are displayed
-        expect(find.text('Learn prepositions and time expressions'), findsOneWidget);
-        expect(find.text('Present, past, and future continuous'), findsOneWidget);
+        expect(find.text('Learn prepositions and time expressions'),
+            findsOneWidget);
+        expect(find.text('Present, past, and future continuous'),
+            findsOneWidget);
       });
 
-      testWidgets('Phase2LessonListScreen loads lessons offline',
+      testWidgets('PhaseLessonListScreen loads lessons offline',
           (WidgetTester tester) async {
-        // Navigate to Phase2LessonListScreen for Unit 7
+        // Navigate to the lesson list for Unit 7
         await tester.pumpWidget(createOfflineTestApp(
-          home: const Phase2LessonListScreen(unitId: 'phase2_unit7'),
+          home: const PhaseLessonListScreen(unitId: 'phase2_unit7'),
         ));
-        
-        await tester.pump();
-        await tester.pump(const Duration(milliseconds: 500));
+
+        await pumpUi(tester);
 
         // Verify lessons are displayed
         expect(find.text('Time Prepositions'), findsOneWidget);
@@ -147,13 +208,12 @@ void main() {
         await tester.pumpWidget(createOfflineTestApp(
           home: const LessonScreen(lessonId: 'phase2_lesson7_1'),
         ));
-        
-        await tester.pump();
-        await tester.pump(const Duration(milliseconds: 500));
+
+        await pumpUi(tester);
 
         // Verify lesson content is displayed
         expect(find.text('Time Prepositions'), findsOneWidget);
-        
+
         // Verify tabs are available
         expect(find.text('Explain'), findsOneWidget);
         expect(find.text('Examples'), findsOneWidget);
@@ -165,33 +225,42 @@ void main() {
 
       testWidgets('Complete navigation flow through all Phase 2 screens offline',
           (WidgetTester tester) async {
+        // Master Unit 7 lessons so the first Unit 8 lesson is unlocked
+        // (gating is active - no dev-mode bypass).
+        for (final lessonId in [
+          'phase2_lesson7_1',
+          'phase2_lesson7_2',
+          'phase2_lesson7_3',
+        ]) {
+          await progressRepository.saveLessonProgress(UserLessonStatus(
+            lessonId: lessonId,
+            isMastered: true,
+            masteryBestScore: 0.9,
+          ));
+        }
+
         // Start on HomeScreen
         await tester.pumpWidget(createOfflineTestApp(
           home: const HomeScreen(),
         ));
-        
-        await tester.pump();
-        await tester.pump(const Duration(milliseconds: 500));
 
-        // Navigate to Phase2UnitScreen
-        final phase2Tile = find.ancestor(
-          of: find.text('Phase 2: Intermediate English'),
-          matching: find.byType(InkWell),
-        );
-        await tester.tap(phase2Tile);
-        await tester.pump();
-        await tester.pump(const Duration(milliseconds: 500));
-        expect(find.byType(Phase2UnitScreen), findsOneWidget);
+        await pumpUi(tester);
 
-        // Navigate to Phase2LessonListScreen (Unit 8)
+        // Navigate to the Phase 2 unit screen
+        await revealText(tester, 'Phase 2');
+        await tester.tap(find.text('Phase 2'));
+        await pumpUi(tester);
+        expect(find.byType(PhaseUnitScreen), findsOneWidget);
+
+        // Navigate to PhaseLessonListScreen (Unit 8)
         final unit8Card = find.ancestor(
           of: find.text('Continuous Tenses'),
           matching: find.byType(InkWell),
         );
+        await revealText(tester, 'Continuous Tenses');
         await tester.tap(unit8Card);
-        await tester.pump();
-        await tester.pump(const Duration(milliseconds: 500));
-        expect(find.byType(Phase2LessonListScreen), findsOneWidget);
+        await pumpUi(tester);
+        expect(find.byType(PhaseLessonListScreen), findsOneWidget);
         expect(find.text('Unit 8: Continuous Tenses'), findsOneWidget);
 
         // Navigate to LessonScreen
@@ -200,24 +269,20 @@ void main() {
           matching: find.byType(InkWell),
         ).first;
         await tester.tap(lesson1Card);
-        await tester.pump();
-        await tester.pump(const Duration(milliseconds: 500));
+        await pumpUi(tester);
         expect(find.byType(LessonScreen), findsOneWidget);
 
         // Navigate back through screens
         await tester.pageBack();
-        await tester.pump();
-        await tester.pump(const Duration(milliseconds: 300));
-        expect(find.byType(Phase2LessonListScreen), findsOneWidget);
+        await pumpUi(tester);
+        expect(find.byType(PhaseLessonListScreen), findsOneWidget);
 
         await tester.pageBack();
-        await tester.pump();
-        await tester.pump(const Duration(milliseconds: 300));
-        expect(find.byType(Phase2UnitScreen), findsOneWidget);
+        await pumpUi(tester);
+        expect(find.byType(PhaseUnitScreen), findsOneWidget);
 
         await tester.pageBack();
-        await tester.pump();
-        await tester.pump(const Duration(milliseconds: 300));
+        await pumpUi(tester);
         expect(find.byType(HomeScreen), findsOneWidget);
       });
     });
@@ -229,29 +294,26 @@ void main() {
         await tester.pumpWidget(createOfflineTestApp(
           home: const LessonScreen(lessonId: 'phase2_lesson7_1'),
         ));
-        
-        await tester.pump();
-        await tester.pump(const Duration(milliseconds: 500));
+
+        await pumpUi(tester);
 
         // Verify Explain tab is accessible
         final explainTab = find.text('Explain');
         expect(explainTab, findsOneWidget);
         await tester.tap(explainTab);
         await tester.pump();
-        
+
         // Verify Examples tab is accessible
         final examplesTab = find.text('Examples');
         expect(examplesTab, findsOneWidget);
         await tester.tap(examplesTab);
-        await tester.pump();
-        await tester.pump(const Duration(milliseconds: 300));
-        
+        await pumpUi(tester, frames: 3);
+
         // Verify Practice tab is accessible
         final practiceTab = find.text('Practice');
         expect(practiceTab, findsOneWidget);
         await tester.tap(practiceTab);
-        await tester.pump();
-        await tester.pump(const Duration(milliseconds: 300));
+        await pumpUi(tester, frames: 3);
       });
 
       test('Lesson content loads from local JSON assets offline', () async {
@@ -263,7 +325,7 @@ void main() {
         expect(lesson.id, 'phase2_lesson7_1');
         expect(lesson.title, 'Time Prepositions');
         expect(lesson.unitId, 'phase2_unit7');
-        
+
         // Verify content is present
         expect(lesson.explain.ta, isNotEmpty);
         expect(lesson.explain.en, isNotEmpty);
@@ -278,13 +340,17 @@ void main() {
           // Unit 7
           'phase2_lesson7_1', 'phase2_lesson7_2', 'phase2_lesson7_3',
           // Unit 8
-          'phase2_lesson8_1', 'phase2_lesson8_2', 'phase2_lesson8_3', 'phase2_lesson8_4',
+          'phase2_lesson8_1', 'phase2_lesson8_2', 'phase2_lesson8_3',
+          'phase2_lesson8_4',
           // Unit 9
-          'phase2_lesson9_1', 'phase2_lesson9_2', 'phase2_lesson9_3', 'phase2_lesson9_4', 'phase2_lesson9_5',
+          'phase2_lesson9_1', 'phase2_lesson9_2', 'phase2_lesson9_3',
+          'phase2_lesson9_4', 'phase2_lesson9_5',
           // Unit 10
-          'phase2_lesson10_1', 'phase2_lesson10_2', 'phase2_lesson10_3', 'phase2_lesson10_4', 'phase2_lesson10_5',
+          'phase2_lesson10_1', 'phase2_lesson10_2', 'phase2_lesson10_3',
+          'phase2_lesson10_4', 'phase2_lesson10_5',
           // Unit 11
-          'phase2_lesson11_1', 'phase2_lesson11_2', 'phase2_lesson11_3', 'phase2_lesson11_4', 'phase2_lesson11_5',
+          'phase2_lesson11_1', 'phase2_lesson11_2', 'phase2_lesson11_3',
+          'phase2_lesson11_4', 'phase2_lesson11_5',
         ];
 
         // Load each lesson
@@ -311,7 +377,8 @@ void main() {
         await progressRepository.saveLessonProgress(status);
 
         // Load progress back
-        final loadedStatus = await progressRepository.loadLessonProgress('phase2_lesson8_1');
+        final loadedStatus =
+            await progressRepository.loadLessonProgress('phase2_lesson8_1');
 
         // Verify progress was saved
         expect(loadedStatus, isNotNull);
@@ -355,24 +422,16 @@ void main() {
         // Set Phase 2 as unlocked
         await storageService.setBool('phase1FinalTestPassed', true);
 
-        // Create provider
-        final provider = ProgressProvider(
-          progressRepo: progressRepository,
-          lessonRepo: lessonRepository,
-          storageService: storageService,
-        );
+        // Create provider (refreshes the cached unlock status)
+        final provider = await createProgressProvider();
 
         // Verify Phase 2 is unlocked
         expect(provider.isPhase2Unlocked, true);
       });
 
       test('Lesson unlock logic works offline', () async {
-        // Create provider
-        final provider = ProgressProvider(
-          progressRepo: progressRepository,
-          lessonRepo: lessonRepository,
-          storageService: storageService,
-        );
+        // Create provider (refreshes the cached unlock status)
+        final provider = await createProgressProvider();
 
         // First lesson should be unlocked
         expect(provider.isLessonUnlocked('phase2_lesson7_1'), true);
@@ -395,11 +454,7 @@ void main() {
 
       test('Unit lesson filtering works offline', () async {
         // Create provider
-        final provider = ProgressProvider(
-          progressRepo: progressRepository,
-          lessonRepo: lessonRepository,
-          storageService: storageService,
-        );
+        final provider = await createProgressProvider();
 
         // Load lessons for Unit 7
         await provider.loadAllData();
@@ -468,15 +523,15 @@ void main() {
       });
 
       test('Cross-unit unlock logic works offline', () async {
-        // Create provider
-        final provider = ProgressProvider(
-          progressRepo: progressRepository,
-          lessonRepo: lessonRepository,
-          storageService: storageService,
-        );
+        // Create provider (refreshes the cached unlock status)
+        final provider = await createProgressProvider();
 
         // Master all Unit 7 lessons
-        final unit7Lessons = ['phase2_lesson7_1', 'phase2_lesson7_2', 'phase2_lesson7_3'];
+        final unit7Lessons = [
+          'phase2_lesson7_1',
+          'phase2_lesson7_2',
+          'phase2_lesson7_3',
+        ];
         for (final lessonId in unit7Lessons) {
           final status = UserLessonStatus(
             lessonId: lessonId,
@@ -493,11 +548,7 @@ void main() {
 
       test('Last accessed lesson tracking works offline', () async {
         // Create provider
-        final provider = ProgressProvider(
-          progressRepo: progressRepository,
-          lessonRepo: lessonRepository,
-          storageService: storageService,
-        );
+        final provider = await createProgressProvider();
 
         // Access a lesson
         final status = UserLessonStatus(
@@ -528,7 +579,8 @@ void main() {
         final newProgressRepository = ProgressRepository(newStorageService);
 
         // Load progress
-        final loadedStatus = await newProgressRepository.loadLessonProgress('phase2_lesson10_3');
+        final loadedStatus = await newProgressRepository
+            .loadLessonProgress('phase2_lesson10_3');
 
         // Verify progress persisted
         expect(loadedStatus, isNotNull);
@@ -561,9 +613,15 @@ void main() {
           throwsA(isA<LessonLoadException>()),
         );
 
-        // Try to load invalid unit
+        // A well-formed but non-existent unit is rejected
         expect(
           () => lessonRepository.loadUnitLessons('phase2_unit99'),
+          throwsA(isA<LessonLoadException>()),
+        );
+
+        // A malformed unit ID is rejected with a LessonLoadException
+        expect(
+          () => lessonRepository.loadUnitLessons('not_a_valid_unit'),
           throwsA(isA<LessonLoadException>()),
         );
       });

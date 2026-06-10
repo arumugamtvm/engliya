@@ -13,7 +13,6 @@ void main() {
     late StorageService storageService;
     late ProgressRepository progressRepository;
     late LessonRepository lessonRepository;
-    late ProgressProvider progressProvider;
 
     setUp(() async {
       // Initialize mock SharedPreferences
@@ -27,12 +26,6 @@ void main() {
       // Clear all data
       await progressRepository.clearAllProgress();
       await storageService.remove('phase1FinalTestPassed');
-      
-      progressProvider = ProgressProvider(
-        progressRepo: progressRepository,
-        lessonRepo: lessonRepository,
-        storageService: storageService,
-      );
     });
 
     tearDown(() {

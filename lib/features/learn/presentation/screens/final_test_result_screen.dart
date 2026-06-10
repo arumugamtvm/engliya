@@ -4,6 +4,7 @@ import '../../data/models/phase4_test_result.dart';
 import '../../data/models/phase5_test_result.dart';
 import '../../../../app/routes.dart';
 import '../../../../app/theme.dart';
+import '../../../../core/constants/app_strings.dart';
 
 enum FinalTestActionStyle { filled, outlined, text }
 
@@ -91,13 +92,15 @@ class FinalTestResultViewData {
     return FinalTestResultViewData(
       passed: passed,
       showBackButton: true,
-      appBarTitle: 'Test Results',
-      completionTitle: 'Phase 4 Final Test Completed!',
-      statusLabel: passed ? 'PASSED ✅' : 'NOT PASSED ❌',
+      appBarTitle: AppStrings.testResults,
+      completionTitle: AppStrings.finalTestCompletedTitle(4),
+      statusLabel: passed
+          ? AppStrings.testPassedStatus
+          : AppStrings.testNotPassedStatus,
       statusMessage: passed
-          ? 'Congratulations! You have mastered Phase 4.\nPhase 5 - Professional English is now unlocked!'
-          : 'You are close! Review Phase 4 lessons and try again.\nYou need 18 points (75%) to pass.',
-      badgeText: passed ? 'Phase 5 Unlocked!' : null,
+          ? AppStrings.phase4PassedMessage
+          : AppStrings.phase4FailedMessage,
+      badgeText: passed ? AppStrings.phaseUnlockedBadge(5) : null,
       badgeIcon: Icons.lock_open,
       badgeColor: AppTheme.masteredColor,
       passedIcon: Icons.celebration,
@@ -107,19 +110,19 @@ class FinalTestResultViewData {
       percentage: result.percentage,
       breakdownItems: [
         FinalTestScoreBreakdownItem(
-          label: 'MCQ Questions',
+          label: AppStrings.mcqQuestions,
           score: result.mcqCorrect,
           maxScore: Phase4TestResult.maxMcqScore,
           icon: Icons.quiz,
         ),
         FinalTestScoreBreakdownItem(
-          label: 'Speaking Tasks',
+          label: AppStrings.speakingTasks,
           score: result.speakingScore,
           maxScore: Phase4TestResult.maxSpeakingScore,
           icon: Icons.mic,
         ),
         FinalTestScoreBreakdownItem(
-          label: 'Total Score',
+          label: AppStrings.totalScore,
           score: result.totalScore,
           maxScore: result.maxScore,
           icon: Icons.stars,
@@ -128,7 +131,7 @@ class FinalTestResultViewData {
       ],
       actions: [
         FinalTestAction(
-          label: 'Review Mistakes',
+          label: AppStrings.reviewMistakes,
           icon: Icons.rate_review,
           style: FinalTestActionStyle.outlined,
           visible: hasMistakes,
@@ -140,7 +143,7 @@ class FinalTestResultViewData {
           },
         ),
         FinalTestAction(
-          label: 'Continue',
+          label: AppStrings.continueLabel,
           icon: Icons.check,
           style: FinalTestActionStyle.filled,
           backgroundColor: AppTheme.correctColor,
@@ -149,16 +152,16 @@ class FinalTestResultViewData {
           onPressed: (context) {
             Navigator.of(context).popUntil((route) => route.isFirst);
             ScaffoldMessenger.of(context).showSnackBar(
-              const SnackBar(
-                content: Text('Phase 5 is now unlocked!'),
+              SnackBar(
+                content: Text(AppStrings.phaseNowUnlocked(5)),
                 backgroundColor: AppTheme.correctColor,
-                duration: Duration(seconds: 3),
+                duration: const Duration(seconds: 3),
               ),
             );
           },
         ),
         FinalTestAction(
-          label: 'Try Again',
+          label: AppStrings.tryAgain,
           icon: Icons.refresh,
           style: FinalTestActionStyle.filled,
           backgroundColor: AppTheme.primaryColor,
@@ -168,7 +171,7 @@ class FinalTestResultViewData {
             Navigator.of(context).pop();
             ScaffoldMessenger.of(context).showSnackBar(
               const SnackBar(
-                content: Text('Starting a new test...'),
+                content: Text(AppStrings.startingNewTest),
                 duration: Duration(seconds: 2),
                 backgroundColor: AppTheme.primaryColor,
               ),
@@ -185,13 +188,14 @@ class FinalTestResultViewData {
     return FinalTestResultViewData(
       passed: passed,
       showBackButton: false,
-      appBarTitle: 'Test Results',
-      completionTitle: 'Phase 5 Final Test Completed!',
-      statusLabel: passed ? 'Congratulations!' : 'Not Passed',
+      appBarTitle: AppStrings.testResults,
+      completionTitle: AppStrings.finalTestCompletedTitle(5),
+      statusLabel:
+          passed ? AppStrings.congratulations : AppStrings.notPassed,
       statusMessage: passed
-          ? 'You have completed the English Communication Mastery Program!'
-          : 'You are very close. Review Phase 5 lessons and try again.',
-      badgeText: passed ? 'CERTIFIED ✔️' : null,
+          ? AppStrings.programCompleted
+          : AppStrings.phase5FailedMessage,
+      badgeText: passed ? AppStrings.certifiedBadge : null,
       badgeIcon: Icons.verified,
       badgeColor: Colors.green,
       passedIcon: Icons.emoji_events,
@@ -199,22 +203,22 @@ class FinalTestResultViewData {
       score: result.totalScore,
       maxScore: result.maxScore,
       percentage: result.percentage,
-      passingScoreText: 'Passing Score: 45/60 (75%)',
+      passingScoreText: '${AppStrings.passingScoreLabel}: 42/60 (70%)',
       breakdownItems: [
         FinalTestScoreBreakdownItem(
-          label: 'MCQ Questions',
+          label: AppStrings.mcqQuestions,
           score: result.mcqCorrect,
           maxScore: Phase5TestResult.maxMcqScore,
           icon: Icons.quiz,
         ),
         FinalTestScoreBreakdownItem(
-          label: 'Speaking Tasks',
+          label: AppStrings.speakingTasks,
           score: result.speakingScore,
           maxScore: Phase5TestResult.maxSpeakingScore,
           icon: Icons.mic,
         ),
         FinalTestScoreBreakdownItem(
-          label: 'Total Score',
+          label: AppStrings.totalScore,
           score: result.totalScore,
           maxScore: result.maxScore,
           icon: Icons.stars,
@@ -223,7 +227,7 @@ class FinalTestResultViewData {
       ],
       actions: [
         FinalTestAction(
-          label: 'Review Mistakes',
+          label: AppStrings.reviewMistakes,
           icon: Icons.rate_review,
           style: FinalTestActionStyle.filled,
           backgroundColor: AppTheme.primaryColor,
@@ -236,20 +240,20 @@ class FinalTestResultViewData {
           },
         ),
         FinalTestAction(
-          label: 'Download Certificate',
+          label: AppStrings.downloadCertificate,
           icon: Icons.download,
           style: FinalTestActionStyle.outlined,
           visible: passed,
           onPressed: (context) {
             ScaffoldMessenger.of(context).showSnackBar(
               const SnackBar(
-                content: Text('Certificate download coming soon!'),
+                content: Text(AppStrings.certificateSoon),
               ),
             );
           },
         ),
         FinalTestAction(
-          label: 'Return to Home',
+          label: AppStrings.returnToHome,
           style: FinalTestActionStyle.text,
           visible: passed,
           onPressed: (context) {
@@ -257,7 +261,7 @@ class FinalTestResultViewData {
           },
         ),
         FinalTestAction(
-          label: 'Try Again',
+          label: AppStrings.tryAgain,
           icon: Icons.refresh,
           style: FinalTestActionStyle.outlined,
           visible: !passed,
@@ -584,12 +588,15 @@ class _FinalTestResultScreenState extends State<FinalTestResultScreen>
                         size: 20,
                       ),
                       const SizedBox(width: AppTheme.spacingS),
-                      Text(
-                        data.badgeText!,
-                        style: TextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.bold,
-                          color: data.badgeColor ?? AppTheme.masteredColor,
+                      Flexible(
+                        child: Text(
+                          data.badgeText!,
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.bold,
+                            color: data.badgeColor ?? AppTheme.masteredColor,
+                          ),
                         ),
                       ),
                     ],
@@ -615,7 +622,7 @@ class _FinalTestResultScreenState extends State<FinalTestResultScreen>
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const Text(
-            'Score Breakdown:',
+            AppStrings.scoreBreakdown,
             style: TextStyle(
               fontSize: 18,
               fontWeight: FontWeight.bold,
@@ -731,7 +738,7 @@ class _FinalTestResultScreenState extends State<FinalTestResultScreen>
   }
 
   Widget _buildActionButton(BuildContext context, FinalTestAction action) {
-    final onPressed = () => action.onPressed(context);
+    void onPressed() => action.onPressed(context);
     final buttonStyle = _buttonStyle(action);
 
     if (action.style == FinalTestActionStyle.text) {
@@ -784,7 +791,7 @@ class _FinalTestResultScreenState extends State<FinalTestResultScreen>
   ButtonStyle _buttonStyle(FinalTestAction action) {
     final base = ButtonStyle(
       padding:
-          MaterialStateProperty.all(const EdgeInsets.all(AppTheme.spacingM)),
+          WidgetStateProperty.all(const EdgeInsets.all(AppTheme.spacingM)),
     );
 
     if (action.style == FinalTestActionStyle.text) {
@@ -794,20 +801,20 @@ class _FinalTestResultScreenState extends State<FinalTestResultScreen>
     if (action.style == FinalTestActionStyle.outlined) {
       return base.copyWith(
         foregroundColor: action.foregroundColor != null
-            ? MaterialStateProperty.all(action.foregroundColor)
+            ? WidgetStateProperty.all(action.foregroundColor)
             : null,
         side: action.borderColor != null
-            ? MaterialStateProperty.all(BorderSide(color: action.borderColor!))
+            ? WidgetStateProperty.all(BorderSide(color: action.borderColor!))
             : null,
       );
     }
 
     return base.copyWith(
       backgroundColor: action.backgroundColor != null
-          ? MaterialStateProperty.all(action.backgroundColor)
+          ? WidgetStateProperty.all(action.backgroundColor)
           : null,
       foregroundColor: action.foregroundColor != null
-          ? MaterialStateProperty.all(action.foregroundColor)
+          ? WidgetStateProperty.all(action.foregroundColor)
           : null,
     );
   }

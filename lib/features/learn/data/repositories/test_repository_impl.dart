@@ -10,6 +10,7 @@ import '../models/lesson.dart';
 import '../../../../services/local_storage/storage_service.dart';
 import '../../services/test_exceptions.dart';
 import 'lesson_repository.dart';
+import '../../../../core/logging/app_logger.dart';
 
 /// Implementation of TestRepository that handles all phases
 /// Uses PhaseConfig to determine phase-specific behavior
@@ -70,7 +71,7 @@ class TestRepositoryImpl implements TestRepository {
         questions.addAll(unitQuestions);
       } catch (e) {
         // Log error but continue loading other units
-        print('Warning: Failed to load questions for unit $unitId: $e');
+        AppLogger.warning('Warning: Failed to load questions for unit $unitId: $e');
       }
     }
   }
@@ -93,7 +94,7 @@ class TestRepositoryImpl implements TestRepository {
         questions.addAll(lessonQuestions);
       } catch (e) {
         // Log error but continue loading other lessons
-        print('Warning: Failed to load questions for lesson $lessonId: $e');
+        AppLogger.warning('Warning: Failed to load questions for lesson $lessonId: $e');
       }
     }
   }
@@ -113,7 +114,7 @@ class TestRepositoryImpl implements TestRepository {
         final lessonQuestions = _extractQuestionsFromLesson(lesson, unitId);
         questions.addAll(lessonQuestions);
       } catch (e) {
-        print('Warning: Failed to load lesson $lessonId: $e');
+        AppLogger.warning('Warning: Failed to load lesson $lessonId: $e');
       }
     }
 
@@ -222,7 +223,7 @@ class TestRepositoryImpl implements TestRepository {
       return TestResultModel.fromJson(json).toEntity();
     } catch (e) {
       // Return null if result cannot be loaded
-      print('Warning: Failed to load test result for ${config.name}: $e');
+      AppLogger.warning('Warning: Failed to load test result for ${config.name}: $e');
       return null;
     }
   }

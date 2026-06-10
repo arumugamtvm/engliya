@@ -7,6 +7,7 @@ import '../../../learn/domain/entities/phase_units.dart';
 import '../../../../app/theme.dart';
 import '../../../../app/routes.dart';
 import '../../../../core/widgets/status_badge.dart';
+import '../../../../core/constants/app_strings.dart';
 
 /// Progress overview screen displaying all lessons with their mastery status
 /// Shows detailed scores for completed lessons
@@ -31,7 +32,18 @@ class _ProgressScreenState extends State<ProgressScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Your Progress'),
+        title: const Column(
+          children: [
+            Text(AppStrings.yourProgressEn),
+            Text(
+              AppStrings.yourProgressTa,
+              style: TextStyle(
+                fontSize: 13,
+                fontWeight: FontWeight.normal,
+              ),
+            ),
+          ],
+        ),
         centerTitle: true,
       ),
       body: Consumer<ProgressProvider>(
@@ -69,7 +81,7 @@ class _ProgressScreenState extends State<ProgressScreen> {
                   const SizedBox(height: 24),
                   ElevatedButton(
                     onPressed: () => provider.reload(),
-                    child: const Text('Retry'),
+                    child: const Text(AppStrings.tryAgain),
                   ),
                 ],
               ),
@@ -78,7 +90,10 @@ class _ProgressScreenState extends State<ProgressScreen> {
 
           if (provider.allLessons.isEmpty) {
             return const Center(
-              child: Text('No lessons available'),
+              child: Text(
+                AppStrings.noLessonsAvailable,
+                textAlign: TextAlign.center,
+              ),
             );
           }
 
@@ -92,7 +107,11 @@ class _ProgressScreenState extends State<ProgressScreen> {
                 const SizedBox(height: 28),
 
                 // Phase 1 Section
-                _buildSectionHeader('Phase 1: Foundation', AppTheme.primaryColor),
+                _buildSectionHeader(
+                  'Phase 1: ${AppStrings.phaseFoundationEn}',
+                  AppTheme.primaryColor,
+                  tamilGloss: AppStrings.phaseFoundationTa,
+                ),
                 const SizedBox(height: 16),
                 ...provider.getUnitLessons('phase1').map((lesson) {
                   final status = provider.getLessonStatus(lesson.id);
@@ -103,12 +122,16 @@ class _ProgressScreenState extends State<ProgressScreen> {
                     status,
                     isUnlocked,
                   );
-                }).toList(),
+                }),
 
                 // Phase 2 Section
                 if (provider.isPhase2Unlocked) ...[
                   const SizedBox(height: 28),
-                  _buildSectionHeader('Phase 2: Intermediate', Colors.blue),
+                  _buildSectionHeader(
+                    'Phase 2: ${AppStrings.phaseIntermediateEn}',
+                    Colors.blue,
+                    tamilGloss: AppStrings.phaseIntermediateTa,
+                  ),
                   const SizedBox(height: 16),
                   ..._buildPhase2Lessons(provider),
                 ],
@@ -116,7 +139,11 @@ class _ProgressScreenState extends State<ProgressScreen> {
                 // Phase 3 Section
                 if (provider.isPhase3Unlocked) ...[
                   const SizedBox(height: 28),
-                  _buildSectionHeader('Phase 3: Real-Life Communication', Colors.purple),
+                  _buildSectionHeader(
+                    'Phase 3: Real-Life Communication',
+                    Colors.purple,
+                    tamilGloss: AppStrings.phaseRealLifeTa,
+                  ),
                   const SizedBox(height: 16),
                   ..._buildPhase3Lessons(provider),
                 ],
@@ -142,8 +169,8 @@ class _ProgressScreenState extends State<ProgressScreen> {
         decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: [
-              AppTheme.primaryColor.withOpacity(0.05),
-              AppTheme.accentColor.withOpacity(0.02),
+              AppTheme.primaryColor.withValues(alpha: 0.05),
+              AppTheme.accentColor.withValues(alpha: 0.02),
             ],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
@@ -159,7 +186,7 @@ class _ProgressScreenState extends State<ProgressScreen> {
                 Container(
                   padding: const EdgeInsets.all(14),
                   decoration: BoxDecoration(
-                    color: AppTheme.masteredColor.withOpacity(0.15),
+                    color: AppTheme.masteredColor.withValues(alpha: 0.15),
                     shape: BoxShape.circle,
                   ),
                   child: const Icon(
@@ -260,15 +287,15 @@ class _ProgressScreenState extends State<ProgressScreen> {
                   arguments: lesson.id,
                 );
                 // Refresh progress after returning
-                if (mounted) {
+                if (context.mounted) {
                   await context.read<ProgressProvider>().reload();
                 }
               }
             : () {
                 ScaffoldMessenger.of(context).showSnackBar(
                   const SnackBar(
-                    content: Text('Please master the previous lesson first'),
-                    duration: Duration(seconds: 2),
+                    content: Text(AppStrings.masterPreviousLesson),
+                    duration: Duration(seconds: 3),
                   ),
                 );
               },
@@ -331,7 +358,7 @@ class _ProgressScreenState extends State<ProgressScreen> {
               ),
 
               // Show detailed scores if lesson has progress
-              if (hasProgress && status != null) ...[
+              if (hasProgress) ...[
                 const SizedBox(height: 16),
                 const Divider(),
                 const SizedBox(height: 12),
@@ -413,7 +440,7 @@ class _ProgressScreenState extends State<ProgressScreen> {
       padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 6),
       decoration: BoxDecoration(
         color: isComplete
-            ? AppTheme.correctColor.withOpacity(0.1)
+            ? AppTheme.correctColor.withValues(alpha: 0.1)
             : Colors.grey[200],
         borderRadius: BorderRadius.circular(6),
         border: Border.all(
@@ -474,7 +501,7 @@ class _ProgressScreenState extends State<ProgressScreen> {
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
             decoration: BoxDecoration(
-              color: color.withOpacity(0.1),
+              color: color.withValues(alpha: 0.1),
               borderRadius: BorderRadius.circular(4),
               border: Border.all(color: color, width: 1),
             ),
@@ -492,22 +519,40 @@ class _ProgressScreenState extends State<ProgressScreen> {
     );
   }
 
-  /// Build section header for each phase
-  Widget _buildSectionHeader(String title, Color color) {
+  /// Build section header for each phase.
+  /// [tamilGloss] adds a short Tamil label under the English title.
+  Widget _buildSectionHeader(String title, Color color, {String? tamilGloss}) {
     return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
           width: 4,
-          height: 24,
+          height: tamilGloss != null ? 44 : 24,
+          margin: const EdgeInsets.only(top: 4),
           decoration: BoxDecoration(
             color: color,
             borderRadius: BorderRadius.circular(2),
           ),
         ),
         const SizedBox(width: 12),
-        Text(
-          title,
-          style: AppTheme.headline2,
+        Expanded(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                title,
+                style: AppTheme.headline2,
+              ),
+              if (tamilGloss != null)
+                Text(
+                  tamilGloss,
+                  style: AppTheme.bodyText2.copyWith(
+                    color: color,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+            ],
+          ),
         ),
       ],
     );

@@ -1,28 +1,62 @@
 import 'package:speech_to_text/speech_to_text.dart' as stt;
-import 'package:permission_handler/permission_handler.dart';
+import '../../../core/logging/app_logger.dart';
 
 /// Service for handling speech recognition
 class SpeechService {
+  static const String _tag = 'SpeechService';
+
+  /// Indian English - the right locale for Tamil Nadu learners
+  static const String preferredLocaleId = 'en_IN';
+
   final stt.SpeechToText _speech = stt.SpeechToText();
   bool _isInitialized = false;
+  String? _localeId;
 
   /// Initialize speech recognition
+  /// Note: speech_to_text requests microphone permission during initialize,
+  /// so no separate permission request is needed here.
   Future<bool> initialize() async {
     if (_isInitialized) return true;
 
-    // Request microphone permission
-    final status = await Permission.microphone.request();
-    if (!status.isGranted) {
-      return false;
-    }
-
-    // Initialize speech recognition
+    // Initialize speech recognition (requests mic permission if needed)
     _isInitialized = await _speech.initialize(
-      onError: (error) => print('Speech recognition error: $error'),
-      onStatus: (status) => print('Speech recognition status: $status'),
+      onError: (error) =>
+          AppLogger.error('Speech recognition error: $error', tag: _tag),
+      onStatus: (status) =>
+          AppLogger.debug('Speech recognition status: $status', tag: _tag),
     );
 
+    if (_isInitialized) {
+      _localeId = await _resolvePreferredLocale();
+    }
+
     return _isInitialized;
+  }
+
+  /// Resolve the preferred recognition locale (en_IN), falling back to the
+  /// device default (null) when Indian English is not supported.
+  Future<String?> _resolvePreferredLocale() async {
+    try {
+      final locales = await _speech.locales();
+      for (final locale in locales) {
+        if (locale.localeId.replaceAll('-', '_').toLowerCase() ==
+            preferredLocaleId.toLowerCase()) {
+          return locale.localeId;
+        }
+      }
+      AppLogger.info(
+        '$preferredLocaleId locale not available; using device default',
+        tag: _tag,
+      );
+    } catch (e, stackTrace) {
+      AppLogger.warning(
+        'Failed to query speech locales; using device default',
+        tag: _tag,
+        error: e,
+        stackTrace: stackTrace,
+      );
+    }
+    return null;
   }
 
   /// Check if speech recognition is available
@@ -52,9 +86,12 @@ class SpeechService {
       },
       listenFor: const Duration(seconds: 10),
       pauseFor: const Duration(seconds: 3),
-      partialResults: true,
-      cancelOnError: true,
-      listenMode: stt.ListenMode.confirmation,
+      listenOptions: stt.SpeechListenOptions(
+        partialResults: true,
+        cancelOnError: true,
+        listenMode: stt.ListenMode.confirmation,
+      ),
+      localeId: _localeId,
     );
   }
 
@@ -100,6 +137,8 @@ class SpeechService {
 
   /// Dispose resources
   void dispose() {
+    // Cancel any in-flight recognition session, then stop the recognizer
+    _speech.cancel();
     _speech.stop();
   }
 }

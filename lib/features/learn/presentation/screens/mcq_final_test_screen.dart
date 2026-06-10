@@ -11,11 +11,13 @@ import '../providers/mcq_final_test_provider.dart';
 import '../../../../app/routes.dart';
 import '../../../../app/theme.dart';
 import '../../../../core/constants/app_config.dart';
+import '../../../../core/constants/app_strings.dart';
 import '../../../../core/utils/animations.dart';
 import '../../../../core/utils/error_handler.dart';
 import '../../../../core/widgets/app_empty_state.dart';
 import '../../../../core/widgets/app_error_state.dart';
 import '../../../../core/widgets/app_loading_state.dart';
+import '../../../../core/logging/app_logger.dart';
 
 typedef QuestionLabelBuilder =
     String Function(
@@ -83,8 +85,7 @@ class McqFinalTestScreenConfig {
       subtitle: 'Covering Lessons 1 to 6',
       semanticsLabel: 'Phase 1 Final Test, Covering Lessons 1 to 6',
       checkAccess: false,
-      lockedDescription:
-          'Please master all Phase 1 lessons before taking the final test',
+      lockedDescription: AppStrings.finalTestLockedDescription(1),
       lockedSemanticsLabel:
           'Test locked. Please master all Phase 1 lessons before taking the final test.',
       showSkipButton: false,
@@ -98,7 +99,7 @@ class McqFinalTestScreenConfig {
       replaceOnResult: true,
       popAfterResult: false,
       showRetrySaveAction: false,
-      questionSemanticsLabel: (question, _, __) =>
+      questionSemanticsLabel: (question, _, _) =>
           'Question: ${question.promptEn}',
       announcementLabel: (question, number, total) =>
           'Question $number of $total. ${question.promptEn}',
@@ -112,8 +113,7 @@ class McqFinalTestScreenConfig {
       subtitle: 'Units 7–11 • 25 Questions',
       semanticsLabel: 'Phase 2 Final Test, Units 7 to 11, 25 Questions',
       checkAccess: true,
-      lockedDescription:
-          'Please master all Phase 2 lessons before taking the final test',
+      lockedDescription: AppStrings.finalTestLockedDescription(2),
       lockedSemanticsLabel:
           'Test locked. Please master all Phase 2 lessons before taking the final test.',
       showSkipButton: true,
@@ -127,7 +127,7 @@ class McqFinalTestScreenConfig {
       replaceOnResult: false,
       popAfterResult: true,
       showRetrySaveAction: true,
-      questionSemanticsLabel: (question, _, __) =>
+      questionSemanticsLabel: (question, _, _) =>
           'Question: ${question.promptEn}',
       announcementLabel: (question, number, total) =>
           'Question $number of $total. ${question.promptEn}',
@@ -141,8 +141,7 @@ class McqFinalTestScreenConfig {
       subtitle: 'Real-Life Communication Check',
       semanticsLabel: 'Phase 3 Final Test, Real-Life Communication Check',
       checkAccess: true,
-      lockedDescription:
-          'Please master all Phase 3 lessons before taking the final test',
+      lockedDescription: AppStrings.finalTestLockedDescription(3),
       lockedSemanticsLabel:
           'Test locked. Please master all Phase 3 lessons before taking the final test.',
       showSkipButton: true,
@@ -282,7 +281,7 @@ class _McqFinalTestScreenBodyState extends State<_McqFinalTestScreenBody>
       await provider.startTest();
       _questionAnimationController.forward();
     } catch (e) {
-      print('Test initialization failed: $e');
+      AppLogger.debug('Test initialization failed: $e');
     }
   }
 
@@ -295,7 +294,7 @@ class _McqFinalTestScreenBodyState extends State<_McqFinalTestScreenBody>
       await context.read<McqFinalTestProvider>().retryStartTest();
       _questionAnimationController.forward();
     } catch (e) {
-      print('Test retry failed: $e');
+      AppLogger.debug('Test retry failed: $e');
     } finally {
       if (mounted) {
         setState(() {
@@ -348,8 +347,8 @@ class _McqFinalTestScreenBodyState extends State<_McqFinalTestScreenBody>
 
     if (provider.questions.isEmpty) {
       return const AppEmptyState(
-        title: 'No questions available',
-        subtitle: 'Please try again in a moment.',
+        title: AppStrings.noQuestions,
+        subtitle: AppStrings.tryAgainMoment,
       );
     }
 
@@ -404,7 +403,7 @@ class _McqFinalTestScreenBodyState extends State<_McqFinalTestScreenBody>
               ),
               const SizedBox(height: AppTheme.spacingM),
               const Text(
-                'Test Locked',
+                AppStrings.testLocked,
                 style: TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
@@ -425,7 +424,7 @@ class _McqFinalTestScreenBodyState extends State<_McqFinalTestScreenBody>
                 child: ElevatedButton.icon(
                   onPressed: () => Navigator.of(context).pop(),
                   icon: const Icon(Icons.arrow_back),
-                  label: const Text('Go Back'),
+                  label: const Text(AppStrings.goBack),
                 ),
               ),
             ],
@@ -439,8 +438,9 @@ class _McqFinalTestScreenBodyState extends State<_McqFinalTestScreenBody>
     return Semantics(
       label: 'Error loading test. ${provider.error}. Please retry.',
       child: AppErrorState(
-        message: provider.error ?? 'An error occurred while loading test.',
-        retryLabel: _isRetryingInitialize ? 'Retrying...' : 'Retry',
+        message: provider.error ?? AppStrings.unableToLoadTest,
+        retryLabel:
+            _isRetryingInitialize ? AppStrings.retrying : AppStrings.retry,
         onRetry: _isRetryingInitialize ? () {} : _retryInitializeTest,
       ),
     );
@@ -738,7 +738,8 @@ class _McqFinalTestScreenBodyState extends State<_McqFinalTestScreenBody>
   ) {
     final canProceed = provider.canProceed;
     final isLastQuestion = provider.isLastQuestion;
-    final buttonText = isLastQuestion ? 'Submit Test' : 'Next';
+    final buttonText =
+        isLastQuestion ? AppStrings.submitTest : AppStrings.next;
     final semanticLabel = canProceed
         ? (isLastQuestion
               ? 'Submit test and view results'
@@ -808,7 +809,7 @@ class _McqFinalTestScreenBodyState extends State<_McqFinalTestScreenBody>
                           borderRadius: BorderRadius.circular(AppTheme.radiusL),
                         ),
                       ),
-                      child: const Text('Skip'),
+                      child: const Text(AppStrings.skip),
                     ),
                   ),
                   const SizedBox(width: AppTheme.spacingM),
@@ -864,7 +865,11 @@ class _McqFinalTestScreenBodyState extends State<_McqFinalTestScreenBody>
         questionNumber,
         totalQuestions,
       );
-      SemanticsService.announce(announcement, TextDirection.ltr);
+      SemanticsService.sendAnnouncement(
+        View.of(context),
+        announcement,
+        TextDirection.ltr,
+      );
     }
   }
 
@@ -894,7 +899,7 @@ class _McqFinalTestScreenBodyState extends State<_McqFinalTestScreenBody>
         try {
           Navigator.of(context).pop();
         } catch (e) {
-          print('Error closing loading dialog: $e');
+          AppLogger.error('Error closing loading dialog: $e');
         }
       }
 
@@ -917,7 +922,7 @@ class _McqFinalTestScreenBodyState extends State<_McqFinalTestScreenBody>
                       );
                     }
                   } catch (e) {
-                    print('Retry save failed: $e');
+                    AppLogger.debug('Retry save failed: $e');
                   }
                 },
               )
@@ -976,7 +981,7 @@ class _McqFinalTestScreenBodyState extends State<_McqFinalTestScreenBody>
             backgroundColor: AppTheme.incorrectColor,
             duration: const Duration(seconds: 5),
             action: SnackBarAction(
-              label: 'Retry',
+              label: AppStrings.retry,
               textColor: Colors.white,
               onPressed: () => _submitTest(context, provider),
             ),
@@ -997,7 +1002,7 @@ class _McqFinalTestScreenBodyState extends State<_McqFinalTestScreenBody>
             backgroundColor: AppTheme.incorrectColor,
             duration: const Duration(seconds: 5),
             action: SnackBarAction(
-              label: 'Retry',
+              label: AppStrings.retry,
               textColor: Colors.white,
               onPressed: () => _submitTest(context, provider),
             ),

@@ -4,6 +4,7 @@ import '../../providers/lesson_provider.dart';
 import '../../../services/audio_service.dart';
 import '../../../../../app/theme.dart';
 import '../../../../../core/utils/error_handler.dart';
+import '../../../../../core/constants/app_strings.dart';
 
 /// Examples tab widget that displays example sentences with audio playback
 /// Requirements: 7.1, 7.2, 7.3, 7.4, 7.5
@@ -104,7 +105,10 @@ class _ExamplesTabState extends State<ExamplesTab> {
 
     if (lesson == null) {
       return const Center(
-        child: Text('No lesson data available'),
+        child: Text(
+          AppStrings.noLessonData,
+          textAlign: TextAlign.center,
+        ),
       );
     }
 
@@ -116,7 +120,10 @@ class _ExamplesTabState extends State<ExamplesTab> {
 
     if (examples.isEmpty) {
       return const Center(
-        child: Text('No examples available'),
+        child: Text(
+          AppStrings.noExamples,
+          textAlign: TextAlign.center,
+        ),
       );
     }
 
@@ -125,7 +132,7 @@ class _ExamplesTabState extends State<ExamplesTab> {
         // Progress indicator
         Container(
           padding: const EdgeInsets.all(16),
-          color: AppTheme.primaryColor.withOpacity(0.1),
+          color: AppTheme.primaryColor.withValues(alpha: 0.1),
           child: Row(
             children: [
               Icon(
@@ -139,9 +146,18 @@ class _ExamplesTabState extends State<ExamplesTab> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Listen to at least 3 examples',
+                      AppStrings.listenToExamplesEn,
                       style: AppTheme.bodyText1.copyWith(
                         fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    const SizedBox(height: 2),
+                    Text(
+                      AppStrings.listenToExamplesTa,
+                      style: AppTheme.bodyText2.copyWith(
+                        fontSize: 14,
+                        color: AppTheme.primaryColor,
+                        fontWeight: FontWeight.w600,
                       ),
                     ),
                     const SizedBox(height: 4),
@@ -181,7 +197,7 @@ class _ExamplesTabState extends State<ExamplesTab> {
                   borderRadius: BorderRadius.circular(12),
                   side: BorderSide(
                     color: isPlayed
-                        ? AppTheme.primaryColor.withOpacity(0.3)
+                        ? AppTheme.primaryColor.withValues(alpha: 0.3)
                         : Colors.transparent,
                     width: 2,
                   ),

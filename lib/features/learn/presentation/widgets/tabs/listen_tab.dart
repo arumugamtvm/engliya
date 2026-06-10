@@ -4,6 +4,7 @@ import '../../providers/lesson_provider.dart';
 import '../../../services/audio_service.dart';
 import '../../../../../app/theme.dart';
 import '../../../../../core/utils/error_handler.dart';
+import '../../../../../core/constants/app_strings.dart';
 
 /// Listen tab widget for listening comprehension practice
 /// Requirements: 8.1, 8.2, 8.3, 8.4, 8.5, 8.6
@@ -148,7 +149,10 @@ class _ListenTabState extends State<ListenTab> {
 
     if (lesson == null) {
       return const Center(
-        child: Text('No lesson data available'),
+        child: Text(
+          AppStrings.noLessonData,
+          textAlign: TextAlign.center,
+        ),
       );
     }
 
@@ -156,7 +160,10 @@ class _ListenTabState extends State<ListenTab> {
 
     if (questions.isEmpty) {
       return const Center(
-        child: Text('No listening questions available'),
+        child: Text(
+          AppStrings.noListeningQuestions,
+          textAlign: TextAlign.center,
+        ),
       );
     }
 
@@ -176,7 +183,7 @@ class _ListenTabState extends State<ListenTab> {
         // Progress indicator
         Container(
           padding: const EdgeInsets.all(16),
-          color: AppTheme.primaryColor.withOpacity(0.1),
+          color: AppTheme.primaryColor.withValues(alpha: 0.1),
           child: Row(
             children: [
               Icon(
@@ -190,9 +197,18 @@ class _ListenTabState extends State<ListenTab> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Answer at least 3 questions with 70%+ accuracy',
+                      AppStrings.listenRuleEn,
                       style: AppTheme.bodyText1.copyWith(
                         fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    const SizedBox(height: 2),
+                    Text(
+                      AppStrings.listenRuleTa,
+                      style: AppTheme.bodyText2.copyWith(
+                        fontSize: 14,
+                        color: AppTheme.primaryColor,
+                        fontWeight: FontWeight.w600,
                       ),
                     ),
                     const SizedBox(height: 4),
@@ -220,10 +236,10 @@ class _ListenTabState extends State<ListenTab> {
             margin: const EdgeInsets.fromLTRB(16, 16, 16, 0),
             padding: const EdgeInsets.all(16),
             decoration: BoxDecoration(
-              color: AppTheme.incorrectColor.withOpacity(0.1),
+              color: AppTheme.incorrectColor.withValues(alpha: 0.1),
               borderRadius: BorderRadius.circular(12),
               border: Border.all(
-                color: AppTheme.incorrectColor.withOpacity(0.5),
+                color: AppTheme.incorrectColor.withValues(alpha: 0.5),
                 width: 1.5,
               ),
             ),
@@ -231,17 +247,25 @@ class _ListenTabState extends State<ListenTab> {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 Text(
-                  'You answered all questions, but need at least 70% to continue.',
+                  AppStrings.listenRetryMessageEn,
                   style: AppTheme.bodyText2.copyWith(
                     color: Colors.black87,
                     fontWeight: FontWeight.w600,
+                  ),
+                ),
+                const SizedBox(height: 6),
+                Text(
+                  AppStrings.listenRetryMessageTa,
+                  style: AppTheme.bodyText2.copyWith(
+                    fontSize: 14,
+                    color: Colors.black87,
                   ),
                 ),
                 const SizedBox(height: 10),
                 ElevatedButton.icon(
                   onPressed: _retryListen,
                   icon: const Icon(Icons.refresh),
-                  label: const Text('Retry Listening'),
+                  label: const Text(AppStrings.tryAgain),
                   style: ElevatedButton.styleFrom(
                     backgroundColor: AppTheme.primaryColor,
                     foregroundColor: Colors.white,
@@ -272,8 +296,8 @@ class _ListenTabState extends State<ListenTab> {
                   side: BorderSide(
                     color: isAnswered
                         ? (isCorrect
-                            ? AppTheme.correctColor.withOpacity(0.3)
-                            : AppTheme.incorrectColor.withOpacity(0.3))
+                            ? AppTheme.correctColor.withValues(alpha: 0.3)
+                            : AppTheme.incorrectColor.withValues(alpha: 0.3))
                         : Colors.transparent,
                     width: 2,
                   ),
@@ -337,7 +361,7 @@ class _ListenTabState extends State<ListenTab> {
                             }
                           } else if (isCorrectOption) {
                             // Show correct answer if user selected wrong
-                            buttonColor = AppTheme.correctColor.withOpacity(0.3);
+                            buttonColor = AppTheme.correctColor.withValues(alpha: 0.3);
                             textColor = AppTheme.correctColor;
                             icon = Icons.check_circle;
                           }
@@ -406,7 +430,9 @@ class _ListenTabState extends State<ListenTab> {
                               ),
                               const SizedBox(width: 8),
                               Text(
-                                isCorrect ? 'Correct!' : 'Incorrect',
+                                isCorrect
+                                    ? AppStrings.correct
+                                    : AppStrings.incorrect,
                                 style: AppTheme.bodyText2.copyWith(
                                   color: isCorrect
                                       ? AppTheme.correctColor
