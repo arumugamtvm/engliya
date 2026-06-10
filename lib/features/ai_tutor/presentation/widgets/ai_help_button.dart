@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../../../services/ai/ai_service.dart';
 import '../screens/ai_chat_screen.dart';
+import '../../../../core/constants/app_strings.dart';
 
 /// Floating AI help button with modern gradient design
 class AIHelpButton extends StatefulWidget {
@@ -340,7 +341,7 @@ class _AIQuickHelpState extends State<AIQuickHelp> {
                                 _loadExplanation();
                               },
                               icon: const Icon(Icons.refresh),
-                              label: const Text('Retry'),
+                              label: const Text(AppStrings.retry),
                             ),
                           ],
                         )

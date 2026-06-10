@@ -1320,7 +1320,7 @@ class _FinalTestScreenState<
             backgroundColor: AppTheme.incorrectColor,
             duration: const Duration(seconds: 5),
             action: SnackBarAction(
-              label: 'Retry',
+              label: AppStrings.retry,
               textColor: Colors.white,
               onPressed: () => _submitTest(context, provider),
             ),
@@ -1341,7 +1341,7 @@ class _FinalTestScreenState<
             backgroundColor: AppTheme.incorrectColor,
             duration: const Duration(seconds: 5),
             action: SnackBarAction(
-              label: 'Retry',
+              label: AppStrings.retry,
               textColor: Colors.white,
               onPressed: () => _submitTest(context, provider),
             ),

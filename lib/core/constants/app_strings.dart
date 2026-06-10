@@ -158,6 +158,26 @@ class AppStrings {
   static const String tryAgainTa = 'மீண்டும் முயற்சி';
   static const String tryAgain = '$tryAgainEn / $tryAgainTa';
 
+  static const String errorLoadingLessonsEn = 'Error loading lessons';
+  static const String errorLoadingLessonsTa = 'பாடங்களை ஏற்ற முடியவில்லை';
+  static const String errorLoadingLessons =
+      '$errorLoadingLessonsEn\n$errorLoadingLessonsTa';
+
+  static const String errorLoadingUnitsEn = 'Error loading units';
+  static const String errorLoadingUnitsTa = 'பகுதிகளை ஏற்ற முடியவில்லை';
+  static const String errorLoadingUnits =
+      '$errorLoadingUnitsEn\n$errorLoadingUnitsTa';
+
+  static const String noLessonsAvailableEn = 'No lessons available';
+  static const String noLessonsAvailableTa = 'பாடங்கள் எதுவும் இல்லை';
+  static const String noLessonsAvailable =
+      '$noLessonsAvailableEn\n$noLessonsAvailableTa';
+
+  static const String noUnitsAvailableEn = 'No units available';
+  static const String noUnitsAvailableTa = 'பகுதிகள் எதுவும் இல்லை';
+  static const String noUnitsAvailable =
+      '$noUnitsAvailableEn\n$noUnitsAvailableTa';
+
   // ---------------------------------------------------------------------
   // Lesson tabs — shared feedback
   // ---------------------------------------------------------------------

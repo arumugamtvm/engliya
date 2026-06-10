@@ -90,7 +90,10 @@ class _ProgressScreenState extends State<ProgressScreen> {
 
           if (provider.allLessons.isEmpty) {
             return const Center(
-              child: Text('No lessons available'),
+              child: Text(
+                AppStrings.noLessonsAvailable,
+                textAlign: TextAlign.center,
+              ),
             );
           }
 

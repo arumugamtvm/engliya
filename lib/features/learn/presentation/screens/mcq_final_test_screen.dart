@@ -981,7 +981,7 @@ class _McqFinalTestScreenBodyState extends State<_McqFinalTestScreenBody>
             backgroundColor: AppTheme.incorrectColor,
             duration: const Duration(seconds: 5),
             action: SnackBarAction(
-              label: 'Retry',
+              label: AppStrings.retry,
               textColor: Colors.white,
               onPressed: () => _submitTest(context, provider),
             ),
@@ -1002,7 +1002,7 @@ class _McqFinalTestScreenBodyState extends State<_McqFinalTestScreenBody>
             backgroundColor: AppTheme.incorrectColor,
             duration: const Duration(seconds: 5),
             action: SnackBarAction(
-              label: 'Retry',
+              label: AppStrings.retry,
               textColor: Colors.white,
               onPressed: () => _submitTest(context, provider),
             ),

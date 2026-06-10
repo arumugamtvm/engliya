@@ -20,6 +20,7 @@ import '../widgets/unit_card.dart';
 import '../../../../app/routes.dart';
 import '../../../../app/theme.dart';
 import '../../../../core/constants/app_config.dart';
+import '../../../../core/constants/app_strings.dart';
 
 class PhaseUnitScreenConfig {
   final PhaseType phaseType;
@@ -285,7 +286,8 @@ class _PhaseUnitScreenState extends State<PhaseUnitScreen> {
                     ),
                     const SizedBox(height: 16),
                     Text(
-                      'Error loading units',
+                      AppStrings.errorLoadingUnits,
+                      textAlign: TextAlign.center,
                       style: Theme.of(context).textTheme.titleLarge,
                     ),
                     const SizedBox(height: 8),
@@ -296,7 +298,7 @@ class _PhaseUnitScreenState extends State<PhaseUnitScreen> {
                     const SizedBox(height: 24),
                     ElevatedButton(
                       onPressed: () => provider.reload(),
-                      child: const Text('Retry'),
+                      child: const Text(AppStrings.tryAgain),
                     ),
                   ],
                 ),
@@ -305,7 +307,12 @@ class _PhaseUnitScreenState extends State<PhaseUnitScreen> {
 
             final units = provider.units;
             if (units.isEmpty) {
-              return const Center(child: Text('No units available'));
+              return const Center(
+                child: Text(
+                  AppStrings.noUnitsAvailable,
+                  textAlign: TextAlign.center,
+                ),
+              );
             }
 
             return ListView.builder(

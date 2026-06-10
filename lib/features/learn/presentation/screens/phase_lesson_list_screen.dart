@@ -4,6 +4,7 @@ import '../providers/progress_provider.dart';
 import '../../domain/entities/phase_units.dart';
 import '../../../../core/widgets/lesson_card.dart';
 import '../../../../app/routes.dart';
+import '../../../../core/constants/app_strings.dart';
 
 class PhaseLessonListScreen extends StatefulWidget {
   final String unitId;
@@ -73,7 +74,8 @@ class _PhaseLessonListScreenState extends State<PhaseLessonListScreen> {
                   const Icon(Icons.error_outline,
                       size: 64, color: Colors.red),
                   const SizedBox(height: 16),
-                  Text('Error loading lessons',
+                  Text(AppStrings.errorLoadingLessons,
+                      textAlign: TextAlign.center,
                       style: Theme.of(context).textTheme.titleLarge),
                   const SizedBox(height: 8),
                   Padding(
@@ -87,7 +89,7 @@ class _PhaseLessonListScreenState extends State<PhaseLessonListScreen> {
                   const SizedBox(height: 24),
                   ElevatedButton(
                     onPressed: () => progressProvider.reload(),
-                    child: const Text('Retry'),
+                    child: const Text(AppStrings.tryAgain),
                   ),
                 ],
               ),
@@ -103,7 +105,8 @@ class _PhaseLessonListScreenState extends State<PhaseLessonListScreen> {
                   const Icon(Icons.school_outlined,
                       size: 64, color: Colors.grey),
                   const SizedBox(height: 16),
-                  Text('No lessons available',
+                  Text(AppStrings.noLessonsAvailable,
+                      textAlign: TextAlign.center,
                       style: Theme.of(context).textTheme.titleLarge),
                 ],
               ),
